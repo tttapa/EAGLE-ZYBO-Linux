@@ -2,6 +2,8 @@
 extern "C" {
 #endif
 
+#include <stdint.h>
+
 int wmemf(uint64_t offset, float value);
 int wmem(uint64_t offset, uint32_t value);
 int rmem(uint64_t offset);
