@@ -4,7 +4,9 @@
             "name": "Linux",
             "intelliSenseMode": "gcc-x64",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/crypto/include",
+                "${workspaceFolder}/src/comm/include"
             ],
             "defines": [],
             "cStandard": "c11",

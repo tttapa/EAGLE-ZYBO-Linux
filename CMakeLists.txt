@@ -61,10 +61,11 @@ enable_testing()
 set(CMAKE_CXX_STANDARD 17)
 
 # Optimize during linking stage
-set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE) # LTO
+# set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE) # LTO
+# I had to disable LTO, because otherwise GCC has an internal compiler error ...
 
 # Allow linking the compiled code into a shared library (for Python modules)
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+# set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # Compiler flags for C++
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
