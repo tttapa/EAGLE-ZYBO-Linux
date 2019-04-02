@@ -1,2 +1,2 @@
 # Hello World! example
-add_subdirectory(greet)
+add_subdirectory(crypto)
