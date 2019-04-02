@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(BareMetal-Improved)
+project(Crypto)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
@@ -50,7 +50,6 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest/googletest-src
                  ${CMAKE_BINARY_DIR}/googletest/googletest-build
                  EXCLUDE_FROM_ALL)
 # </copy>
-
 include(GoogleTest)
 enable_testing()
 
@@ -59,7 +58,7 @@ enable_testing()
 ################################################################################
 
 # Use C++ 17
-set (CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17)
 
 # Optimize during linking stage
 set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE) # LTO
@@ -75,6 +74,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
 -Wno-register \
 -Wno-missing-braces \
 -Wno-unknown-pragmas \
+-Wno-psabi \
 -fdiagnostics-show-option")
 
 # Compiler flags for C

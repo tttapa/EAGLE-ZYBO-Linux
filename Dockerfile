@@ -1,8 +1,8 @@
 # https://medium.com/@aharon.amir/develop-c-on-docker-with-vscode-98fb85b818b2
 FROM ubuntu:latest
 
-RUN apt-get update
-RUN apt-get install -y git gcc-8 g++-8 cmake gdb gdbserver  && \
+RUN apt-get update && \
+    apt-get install -y git wget gcc-8 g++-8 cmake gdb gdbserver  && \
     apt-get clean autoclean && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
@@ -21,6 +21,14 @@ EXPOSE 2000
 USER develop
 WORKDIR /home/develop
 RUN git clone https://github.com/google/googletest.git
+
+RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-a/8.2-2019.01/gcc-arm-8.2-2019.01-x86_64-arm-linux-gnueabihf.tar.xz && \
+    tar xf gcc-arm-8.2-2019.01-x86_64-arm-linux-gnueabihf.tar.xz && \
+    rm gcc-arm-8.2-2019.01-x86_64-arm-linux-gnueabihf.tar.xz
+ENV PATH="${PATH}:/home/develop/gcc-arm-8.2-2019.01-x86_64-arm-linux-gnueabihf/bin"
+RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-a/8.2-2019.01/sysroot-glibc-8.2-2019.01-x86_64-arm-linux-gnueabihf.tar.xz && \
+    tar xf sysroot-glibc-8.2-2019.01-x86_64-arm-linux-gnueabihf.tar.xz && \
+    rm sysroot-glibc-8.2-2019.01-x86_64-arm-linux-gnueabihf.tar.xz
 
 ARG WORKSPACE_ROOT
 VOLUME ${WORKSPACE_ROOT}

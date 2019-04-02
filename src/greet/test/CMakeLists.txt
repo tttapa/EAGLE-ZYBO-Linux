@@ -6,4 +6,6 @@ target_link_libraries(test-Greet gtest_main greet)
 
 # Add the tests to Google Test
 include(GoogleTest)
+if (NOT CMAKE_CROSSCOMPILING)
 gtest_discover_tests(test-Greet)
+endif()

@@ -50,6 +50,24 @@
             "problemMatcher": [],
         },
         {
+            "label": "Run CMake ARMv7 ZYBO (Docker)",
+            "type": "shell",
+            "command": "docker exec -it -w  ${workspaceFolder}/build devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
+            "windows": {
+                "command": "docker exec -it -w  /home/develop/eagle/build devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "Run CMake ARMv6 RPi-Z (Docker)",
+            "type": "shell",
+            "command": "docker exec -it -w  ${workspaceFolder}/build devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv6-RPi-Z.cmake ..",
+            "windows": {
+                "command": "docker exec -it -w  /home/develop/eagle/build devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv6-RPi-Z.cmake ..",
+            },
+            "problemMatcher": [],
+        },
+        {
             "label": "Run CMake (Local)",
             "type": "shell",
             "command": "cmake ..",
