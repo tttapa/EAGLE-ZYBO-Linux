@@ -16,6 +16,8 @@
  *
  */
 
+/* GIVEN FILE - DO NOT EDIT */
+
 #include <wrapper.h>
 
 #include <byteswap.h>
