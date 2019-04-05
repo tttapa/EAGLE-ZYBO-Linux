@@ -2,7 +2,7 @@
 version: '2'
 services:
   dev-image:
-    image: eagle1/baremetal/develop
+    image: eagle1/crypto/develop
     ports:
       - "2000:2000"
     privileged: true

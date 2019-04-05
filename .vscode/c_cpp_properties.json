@@ -6,7 +6,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/src/crypto/include",
-                "${workspaceFolder}/src/comm/include"
+                "${workspaceFolder}/src/comm/include",
+                "/usr/src/linux-headers-4.4.178-0404178/**"
             ],
             "defines": [],
             "cStandard": "c11",

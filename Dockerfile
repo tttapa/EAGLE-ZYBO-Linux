@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 RUN apt-get update && \
-    apt-get install -y git wget gcc-8 g++-8 cmake gdb gdbserver  && \
+    apt-get install -y sudo git wget gcc-8 g++-8 cmake gdb gdbserver  && \
     apt-get clean autoclean && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
@@ -30,6 +30,8 @@ RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-a/8.3-2019.03/bin
 RUN tar xf sysroot-glibc-8.3-2019.03-x86_64-arm-linux-gnueabi.tar.xz && \
     rm sysroot-glibc-8.3-2019.03-x86_64-arm-linux-gnueabi.tar.xz
 
+USER develop
 ARG WORKSPACE_ROOT
+ENV WORKSPACE_ROOT=${WORKSPACE_ROOT}
 VOLUME ${WORKSPACE_ROOT}
 WORKDIR ${WORKSPACE_ROOT}/build

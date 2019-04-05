@@ -151,9 +151,18 @@
         {
             "label": "Build Docker Image",
             "type": "shell",
-            "command": "docker build -f Dockerfile --build-arg WORKSPACE_ROOT=${workspaceFolder} -t eagle1/baremetal/develop .",
+            "command": "docker build -f Dockerfile --network=host --build-arg WORKSPACE_ROOT=${workspaceFolder} -t eagle1/crypto/develop .",
             "windows": {
-                "command": "docker build -f Dockerfile.win -t eagle1/baremetal/develop .",
+                "command": "docker build -f Dockerfile.win -t eagle1/crypto/develop .",
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Docker Image (LKM)",
+            "type": "shell",
+            "command": "docker build -f lkm/Dockerfile --network=host --build-arg WORKSPACE_ROOT=${workspaceFolder} -t eagle1/crypto/lkm .",
+            "windows": {
+                "command": "docker build -f lkm/Dockerfile.win -t eagle1/crypto/lkm .",
             },
             "problemMatcher": []
         },
