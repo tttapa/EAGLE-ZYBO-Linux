@@ -5,9 +5,9 @@
         {
             "label": "Start Docker Container",
             "type": "shell",
-            "command": "docker-compose -f compose.yml run --service-ports --name devenv dev-image bash",
+            "command": "docker-compose -f compose.yml run --service-ports --name crypto-devenv dev-image bash",
             "windows": {
-                "command": "docker-compose -f compose.win.yml run --service-ports --name devenv dev-image bash",
+                "command": "docker-compose -f compose.win.yml run --service-ports --name crypto-devenv dev-image bash",
             },
             "problemMatcher": [],
             "dependsOn": "Stop Docker Container", // Restart if already running
@@ -43,27 +43,27 @@
         {
             "label": "Run CMake (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w  ${workspaceFolder}/build devenv cmake ..",
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake ..",
             "windows": {
-                "command": "docker exec -it -w  /home/develop/eagle/build devenv cmake ..",
+                "command": "docker exec -it -w  /home/develop/eagle/build crypto-devenv cmake ..",
             },
             "problemMatcher": [],
         },
         {
             "label": "Run CMake ARMv7 ZYBO (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w  ${workspaceFolder}/build devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
             "windows": {
-                "command": "docker exec -it -w  /home/develop/eagle/build devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
+                "command": "docker exec -it -w  /home/develop/eagle/build crypto-devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
             },
             "problemMatcher": [],
         },
         {
             "label": "Run CMake ARMv6 RPi-Z (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w  ${workspaceFolder}/build devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv6-RPi-Z.cmake ..",
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv6-RPi-Z.cmake ..",
             "windows": {
-                "command": "docker exec -it -w  /home/develop/eagle/build devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv6-RPi-Z.cmake ..",
+                "command": "docker exec -it -w  /home/develop/eagle/build crypto-devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv6-RPi-Z.cmake ..",
             },
             "problemMatcher": [],
         },
@@ -83,9 +83,9 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "command": "docker exec -it -w  ${workspaceFolder}/build devenv make -j$(nproc)",
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make -j$(nproc)",
             "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build devenv sh -c 'make -j $(nproc)'",
+                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make -j $(nproc)'",
             },
             "problemMatcher": "$gcc"
         },
@@ -105,9 +105,9 @@
                 "kind": "test",
                 "isDefault": true
             },
-            "command": "docker exec -it -w ${workspaceFolder}/build devenv sh -c 'make -j$(nproc) && make test'",
+            "command": "docker exec -it -w ${workspaceFolder}/build crypto-devenv sh -c 'make -j$(nproc) && make test'",
             "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build devenv sh -c 'make -j$(nproc) && make test'",
+                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make -j$(nproc) && make test'",
             },
             "problemMatcher": "$gcc"
         },
@@ -117,15 +117,15 @@
             "command": "make -j$(nproc) && make test",
             "options": {
                 "cwd": "${workspaceFolder}/build"
-            },
+            },  
             "problemMatcher": "$gcc"
         },
         {
             "label": "Make Clean (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w ${workspaceFolder}/build devenv make clean",
+            "command": "docker exec -it -w ${workspaceFolder}/build crypto-devenv make clean",
             "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build devenv make clean",
+                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv make clean",
             },
             "problemMatcher": "$gcc"
         },
@@ -142,9 +142,9 @@
             "label": "Start GDB Server",
             "type": "shell",
             // not using -it so that it can be a preLaunchTask
-            "command": "docker exec -d devenv gdbserver localhost:2000  ${workspaceRoot}/build/bin/hello-world",
+            "command": "docker exec -d crypto-devenv gdbserver localhost:2000  ${workspaceRoot}/build/bin/hello-world",
             "windows": {
-                "command": "docker exec -d devenv gdbserver localhost:2000  /home/develop/eagle/build/bin/hello-world",
+                "command": "docker exec -d crypto-devenv gdbserver localhost:2000  /home/develop/eagle/build/bin/hello-world",
             },
             "problemMatcher": []
         },
@@ -160,18 +160,18 @@
         {
             "label": "Build Docker Image (LKM)",
             "type": "shell",
-            "command": "docker build -f lkm/Dockerfile --network=host --build-arg WORKSPACE_ROOT=${workspaceFolder} -t eagle1/crypto/lkm .",
+            "command": "docker build -f lkm/Dockerfile --network=host --build-arg WORKSPACE_ROOT=${workspaceFolder} -t eagle1/armv7/lkm .",
             "windows": {
-                "command": "docker build -f lkm/Dockerfile.win -t eagle1/crypto/lkm .",
+                "command": "docker build -f lkm/Dockerfile.win -t eagle1/armv7/lkm .",
             },
             "problemMatcher": []
         },
         {
             "label": "Run Application (Docker)",
             "type": "shell",
-            "command": "docker exec -it devenv ${workspaceFolder}/build/bin/hello-world",
+            "command": "docker exec -it crypto-devenv ${workspaceFolder}/build/bin/hello-world",
             "windows": {
-                "command": "docker exec -it devenv /home/develop/eagle/build/bin/hello-world",
+                "command": "docker exec -it crypto-devenv /home/develop/eagle/build/bin/hello-world",
             },
             "problemMatcher": []
         },
@@ -187,7 +187,7 @@
         {
             "label": "Stop Application (Docker)",
             "type": "shell",
-            "command": "docker exec -d devenv pkill hello-world",
+            "command": "docker exec -d crypto-devenv pkill hello-world",
             "problemMatcher": []
         },
         {

@@ -19,10 +19,11 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
 -mcpu=cortex-a9 \
--mfpu=neon -mfloat-abi=hard -ftree-vectorize -mvectorize-with-neon-quad" 
+-mfpu=neon -mfloat-abi=hard -ftree-vectorize -mvectorize-with-neon-quad \
+-D_POSIX_PATH_MAX=4096" # TODO
 CACHE STRING "" FORCE)
 # -mfpu=neon-vfpv3")
 
 # Link all libraries statically
-SET(CMAKE_EXE_LINKER_FLAGS " -static"
-CACHE STRING "" FORCE)
+# SET(CMAKE_EXE_LINKER_FLAGS " -static"
+# CACHE STRING "" FORCE)

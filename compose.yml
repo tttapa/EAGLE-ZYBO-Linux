@@ -6,6 +6,6 @@ services:
     ports:
       - "2000:2000"
     privileged: true
-    container_name: devenv
+    container_name: armv7-devenv
     volumes:
       - "./:${PWD}"
