@@ -6,6 +6,7 @@
 #include <netinet/in.h>
 #include <stdexcept>
 #include <sys/types.h>
+#include <unistd.h>  // close
 
 MulticastSender::MulticastSender(const char *group, int port) : address{} {
     memset(&address, 0, sizeof(address));
@@ -57,6 +58,7 @@ void MulticastSender::begin() {
 }
 
 MulticastSender::~MulticastSender() {
+#if 0
     int result = shutdown(socket, 2);
     if (result < 0) {
         switch (errno) {
@@ -75,6 +77,9 @@ MulticastSender::~MulticastSender() {
                           << std::endl;
         }
     }
+#endif
+
+    close(socket);
 }
 
 size_t MulticastSender::send(const std::vector<uint8_t> &data) {
