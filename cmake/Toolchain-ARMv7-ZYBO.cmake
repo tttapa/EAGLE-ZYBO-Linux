@@ -15,3 +15,8 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
 -ftree-vectorize -mvectorize-with-neon-quad \
 -DREAL_RMEM_WMEM" # TODO
 CACHE STRING "" FORCE)
+
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} \
+-ftree-vectorize -mvectorize-with-neon-quad \
+-DREAL_RMEM_WMEM" # TODO
+CACHE STRING "" FORCE)
