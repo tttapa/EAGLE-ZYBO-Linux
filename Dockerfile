@@ -41,6 +41,7 @@ ENV PATH=/home/develop/x-tools/arm-cortexa9_neon-linux-gnueabihf/bin:$PATH
 ARG WORKSPACE_ROOT
 VOLUME ${WORKSPACE_ROOT}
 WORKDIR ${WORKSPACE_ROOT}/build
+
 ################################################################################
 
 # for gdbserver

@@ -85,6 +85,7 @@ void output(float throttle, float rotx, float roty, float rotz) {
 int curr_z() { return rmem(OFFSET_ALTITUDE); }
 
 int rmem(uint64_t offset) {
+#ifdef REAL_RMEM_WMEM
     int i, fd;
     int value;
     uint64_t base;
@@ -114,8 +115,13 @@ int rmem(uint64_t offset) {
     munmap((void *) mm, PAGE_SIZE);
     close(fd);
     return value;
+#else
+    return offset;
+#endif
 }
+
 int wmemf(uint64_t offset, float value) {
+#ifdef REAL_RMEM_WMEM
     int fd;
     uint64_t base;
 
@@ -141,8 +147,14 @@ int wmemf(uint64_t offset, float value) {
     munmap((void *) mm, PAGE_SIZE);
     close(fd);
     return 1;
+#else
+    (void) offset;
+    (void) value;
+    return 0;
+#endif
 }
 int wmem(uint64_t offset, uint32_t value) {
+#ifdef REAL_RMEM_WMEM
     int fd;
     uint64_t base;
 
@@ -168,4 +180,9 @@ int wmem(uint64_t offset, uint32_t value) {
     munmap((void *) mm, PAGE_SIZE);
     close(fd);
     return 1;
+#else
+    (void) offset;
+    (void) value;
+    return 0;
+#endif
 }

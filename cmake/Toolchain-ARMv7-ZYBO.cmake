@@ -12,5 +12,6 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
--ftree-vectorize -mvectorize-with-neon-quad" # TODO
+-ftree-vectorize -mvectorize-with-neon-quad \
+-DREAL_RMEM_WMEM" # TODO
 CACHE STRING "" FORCE)
