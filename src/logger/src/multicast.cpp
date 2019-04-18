@@ -1,6 +1,5 @@
 #include <arpa/inet.h>
 #include <cerrno>
-#include <cstring>  // memset
 #include <iostream>
 #include <multicast.hpp>
 #include <netinet/in.h>
@@ -9,7 +8,6 @@
 #include <unistd.h>  // close
 
 MulticastSender::MulticastSender(const char *group, int port) : address{} {
-    memset(&address, 0, sizeof(address));
     address.sin_family      = AF_INET;
     address.sin_addr.s_addr = inet_addr(group);
     address.sin_port        = htons(port);
