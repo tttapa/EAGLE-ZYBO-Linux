@@ -1,11 +1,10 @@
-# https://medium.com/@aharon.amir/develop-c-on-docker-with-vscode-98fb85b818b2
 version: '2'
 services:
   dev-image:
-    image: eagle1/baremetal/develop
+    image: eagle1/crypto/develop
     ports:
       - "2000:2000"
-    privileged: true
-    container_name: devenv
+    privileged: false
+    container_name: crypto-devenv
     volumes:
       - "./:/home/develop/eagle"

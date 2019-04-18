@@ -1,34 +1,56 @@
-# https://medium.com/@aharon.amir/develop-c-on-docker-with-vscode-98fb85b818b2
+# Ubuntu 18.04 at the time of writing (2019-04-02)
 FROM ubuntu:latest
 
+# Install some tools and compilers + clean up
 RUN apt-get update && \
-    apt-get install -y wget git gcc-8 g++-8 cmake gdb gdbserver  && \
+    apt-get install -y git wget \
+                       gcc g++ cmake make autoconf automake gperf diffutils bzip2 xz-utils \
+                       flex gawk help2man libncurses-dev patch bison python-dev gnupg2 texinfo unzip libtool-bin && \
     apt-get clean autoclean && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
-    
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 999 \
- && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 999 \
- && update-alternatives --install /usr/bin/cc  cc  /usr/bin/gcc-8 999 \
- && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-8 999
 
+# Add a user called `develop`
 RUN useradd -ms /bin/bash develop
 RUN echo "develop   ALL=(ALL:ALL) ALL" >> /etc/sudoers
+
+USER develop
+WORKDIR /home/develop
+
+ENV VERSION=1.24.0
+RUN git clone https://github.com/crosstool-ng/crosstool-ng.git
+WORKDIR /home/develop/crosstool-ng
+RUN git checkout crosstool-ng-${VERSION}
+RUN ./bootstrap
+RUN ./configure --prefix=/home/develop/.local
+RUN make -j$(nproc)
+RUN make install
+ENV PATH=/home/develop/.local/bin:$PATH
+RUN ct-ng --version
+
+WORKDIR /home/develop
+RUN wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.4.tar.xz
+
+RUN mkdir /home/develop/ZYBO
+WORKDIR /home/develop/ZYBO
+COPY --chown=develop:develop config .config
+RUN ls -al
+RUN ct-ng build
+ENV PATH=/home/develop/x-tools/arm-cortexa9_neon-linux-gnueabihf/bin:$PATH
+
+ARG WORKSPACE_ROOT
+VOLUME ${WORKSPACE_ROOT}
+WORKDIR ${WORKSPACE_ROOT}/build
+
+################################################################################
 
 # for gdbserver
 EXPOSE 2000
 
-USER develop
 WORKDIR /home/develop
 RUN git clone https://github.com/google/googletest.git
 
-RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-a/8.3-2019.03/binrel/gcc-arm-8.3-2019.03-x86_64-arm-linux-gnueabihf.tar.xz
-RUN tar xf gcc-arm-8.3-2019.03-x86_64-arm-linux-gnueabihf.tar.xz && \
-    rm gcc-arm-8.3-2019.03-x86_64-arm-linux-gnueabihf.tar.xz
-ENV PATH="${PATH}:/home/develop/gcc-arm-8.3-2019.03-x86_64-arm-linux-gnueabihf/bin"
-RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-a/8.3-2019.03/binrel/sysroot/sysroot-glibc-8.3-2019.03-x86_64-arm-linux-gnueabi.tar.xz
-RUN tar xf sysroot-glibc-8.3-2019.03-x86_64-arm-linux-gnueabi.tar.xz && \
-    rm sysroot-glibc-8.3-2019.03-x86_64-arm-linux-gnueabi.tar.xz
+USER develop
 
 VOLUME /home/develop/eagle
 WORKDIR /home/develop/eagle/build
