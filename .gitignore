@@ -1,1 +1,10 @@
 .vscode/ipch
+sysroot.ext4
+*.o
+*.ko
+*.mod.c
+*.symvers
+*.o.cmd
+*.ko.cmd
+*.order
+.tmp_versions

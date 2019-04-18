@@ -41,6 +41,44 @@
             }
         },
         {
+            "label": "Start Docker Container (LKM)",
+            "type": "shell",
+            "command": "docker-compose -f lkm/compose.yml run --service-ports --name crypto-lkm dev-image bash",
+            "windows": {
+                "command": "docker-compose -f lkm/compose.win.yml run --service-ports --name crypto-lkm dev-image bash",
+            },
+            "problemMatcher": [],
+            "dependsOn": "Stop Docker Container (LKM)", // Restart if already running
+            "runOptions": {
+                "runOn": "folderOpen" // Run the container every time this folder is opened
+            },
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            }
+        },
+        {
+            "label": "Stop Docker Container (LKM)",
+            "type": "shell",
+            "command": "docker-compose -f lkm/compose.yml down",
+            "windows": {
+                "command": "docker-compose -f lkm/compose.win.yml down",
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            }
+        },
+        {
             "label": "Run CMake (Docker)",
             "type": "shell",
             "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake ..",
@@ -160,9 +198,9 @@
         {
             "label": "Build Docker Image (LKM)",
             "type": "shell",
-            "command": "docker build -f lkm/Dockerfile --network=host --build-arg WORKSPACE_ROOT=${workspaceFolder} -t eagle1/armv7/lkm .",
+            "command": "docker build -f lkm/Dockerfile --network=host --build-arg WORKSPACE_ROOT=${workspaceFolder} -t eagle1/crypto/lkm .",
             "windows": {
-                "command": "docker build -f lkm/Dockerfile.win -t eagle1/armv7/lkm .",
+                "command": "docker build -f lkm/Dockerfile.win -t eagle1/crypto/lkm .",
             },
             "problemMatcher": []
         },
