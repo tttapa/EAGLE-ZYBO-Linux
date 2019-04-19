@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ZYBO Linux: Status Quaestionis</title>
+<title>EAGLE ZYBO Linux: Status Quaestionis</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ZYBO Linux
+   <div id="projectname">EAGLE ZYBO Linux
    </div>
   </td>
  </tr>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('md_Status-Quaestionis.html','');});
 <p>The Docker image also contains a native x86-64 toolchain for testing and debugging. This allows you to run the applications not only on the ZYBO, but on any normal computer as well.</p>
 <p>All build tasks are available as tasks in Visual Studio Code, this includes building the Docker images, toolchains, libraries, ZYBO applications, testing, debugging.</p>
 <h3>Crypto</h3>
-<p>✓ I provided simple skeleton for the Crypto code. It just writes a single word to R0, and then reads it back from R1.</p>
+<p>✓ I provided the basic structure for the Crypto code. It just writes a single word to R0, and then reads it back from R1.</p>
 <p>🗙 The next step is to write functions that are able to decode strings of data, as well as more elaborate test cases.</p>
 <p>The public API of the crypto code goes in <code><a class="el" href="crypto_8hpp.html">src/crypto/include/crypto.hpp</a></code>, and the implementations in <code><a class="el" href="crypto_8cpp.html">src/crypto/src/crypto.cpp</a></code>. <br  />
 Test cases go in <code>src/crypto/test/test-crypto.cpp</code>.</p>

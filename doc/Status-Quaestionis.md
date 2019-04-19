@@ -16,7 +16,7 @@ debugging.
 
 ### Crypto
 
-✓ I provided simple skeleton for the Crypto code. It just writes a 
+✓ I provided the basic structure for the Crypto code. It just writes a 
 single word to R0, and then reads it back from R1.
 
 🗙 The next step is to write functions that are able to decode strings of data, as

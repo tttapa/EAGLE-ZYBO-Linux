@@ -87,7 +87,7 @@ var NAVTREEINDEX1 =
 "globals_vars.html":[5,1,2],
 "hierarchy.html":[4,2],
 "index.html":[],
-"md_Install.html":[0],
+"md_Getting-Started.html":[0],
 "md_Status-Quaestionis.html":[1],
 "md_Structure.html":[2],
 "multicast_8cpp.html":[5,0,0,5,1,0],

@@ -22,8 +22,8 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "ZYBO Linux", "index.html", [
-    [ "Install", "md_Install.html", null ],
+  [ "EAGLE ZYBO Linux", "index.html", [
+    [ "Getting Started", "md_Getting-Started.html", null ],
     [ "Status Quaestionis", "md_Status-Quaestionis.html", null ],
     [ "Structure", "md_Structure.html", null ],
     [ "Namespaces", "namespaces.html", [

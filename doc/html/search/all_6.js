@@ -20,6 +20,7 @@ var searchData=
   ['getmiddleresult',['GetMiddleResult',['../structGetMiddleResult.html',1,'']]],
   ['getmiddlewithretries',['getMiddleWithRetries',['../classGridFinder.html#a504ddc8af3a0cc68b68de387ac1a90ea',1,'GridFinder']]],
   ['getscalingfactor',['getScalingFactor',['../structCosSin.html#a749d8e9cc59e1cf72f4d1e93e4fcfe0d',1,'CosSin']]],
+  ['getting_2dstarted_2emd',['Getting-Started.md',['../Getting-Started_8md.html',1,'']]],
   ['getwidthatpointonline',['getWidthAtPointOnLine',['../classGridFinder.html#a83b31c2192a137e56e91d13661f1c658',1,'GridFinder']]],
   ['green',['green',['../namespaceANSIColors.html#aa076dba951dd8c8c7ac6e3d768fc7673',1,'ANSIColors']]],
   ['greenb',['greenb',['../namespaceANSIColors.html#a1f272da02143ee4d183a1ce568cdc988',1,'ANSIColors']]],
@@ -27,5 +28,6 @@ var searchData=
   ['greet_2ecpp',['Greet.cpp',['../Greet_8cpp.html',1,'']]],
   ['greet_2ehpp',['Greet.hpp',['../Greet_8hpp.html',1,'']]],
   ['gridfinder',['GridFinder',['../classGridFinder.html',1,'GridFinder&lt; W, H &gt;'],['../classGridFinder.html#a268bfb67d2d118590843a688baf4e398',1,'GridFinder::GridFinder(const Img_t &amp;mask)'],['../classGridFinder.html#aa707b822d64e428cfc31726dbdcb8b7a',1,'GridFinder::GridFinder()']]],
-  ['gridfinder_2ehpp',['GridFinder.hpp',['../GridFinder_8hpp.html',1,'']]]
+  ['gridfinder_2ehpp',['GridFinder.hpp',['../GridFinder_8hpp.html',1,'']]],
+  ['getting_20started',['Getting Started',['../md_Getting-Started.html',1,'']]]
 ];

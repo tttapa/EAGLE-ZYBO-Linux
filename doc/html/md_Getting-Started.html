@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ZYBO Linux: Install</title>
+<title>EAGLE ZYBO Linux: Getting Started</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ZYBO Linux
+   <div id="projectname">EAGLE ZYBO Linux
    </div>
   </td>
  </tr>
@@ -67,7 +67,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('md_Install.html','');});
+$(document).ready(function(){initNavTree('md_Getting-Started.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -87,21 +87,22 @@ $(document).ready(function(){initNavTree('md_Install.html','');});
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Install </div>  </div>
+<div class="title">Getting Started </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This is a quick install guide to get the project up and running.</p>
-<h2>Docker</h2>
+<div class="textblock"><p>This is a quick install guide to get the project up and running, and some instructions on how to build, debug and run code and tests.</p>
+<h2>Installation</h2>
+<h3>Docker</h3>
 <p>The toolchain runs in a Docker container. You need Docker and Docker-Compose to run it.</p>
-<h3>Linux</h3>
+<h4>Linux</h4>
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04</a> <br  />
-<a href="https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04</a> </p><div class="fragment"><div class="line">sudo apt update</div><div class="line">sudo apt install apt-transport-https ca-certificates curl software-properties-common</div><div class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</div><div class="line">sudo apt update</div><div class="line">sudo apt install docker-ce</div><div class="line">sudo usermod -aG docker $USER</div><div class="line">sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</div></div><!-- fragment --><h3>Windows Home</h3>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04</a> </p><div class="fragment"><div class="line">sudo apt update</div><div class="line">sudo apt install apt-transport-https ca-certificates curl software-properties-common</div><div class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</div><div class="line">sudo apt update</div><div class="line">sudo apt install docker-ce</div><div class="line">sudo usermod -aG docker $USER</div><div class="line">sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</div></div><!-- fragment --><h4>Windows Home</h4>
 <p><a href="https://download.docker.com/win/stable/DockerToolbox.exe">https://download.docker.com/win/stable/DockerToolbox.exe</a></p>
-<h3>Windows Pro</h3>
+<h4>Windows Pro</h4>
 <p><a href="https://docs.docker.com/docker-for-windows/install/">https://docs.docker.com/docker-for-windows/install/</a></p>
-<h3>OSX</h3>
+<h4>OSX</h4>
 <p><a href="https://docs.docker.com/docker-for-mac/install/">https://docs.docker.com/docker-for-mac/install/</a></p>
-<h2>Visual Studio Code</h2>
+<h3>Visual Studio Code</h3>
 <p><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> <a href="https://github.com/VSCodium/vscodium">https://github.com/VSCodium/vscodium</a> (Open-source version without Microsoft telemetry)</p>
 <h2>Setup</h2>
 <p>When you have installed Docker, Docker-Compose and VSCode, clone this repository and open the folder in VSCode (<code>CTRL+K+O</code>).</p>
