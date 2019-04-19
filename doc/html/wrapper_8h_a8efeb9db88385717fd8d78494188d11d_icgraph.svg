@@ -66,7 +66,7 @@
 <!-- Node17 -->
 <g id="node5" class="node">
 <title>Node17</title>
-<g id="a_node5"><a xlink:href="crypto_8cpp.html#a5774beae40566cc5a6615d238427e8ba" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="crypto_8cpp.html#a5774beae40566cc5a6615d238427e8ba" target="_top" xlink:title="Read the value of Crypto FPGA register R0.">
 <polygon fill="#ffffff" stroke="#000000" points="11.5,-38.5 11.5,-57.5 62.5,-57.5 62.5,-38.5 11.5,-38.5"/>
 <text text-anchor="middle" x="37" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">readR0</text>
 </a>
@@ -81,7 +81,7 @@
 <!-- Node18 -->
 <g id="node6" class="node">
 <title>Node18</title>
-<g id="a_node6"><a xlink:href="crypto_8cpp.html#aadd575b66f038f069fe17a83c9f04645" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="crypto_8cpp.html#aadd575b66f038f069fe17a83c9f04645" target="_top" xlink:title="Read the value of Crypto FPGA register R1.">
 <polygon fill="#ffffff" stroke="#000000" points="11.5,-.5 11.5,-19.5 62.5,-19.5 62.5,-.5 11.5,-.5"/>
 <text text-anchor="middle" x="37" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">readR1</text>
 </a>

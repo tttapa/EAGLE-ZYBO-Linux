@@ -1,4 +1,4 @@
 <map id="readR1" name="readR1">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,73,32"/>
+<area shape="rect" id="node1" title="Read the value of Crypto FPGA register R1." alt="" coords="5,5,73,32"/>
 <area shape="rect" id="node2" href="$wrapper_8h.html#a8efeb9db88385717fd8d78494188d11d" title=" " alt="" coords="121,5,183,32"/>
 </map>

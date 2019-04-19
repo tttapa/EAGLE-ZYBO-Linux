@@ -1,7 +1,7 @@
-# Create target and set properties
+# Create target
 add_library(matrix INTERFACE)
 
-# Set target properties
+# Set target include folders
 target_include_directories(matrix
     INTERFACE
         $<INSTALL_INTERFACE:include>

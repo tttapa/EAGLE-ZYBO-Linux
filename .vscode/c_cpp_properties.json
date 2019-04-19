@@ -4,13 +4,9 @@
             "name": "Linux",
             "intelliSenseMode": "gcc-x64",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/src/crypto/include",
-                "${workspaceFolder}/src/comm/include",
-                "${workspaceFolder}/src/logger/include",
+                "${workspaceFolder}/src/**",
                 "/usr/include/c++/8",
-                "${env:HOME}/opt/opencv-4.1.0/include",
-                "${env:HOME}/opt/opencv-4.1.0/modules/*/include"
+                "${workspaceFolder}/build/googletest/googletest-src/googletest/include"
             ],
             "defines": [],
             "cStandard": "c11",

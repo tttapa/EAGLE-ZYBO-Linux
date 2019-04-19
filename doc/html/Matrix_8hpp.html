@@ -335,13 +335,13 @@ Functions</h2></td></tr>
 <tr class="memitem:aed5547ff2b72b0a4c0d8a37d6d6ce73f"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Matrix_8hpp.html#aed5547ff2b72b0a4c0d8a37d6d6ce73f">hcat</a> (const <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; T, R, C &gt; &amp;l, Args... args) -&gt; decltype(hcat(l, hcat(args...)))</td></tr>
 <tr class="separator:aed5547ff2b72b0a4c0d8a37d6d6ce73f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b703886d2a8afc3e2ae96a34f375ee1"><td class="memTemplParams" colspan="2">template&lt;class T , size_t R1&gt; </td></tr>
-<tr class="memitem:a6b703886d2a8afc3e2ae96a34f375ee1"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a>+1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Matrix_8hpp.html#a6b703886d2a8afc3e2ae96a34f375ee1">vcat</a> (const <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a> &gt; &amp;t, T b)</td></tr>
+<tr class="memitem:a6b703886d2a8afc3e2ae96a34f375ee1"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, R1+1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Matrix_8hpp.html#a6b703886d2a8afc3e2ae96a34f375ee1">vcat</a> (const <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, R1 &gt; &amp;t, T b)</td></tr>
 <tr class="separator:a6b703886d2a8afc3e2ae96a34f375ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7c262a28886879e90372b013eaba545"><td class="memTemplParams" colspan="2">template&lt;class T , size_t R1&gt; </td></tr>
-<tr class="memitem:ae7c262a28886879e90372b013eaba545"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a>+1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Matrix_8hpp.html#ae7c262a28886879e90372b013eaba545">vcat</a> (T t, const <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a> &gt; &amp;b)</td></tr>
+<tr class="memitem:ae7c262a28886879e90372b013eaba545"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, R1+1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Matrix_8hpp.html#ae7c262a28886879e90372b013eaba545">vcat</a> (T t, const <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, R1 &gt; &amp;b)</td></tr>
 <tr class="separator:ae7c262a28886879e90372b013eaba545"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af15e4f88d4e60baf25c17dcbb90542a3"><td class="memTemplParams" colspan="2">template&lt;class T , size_t R1, size_t R2, size_t C&gt; </td></tr>
-<tr class="memitem:af15e4f88d4e60baf25c17dcbb90542a3"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a>+R2, C &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Matrix_8hpp.html#af15e4f88d4e60baf25c17dcbb90542a3">vcat</a> (const <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a>, C &gt; &amp;t, const <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; T, R2, C &gt; &amp;b)</td></tr>
+<tr class="memitem:af15e4f88d4e60baf25c17dcbb90542a3"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; T, R1+R2, C &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Matrix_8hpp.html#af15e4f88d4e60baf25c17dcbb90542a3">vcat</a> (const <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; T, R1, C &gt; &amp;t, const <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; T, R2, C &gt; &amp;b)</td></tr>
 <tr class="separator:af15e4f88d4e60baf25c17dcbb90542a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a255a5dd5a07d823cfba97b4987637dee"><td class="memTemplParams" colspan="2">template&lt;class T , size_t R, size_t C, class... Args&gt; </td></tr>
 <tr class="memitem:a255a5dd5a07d823cfba97b4987637dee"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Matrix_8hpp.html#a255a5dd5a07d823cfba97b4987637dee">vcat</a> (const <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; T, R, C &gt; &amp;t, Args... args) -&gt; decltype(vcat(t, vcat(args...)))</td></tr>
@@ -2439,9 +2439,9 @@ template&lt;class T , size_t R1&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt;T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a> + 1&gt; vcat </td>
+          <td class="memname">constexpr <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt;T, R1 + 1&gt; vcat </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, R1 &gt; &amp;&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
@@ -2527,9 +2527,9 @@ template&lt;class T , size_t R1, size_t R2, size_t C&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt;T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a> + R2, C&gt; vcat </td>
+          <td class="memname">constexpr <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt;T, R1 + R2, C&gt; vcat </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a>, C &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; T, R1, C &gt; &amp;&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
@@ -2565,7 +2565,7 @@ template&lt;class T , size_t R1&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt;T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a> + 1&gt; vcat </td>
+          <td class="memname">constexpr <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt;T, R1 + 1&gt; vcat </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>t</em>, </td>
@@ -2573,7 +2573,7 @@ template&lt;class T , size_t R1&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, <a class="el" href="crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737">R1</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="Matrix_8hpp.html#a19ebe5918dddddcceb73d133609dbeb1">TColVector</a>&lt; T, R1 &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EAGLE ZYBO Linux: /home/pieter/GitHub/EAGLE-ZYBO-Linux/src/greet/include/Greet.hpp Source File</title>
+<title>EAGLE ZYBO Linux: /home/pieter/GitHub/EAGLE-ZYBO-Linux/src/crypto/src/registers.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,7 +67,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('Greet_8hpp_source.html','');});
+$(document).ready(function(){initNavTree('registers_8hpp.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -86,17 +86,79 @@ $(document).ready(function(){initNavTree('Greet_8hpp_source.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Greet.hpp</div>  </div>
+<div class="title">registers.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="Greet_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span>  <span class="comment">// std::ostream, std::cout</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span>    <span class="comment">// std::string</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Greet_8hpp.html#abd2ea45605ea70de845186c8a2366bd5">greet</a>(std::string name, std::ostream &amp;os = std::cout);</div></div><!-- fragment --></div><!-- contents -->
+<div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="registers_8hpp__dep__incl.svg" width="190" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="registers_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa8dbc049b35e3155a57cd531cfdb7f01"><td class="memItemLeft" align="right" valign="top">constexpr uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registers_8hpp.html#aa8dbc049b35e3155a57cd531cfdb7f01">R0_ADDR</a> = 0x43c70000</td></tr>
+<tr class="separator:aa8dbc049b35e3155a57cd531cfdb7f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3682b3a513dfa0716c1024a2cc204531"><td class="memItemLeft" align="right" valign="top">constexpr uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registers_8hpp.html#a3682b3a513dfa0716c1024a2cc204531">R1_ADDR</a> = <a class="el" href="registers_8hpp.html#aa8dbc049b35e3155a57cd531cfdb7f01">R0_ADDR</a> + 4</td></tr>
+<tr class="separator:a3682b3a513dfa0716c1024a2cc204531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aa8dbc049b35e3155a57cd531cfdb7f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8dbc049b35e3155a57cd531cfdb7f01">&#9670;&nbsp;</a></span>R0_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uintptr_t R0_ADDR = 0x43c70000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3682b3a513dfa0716c1024a2cc204531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3682b3a513dfa0716c1024a2cc204531">&#9670;&nbsp;</a></span>R1_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uintptr_t R1_ADDR = <a class="el" href="registers_8hpp.html#aa8dbc049b35e3155a57cd531cfdb7f01">R0_ADDR</a> + 4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aGreet_8hpp_html_abd2ea45605ea70de845186c8a2366bd5"><div class="ttname"><a href="Greet_8hpp.html#abd2ea45605ea70de845186c8a2366bd5">greet</a></div><div class="ttdeci">void greet(std::string name, std::ostream &amp;os=std::cout)</div><div class="ttdoc">A function that prints a greeting to the given output stream.</div><div class="ttdef"><b>Definition:</b> Greet.cpp:3</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_9f42a264daae6f1215a4a8774a60c231.html">greet</a></li><li class="navelem"><a class="el" href="dir_defcd70949f97dabb2e852c51988a4af.html">include</a></li><li class="navelem"><a class="el" href="Greet_8hpp.html">Greet.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4261af1259721e3e39e0d2dd7354b511.html">crypto</a></li><li class="navelem"><a class="el" href="dir_55e250dd341373e0cb8728b6db6bcdc0.html">src</a></li><li class="navelem"><a class="el" href="registers_8hpp.html">registers.hpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

@@ -1,4 +1,4 @@
 <map id="writeR0" name="writeR0">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,77,32"/>
+<area shape="rect" id="node1" title="Write the given word to Crypto FPGA register R0." alt="" coords="5,5,77,32"/>
 <area shape="rect" id="node2" href="$wrapper_8h.html#a33eaf162ba3d16c401a1f37349d81fe3" title=" " alt="" coords="125,5,192,32"/>
 </map>

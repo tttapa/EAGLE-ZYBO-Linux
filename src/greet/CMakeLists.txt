@@ -27,10 +27,10 @@ target_compile_features(greet PUBLIC cxx_std_17)
 #   the actual linking of the other libraries.
 #   Libraries that are used in the public header files should be public,
 #   libraries that are only used in the implementation files should be private.
-target_link_libraries(greet 
-    PRIVATE
-        comm
-)
+# target_link_libraries(greet 
+#     PRIVATE
+#         comm
+# )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
 # adds the tests.

@@ -34,7 +34,7 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-c
 
 ### Visual Studio Code
 
-<https://code.visualstudio.com/>
+<https://code.visualstudio.com/>  
 <https://github.com/VSCodium/vscodium> (Open-source version without Microsoft 
 telemetry)
 
@@ -68,7 +68,7 @@ For recompiling afterwards, you only need to execute Build All (Docker).
 This task will automatically compile any files that have changed.
 
 ## Building for ARMv7 (ZYBO)
-- Clear 'build' Directory ARMv7 ZYBO
+- Clear 'build' Directory ARMv7 ZYBO - optional
 - Run CMake ARMv7 ZYBO (Docker)
 - Build All ARMv7 ZYBO (Docker)
 
@@ -98,9 +98,15 @@ end, like [gdbgui](https://gdbgui.com/).
 ## Running
 You can run the application in the Docker container by running the Run 
 Application (Docker) task.  
-You can select the application to run in `tasks.json`.
+You can change the application to run in `tasks.json`.
 
 ## Generating the Documentation
 - Generate Documentation (Docker)
 
 The documentation is generated in `doc/html`.
+
+## Writing Code
+Check the @ref Structure.md page for information about the folder structure of 
+the project.
+
+For example code, have a look at `src/greet` and `src/crypto`.

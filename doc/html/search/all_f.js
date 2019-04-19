@@ -1,8 +1,8 @@
 var searchData=
 [
   ['r',['R',['../structQR.html#ab91e0bf9d76e3bdbbff95fda21e76c2e',1,'QR']]],
-  ['r0',['R0',['../crypto_8cpp.html#a6b543e2ce6043ea7cf648b83ee965112',1,'crypto.cpp']]],
-  ['r1',['R1',['../crypto_8cpp.html#abc7817a988d35b4969f57501f94d8737',1,'crypto.cpp']]],
+  ['r0_5faddr',['R0_ADDR',['../registers_8hpp.html#aa8dbc049b35e3155a57cd531cfdb7f01',1,'registers.hpp']]],
+  ['r1_5faddr',['R1_ADDR',['../registers_8hpp.html#a3682b3a513dfa0716c1024a2cc204531',1,'registers.hpp']]],
   ['r_5foffset_5fthrust',['R_OFFSET_THRUST',['../wrapper_8c.html#ab1d35c090dce5afba4ef5d4f36d77ec9',1,'wrapper.c']]],
   ['r_5foffset_5fx',['R_OFFSET_X',['../wrapper_8c.html#ad0251580e01323586af19872d5166c71',1,'wrapper.c']]],
   ['r_5foffset_5fy',['R_OFFSET_Y',['../wrapper_8c.html#a1a82d2aea096158dd87a3459f579c3d4',1,'wrapper.c']]],
@@ -14,6 +14,7 @@ var searchData=
   ['readr1',['readR1',['../crypto_8hpp.html#aadd575b66f038f069fe17a83c9f04645',1,'readR1():&#160;crypto.cpp'],['../crypto_8cpp.html#aadd575b66f038f069fe17a83c9f04645',1,'readR1():&#160;crypto.cpp']]],
   ['red',['red',['../namespaceANSIColors.html#ae8f007b9b1717af1703bd05d5f9619db',1,'ANSIColors']]],
   ['redb',['redb',['../namespaceANSIColors.html#a522acb9dcd3888cdac77214490578831',1,'ANSIColors']]],
+  ['registers_2ehpp',['registers.hpp',['../registers_8hpp.html',1,'']]],
   ['reset',['reset',['../namespaceANSIColors.html#a923babbed800df1b01db512486cba2ff',1,'ANSIColors']]],
   ['resolution',['resolution',['../classAngle.html#a84ce9a0e2a186ada6997077fd96d6e4c',1,'Angle']]],
   ['retry_5fjump_5fdistance',['RETRY_JUMP_DISTANCE',['../classGridFinder.html#a2b976d83dc517faa4d46c2b6c6b79540',1,'GridFinder']]],

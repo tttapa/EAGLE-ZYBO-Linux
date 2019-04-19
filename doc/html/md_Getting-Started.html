@@ -103,7 +103,8 @@ $(document).ready(function(){initNavTree('md_Getting-Started.html','');});
 <h4>OSX</h4>
 <p><a href="https://docs.docker.com/docker-for-mac/install/">https://docs.docker.com/docker-for-mac/install/</a></p>
 <h3>Visual Studio Code</h3>
-<p><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> <a href="https://github.com/VSCodium/vscodium">https://github.com/VSCodium/vscodium</a> (Open-source version without Microsoft telemetry)</p>
+<p><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> <br  />
+<a href="https://github.com/VSCodium/vscodium">https://github.com/VSCodium/vscodium</a> (Open-source version without Microsoft telemetry)</p>
 <h2>Setup</h2>
 <p>When you have installed Docker, Docker-Compose and VSCode, clone this repository and open the folder in VSCode (<code>CTRL+K+O</code>).</p>
 <p>Then execute the following tasks by pressing <code>CTRL+P</code> and then typing <code>task &lt;task name&gt;</code> (you don't have to type the entire name, just a few letters is enough, then use the arrows, and hit enter):</p><ul>
@@ -127,7 +128,7 @@ You only have to do this once. If you have a slow computer, feel free to just as
 <p>This task will automatically compile any files that have changed.</p>
 <h2>Building for ARMv7 (ZYBO)</h2>
 <ul>
-<li>Clear 'build' Directory ARMv7 ZYBO</li>
+<li>Clear 'build' Directory ARMv7 ZYBO - optional</li>
 <li>Run CMake ARMv7 ZYBO (Docker)</li>
 <li>Build All ARMv7 ZYBO (Docker)</li>
 </ul>
@@ -141,12 +142,15 @@ If you want access to the standard output, you can run the Start GDB Server task
 <p>On Windows, VSCode doesn't support GDB, so you'll have to use a different front- end, like <a href="https://gdbgui.com/">gdbgui</a>.</p>
 <h2>Running</h2>
 <p>You can run the application in the Docker container by running the Run Application (Docker) task. <br  />
-You can select the application to run in <code>tasks.json</code>.</p>
+You can change the application to run in <code>tasks.json</code>.</p>
 <h2>Generating the Documentation</h2>
 <ul>
 <li>Generate Documentation (Docker)</li>
 </ul>
-<p>The documentation is generated in <code>doc/html</code>. </p>
+<p>The documentation is generated in <code>doc/html</code>.</p>
+<h2>Writing Code</h2>
+<p>Check the <a class="el" href="md_Structure.html">Structure</a> page for information about the folder structure of the project.</p>
+<p>For example code, have a look at <code>src/greet</code> and <code>src/crypto</code>. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
