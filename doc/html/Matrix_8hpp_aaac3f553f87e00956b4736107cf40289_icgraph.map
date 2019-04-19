@@ -1,0 +1,6 @@
+<map id="cross" name="cross">
+<area shape="rect" id="node1" title="Calculates u × v, where u, v ⊆ ℝ³." alt="" coords="583,5,639,32"/>
+<area shape="rect" id="node2" href="$classLine.html#af14c90f6f7c18003e35ca3a08be32368" title=" " alt="" coords="420,5,535,32"/>
+<area shape="rect" id="node3" href="$classGridFinder.html#a5657aed220771995d8fd1b9e3779b226" title="Get the point of intersection of two lines." alt="" coords="219,5,372,32"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#a3104d4fe44099faf5179674ecb55cb52" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="5,5,171,32"/>
+</map>

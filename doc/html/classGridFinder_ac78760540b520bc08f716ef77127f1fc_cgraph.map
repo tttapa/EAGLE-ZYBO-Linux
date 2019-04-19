@@ -1,0 +1,18 @@
+<map id="GridFinder::getFirstLineEstimate" name="GridFinder::getFirstLineEstimate">
+<area shape="rect" id="node1" title="Get an estimate of the line through a given pixel. Find an estimate of the slope, then use that to de..." alt="" coords="5,78,176,119"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#a20f10e8136febf04c3a1987a35860ef1" title="Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not ve..." alt="" coords="463,56,647,83"/>
+<area shape="rect" id="node10" href="$classGridFinder.html#a504ddc8af3a0cc68b68de387ac1a90ea" title="In exceptional cases, we might want to find the middle of a line in a point that happens to lie at th..." alt="" coords="224,107,415,149"/>
+<area shape="rect" id="node3" href="$classAngle.html#a84ce9a0e2a186ada6997077fd96d6e4c" title=" " alt="" coords="703,5,889,32"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#ae562737b4e1d28a7888aedb53449e0e7" title="Starting from the given pixel, move in the direction of the given angle, and count the number of whit..." alt="" coords="728,107,864,133"/>
+<area shape="rect" id="node5" href="$classBresenhamLine.html#aba0822ee20811d67cd9539ccbe1cd346" title=" " alt="" coords="1193,136,1379,163"/>
+<area shape="rect" id="node7" href="$classBresenhamLine.html#a10d505e30945f42a5cd0270c315b104f" title=" " alt="" coords="965,111,1125,137"/>
+<area shape="rect" id="node8" href="$classGridFinder.html#a53cfbafaf3cd06baac2a19eeee0cfb73" title="Get the value of the given pixel." alt="" coords="987,212,1104,239"/>
+<area shape="rect" id="node9" href="$classBresenhamLine.html#ad93a4adf0535a9b4e649bce5ade1bc5e" title=" " alt="" coords="945,45,1145,86"/>
+<area shape="rect" id="node6" href="$structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" title=" " alt="" coords="1427,136,1541,163"/>
+<area shape="rect" id="node11" href="$classGridFinder.html#a187e8c44c7f99237645b49dc2c6745c8" title="Find the middle of a line." alt="" coords="475,224,635,251"/>
+<area shape="rect" id="node16" href="$classGridFinder.html#a9b31ec7807efc6e1fde49f5a56c0d0fa" title="Move a pixel in a given direction for a given distance." alt="" coords="729,56,863,83"/>
+<area shape="rect" id="node12" href="$structCosSin.html#a4c63ac2c483b5caa4012f8c27d58dd96" title=" " alt="" coords="731,376,861,403"/>
+<area shape="rect" id="node13" href="$classGridFinder.html#a83b31c2192a137e56e91d13661f1c658" title="Get the width of the line at a given point." alt="" coords="695,158,897,199"/>
+<area shape="rect" id="node14" href="$structCosSin.html#adb1d000cc58879b65a63fac849408bfe" title=" " alt="" coords="964,317,1127,344"/>
+<area shape="rect" id="node15" href="$Array_8hpp.html#a54bae1a9c86ad6bc491b4f10495a759f" title=" " alt="" coords="773,224,819,251"/>
+</map>

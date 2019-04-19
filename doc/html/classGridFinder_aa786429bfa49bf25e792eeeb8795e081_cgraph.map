@@ -1,0 +1,4 @@
+<map id="GridFinder::print" name="GridFinder::print">
+<area shape="rect" id="node1" title="Print the mask as &quot;pixels&quot; to the given output stream." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#a53cfbafaf3cd06baac2a19eeee0cfb73" title="Get the value of the given pixel." alt="" coords="180,5,297,32"/>
+</map>

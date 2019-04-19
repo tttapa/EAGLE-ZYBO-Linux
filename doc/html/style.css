@@ -1,0 +1,18 @@
+div.textblock {
+    max-width: 50em;
+}
+
+div.fragment {
+    overflow-x: auto;
+    padding: 0.5em;
+}
+
+div.line {
+    width: max-content;
+    line-height: 1.2;
+}
+
+code {
+    background-color: #eee;
+    padding: 0px 3px;
+}
