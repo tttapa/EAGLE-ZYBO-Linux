@@ -73,7 +73,7 @@
         //#endregion
         //#region CMake.........................................................
         {
-            "label": "Run CMake (Docker)",
+            "label": "Run CMake x86-64 (Docker)",
             "type": "shell",
             "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake ..",
             "windows": {
@@ -84,14 +84,14 @@
         {
             "label": "Run CMake ARMv7 ZYBO (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
+            "command": "docker exec -it -w ${workspaceFolder}/build-arm crypto-devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
             "windows": {
-                "command": "docker exec -it -w  /home/develop/eagle/build crypto-devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
+                "command": "docker exec -it -w /home/develop/eagle/build-arm crypto-devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
             },
             "problemMatcher": [],
         },
         {
-            "label": "Run CMake (Local)",
+            "label": "Run CMake x86-64 (Local)",
             "type": "shell",
             "command": "cmake ..",
             "options": {
@@ -102,7 +102,7 @@
         //#endregion
         //#region Building......................................................
         {
-            "label": "Build All (Docker)",
+            "label": "Build All x86-64 (Docker)",
             "type": "shell",
             "group": {
                 "kind": "build",
@@ -115,7 +115,20 @@
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Build All (Local)",
+            "label": "Build All ARMv7 ZYBO (Docker)",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "docker exec -it -w  ${workspaceFolder}/build-arm crypto-devenv make -j$(nproc)",
+            "windows": {
+                "command": "docker exec -it -w /home/develop/eagle/build-arm crypto-devenv sh -c 'make -j $(nproc)'",
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build All x86-64 (Local)",
             "type": "shell",
             "command": "make -j$(nproc)",
             "options": {
@@ -174,7 +187,7 @@
         //#endregion
         //#region Cleaning up...................................................
         {
-            "label": "Make Clean (Docker)",
+            "label": "Make Clean x86-64 (Docker)",
             "type": "shell",
             "command": "docker exec -it -w ${workspaceFolder}/build crypto-devenv make clean",
             "windows": {
@@ -183,7 +196,16 @@
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Make Clean (Local)",
+            "label": "Make Clean ARMv7 ZYBO (Docker)",
+            "type": "shell",
+            "command": "docker exec -it -w ${workspaceFolder}/build-arm crypto-devenv make clean",
+            "windows": {
+                "command": "docker exec -it -w /home/develop/eagle/build-arm crypto-devenv make clean",
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Make Clean x86-64 (Local)",
             "type": "shell",
             "command": "make clean",
             "options": {
@@ -192,7 +214,16 @@
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Clear 'build' Directory",
+            "label": "Make Clean ARMv7 ZYBO (Local)",
+            "type": "shell",
+            "command": "make clean",
+            "options": {
+                "cwd": "${workspaceFolder}/build-arm"
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Clear 'build' Directory x86-64",
             "type": "shell",
             "command": "find ${workspaceFolder}/build -type f -not -name '.gitignore' -print0 | xargs -0 rm --",
             "windows": {
@@ -200,10 +231,29 @@
             },
             "problemMatcher": []
         },
+        {
+            "label": "Clear 'build' Directory ARMv7 ZYBO",
+            "type": "shell",
+            "command": "find ${workspaceFolder}/build-arm -type f -not -name '.gitignore' -print0 | xargs -0 rm --",
+            "windows": {
+                "command": "Remove-Item ${workspaceFolder}/build-arm/ -Recurse -Exclude .gitignore"
+            },
+            "problemMatcher": []
+        },
         //#endregion
         //#region Debugging.....................................................
         {
             "label": "Start GDB Server",
+            "type": "shell",
+            // not using -it so that it can be a preLaunchTask
+            "command": "docker exec crypto-devenv gdbserver localhost:2000 ${workspaceRoot}/build/bin/hello-world",
+            "windows": {
+                "command": "docker exec crypto-devenv gdbserver localhost:2000 /home/develop/eagle/build/bin/hello-world",
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Start GDB Server (Background)",
             "type": "shell",
             // not using -it so that it can be a preLaunchTask
             "command": "docker exec -d crypto-devenv gdbserver localhost:2000 ${workspaceRoot}/build/bin/hello-world",

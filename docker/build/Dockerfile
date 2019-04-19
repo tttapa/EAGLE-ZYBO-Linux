@@ -49,10 +49,10 @@ RUN cmake -DCMAKE_INSTALL_PREFIX=/home/develop/.local ..
 RUN make -j$(nproc)
 RUN make install
 
-# Install dot
+# Install dot and gdbserver
 USER root
 RUN apt-get update && \
-    apt-get install -y graphviz && \
+    apt-get install -y graphviz gdbserver && \
     apt-get clean autoclean && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*

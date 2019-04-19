@@ -10,7 +10,7 @@
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [
                 {
@@ -32,7 +32,7 @@
             "externalConsole": true,
             "filterStderr": true,
             "filterStdout": true,
-            "preLaunchTask": "Start GDB Server",
+            "preLaunchTask": "Start GDB Server (Background)",
             "miDebuggerServerAddress": "localhost:2000",
             "MIMode": "gdb",
             "miDebuggerPath": "gdb",
