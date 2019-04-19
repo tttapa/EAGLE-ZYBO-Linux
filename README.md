@@ -1,3 +1,3 @@
-# Crypto EAGLE
+# EAGLE ZYBO Linux
 
-Docker image for cross-compiling C/C++ code for Zynq7000 running Linux.
+Cross-compilation toolchain for the ARMv7 ZYBO board for the EAGLE project.
