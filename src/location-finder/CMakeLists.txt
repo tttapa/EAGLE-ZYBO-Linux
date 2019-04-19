@@ -3,7 +3,6 @@ add_library(location_finder
     src/LocationFinder.cpp
 )
 
-set(OpenCV_DIR "$ENV{HOME}/opt/opencv-arm/lib/cmake/opencv4")
 find_package(OpenCV REQUIRED )
 
 # Set target include directories 

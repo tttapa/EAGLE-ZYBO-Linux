@@ -1,7 +1,11 @@
 version: '2'
 services:
   dev-image:
-    image: eagle1/crypto/develop
+    image: eagle1/crypto/develop:v1
+    build:
+      context: .
+      dockerfile: Dockerfile.win
+      network: host
     ports:
       - "2000:2000"
     privileged: false

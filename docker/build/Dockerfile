@@ -1,0 +1,45 @@
+FROM eagle1/ct-ng:v1
+
+# for gdbserver
+EXPOSE 2000
+
+# Download Google Test and OpenCV
+WORKDIR /home/develop
+RUN git clone https://github.com/google/googletest.git
+RUN wget -O opencv-4.1.0.tar.gz https://codeload.github.com/opencv/opencv/tar.gz/4.1.0
+RUN tar -xf opencv-4.1.0.tar.gz && rm opencv-4.1.0.tar.gz
+RUN mv opencv-4.1.0 opencv
+# Build OpenCV
+WORKDIR /home/develop/opencv-arm-build
+USER root
+RUN chown -R develop .
+USER develop
+RUN chmod -R 755 $TOOLCHAIN_PATH/arm-cortexa9_neon-linux-gnueabihf/sysroot
+RUN cmake \
+        -DCMAKE_TOOLCHAIN_FILE=../opencv/platforms/linux/arm.toolchain.cmake \
+        -DENABLE_VFPV3=ON -DENABLE_NEON=ON \
+        -DGNU_MACHINE="arm-cortexa9_neon-linux-gnueabi" \
+        -DWITH_V4L=ON -DWITH_LIBV4L=ON \
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -DCMAKE_INSTALL_PREFIX=$TOOLCHAIN_PATH/arm-cortexa9_neon-linux-gnueabihf/sysroot \
+        ../opencv
+RUN make -j$(nproc)
+RUN make install
+
+WORKDIR /home/develop/opencv-x86-build
+USER root
+RUN chown -R develop .
+USER develop
+RUN cmake \
+        -DWITH_V4L=ON -DWITH_LIBV4L=ON \
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -DCMAKE_INSTALL_PREFIX=/home/develop/.local \
+        ../opencv
+RUN make -j$(nproc)
+RUN make install
+
+# Bind the workspace root
+ARG WORKSPACE_ROOT
+ENV WORKSPACE_ROOT=${WORKSPACE_ROOT}
+VOLUME ${WORKSPACE_ROOT}
+WORKDIR ${WORKSPACE_ROOT}/build

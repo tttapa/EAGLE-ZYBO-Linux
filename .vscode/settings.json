@@ -41,4 +41,13 @@
     "editor.rulers": [
         80
     ],
+    "cSpell.words": [
+        "Baremetal",
+        "FPGA",
+        "ZYBO",
+        "multicast",
+        "toolchain",
+        "toolchains",
+        "unicast"
+    ],
 }

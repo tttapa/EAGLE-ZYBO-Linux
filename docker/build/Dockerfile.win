@@ -1,13 +1,15 @@
-FROM eagle1/ct-ng/develop:latest
+FROM eagle1/ct-ng:v1
 
 # for gdbserver
 EXPOSE 2000
 
+# Download Google Test and OpenCV
 WORKDIR /home/develop
 RUN git clone https://github.com/google/googletest.git
 RUN wget -O opencv-4.1.0.tar.gz https://codeload.github.com/opencv/opencv/tar.gz/4.1.0
 RUN tar -xf opencv-4.1.0.tar.gz && rm opencv-4.1.0.tar.gz
 RUN mv opencv-4.1.0 opencv
+# Build OpenCV
 WORKDIR /home/develop/opencv-build
 USER root
 RUN chown -R develop .
@@ -23,9 +25,6 @@ RUN cmake -DCMAKE_TOOLCHAIN_FILE=../opencv/platforms/linux/arm.toolchain.cmake \
 RUN make -j$(nproc)
 RUN make install
 
-USER develop
-
-ARG WORKSPACE_ROOT
-ENV WORKSPACE_ROOT=${WORKSPACE_ROOT}
-VOLUME ${WORKSPACE_ROOT}
-WORKDIR ${WORKSPACE_ROOT}/build
+# Bind the workspace root
+VOLUME /home/develop/eagle
+WORKDIR /home/develop/eagle/build

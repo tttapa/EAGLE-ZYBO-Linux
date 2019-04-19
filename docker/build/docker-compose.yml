@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  dev-image:
+    image: eagle1/crypto/develop:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+      network: host
+    ports:
+      - "2000:2000"
+    privileged: false
+    container_name: crypto-devenv
+    volumes:
+      - "../../:${PWD}/../../"

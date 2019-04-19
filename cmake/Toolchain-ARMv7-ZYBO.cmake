@@ -5,6 +5,8 @@ SET(CMAKE_SYSTEM_VERSION 1)
 SET(CMAKE_C_COMPILER   arm-cortexa9_neon-linux-gnueabihf-gcc)
 SET(CMAKE_CXX_COMPILER arm-cortexa9_neon-linux-gnueabihf-g++)
 
+SET(CMAKE_FIND_ROOT_PATH $ENV{TOOLCHAIN_PATH}/arm-cortexa9_neon-linux-gnueabihf/sysroot)
+
 # Search for programs in the build host directories
 SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 # for libraries and headers in the target directories
