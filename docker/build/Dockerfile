@@ -38,6 +38,26 @@ RUN cmake \
 RUN make -j$(nproc)
 RUN make install
 
+# Download Doxygen
+WORKDIR /home/develop
+RUN git clone https://github.com/doxygen/doxygen.git
+WORKDIR /home/develop/doxygen/build
+USER root
+RUN chown -R develop .
+USER develop
+RUN cmake -DCMAKE_INSTALL_PREFIX=/home/develop/.local ..
+RUN make -j$(nproc)
+RUN make install
+
+# Install dot
+USER root
+RUN apt-get update && \
+    apt-get install -y graphviz && \
+    apt-get clean autoclean && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
+USER develop
+
 # Bind the workspace root
 ARG WORKSPACE_ROOT
 ENV WORKSPACE_ROOT=${WORKSPACE_ROOT}

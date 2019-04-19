@@ -206,16 +206,26 @@
             "label": "Start GDB Server",
             "type": "shell",
             // not using -it so that it can be a preLaunchTask
-            "command": "docker exec -d crypto-devenv gdbserver localhost:2000  ${workspaceRoot}/build/bin/hello-world",
+            "command": "docker exec -d crypto-devenv gdbserver localhost:2000 ${workspaceRoot}/build/bin/hello-world",
             "windows": {
-                "command": "docker exec -d crypto-devenv gdbserver localhost:2000  /home/develop/eagle/build/bin/hello-world",
+                "command": "docker exec -d crypto-devenv gdbserver localhost:2000 /home/develop/eagle/build/bin/hello-world",
             },
             "problemMatcher": []
         },
         //#endregion
         //#region Documentation.................................................
         {
-            "label": "Generate Documentation",
+            "label": "Generate Documentation (Docker)",
+            "type": "shell",
+            "command": "rm -rf html && docker exec -w \"${workspaceFolder}/doc\" crypto-devenv doxygen && sensible-browser html/index.html",
+            // TODO: add Windows command
+            "options": {
+                "cwd": "${workspaceFolder}/doc"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Generate Documentation (Local)",
             "type": "shell",
             "command": "rm -rf html && doxygen && sensible-browser html/index.html",
             "options": {
