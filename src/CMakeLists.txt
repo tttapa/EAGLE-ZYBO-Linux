@@ -1,3 +1,7 @@
 add_subdirectory(comm)
 add_subdirectory(crypto)
 add_subdirectory(logger)
+add_subdirectory(matrix)
+add_subdirectory(utilities)
+add_subdirectory(grid-finder)
+add_subdirectory(location-finder)
