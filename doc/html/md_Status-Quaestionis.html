@@ -108,7 +108,7 @@ This is not ideal, because it has a lot of overhead when reading large amounts o
 It's important that we use different locks for logging and vision.</p>
 <p>🗙 If we can't get multicast routing to work for the base station, we might have to send the same message as unicast as well.</p>
 <h3>Vision</h3>
-<p>✓ The main part of the vision algorithm is <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a>: as an input, it takes the mask, where read lines are white, and everything else is black. As an output, it returns the vertices of the square of the grid in the center of the frame, and the lines (and angles) of that square. <br  />
+<p>✓ The main part of the vision algorithm is <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a>: as an input, it takes the mask, where red lines are white, and everything else is black. As an output, it returns the vertices of the square of the grid in the center of the frame, and the lines (and angles) of that square. <br  />
 This part is finished, and has been tested using videos.</p>
 <p>🗙 We also need code that reads the image from the HDMI input, applies the mask to filter out the red lines, and passes it to <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a>. <br  />
 Then it transforms the output of <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a> in order to get the position of the drone, relative to the grid.</p>

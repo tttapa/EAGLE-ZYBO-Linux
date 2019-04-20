@@ -713,7 +713,7 @@ class GridFinder {
      *          up the line closest to the center of the frame.
      * 
      * We use two lines here instead of one, because their slopes don't differ
-     * by exactly 180°, because of lense distorion.  
+     * by exactly 180°, because of lense distortion.  
      * This makes our intersection a bit more accurate, and it's not too 
      * expensive.
      * 
