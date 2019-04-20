@@ -59,8 +59,8 @@ Then execute the following tasks by pressing `CTRL+P` and then typing
 `task <task name>` (you don't have to type the entire name, just a few letters
 is enough, then use the arrows, and hit enter):
 
-- Build Docker Image (crosstool-NG) - ~40 minutes
-- Build Docker Image - ~35 minutes
+- Build Docker Image (crosstool-NG)
+- Build Docker Image
 - Start Docker Container
 
 These commands install all dependencies and build the toolchain (compiler etc.)
