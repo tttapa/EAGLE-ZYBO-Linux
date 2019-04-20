@@ -96,7 +96,9 @@ $(document).ready(function(){initNavTree('md_Getting-Started.html','');});
 <p>The toolchain runs in a Docker container. You need Docker and Docker-Compose to run it.</p>
 <h4>Linux</h4>
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04</a> <br  />
-<a href="https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04</a> </p><div class="fragment"><div class="line">sudo apt update</div><div class="line">sudo apt install apt-transport-https ca-certificates curl software-properties-common</div><div class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</div><div class="line">sudo apt update</div><div class="line">sudo apt install docker-ce</div><div class="line">sudo usermod -aG docker $USER</div><div class="line">sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</div></div><!-- fragment --><h4>Windows Home</h4>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04</a></p>
+<div class="fragment"><div class="line">sudo apt update</div><div class="line">sudo apt install apt-transport-https ca-certificates curl software-properties-common</div><div class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</div><div class="line">sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable&quot;</div><div class="line">sudo apt update</div><div class="line">sudo apt install docker-ce</div><div class="line">sudo usermod -aG docker $USER</div><div class="line">sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</div><div class="line">sudo chmod +x /usr/local/bin/docker-compose</div></div><!-- fragment --><p>Then logout and back in again.</p>
+<h4>Windows Home</h4>
 <p><a href="https://download.docker.com/win/stable/DockerToolbox.exe">https://download.docker.com/win/stable/DockerToolbox.exe</a></p>
 <h4>Windows Pro</h4>
 <p><a href="https://docs.docker.com/docker-for-windows/install/">https://docs.docker.com/docker-for-windows/install/</a></p>
@@ -105,15 +107,18 @@ $(document).ready(function(){initNavTree('md_Getting-Started.html','');});
 <h3>Visual Studio Code</h3>
 <p><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> <br  />
 <a href="https://github.com/VSCodium/vscodium">https://github.com/VSCodium/vscodium</a> (Open-source version without Microsoft telemetry)</p>
+<p>Also install the Docker and C/C++ extensions by Microsoft (<code>CTRL+SHIFT+X</code>).</p>
 <h2>Setup</h2>
-<p>When you have installed Docker, Docker-Compose and VSCode, clone this repository and open the folder in VSCode (<code>CTRL+K+O</code>).</p>
-<p>Then execute the following tasks by pressing <code>CTRL+P</code> and then typing <code>task &lt;task name&gt;</code> (you don't have to type the entire name, just a few letters is enough, then use the arrows, and hit enter):</p><ul>
+<p>When you have installed Docker, Docker-Compose and VSCode, clone this repository and open the folder in VSCode (<code>CTRL+K+O</code>). Make sure to clone using SSH, not HTTPS.</p>
+<p>Then execute the following tasks by pressing <code>CTRL+P</code> and then typing <code>task &lt;task name&gt;</code> (you don't have to type the entire name, just a few letters is enough, then use the arrows, and hit enter):</p>
+<ul>
 <li>Build Docker Image (crosstool-NG) - ~40 minutes</li>
-<li>Build Docker Image - ~30 minutes</li>
+<li>Build Docker Image - ~35 minutes</li>
 <li>Start Docker Container</li>
 </ul>
 <p>These commands install all dependencies and build the toolchain (compiler etc.) and OpenCV. <br  />
-You only have to do this once. If you have a slow computer, feel free to just ask me for the image on a USB stick.</p>
+You only have to do this once. <br  />
+The first two commands took 40 and 35 minutes on my i7-7700HQ, and 70 and 60 minutes on my i7-3630QM. If you have a slow computer, feel free to just ask me for the image on a USB stick.</p>
 <h2>Building for x86 (Computer)</h2>
 <ul>
 <li>Clear 'build' Directory x86-64 - optional</li>
