@@ -110,7 +110,8 @@ $(document).ready(function(){initNavTree('md_Getting-Started.html','');});
 <p>Also install the Docker and C/C++ extensions by Microsoft (<code>CTRL+SHIFT+X</code>).</p>
 <h2>Setup</h2>
 <p>When you have installed Docker, Docker-Compose and VSCode, clone this repository and open the folder in VSCode (<code>CTRL+K+O</code>). Make sure to clone using SSH, not HTTPS.</p>
-<p>Then execute the following tasks by pressing <code>CTRL+P</code> and then typing <code>task &lt;task name&gt;</code> (you don't have to type the entire name, just a few letters is enough, then use the arrows, and hit enter):</p>
+<p>When you get a message about automatically running a task, click allow. It will fail, because you haven't built the Docker images yet, this is normal.</p>
+<p>Then execute the following tasks by pressing <code>CTRL+P</code> and typing <code>task &lt;task name&gt;</code> (you don't have to type the entire name, just a few letters is enough, then use the arrow keys, and hit enter):</p>
 <ul>
 <li>Build Docker Image (crosstool-NG)</li>
 <li>Build Docker Image</li>
@@ -152,7 +153,7 @@ You can change the application to run in <code>tasks.json</code>.</p>
 <ul>
 <li>Generate Documentation (Docker)</li>
 </ul>
-<p>The documentation is generated in <code>doc/html</code>.</p>
+<p>The documentation is generated in <code>doc/html</code>. You can ignore any errors related to LaTeX and dvips.</p>
 <h2>Writing Code</h2>
 <p>Check the <a class="el" href="md_Structure.html">Structure</a> page for information about the folder structure of the project.</p>
 <p>For example code, have a look at <code>src/greet</code> and <code>src/crypto</code>. </p>

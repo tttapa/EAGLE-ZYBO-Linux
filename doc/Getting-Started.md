@@ -55,9 +55,12 @@ When you have installed Docker, Docker-Compose and VSCode, clone this repository
 and open the folder in VSCode (`CTRL+K+O`). Make sure to clone using SSH, not
 HTTPS.
 
-Then execute the following tasks by pressing `CTRL+P` and then typing
+When you get a message about automatically running a task, click allow. It will
+fail, because you haven't built the Docker images yet, this is normal.
+
+Then execute the following tasks by pressing `CTRL+P` and typing
 `task <task name>` (you don't have to type the entire name, just a few letters
-is enough, then use the arrows, and hit enter):
+is enough, then use the arrow keys, and hit enter):
 
 - Build Docker Image (crosstool-NG)
 - Build Docker Image
@@ -124,7 +127,8 @@ You can change the application to run in `tasks.json`.
 
 - Generate Documentation (Docker)
 
-The documentation is generated in `doc/html`.
+The documentation is generated in `doc/html`. You can ignore any errors related
+to LaTeX and dvips.
 
 ## Writing Code
 
