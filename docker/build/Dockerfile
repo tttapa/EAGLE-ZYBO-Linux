@@ -1,5 +1,7 @@
 FROM eagle1/ct-ng:v1
 
+WORKDIR /home/develop
+
 # Download OpenCV
 RUN wget -O opencv-4.1.0.tar.gz https://codeload.github.com/opencv/opencv/tar.gz/4.1.0
 RUN tar -xf opencv-4.1.0.tar.gz && rm opencv-4.1.0.tar.gz

@@ -6,7 +6,8 @@
             "includePath": [
                 "${workspaceFolder}/src/**",
                 "/usr/include/c++/8",
-                "${workspaceFolder}/build/googletest/googletest-src/googletest/include"
+                "${workspaceFolder}/build/googletest/googletest-src/googletest/include",
+                "${workspaceFolder}/build-arm/googletest/googletest-src/googletest/include"
             ],
             "defines": [],
             "cStandard": "c11",
