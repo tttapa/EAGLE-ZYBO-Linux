@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/SVG"],
+});
+</script><script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -98,8 +104,14 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <li>angle_t
 : <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">Angle.hpp</a>
 </li>
+<li>applyMask()
+: <a class="el" href="Mask-NEON_8hpp.html#a525d99350b2a5ebed4ccee8aa7aa4264">Mask-NEON.hpp</a>
+</li>
+<li>applyMaskFunction()
+: <a class="el" href="Mask-NEON_8hpp.html#a0dda7e336e328c2e01b5cdac663a5623">Mask-NEON.hpp</a>
+</li>
 <li>asrowvector()
-: <a class="el" href="Matrix_8hpp.html#a5396ac0689ea8f47e7ba2726b3b79357">Matrix.hpp</a>
+: <a class="el" href="Matrix_8hpp.html#a6ff4bfee4dd43e43bdaeb7dfbfd38ac7">Matrix.hpp</a>
 </li>
 <li>assignBlock()
 : <a class="el" href="Matrix_8hpp.html#aa7a0a009ff4ef0cc5545c80716559f36">Matrix.hpp</a>
@@ -291,14 +303,17 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="Array_8hpp.html#a58deff765770e1a1b3cc9b979ba1c9e3">Array.hpp</a>
 </li>
 <li>operator&lt;()
-: <a class="el" href="Array_8hpp.html#a6b6a0d2dee71b1834e34e6ac96dde807">Array.hpp</a>
+: <a class="el" href="Array_8hpp.html#a3af69c2c1843173f1c4d195102aa2b20">Array.hpp</a>
 </li>
 <li>operator&lt;&lt;()
-: <a class="el" href="HelperStructs_8hpp.html#a8d72795c613cf90fdae6c7de87343593">HelperStructs.hpp</a>
+: <a class="el" href="NEON-PrintHelpers_8hpp.html#a207cd822106fe3d8f5091a365ae82216">NEON-PrintHelpers.hpp</a>
+, <a class="el" href="HelperStructs_8hpp.html#a8d72795c613cf90fdae6c7de87343593">HelperStructs.hpp</a>
 , <a class="el" href="Line_8hpp.html#aa9156371c8550a5d504e1719c810b7c1">Line.hpp</a>
 , <a class="el" href="Pixel_8hpp.html#afe2cf6629d2060ae8d64de9f0eb0c0d4">Pixel.hpp</a>
-, <a class="el" href="Matrix_8hpp.html#a1660187b5415c3e3ba91326f3f4a2fce">Matrix.hpp</a>
+, <a class="el" href="NEON-PrintHelpers_8hpp.html#ac32840bdab1fd7cffffa6263b7dda76b">NEON-PrintHelpers.hpp</a>
+, <a class="el" href="Matrix_8hpp.html#ad99ddf6ee0960b13bb47d98684b3c4c5">Matrix.hpp</a>
 , <a class="el" href="HelperStructs_8hpp.html#a05ace7b847c787ca35dee01848a351c0">HelperStructs.hpp</a>
+, <a class="el" href="Matrix_8hpp.html#a1660187b5415c3e3ba91326f3f4a2fce">Matrix.hpp</a>
 , <a class="el" href="Angle_8hpp.html#a793cc770643952c1bf4f195e56efc017">Angle.hpp</a>
 , <a class="el" href="HelperStructs_8hpp.html#a824035fe89d1222b42d7c00847b06f70">HelperStructs.hpp</a>
 </li>
@@ -315,14 +330,14 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="Array_8hpp.html#ab52ea7aa569faf7d05d36689b23fa4d2">Array.hpp</a>
 </li>
 <li>operator&gt;=()
-: <a class="el" href="Array_8hpp.html#a0f6752aab31457cfa3b630ef1ea60f1e">Array.hpp</a>
+: <a class="el" href="Array_8hpp.html#a12e8379e687c9a9981da132be5a43aa6">Array.hpp</a>
 </li>
 <li>operator^()
 : <a class="el" href="Matrix_8hpp.html#abc557f2f1ce3f0e6c8456b41d2c5d852">Matrix.hpp</a>
 </li>
 <li>output()
-: <a class="el" href="wrapper_8h.html#a6f48a90c49c9dfaaf486105ab10152ae">wrapper.h</a>
-, <a class="el" href="wrapper_8c.html#a6f48a90c49c9dfaaf486105ab10152ae">wrapper.c</a>
+: <a class="el" href="wrapper_8c.html#a6f48a90c49c9dfaaf486105ab10152ae">wrapper.c</a>
+, <a class="el" href="wrapper_8h.html#a6f48a90c49c9dfaaf486105ab10152ae">wrapper.h</a>
 </li>
 </ul>
 
@@ -428,6 +443,9 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <li>Teye()
 : <a class="el" href="Matrix_8hpp.html#a8ea96ff7a9005c051acff866b2cba45c">Matrix.hpp</a>
 </li>
+<li>THRESHOLD
+: <a class="el" href="Mask-NEON_8hpp.html#aa3d20671700581f5331659708aa95e69">Mask-NEON.hpp</a>
+</li>
 <li>TMatrix
 : <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">Matrix.hpp</a>
 </li>
@@ -441,7 +459,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="Matrix_8hpp.html#a7e2edcf0adff5dd92023ba70c3d080c1">Matrix.hpp</a>
 </li>
 <li>toStdArray()
-: <a class="el" href="Matrix_8hpp.html#ae6a6b7e9a54cb9418798b6c979e3dd48">Matrix.hpp</a>
+: <a class="el" href="Matrix_8hpp.html#a959be8d53cd66d399017fa11052da6fd">Matrix.hpp</a>
 </li>
 <li>transpose()
 : <a class="el" href="Matrix_8hpp.html#ae8d7f8a24d9759e2535e2ff13f13fe26">Matrix.hpp</a>

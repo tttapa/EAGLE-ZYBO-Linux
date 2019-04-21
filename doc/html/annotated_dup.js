@@ -22,6 +22,7 @@ var annotated_dup =
     [ "Incrementor", "classIncrementor.html", "classIncrementor" ],
     [ "Line", "classLine.html", "classLine" ],
     [ "LineResult", "structLineResult.html", "structLineResult" ],
+    [ "Mask", "classMask.html", "classMask" ],
     [ "MatrixAssignmentHelper", "structMatrixAssignmentHelper.html", "structMatrixAssignmentHelper" ],
     [ "MulticastSender", "classMulticastSender.html", "classMulticastSender" ],
     [ "PerfTimer", "classPerfTimer.html", "classPerfTimer" ],

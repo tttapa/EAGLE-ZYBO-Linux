@@ -7,7 +7,7 @@
             "/usr/include/c++/8",
             "${workspaceFolder}/build/googletest/googletest-src/googletest/include"
         ],
-        "defines": ["__AVX__", "__SSE2__"],
+        "defines": ["__AVX__", "__SSE2__", "__ARM_NEON"],
         "cStandard": "c11",
         "cppStandard": "c++17",
         "browse": {

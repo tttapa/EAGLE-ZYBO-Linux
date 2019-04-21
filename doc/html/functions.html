@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/SVG"],
+});
+</script><script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -102,6 +108,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>apply()
 : <a class="el" href="structQR.html#aa61fe3635ba82acfc32da54920b79309">QR&lt; T, Rm, Cn &gt;</a>
 </li>
+<li>applyMask()
+: <a class="el" href="classMask.html#ad781014c1f754f97f0cc53aa5bb02300">Mask</a>
+</li>
 <li>applyTranspose()
 : <a class="el" href="structQR.html#a8001dce66a751b468c5ae4b85d964ff2">QR&lt; T, Rm, Cn &gt;</a>
 </li>
@@ -139,11 +148,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>checkLine()
 : <a class="el" href="classGridFinder.html#a9050aab45d10d2c2d4859af19b4987b4">GridFinder&lt; W, H &gt;</a>
 </li>
+<li>checkType()
+: <a class="el" href="classMask.html#a85abd07504faf9fdd0a2d1c5ef3201ab">Mask</a>
+</li>
 <li>ConstantTimeFunctionT()
 : <a class="el" href="structConstantTimeFunctionT.html#a289c13537754efc7e5de87cccf6bd10d">ConstantTimeFunctionT&lt; T &gt;</a>
 </li>
 <li>cos()
-: <a class="el" href="classAngle.html#aa2ce213e9b45424e62d818ec6769a71b">Angle&lt; Resolution &gt;</a>
+: <a class="el" href="classAngle.html#aa9320b89316dc7b3825123a633fca8ad">Angle&lt; Resolution &gt;</a>
 , <a class="el" href="classBresenhamLine.html#ae4b0dd9c534a550583ae812695bbac59">BresenhamLine</a>
 , <a class="el" href="structCosSin.html#a2124ce76ea33757e1d1e91dda028f98c">CosSin</a>
 </li>
@@ -326,6 +338,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a id="index_m"></a>- m -</h3><ul>
 <li>m
 : <a class="el" href="structMatrixAssignmentHelper.html#ac0605b614e7a1b70c74c68dcb52b8f73">MatrixAssignmentHelper&lt; T, R, C, RR_sz, CC_sz, RR_offset, CC_offset &gt;</a>
+</li>
+<li>Mask()
+: <a class="el" href="classMask.html#a6f4e8ee2b44bee6bcbbd3bbdd51fb757">Mask</a>
 </li>
 <li>MAX_GAP
 : <a class="el" href="classGridFinder.html#aefccfda1ff7d039edab855b6f7eafd54">GridFinder&lt; W, H &gt;</a>
@@ -552,6 +567,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
+<li>toBGRptr()
+: <a class="el" href="classMask.html#ae70048a94ee7d94f22c5e205d2fe1594">Mask</a>
+</li>
 <li>type
 : <a class="el" href="structArray.html#a3cbf8f2bfa23eb494f638eaa609a92f4">Array&lt; T, N &gt;</a>
 , <a class="el" href="structgetArrayTypeBase.html#ade01210b742c97dd587d43c05291e48e">getArrayTypeBase&lt; T &gt;</a>

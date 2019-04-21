@@ -1,35 +1,14 @@
+#include <GridFinder.hpp>
 #include <LocationFinder.hpp>
 #include <iostream>
-#include <opencv2/opencv.hpp>
 #include <string>
+
+#include <opencv2/opencv.hpp>
 
 #include <opencv2/core/utils/logger.hpp>
 
 using namespace cv;
-using std::string;
-
-string type2str(int type) {
-    string r;
-
-    uchar depth = type & CV_MAT_DEPTH_MASK;
-    uchar chans = 1 + (type >> CV_CN_SHIFT);
-
-    switch (depth) {
-        case CV_8U: r = "8U"; break;
-        case CV_8S: r = "8S"; break;
-        case CV_16U: r = "16U"; break;
-        case CV_16S: r = "16S"; break;
-        case CV_32S: r = "32S"; break;
-        case CV_32F: r = "32F"; break;
-        case CV_64F: r = "64F"; break;
-        default: r = "User"; break;
-    }
-
-    r += "C";
-    r += (chans + '0');
-
-    return r;
-}
+using ::Point;
 
 int test() {
     utils::logging::setLogLevel(utils::logging::LogLevel::LOG_LEVEL_VERBOSE);
@@ -45,9 +24,6 @@ int test() {
     Mat frame;
     cap >> frame;  // get a new frame from camera
     std::cout << "VideoCapture captured" << std::endl;
-
-    string ty = type2str(frame.type());
-    printf("Matrix: %s %dx%d, depth: %d\n", ty.c_str(), frame.cols, frame.rows, frame.depth());
 
     Mat blur;
     GaussianBlur(frame, blur, Size(7, 7), 1.5, 1.5);

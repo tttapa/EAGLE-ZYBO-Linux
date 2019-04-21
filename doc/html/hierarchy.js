@@ -26,6 +26,7 @@ var hierarchy =
     [ "Incrementor< T >", "classIncrementor.html", null ],
     [ "Line", "classLine.html", null ],
     [ "LineResult", "structLineResult.html", null ],
+    [ "Mask", "classMask.html", null ],
     [ "MatrixAssignmentHelper< T, R, C, RR_sz, CC_sz, RR_offset, CC_offset >", "structMatrixAssignmentHelper.html", null ],
     [ "MulticastSender", "classMulticastSender.html", null ],
     [ "PerfTimer", "classPerfTimer.html", null ],

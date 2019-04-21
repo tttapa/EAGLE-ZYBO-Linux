@@ -2,9 +2,19 @@
 add_executable(location_finder.test 
     test-LocationFinder.cpp
 )
+
+# Tests need access to private headers as well
+target_include_directories(location_finder.test 
+    PRIVATE 
+        ../src
+        ${OpenCV_INCLUDE_DIRS})
+
 # Link the test executable with the Google Test main entry point and the library
 # under test
-target_link_libraries(location_finder.test gtest_main location_finder)
+target_link_libraries(location_finder.test 
+    gtest_main
+    location_finder
+    ${OpenCV_LIBS})
 
 # Add the tests to Google Test
 include(GoogleTest)

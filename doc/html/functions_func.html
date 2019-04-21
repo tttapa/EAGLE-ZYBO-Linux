@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/SVG"],
+});
+</script><script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -95,6 +101,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>apply()
 : <a class="el" href="structQR.html#aa61fe3635ba82acfc32da54920b79309">QR&lt; T, Rm, Cn &gt;</a>
 </li>
+<li>applyMask()
+: <a class="el" href="classMask.html#ad781014c1f754f97f0cc53aa5bb02300">Mask</a>
+</li>
 <li>applyTranspose()
 : <a class="el" href="structQR.html#a8001dce66a751b468c5ae4b85d964ff2">QR&lt; T, Rm, Cn &gt;</a>
 </li>
@@ -132,6 +141,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>checkLine()
 : <a class="el" href="classGridFinder.html#a9050aab45d10d2c2d4859af19b4987b4">GridFinder&lt; W, H &gt;</a>
 </li>
+<li>checkType()
+: <a class="el" href="classMask.html#a85abd07504faf9fdd0a2d1c5ef3201ab">Mask</a>
+</li>
 <li>ConstantTimeFunctionT()
 : <a class="el" href="structConstantTimeFunctionT.html#a289c13537754efc7e5de87cccf6bd10d">ConstantTimeFunctionT&lt; T &gt;</a>
 </li>
@@ -158,7 +170,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classAngle.html#a4ef8c6fb3a420f4b05590d3127feba14">Angle&lt; Resolution &gt;</a>
 </li>
 <li>drawLine()
-: <a class="el" href="classGridFinder.html#a052706dc431a652170442a8995a0e864">GridFinder&lt; W, H &gt;</a>
+: <a class="el" href="classGridFinder.html#ae7296afac0b1184604dcdd5d62bcaebd">GridFinder&lt; W, H &gt;</a>
 </li>
 </ul>
 
@@ -218,7 +230,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classPerfTimer.html#a4d76e90eda37bbfeb0cb1b79292d9640">PerfTimer</a>
 </li>
 <li>getFirstLineEstimate()
-: <a class="el" href="classGridFinder.html#ac78760540b520bc08f716ef77127f1fc">GridFinder&lt; W, H &gt;</a>
+: <a class="el" href="classGridFinder.html#a05628935998785212ee5320a7e146f2b">GridFinder&lt; W, H &gt;</a>
 </li>
 <li>getFirstTwoHalfLines()
 : <a class="el" href="classGridFinder.html#a8ac6a50ff32685b1e958cbb0a88ca4dc">GridFinder&lt; W, H &gt;</a>
@@ -286,6 +298,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
+<li>Mask()
+: <a class="el" href="classMask.html#a6f4e8ee2b44bee6bcbbd3bbdd51fb757">Mask</a>
+</li>
 <li>move()
 : <a class="el" href="classGridFinder.html#a9b31ec7807efc6e1fde49f5a56c0d0fa">GridFinder&lt; W, H &gt;</a>
 </li>
@@ -386,7 +401,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="structArray.html#abf33b5cb57569871bd51ca0acf371249">Array&lt; T, N &gt;</a>
 </li>
 <li>operator[]()
-: <a class="el" href="structArray.html#ac438f1675c7d67d9130a65a685e20042">Array&lt; T, N &gt;</a>
+: <a class="el" href="structArray.html#accf9a343a276bb250abc92375d3ede3d">Array&lt; T, N &gt;</a>
 </li>
 <li>opposite()
 : <a class="el" href="classAngle.html#ae6809e9c2bd2ef8f1351da0b59f1fca4">Angle&lt; Resolution &gt;</a>
@@ -453,7 +468,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classGridFinder.html#a5fef4e6faa3242e689a3ecb6ef21fb1f">GridFinder&lt; W, H &gt;</a>
 </li>
 <li>sin()
-: <a class="el" href="classAngle.html#a3700fa4572ca0b7dfacf65cc11108668">Angle&lt; Resolution &gt;</a>
+: <a class="el" href="classAngle.html#adb9bfe045dd75dad8912cf1e741d2820">Angle&lt; Resolution &gt;</a>
 , <a class="el" href="classBresenhamLine.html#a115d1f10a5ce1e0ef945258346b6f035">BresenhamLine</a>
 </li>
 <li>sind()
@@ -466,6 +481,13 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>step()
 : <a class="el" href="classAngle.html#aaff4df6bab7baf6e798036a470e2cf0d">Angle&lt; Resolution &gt;</a>
+</li>
+</ul>
+
+
+<h3><a id="index_t"></a>- t -</h3><ul>
+<li>toBGRptr()
+: <a class="el" href="classMask.html#ae70048a94ee7d94f22c5e205d2fe1594">Mask</a>
 </li>
 </ul>
 

@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/SVG"],
+});
+</script><script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -120,8 +126,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a302eae526b10a18783bc2623ee9fe646"><td class="memTemplParams" colspan="2">template&lt;class T , size_t N, class U &gt; </td></tr>
 <tr class="memitem:a302eae526b10a18783bc2623ee9fe646"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structArray.html">Array</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ArrayHelpers_8hpp.html#a302eae526b10a18783bc2623ee9fe646">generatedArray</a> (U start=0, U increment=1)</td></tr>
 <tr class="memdesc:a302eae526b10a18783bc2623ee9fe646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an array where the first value is given, and the subsequent values are calculated as the previous value incremented with a given value: <br  />
- <img class="formulaInl" alt="$ x[0] = start $" src="form_0.png"/> <br  />
- <img class="formulaInl" alt="$ x[k+1] = x[k] + increment $" src="form_1.png"/>.  <a href="#a302eae526b10a18783bc2623ee9fe646">More...</a><br /></td></tr>
+ \( x[0] = start \) <br  />
+ \( x[k+1] = x[k] + increment \).  <a href="#a302eae526b10a18783bc2623ee9fe646">More...</a><br /></td></tr>
 <tr class="separator:a302eae526b10a18783bc2623ee9fe646"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a021512d0f49f5f3ac08ebac9bb547cfc"><td class="memTemplParams" colspan="2">template&lt;class T , size_t N&gt; </td></tr>
 <tr class="memitem:a021512d0f49f5f3ac08ebac9bb547cfc"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structArray.html">Array</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ArrayHelpers_8hpp.html#a021512d0f49f5f3ac08ebac9bb547cfc">filledArray</a> (const T &amp;value)</td></tr>
@@ -199,8 +205,8 @@ template&lt;class T , size_t N, class U &gt; </div>
 </div><div class="memdoc">
 
 <p>Generate an array where the first value is given, and the subsequent values are calculated as the previous value incremented with a given value: <br  />
- <img class="formulaInl" alt="$ x[0] = start $" src="form_0.png"/> <br  />
- <img class="formulaInl" alt="$ x[k+1] = x[k] + increment $" src="form_1.png"/>. </p>
+ \( x[0] = start \) <br  />
+ \( x[k+1] = x[k] + increment \). </p>
 <p>For example: <br  />
 </p><div class="fragment"><div class="line"><span class="keyword">auto</span> x = generateArray&lt;unsigned int, 4&gt;(2, 3);</div></div><!-- fragment --><p> is equivalent to <br  />
 </p><div class="fragment"><div class="line"><a class="code" href="structArray.html">Array&lt;unsigned int, 4&gt;</a> x = {2, 5, 8, 11};</div></div><!-- fragment --><dl class="tparams"><dt>Template Parameters</dt><dd>
