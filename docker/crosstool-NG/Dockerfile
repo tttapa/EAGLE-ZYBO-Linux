@@ -38,5 +38,6 @@ WORKDIR /home/develop/ZYBO
 COPY --chown=develop:develop config .config
 RUN ls -al
 RUN ct-ng build
+RUN rm -rf .build
 ENV TOOLCHAIN_PATH=/home/develop/x-tools/arm-cortexa9_neon-linux-gnueabihf
 ENV PATH=${TOOLCHAIN_PATH}/bin:$PATH

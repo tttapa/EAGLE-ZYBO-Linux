@@ -1,14 +1,10 @@
 FROM eagle1/ct-ng:v1
 
-# for gdbserver
-EXPOSE 2000
-
-# Download Google Test and OpenCV
-WORKDIR /home/develop
-RUN git clone https://github.com/google/googletest.git
+# Download OpenCV
 RUN wget -O opencv-4.1.0.tar.gz https://codeload.github.com/opencv/opencv/tar.gz/4.1.0
 RUN tar -xf opencv-4.1.0.tar.gz && rm opencv-4.1.0.tar.gz
 RUN mv opencv-4.1.0 opencv
+
 # Build OpenCV
 WORKDIR /home/develop/opencv-arm-build
 USER root
@@ -26,6 +22,9 @@ RUN cmake \
 RUN make -j$(nproc)
 RUN make install
 
+WORKDIR /home/develop
+RUN rm -rf opencv-arm-build
+
 WORKDIR /home/develop/opencv-x86-build
 USER root
 RUN chown -R develop .
@@ -38,7 +37,14 @@ RUN cmake \
 RUN make -j$(nproc)
 RUN make install
 
-# Download Doxygen
+WORKDIR /home/develop
+RUN rm -rf opencv-x86-build
+
+# Download Google Test
+WORKDIR /home/develop
+RUN git clone https://github.com/google/googletest.git
+
+# Download and build Doxygen
 WORKDIR /home/develop
 RUN git clone https://github.com/doxygen/doxygen.git
 WORKDIR /home/develop/doxygen/build
@@ -56,6 +62,9 @@ RUN apt-get update && \
     apt-get clean autoclean && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
+# for gdbserver
+EXPOSE 2000
+
 USER develop
 
 # Bind the workspace root
