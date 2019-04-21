@@ -1,4 +1,4 @@
-FROM eagle1/ct-ng:v2
+FROM eagle1/ct-ng:v1
 
 WORKDIR /home/develop
 
