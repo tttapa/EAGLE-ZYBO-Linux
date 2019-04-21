@@ -46,8 +46,8 @@ int test() {
     cap >> frame;  // get a new frame from camera
     std::cout << "VideoCapture captured" << std::endl;
 
-    string ty = type2str(M.type());
-    printf("Matrix: %s %dx%d, depth: %d\n", ty.c_str(), M.cols, M.rows, M.depth());
+    string ty = type2str(frame.type());
+    printf("Matrix: %s %dx%d, depth: %d\n", ty.c_str(), frame.cols, frame.rows, frame.depth());
 
     Mat blur;
     GaussianBlur(frame, blur, Size(7, 7), 1.5, 1.5);

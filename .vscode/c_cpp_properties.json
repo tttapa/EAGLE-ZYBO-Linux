@@ -1,21 +1,18 @@
 {
-    "configurations": [
-        {
-            "name": "Linux",
-            "intelliSenseMode": "gcc-x64",
-            "includePath": [
-                "${workspaceFolder}/src/**",
-                "/usr/include/c++/8",
-                "${workspaceFolder}/build/googletest/googletest-src/googletest/include",
-                "${workspaceFolder}/build-arm/googletest/googletest-src/googletest/include"
-            ],
-            "defines": [],
-            "cStandard": "c11",
-            "cppStandard": "c++17",
-            "browse": {
-                "limitSymbolsToIncludedHeaders": true
-            }
+    "configurations": [{
+        "name": "Linux",
+        "intelliSenseMode": "gcc-x64",
+        "includePath": [
+            "${workspaceFolder}/src/**",
+            "/usr/include/c++/8",
+            "${workspaceFolder}/build/googletest/googletest-src/googletest/include"
+        ],
+        "defines": ["__AVX__", "__SSE2__"],
+        "cStandard": "c11",
+        "cppStandard": "c++17",
+        "browse": {
+            "limitSymbolsToIncludedHeaders": true
         }
-    ],
+    }],
     "version": 4
 }

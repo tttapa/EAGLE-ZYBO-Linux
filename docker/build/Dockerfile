@@ -1,4 +1,4 @@
-FROM eagle1/ct-ng:v1
+FROM eagle1/ct-ng:v2
 
 WORKDIR /home/develop
 
@@ -21,11 +21,9 @@ RUN cmake \
         -DCMAKE_BUILD_TYPE=RelWithDebInfo \
         -DCMAKE_INSTALL_PREFIX=$TOOLCHAIN_PATH/arm-cortexa9_neon-linux-gnueabihf/sysroot \
         ../opencv
-RUN make -j$(nproc)
-RUN make install
-
-WORKDIR /home/develop
-RUN rm -rf opencv-arm-build
+RUN make -j$(nproc) && \
+    make install && \
+    cd && rm -rf /home/develop/opencv-arm-build
 
 WORKDIR /home/develop/opencv-x86-build
 USER root
@@ -36,11 +34,9 @@ RUN cmake \
         -DCMAKE_BUILD_TYPE=RelWithDebInfo \
         -DCMAKE_INSTALL_PREFIX=/home/develop/.local \
         ../opencv
-RUN make -j$(nproc)
-RUN make install
-
-WORKDIR /home/develop
-RUN rm -rf opencv-x86-build
+RUN make -j$(nproc) && \
+    make install && \
+    cd && rm -rf /home/develop/opencv-x86-build
 
 # Download Google Test
 WORKDIR /home/develop
@@ -54,8 +50,9 @@ USER root
 RUN chown -R develop .
 USER develop
 RUN cmake -DCMAKE_INSTALL_PREFIX=/home/develop/.local ..
-RUN make -j$(nproc)
-RUN make install
+RUN make -j$(nproc) && \
+    make install && \
+    cd && rm -rf /home/develop/doxygen/build
 
 # Install dot and gdbserver
 USER root
@@ -64,10 +61,11 @@ RUN apt-get update && \
     apt-get clean autoclean && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
-# for gdbserver
-EXPOSE 2000
 
 USER develop
+
+# for gdbserver
+EXPOSE 2000
 
 # Bind the workspace root
 ARG WORKSPACE_ROOT

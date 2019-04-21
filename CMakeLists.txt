@@ -78,6 +78,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
 -Wno-psabi \
 -fdiagnostics-show-option")
 
+if(NOT CMAKE_CROSSCOMPILING)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+endif()
+
 # Compiler flags for C
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} \
 -O3 -g3 \
