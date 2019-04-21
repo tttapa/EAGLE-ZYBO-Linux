@@ -1,4 +1,4 @@
-FROM eagle1/ct-ng:v1
+FROM eagle1/ct-ng:v1 as build
 
 WORKDIR /home/develop
 
@@ -66,6 +66,13 @@ USER develop
 
 # for gdbserver
 EXPOSE 2000
+
+FROM build as windows
+
+VOLUME /home/develop/eagle
+WORKDIR /home/develop/eagle/build
+
+FROM build as linux
 
 # Bind the workspace root
 ARG WORKSPACE_ROOT

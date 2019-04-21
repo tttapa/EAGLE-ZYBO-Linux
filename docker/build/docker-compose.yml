@@ -6,6 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       network: host
+      target: linux
     ports:
       - "2000:2000"
     privileged: false

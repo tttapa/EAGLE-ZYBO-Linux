@@ -1,11 +1,12 @@
 version: '3.4'
 services:
   dev-image:
-    image: eagle1/crypto/develop:v1
+    image: eagle1/crypto/develop-win:v1
     build:
       context: .
       dockerfile: Dockerfile
       network: host
+      target: windows
     ports:
       - "2000:2000"
     privileged: false
