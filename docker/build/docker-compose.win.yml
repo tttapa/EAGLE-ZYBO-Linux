@@ -16,4 +16,4 @@ services:
       - seccomp:unconfined
     container_name: crypto-devenv
     volumes:
-      - "./:/home/develop/eagle"
+      - "../../:/home/develop/eagle"
