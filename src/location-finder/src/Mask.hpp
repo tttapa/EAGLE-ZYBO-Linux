@@ -3,48 +3,50 @@
 #include <GridFinder.hpp>
 #include <opencv2/core/mat.hpp>
 
-#ifdef __ARM_NEON
-#include <Mask-NEON.hpp>
-#else
-#error TODO: fallback mask
-#endif
-
 class Mask {
+  public:
+    /**
+     * @brief   Construct a new Mask object from a plain array of interleaved 
+     *          BGR bytes.
+     * 
+     * @param   imgBGR
+     *          A pointer to an array of interleaved BGR bytes.
+     * @param   rows 
+     *          The height of the image, or the number of rows in the pixel 
+     *          matrix.
+     * @param   cols 
+     *          The width of the image, or the number of columns in the pixel
+     *          matrix.
+     */
+    Mask(const uint8_t *imgBGR, size_t rows, size_t cols);
+    /**
+     * @brief   Construct a new Mask object from an OpenCV image.
+     * 
+     * @param   imgBGR 
+     *          An OpenCV image.
+     */
+    Mask(const cv::Mat &imgBGR);
+
+  protected:
+    /**
+     * @brief   Get the padded length for the data vector.
+     * 
+     * Because the implementation of the masking uses vector instructions that
+     * handle 16 pixels at a time, we always allocate more memory than needed
+     * to make sure we never write out of bounds.
+     * 
+     * @param   numberOfPixels
+     *          The actual number of pixels in the original image.
+     * @return  The size in bytes of mask data, rounded up to the nearest 
+     *          multiple of 16.
+     */
+    static size_t getPaddedLength(size_t numberOfPixels);
+    static std::vector<uint8_t> applyMask(const uint8_t *imgBGR,
+                                          size_t numberOfPixels);
+    static bool checkImageType(const cv::Mat &img);
+    static const uint8_t *toBGR_ptr(const cv::Mat &imgBGR);
+
   private:
     const std::vector<uint8_t> data;
     const size_t rows, cols;
-
-  protected:
-    static std::vector<uint8_t> applyMask(const uint8_t *imgBGR,
-                                          size_t numberOfPixels) {
-        std::vector<uint8_t> result;
-        result.resize(getPaddedLength(numberOfPixels));
-        for (size_t i = 0; i < result.size(); i += 16)
-            ::applyMask(&imgBGR[3 * i], &result[i]);
-        return result;
-    }
-
-    static bool checkType(const cv::Mat &img) {
-        uchar depth    = img.type() & CV_MAT_DEPTH_MASK;
-        uchar channels = 1 + (img.type() >> CV_CN_SHIFT);
-        bool cont      = img.isContinuous();
-        return depth == CV_8U && channels == 3 && cont;
-    }
-
-    static const uint8_t *toBGRptr(const cv::Mat &imgBGR) {
-        if (!checkType(imgBGR))
-            throw std::runtime_error("Error: invalid image format");
-        return imgBGR.ptr();
-    }
-
-  public:
-    Mask(const uint8_t *imgBGR, size_t rows, size_t cols)
-        : data(applyMask(imgBGR, rows * cols)), rows(rows), cols(cols) {}
-
-    Mask(const cv::Mat &imgBGR)
-        : Mask{toBGRptr(imgBGR), imgBGR.rows, imgBGR.cols} {}
-
-    static size_t getPaddedLength(size_t numberOfPixels) {
-        return ((15 + numberOfPixels) / 16) * 16;
-    }
 };
