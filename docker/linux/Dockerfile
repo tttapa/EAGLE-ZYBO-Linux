@@ -1,0 +1,7 @@
+FROM eagle1/toolchain:v1 as linux
+
+# Bind the workspace root
+ARG WORKSPACE_ROOT
+ENV WORKSPACE_ROOT=${WORKSPACE_ROOT}
+VOLUME ${WORKSPACE_ROOT}
+WORKDIR ${WORKSPACE_ROOT}/build

@@ -1,2 +1,1 @@
-cmake/Toolchain-ARMv7-ZYBO.cmake text eol=lf
-docker/crosstool-NG/config text eol=lf
+docker/toolchain/config text eol=lf
