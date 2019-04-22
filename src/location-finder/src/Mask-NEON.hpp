@@ -37,6 +37,6 @@ inline uint8x16_t applyMask(const uint8_t *colors) {
     return reinterpret_cast<uint8x16_t>(vcgeq_s8(maskfn, thresholdv));
 }
 
-inline void applyMask(const uint8_t *colors, uint8_t mask) {
-    vst1q_s8(mask, applyMask(colors));
+inline void applyMask(const uint8_t *colors, uint8_t *mask) {
+    vst1q_u8(mask, applyMask(colors));
 }

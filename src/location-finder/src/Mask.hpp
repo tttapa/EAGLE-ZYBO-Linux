@@ -20,15 +20,15 @@ class Mask {
         std::vector<uint8_t> result;
         result.resize(getPaddedLength(numberOfPixels));
         for (size_t i = 0; i < result.size(); i += 16)
-            ::applyMask(&imgRGB[3 * i], &result[i]);
+            ::applyMask(&imgBGR[3 * i], &result[i]);
         return result;
     }
 
-    static bool checkType(const Mat &img) {
-        uchar depth = img.type() & CV_MAT_DEPTH_MASK;
-        uchar chans = 1 + (img.type() >> CV_CN_SHIFT);
-        bool cont   = img.isContinuous();
-        return depth == CV_8U && chans == 3 && cont;
+    static bool checkType(const cv::Mat &img) {
+        uchar depth    = img.type() & CV_MAT_DEPTH_MASK;
+        uchar channels = 1 + (img.type() >> CV_CN_SHIFT);
+        bool cont      = img.isContinuous();
+        return depth == CV_8U && channels == 3 && cont;
     }
 
     static const uint8_t *toBGRptr(const cv::Mat &imgBGR) {
@@ -39,12 +39,12 @@ class Mask {
 
   public:
     Mask(const uint8_t *imgBGR, size_t rows, size_t cols)
-        : data(applyMask(imgBGR)), rows(rows), cols(cols) {}
+        : data(applyMask(imgBGR, rows * cols)), rows(rows), cols(cols) {}
 
     Mask(const cv::Mat &imgBGR)
-        :
+        : Mask{toBGRptr(imgBGR), imgBGR.rows, imgBGR.cols} {}
 
-          static getPaddedLength(size_t numberOfPixels) {
+    static size_t getPaddedLength(size_t numberOfPixels) {
         return ((15 + numberOfPixels) / 16) * 16;
     }
 };
