@@ -65,4 +65,9 @@
         "toolchains",
         "unicast"
     ],
+    "search.exclude": {
+        "doc/html": true,
+        "docker-include": true,
+        "docs": true
+    },
 }

@@ -67,11 +67,6 @@ USER develop
 # for gdbserver
 EXPOSE 2000
 
-FROM build as windows
-
-VOLUME /home/develop/eagle
-WORKDIR /home/develop/eagle/build
-
 FROM build as linux
 
 # Bind the workspace root

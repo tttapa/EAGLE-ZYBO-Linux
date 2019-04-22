@@ -12,6 +12,7 @@ var searchData=
   ['getindex',['getIndex',['../classAngle.html#a189165d5417fcc5489298a8c913a0e38',1,'Angle::getIndex() const'],['../classAngle.html#a63862e75b876b7b8555f05a54ac85628',1,'Angle::getIndex(double angle)']]],
   ['getmiddle',['getMiddle',['../classGridFinder.html#a187e8c44c7f99237645b49dc2c6745c8',1,'GridFinder']]],
   ['getmiddlewithretries',['getMiddleWithRetries',['../classGridFinder.html#a504ddc8af3a0cc68b68de387ac1a90ea',1,'GridFinder']]],
+  ['getpaddedlength',['getPaddedLength',['../classMask.html#afccb488695315cdf572d5b28dabc0720',1,'Mask']]],
   ['getscalingfactor',['getScalingFactor',['../structCosSin.html#a749d8e9cc59e1cf72f4d1e93e4fcfe0d',1,'CosSin']]],
   ['getwidthatpointonline',['getWidthAtPointOnLine',['../classGridFinder.html#a83b31c2192a137e56e91d13661f1c658',1,'GridFinder']]],
   ['greet',['greet',['../Greet_8hpp.html#abd2ea45605ea70de845186c8a2366bd5',1,'greet(std::string name, std::ostream &amp;os=std::cout):&#160;Greet.cpp'],['../Greet_8cpp.html#a80b2901f1a33ab4ba3d294773c8e92c4',1,'greet(std::string name, std::ostream &amp;os):&#160;Greet.cpp']]],

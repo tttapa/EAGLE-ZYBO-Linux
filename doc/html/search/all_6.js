@@ -19,6 +19,7 @@ var searchData=
   ['getmiddle',['getMiddle',['../classGridFinder.html#a187e8c44c7f99237645b49dc2c6745c8',1,'GridFinder']]],
   ['getmiddleresult',['GetMiddleResult',['../structGetMiddleResult.html',1,'']]],
   ['getmiddlewithretries',['getMiddleWithRetries',['../classGridFinder.html#a504ddc8af3a0cc68b68de387ac1a90ea',1,'GridFinder']]],
+  ['getpaddedlength',['getPaddedLength',['../classMask.html#afccb488695315cdf572d5b28dabc0720',1,'Mask']]],
   ['getscalingfactor',['getScalingFactor',['../structCosSin.html#a749d8e9cc59e1cf72f4d1e93e4fcfe0d',1,'CosSin']]],
   ['getting_2dstarted_2emd',['Getting-Started.md',['../Getting-Started_8md.html',1,'']]],
   ['getwidthatpointonline',['getWidthAtPointOnLine',['../classGridFinder.html#a83b31c2192a137e56e91d13661f1c658',1,'GridFinder']]],

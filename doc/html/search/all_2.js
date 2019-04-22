@@ -6,7 +6,7 @@ var searchData=
   ['centerpointoutlineiterator',['CenterPointOutLineIterator',['../classCenterPointOutLineIterator.html',1,'CenterPointOutLineIterator'],['../classCenterPointOutLineIterator.html#a1c3e333fca03afce181df6ed43153836',1,'CenterPointOutLineIterator::CenterPointOutLineIterator()']]],
   ['centerpointoutlineiterator_2ehpp',['CenterPointOutLineIterator.hpp',['../CenterPointOutLineIterator_8hpp.html',1,'']]],
   ['checkline',['checkLine',['../classGridFinder.html#a9050aab45d10d2c2d4859af19b4987b4',1,'GridFinder']]],
-  ['checktype',['checkType',['../classMask.html#a85abd07504faf9fdd0a2d1c5ef3201ab',1,'Mask']]],
+  ['checktype',['checkType',['../classMask.html#ae06736bf1854f528c85ca365297de872',1,'Mask']]],
   ['clamp',['clamp',['../Matrix_8hpp.html#adb959bd990ed4fd37ed02cd0202ca511',1,'Matrix.hpp']]],
   ['colvector',['ColVector',['../Matrix_8hpp.html#a99e9937497f969c9f701b4ed27af7349',1,'Matrix.hpp']]],
   ['colvectorfromcpparray',['ColVectorFromCppArray',['../Matrix_8hpp.html#aeae40defd7db46d853d1b0411049d3df',1,'Matrix.hpp']]],

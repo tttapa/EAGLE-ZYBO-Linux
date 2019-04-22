@@ -11,7 +11,7 @@ var searchData=
   ['ansicolors',['ANSIColors',['../namespaceANSIColors.html',1,'']]],
   ['ansicolors_2ehpp',['ANSIColors.hpp',['../ANSIColors_8hpp.html',1,'']]],
   ['apply',['apply',['../structQR.html#aa61fe3635ba82acfc32da54920b79309',1,'QR']]],
-  ['applymask',['applyMask',['../classMask.html#ad781014c1f754f97f0cc53aa5bb02300',1,'Mask::applyMask()'],['../Mask-NEON_8hpp.html#a525d99350b2a5ebed4ccee8aa7aa4264',1,'applyMask(const uint8_t *colors):&#160;Mask-NEON.hpp'],['../Mask-NEON_8hpp.html#afc49f01a08c61dd51843a0ab988f5d09',1,'applyMask(const uint8_t *colors, uint8_t mask):&#160;Mask-NEON.hpp']]],
+  ['applymask',['applyMask',['../classMask.html#ad781014c1f754f97f0cc53aa5bb02300',1,'Mask::applyMask()'],['../Mask-NEON_8hpp.html#a525d99350b2a5ebed4ccee8aa7aa4264',1,'applyMask(const uint8_t *colors):&#160;Mask-NEON.hpp'],['../Mask-NEON_8hpp.html#a1d892e32437b94028b40818bd2908513',1,'applyMask(const uint8_t *colors, uint8_t *mask):&#160;Mask-NEON.hpp']]],
   ['applymaskfunction',['applyMaskFunction',['../Mask-NEON_8hpp.html#a0dda7e336e328c2e01b5cdac663a5623',1,'Mask-NEON.hpp']]],
   ['applytranspose',['applyTranspose',['../structQR.html#a8001dce66a751b468c5ae4b85d964ff2',1,'QR']]],
   ['array',['Array',['../structArray.html',1,'']]],
