@@ -31,12 +31,30 @@ inline int8x16_t applyMaskFunction(const uint8_t *colors) {
     return reinterpret_cast<int8x16_t>(vhsubq_u8(r_over4, g_plus_b_over2));
 }
 
+/**
+ * @brief   Applies the mapping function, and checks if the result is greater
+ *          than the threshold.
+ * 
+ * @param   colors 
+ *          A pointer to an array of at least 16 BGR pixels (or 48 bytes).
+ * @return  A vector register containing 0xFF for red pixels and 0x00 for other
+ *          colors.
+ */
 inline uint8x16_t applyMask(const uint8_t *colors) {
     int8x16_t maskfn     = applyMaskFunction(colors);
     int8x16_t thresholdv = vdupq_n_s8(THRESHOLD);
     return reinterpret_cast<uint8x16_t>(vcgeq_s8(maskfn, thresholdv));
 }
 
+/**
+ * @brief   Calculate the mask of 16 pixels of the BGR image, and store the mask
+ *          in second parameter.
+ * 
+ * @param[in]   colors 
+ *              A pointer to an array of at least 16 BGR pixels (or 48 bytes).
+ * @param[out]  mask 
+ *              A pointer to write the mask to.
+ */
 inline void applyMask(const uint8_t *colors, uint8_t *mask) {
     vst1q_u8(mask, applyMask(colors));
 }

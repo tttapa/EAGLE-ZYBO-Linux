@@ -6,12 +6,14 @@
         {
             "label": "Start Docker Container",
             "type": "shell",
-            "command": "docker-compose -f docker-compose.yml run --service-ports --name crypto-devenv dev-image bash",
-            "windows": {
-                "command": "docker-compose -f docker-compose.win.yml run --service-ports --name crypto-devenv dev-image bash",
-            },
+            "command": "docker-compose run --service-ports --name crypto-devenv dev-image bash",
             "options": {
-                "cwd": "${workspaceFolder}/docker/build"
+                "cwd": "${workspaceFolder}/docker/linux"
+            },
+            "windows": {
+                "options": {
+                    "cwd": "${workspaceFolder}/docker/windows"
+                },
             },
             "problemMatcher": [],
             "dependsOn": "Stop Docker Container", // Restart if already running
@@ -30,12 +32,14 @@
         {
             "label": "Stop Docker Container",
             "type": "shell",
-            "command": "docker-compose -f docker-compose.yml down",
-            "windows": {
-                "command": "docker-compose -f docker-compose.win.yml down",
-            },
+            "command": "docker-compose down",
             "options": {
-                "cwd": "${workspaceFolder}/docker/build"
+                "cwd": "${workspaceFolder}/docker/linux"
+            },
+            "windows": {
+                "options": {
+                    "cwd": "${workspaceFolder}/docker/windows"
+                },
             },
             "problemMatcher": [],
             "presentation": {
@@ -52,21 +56,24 @@
         {
             "label": "Build Docker Image",
             "type": "shell",
-            "command": "docker-compose -f docker-compose.yml build --build-arg WORKSPACE_ROOT=${workspaceFolder} dev-image",
-            "windows": {
-                "command": "docker-compose -f docker-compose.win.yml build dev-image",
-            },
+            "command": "docker-compose build --build-arg WORKSPACE_ROOT=${workspaceFolder} dev-image",
             "options": {
-                "cwd": "docker/build"
+                "cwd": "docker/linux"
+            },
+            "windows": {
+                "command": "docker-compose build dev-image",
+                "options": {
+                    "cwd": "docker/windows"
+                },
             },
             "problemMatcher": []
         },
         {
-            "label": "Build Docker Image (crosstool-NG)",
+            "label": "Build Docker Image (Toolchain)",
             "type": "shell",
-            "command": "docker-compose -f docker-compose.yml build",
+            "command": "docker-compose build toolchain",
             "options": {
-                "cwd": "docker/crosstool-NG"
+                "cwd": "docker/toolchain"
             },
             "problemMatcher": []
         },

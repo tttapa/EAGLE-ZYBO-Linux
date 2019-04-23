@@ -1,5 +1,6 @@
 #include <GridFinder.hpp>
 #include <LocationFinder.hpp>
+#include <Mask.hpp>
 #include <iostream>
 #include <string>
 
@@ -7,10 +8,10 @@
 
 #include <opencv2/core/utils/logger.hpp>
 
-using namespace cv;
 using ::Point;
 
 int test() {
+    using namespace cv;
     utils::logging::setLogLevel(utils::logging::LogLevel::LOG_LEVEL_VERBOSE);
     std::cout << "Trying to create capture" << std::endl;
     VideoCapture cap(0 + CAP_V4L2);  // open the default camera
@@ -31,4 +32,15 @@ int test() {
     imwrite("blur.bmp", blur);
     // the camera will be deinitialized automatically in VideoCapture destructor
     return 0;
+}
+
+Point LocationFinder::getLocation() {
+    if (!cap.isOpened())
+        throw std::runtime_error("Capture is not opened");
+    cv::Mat img;
+    cap >> img;
+    Mask mask     = img;
+    GridFinder gf = std::move(mask);
+    std::cout << gf.findSquare() << std::endl;
+    return {0, 0};  // TODO
 }

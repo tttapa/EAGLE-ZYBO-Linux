@@ -1,8 +1,9 @@
 version: '3.4'
 
 services:
-  crosstool-ng:
+  toolchain:
     build:
       context: .
       network: host
-    image: eagle1/ct-ng:v1
+      target: build
+    image: eagle1/toolchain:v1
