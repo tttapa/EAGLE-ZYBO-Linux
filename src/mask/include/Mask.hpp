@@ -7,10 +7,10 @@ class Mask {
   public:
     /**
      * @brief   Construct a new Mask object from a plain array of interleaved 
-     *          BGR bytes.
+     *          RGB bytes.
      * 
-     * @param   imgBGR
-     *          A pointer to an array of interleaved BGR bytes.
+     * @param   imgRGB
+     *          A pointer to an array of interleaved RGB bytes.
      * @param   rows 
      *          The height of the image, or the number of rows in the pixel 
      *          matrix.
@@ -18,14 +18,14 @@ class Mask {
      *          The width of the image, or the number of columns in the pixel
      *          matrix.
      */
-    Mask(const uint8_t *imgBGR, uint rows, uint cols);
+    Mask(const uint8_t *imgRGB, uint rows, uint cols);
     /**
      * @brief   Construct a new Mask object from an OpenCV image.
      * 
-     * @param   imgBGR 
+     * @param   imgRGB 
      *          An OpenCV image.
      */
-    Mask(const cv::Mat &imgBGR);
+    Mask(const cv::Mat &imgRGB);
     /**
      * @brief   Default constructor.
      */
@@ -90,6 +90,10 @@ class Mask {
     /// Get the height of the mask in pixels.
     uint height() const { return rows; }
 
+    /// Get a pointer to the array of mask bytes.
+    const uint8_t *ptr() const { return data.data(); }
+    uint8_t *ptr() { return data.data(); }
+
   protected:
     /**
      * @brief   Get the padded length for the data vector.
@@ -108,21 +112,21 @@ class Mask {
     /**
      * @brief   Generate the black and white mask of the given image.
      *          
-     * @param   imgBGR 
-     *          A pointer to an array of interleaved BGR bytes.
+     * @param   imgRGB 
+     *          A pointer to an array of interleaved RGB bytes.
      * @param   numberOfPixels 
      *          The total number of pixels in the array (rows × columns).
      * @return  A vector of bytes with either a value of 0xFF for red pixels,
      *          or a value off 0x00 for any other color.
      */
-    static std::vector<uint8_t> generateMask(const uint8_t *imgBGR,
+    static std::vector<uint8_t> generateMask(const uint8_t *imgRGB,
                                              size_t numberOfPixels);
 
     /**
      * @brief   Check if an OpenCV matrix has the correct image type:
      *          The matrix should have two dimensions, 
      *          the type should be @c CV_8U, 
-     *          it should have 3 channels (BGR), 
+     *          it should have 3 channels (RGB), 
      *          and it should be stored in memory contiguously.
      */
     static bool checkImageType(const cv::Mat &img);
@@ -135,7 +139,7 @@ class Mask {
      * 
      * @see     checkImageType
      */
-    static const uint8_t *toBGR_ptr(const cv::Mat &imgBGR);
+    static const uint8_t *toRGB_ptr(const cv::Mat &imgRGB);
 
   private:
     std::vector<uint8_t> data;

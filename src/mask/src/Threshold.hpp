@@ -2,4 +2,4 @@
 
 #include <cstdint>
 
-constexpr int8_t THRESHOLD = 6;
+constexpr int8_t THRESHOLD = 2;

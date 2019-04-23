@@ -6,12 +6,12 @@
 #include <Mask-Fallback.hpp>
 #endif
 
-std::vector<uint8_t> Mask::generateMask(const uint8_t *imgBGR,
+std::vector<uint8_t> Mask::generateMask(const uint8_t *imgRGB,
                                         size_t numberOfPixels) {
     std::vector<uint8_t> result;
     result.resize(getPaddedLength(numberOfPixels));
     for (size_t i = 0; i < result.size(); i += 16)
-        ::applyMask(&imgBGR[3 * i], &result[i]);
+        ::applyMask(&imgRGB[3 * i], &result[i]);
     return result;
 }
 
@@ -23,18 +23,18 @@ bool Mask::checkImageType(const cv::Mat &img) {
     return dimensions == 2 && depth == CV_8U && channels == 3 && contiguous;
 }
 
-const uint8_t *Mask::toBGR_ptr(const cv::Mat &imgBGR) {
-    if (!checkImageType(imgBGR))
+const uint8_t *Mask::toRGB_ptr(const cv::Mat &imgRGB) {
+    if (!checkImageType(imgRGB))
         throw std::runtime_error("Error: invalid image format");
-    return imgBGR.ptr();
+    return imgRGB.ptr();
 }
 
-Mask::Mask(const uint8_t *imgBGR, uint rows, uint cols)
-    : data(generateMask(imgBGR, (size_t) rows * cols)), rows(rows), cols(cols) {
+Mask::Mask(const uint8_t *imgRGB, uint rows, uint cols)
+    : data(generateMask(imgRGB, (size_t) rows * cols)), rows(rows), cols(cols) {
 }
 
-Mask::Mask(const cv::Mat &imgBGR)
-    : Mask{toBGR_ptr(imgBGR), (uint) imgBGR.rows, (uint) imgBGR.cols} {}
+Mask::Mask(const cv::Mat &imgRGB)
+    : Mask{toRGB_ptr(imgRGB), (uint) imgRGB.rows, (uint) imgRGB.cols} {}
 
 size_t Mask::getPaddedLength(size_t numberOfPixels) {
     return ((15 + numberOfPixels) / 16) * 16;

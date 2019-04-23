@@ -39,7 +39,16 @@ Point LocationFinder::getLocation() {
         throw std::runtime_error("Capture is not opened");
     cv::Mat img;
     cap >> img;
-    Mask mask     = img;
+    cv::Mat rgbimg;
+    cv::cvtColor(img, rgbimg, cv::COLOR_BGR2RGB);
+    cv::imwrite("img.bmp", rgbimg);
+    uint px = 3 * 32;
+    std::cout << +img.ptr()[px + 0] << ", "
+              << +img.ptr()[px + 1] << ", "
+              << +img.ptr()[px + 2] << std::endl;
+    Mask mask       = img;
+    cv::Mat maskimg = {img.rows, img.cols, CV_8UC1, mask.ptr()};
+    cv::imwrite("mask.bmp", maskimg);
     GridFinder gf = std::move(mask);
     std::cout << gf.findSquare() << std::endl;
     return {0, 0};  // TODO

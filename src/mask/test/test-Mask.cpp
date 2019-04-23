@@ -38,18 +38,16 @@ TEST(Mask, applyMaskFunctionNEON) {
 #include <Mask-Fallback.hpp>
 #endif
 
-#define RGB2BGR(r, g, b) (b), (g), (r)
-
 TEST(Mask, applyMask) {
     uint8_t colors[16 * 3] = {
-        RGB2BGR(255, 0, 0),    // red
-        RGB2BGR(102, 4, 4),    // dark red
-        RGB2BGR(255, 48, 48),  // light red
+        255, 0, 0,    // red
+        102, 4, 4,    // dark red
+        255, 48, 48,  // light red
         //
-        RGB2BGR(200, 59, 239),   // purple
-        RGB2BGR(46, 37, 145),    // dark blue
-        RGB2BGR(255, 239, 122),  // pastel yellow
-        RGB2BGR(51, 42, 42),     // gray
+        200, 59, 239,   // purple
+        46, 37, 145,    // dark blue
+        255, 239, 122,  // pastel yellow
+        51, 42, 42,     // gray
 
     };
 
@@ -72,15 +70,15 @@ TEST(Mask, applyMask) {
 
 TEST(Mask, Mask) {
     uint8_t colors[8 * 3] = {
-        RGB2BGR(255, 0, 0),    // red
-        RGB2BGR(102, 4, 4),    // dark red
-        RGB2BGR(255, 48, 48),  // light red
+        255, 0, 0,    // red
+        102, 4, 4,    // dark red
+        255, 48, 48,  // light red
         //
-        RGB2BGR(200, 59, 239),   // purple
-        RGB2BGR(46, 37, 145),    // dark blue
-        RGB2BGR(255, 239, 122),  // pastel yellow
-        RGB2BGR(51, 42, 42),     // gray
-        RGB2BGR(255, 255, 255),  // white
+        200, 59, 239,   // purple
+        46, 37, 145,    // dark blue
+        255, 239, 122,  // pastel yellow
+        51, 42, 42,     // gray
+        255, 255, 255,  // white
     };
 
     Mask mask = {colors, 4, 2};
