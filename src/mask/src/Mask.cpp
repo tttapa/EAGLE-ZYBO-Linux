@@ -3,7 +3,7 @@
 #ifdef __ARM_NEON
 #include <Mask-NEON.hpp>
 #else
-#error TODO: fallback mask
+#include <Mask-Fallback.hpp>
 #endif
 
 std::vector<uint8_t> Mask::generateMask(const uint8_t *imgBGR,

@@ -34,14 +34,20 @@ TEST(Mask, applyMaskFunctionNEON) {
 }
 #endif
 
+#ifndef __ARM_NEON
+#include <Mask-Fallback.hpp>
+#endif
+
 #define RGB2BGR(r, g, b) (b), (g), (r)
 
 TEST(Mask, applyMask) {
     uint8_t colors[16 * 3] = {
-        RGB2BGR(255, 0, 0),      // red
+        RGB2BGR(255, 0, 0),    // red
+        RGB2BGR(102, 4, 4),    // dark red
+        RGB2BGR(255, 48, 48),  // light red
+        //
         RGB2BGR(200, 59, 239),   // purple
         RGB2BGR(46, 37, 145),    // dark blue
-        RGB2BGR(173, 17, 53),    // dark rose red
         RGB2BGR(255, 239, 122),  // pastel yellow
         RGB2BGR(51, 42, 42),     // gray
 
@@ -49,13 +55,52 @@ TEST(Mask, applyMask) {
 
     std::array<uint8_t, 16> expected = {
         0xFF,  //
-        0x00,  //
-        0x00,  //
         0xFF,  //
+        0xFF,  //
+        //
+        0x00,  //
+        0x00,  //
         0x00,  //
         0x00,  //
     };
     std::array<uint8_t, 16> result;
     applyMask(colors, result.begin());
+    ASSERT_EQ(result, expected);
+}
+
+#include <Mask.hpp>
+
+TEST(Mask, Mask) {
+    uint8_t colors[8 * 3] = {
+        RGB2BGR(255, 0, 0),    // red
+        RGB2BGR(102, 4, 4),    // dark red
+        RGB2BGR(255, 48, 48),  // light red
+        //
+        RGB2BGR(200, 59, 239),   // purple
+        RGB2BGR(46, 37, 145),    // dark blue
+        RGB2BGR(255, 239, 122),  // pastel yellow
+        RGB2BGR(51, 42, 42),     // gray
+        RGB2BGR(255, 255, 255),  // white
+    };
+
+    Mask mask = {colors, 4, 2};
+
+    std::array<uint8_t, 16> result = {
+        mask.get({0, 0}), mask.get({1, 0}),  //
+        mask.get({0, 1}), mask.get({1, 1}),  //
+        mask.get({0, 2}), mask.get({1, 2}),  //
+        mask.get({0, 3}), mask.get({1, 3}),  //
+    };
+
+    std::array<uint8_t, 16> expected = {
+        0xFF,  //
+        0xFF,  //
+        0xFF,  //
+        //
+        0x00,  //
+        0x00,  //
+        0x00,  //
+        0x00,  //
+    };
     ASSERT_EQ(result, expected);
 }

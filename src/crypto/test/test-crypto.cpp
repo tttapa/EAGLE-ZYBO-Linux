@@ -25,5 +25,5 @@ TEST(Crypto, writeR0ReadR1) {
     const uint32_t mask = 0x00'0F'FF'FF;
     uint32_t data       = 0x00'0A'AA'AA;
     writeR0(0x10'10'00'00 | (data & mask));
-    ASSERT_EQ(readR0() & mask, data & mask);
+    ASSERT_EQ(readR1() & mask, data & mask);
 }
