@@ -5,7 +5,7 @@
 class CryptoException : public std::exception {
 
   public:
-    enum ExceptionType { TIMEOUT_EXCEPTION, UNSUCCESSFUL_DECODE };
+    enum ExceptionType { TIMEOUT_EXCEPTION, UNSUCCESSFUL_DECODE_EXCEPTION };
 
     ExceptionType exceptionType;
     CryptoException(ExceptionType exceptionType)

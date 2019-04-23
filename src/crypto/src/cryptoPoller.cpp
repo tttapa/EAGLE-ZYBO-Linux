@@ -2,7 +2,7 @@
 
 bool CryptoPoller::isInitialized = false;
 
-CryptoPoller::CryptoPoller(unsigned int timeoutMilliseconds = 100)
+CryptoPoller::CryptoPoller(unsigned int timeoutMilliseconds)
     : timeoutMilliseconds(timeoutMilliseconds) {
     if (!isInitialized) {
         initialize();
@@ -15,15 +15,15 @@ uint32_t CryptoPoller::execute(uint32_t instruction) {
     return poll(0x80'00'00'00, currentBitFlip);
 }
 
-uint32_t CryptoPoller::poll(uint32_t mask, uint32_t endValue) {
+uint32_t CryptoPoller::poll(uint32_t mask, uint32_t previousValue) {
     PerfTimer timer;
     bool instructionDone = false;
-    uint32_t readValue;
+    uint32_t currentR1;
     while (timer.getDuration<std::chrono::milliseconds>() <=
            timeoutMilliseconds) {
-        for (int i = 0; i < 10000; i++) {
-            readValue = readR1();
-            if ((readValue & mask) != endValue) {
+        for (int i = 0; i < 10'000; i++) {
+            currentR1 = readR1();
+            if ((currentR1 & mask) != previousValue) {
                 instructionDone = true;
                 break;
             }
@@ -36,21 +36,18 @@ uint32_t CryptoPoller::poll(uint32_t mask, uint32_t endValue) {
     if (!instructionDone)
         throw CryptoException(CryptoException::TIMEOUT_EXCEPTION);
 
-    currentBitFlip = readValue & 0x80'00'00'00;
-
-    return readValue;
+    currentBitFlip = currentR1 & 0x80'00'00'00;
+    return currentR1;
 }
 
 void CryptoPoller::initialize() {
-    uint32_t endValue;
     if (readR1() & 0x00'00'00'01) {
         writeR0(0x10'10'00'00);
-        endValue = 0x00'00'00'01;
+        poll(0x00'00'00'01, 0x00'00'00'01);
     } else {
         writeR0(0x10'10'00'01);
-        endValue = 0x00'00'00'00;
+        poll(0x00'00'00'01, 0x00'00'00'00);
     }
 
-    poll(0x00'00'00'01, endValue);
     execute(0x00'00'00'00);
 }
