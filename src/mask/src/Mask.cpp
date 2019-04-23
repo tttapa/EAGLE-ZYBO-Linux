@@ -6,8 +6,8 @@
 #error TODO: fallback mask
 #endif
 
-std::vector<uint8_t> Mask::applyMask(const uint8_t *imgBGR,
-                                     size_t numberOfPixels) {
+std::vector<uint8_t> Mask::generateMask(const uint8_t *imgBGR,
+                                        size_t numberOfPixels) {
     std::vector<uint8_t> result;
     result.resize(getPaddedLength(numberOfPixels));
     for (size_t i = 0; i < result.size(); i += 16)
@@ -16,10 +16,11 @@ std::vector<uint8_t> Mask::applyMask(const uint8_t *imgBGR,
 }
 
 bool Mask::checkImageType(const cv::Mat &img) {
+    int dimensions  = img.dims;
     uchar depth     = img.type() & CV_MAT_DEPTH_MASK;
     uchar channels  = 1 + (img.type() >> CV_CN_SHIFT);
     bool contiguous = img.isContinuous();
-    return depth == CV_8U && channels == 3 && contiguous;
+    return dimensions == 2 && depth == CV_8U && channels == 3 && contiguous;
 }
 
 const uint8_t *Mask::toBGR_ptr(const cv::Mat &imgBGR) {
@@ -28,11 +29,12 @@ const uint8_t *Mask::toBGR_ptr(const cv::Mat &imgBGR) {
     return imgBGR.ptr();
 }
 
-Mask::Mask(const uint8_t *imgBGR, size_t rows, size_t cols)
-    : data(applyMask(imgBGR, rows * cols)), rows(rows), cols(cols) {}
+Mask::Mask(const uint8_t *imgBGR, uint rows, uint cols)
+    : data(generateMask(imgBGR, (size_t) rows * cols)), rows(rows), cols(cols) {
+}
 
 Mask::Mask(const cv::Mat &imgBGR)
-    : Mask{toBGR_ptr(imgBGR), imgBGR.rows, imgBGR.cols} {}
+    : Mask{toBGR_ptr(imgBGR), (uint) imgBGR.rows, (uint) imgBGR.cols} {}
 
 size_t Mask::getPaddedLength(size_t numberOfPixels) {
     return ((15 + numberOfPixels) / 16) * 16;

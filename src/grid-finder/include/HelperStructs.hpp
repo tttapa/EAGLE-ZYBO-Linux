@@ -1,3 +1,5 @@
+#pragma once
+
 #include <Angle.hpp>
 #include <Line.hpp>
 #include <Pixel.hpp>
