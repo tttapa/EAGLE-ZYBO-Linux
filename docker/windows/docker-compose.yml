@@ -4,7 +4,6 @@ services:
     image: eagle1/crypto/develop-win:v1
     build:
       context: .
-      dockerfile: Dockerfile.win
       network: host
       target: windows
     ports:
