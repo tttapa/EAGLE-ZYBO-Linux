@@ -2,7 +2,7 @@
 
 bool CryptoPoller::isInitialized = false;
 
-CryptoPoller::CryptoPoller(unsigned int timeoutMilliseconds)
+CryptoPoller::CryptoPoller(uint16_t timeoutMilliseconds)
     : timeoutMilliseconds(timeoutMilliseconds) {
     if (!isInitialized) {
         initialize();
