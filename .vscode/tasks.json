@@ -299,5 +299,13 @@
             "problemMatcher": []
         },
         //#endregion
+        //#region Copying files to the ZYBO.....................................
+        {
+            "label": "Copy all binaries to ZYBO",
+            "type": "shell",
+            "command": "scp ${workspaceFolder}/build-arm/bin/* root@drone:/media",
+            "problemMatcher": []
+        }
+        //#endregion
     ]
 }
