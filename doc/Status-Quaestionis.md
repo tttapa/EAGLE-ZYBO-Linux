@@ -66,13 +66,6 @@ of the drone, relative to the grid.
 🗙 When BareMetal indicates that the target position has been reached, the image
 should be sent to the QR decoder and then the crypto code needs to be executed.
 
-🗙 I can't seem to get the HDMI input of the ZYBO to work, my laptop doesn't
-recognize it, and when I try to open it in OpenCV (`cv::VideoCapture cap(0)`),
-it gives a timeout in C++, and a V4L2 error in Python.  
-I'm using a cross-compiled version of OpenCV for the C++ code, rather than using
-the libraries that were pre-installed on the ZYBO image.  
-V4L2-support should be enabled in this build.
-
 ## ZYBO Baremetal
 
 ### Controllers

@@ -15,10 +15,12 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
 -ftree-vectorize -mvectorize-with-neon-quad \
--DREAL_RMEM_WMEM" # TODO
+-DREAL_RMEM_WMEM \
+-DZYBO"
 CACHE STRING "" FORCE)
 
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} \
 -ftree-vectorize -mvectorize-with-neon-quad \
--DREAL_RMEM_WMEM" # TODO
+-DREAL_RMEM_WMEM \
+-DZYBO"
 CACHE STRING "" FORCE)
