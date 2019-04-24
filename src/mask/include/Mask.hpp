@@ -143,5 +143,5 @@ class Mask {
 
   private:
     std::vector<uint8_t> data;
-    const uint rows, cols;
+    uint rows, cols;
 };

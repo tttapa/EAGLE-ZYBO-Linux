@@ -1,5 +1,6 @@
 #include <Mask.hpp>
 
+#if 0
 #ifdef __ARM_NEON
 #include <Mask-NEON.hpp>
 void (&applyMaskImpl)(const uint8_t *, uint8_t *) = NEON::applyMask;
@@ -16,7 +17,11 @@ std::vector<uint8_t> Mask::generateMask(const uint8_t *imgRGB,
         applyMaskImpl(&imgRGB[3 * i], &result[i]);
     return result;
 }
+#else
 
+#include "GenerateMask-Unroll.ipp"
+
+#endif
 bool Mask::checkImageType(const cv::Mat &img) {
     int dimensions  = img.dims;
     uchar depth     = img.type() & CV_MAT_DEPTH_MASK;

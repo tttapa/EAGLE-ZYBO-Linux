@@ -23,9 +23,13 @@ TEST(MaskGridFinder, fromImage) {
     cv::Mat img;
     cv::cvtColor(imgbgr, img, cv::COLOR_BGR2RGB);
     PerfTimer pt;
-    Mask mask = img;
-    std::cout << "Masking took " << pt.getDuration<std::chrono::microseconds>()
-              << "µs" << std::endl;
+    volatile size_t loop = 1;
+    Mask mask            = img;
+    for (size_t i = 0; i < loop - 1; ++i)
+        mask = img;
+    std::cout << "Masking took "
+              << pt.getDuration<std::chrono::microseconds>() / loop << "µs"
+              << std::endl;
     cv::Mat maskimg = {img.rows, img.cols, CV_8UC1, mask.ptr()};
     cv::imwrite("mask.bmp", maskimg);
     GridFinder gf = std::move(mask);
