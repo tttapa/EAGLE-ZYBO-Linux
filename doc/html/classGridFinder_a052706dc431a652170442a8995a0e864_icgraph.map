@@ -1,4 +1,0 @@
-<map id="GridFinder::drawLine" name="GridFinder::drawLine">
-<area shape="rect" id="node1" title="Draw a line on the mask. Used only for testing." alt="" coords="208,5,363,32"/>
-<area shape="rect" id="node2" href="$classGridFinder.html#ae7296afac0b1184604dcdd5d62bcaebd" title="Draw a line on the mask. Used only for testing." alt="" coords="5,5,160,32"/>
-</map>

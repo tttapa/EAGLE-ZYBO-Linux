@@ -1,0 +1,11 @@
+<map id="GridFinder::move" name="GridFinder::move">
+<area shape="rect" id="node1" title="Move a pixel in a given direction for a given distance." alt="" coords="5,107,139,133"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c" title="Get the width of the frame." alt="" coords="221,5,353,32"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#affd9ae441c8d86b1856a9ef31190e9ab" title="Get the height of the frame." alt="" coords="218,56,355,83"/>
+<area shape="rect" id="node6" href="$classBresenhamLine.html#aba0822ee20811d67cd9539ccbe1cd346" title=" " alt="" coords="435,165,620,192"/>
+<area shape="rect" id="node8" href="$classBresenhamLine.html#ad93a4adf0535a9b4e649bce5ade1bc5e" title=" " alt="" coords="187,158,387,199"/>
+<area shape="rect" id="node9" href="$classBresenhamLine.html#a10d505e30945f42a5cd0270c315b104f" title=" " alt="" coords="207,224,367,251"/>
+<area shape="rect" id="node3" href="$classMask.html#a4124a2daa1f7501d4fd80775b6217679" title="Get the width of the mask in pixels." alt="" coords="477,5,577,32"/>
+<area shape="rect" id="node5" href="$classMask.html#af845b7d3220b707c8b4c48bf87d045bb" title="Get the height of the mask in pixels." alt="" coords="475,56,580,83"/>
+<area shape="rect" id="node7" href="$structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" title=" " alt="" coords="668,165,783,192"/>
+</map>

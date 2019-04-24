@@ -1,4 +1,0 @@
-<map id="GridFinder::findLineAngle" name="GridFinder::findLineAngle">
-<area shape="rect" id="node1" title="Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not ve..." alt="" coords="224,13,408,39"/>
-<area shape="rect" id="node2" href="$classGridFinder.html#ac78760540b520bc08f716ef77127f1fc" title="Get an estimate of the line through a given pixel. Find an estimate of the slope, then use that to de..." alt="" coords="5,5,176,47"/>
-</map>

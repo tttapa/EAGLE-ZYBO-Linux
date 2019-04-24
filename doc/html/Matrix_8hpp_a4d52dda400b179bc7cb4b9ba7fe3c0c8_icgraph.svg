@@ -9,87 +9,87 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 176)">
 <title>round</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-176 218,-176 218,4 -4,4"/>
-<!-- Node131 -->
+<!-- Node132 -->
 <g id="node1" class="node">
-<title>Node131</title>
+<title>Node132</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="170,-76.5 170,-95.5 214,-95.5 214,-76.5 170,-76.5"/>
 <text text-anchor="middle" x="192" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">round</text>
 </a>
 </g>
 </g>
-<!-- Node132 -->
+<!-- Node133 -->
 <g id="node2" class="node">
-<title>Node132</title>
+<title>Node133</title>
 <g id="a_node2"><a xlink:href="classAngle.html#aa2ce213e9b45424e62d818ec6769a71b" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="13.5,-152.5 13.5,-171.5 120.5,-171.5 120.5,-152.5 13.5,-152.5"/>
 <text text-anchor="middle" x="67" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::cos</text>
 </a>
 </g>
 </g>
-<!-- Node131&#45;&gt;Node132 -->
+<!-- Node132&#45;&gt;Node133 -->
 <g id="edge1" class="edge">
-<title>Node131&#45;&gt;Node132</title>
+<title>Node132&#45;&gt;Node133</title>
 <path fill="none" stroke="#191970" d="M178.2769,-103.583C167.5067,-116.258 151.4546,-132.8546 134,-143 127.4145,-146.8278 120.0127,-149.9222 112.5951,-152.4125"/>
 <polygon fill="#191970" stroke="#191970" points="181.2165,-105.5174 184.8416,-95.562 175.7994,-101.0838 181.2165,-105.5174"/>
 </g>
-<!-- Node133 -->
+<!-- Node134 -->
 <g id="node3" class="node">
-<title>Node133</title>
+<title>Node134</title>
 <g id="a_node3"><a xlink:href="classAngle.html#adb9bfe045dd75dad8912cf1e741d2820" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="14.5,-114.5 14.5,-133.5 119.5,-133.5 119.5,-114.5 14.5,-114.5"/>
 <text text-anchor="middle" x="67" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::sin</text>
 </a>
 </g>
 </g>
-<!-- Node131&#45;&gt;Node133 -->
+<!-- Node132&#45;&gt;Node134 -->
 <g id="edge2" class="edge">
-<title>Node131&#45;&gt;Node133</title>
+<title>Node132&#45;&gt;Node134</title>
 <path fill="none" stroke="#191970" d="M160.1921,-96.675C151.7036,-99.4539 142.5219,-102.397 134,-105 123.5931,-108.1788 112.2226,-111.4708 101.8523,-114.4036"/>
 <polygon fill="#191970" stroke="#191970" points="161.3579,-99.976 169.7574,-93.5185 159.1642,-93.3286 161.3579,-99.976"/>
 </g>
-<!-- Node134 -->
+<!-- Node135 -->
 <g id="node4" class="node">
-<title>Node134</title>
+<title>Node135</title>
 <g id="a_node4"><a xlink:href="classAngle.html#a63862e75b876b7b8555f05a54ac85628" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-76.5 0,-95.5 134,-95.5 134,-76.5 0,-76.5"/>
 <text text-anchor="middle" x="67" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::getIndex</text>
 </a>
 </g>
 </g>
-<!-- Node131&#45;&gt;Node134 -->
+<!-- Node132&#45;&gt;Node135 -->
 <g id="edge3" class="edge">
-<title>Node131&#45;&gt;Node134</title>
+<title>Node132&#45;&gt;Node135</title>
 <path fill="none" stroke="#191970" d="M159.7483,-86C151.837,-86 143.0736,-86 134.1832,-86"/>
 <polygon fill="#191970" stroke="#191970" points="159.9403,-89.5001 169.9402,-86 159.9402,-82.5001 159.9403,-89.5001"/>
 </g>
-<!-- Node135 -->
+<!-- Node136 -->
 <g id="node5" class="node">
-<title>Node135</title>
+<title>Node136</title>
 <g id="a_node5"><a xlink:href="classBresenhamLine.html#ae4b0dd9c534a550583ae812695bbac59" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="9.5,-38.5 9.5,-57.5 124.5,-57.5 124.5,-38.5 9.5,-38.5"/>
 <text text-anchor="middle" x="67" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BresenhamLine::cos</text>
 </a>
 </g>
 </g>
-<!-- Node131&#45;&gt;Node135 -->
+<!-- Node132&#45;&gt;Node136 -->
 <g id="edge4" class="edge">
-<title>Node131&#45;&gt;Node135</title>
+<title>Node132&#45;&gt;Node136</title>
 <path fill="none" stroke="#191970" d="M160.1921,-75.325C151.7036,-72.5461 142.5219,-69.603 134,-67 123.5931,-63.8212 112.2226,-60.5292 101.8523,-57.5964"/>
 <polygon fill="#191970" stroke="#191970" points="159.1642,-78.6714 169.7574,-78.4815 161.3579,-72.024 159.1642,-78.6714"/>
 </g>
-<!-- Node136 -->
+<!-- Node137 -->
 <g id="node6" class="node">
-<title>Node136</title>
+<title>Node137</title>
 <g id="a_node6"><a xlink:href="classBresenhamLine.html#a115d1f10a5ce1e0ef945258346b6f035" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="10.5,-.5 10.5,-19.5 123.5,-19.5 123.5,-.5 10.5,-.5"/>
 <text text-anchor="middle" x="67" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BresenhamLine::sin</text>
 </a>
 </g>
 </g>
-<!-- Node131&#45;&gt;Node136 -->
+<!-- Node132&#45;&gt;Node137 -->
 <g id="edge5" class="edge">
-<title>Node131&#45;&gt;Node136</title>
+<title>Node132&#45;&gt;Node137</title>
 <path fill="none" stroke="#191970" d="M178.2769,-68.417C167.5067,-55.742 151.4546,-39.1454 134,-29 127.4145,-25.1722 120.0127,-22.0778 112.5951,-19.5875"/>
 <polygon fill="#191970" stroke="#191970" points="175.7994,-70.9162 184.8416,-76.438 181.2165,-66.4826 175.7994,-70.9162"/>
 </g>

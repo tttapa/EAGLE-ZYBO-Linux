@@ -2,8 +2,10 @@
 
 #ifdef __ARM_NEON
 #include <Mask-NEON.hpp>
+void (&applyMaskImpl)(const uint8_t *, uint8_t *) = NEON::applyMask;
 #else
 #include <Mask-Fallback.hpp>
+void (&applyMaskImpl)(const uint8_t *, uint8_t *) = Fallback::applyMask;
 #endif
 
 std::vector<uint8_t> Mask::generateMask(const uint8_t *imgRGB,
@@ -11,7 +13,7 @@ std::vector<uint8_t> Mask::generateMask(const uint8_t *imgRGB,
     std::vector<uint8_t> result;
     result.resize(getPaddedLength(numberOfPixels));
     for (size_t i = 0; i < result.size(); i += 16)
-        ::applyMask(&imgRGB[3 * i], &result[i]);
+        applyMaskImpl(&imgRGB[3 * i], &result[i]);
     return result;
 }
 

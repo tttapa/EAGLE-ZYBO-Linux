@@ -2,10 +2,10 @@ var searchData=
 [
   ['calculatecoslut',['calculateCosLut',['../classAngle.html#ad989ebc5cb78ef0a7a7b7a2f15db7203',1,'Angle']]],
   ['calculatesinlut',['calculateSinLut',['../classAngle.html#a677e4343d9f9cc5e1b721c2353552dc8',1,'Angle']]],
-  ['center',['center',['../classGridFinder.html#af5906137a7b42eeeb983781128fcd463',1,'GridFinder']]],
+  ['center',['center',['../classGridFinder.html#ace2a9cb90cc19a295d0fbe934a79b7e0',1,'GridFinder']]],
   ['centerpointoutlineiterator',['CenterPointOutLineIterator',['../classCenterPointOutLineIterator.html#a1c3e333fca03afce181df6ed43153836',1,'CenterPointOutLineIterator']]],
-  ['checkline',['checkLine',['../classGridFinder.html#a9050aab45d10d2c2d4859af19b4987b4',1,'GridFinder']]],
-  ['checktype',['checkType',['../classMask.html#ae06736bf1854f528c85ca365297de872',1,'Mask']]],
+  ['checkimagetype',['checkImageType',['../classMask.html#a278f890f8063043a92dd8d8104733661',1,'Mask']]],
+  ['checkline',['checkLine',['../classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d',1,'GridFinder']]],
   ['clamp',['clamp',['../Matrix_8hpp.html#adb959bd990ed4fd37ed02cd0202ca511',1,'Matrix.hpp']]],
   ['colvectorfromcpparray',['ColVectorFromCppArray',['../Matrix_8hpp.html#aeae40defd7db46d853d1b0411049d3df',1,'Matrix.hpp']]],
   ['constanttimefunctiont',['ConstantTimeFunctionT',['../structConstantTimeFunctionT.html#a289c13537754efc7e5de87cccf6bd10d',1,'ConstantTimeFunctionT']]],

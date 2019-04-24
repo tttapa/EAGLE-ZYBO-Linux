@@ -1,0 +1,12 @@
+<map id="GridFinder::hough" name="GridFinder::hough">
+<area shape="rect" id="node1" title="Starting from the given pixel, move in the direction of the given angle, and count the number of whit..." alt="" coords="5,132,141,159"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c" title="Get the width of the frame." alt="" coords="223,5,355,32"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#affd9ae441c8d86b1856a9ef31190e9ab" title="Get the height of the frame." alt="" coords="221,56,358,83"/>
+<area shape="rect" id="node6" href="$classBresenhamLine.html#aba0822ee20811d67cd9539ccbe1cd346" title=" " alt="" coords="437,132,623,159"/>
+<area shape="rect" id="node8" href="$classBresenhamLine.html#a10d505e30945f42a5cd0270c315b104f" title=" " alt="" coords="209,157,369,184"/>
+<area shape="rect" id="node9" href="$classGridFinder.html#afbed8951f70923626b73abdbe05236da" title="Get the value of the given pixel." alt="" coords="231,232,348,259"/>
+<area shape="rect" id="node10" href="$classBresenhamLine.html#ad93a4adf0535a9b4e649bce5ade1bc5e" title=" " alt="" coords="189,283,389,325"/>
+<area shape="rect" id="node3" href="$classMask.html#a4124a2daa1f7501d4fd80775b6217679" title="Get the width of the mask in pixels." alt="" coords="480,5,580,32"/>
+<area shape="rect" id="node5" href="$classMask.html#af845b7d3220b707c8b4c48bf87d045bb" title="Get the height of the mask in pixels." alt="" coords="477,56,583,83"/>
+<area shape="rect" id="node7" href="$structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" title=" " alt="" coords="671,132,785,159"/>
+</map>

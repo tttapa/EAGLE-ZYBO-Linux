@@ -1,0 +1,13 @@
+<map id="GridFinder::getWidthAtPointOnLine" name="GridFinder::getWidthAtPointOnLine">
+<area shape="rect" id="node1" title="Get the width of the line at a given point." alt="" coords="5,150,208,191"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c" title="Get the width of the frame." alt="" coords="290,5,422,32"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#affd9ae441c8d86b1856a9ef31190e9ab" title="Get the height of the frame." alt="" coords="287,56,425,83"/>
+<area shape="rect" id="node6" href="$structCosSin.html#adb1d000cc58879b65a63fac849408bfe" title=" " alt="" coords="275,107,437,133"/>
+<area shape="rect" id="node7" href="$classBresenhamLine.html#aba0822ee20811d67cd9539ccbe1cd346" title=" " alt="" coords="504,183,689,209"/>
+<area shape="rect" id="node9" href="$classBresenhamLine.html#a10d505e30945f42a5cd0270c315b104f" title=" " alt="" coords="276,208,436,235"/>
+<area shape="rect" id="node10" href="$classBresenhamLine.html#ad93a4adf0535a9b4e649bce5ade1bc5e" title=" " alt="" coords="256,259,456,301"/>
+<area shape="rect" id="node11" href="$classGridFinder.html#afbed8951f70923626b73abdbe05236da" title="Get the value of the given pixel." alt="" coords="297,349,415,376"/>
+<area shape="rect" id="node3" href="$classMask.html#a4124a2daa1f7501d4fd80775b6217679" title="Get the width of the mask in pixels." alt="" coords="547,5,647,32"/>
+<area shape="rect" id="node5" href="$classMask.html#af845b7d3220b707c8b4c48bf87d045bb" title="Get the height of the mask in pixels." alt="" coords="544,56,649,83"/>
+<area shape="rect" id="node8" href="$structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" title=" " alt="" coords="737,183,852,209"/>
+</map>

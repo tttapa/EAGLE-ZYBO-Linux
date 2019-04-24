@@ -1,0 +1,5 @@
+<map id="GridFinder::get" name="GridFinder::get">
+<area shape="rect" id="node1" title="Get the value of the given pixel." alt="" coords="5,5,123,32"/>
+<area shape="rect" id="node2" href="$classMask.html#a24f3c4e9b7197d2d72b590fb30c4ea10" title="Get the value of the mask at a given location." alt="" coords="171,5,256,32"/>
+<area shape="rect" id="node3" href="$structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" title=" " alt="" coords="304,5,419,32"/>
+</map>

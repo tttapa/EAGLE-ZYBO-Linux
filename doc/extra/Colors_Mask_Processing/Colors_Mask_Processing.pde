@@ -33,20 +33,23 @@ PGraphics createTriangles(LightDark lightdark) {
         }
         pg.stroke(color(r, g, b));
         pg.point(x, y);
-        pg.stroke(f1(r, g, b));
-        pg.point(width/2+(x/2), (y/2));
-        pg.stroke(f2(r, g, b));
-        pg.point(3*width/4+(x/2), (y/2));
-        pg.stroke(f3(r, g, b));
-        pg.point(width/2+(x/2), (y/2)+height/2);
-        pg.stroke(f4(r, g, b));
-        pg.point(3*width/4+(x/2), (y/2)+height/2);
+        pg.stroke(f(r, g, b));
+        pg.point(width/2+(x), (y));
       }
     }
   }
-  pg.stroke(color(255, 255, 255));
-  pg.point(width/4, 255);
-  pg.point(3*width/4, 255);
+  pg.ellipseMode(CENTER);
+  if (lightdark == LightDark.dark) {
+    pg.stroke(255);
+    pg.fill(255);
+    pg.circle(width/4, 255, 2);
+    pg.circle(3*width/4, 255, 2);
+  } else {
+    pg.stroke(0);
+    pg.fill(0);
+    pg.circle(width/4, height-255, 2);
+    pg.circle(3*width/4, height-255, 2);
+  }
   pg.endDraw();
   return pg;
 }
@@ -65,14 +68,8 @@ PGraphics createGradient(float hue) {
       float b = blue(c);
       pg.stroke(color(r, g, b));
       pg.point(x, y);
-      pg.stroke(f1(r, g, b));
-      pg.point(width/2+(x/2), (y/2));
-      pg.stroke(f2(r, g, b));
-      pg.point(3*width/4+(x/2), (y/2));
-      pg.stroke(f3(r, g, b));
-      pg.point(width/2+(x/2), (y/2)+height/2);
-      pg.stroke(f4(r, g, b));
-      pg.point(3*width/4+(x/2), (y/2)+height/2);
+      pg.stroke(f(r, g, b));
+      pg.point(width/2+(x), (y));
     }
   }
   pg.endDraw();
@@ -81,7 +78,7 @@ PGraphics createGradient(float hue) {
 
 PGraphics light;
 PGraphics dark;
-PGraphics tests;
+PGraphics gradient;
 
 void setup() {
   size(1786, 766);      
@@ -90,64 +87,49 @@ void setup() {
   light.save("../../images/Colors-Mask-Light.png");
   dark = createTriangles(LightDark.dark);
   dark.save("../../images/Colors-Mask-Dark.png");
-  tests = createGradient(0);
-  tests.save("../../image/Colors-Mask-Gradient.png");
+  gradient = createGradient(0);
+  gradient.save("../../images/Colors-Mask-Gradient.png");
   update();
 }
-
-// /*
-color f1(float r, float g, float b) {
-  float v = (r/8 - (g+b)/4) >= 6 ? 1 : -1;
-  int rr = max(0, min(int(round(255 * v)), 255));
-  int bb = max(0, min(int(round(-255 * v)), 255));
-  return color(rr, 0, bb);
-} // */
 
 // Calculates the base-2 logarithm of a number
 float log2(float x) {
   return (log(x) / log(2));
 }
 
-final int SATURATION_THRES       = 16;
-final int SATURATION_THRES_SHIFT = round(log2(SATURATION_THRES));
-final int BRIGHTNESS_THRES       = 16;
-final int HUE_THRES_DEGREES      = 15;
+/*
+final int SATURATION_THRES       = 32;
+final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
+final int BRIGHTNESS_THRES       = 32;
+final int HUE_THRES_DEGREES      = 30;
 final int HUE_THRES_SHIFT        = round(log2(60 / HUE_THRES_DEGREES));
 
-// /*
-color f2(float r, float g, float b) {
+color f(float r, float g, float b) {
+  int max = int(round(max(max(r, g), b)));
+  int min = int(round(min(min(r, g), b)));
+  int delta = max - min;
+  boolean cond = delta > max >> SATURATION_THRES_SHIFT // saturation
+    && max > BRIGHTNESS_THRES // brightness
+    && r == max && delta >> HUE_THRES_SHIFT > abs(g - b) // hue
+    && (max * max / 256 + delta * 256 / 128 > max);
+  return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
+} // */
+
+final int SATURATION_THRES       = 64;
+final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
+final int BRIGHTNESS_THRES       = 32;
+final int HUE_THRES_DEGREES      = 30;
+final int HUE_THRES_SHIFT        = round(log2(60 / HUE_THRES_DEGREES));
+
+color f(float r, float g, float b) {
   int max = int(round(max(max(r, g), b)));
   int min = int(round(min(min(r, g), b)));
   int delta = max - min;
   boolean cond = delta > max >> SATURATION_THRES_SHIFT // saturation
     && max > BRIGHTNESS_THRES // brightness
     && r == max && delta >> HUE_THRES_SHIFT > abs(g - b); // hue
-  float v = cond ? 1 : -1;
-  int rr = max(0, min(int(round(255 * v)), 255));
-  int bb = max(0, min(int(round(-255 * v)), 255));
-  return color(rr, 0, bb);
-} // */
-
-// /*
-color f3(float r, float g, float b) {
-  // float v = r * r + r > (b + g) * (g + b - r) + 255 * 8 && r * 255 > (g + b) * (g + b) && (g+b) * 128  <= (2 * r - b - g) * (2 * r - b - g)  ? 1: -1;
-  // float v = g * g + b * b + 255*8 < r * r - 8 * r ? 1: -1;
-  float v = g * g + b * b + 255*8 < r * r - 8 * r && ((r/8 - (g+b)/4) >= 0 || (g + b)*(g+b) - (g+b)*32 < r * 128) ? 1: -1;
-  int rr = max(0, min(int(round(255 * v)), 255));
-  int bb = max(0, min(int(round(-255 * v)), 255));
-  return color(rr, 0, bb);
-} // */
-
-// /*
-color f4(float r, float g, float b) {
-  float h = hue(color(r, g, b));
-  float s = saturation(color(r, g, b));
-  float v = brightness(color(r, g, b));
-  float res = (h > 240 || h < 16) && s > 16 && v > 16 ? 1: -1;
-  int rr = max(0, min(int(round(255 * res)), 255));
-  int bb = max(0, min(int(round(-255 * res)), 255));
-  return color(rr, 0, bb);
-} // */
+  return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
+}
 
 void draw() {
 }
@@ -166,7 +148,7 @@ void update() {
     image(dark, 0, 0);
     break;
   case 2:
-    image(tests, 0, 0);
+    image(gradient, 0, 0);
     break;
   }
   display++;

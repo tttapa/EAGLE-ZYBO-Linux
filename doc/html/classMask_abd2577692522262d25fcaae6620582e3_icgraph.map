@@ -1,0 +1,5 @@
+<map id="Mask::set" name="Mask::set">
+<area shape="rect" id="node1" title="Set the value of the mask at the given location." alt="" coords="372,5,456,32"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#a376419f000b3be1e8db278726a2efbc1" title="Set the value of the given pixel." alt="" coords="208,5,324,32"/>
+<area shape="rect" id="node3" href="$classGridFinder.html#a3b5caee289831bd2207db3ec542be2b0" title="Draw a line on the mask. Used only for testing." alt="" coords="5,5,160,32"/>
+</map>

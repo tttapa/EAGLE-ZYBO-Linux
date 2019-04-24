@@ -1,0 +1,7 @@
+<map id="GridFinder::center" name="GridFinder::center">
+<area shape="rect" id="node1" title="Get the center pixel of the frame." alt="" coords="5,31,143,57"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c" title="Get the width of the frame." alt="" coords="193,5,325,32"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#affd9ae441c8d86b1856a9ef31190e9ab" title="Get the height of the frame." alt="" coords="191,56,328,83"/>
+<area shape="rect" id="node3" href="$classMask.html#a4124a2daa1f7501d4fd80775b6217679" title="Get the width of the mask in pixels." alt="" coords="379,5,479,32"/>
+<area shape="rect" id="node5" href="$classMask.html#af845b7d3220b707c8b4c48bf87d045bb" title="Get the height of the mask in pixels." alt="" coords="376,56,481,83"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="GridFinder::getFirstLineEstimate" name="GridFinder::getFirstLineEstimate">
+<area shape="rect" id="node1" title="Get an estimate of the first line. Searches in multiple columns, starting from the center,..." alt="" coords="5,57,176,98"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c" title="Get the width of the frame." alt="" coords="256,5,388,32"/>
+<area shape="rect" id="node4" href="$classCenterPointOutLineIterator.html#a6f4fda8865e7d1def0a8614622f0f6ef" title=" " alt="" coords="224,57,420,98"/>
+<area shape="rect" id="node5" href="$classCenterPointOutLineIterator.html#a89580e1393d0dfc3ff12c7a5af2a4374" title=" " alt="" coords="224,122,420,163"/>
+<area shape="rect" id="node3" href="$classMask.html#a4124a2daa1f7501d4fd80775b6217679" title="Get the width of the mask in pixels." alt="" coords="468,5,568,32"/>
+</map>

@@ -1,8 +1,0 @@
-<map id="GridFinder::hough" name="GridFinder::hough">
-<area shape="rect" id="node1" title="Starting from the given pixel, move in the direction of the given angle, and count the number of whit..." alt="" coords="5,57,141,84"/>
-<area shape="rect" id="node2" href="$classBresenhamLine.html#aba0822ee20811d67cd9539ccbe1cd346" title=" " alt="" coords="437,7,623,33"/>
-<area shape="rect" id="node4" href="$classBresenhamLine.html#a10d505e30945f42a5cd0270c315b104f" title=" " alt="" coords="209,32,369,59"/>
-<area shape="rect" id="node5" href="$classGridFinder.html#a53cfbafaf3cd06baac2a19eeee0cfb73" title="Get the value of the given pixel." alt="" coords="231,83,348,109"/>
-<area shape="rect" id="node6" href="$classBresenhamLine.html#ad93a4adf0535a9b4e649bce5ade1bc5e" title=" " alt="" coords="189,134,389,175"/>
-<area shape="rect" id="node3" href="$structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" title=" " alt="" coords="671,7,785,33"/>
-</map>
