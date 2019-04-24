@@ -46,7 +46,8 @@
         "string_view": "cpp",
         "chrono": "cpp",
         "ratio": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "string": "cpp"
     },
     "explorer.sortOrder": "filesFirst",
     "C_Cpp.default.cppStandard": "c++17",
