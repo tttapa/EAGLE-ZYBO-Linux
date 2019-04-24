@@ -269,6 +269,12 @@
             },
             "problemMatcher": []
         },
+        {
+            "label": "Start GDB Server (ZYBO)",
+            "type": "shell",
+            "command": "ssh root@drone 'source /media/ldpath.sh && /mnt/usr/bin/gdbserver localhost:2000 /media/location_finder.test'",
+            "problemMatcher": []
+        },
         //#endregion
         //#region Documentation.................................................
         {
