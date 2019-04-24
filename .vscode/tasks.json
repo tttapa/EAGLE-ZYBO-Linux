@@ -305,6 +305,20 @@
             "type": "shell",
             "command": "scp ${workspaceFolder}/build-arm/bin/* root@drone:/media",
             "problemMatcher": []
+        },
+        //#endregion
+        //#region ZYBO..........................................................
+        {
+            "label": "Reboot ZYBO",
+            "type": "shell",
+            "command": "ssh root@drone /sbin/reboot",
+            "problemMatcher": []
+        },
+        {
+            "label": "ZYBO Shell",
+            "type": "shell",
+            "command": "ssh root@drone",
+            "problemMatcher": []
         }
         //#endregion
     ]
