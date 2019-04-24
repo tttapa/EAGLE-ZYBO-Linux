@@ -2,47 +2,48 @@
 
 #include <Threshold.hpp>
 #include <arm_neon.h>
+#include <cmath>
+
+const int SATURATION_THRES       = 16;
+const int SATURATION_THRES_SHIFT = round(log2(SATURATION_THRES));
+const int BRIGHTNESS_THRES       = 16;
+const int HUE_THRES_DEGREES      = 15;
+const int HUE_THRES_SHIFT        = round(log2(60 / HUE_THRES_DEGREES));
 
 /**
- * @brief   Calculates @f$ \frac{R}{4} - \frac{G+B}{4} @f$ for eight RGB pixels.
+ * @brief   Checks whether the given RGB pixels are within a certain range in 
+ *          HSV space.
  * 
- * This value is greater than @ref THRESHOLD in the grey triangle in the
- * image below (it reaches its maximum value of 63 for `#FF0000`).  
- * When the color is too dark (R is low), or when the color contains 
- * too much R and B, the value is lower than the threshold, the mask is
- * black, and the actual color is shown in the image below.
- * 
- * @image   html Colors-Mask.png
+ * @image   html Colors-Mask-Light.png
+ * @image   html Colors-Mask-Dark.png
+ * @image   html Colors-Mask-Gradient.png
  * 
  * @param   colors
  *          A pointer to an array of at least 16 RGB pixels (or 48 bytes).
  */
-inline int8x16_t applyMaskFunction(const uint8_t *colors) {
+inline uint8x16_t applyMask(const uint8_t *colors) {
     // First, load 48 bytes of strided RGB data from the image in three vector
     // registers, one for red, one for green, and one for blue.
     uint8x16x3_t rgb = vld3q_u8(colors);
-    // Shift the red vector 1 bit to the right, to divide by 2.
-    uint8x16_t r_over2 = vshrq_n_u8(rgb.val[0], 1);
-    // Calculate the average of the green and blue vectors.
-    uint8x16_t g_plus_b_over2 = vhaddq_u8(rgb.val[1], rgb.val[2]);
-    // Subtract the average of green and blue from the scaled red vector, and
-    // halve the result so it fits in an 8-bit integer.
-    return reinterpret_cast<int8x16_t>(vhsubq_u8(r_over2, g_plus_b_over2));
-}
+    uint8x16_t r     = colors[0];
+    uint8x16_t g     = colors[1];
+    uint8x16_t b     = colors[2];
 
-/**
- * @brief   Applies the mapping function, and checks if the result is greater
- *          than the threshold.
- * 
- * @param   colors 
- *          A pointer to an array of at least 16 RGB pixels (or 48 bytes).
- * @return  A vector register containing 0xFF for red pixels and 0x00 for other
- *          colors.
- */
-inline uint8x16_t applyMask(const uint8_t *colors) {
-    int8x16_t maskfn     = applyMaskFunction(colors);
-    int8x16_t thresholdv = vdupq_n_s8(THRESHOLD);
-    return reinterpret_cast<uint8x16_t>(vcgeq_s8(maskfn, thresholdv));
+    uint8x16_t max   = vmaxq_u8(vmaxq_u8(r, g), b);
+    uint8x16_t min   = vminq_u8(vminq_u8(r, g), b);
+    uint8x16_t delta = vsubq_u8(max, min);
+
+    // Condition for saturation: thres < s = delta / max
+    uint8x16_t sat_cond =
+        vcgtq_u8(delta, vshrq_n_u8(max, SATURATION_THRES_SHIFT));
+    // Condition for value/brightness
+    uint8x16_t val_cond = vcgtq_u8(max, vdupq_n_u8(BRIGHTNESS_THRES));
+    // Condition for hue
+    uint8x16_t hue_cond =
+        vandq_u8(vceqq_u8(r, max),
+                 vcgtq_u8(vshrq_n_u8(delta, HUE_THRES_SHIFT), vabdq_u8(g, b)));
+
+    return vandq_u8(vandq_u8(sat_cond, val_cond), hue_cond);
 }
 
 /**
