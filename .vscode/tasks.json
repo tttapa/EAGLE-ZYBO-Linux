@@ -303,7 +303,10 @@
         {
             "label": "Copy all binaries to ZYBO",
             "type": "shell",
-            "command": "scp ${workspaceFolder}/build-arm/bin/* root@drone:/media",
+            "command": "./copy-binaries-zybo.sh ${workspaceFolder}",
+            "options": {
+                "cwd": "${workspaceFolder}/scripts"
+            },
             "problemMatcher": []
         },
         //#endregion
