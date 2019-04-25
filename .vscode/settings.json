@@ -77,7 +77,8 @@
         "vcgtq",
         "vdupq",
         "vshrq",
-        "vsubq"
+        "vsubq",
+        "zbar"
     ],
     "search.exclude": {
         "doc/html": true,

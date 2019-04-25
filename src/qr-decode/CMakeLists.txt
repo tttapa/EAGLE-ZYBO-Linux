@@ -3,7 +3,15 @@ add_library(qr-decode
     src/QR-Decode.cpp
 )
 
+# OpenCV
 find_package(OpenCV REQUIRED)
+
+# Zbar
+add_library(zbar STATIC IMPORTED)
+set_target_properties(zbar PROPERTIES
+  IMPORTED_LOCATION $ENV{HOME}/.local/lib/libzbar.a
+  INTERFACE_INCLUDE_DIRECTORIES $ENV{HOME}/.local/include
+)
 
 # Set target include directories 
 #   These are the folders where the compiler will search for included header 
@@ -33,6 +41,7 @@ target_compile_features(qr-decode INTERFACE cxx_std_17)
 target_link_libraries(qr-decode 
     PUBLIC 
         ${OpenCV_LIBS}
+        zbar
 )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that

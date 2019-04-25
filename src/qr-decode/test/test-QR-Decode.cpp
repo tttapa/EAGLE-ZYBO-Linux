@@ -14,12 +14,9 @@ TEST(QRDecoder, fromImage) {
 #endif
     cout << "Reading image `" << imagePath << "`" << endl;
     cv::Mat imgbgr = cv::imread(imagePath);
-    cv::Mat imggrey;
-    cv::cvtColor(imgbgr, imggrey, cv::COLOR_BGR2GRAY);
     PerfTimer pt;
-    vector<uint8_t> decoded = QR::decode(imggrey);
+    string decoded = QR::decode(imgbgr);
     cout << "QR decoding took " << pt.getDuration<chrono::microseconds>()
          << "µs" << endl;
-    string str = {decoded.begin(), decoded.end()};
-    cout << "Data = " << str << endl;
+    cout << "Data = " << decoded << endl;
 }

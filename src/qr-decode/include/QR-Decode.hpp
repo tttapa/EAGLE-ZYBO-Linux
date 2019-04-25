@@ -1,8 +1,8 @@
 #pragma once
 
 #include <opencv2/core/mat.hpp>
-#include <vector>
+#include <string>
 
 namespace QR {
-std::vector<uint8_t> decode(const cv::Mat &img);
+std::string decode(const cv::Mat &img);
 }
