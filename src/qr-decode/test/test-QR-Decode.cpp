@@ -18,5 +18,6 @@ TEST(QRDecoder, fromImage) {
     string decoded = QR::decode(imgbgr);
     cout << "QR decoding took " << pt.getDuration<chrono::microseconds>()
          << "µs" << endl;
-    cout << "Data = " << decoded << endl;
+    string expected = "AAAAAAAAAAAAAAAAAAAACQMNCQACE2liv6B2BEyi97naxRwB/JPBBaQTuRTjQmJnhwscT0fXX9krwoCPjg==";
+    ASSERT_EQ(decoded, expected);
 }

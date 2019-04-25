@@ -7,11 +7,21 @@ add_library(qr-decode
 find_package(OpenCV REQUIRED)
 
 # Zbar
+if(NOT CMAKE_CROSSCOMPILING)
 add_library(zbar STATIC IMPORTED)
 set_target_properties(zbar PROPERTIES
   IMPORTED_LOCATION $ENV{HOME}/.local/lib/libzbar.a
   INTERFACE_INCLUDE_DIRECTORIES $ENV{HOME}/.local/include
 )
+else()
+add_library(zbar STATIC IMPORTED)
+set_target_properties(zbar PROPERTIES
+  IMPORTED_LOCATION
+    $ENV{TOOLCHAIN_PATH}/arm-cortexa9_neon-linux-gnueabihf/sysroot/lib/libzbar.a
+  INTERFACE_INCLUDE_DIRECTORIES
+    $ENV{TOOLCHAIN_PATH}/arm-cortexa9_neon-linux-gnueabihf/sysroot/include
+)
+endif()
 
 # Set target include directories 
 #   These are the folders where the compiler will search for included header 
@@ -41,6 +51,7 @@ target_compile_features(qr-decode INTERFACE cxx_std_17)
 target_link_libraries(qr-decode 
     PUBLIC 
         ${OpenCV_LIBS}
+    PRIVATE
         zbar
 )
 
