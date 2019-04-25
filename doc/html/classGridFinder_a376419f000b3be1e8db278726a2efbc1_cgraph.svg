@@ -9,42 +9,42 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>GridFinder::set</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-24 312,-24 312,4 -4,4"/>
-<!-- Node380 -->
+<!-- Node394 -->
 <g id="node1" class="node">
-<title>Node380</title>
+<title>Node394</title>
 <g id="a_node1"><a xlink:title="Set the value of the given pixel.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-19.5 87,-19.5 87,-.5 0,-.5"/>
 <text text-anchor="middle" x="43.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::set</text>
 </a>
 </g>
 </g>
-<!-- Node381 -->
+<!-- Node395 -->
 <g id="node2" class="node">
-<title>Node381</title>
+<title>Node395</title>
 <g id="a_node2"><a xlink:href="classMask.html#abd2577692522262d25fcaae6620582e3" target="_top" xlink:title="Set the value of the mask at the given location.">
 <polygon fill="#ffffff" stroke="#000000" points="123,-.5 123,-19.5 186,-19.5 186,-.5 123,-.5"/>
 <text text-anchor="middle" x="154.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Mask::set</text>
 </a>
 </g>
 </g>
-<!-- Node380&#45;&gt;Node381 -->
+<!-- Node394&#45;&gt;Node395 -->
 <g id="edge1" class="edge">
-<title>Node380&#45;&gt;Node381</title>
+<title>Node394&#45;&gt;Node395</title>
 <path fill="none" stroke="#191970" d="M87.0516,-10C95.4219,-10 104.1728,-10 112.493,-10"/>
 <polygon fill="#191970" stroke="#191970" points="112.7407,-13.5001 122.7406,-10 112.7406,-6.5001 112.7407,-13.5001"/>
 </g>
-<!-- Node382 -->
+<!-- Node396 -->
 <g id="node3" class="node">
-<title>Node382</title>
+<title>Node396</title>
 <g id="a_node3"><a xlink:href="structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="222,-.5 222,-19.5 308,-19.5 308,-.5 222,-.5"/>
 <text text-anchor="middle" x="265" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pixel::inRange</text>
 </a>
 </g>
 </g>
-<!-- Node381&#45;&gt;Node382 -->
+<!-- Node395&#45;&gt;Node396 -->
 <g id="edge2" class="edge">
-<title>Node381&#45;&gt;Node382</title>
+<title>Node395&#45;&gt;Node396</title>
 <path fill="none" stroke="#191970" d="M186.1649,-10C194.1407,-10 202.9237,-10 211.6438,-10"/>
 <polygon fill="#191970" stroke="#191970" points="211.7994,-13.5001 221.7993,-10 211.7993,-6.5001 211.7994,-13.5001"/>
 </g>

@@ -9,27 +9,27 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>CosSin::sinf</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-24 177,-24 177,4 -4,4"/>
-<!-- Node49 -->
+<!-- Node51 -->
 <g id="node1" class="node">
-<title>Node49</title>
+<title>Node51</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="99,-.5 99,-19.5 173,-19.5 173,-.5 99,-.5"/>
 <text text-anchor="middle" x="136" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">CosSin::sinf</text>
 </a>
 </g>
 </g>
-<!-- Node50 -->
+<!-- Node52 -->
 <g id="node2" class="node">
-<title>Node50</title>
+<title>Node52</title>
 <g id="a_node2"><a xlink:href="classLine.html#a5787b2d9bfde75c663aafded9d29c6a5" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-19.5 63,-19.5 63,-.5 0,-.5"/>
 <text text-anchor="middle" x="31.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Line::Line</text>
 </a>
 </g>
 </g>
-<!-- Node49&#45;&gt;Node50 -->
+<!-- Node51&#45;&gt;Node52 -->
 <g id="edge1" class="edge">
-<title>Node49&#45;&gt;Node50</title>
+<title>Node51&#45;&gt;Node52</title>
 <path fill="none" stroke="#191970" d="M88.861,-10C80.2182,-10 71.387,-10 63.3257,-10"/>
 <polygon fill="#191970" stroke="#191970" points="88.863,-13.5001 98.863,-10 88.8629,-6.5001 88.863,-13.5001"/>
 </g>

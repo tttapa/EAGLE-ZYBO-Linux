@@ -26,7 +26,7 @@ string decode(const Mat &img) {
     return result;
 #else
     Mat gray;
-    cvtColor(img, gray, COLOR_BGR2GRAY);
+    cvtColor(img, gray, COLOR_RGB2GRAY);
     Image image(gray.cols, gray.rows, "Y800", gray.ptr(),
                 gray.cols * gray.rows);
 

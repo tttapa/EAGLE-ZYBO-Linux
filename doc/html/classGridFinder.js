@@ -1,6 +1,7 @@
 var classGridFinder =
 [
     [ "GridFinder", "classGridFinder.html#aedf6227abcdacca5a81838de72736776", null ],
+    [ "GridFinder", "classGridFinder.html#a13b104fa62cde85e9269b60e543a826e", null ],
     [ "GridFinder", "classGridFinder.html#ad3502a7dc40efd274cfd5a038765735e", null ],
     [ "center", "classGridFinder.html#ace2a9cb90cc19a295d0fbe934a79b7e0", null ],
     [ "checkLine", "classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d", null ],

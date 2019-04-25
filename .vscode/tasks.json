@@ -82,9 +82,9 @@
         {
             "label": "Run CMake x86-64 (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake ..",
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake -DPYBIND11_PYTHON_VERSION=3.7 -DPYTHON_EXECUTABLE=/home/develop/.local/bin/python3 ..",
             "windows": {
-                "command": "docker exec -it -w  /home/develop/eagle/build crypto-devenv sh -c 'cmake ..'",
+                "command": "docker exec -it -w  /home/develop/eagle/build crypto-devenv sh -c 'cmake -DPYBIND11_PYTHON_VERSION=3.7 -DPYTHON_EXECUTABLE=/home/develop/.local/bin/python3 ..'",
             },
             "problemMatcher": [],
         },
@@ -143,6 +143,19 @@
             },
             "problemMatcher": "$gcc"
         },
+        {
+            "label": "Build & Install Python Module x86-64 (Docker)",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make python",
+            "windows": {
+                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make python'",
+            },
+            "problemMatcher": "$gcc"
+        },
         //#endregion
         //#region Running.......................................................
         {
@@ -195,6 +208,24 @@
             "command": "./hello-world",
             "options": {
                 "cwd": "${workspaceFolder}/build/bin"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Python Vision Script (Docker)",
+            "type": "shell",
+            "command": "docker exec -it -w ${workspaceFolder}/python crypto-devenv ./VideoLines.py",
+            "problemMatcher": []
+        },
+        {
+            "label": "Launch Jupyter Notebook (Docker)",
+            "type": "shell",
+            "command": "docker exec -d -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0 && sleep 1 && sensible-browser http://localhost:9999",
+            "options": {
+                "cwd": "${workspaceFolder}/build/bin"
+            },
+            "windows": {
+                "command": "docker exec -d -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0; if($?) {Start-Sleep 1; Start-Process \"http://localhost:9999\"}",
             },
             "problemMatcher": []
         },

@@ -8,7 +8,8 @@
                 "${workspaceFolder}/build/googletest/googletest-src/googletest/include",
                 "${workspaceFolder}/docker-include/arm/8.3.0/**",
                 "${workspaceFolder}/docker-include/opencv4/**",
-                "${workspaceFolder}/docker-include/zbar"
+                "${workspaceFolder}/docker-include/zbar",
+                "${workspaceFolder}/docker-include/python3.7m"
             ],
             "defines": [
                 "__AVX__",

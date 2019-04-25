@@ -8,5 +8,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "logger", "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html", "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801" ],
     [ "mask", "dir_d2da34f738933fa17ec589dd95f08c72.html", "dir_d2da34f738933fa17ec589dd95f08c72" ],
     [ "matrix", "dir_40d7732de2983c682bb99d86585a563c.html", "dir_40d7732de2983c682bb99d86585a563c" ],
+    [ "py-grid-finder", "dir_78013b9138429c0bcb36eab7f16ba065.html", "dir_78013b9138429c0bcb36eab7f16ba065" ],
+    [ "py-matrix", "dir_e933f813a55dc21e057ace61f7557bd3.html", "dir_e933f813a55dc21e057ace61f7557bd3" ],
+    [ "qr-decode", "dir_a6001fb970975ebb58a93b6f2462248e.html", "dir_a6001fb970975ebb58a93b6f2462248e" ],
     [ "utilities", "dir_7b5d38f1875f1b693f62ca6a108a1129.html", "dir_7b5d38f1875f1b693f62ca6a108a1129" ]
 ];

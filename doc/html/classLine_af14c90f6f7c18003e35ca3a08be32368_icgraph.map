@@ -1,6 +1,7 @@
 <map id="Line::intersect" name="Line::intersect">
-<area shape="rect" id="node1" title=" " alt="" coords="668,5,783,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="668,31,783,57"/>
 <area shape="rect" id="node2" href="$classGridFinder.html#ac7202be6727634054a169022b5ce3e01" title="Get the point of intersection of two lines." alt="" coords="467,5,620,32"/>
+<area shape="rect" id="node5" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="30,56,181,83"/>
 <area shape="rect" id="node3" href="$classGridFinder.html#a8940ca681fac78274043cf5f1f1f5761" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="253,5,419,32"/>
 <area shape="rect" id="node4" href="$classLocationFinder.html#a398bb42565e1e2a499471765f569bc40" title=" " alt="" coords="5,5,205,32"/>
 </map>

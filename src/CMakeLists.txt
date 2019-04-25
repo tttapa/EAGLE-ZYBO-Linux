@@ -8,3 +8,8 @@ add_subdirectory(grid-finder)
 add_subdirectory(mask)
 add_subdirectory(location-finder)
 add_subdirectory(qr-decode)
+
+if (NOT CMAKE_CROSSCOMPILING)
+add_subdirectory(py-matrix)
+add_subdirectory(py-grid-finder)
+endif()

@@ -9,72 +9,72 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 62)">
 <title>GridFinder::center</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-62 361,-62 361,4 -4,4"/>
-<!-- Node4 -->
+<!-- Node6 -->
 <g id="node1" class="node">
-<title>Node4</title>
+<title>Node6</title>
 <g id="a_node1"><a xlink:title="Get the center pixel of the frame.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-19.5 0,-38.5 103,-38.5 103,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="51.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::center</text>
 </a>
 </g>
 </g>
-<!-- Node5 -->
+<!-- Node7 -->
 <g id="node2" class="node">
-<title>Node5</title>
+<title>Node7</title>
 <g id="a_node2"><a xlink:href="classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c" target="_top" xlink:title="Get the width of the frame.">
 <polygon fill="#ffffff" stroke="#000000" points="141,-38.5 141,-57.5 240,-57.5 240,-38.5 141,-38.5"/>
 <text text-anchor="middle" x="190.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::width</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node5 -->
+<!-- Node6&#45;&gt;Node7 -->
 <g id="edge1" class="edge">
-<title>Node4&#45;&gt;Node5</title>
+<title>Node6&#45;&gt;Node7</title>
 <path fill="none" stroke="#191970" d="M103.2585,-36.0749C112.1193,-37.2861 121.3924,-38.5536 130.4476,-39.7914"/>
 <polygon fill="#191970" stroke="#191970" points="130.163,-43.285 140.5449,-41.1716 131.111,-36.3494 130.163,-43.285"/>
 </g>
-<!-- Node7 -->
+<!-- Node9 -->
 <g id="node4" class="node">
-<title>Node7</title>
+<title>Node9</title>
 <g id="a_node4"><a xlink:href="classGridFinder.html#affd9ae441c8d86b1856a9ef31190e9ab" target="_top" xlink:title="Get the height of the frame.">
 <polygon fill="#ffffff" stroke="#000000" points="139,-.5 139,-19.5 242,-19.5 242,-.5 139,-.5"/>
 <text text-anchor="middle" x="190.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::height</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node7 -->
+<!-- Node6&#45;&gt;Node9 -->
 <g id="edge3" class="edge">
-<title>Node4&#45;&gt;Node7</title>
+<title>Node6&#45;&gt;Node9</title>
 <path fill="none" stroke="#191970" d="M103.2585,-21.9251C111.4897,-20.8 120.0768,-19.6262 128.5144,-18.4729"/>
 <polygon fill="#191970" stroke="#191970" points="129.2645,-21.903 138.6983,-17.0808 128.3164,-14.9675 129.2645,-21.903"/>
 </g>
-<!-- Node6 -->
+<!-- Node8 -->
 <g id="node3" class="node">
-<title>Node6</title>
+<title>Node8</title>
 <g id="a_node3"><a xlink:href="classMask.html#a4124a2daa1f7501d4fd80775b6217679" target="_top" xlink:title="Get the width of the mask in pixels.">
 <polygon fill="#ffffff" stroke="#000000" points="280,-38.5 280,-57.5 355,-57.5 355,-38.5 280,-38.5"/>
 <text text-anchor="middle" x="317.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Mask::width</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node6 -->
+<!-- Node7&#45;&gt;Node8 -->
 <g id="edge2" class="edge">
-<title>Node5&#45;&gt;Node6</title>
+<title>Node7&#45;&gt;Node8</title>
 <path fill="none" stroke="#191970" d="M240.3293,-48C250.0255,-48 260.1682,-48 269.7939,-48"/>
 <polygon fill="#191970" stroke="#191970" points="269.9904,-51.5001 279.9903,-48 269.9903,-44.5001 269.9904,-51.5001"/>
 </g>
-<!-- Node8 -->
+<!-- Node10 -->
 <g id="node5" class="node">
-<title>Node8</title>
+<title>Node10</title>
 <g id="a_node5"><a xlink:href="classMask.html#af845b7d3220b707c8b4c48bf87d045bb" target="_top" xlink:title="Get the height of the mask in pixels.">
 <polygon fill="#ffffff" stroke="#000000" points="278,-.5 278,-19.5 357,-19.5 357,-.5 278,-.5"/>
 <text text-anchor="middle" x="317.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Mask::height</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node8 -->
+<!-- Node9&#45;&gt;Node10 -->
 <g id="edge4" class="edge">
-<title>Node7&#45;&gt;Node8</title>
+<title>Node9&#45;&gt;Node10</title>
 <path fill="none" stroke="#191970" d="M242.1558,-10C250.6508,-10 259.4391,-10 267.8831,-10"/>
 <polygon fill="#191970" stroke="#191970" points="267.9692,-13.5001 277.9691,-10 267.9691,-6.5001 267.9692,-13.5001"/>
 </g>

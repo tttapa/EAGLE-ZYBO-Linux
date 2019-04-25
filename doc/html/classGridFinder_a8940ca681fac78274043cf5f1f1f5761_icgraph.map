@@ -1,4 +1,5 @@
 <map id="GridFinder::findSquare" name="GridFinder::findSquare">
-<area shape="rect" id="node1" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="253,5,419,32"/>
+<area shape="rect" id="node1" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="253,31,419,57"/>
 <area shape="rect" id="node2" href="$classLocationFinder.html#a398bb42565e1e2a499471765f569bc40" title=" " alt="" coords="5,5,205,32"/>
+<area shape="rect" id="node3" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="30,56,181,83"/>
 </map>

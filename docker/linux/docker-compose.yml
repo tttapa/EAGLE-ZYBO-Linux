@@ -9,6 +9,7 @@ services:
       target: linux
     ports:
       - "2000:2000"
+      - "9999:9999"
     privileged: false
     cap_add: 
       - SYS_PTRACE

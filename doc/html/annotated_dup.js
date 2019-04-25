@@ -1,12 +1,15 @@
 var annotated_dup =
 [
     [ "Matrices", "namespaceMatrices.html", "namespaceMatrices" ],
+    [ "pybind11", "namespacepybind11.html", "namespacepybind11" ],
     [ "Angle", "classAngle.html", "classAngle" ],
     [ "Array", "structArray.html", "structArray" ],
     [ "BresenhamLine", "classBresenhamLine.html", "classBresenhamLine" ],
     [ "CenterPointOutLineIterator", "classCenterPointOutLineIterator.html", "classCenterPointOutLineIterator" ],
     [ "ConstantTimeFunctionT", "structConstantTimeFunctionT.html", "structConstantTimeFunctionT" ],
     [ "CosSin", "structCosSin.html", "structCosSin" ],
+    [ "CryptoException", "classCryptoException.html", "classCryptoException" ],
+    [ "CryptoPoller", "classCryptoPoller.html", "classCryptoPoller" ],
     [ "FirstLineEstimate", "structFirstLineEstimate.html", "structFirstLineEstimate" ],
     [ "FunctionalTimeFunctionT", "structFunctionalTimeFunctionT.html", "structFunctionalTimeFunctionT" ],
     [ "FunctionPointerTimeFunctionT", "structFunctionPointerTimeFunctionT.html", "structFunctionPointerTimeFunctionT" ],

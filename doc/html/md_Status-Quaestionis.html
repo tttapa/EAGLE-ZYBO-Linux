@@ -116,8 +116,10 @@ It's important that we use different locks for logging and vision.</p>
 <h3>Vision</h3>
 <p>✓ The main part of the vision algorithm is <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a>: as an input, it takes the mask, where red lines are white, and everything else is black. As an output, it returns the vertices of the square of the grid in the center of the frame, and the lines (and angles) of that square. <br  />
 This part is finished, and has been tested using videos.</p>
-<p>🗙 We also need code that reads the image from the HDMI input, applies the mask to filter out the red lines, and passes it to <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a>. <br  />
-Then it transforms the output of <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a> in order to get the position of the drone, relative to the grid.</p>
+<p>✓ I've completely re-written the red pixel detection for generating the masks. <br  />
+It now uses ARM <a class="el" href="namespaceNEON.html">NEON</a> SIMD vector instructions, so it can mask 16 pixels in parallel.</p>
+<p>✓ Reading the image from the HDMI input seems to be working.</p>
+<p>🗙 Next, we need a way to transform the points returned by <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a> to get the global location of the drone, relative to the grid.</p>
 <p>🗙 Finally, this location has to be sent to the BareMetal core.</p>
 <p>🗙 When BareMetal indicates that the target position has been reached, the image should be sent to the <a class="el" href="structQR.html">QR</a> decoder and then the crypto code needs to be executed.</p>
 <h2>ZYBO Baremetal</h2>

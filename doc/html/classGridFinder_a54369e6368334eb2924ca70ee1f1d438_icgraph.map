@@ -2,5 +2,6 @@
 <area shape="rect" id="node1" title="Follow the given line to find the line perpendicular to it. Move along the line for minDistance pixel..." alt="" coords="480,31,659,57"/>
 <area shape="rect" id="node2" href="$classGridFinder.html#a3edbd3ffbcfe6d373fbaf576e4dca51b" title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults." alt="" coords="253,5,432,32"/>
 <area shape="rect" id="node3" href="$classGridFinder.html#a8940ca681fac78274043cf5f1f1f5761" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="260,56,425,83"/>
-<area shape="rect" id="node4" href="$classLocationFinder.html#a398bb42565e1e2a499471765f569bc40" title=" " alt="" coords="5,56,205,83"/>
+<area shape="rect" id="node4" href="$classLocationFinder.html#a398bb42565e1e2a499471765f569bc40" title=" " alt="" coords="5,31,205,57"/>
+<area shape="rect" id="node5" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="30,81,181,108"/>
 </map>

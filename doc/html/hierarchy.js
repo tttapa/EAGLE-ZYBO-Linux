@@ -10,6 +10,10 @@ var hierarchy =
     [ "BresenhamLine", "classBresenhamLine.html", null ],
     [ "CenterPointOutLineIterator", "classCenterPointOutLineIterator.html", null ],
     [ "CosSin", "structCosSin.html", null ],
+    [ "CryptoPoller", "classCryptoPoller.html", null ],
+    [ "std::exception", null, [
+      [ "CryptoException", "classCryptoException.html", null ]
+    ] ],
     [ "FirstLineEstimate", "structFirstLineEstimate.html", null ],
     [ "getArrayLengthBase< T >", "structgetArrayLengthBase.html", [
       [ "getArrayLength< T >", "structgetArrayLength.html", null ]
@@ -43,5 +47,6 @@ var hierarchy =
       [ "FunctionalTimeFunctionT< T >", "structFunctionalTimeFunctionT.html", null ],
       [ "FunctionPointerTimeFunctionT< T >", "structFunctionPointerTimeFunctionT.html", null ]
     ] ],
-    [ "Matrices::TransposeStruct", "structMatrices_1_1TransposeStruct.html", null ]
+    [ "Matrices::TransposeStruct", "structMatrices_1_1TransposeStruct.html", null ],
+    [ "pybind11::detail::type_caster< TMatrix< T, R, C > >", "structpybind11_1_1detail_1_1type__caster_3_01TMatrix_3_01T_00_01R_00_01C_01_4_01_4.html", null ]
 ];

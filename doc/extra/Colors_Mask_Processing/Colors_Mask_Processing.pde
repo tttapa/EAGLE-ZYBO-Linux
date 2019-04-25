@@ -117,7 +117,7 @@ color f(float r, float g, float b) {
 
 final int SATURATION_THRES       = 64;
 final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
-final int BRIGHTNESS_THRES       = 32;
+final int BRIGHTNESS_THRES       = 30;
 final int HUE_THRES_DEGREES      = 30;
 final int HUE_THRES_SHIFT        = round(log2(60 / HUE_THRES_DEGREES));
 

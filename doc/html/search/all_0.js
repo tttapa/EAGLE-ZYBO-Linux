@@ -12,7 +12,7 @@ var searchData=
   ['ansicolors_2ehpp',['ANSIColors.hpp',['../ANSIColors_8hpp.html',1,'']]],
   ['apply',['apply',['../structQR.html#aa61fe3635ba82acfc32da54920b79309',1,'QR']]],
   ['applymask',['applyMask',['../namespaceFallback.html#a505e4b4c630f9c62620d4308773ea4b7',1,'Fallback::applyMask()'],['../namespaceNEON.html#ad86177685f564f122f8862f9b0186107',1,'NEON::applyMask(const uint8_t *colors)'],['../namespaceNEON.html#a18e9c2e1570cbe37e0b164129acbff73',1,'NEON::applyMask(const uint8_t *colors, uint8_t *mask)']]],
-  ['applymaskimpl',['applyMaskImpl',['../Mask_8cpp.html#a9b531c6ea0309d1296b49874790edab0',1,'Mask.cpp']]],
+  ['applymaskimpl',['applyMaskImpl',['../GenerateMask-Unroll_8ipp.html#a9b531c6ea0309d1296b49874790edab0',1,'GenerateMask-Unroll.ipp']]],
   ['applytranspose',['applyTranspose',['../structQR.html#a8001dce66a751b468c5ae4b85d964ff2',1,'QR']]],
   ['array',['Array',['../structArray.html',1,'']]],
   ['array_2ehpp',['Array.hpp',['../Array_8hpp.html',1,'']]],

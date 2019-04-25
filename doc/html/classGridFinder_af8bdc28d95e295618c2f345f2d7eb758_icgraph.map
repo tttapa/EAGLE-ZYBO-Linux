@@ -7,5 +7,6 @@
 <area shape="rect" id="node4" href="$classGridFinder.html#aaea3af418ab7124f2b25bcc124fccaca" title="Get an estimate of the line through a given pixel. Find an estimate of the slope, then use that to de..." alt="" coords="484,5,655,47"/>
 <area shape="rect" id="node7" href="$classGridFinder.html#a3edbd3ffbcfe6d373fbaf576e4dca51b" title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults." alt="" coords="253,71,432,98"/>
 <area shape="rect" id="node8" href="$classGridFinder.html#a8940ca681fac78274043cf5f1f1f5761" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="260,122,425,149"/>
-<area shape="rect" id="node9" href="$classLocationFinder.html#a398bb42565e1e2a499471765f569bc40" title=" " alt="" coords="5,122,205,149"/>
+<area shape="rect" id="node9" href="$classLocationFinder.html#a398bb42565e1e2a499471765f569bc40" title=" " alt="" coords="5,97,205,123"/>
+<area shape="rect" id="node10" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="30,147,181,174"/>
 </map>

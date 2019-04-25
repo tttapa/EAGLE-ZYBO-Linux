@@ -1,5 +1,7 @@
 <map id="Angle::getIndex" name="Angle::getIndex">
-<area shape="rect" id="node1" title=" " alt="" coords="237,35,361,61"/>
+<area shape="rect" id="node1" title=" " alt="" coords="237,85,361,112"/>
 <area shape="rect" id="node2" href="$classAngle.html#a90a26814a60b92e152667b921ef542a4" title=" " alt="" coords="18,5,177,32"/>
-<area shape="rect" id="node3" href="$classGridFinder.html#afcc1eed83ee0292966c3c80883069634" title="Similar to findLineAngle, but is more accurate, because it uses the average of the range of angles wi..." alt="" coords="5,57,189,98"/>
+<area shape="rect" id="node3" href="$classAngle.html#a50309ff78d5ce30e24c967c5684bad3b" title=" " alt="" coords="9,56,185,83"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#afcc1eed83ee0292966c3c80883069634" title="Similar to findLineAngle, but is more accurate, because it uses the average of the range of angles wi..." alt="" coords="5,107,189,149"/>
+<area shape="rect" id="node5" href="$structSquare.html#a12c1f0ee0bd30021a5a7d7344538fef9" title="Get the average angle of the sides of the square ." alt="" coords="31,173,164,200"/>
 </map>

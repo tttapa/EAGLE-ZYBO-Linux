@@ -1,9 +1,11 @@
 <map id="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/grid&#45;finder/include/Angle.hpp" name="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/grid&#45;finder/include/Angle.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="132,5,346,61"/>
-<area shape="rect" id="node2" href="$Bresenham_8hpp.html" title=" " alt="" coords="32,213,283,269"/>
-<area shape="rect" id="node3" href="$GridFinder_8hpp.html" title=" " alt="" coords="138,325,380,381"/>
-<area shape="rect" id="node5" href="$HelperStructs_8hpp.html" title=" " alt="" coords="358,213,622,269"/>
-<area shape="rect" id="node7" href="$Line_8hpp.html" title=" " alt="" coords="219,109,422,165"/>
-<area shape="rect" id="node4" href="$LocationFinder_8cpp.html" title=" " alt="" coords="272,436,475,507"/>
-<area shape="rect" id="node6" href="$LocationFinder_8hpp.html" title=" " alt="" coords="404,317,576,388"/>
+<area shape="rect" id="node1" title=" " alt="" coords="254,5,467,61"/>
+<area shape="rect" id="node2" href="$Bresenham_8hpp.html" title=" " alt="" coords="518,213,769,269"/>
+<area shape="rect" id="node3" href="$GridFinder_8hpp.html" title=" " alt="" coords="201,325,443,381"/>
+<area shape="rect" id="node7" href="$HelperStructs_8hpp.html" title=" " alt="" coords="21,213,285,269"/>
+<area shape="rect" id="node9" href="$Line_8hpp.html" title=" " alt="" coords="190,109,393,165"/>
+<area shape="rect" id="node4" href="$LocationFinder_8cpp.html" title=" " alt="" coords="77,436,279,507"/>
+<area shape="rect" id="node5" href="$Grid-Finder_8module_8hpp.html" title=" " alt="" coords="312,436,489,507"/>
+<area shape="rect" id="node6" href="$Grid-Finder_8module_8cpp.html" title=" " alt="" coords="315,555,487,625"/>
+<area shape="rect" id="node8" href="$LocationFinder_8hpp.html" title=" " alt="" coords="5,317,177,388"/>
 </map>

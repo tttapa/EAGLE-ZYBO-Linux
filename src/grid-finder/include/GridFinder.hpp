@@ -27,6 +27,7 @@ class GridFinder {
   public:
     /// Constructor from a given mask.
     GridFinder(Mask &&mask) : mask(mask) {}
+    GridFinder(const Mask &mask) : mask(mask) {}
     /// Default constructor (creates a mask of all zeros).
     GridFinder() : mask{} {}
 
@@ -402,9 +403,7 @@ class GridFinder {
      * @param   value
      *          The value to set the pixel to.
      */
-    inline void set(Pixel px, uint8_t value = 0xFF) {
-        mask.set(px, value);
-    }
+    inline void set(Pixel px, uint8_t value = 0xFF) { mask.set(px, value); }
 
 #pragma endregion
 
@@ -584,8 +583,8 @@ class GridFinder {
         // If the center pixel is white, look for the first black pixels in both
         // directions
         if (get(x, c.getCenter())) {
-            uint first_white;
             uint y = c.getCenter();
+            uint first_white = y;
             // Find the lowest white pixel of the line through the center
             while (y < height()) {
                 if (get(x, y))
@@ -595,7 +594,7 @@ class GridFinder {
                 --y;
             }
             // Find the highest white pixel of the line through the center
-            uint last_white;
+            uint last_white = first_white;
             y = c.getCenter();
             while (y < height()) {
                 if (get(x, y))
