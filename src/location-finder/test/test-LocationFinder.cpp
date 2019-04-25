@@ -33,7 +33,7 @@ TEST(MaskGridFinder, fromImage) {
     cv::Mat maskimg = {img.rows, img.cols, CV_8UC1, mask.ptr()};
     cv::imwrite("mask.bmp", maskimg);
     GridFinder gf = std::move(mask);
-    pt            = PerfTimer();
+    pt.reset();
     Square sq     = gf.findSquare();
     std::cout << "GridFinder took "
               << pt.getDuration<std::chrono::microseconds>() << "µs"

@@ -61,6 +61,7 @@
         "FPGA",
         "SIMD",
         "ZYBO",
+        "chrono",
         "cmake",
         "crosstool",
         "executables",
