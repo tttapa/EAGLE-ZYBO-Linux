@@ -39,5 +39,6 @@ TEST(MaskGridFinder, fromImage) {
               << pt.getDuration<std::chrono::microseconds>() << "µs"
               << std::endl;
     std::cout << sq << std::endl;
+    std::cout << "Square angle = " << sq.getAngle() << std::endl;
     // TODO: check square result!
 }

@@ -17,3 +17,5 @@ services:
     container_name: crypto-devenv
     volumes:
       - "../../:${PWD}/../../"
+    extra_hosts: 
+      - "drone:192.168.0.200"

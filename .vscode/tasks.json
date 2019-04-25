@@ -168,6 +168,13 @@
             "problemMatcher": "$gcc"
         },
         {
+            "label": "Run Tests (ZYBO)",
+            "type": "shell",
+            "command": "docker exec -it crypto-devenv sh -c 'ssh root@drone /media/run-all-tests.sh /media'",
+            "dependsOn": "Copy all binaries to ZYBO",
+            "problemMatcher": "$gcc"
+        },
+        {
             "label": "Run Application (Docker)",
             "type": "shell",
             "command": "docker exec -it crypto-devenv ${workspaceFolder}/build/bin/hello-world",
@@ -272,7 +279,7 @@
         {
             "label": "Start GDB Server (ZYBO)",
             "type": "shell",
-            "command": "ssh root@drone 'source /media/ldpath.sh && /mnt/usr/bin/gdbserver localhost:2000 /media/location_finder.test'",
+            "command": "docker exec -it crypto-devenv ssh root@drone 'source /media/ldpath.sh && /mnt/usr/bin/gdbserver localhost:2000 /media/location_finder.test'",
             "problemMatcher": []
         },
         //#endregion
@@ -303,10 +310,11 @@
         {
             "label": "Copy all binaries to ZYBO",
             "type": "shell",
-            "command": "./copy-binaries-zybo.sh ${workspaceFolder}",
+            "command": "docker exec crypto-devenv sh -c '$WORKSPACE_ROOT/scripts/copy-binaries-zybo.sh ${workspaceFolder}/build-arm/bin /media'",
             "options": {
                 "cwd": "${workspaceFolder}/scripts"
             },
+            "dependsOn": "Build All ARMv7 ZYBO (Docker)",
             "problemMatcher": []
         },
         //#endregion
@@ -314,13 +322,13 @@
         {
             "label": "Reboot ZYBO",
             "type": "shell",
-            "command": "ssh root@drone /sbin/reboot",
+            "command": "docker exec crypto-devenv sh -c 'ssh root@drone /sbin/reboot'",
             "problemMatcher": []
         },
         {
             "label": "ZYBO Shell",
             "type": "shell",
-            "command": "ssh root@drone",
+            "command": "docker exec -it crypto-devenv sh -c 'ssh root@drone'",
             "problemMatcher": []
         }
         //#endregion

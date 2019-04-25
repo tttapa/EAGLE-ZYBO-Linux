@@ -13,8 +13,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Add a user called `develop`
-RUN useradd -ms /bin/bash develop
-RUN echo "develop   ALL=(ALL:ALL) ALL" >> /etc/sudoers
+RUN useradd -m develop && echo "develop:develop" | chpasswd && adduser develop sudo
 
 USER develop
 WORKDIR /home/develop
@@ -68,7 +67,7 @@ RUN cmake \
         ../opencv
 RUN make -j16 && \
     make install && \
-    cd && rm -rf /home/develop/opencv-arm-build
+    cd /home/develop && rm -rf /home/develop/opencv-arm-build
 
 WORKDIR /home/develop/opencv-x86-build
 USER root
@@ -81,7 +80,7 @@ RUN cmake \
         ../opencv
 RUN make -j16 && \
     make install && \
-    cd && rm -rf /home/develop/opencv-x86-build
+    cd /home/develop && rm -rf /home/develop/opencv-x86-build
 
 # Download Google Test
 WORKDIR /home/develop
@@ -97,7 +96,7 @@ USER develop
 RUN cmake -DCMAKE_INSTALL_PREFIX=/home/develop/.local ..
 RUN make -j16 && \
     make install && \
-    cd && rm -rf /home/develop/doxygen/build
+    cd /home/develop && rm -rf /home/develop/doxygen/build
 
 # Install dot and gdbserver
 USER root
@@ -107,6 +106,45 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
+USER develop
+
+# Install zbar
+WORKDIR /home/develop
+RUN wget http://downloads.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2 && \
+    tar xjf zbar-0.10.tar.bz2 && rm zbar-0.10.tar.bz2
+
+# x86-64
+RUN mkdir zbar-0.10/build
+WORKDIR /home/develop/zbar-0.10/build
+RUN ../configure \
+        --disable-video --without-imagemagick --without-gtk --without-python \
+        --without-qt --without-jpeg \
+        CFLAGS= \
+        --prefix=$HOME/.local
+RUN make -j$(nproc) && \
+    make install && \
+    cd /home/develop && rm -rf zbar-0.10/build
+
+# ARM
+WORKDIR /home/develop
+RUN mkdir zbar-0.10/build-arm
+WORKDIR /home/develop/zbar-0.10/build-arm
+RUN ../configure \
+        --disable-video --without-imagemagick --without-gtk --without-python \
+        --without-qt --without-jpeg \
+        CFLAGS= \
+        CC=arm-cortexa9_neon-linux-gnueabihf-gcc \
+        --host=arm-cortexa9_neon-linux-gnueabihf \
+        --prefix=$TOOLCHAIN_PATH/arm-cortexa9_neon-linux-gnueabihf/sysroot
+RUN make -j$(nproc) && \
+    make install && \
+    cd /home/develop && rm -rf zbar-0.10/build-arm
+
+COPY --chown=develop:develop id_rsa /home/develop/.ssh/id_rsa
+COPY --chown=develop:develop id_rsa.pub /home/develop/.ssh/id_rsa.pub
+
+USER root
+RUN echo "drone 192.168.0.200" >> /etc/hosts
 USER develop
 
 # for gdbserver
