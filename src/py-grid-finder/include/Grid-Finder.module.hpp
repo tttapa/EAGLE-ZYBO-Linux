@@ -2,6 +2,7 @@
 
 #define TEMPLATE_GRIDFINDER
 
+#include <AngleTracker.hpp>
 #include <GridFinder.hpp>
 #include <Line.hpp>
 #include <PyMatrix.hpp>
@@ -33,6 +34,7 @@ PYBIND11_MODULE(py_grid_finder, pygridmodule) {
     pybind11::class_<Square>(pygridmodule, "Square")
         .def_readonly("lines", &Square::lines)
         .def_readonly("points", &Square::points)
+        .def("getAngle", [](Square s) { return s.getAngle().rad(); })
         .def("__str__", [](const Square &sq) {
             std::ostringstream s;
             s << sq;
@@ -81,4 +83,9 @@ PYBIND11_MODULE(py_grid_finder, pygridmodule) {
                 /* Strides (in bytes) for each index */
             );
         });
+
+    pybind11::class_<AngleTracker>(pygridmodule, "AngleTracker")
+        .def(pybind11::init<>())
+        .def("update",
+             [](AngleTracker a, double rad) { return a.update(rad).rad(); });
 }

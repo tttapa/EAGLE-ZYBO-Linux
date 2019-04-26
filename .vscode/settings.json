@@ -67,6 +67,7 @@
         "crosstool",
         "executables",
         "googletest",
+        "indexof",
         "multicast",
         "subfolder",
         "toolchain",

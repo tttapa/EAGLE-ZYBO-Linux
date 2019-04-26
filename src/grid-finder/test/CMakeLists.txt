@@ -3,6 +3,7 @@ add_executable(grid_finder.test
     # test-GridFinder.cpp # // TODO
     test-Bresenham.cpp
     test-Angle.cpp
+    test-AngleTracker.cpp
     test-Line.cpp
     test-CenterPointOutLineIterator.cpp
 )

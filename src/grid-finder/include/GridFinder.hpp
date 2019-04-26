@@ -78,7 +78,7 @@ class GridFinder {
         return *std::max_element(houghRes.begin(), houghRes.end());
     }
 
-#if 1  // Not needed anymore
+#if 0  // Not needed anymore
     HoughResult findLineAngleAccurate(Pixel px) {
         std::array<HoughResult, angle_t::resolution()> houghRes;
         for (uint i = 0; i < angle_t::resolution(); ++i)
@@ -210,7 +210,7 @@ class GridFinder {
 
         return {
             angle_t::average(first_max->angle, last_max->angle),
-            first_max->count,  // TODO: should this be max->count?
+            max->count,
         };
     }
 
@@ -482,7 +482,7 @@ class GridFinder {
     constexpr static uint MINIMUM_START_LINE_WIDTH = 10;
     /// The minimum number of Hough votes the first line must have.
     /// @see    HoughResult::count
-    constexpr static uint MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT = 80;
+    constexpr static uint MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT = 100;
 
     /**
      * @brief   Get an estimate of the line through a given pixel.
@@ -520,7 +520,7 @@ class GridFinder {
 
     /// Don't use vertical lines as the first line, as this can result in
     /// finding a first square that's not in the center of the frame.
-    constexpr static uint MAXIMUM_VERTICAL_START_LINE_WIDTH = 32;
+    constexpr static uint MAXIMUM_VERTICAL_START_LINE_WIDTH = 32; // TODO
 
     /**
      * @brief   Find the vertical range of white pixels closest to the center of
@@ -583,7 +583,7 @@ class GridFinder {
         // If the center pixel is white, look for the first black pixels in both
         // directions
         if (get(x, c.getCenter())) {
-            uint y = c.getCenter();
+            uint y           = c.getCenter();
             uint first_white = y;
             // Find the lowest white pixel of the line through the center
             while (y < height()) {
@@ -595,7 +595,7 @@ class GridFinder {
             }
             // Find the highest white pixel of the line through the center
             uint last_white = first_white;
-            y = c.getCenter();
+            y               = c.getCenter();
             while (y < height()) {
                 if (get(x, y))
                     last_white = y;

@@ -220,13 +220,14 @@
         {
             "label": "Launch Jupyter Notebook (Docker)",
             "type": "shell",
-            "command": "docker exec -d -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0 && sleep 1 && sensible-browser http://localhost:9999",
+            "command": "docker exec -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0 --NotebookApp.token='' --NotebookApp.password=''",
             "options": {
                 "cwd": "${workspaceFolder}/build/bin"
             },
             "windows": {
-                "command": "docker exec -d -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0; if($?) {Start-Sleep 1; Start-Process \"http://localhost:9999\"}",
+                "command": "docker exec -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0 --NotebookApp.token='' --NotebookApp.password=''",
             },
+            "dependsOn": "Build & Install Python Module x86-64 (Docker)",
             "problemMatcher": []
         },
         //#endregion

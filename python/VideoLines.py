@@ -20,17 +20,18 @@ def main(filename):
     gr_times = np.zeros((int(video.get(cv2.CAP_PROP_FRAME_COUNT)),))
     mask_time = 0
     framectr = 0
+    angleTracker = gr.AngleTracker()
     result, image = video.read()
     while result and video.isOpened():
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         mask, mask_duration = redmask(image)
         mask_time += mask_duration
-        try:
-            processed, time = processFrame(image, mask)
-            gr_time += time
-            gr_times[framectr] = time
-        except Exception as e:
-            print(e)
+        processed, angle, time = processFrame(image, mask)
+        if angle >= 0:
+            angle = angleTracker.update(angle)
+            showAngle(angle, processed)
+        gr_time += time
+        gr_times[framectr] = time
         result, image = video.read()
         mask = cv2.cvtColor(np.array(mask), cv2.COLOR_GRAY2RGB)
         font = cv2.FONT_HERSHEY_SIMPLEX
@@ -61,12 +62,23 @@ def showLine(line, color, image):
           line.getLineCenter().y + int(2 * 410 * sin(line.getAngle())))
     cv2.line(image, p1, p2, color, 2)
 
+def showAngle(angle, image: np.array):
+    h, w, _ = image.shape
+    p1 = (int(w / 2), int(h / 2))
+    p2 = (int(w / 2 + 2 * w * cos(angle)),
+          int(h / 2 + 2 * w * sin(angle)))
+    cv2.line(image, p1, p2, (100, 100, 100), 2)
 
 def processFrame(image, mask):
     start = timer()
     gf = gr.GridFinder(mask)
     square = gf.findSquare()
     lines, points = square.lines, square.points
+    angle = -1
+    try:
+        angle = square.getAngle()
+    except:
+        pass
     end = timer()
     time = end - start
 
@@ -82,7 +94,7 @@ def processFrame(image, mask):
             point = (round(point.x), round(point.y))
             cv2.circle(image, point, 3, (255, 0, 0), -1)
 
-    return image, time
+    return image, angle, time
 
 
 def redmask(image):

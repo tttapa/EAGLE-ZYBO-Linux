@@ -111,11 +111,13 @@ color f(float r, float g, float b) {
   boolean cond = delta > max >> SATURATION_THRES_SHIFT // saturation
     && max > BRIGHTNESS_THRES // brightness
     && r == max && delta >> HUE_THRES_SHIFT > abs(g - b) // hue
-    && (max * max / 256 + delta * 256 / 128 > max);
+    && ((max / 16) * (max / 32) + delta) / 2 > max / 4;
   return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
 } // */
 
-final int SATURATION_THRES       = 64;
+
+// /*
+final int SATURATION_THRES       = 32;
 final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
 final int BRIGHTNESS_THRES       = 30;
 final int HUE_THRES_DEGREES      = 30;
@@ -129,7 +131,7 @@ color f(float r, float g, float b) {
     && max > BRIGHTNESS_THRES // brightness
     && r == max && delta >> HUE_THRES_SHIFT > abs(g - b); // hue
   return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
-}
+} // */
 
 void draw() {
 }

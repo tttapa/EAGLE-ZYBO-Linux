@@ -141,6 +141,10 @@ class Angle {
         return normalize(angle);
     }
 
+    constexpr static uint indexof(Angle angle) {
+        return angle.getIndex();
+    }
+
     static constexpr int cos(uint angleIndex) {
         return std::round(std::cos(step() * angleIndex) *
                           CosSin::getScalingFactor());

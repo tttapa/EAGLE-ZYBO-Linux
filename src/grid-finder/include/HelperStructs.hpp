@@ -72,10 +72,10 @@ struct Square {
                      (first_angle % _90)  //
                      + _360               // make sure that the result is > 0
                      - _45;
-            std::cout << v << "; ";
+            // std::cout << v << "; ";
             sum += v;
         }
-        std::cout << std::endl;
+        // std::cout << std::endl;
         return angle_t{(sum / 4) % _90};
     }
 };
