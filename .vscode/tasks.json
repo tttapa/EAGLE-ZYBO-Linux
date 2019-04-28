@@ -230,6 +230,18 @@
             "dependsOn": "Build & Install Python Module x86-64 (Docker)",
             "problemMatcher": []
         },
+        {
+            "label": "Open Jupyter Notebook in Browser",
+            "type": "shell",
+            "command": "sensible-browser http://localhost:9999",
+            "options": {
+                "cwd": "${workspaceFolder}/build/bin"
+            },
+            "windows": {
+                "command": "Start-Process \"http://localhost:9999\"",
+            },
+            "problemMatcher": []
+        },
         //#endregion
         //#region Cleaning up...................................................
         {
