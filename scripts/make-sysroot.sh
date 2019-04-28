@@ -11,5 +11,10 @@ sudo chown -R $USER /tmp/mnt-sysroot
 sudo docker cp \
     crypto-devenv:/home/develop/x-tools/arm-cortexa9_neon-linux-gnueabihf/arm-cortexa9_neon-linux-gnueabihf/sysroot/. \
     /tmp/mnt-sysroot
+if [ $1 == debug ]; then
+sudo docker cp \
+    crypto-devenv:/home/develop/x-tools/arm-cortexa9_neon-linux-gnueabihf/arm-cortexa9_neon-linux-gnueabihf/debug-root/. \
+    /tmp/mnt-sysroot
+fi
 sync -f /tmp/mnt-sysroot/*
 sudo umount /tmp/mnt-sysroot

@@ -12,6 +12,11 @@ struct Point {
     constexpr bool operator==(Point rhs) const {
         return this->x == rhs.x && this->y == rhs.y;
     }
+
+    operator TColVector<float, 2> &() {
+        static_assert(sizeof(*this) == sizeof(TColVector<float, 2>));
+        return *reinterpret_cast<TColVector<float, 2> *>(this);
+    }
 };
 
 inline std::ostream &operator<<(std::ostream &os, Point p) {

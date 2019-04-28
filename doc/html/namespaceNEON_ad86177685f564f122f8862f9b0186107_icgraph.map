@@ -1,0 +1,4 @@
+<map id="NEON::applyMask" name="NEON::applyMask">
+<area shape="rect" id="node1" title="Checks whether the given RGB pixels are within a certain range in HSV space." alt="" coords="192,5,331,32"/>
+<area shape="rect" id="node2" href="$namespaceNEON.html#a18e9c2e1570cbe37e0b164129acbff73" title="Calculate the mask of 16 pixels of the RGB image, and store the mask in second parameter." alt="" coords="5,5,144,32"/>
+</map>

@@ -82,9 +82,9 @@
         {
             "label": "Run CMake x86-64 (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake ..",
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake -DPYBIND11_PYTHON_VERSION=3.7 -DPYTHON_EXECUTABLE=/home/develop/.local/bin/python3 ..",
             "windows": {
-                "command": "docker exec -it -w  /home/develop/eagle/build crypto-devenv sh -c 'cmake ..'",
+                "command": "docker exec -it -w  /home/develop/eagle/build crypto-devenv sh -c 'cmake -DPYBIND11_PYTHON_VERSION=3.7 -DPYTHON_EXECUTABLE=/home/develop/.local/bin/python3 ..'",
             },
             "problemMatcher": [],
         },
@@ -143,6 +143,19 @@
             },
             "problemMatcher": "$gcc"
         },
+        {
+            "label": "Build & Install Python Module x86-64 (Docker)",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make python",
+            "windows": {
+                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make python'",
+            },
+            "problemMatcher": "$gcc"
+        },
         //#endregion
         //#region Running.......................................................
         {
@@ -168,6 +181,13 @@
             "problemMatcher": "$gcc"
         },
         {
+            "label": "Run Tests (ZYBO)",
+            "type": "shell",
+            "command": "docker exec -it crypto-devenv sh -c 'ssh root@drone /media/run-all-tests.sh /media'",
+            "dependsOn": "Copy all binaries to ZYBO",
+            "problemMatcher": "$gcc"
+        },
+        {
             "label": "Run Application (Docker)",
             "type": "shell",
             "command": "docker exec -it crypto-devenv ${workspaceFolder}/build/bin/hello-world",
@@ -189,6 +209,25 @@
             "options": {
                 "cwd": "${workspaceFolder}/build/bin"
             },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Python Vision Script (Docker)",
+            "type": "shell",
+            "command": "docker exec -it -w ${workspaceFolder}/python crypto-devenv ./VideoLines.py",
+            "problemMatcher": []
+        },
+        {
+            "label": "Launch Jupyter Notebook (Docker)",
+            "type": "shell",
+            "command": "docker exec -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0 --NotebookApp.token='' --NotebookApp.password=''",
+            "options": {
+                "cwd": "${workspaceFolder}/build/bin"
+            },
+            "windows": {
+                "command": "docker exec -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0 --NotebookApp.token='' --NotebookApp.password=''",
+            },
+            "dependsOn": "Build & Install Python Module x86-64 (Docker)",
             "problemMatcher": []
         },
         //#endregion
@@ -269,6 +308,12 @@
             },
             "problemMatcher": []
         },
+        {
+            "label": "Start GDB Server (ZYBO)",
+            "type": "shell",
+            "command": "docker exec -it crypto-devenv ssh root@drone 'source /media/ldpath.sh && /mnt/usr/bin/gdbserver localhost:2000 /media/location_finder.test'",
+            "problemMatcher": []
+        },
         //#endregion
         //#region Documentation.................................................
         {
@@ -292,6 +337,32 @@
             },
             "problemMatcher": []
         },
+        //#endregion
+        //#region Copying files to the ZYBO.....................................
+        {
+            "label": "Copy all binaries to ZYBO",
+            "type": "shell",
+            "command": "docker exec crypto-devenv sh -c '$WORKSPACE_ROOT/scripts/copy-binaries-zybo.sh ${workspaceFolder}/build-arm/bin /media'",
+            "options": {
+                "cwd": "${workspaceFolder}/scripts"
+            },
+            "dependsOn": "Build All ARMv7 ZYBO (Docker)",
+            "problemMatcher": []
+        },
+        //#endregion
+        //#region ZYBO..........................................................
+        {
+            "label": "Reboot ZYBO",
+            "type": "shell",
+            "command": "docker exec crypto-devenv sh -c 'ssh root@drone /sbin/reboot'",
+            "problemMatcher": []
+        },
+        {
+            "label": "ZYBO Shell",
+            "type": "shell",
+            "command": "docker exec -it crypto-devenv sh -c 'ssh root@drone'",
+            "problemMatcher": []
+        }
         //#endregion
     ]
 }

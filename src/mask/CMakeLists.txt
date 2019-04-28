@@ -31,8 +31,9 @@ target_compile_features(mask INTERFACE cxx_std_17)
 #   Libraries that are used in the public header files should be public,
 #   libraries that are only used in the implementation files should be private.
 target_link_libraries(mask 
-    PRIVATE 
+    PUBLIC
         grid_finder
+    PRIVATE 
         ${OpenCV_LIBS}
 )
 

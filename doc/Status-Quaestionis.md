@@ -56,22 +56,19 @@ returns the vertices of the square of the grid in the center of the frame, and
 the lines (and angles) of that square.  
 This part is finished, and has been tested using videos.
 
-🗙 We also need code that reads the image from the HDMI input, applies the mask
-to filter out the red lines, and passes it to GridFinder.  
-Then it transforms the output of GridFinder in order to get the position
-of the drone, relative to the grid.
+✓ I've completely re-written the red pixel detection for generating the masks.  
+It now uses ARM NEON SIMD vector instructions, so it can mask 16 pixels in 
+parallel.
+
+✓ Reading the image from the HDMI input seems to be working.
+
+🗙 Next, we need a way to transform the points returned by GridFinder to get the
+global location of the drone, relative to the grid.
 
 🗙 Finally, this location has to be sent to the BareMetal core.
 
 🗙 When BareMetal indicates that the target position has been reached, the image
 should be sent to the QR decoder and then the crypto code needs to be executed.
-
-🗙 I can't seem to get the HDMI input of the ZYBO to work, my laptop doesn't
-recognize it, and when I try to open it in OpenCV (`cv::VideoCapture cap(0)`),
-it gives a timeout in C++, and a V4L2 error in Python.  
-I'm using a cross-compiled version of OpenCV for the C++ code, rather than using
-the libraries that were pre-installed on the ZYBO image.  
-V4L2-support should be enabled in this build.
 
 ## ZYBO Baremetal
 

@@ -1,0 +1,5 @@
+<map id="Mask::generateMask" name="Mask::generateMask">
+<area shape="rect" id="node1" title="Generate the black and white mask of the given image." alt="" coords="5,31,161,57"/>
+<area shape="rect" id="node2" href="$classMask.html#a5e07140c5f18883bf05b4b755bacbd6a" title="Get the padded length for the data vector." alt="" coords="209,5,385,32"/>
+<area shape="rect" id="node3" href="$Array_8hpp.html#a265844176c0bd4643c0861d23003eff4" title=" " alt="" coords="248,56,347,83"/>
+</map>

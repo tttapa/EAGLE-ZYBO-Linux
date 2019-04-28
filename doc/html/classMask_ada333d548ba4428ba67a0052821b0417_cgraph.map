@@ -1,0 +1,4 @@
+<map id="Mask::toRGB_ptr" name="Mask::toRGB_ptr">
+<area shape="rect" id="node1" title="Ensure that an OpenCV matrix has the correct image type, and return a pointer to its data." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node2" href="$classMask.html#a278f890f8063043a92dd8d8104733661" title="Check if an OpenCV matrix has the correct image type: The matrix should have two dimensions,..." alt="" coords="184,5,357,32"/>
+</map>

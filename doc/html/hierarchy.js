@@ -7,10 +7,13 @@ var hierarchy =
     [ "Array< R, C >", "structArray.html", null ],
     [ "Array< T, R, C >", "structArray.html", null ],
     [ "Array< T, Rm, Cn >", "structArray.html", null ],
-    [ "Array< uint8_t, H, W >", "structArray.html", null ],
     [ "BresenhamLine", "classBresenhamLine.html", null ],
     [ "CenterPointOutLineIterator", "classCenterPointOutLineIterator.html", null ],
     [ "CosSin", "structCosSin.html", null ],
+    [ "CryptoPoller", "classCryptoPoller.html", null ],
+    [ "std::exception", null, [
+      [ "CryptoException", "classCryptoException.html", null ]
+    ] ],
     [ "FirstLineEstimate", "structFirstLineEstimate.html", null ],
     [ "getArrayLengthBase< T >", "structgetArrayLengthBase.html", [
       [ "getArrayLength< T >", "structgetArrayLength.html", null ]
@@ -21,11 +24,12 @@ var hierarchy =
     ] ],
     [ "getArrayTypeBase< Array< T, N > >", "structgetArrayTypeBase_3_01Array_3_01T_00_01N_01_4_01_4.html", null ],
     [ "GetMiddleResult", "structGetMiddleResult.html", null ],
-    [ "GridFinder< W, H >", "classGridFinder.html", null ],
+    [ "GridFinder", "classGridFinder.html", null ],
     [ "HoughResult", "structHoughResult.html", null ],
     [ "Incrementor< T >", "classIncrementor.html", null ],
     [ "Line", "classLine.html", null ],
     [ "LineResult", "structLineResult.html", null ],
+    [ "LocationFinder", "classLocationFinder.html", null ],
     [ "Mask", "classMask.html", null ],
     [ "MatrixAssignmentHelper< T, R, C, RR_sz, CC_sz, RR_offset, CC_offset >", "structMatrixAssignmentHelper.html", null ],
     [ "MulticastSender", "classMulticastSender.html", null ],
@@ -43,5 +47,6 @@ var hierarchy =
       [ "FunctionalTimeFunctionT< T >", "structFunctionalTimeFunctionT.html", null ],
       [ "FunctionPointerTimeFunctionT< T >", "structFunctionPointerTimeFunctionT.html", null ]
     ] ],
-    [ "Matrices::TransposeStruct", "structMatrices_1_1TransposeStruct.html", null ]
+    [ "Matrices::TransposeStruct", "structMatrices_1_1TransposeStruct.html", null ],
+    [ "pybind11::detail::type_caster< TMatrix< T, R, C > >", "structpybind11_1_1detail_1_1type__caster_3_01TMatrix_3_01T_00_01R_00_01C_01_4_01_4.html", null ]
 ];

@@ -1,0 +1,4 @@
+<map id="GridFinder::height" name="GridFinder::height">
+<area shape="rect" id="node1" title="Get the height of the frame." alt="" coords="5,5,143,32"/>
+<area shape="rect" id="node2" href="$classMask.html#af845b7d3220b707c8b4c48bf87d045bb" title="Get the height of the mask in pixels." alt="" coords="191,5,296,32"/>
+</map>

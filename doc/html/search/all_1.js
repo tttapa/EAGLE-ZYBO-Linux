@@ -6,5 +6,6 @@ var searchData=
   ['blue',['blue',['../namespaceANSIColors.html#a2b83736d36bd9217b46f58988274cc5c',1,'ANSIColors']]],
   ['blueb',['blueb',['../namespaceANSIColors.html#a28b0b281992e2c3b2c0c7db4663ff79b',1,'ANSIColors']]],
   ['bresenham_2ehpp',['Bresenham.hpp',['../Bresenham_8hpp.html',1,'']]],
-  ['bresenhamline',['BresenhamLine',['../classBresenhamLine.html',1,'BresenhamLine'],['../classBresenhamLine.html#a1e4c3b6c3175aa4899c8f4506efb1ea3',1,'BresenhamLine::BresenhamLine(Pixel start, int cos, int sin, uint w, uint h)'],['../classBresenhamLine.html#a04f205421f7687f16cc26f63667d8c64',1,'BresenhamLine::BresenhamLine(Pixel start, CosSin angle, uint w, uint h)'],['../classBresenhamLine.html#a4a605f7766d104ab8a89169a757c5f75',1,'BresenhamLine::BresenhamLine(Pixel start, double angle, uint w, uint h)']]]
+  ['bresenhamline',['BresenhamLine',['../classBresenhamLine.html',1,'BresenhamLine'],['../classBresenhamLine.html#a1e4c3b6c3175aa4899c8f4506efb1ea3',1,'BresenhamLine::BresenhamLine(Pixel start, int cos, int sin, uint w, uint h)'],['../classBresenhamLine.html#a04f205421f7687f16cc26f63667d8c64',1,'BresenhamLine::BresenhamLine(Pixel start, CosSin angle, uint w, uint h)'],['../classBresenhamLine.html#a4a605f7766d104ab8a89169a757c5f75',1,'BresenhamLine::BresenhamLine(Pixel start, double angle, uint w, uint h)']]],
+  ['brightness_5fthres',['BRIGHTNESS_THRES',['../Threshold_8hpp.html#a2f34b8ce94656374e678821229c1e41b',1,'Threshold.hpp']]]
 ];
