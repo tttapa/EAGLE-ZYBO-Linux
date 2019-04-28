@@ -14,4 +14,8 @@ class LocationFinder {
 
   private:
     cv::VideoCapture cap;
+    const Point center = {320,240};
+    //TODO 640,480
+    float length;
+    Point previous_location;
 };

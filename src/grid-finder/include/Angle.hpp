@@ -102,12 +102,24 @@ class Angle {
         return normalize(this->angle_index + rhs.angle_index);
     }
 
+    [[nodiscard]] constexpr Angle operator-(Angle rhs) const {
+        return normalize(resolution() + this->angle_index - rhs.angle_index);
+    }
+
     [[nodiscard]] constexpr Angle operator/(uint divisor) const {
         return angle_index / divisor;
     }
 
     constexpr bool operator==(Angle rhs) const {
         return this->angle_index == rhs.angle_index;
+    }
+
+    constexpr bool operator>(Angle rhs) const {
+        return this->angle_index > rhs.angle_index;
+    }
+
+    constexpr bool operator<(Angle rhs) const {
+        return this->angle_index < rhs.angle_index;
     }
 
     [[nodiscard]] static constexpr Angle normalize(uint angle_index) {
