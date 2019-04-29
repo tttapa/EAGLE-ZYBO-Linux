@@ -183,6 +183,10 @@
         {
             "label": "Run Tests (ZYBO)",
             "type": "shell",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
             "command": "docker exec -it crypto-devenv sh -c 'ssh root@drone /media/run-all-tests.sh /media'",
             "dependsOn": "Copy all binaries to ZYBO",
             "problemMatcher": "$gcc"

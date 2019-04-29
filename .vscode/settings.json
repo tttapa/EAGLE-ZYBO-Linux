@@ -48,7 +48,8 @@
         "ratio": "cpp",
         "*.ipp": "cpp",
         "string": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "future": "cpp"
     },
     "explorer.sortOrder": "filesFirst",
     "C_Cpp.default.cppStandard": "c++17",
