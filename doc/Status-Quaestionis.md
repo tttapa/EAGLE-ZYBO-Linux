@@ -19,6 +19,15 @@ debugging.
 ✓ I provided the basic structure for the Crypto code. It just writes a
 single word to R0, and then reads it back from R1.
 
+✓ I included the ZBar library for decoding the QR code. I also tried the OpenCV
+QR decoder, but ZBar seems to work better. I added a test as an example to run
+it asynchronously, that is, vision keeps on refreshing while the QR decoder is
+running. It remains to be seen if this is a good idea, because we only have a 
+single thread anyway.
+
+✓ I also added a base64-decoder library for extracting the binary data from the 
+QR code.
+
 🗙 The next step is to write functions that are able to decode strings of data, as
 well as more elaborate test cases.
 
@@ -50,7 +59,7 @@ to send the same message as unicast as well.
 
 ### Vision
 
-✓ The main part of the vision algorithm is GridFinder: as an input, it takes the
+✓ The main part of the vision algorithm is GridFinder: as an input, it uses the
 mask, where red lines are white, and everything else is black. As an output, it
 returns the vertices of the square of the grid in the center of the frame, and
 the lines (and angles) of that square.  
@@ -58,12 +67,18 @@ This part is finished, and has been tested using videos.
 
 ✓ I've completely re-written the red pixel detection for generating the masks.  
 It now uses ARM NEON SIMD vector instructions, so it can mask 16 pixels in 
-parallel.
+parallel. There's also a function that's a bit more accurate, but a bit slower.
+If dark, washed-out red is detected as a line, and if this is a problem, we 
+could use that code instead.
 
-✓ Reading the image from the HDMI input seems to be working.
+✓ Reading the image from the HDMI input seems to be working. There is a purple
+line at the edge of the frame though, that I can't seem to get rid of.
 
 🗙 Next, we need a way to transform the points returned by GridFinder to get the
-global location of the drone, relative to the grid.
+global location of the drone, relative to the grid. I believe Cyriel finished
+the code, but didn't test it yet.
+I also added the code to get the orientation of a square. It still needs code to
+handle the case where not all four sides of the square are available.
 
 🗙 Finally, this location has to be sent to the BareMetal core.
 

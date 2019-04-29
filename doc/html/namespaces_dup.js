@@ -1,6 +1,7 @@
 var namespaces_dup =
 [
     [ "ANSIColors", "namespaceANSIColors.html", null ],
+    [ "Base64", "namespaceBase64.html", null ],
     [ "Fallback", "namespaceFallback.html", null ],
     [ "Matrices", "namespaceMatrices.html", null ],
     [ "MatrixPrinting", "namespaceMatrixPrinting.html", null ],

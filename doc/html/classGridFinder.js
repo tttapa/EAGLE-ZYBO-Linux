@@ -9,7 +9,6 @@ var classGridFinder =
     [ "drawLine", "classGridFinder.html#a38cc6124693e5f533e1598587272f92a", null ],
     [ "drawLine", "classGridFinder.html#a0cb4d1d344f4830de77ecf1615878656", null ],
     [ "findLineAngle", "classGridFinder.html#a04e1362c95151ac77477844a952af0f9", null ],
-    [ "findLineAngleAccurate", "classGridFinder.html#af44b4862dc3f8c725e8ea3739b33c2e6", null ],
     [ "findLineAngleAccurateRange", "classGridFinder.html#afcc1eed83ee0292966c3c80883069634", null ],
     [ "findNextLine", "classGridFinder.html#a54369e6368334eb2924ca70ee1f1d438", null ],
     [ "findNextLine", "classGridFinder.html#a3edbd3ffbcfe6d373fbaf576e4dca51b", null ],

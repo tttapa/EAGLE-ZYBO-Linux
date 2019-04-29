@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['matrices',['Matrices',['../namespaceMatrices.html',1,'']]],
-  ['matrixprinting',['MatrixPrinting',['../namespaceMatrixPrinting.html',1,'']]]
+  ['fallback',['Fallback',['../namespaceFallback.html',1,'']]]
 ];

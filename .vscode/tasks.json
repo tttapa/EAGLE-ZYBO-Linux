@@ -183,6 +183,10 @@
         {
             "label": "Run Tests (ZYBO)",
             "type": "shell",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
             "command": "docker exec -it crypto-devenv sh -c 'ssh root@drone /media/run-all-tests.sh /media'",
             "dependsOn": "Copy all binaries to ZYBO",
             "problemMatcher": "$gcc"
@@ -228,6 +232,21 @@
                 "command": "docker exec -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0 --NotebookApp.token='' --NotebookApp.password=''",
             },
             "dependsOn": "Build & Install Python Module x86-64 (Docker)",
+            "problemMatcher": []
+        },
+        {
+            "label": "Open Jupyter Notebook in Browser",
+            "type": "shell",
+            "command": "sensible-browser http://localhost:9999",
+            "options": {
+                "cwd": "${workspaceFolder}/build/bin"
+            },
+            "windows": {
+                "command": "Start-Process \"http://localhost:9999\"",
+            },
+            "osx": {
+                "command": "open \"http://localhost:9999\"",
+            },
             "problemMatcher": []
         },
         //#endregion

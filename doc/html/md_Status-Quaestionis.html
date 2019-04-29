@@ -102,6 +102,8 @@ $(document).ready(function(){initNavTree('md_Status-Quaestionis.html','');});
 <p>All build tasks are available as tasks in Visual Studio Code, this includes building the Docker images, toolchains, libraries, ZYBO applications, testing, debugging.</p>
 <h3>Crypto</h3>
 <p>✓ I provided the basic structure for the Crypto code. It just writes a single word to R0, and then reads it back from R1.</p>
+<p>✓ I included the ZBar library for decoding the <a class="el" href="structQR.html">QR</a> code. I also tried the OpenCV <a class="el" href="structQR.html">QR</a> decoder, but ZBar seems to work better. I added a test as an example to run it asynchronously, that is, vision keeps on refreshing while the <a class="el" href="structQR.html">QR</a> decoder is running. It remains to be seen if this is a good idea, because we only have a single thread anyway.</p>
+<p>✓ I also added a base64-decoder library for extracting the binary data from the <a class="el" href="structQR.html">QR</a> code.</p>
 <p>🗙 The next step is to write functions that are able to decode strings of data, as well as more elaborate test cases.</p>
 <p>The public API of the crypto code goes in <code><a class="el" href="crypto_8hpp.html">src/crypto/include/crypto.hpp</a></code>, and the implementations in <code><a class="el" href="crypto_8cpp.html">src/crypto/src/crypto.cpp</a></code>. <br  />
 Test cases go in <code>src/crypto/test/test-crypto.cpp</code>.</p>
@@ -114,12 +116,12 @@ This is not ideal, because it has a lot of overhead when reading large amounts o
 It's important that we use different locks for logging and vision.</p>
 <p>🗙 If we can't get multicast routing to work for the base station, we might have to send the same message as unicast as well.</p>
 <h3>Vision</h3>
-<p>✓ The main part of the vision algorithm is <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a>: as an input, it takes the mask, where red lines are white, and everything else is black. As an output, it returns the vertices of the square of the grid in the center of the frame, and the lines (and angles) of that square. <br  />
+<p>✓ The main part of the vision algorithm is <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a>: as an input, it uses the mask, where red lines are white, and everything else is black. As an output, it returns the vertices of the square of the grid in the center of the frame, and the lines (and angles) of that square. <br  />
 This part is finished, and has been tested using videos.</p>
 <p>✓ I've completely re-written the red pixel detection for generating the masks. <br  />
-It now uses ARM <a class="el" href="namespaceNEON.html">NEON</a> SIMD vector instructions, so it can mask 16 pixels in parallel.</p>
-<p>✓ Reading the image from the HDMI input seems to be working.</p>
-<p>🗙 Next, we need a way to transform the points returned by <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a> to get the global location of the drone, relative to the grid.</p>
+It now uses ARM <a class="el" href="namespaceNEON.html">NEON</a> SIMD vector instructions, so it can mask 16 pixels in parallel. There's also a function that's a bit more accurate, but a bit slower. If dark, washed-out red is detected as a line, and if this is a problem, we could use that code instead.</p>
+<p>✓ Reading the image from the HDMI input seems to be working. There is a purple line at the edge of the frame though, that I can't seem to get rid of.</p>
+<p>🗙 Next, we need a way to transform the points returned by <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a> to get the global location of the drone, relative to the grid. I believe Cyriel finished the code, but didn't test it yet. I also added the code to get the orientation of a square. It still needs code to handle the case where not all four sides of the square are available.</p>
 <p>🗙 Finally, this location has to be sent to the BareMetal core.</p>
 <p>🗙 When BareMetal indicates that the target position has been reached, the image should be sent to the <a class="el" href="structQR.html">QR</a> decoder and then the crypto code needs to be executed.</p>
 <h2>ZYBO Baremetal</h2>

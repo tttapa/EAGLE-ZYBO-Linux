@@ -130,8 +130,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a04e1362c95151ac77477844a952af0f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not very accurate, as it doesn't handle the case where multiple angles have the same maximum count. <br  />
  On the other hand, it's a bit faster than the more accurate alternatives, making it a good candidate for finding the first angle estimate, to narrow down the search space.  <a href="classGridFinder.html#a04e1362c95151ac77477844a952af0f9">More...</a><br /></td></tr>
 <tr class="separator:a04e1362c95151ac77477844a952af0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af44b4862dc3f8c725e8ea3739b33c2e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHoughResult.html">HoughResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#af44b4862dc3f8c725e8ea3739b33c2e6">findLineAngleAccurate</a> (<a class="el" href="structPixel.html">Pixel</a> px)</td></tr>
-<tr class="separator:af44b4862dc3f8c725e8ea3739b33c2e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcc1eed83ee0292966c3c80883069634"><td class="memTemplParams" colspan="2">template&lt;uint N&gt; </td></tr>
 <tr class="memitem:afcc1eed83ee0292966c3c80883069634"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structHoughResult.html">HoughResult</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGridFinder.html#afcc1eed83ee0292966c3c80883069634">findLineAngleAccurateRange</a> (<a class="el" href="structPixel.html">Pixel</a> px, <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">angle_t</a> centerAngle) const</td></tr>
 <tr class="memdesc:afcc1eed83ee0292966c3c80883069634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classGridFinder.html#a04e1362c95151ac77477844a952af0f9" title="Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not ve...">findLineAngle</a>, but is more accurate, because it uses the average of the range of angles with the hightest vote counts. It also doesn't scan 360°, but takes 2<code>N</code> samples around a given center angle.  <a href="classGridFinder.html#afcc1eed83ee0292966c3c80883069634">More...</a><br /></td></tr>
@@ -224,7 +222,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a75001d71e7ef1313c09f955fceda9a18"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a75001d71e7ef1313c09f955fceda9a18">MINIMUM_START_LINE_WIDTH</a> = 10</td></tr>
 <tr class="memdesc:a75001d71e7ef1313c09f955fceda9a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum width the first line must have.  <a href="classGridFinder.html#a75001d71e7ef1313c09f955fceda9a18">More...</a><br /></td></tr>
 <tr class="separator:a75001d71e7ef1313c09f955fceda9a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6387b8a031f63ccd0aa5b26f18a3a167"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a6387b8a031f63ccd0aa5b26f18a3a167">MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT</a> = 80</td></tr>
+<tr class="memitem:a6387b8a031f63ccd0aa5b26f18a3a167"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a6387b8a031f63ccd0aa5b26f18a3a167">MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT</a> = 100</td></tr>
 <tr class="separator:a6387b8a031f63ccd0aa5b26f18a3a167"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0d8d7680aa31bafa11fec57bd0ab370"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ad0d8d7680aa31bafa11fec57bd0ab370">MAXIMUM_VERTICAL_START_LINE_WIDTH</a> = 32</td></tr>
 <tr class="separator:ad0d8d7680aa31bafa11fec57bd0ab370"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -618,40 +616,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="af44b4862dc3f8c725e8ea3739b33c2e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af44b4862dc3f8c725e8ea3739b33c2e6">&#9670;&nbsp;</a></span>findLineAngleAccurate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structHoughResult.html">HoughResult</a> GridFinder::findLineAngleAccurate </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
-          <td class="paramname"><em>px</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00082">82</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_af44b4862dc3f8c725e8ea3739b33c2e6_cgraph.svg" width="1074" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
 <a id="afcc1eed83ee0292966c3c80883069634"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afcc1eed83ee0292966c3c80883069634">&#9670;&nbsp;</a></span>findLineAngleAccurateRange()</h2>
 
@@ -975,7 +939,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_afbed8951f70923626b73abdbe05236da_icgraph.svg" width="1551" height="362"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_afbed8951f70923626b73abdbe05236da_icgraph.svg" width="1551" height="323"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1401,7 +1365,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_affd9ae441c8d86b1856a9ef31190e9ab_icgraph.svg" width="1571" height="591"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_affd9ae441c8d86b1856a9ef31190e9ab_icgraph.svg" width="1571" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1460,7 +1424,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ace2c24a54244e7e92618d3fe7ec62fdc_icgraph.svg" width="598" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ace2c24a54244e7e92618d3fe7ec62fdc_icgraph.svg" width="598" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1715,7 +1679,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_aadfce89f171d55f954a19d700b43ff5c_icgraph.svg" width="1566" height="591"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_aadfce89f171d55f954a19d700b43ff5c_icgraph.svg" width="1566" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1885,7 +1849,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT = 80</td>
+          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT = 100</td>
         </tr>
       </table>
   </td>

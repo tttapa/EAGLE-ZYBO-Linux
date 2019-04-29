@@ -14,7 +14,7 @@
 <title>Node0</title>
 <g id="a_node1"><a xlink:href="structArray.html" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-19.5 85,-19.5 85,-.5 0,-.5"/>
-<text text-anchor="middle" x="42.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Array&lt; T, N &gt;</text>
+<text text-anchor="middle" x="42.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Array&lt; R, C &gt;</text>
 </a>
 </g>
 </g>

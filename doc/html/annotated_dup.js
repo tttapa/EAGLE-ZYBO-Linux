@@ -3,6 +3,7 @@ var annotated_dup =
     [ "Matrices", "namespaceMatrices.html", "namespaceMatrices" ],
     [ "pybind11", "namespacepybind11.html", "namespacepybind11" ],
     [ "Angle", "classAngle.html", "classAngle" ],
+    [ "AngleTracker", "classAngleTracker.html", "classAngleTracker" ],
     [ "Array", "structArray.html", "structArray" ],
     [ "BresenhamLine", "classBresenhamLine.html", "classBresenhamLine" ],
     [ "CenterPointOutLineIterator", "classCenterPointOutLineIterator.html", "classCenterPointOutLineIterator" ],

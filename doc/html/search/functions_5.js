@@ -4,7 +4,6 @@ var searchData=
   ['filledmatrix',['filledMatrix',['../MatrixHelpers_8hpp.html#a0143e59b28ca53207a87f0a2d0873bf4',1,'MatrixHelpers.hpp']]],
   ['filledtmatrix',['filledTMatrix',['../MatrixHelpers_8hpp.html#a97dc20f082415c3707e56be3bec40f33',1,'MatrixHelpers.hpp']]],
   ['findlineangle',['findLineAngle',['../classGridFinder.html#a04e1362c95151ac77477844a952af0f9',1,'GridFinder']]],
-  ['findlineangleaccurate',['findLineAngleAccurate',['../classGridFinder.html#af44b4862dc3f8c725e8ea3739b33c2e6',1,'GridFinder']]],
   ['findlineangleaccuraterange',['findLineAngleAccurateRange',['../classGridFinder.html#afcc1eed83ee0292966c3c80883069634',1,'GridFinder']]],
   ['findnextline',['findNextLine',['../classGridFinder.html#a54369e6368334eb2924ca70ee1f1d438',1,'GridFinder::findNextLine(LineResult line, bool direction, uint minDistance=0, uint offset=0) const'],['../classGridFinder.html#a3edbd3ffbcfe6d373fbaf576e4dca51b',1,'GridFinder::findNextLine(optional&lt; LineResult &gt; line, bool direction, uint minDistance=0, uint offset=0) const']]],
   ['findsquare',['findSquare',['../classGridFinder.html#a8940ca681fac78274043cf5f1f1f5761',1,'GridFinder']]],
