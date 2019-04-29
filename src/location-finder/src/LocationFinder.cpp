@@ -53,52 +53,57 @@ Point LocationFinder::transformPoint(angle_t angle, Point point) {
     float y;
     x = point.x - center.x;
     y = -(point.y - center.y);
-    return {x*angle.cosf() + y*angle.sinf(), -x*angle.sinf() + y*angle.cosf()}
+    return {x*angle.cosf() + y*angle.sinf(), -x*angle.sinf() + y*angle.cosf()};
+}
+
+void LocationFinder::setLength(Point point1, Point point2) {
+    this->length = sqrt(pow(point1.x - point2.x , 2) + pow(point1.y - point2.y , 2));
 }
 
 Point LocationFinder::findOrigin(std::array<std::optional<Point>, 4> points, angle_t angle) {
     std::array<std::optional<Point>, 4> transformed_points;
-    std::optional<Point> bottom_left;
-    std::optional<Point> top_left;
-    std::optional<Point> bottom_right;
-    std::optional<Point> top_right;
+    Point bottom_left;
+    Point top_left;
+    Point bottom_right;
+    Point top_right;
+    Point transformed_point;
     for(auto point: points){
-        transformed_point = transformPoint(angle, point);
-        if (transformed_point[0]<0 && transformed_point[1]<0)
-            bottom_left = transformed_point;
-        else if (transformed_point[0]<0 && transformed_point[1]>0)
-            top_left = transformed_point;
-        else if (transformed_point[0]>0 && transformed_point[1]<0)
-            bottom_right = transformed_point;
-        else
-            top_right = transformed_point;
+        if (point){
+            transformed_point = transformPoint(angle, point);
+            if (transformed_point[0]<0 && transformed_point[1]<0)
+                bottom_left = transformed_point;
+            else if (transformed_point[0]<0 && transformed_point[1]>0)
+                top_left = transformed_point;
+            else if (transformed_point[0]>0 && transformed_point[1]<0)
+                bottom_right = transformed_point;
+            else
+                top_right = transformed_point;
+        }
     }
-    if (bottom_left != std::nullopt)
-        transformed_points.push_back(bottom_left);
-    if (top_left != std::nullopt)
-        transformed_points.push_back(top_left);
-    if (bottom_right != std::nullopt)
-        transformed_points.push_back(bottom_right);
-    if (top_right != std::nullopt)
-        transformed_points.push_back(top_right);
-    setLength(transformed_points);
-    return transformed_points[0];
+    if (bottom_left)
+        return bottom_left;
+    if (top_left)
+        return top_left;
+    if (bottom_right)
+        return bottom_right;
+    if (top_right)
+        return top_right;
 }
 
 Point LocationFinder::findLocation(Point origin) {
     float x;
     float y;
-    if (origin[0] <= 0 && origin[1] <= 0){
-        x = -origin[0];
-        y = -origin[1];
+    if (origin.x <= 0 && origin.y <= 0){
+        x = -origin.x;
+        y = -origin.y;
     }
-    else if (origin[0] <= 0 && origin[1] > 0){
-        x = -origin[0];
-        y = 1 - origin[1];
+    else if (origin.x <= 0 && origin.y > 0){
+        x = -origin.x;
+        y = 1 - origin.y;
     }
     else{
-        x = 1 - origin[0];
-        y = -origin[1];
+        x = 1 - origin.x;
+        y = -origin.y;
     }
     this->previous_location = {x/length, y/length};
     return {x/length, y/length};
