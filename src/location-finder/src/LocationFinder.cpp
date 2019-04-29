@@ -35,10 +35,10 @@ int test() {
     return 0;
 }
 
-std::optional<angle_t> LocationFinder::getAverageYaw(std::array<std::optional<LineResult>, 5> lines;) {
+std::optional<angle_t> LocationFinder::getAverageYaw(std::array<std::optional<LineResult>, 5> lines) {
     if (lines.empty())
         return std::nullopt;
-    angle_t angle_line = average(lines[0].angle,lines[1].angle);
+    angle_t angle_line = angle_t::average(lines[0]->angle,lines[1]->angle);
     if ((angle_line > 45_deg && angle_line < 135_deg))
         angle_line = angle_line - 90_deg;
     if ((angle_line > 135_deg && angle_line < 225_deg))
@@ -51,29 +51,18 @@ std::optional<angle_t> LocationFinder::getAverageYaw(std::array<std::optional<Li
 Point LocationFinder::transformPoint(angle_t angle, Point point) {
     float x;
     float y;
-    x = point[0] - center[0];
-    y = -(point[1] - center[1]);
-    return {x*cosf(angle) + y*sinf(angle), -x*sinf(angle) + y*cosf(angle)}
-}
-
-void setLength(std::array<std::optional<Point>, 4> points) {
-    if (points.size() < 2)
-        return;
-    if (points.size() == 2){
-        if ((points[0][1] > 0 && points[1][1] > 0)||(points[0][1] < 0 && points[1][1] < 0)
-            this->length = points[1][0] - points[0][0];
-        else
-            this->length = points[1][1] - points[0][1];
-    }
+    x = point.x - center.x;
+    y = -(point.y - center.y);
+    return {x*angle.cosf() + y*angle.sinf(), -x*angle.sinf() + y*angle.cosf()}
 }
 
 Point LocationFinder::findOrigin(std::array<std::optional<Point>, 4> points, angle_t angle) {
     std::array<std::optional<Point>, 4> transformed_points;
-    Point bottom_left;
-    Point top_left;
-    Point bottom_right;
-    Point top_right;
-    for(Point point: points){
+    std::optional<Point> bottom_left;
+    std::optional<Point> top_left;
+    std::optional<Point> bottom_right;
+    std::optional<Point> top_right;
+    for(auto point: points){
         transformed_point = transformPoint(angle, point);
         if (transformed_point[0]<0 && transformed_point[1]<0)
             bottom_left = transformed_point;
@@ -84,13 +73,13 @@ Point LocationFinder::findOrigin(std::array<std::optional<Point>, 4> points, ang
         else
             top_right = transformed_point;
     }
-    if (bottom_left != null)
+    if (bottom_left != std::nullopt)
         transformed_points.push_back(bottom_left);
-    if (top_left != null)
+    if (top_left != std::nullopt)
         transformed_points.push_back(top_left);
-    if (bottom_right != null)
+    if (bottom_right != std::nullopt)
         transformed_points.push_back(bottom_right);
-    if (top_right != null)
+    if (top_right != std::nullopt)
         transformed_points.push_back(top_right);
     setLength(transformed_points);
     return transformed_points[0];
@@ -115,11 +104,18 @@ Point LocationFinder::findLocation(Point origin) {
     return {x/length, y/length};
 }
 
-boolean LocationFinder::isUsableImage(Square square) {
-    if (square == null || square.lines == null || square.points == null){
-        return false;
+bool LocationFinder::isUsableImage(Square square) {
+    int size_points;
+    int size_lines;
+    for (auto point: square.points){
+        if (point != std::nullopt)
+            size_points += 1;
     }
-    return square.lines.size() >= 2 && square.points.size() >= 2;
+    for (auto line: square.lines){
+        if (line != std::nullopt)
+            size_points += 1;
+    }
+    return size_points >= 2 && size_lines >= 2;
 }
 
 Point LocationFinder::getLocation() {
@@ -140,25 +136,29 @@ Point LocationFinder::getLocation() {
     GridFinder gf = std::move(mask);
     std::cout << gf.findSquare() << std::endl;
     Square fs = gf.findSquare();
-    if (previous_location == null){
+    if (!previous_location){
         this->previous_location = {0.5,0.5};
     }
     if (!isUsableImage(fs)){
         return this->previous_location;
     }
-    angle_t yaw = getAverageYaw(fs.lines);
-    Point origin = findOrigin(fs.points, yaw);
+    std::optional<angle_t> yaw = getAverageYaw(fs.lines);
+    if (!yaw)
+        return this->previous_location;
+    Point origin = findOrigin(fs.points, *yaw);
     return findLocation(origin);
 }
 
 Point test1(Square square) {
-    if (previous_location == null){
+    if (!previous_location){
         this->previous_location = {0.5,0.5};
     }
-    if (!isUsableImage(fs)){
+    if (!isUsableImage(square)){
         return this->previous_location;
     }
-    angle_t yaw = getAverageYaw(fs.lines);
-    Point origin = findOrigin(fs.points, yaw);
+    std::optional<angle_t> yaw = getAverageYaw(square.lines);
+    if (!yaw)
+        return this->previous_location;
+    Point origin = findOrigin(square.points, *yaw);
     return findLocation(origin);
 }

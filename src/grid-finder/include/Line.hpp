@@ -17,6 +17,12 @@ struct Point {
         static_assert(sizeof(*this) == sizeof(TColVector<float, 2>));
         return *reinterpret_cast<TColVector<float, 2> *>(this);
     }
+
+    constexpr Point() : x{nan("")}, y{nan("")} {}
+
+    constexpr Point(float x, float y) : x{x}, y{y} {}
+
+    constexpr explicit operator bool()const{return std::isfinite(x) && std::isfinite(y);}
 };
 
 inline std::ostream &operator<<(std::ostream &os, Point p) {

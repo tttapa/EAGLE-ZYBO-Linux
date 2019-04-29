@@ -42,3 +42,5 @@ TEST(MaskGridFinder, fromImage) {
     std::cout << "Square angle = " << sq.getAngle() << std::endl;
     // TODO: check square result!
 }
+
+TEST()

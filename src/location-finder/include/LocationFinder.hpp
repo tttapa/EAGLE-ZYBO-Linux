@@ -10,6 +10,11 @@ class LocationFinder {
     LocationFinder(cv::VideoCapture &&cap) : cap(cap) {}
     LocationFinder(const cv::VideoCapture &cap) : cap(cap) {}
 
+    std::optional<angle_t> getAverageYaw(std::array<std::optional<LineResult>, 5> lines);
+    Point transformPoint(angle_t angle, Point point);
+    Point findOrigin(std::array<std::optional<Point>, 4> points, angle_t angle);
+    Point findLocation(Point origin);
+    bool isUsableImage(Square square);   
     Point getLocation();
 
   private:
