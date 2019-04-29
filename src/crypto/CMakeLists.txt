@@ -1,6 +1,5 @@
 # Create library target and specify the implementation files to compile.
 add_library(crypto 
-    src/crypto.cpp
     src/bitString.cpp
     src/cryptoPoller.cpp
 )

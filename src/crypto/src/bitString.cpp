@@ -14,7 +14,7 @@ void BitString::concatenate(const BitString &otherBitString) {
 }
 
 void BitString::split(std::array<uint32_t, 10> &array) {
-    for (int i = 0; i < bits.size() / 10; i++) {
+    for (uint16_t i = 0; i < bits.size() / 10; i++) {
         array[2 * i] = bits[10 * i + 1] | (bits[10 * i] << 4) |
                        (bits[10 * i + 3] << 8) | (bits[10 * i + 2] << 12) |
                        (bits[10 * i + 5] << 16);
