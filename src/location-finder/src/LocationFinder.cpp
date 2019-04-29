@@ -42,14 +42,64 @@ Point LocationFinder::getLocation() {
     cv::Mat rgbimg;
     cv::cvtColor(img, rgbimg, cv::COLOR_BGR2RGB);
     cv::imwrite("img.bmp", rgbimg);
-    uint px = 3 * 32;
-    std::cout << +img.ptr()[px + 0] << ", "
-              << +img.ptr()[px + 1] << ", "
-              << +img.ptr()[px + 2] << std::endl;
     Mask mask       = img;
     cv::Mat maskimg = {img.rows, img.cols, CV_8UC1, mask.ptr()};
     cv::imwrite("mask.bmp", maskimg);
     GridFinder gf = std::move(mask);
-    std::cout << gf.findSquare() << std::endl;
-    return {0, 0};  // TODO
+    Square sq     = gf.findSquare();
+    angle_t angle = sq.getAngle();
+    angle         = angleTracker.update(angle);
+    std::cout << sq << std::endl;
+    std::cout << angle << std::endl;
+
+    using Vec2f = TColVector<float, 2>;
+
+    Vec2f frameCenter = Point{gf.center()};
+    Vec2f center;
+    auto points = sq.points;
+    if (!points[0] && !points[1])  // Just a line, not a single point
+        return Point::invalid();
+    angle_t diagAngle = angle + 45_deg;
+    // If only the first point is valid
+    if (points[0] && !points[1] && !points[2] && !points[3]) {
+        if (sideLen == 0)
+            return Point::invalid();
+        center = sideLen / sqrt(2) * Vec2f{diagAngle.cosf(), diagAngle.sinf()} +
+                 points[0]->vec();
+    }
+    // If only the second point is valid
+    else if (!points[0] && points[1] && !points[2] && !points[3]) {
+        if (sideLen == 0)
+            return Point::invalid();
+        center = sideLen / sqrt(2) * Vec2f{diagAngle.cosf(), diagAngle.sinf()} +
+                 points[1]->vec();
+    }
+    // If only the first two points are valid
+    else if (points[0] && points[1] && !points[2] && !points[3]) {
+        sideLen = Point::distance(*points[0], *points[1]);
+        if (sideLen == 0)
+            return Point::invalid();
+        center = sideLen / sqrt(2) * Vec2f{diagAngle.cosf(), diagAngle.sinf()} +
+                 points[0]->vec();
+    }
+    // If we found all four points
+    else if (points[0] && points[1] && points[2] && points[3]) {
+        sideLen = (Point::distance(*points[0], *points[1]) +
+                   Point::distance(*points[0], *points[2]) +
+                   Point::distance(*points[1], *points[3]) +
+                   Point::distance(*points[2], *points[3])) /
+                  4;
+        if (sideLen == 0)
+            return Point::invalid();
+        center = Point::average(Point::average(*points[0], *points[1]),
+                                Point::average(*points[2], *points[3]));
+    } else {
+        std::cerr << ANSIColors::redb
+                  << "Error: Somehow, we only found three points"
+                  << ANSIColors::reset << std::endl;
+        return Point::invalid();
+    }
+    Vec2f position = {0.5, 0.5};
+    position += rotate(frameCenter - center, -angle).vec() / sideLen;
+    return Point{position} % 1.0;
 }

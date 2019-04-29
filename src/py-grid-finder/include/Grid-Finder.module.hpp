@@ -5,6 +5,7 @@
 #include <AngleTracker.hpp>
 #include <GridFinder.hpp>
 #include <Line.hpp>
+#include <LocationFinder.hpp>
 #include <PyMatrix.hpp>
 #include <pybind11/stl.h>
 #include <sstream>
@@ -88,4 +89,8 @@ PYBIND11_MODULE(py_grid_finder, pygridmodule) {
         .def(pybind11::init<>())
         .def("update",
              [](AngleTracker a, double rad) { return a.update(rad).rad(); });
+
+    pybind11::class_<LocationFinder>(pygridmodule, "LocationFinder")
+        .def(pybind11::init<int>())
+        .def("getLocation", &LocationFinder::getLocation);
 }
