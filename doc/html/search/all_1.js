@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['base64',['Base64',['../namespaceBase64.html',1,'']]],
+  ['base64_2ecpp',['base64.cpp',['../base64_8cpp.html',1,'']]],
+  ['base64_2ehpp',['base64.hpp',['../base64_8hpp.html',1,'']]],
   ['begin',['begin',['../classMulticastSender.html#ace8a13e9e68d3283062012df734ef204',1,'MulticastSender::begin()'],['../structArray.html#a9e1b59b422182878c7909c6ca7bfa430',1,'Array::begin()'],['../structArray.html#a474344f13aedb345149a3f2f1ef2d8e2',1,'Array::begin() const']]],
   ['black',['black',['../namespaceANSIColors.html#a1e9bbc477cb8dbf585e5cd37a633f981',1,'ANSIColors']]],
   ['blackb',['blackb',['../namespaceANSIColors.html#a008f76b3ac1cdaafa10debc3d9f5ffb2',1,'ANSIColors']]],
