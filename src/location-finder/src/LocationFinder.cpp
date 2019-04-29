@@ -36,7 +36,7 @@ int test() {
 }
 
 std::optional<angle_t> LocationFinder::getAverageYaw(std::array<std::optional<LineResult>, 5> lines) {
-    if (lines.empty())
+    if (lines[0] == std::nullopt)
         return std::nullopt;
     angle_t angle_line = angle_t::average(lines[0]->angle,lines[1]->angle);
     if ((angle_line > 45_deg && angle_line < 135_deg))
