@@ -43,4 +43,6 @@ TEST(MaskGridFinder, fromImage) {
     // TODO: check square result!
 }
 
-TEST()
+TEST(LocationFinder, fromSquare) {
+    Square sq = {}
+}

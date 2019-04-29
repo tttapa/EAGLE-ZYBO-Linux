@@ -69,12 +69,12 @@ Point LocationFinder::findOrigin(std::array<std::optional<Point>, 4> points, ang
     Point transformed_point;
     for(auto point: points){
         if (point){
-            transformed_point = transformPoint(angle, point);
-            if (transformed_point[0]<0 && transformed_point[1]<0)
+            transformed_point = transformPoint(angle, *point);
+            if (transformed_point.x<0 && transformed_point.y<0)
                 bottom_left = transformed_point;
-            else if (transformed_point[0]<0 && transformed_point[1]>0)
+            else if (transformed_point.x<0 && transformed_point.y>0)
                 top_left = transformed_point;
-            else if (transformed_point[0]>0 && transformed_point[1]<0)
+            else if (transformed_point.x>0 && transformed_point.y<0)
                 bottom_right = transformed_point;
             else
                 top_right = transformed_point;
