@@ -1,0 +1,12 @@
+<map id="GridFinder::getFirstLineEstimate" name="GridFinder::getFirstLineEstimate">
+<area shape="rect" id="node1" title="Find the vertical range of white pixels closest to the center of the given column,..." alt="" coords="5,161,176,202"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c" title="Get the width of the frame." alt="" coords="500,5,632,32"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#affd9ae441c8d86b1856a9ef31190e9ab" title="Get the height of the frame." alt="" coords="253,219,391,245"/>
+<area shape="rect" id="node6" href="$classGridFinder.html#afbed8951f70923626b73abdbe05236da" title="Get the value of the given pixel." alt="" coords="263,293,381,320"/>
+<area shape="rect" id="node7" href="$classCenterPointOutLineIterator.html#a4f03738d6ec01d1e3b15b6efeea6c16c" title=" " alt="" coords="224,345,420,386"/>
+<area shape="rect" id="node8" href="$classGridFinder.html#afa715db70f6b6d2a864bc0674fb5abb6" title="Get an estimate of the first line. Searches in multiple columns, starting from the center,..." alt="" coords="237,102,407,143"/>
+<area shape="rect" id="node9" href="$classCenterPointOutLineIterator.html#a6f4fda8865e7d1def0a8614622f0f6ef" title=" " alt="" coords="468,61,664,102"/>
+<area shape="rect" id="node10" href="$classCenterPointOutLineIterator.html#a89580e1393d0dfc3ff12c7a5af2a4374" title=" " alt="" coords="468,135,664,177"/>
+<area shape="rect" id="node3" href="$classMask.html#a4124a2daa1f7501d4fd80775b6217679" title="Get the width of the mask in pixels." alt="" coords="712,5,812,32"/>
+<area shape="rect" id="node5" href="$classMask.html#af845b7d3220b707c8b4c48bf87d045bb" title="Get the height of the mask in pixels." alt="" coords="513,219,619,245"/>
+</map>

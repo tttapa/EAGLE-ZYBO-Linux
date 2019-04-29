@@ -1,0 +1,5 @@
+<map id="GridFinder::set" name="GridFinder::set">
+<area shape="rect" id="node1" title="Set the value of the given pixel." alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node2" href="$classMask.html#abd2577692522262d25fcaae6620582e3" title="Set the value of the mask at the given location." alt="" coords="169,5,253,32"/>
+<area shape="rect" id="node3" href="$structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" title=" " alt="" coords="301,5,416,32"/>
+</map>

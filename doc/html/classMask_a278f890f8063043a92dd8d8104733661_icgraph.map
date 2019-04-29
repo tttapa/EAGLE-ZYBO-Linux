@@ -1,0 +1,5 @@
+<map id="Mask::checkImageType" name="Mask::checkImageType">
+<area shape="rect" id="node1" title="Check if an OpenCV matrix has the correct image type: The matrix should have two dimensions,..." alt="" coords="331,5,504,32"/>
+<area shape="rect" id="node2" href="$classMask.html#ada333d548ba4428ba67a0052821b0417" title="Ensure that an OpenCV matrix has the correct image type, and return a pointer to its data." alt="" coords="152,5,283,32"/>
+<area shape="rect" id="node3" href="$classMask.html#a302473de9ad7f1b21195f0140208703c" title="Construct a new Mask object from an OpenCV image." alt="" coords="5,5,104,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Mask::get" name="Mask::get">
+<area shape="rect" id="node1" title="Get the value of the mask at a given location." alt="" coords="171,5,256,32"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#a05d847c0d5e11314641f84afa0f2ca05" title="Get the value of the given pixel." alt="" coords="5,5,123,32"/>
+</map>

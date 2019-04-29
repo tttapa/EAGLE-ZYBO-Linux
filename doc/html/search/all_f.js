@@ -17,7 +17,7 @@ var searchData=
   ['registers_2ehpp',['registers.hpp',['../registers_8hpp.html',1,'']]],
   ['reset',['reset',['../namespaceANSIColors.html#a923babbed800df1b01db512486cba2ff',1,'ANSIColors']]],
   ['resolution',['resolution',['../classAngle.html#a84ce9a0e2a186ada6997077fd96d6e4c',1,'Angle']]],
-  ['retry_5fjump_5fdistance',['RETRY_JUMP_DISTANCE',['../classGridFinder.html#a2b976d83dc517faa4d46c2b6c6b79540',1,'GridFinder']]],
+  ['retry_5fjump_5fdistance',['RETRY_JUMP_DISTANCE',['../classGridFinder.html#ae77fc2ece4b93b0b6c68a97997513298',1,'GridFinder']]],
   ['rightofpoint',['rightOfPoint',['../classLine.html#a4cf8a0ce142d3896500f3f9384926100',1,'Line']]],
   ['rmem',['rmem',['../wrapper_8h.html#a8efeb9db88385717fd8d78494188d11d',1,'rmem(uint64_t offset):&#160;wrapper.c'],['../wrapper_8c.html#a8efeb9db88385717fd8d78494188d11d',1,'rmem(uint64_t offset):&#160;wrapper.c']]],
   ['rootmeansquareerror',['rootMeanSquareError',['../MeanSquareError_8hpp.html#a3866a47400c489446b64abc1cb71d11c',1,'MeanSquareError.hpp']]],

@@ -1,0 +1,4 @@
+<map id="GridFinder::set" name="GridFinder::set">
+<area shape="rect" id="node1" title="Set the value of the given pixel." alt="" coords="208,5,324,32"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#a3b5caee289831bd2207db3ec542be2b0" title="Draw a line on the mask. Used only for testing." alt="" coords="5,5,160,32"/>
+</map>

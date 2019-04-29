@@ -69,7 +69,14 @@
         "subfolder",
         "toolchain",
         "toolchains",
-        "unicast"
+        "unicast",
+        "vabdq",
+        "vandq",
+        "vceqq",
+        "vcgtq",
+        "vdupq",
+        "vshrq",
+        "vsubq"
     ],
     "search.exclude": {
         "doc/html": true,

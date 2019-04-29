@@ -9,42 +9,42 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>normalize</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-24 236,-24 236,4 -4,4"/>
-<!-- Node70 -->
+<!-- Node71 -->
 <g id="node1" class="node">
-<title>Node70</title>
+<title>Node71</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-19.5 65,-19.5 65,-.5 0,-.5"/>
 <text text-anchor="middle" x="32.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">normalize</text>
 </a>
 </g>
 </g>
-<!-- Node71 -->
+<!-- Node72 -->
 <g id="node2" class="node">
-<title>Node71</title>
+<title>Node72</title>
 <g id="a_node2"><a xlink:href="Matrix_8hpp.html#af6752e536d7af62cde48d70f45309a2c" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="101,-.5 101,-19.5 143,-19.5 143,-.5 101,-.5"/>
 <text text-anchor="middle" x="122" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">norm</text>
 </a>
 </g>
 </g>
-<!-- Node70&#45;&gt;Node71 -->
+<!-- Node71&#45;&gt;Node72 -->
 <g id="edge1" class="edge">
-<title>Node70&#45;&gt;Node71</title>
+<title>Node71&#45;&gt;Node72</title>
 <path fill="none" stroke="#191970" d="M65.0647,-10C73.4287,-10 82.4075,-10 90.7057,-10"/>
 <polygon fill="#191970" stroke="#191970" points="90.7552,-13.5001 100.7552,-10 90.7551,-6.5001 90.7552,-13.5001"/>
 </g>
-<!-- Node72 -->
+<!-- Node73 -->
 <g id="node3" class="node">
-<title>Node72</title>
+<title>Node73</title>
 <g id="a_node3"><a xlink:href="Matrix_8hpp.html#a49ccaf0f0f1746a2824dc79538165c9c" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="179,-.5 179,-19.5 232,-19.5 232,-.5 179,-.5"/>
 <text text-anchor="middle" x="205.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">normsq</text>
 </a>
 </g>
 </g>
-<!-- Node71&#45;&gt;Node72 -->
+<!-- Node72&#45;&gt;Node73 -->
 <g id="edge2" class="edge">
-<title>Node71&#45;&gt;Node72</title>
+<title>Node72&#45;&gt;Node73</title>
 <path fill="none" stroke="#191970" d="M143.0706,-10C150.8489,-10 159.9085,-10 168.6744,-10"/>
 <polygon fill="#191970" stroke="#191970" points="168.7356,-13.5001 178.7355,-10 168.7355,-6.5001 168.7356,-13.5001"/>
 </g>
