@@ -33,4 +33,6 @@ class CryptoPoller {
     void initialize();
 
     uint32_t execute(uint32_t instruction);
+
+    const uint32_t fullMask = 0x00'0F'FF'FF;
 };

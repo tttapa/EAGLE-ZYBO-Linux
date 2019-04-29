@@ -2,7 +2,7 @@
 #include <cryptoPoller.hpp>
 #include <wrapper.h>
 
-bool CryptoPoller::isInitialized = false;
+bool CryptoPoller::isInitialized      = false;
 uint32_t CryptoPoller::currentBitFlip = 0;
 
 CryptoPoller::CryptoPoller(uint16_t timeoutMilliseconds)
@@ -12,6 +12,10 @@ CryptoPoller::CryptoPoller(uint16_t timeoutMilliseconds)
         isInitialized = true;
     }
 }
+
+void CryptoPoller::writeR0(uint32_t value) { wmem(R0_ADDR, value); }
+uint32_t CryptoPoller::readR0() { return rmem(R0_ADDR); }
+uint32_t CryptoPoller::readR1() { return rmem(R1_ADDR); }
 
 uint32_t CryptoPoller::execute(uint32_t instruction) {
     writeR0(instruction);
@@ -58,45 +62,41 @@ void CryptoPoller::initialize() {
 void CryptoPoller::reset() { execute(0x00'00'00'00); }
 
 void CryptoPoller::write(uint32_t pos, uint32_t data) {
-    pos = pos << 7 * 4;
-    data &= 0x00'0F'FF'FF;
+    pos <<= 28;
+    data &= fullMask;
     execute(pos | data | 0x00'10'00'00);
 }
 
 uint32_t CryptoPoller::read(uint32_t pos) {
-    pos = pos << 7 * 4;
+    pos <<= 28;
     return execute(pos | 0x00'20'00'00);
 }
 
 void CryptoPoller::start() { execute(0x00'40'00'00); }
 
 uint32_t CryptoPoller::normalStep(uint32_t data) {
-    data &= 0x00'0F'FF'FF;
+    data &= fullMask;
     return execute(data | 0x00'80'00'00);
 }
 
 uint32_t CryptoPoller::xorStep(uint32_t data) {
-    data &= 0x00'0F'FF'FF;
+    data &= fullMask;
     return execute(data | 0x00'90'00'00);
 }
 
 uint32_t CryptoPoller::normalStride(uint32_t data) {
-    data &= 0x00'0F'FF'FF;
+    data &= fullMask;
     return execute(data | 0x01'00'00'00);
 }
 
 uint32_t CryptoPoller::xorStride(uint32_t data) {
-    data &= 0x00'0F'FF'FF;
+    data &= fullMask;
     return execute(data | 0x01'10'00'00);
 }
 
 uint32_t CryptoPoller::hashAbsorb(uint32_t data) {
-    data &= 0x00'0F'FF'FF;
+    data &= fullMask;
     return execute(data | 0x02'00'00'00);
 }
 
 uint32_t CryptoPoller::hashSqueeze() { return execute(0x04'00'00'00); }
-
-void CryptoPoller::writeR0(uint32_t value) { wmem(R0_ADDR, value); }
-uint32_t CryptoPoller::readR0() { return rmem(R0_ADDR); }
-uint32_t CryptoPoller::readR1() { return rmem(R1_ADDR); }
