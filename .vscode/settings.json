@@ -72,7 +72,10 @@
         "charconv": "cpp",
         "cuchar": "cpp",
         "memory_resource": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp"
     },
     "explorer.sortOrder": "filesFirst",
     "C_Cpp.default.cppStandard": "c++17",
