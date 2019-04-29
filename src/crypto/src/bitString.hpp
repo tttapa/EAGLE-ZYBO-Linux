@@ -11,4 +11,4 @@ class BitString {
     void concatenate(const BitString &otherBitString);
 
     void split(uint32_t array[]);
-}
+};

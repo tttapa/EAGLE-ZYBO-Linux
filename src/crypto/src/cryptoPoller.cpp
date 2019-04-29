@@ -1,6 +1,9 @@
+#include <PerfTimer.hpp>
 #include <cryptoPoller.hpp>
+#include <wrapper.h>
 
 bool CryptoPoller::isInitialized = false;
+uint32_t CryptoPoller::currentBitFlip = 0;
 
 CryptoPoller::CryptoPoller(uint16_t timeoutMilliseconds)
     : timeoutMilliseconds(timeoutMilliseconds) {
@@ -93,3 +96,7 @@ uint32_t CryptoPoller::hashAbsorb(uint32_t data) {
 }
 
 uint32_t CryptoPoller::hashSqueeze() { return execute(0x04'00'00'00); }
+
+void CryptoPoller::writeR0(uint32_t value) { wmem(R0_ADDR, value); }
+uint32_t CryptoPoller::readR0() { return rmem(R0_ADDR); }
+uint32_t CryptoPoller::readR1() { return rmem(R1_ADDR); }

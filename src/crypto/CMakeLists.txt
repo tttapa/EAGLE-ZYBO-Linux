@@ -1,6 +1,8 @@
 # Create library target and specify the implementation files to compile.
 add_library(crypto 
     src/crypto.cpp
+    src/bitString.cpp
+    src/cryptoPoller.cpp
 )
 
 # Set target include directories 
@@ -30,6 +32,7 @@ target_compile_features(crypto PUBLIC cxx_std_17)
 target_link_libraries(crypto 
     PRIVATE 
         comm
+        utilities
 )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
