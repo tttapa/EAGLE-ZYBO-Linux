@@ -9,18 +9,18 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 111.5)">
 <title>Angle::rad</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-111.5 238,-111.5 238,4 -4,4"/>
-<!-- Node78 -->
+<!-- Node83 -->
 <g id="node1" class="node">
-<title>Node78</title>
+<title>Node83</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="168,-38.5 168,-57.5 234,-57.5 234,-38.5 168,-38.5"/>
 <text text-anchor="middle" x="201" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle::rad</text>
 </a>
 </g>
 </g>
-<!-- Node79 -->
+<!-- Node84 -->
 <g id="node2" class="node">
-<title>Node79</title>
+<title>Node84</title>
 <g id="a_node2"><a xlink:href="classAngle.html#a75cf91b03632d4dc9bc7c1fda6ad5905" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-77 0,-107 132,-107 132,-77 0,-77"/>
 <text text-anchor="start" x="8" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::operator</text>
@@ -28,39 +28,39 @@
 </a>
 </g>
 </g>
-<!-- Node78&#45;&gt;Node79 -->
+<!-- Node83&#45;&gt;Node84 -->
 <g id="edge1" class="edge">
-<title>Node78&#45;&gt;Node79</title>
+<title>Node83&#45;&gt;Node84</title>
 <path fill="none" stroke="#191970" d="M161.9004,-60.7436C146.3717,-65.8048 128.3905,-71.6653 112.2233,-76.9346"/>
 <polygon fill="#191970" stroke="#191970" points="163.2839,-63.9739 171.707,-57.5473 161.1146,-57.3185 163.2839,-63.9739"/>
 </g>
-<!-- Node80 -->
+<!-- Node85 -->
 <g id="node3" class="node">
-<title>Node80</title>
+<title>Node85</title>
 <g id="a_node3"><a xlink:href="classAngle.html#a4ef8c6fb3a420f4b05590d3127feba14" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="11.5,-38.5 11.5,-57.5 120.5,-57.5 120.5,-38.5 11.5,-38.5"/>
 <text text-anchor="middle" x="66" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::deg</text>
 </a>
 </g>
 </g>
-<!-- Node78&#45;&gt;Node80 -->
+<!-- Node83&#45;&gt;Node85 -->
 <g id="edge2" class="edge">
-<title>Node78&#45;&gt;Node80</title>
+<title>Node83&#45;&gt;Node85</title>
 <path fill="none" stroke="#191970" d="M157.877,-48C145.994,-48 132.9467,-48 120.5107,-48"/>
 <polygon fill="#191970" stroke="#191970" points="157.9753,-51.5001 167.9753,-48 157.9753,-44.5001 157.9753,-51.5001"/>
 </g>
-<!-- Node81 -->
+<!-- Node86 -->
 <g id="node4" class="node">
-<title>Node81</title>
+<title>Node86</title>
 <g id="a_node4"><a xlink:href="Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="9.5,-.5 9.5,-19.5 122.5,-19.5 122.5,-.5 9.5,-.5"/>
 <text text-anchor="middle" x="66" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PYBIND11_MODULE</text>
 </a>
 </g>
 </g>
-<!-- Node78&#45;&gt;Node81 -->
+<!-- Node83&#45;&gt;Node86 -->
 <g id="edge3" class="edge">
-<title>Node78&#45;&gt;Node81</title>
+<title>Node83&#45;&gt;Node86</title>
 <path fill="none" stroke="#191970" d="M158.1896,-35.9497C139.4344,-30.6704 117.7298,-24.561 100.0935,-19.5967"/>
 <polygon fill="#191970" stroke="#191970" points="157.401,-39.3636 167.9753,-38.7042 159.2977,-32.6255 157.401,-39.3636"/>
 </g>

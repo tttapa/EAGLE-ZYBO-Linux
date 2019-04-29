@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "Angle< Resolution >", "classAngle.html", null ],
     [ "Angle< 360 >", "classAngle.html", null ],
+    [ "AngleTracker", "classAngleTracker.html", null ],
     [ "Array< T, N >", "structArray.html", null ],
     [ "Array< N >", "structArray.html", null ],
     [ "Array< R, C >", "structArray.html", null ],

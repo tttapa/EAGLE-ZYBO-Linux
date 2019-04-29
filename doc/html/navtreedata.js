@@ -64,8 +64,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ANSIColors_8hpp.html",
-"classAngle.html#a1f1503d8f95f0dc6ff16b03e679f4d9a",
-"structArray.html#ac438f1675c7d67d9130a65a685e20042"
+"classAngle.html#a01897132cd9fd91aaddc870e50df157b",
+"structArray.html#ab8e9d18f419d2faa7bd8c4406448ec14"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

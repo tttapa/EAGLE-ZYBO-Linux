@@ -9,42 +9,42 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>BresenhamLine::next</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-24 421,-24 421,4 -4,4"/>
-<!-- Node47 -->
+<!-- Node45 -->
 <g id="node1" class="node">
-<title>Node47</title>
+<title>Node45</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-.5 0,-19.5 120,-19.5 120,-.5 0,-.5"/>
 <text text-anchor="middle" x="60" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BresenhamLine::next</text>
 </a>
 </g>
 </g>
-<!-- Node48 -->
+<!-- Node46 -->
 <g id="node2" class="node">
-<title>Node48</title>
+<title>Node46</title>
 <g id="a_node2"><a xlink:href="classBresenhamLine.html#aba0822ee20811d67cd9539ccbe1cd346" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="156,-.5 156,-19.5 295,-19.5 295,-.5 156,-.5"/>
 <text text-anchor="middle" x="225.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BresenhamLine::hasNext</text>
 </a>
 </g>
 </g>
-<!-- Node47&#45;&gt;Node48 -->
+<!-- Node45&#45;&gt;Node46 -->
 <g id="edge1" class="edge">
-<title>Node47&#45;&gt;Node48</title>
+<title>Node45&#45;&gt;Node46</title>
 <path fill="none" stroke="#191970" d="M120.2175,-10C128.5211,-10 137.1524,-10 145.7407,-10"/>
 <polygon fill="#191970" stroke="#191970" points="145.7806,-13.5001 155.7806,-10 145.7806,-6.5001 145.7806,-13.5001"/>
 </g>
-<!-- Node49 -->
+<!-- Node47 -->
 <g id="node3" class="node">
-<title>Node49</title>
+<title>Node47</title>
 <g id="a_node3"><a xlink:href="structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="331,-.5 331,-19.5 417,-19.5 417,-.5 331,-.5"/>
 <text text-anchor="middle" x="374" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pixel::inRange</text>
 </a>
 </g>
 </g>
-<!-- Node48&#45;&gt;Node49 -->
+<!-- Node46&#45;&gt;Node47 -->
 <g id="edge2" class="edge">
-<title>Node48&#45;&gt;Node49</title>
+<title>Node46&#45;&gt;Node47</title>
 <path fill="none" stroke="#191970" d="M295.4016,-10C303.8647,-10 312.4033,-10 320.5758,-10"/>
 <polygon fill="#191970" stroke="#191970" points="320.6984,-13.5001 330.6984,-10 320.6984,-6.5001 320.6984,-13.5001"/>
 </g>
