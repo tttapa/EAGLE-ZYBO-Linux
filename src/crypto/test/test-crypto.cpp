@@ -31,6 +31,8 @@ TEST(Crypto, CryptoPoller) {
 
     cryptoPoller.start();
 
+    // FIRST ENCRYPTION:
+
     cryptoPoller.normalStep(0x06008);
     cryptoPoller.normalStride(0x05008);
     cryptoPoller.normalStep(0x02008);
@@ -41,4 +43,95 @@ TEST(Crypto, CryptoPoller) {
     cryptoPoller.normalStep(0x02008);
 
     ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0xa5110);
+
+    // SECOND ENCRYPTION:
+
+    cryptoPoller.normalStep(0x06008);
+    cryptoPoller.xorStep(0x4b6cf);
+    cryptoPoller.xorStep(0xec0df);
+    cryptoPoller.xorStep(0x8daef);
+    cryptoPoller.xorStep(0x2e4ff);
+    cryptoPoller.xorStep(0xcff0f);
+    cryptoPoller.normalStride(0x70058);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+
+    ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0xf7210);
+
+    // THIRD ENCRYPTION:
+
+    cryptoPoller.normalStep(0x06008);
+    cryptoPoller.xorStep(0x6b8cf);
+    cryptoPoller.xorStep(0x0c2df);
+    cryptoPoller.xorStep(0xadcef);
+    cryptoPoller.xorStep(0x4e6ff);
+    cryptoPoller.xorStep(0xef10f);
+    cryptoPoller.xorStep(0x90b1f);
+    cryptoPoller.xorStep(0x3152f);
+    cryptoPoller.xorStep(0xd2f3f);
+    cryptoPoller.xorStep(0x7394f);
+    cryptoPoller.xorStep(0x1435f);
+    cryptoPoller.xorStep(0xb5d6f);
+    cryptoPoller.xorStep(0x5677f);
+    cryptoPoller.xorStep(0xf718f);
+    cryptoPoller.normalStride(0x98058);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+
+    ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0xa9b00);
+
+    // FOURTH ENCRYPTION:
+
+    cryptoPoller.normalStep(0x3acbc);
+    cryptoPoller.normalStep(0x5cedc);
+    cryptoPoller.normalStep(0x7e0fc);
+    cryptoPoller.normalStep(0xa031c);
+    cryptoPoller.normalStep(0xc253c);
+    cryptoPoller.normalStep(0xe4068);
+    cryptoPoller.normalStride(0x05008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+
+    ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0x1b4d0);
+
+    // FIFTH ENCRYPTION:
+
+    cryptoPoller.normalStep(0x51e2c);
+    cryptoPoller.normalStep(0x7304c);
+    cryptoPoller.normalStep(0x9526c);
+    cryptoPoller.normalStep(0xb748c);
+    cryptoPoller.normalStep(0xd96ac);
+    cryptoPoller.normalStep(0xfb068);
+    cryptoPoller.xorStep(0xee0ff);
+    cryptoPoller.xorStep(0x8fb0f);
+    cryptoPoller.xorStep(0x3051f);
+    cryptoPoller.xorStep(0xd1f2f);
+    cryptoPoller.xorStep(0x7293f);
+    cryptoPoller.xorStep(0x1334f);
+    cryptoPoller.xorStep(0xb4d5f);
+    cryptoPoller.xorStep(0x5576f);
+    cryptoPoller.xorStep(0xf617f);
+    cryptoPoller.xorStep(0x97b8f);
+    cryptoPoller.xorStep(0x3859f);
+    cryptoPoller.normalStride(0xd9058);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+    cryptoPoller.normalStep(0x02008);
+
+    ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0xe1fb0);
 }

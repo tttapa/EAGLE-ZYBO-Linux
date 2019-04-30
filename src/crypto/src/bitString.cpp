@@ -1,6 +1,6 @@
 #include <bitString.hpp>
 
-BitString::BitString(std::vector<uint8_t> input) {
+BitString::BitString(const std::vector<uint8_t> &input) {
     bits.reserve(2 * input.size());
     for (uint8_t byte : input) {
         bits.push_back(byte & 0x0F);

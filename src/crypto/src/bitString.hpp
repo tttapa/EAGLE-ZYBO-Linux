@@ -1,3 +1,5 @@
+#pragma once
+
 #include <array>
 #include <cstdint>
 #include <vector>
@@ -7,7 +9,7 @@ class BitString {
     std::vector<uint8_t> bits;
 
   public:
-    BitString(std::vector<uint8_t> input);
+    BitString(const std::vector<uint8_t> &input);
 
     void concatenate(const BitString &otherBitString);
     void split(std::array<uint32_t, 10> &array);
