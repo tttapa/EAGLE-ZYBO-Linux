@@ -44,5 +44,17 @@ TEST(MaskGridFinder, fromImage) {
 }
 
 TEST(LocationFinder, fromSquare) {
-    Square sq = {}
+    Square sq = {{std:nullopt,std:nullopt,std:nullopt,std:nullopt,std:nullopt},
+                {std:nullopt,std:nullopt,std:nullopt,std:nullopt}}
+    Point test_location = LocationFinder::test1(sq);
+    std::cout << "x= " << test_location.x << "  y= " << test_location.y << std::endl;
+    ASSERT_NEAR(test_location.x , 0.5, 0.02);
+    ASSERT_NEAR(test_location.y , 0.5, 0.02);
+    Square sq = {{{{290,140},10,0_deg},{{290,140},10,0_deg},{{220,160},10,90_deg},
+                {{220,340},10,0_deg},{{420,340},10,90_deg}},
+                {{220,140},{420,140},{420,340},{220,340}}}
+    Point test_location = LocationFinder::test1(sq);
+    std::cout << "x= " << test_location.x << "  y= " << test_location.y << std::endl;
+    ASSERT_NEAR(test_location.x , 0.5, 0.02);
+    ASSERT_NEAR(test_location.y , 0.5, 0.02);
 }
