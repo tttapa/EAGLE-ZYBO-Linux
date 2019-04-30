@@ -1,8 +1,8 @@
 # Configure the network
-# ifconfig eth0 192.168.3.3
-# ifconfig eth0 netmask 255.255.255.0
-# route add default gateway 192.168.3.1
-# echo "nameserver 192.168.3.1" > /etc/resolv.conf
+ifconfig eth0 192.168.3.3
+ifconfig eth0 netmask 255.255.255.0
+route add default gateway 192.168.3.1
+echo "nameserver 192.168.3.1" > /etc/resolv.conf
 
 # Configure the network
 # ifconfig eth0 10.42.0.2
@@ -11,10 +11,10 @@
 # echo "nameserver 10.42.0.1" > /etc/resolv.conf
 
 # Configure the network
-ifconfig eth0 192.168.0.200
-ifconfig eth0 netmask 255.255.255.0
-route add default gateway 192.168.0.1
-echo "nameserver 192.168.0.1" > /etc/resolv.conf
+# ifconfig eth0 192.168.137.200
+# ifconfig eth0 netmask 255.255.255.0
+# route add default gateway 192.168.137.1
+# echo "nameserver 192.168.137.1" > /etc/resolv.conf
 
 # Mount the filesystem containing shared libraries for glibc and opencv
 mount -t ext4 -o loop /media/sysroot.ext4 /mnt
@@ -44,7 +44,9 @@ ln -s /media/dropbear_ecdsa_host_key /etc/dropbear/
 
 # Add authorized SSH keys
 mkdir -p /root/.ssh
-cat /media/pieter.pub >> /root/.ssh/authorized_keys
+for key in /media/*.pub; do
+  cat $key >> /root/.ssh/authorized_keys
+done
 
 # Automatically set the LD path
 echo "source /media/ldpath.sh" >> /etc/profile

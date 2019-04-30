@@ -28,4 +28,5 @@ target_link_libraries(py_grid_finder
         pybind11::module
         py-matrix
         grid_finder
+        location_finder
 )

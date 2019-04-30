@@ -9,72 +9,72 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 138)">
 <title>Angle::normalize</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-138 279,-138 279,4 -4,4"/>
-<!-- Node52 -->
+<!-- Node58 -->
 <g id="node1" class="node">
-<title>Node52</title>
+<title>Node58</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="176,-57.5 176,-76.5 275,-76.5 275,-57.5 176,-57.5"/>
 <text text-anchor="middle" x="225.5" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle::normalize</text>
 </a>
 </g>
 </g>
-<!-- Node53 -->
+<!-- Node59 -->
 <g id="node2" class="node">
-<title>Node53</title>
+<title>Node59</title>
 <g id="a_node2"><a xlink:href="classAngle.html#ab9d2ba4fd0af98e0428736189fb4804a" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-114.5 0,-133.5 140,-133.5 140,-114.5 0,-114.5"/>
 <text text-anchor="middle" x="70" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::operator+</text>
 </a>
 </g>
 </g>
-<!-- Node52&#45;&gt;Node53 -->
+<!-- Node58&#45;&gt;Node59 -->
 <g id="edge1" class="edge">
-<title>Node52&#45;&gt;Node53</title>
+<title>Node58&#45;&gt;Node59</title>
 <path fill="none" stroke="#191970" d="M197.08,-80.9463C180.6524,-88.6731 159.4469,-98.0851 140,-105 130.1523,-108.5016 119.3319,-111.7299 109.2048,-114.494"/>
 <polygon fill="#191970" stroke="#191970" points="198.6294,-84.0851 206.1508,-76.6233 195.6177,-77.7661 198.6294,-84.0851"/>
 </g>
-<!-- Node54 -->
+<!-- Node60 -->
 <g id="node3" class="node">
-<title>Node54</title>
+<title>Node60</title>
 <g id="a_node3"><a xlink:href="classAngle.html#aa4852a4dd80e8d12d8fc7da8e0e366c8" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="2.5,-76.5 2.5,-95.5 137.5,-95.5 137.5,-76.5 2.5,-76.5"/>
 <text text-anchor="middle" x="70" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::operator&#45;</text>
 </a>
 </g>
 </g>
-<!-- Node52&#45;&gt;Node54 -->
+<!-- Node58&#45;&gt;Node60 -->
 <g id="edge2" class="edge">
-<title>Node52&#45;&gt;Node54</title>
+<title>Node58&#45;&gt;Node60</title>
 <path fill="none" stroke="#191970" d="M165.6733,-74.31C156.4816,-75.4331 146.9365,-76.5994 137.5906,-77.7413"/>
 <polygon fill="#191970" stroke="#191970" points="166.3696,-77.7511 175.8713,-73.064 165.5206,-70.8027 166.3696,-77.7511"/>
 </g>
-<!-- Node55 -->
+<!-- Node61 -->
 <g id="node4" class="node">
-<title>Node55</title>
+<title>Node61</title>
 <g id="a_node4"><a xlink:href="classAngle.html#a4f25f753746a43036e7ab7a3bd9915ab" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="1.5,-38.5 1.5,-57.5 138.5,-57.5 138.5,-38.5 1.5,-38.5"/>
 <text text-anchor="middle" x="70" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::operator*</text>
 </a>
 </g>
 </g>
-<!-- Node52&#45;&gt;Node55 -->
+<!-- Node58&#45;&gt;Node61 -->
 <g id="edge3" class="edge">
-<title>Node52&#45;&gt;Node55</title>
+<title>Node58&#45;&gt;Node61</title>
 <path fill="none" stroke="#191970" d="M165.6884,-59.6918C156.8614,-58.6133 147.7082,-57.4949 138.7182,-56.3964"/>
 <polygon fill="#191970" stroke="#191970" points="165.5206,-63.1973 175.8713,-60.936 166.3696,-56.2489 165.5206,-63.1973"/>
 </g>
-<!-- Node56 -->
+<!-- Node62 -->
 <g id="node5" class="node">
-<title>Node56</title>
+<title>Node62</title>
 <g id="a_node5"><a xlink:href="classAngle.html#a593164c63d4e2eedc8b473419c179f77" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="4.5,-.5 4.5,-19.5 135.5,-19.5 135.5,-.5 4.5,-.5"/>
 <text text-anchor="middle" x="70" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::average</text>
 </a>
 </g>
 </g>
-<!-- Node52&#45;&gt;Node56 -->
+<!-- Node58&#45;&gt;Node62 -->
 <g id="edge4" class="edge">
-<title>Node52&#45;&gt;Node56</title>
+<title>Node58&#45;&gt;Node62</title>
 <path fill="none" stroke="#191970" d="M197.08,-53.0537C180.6524,-45.3269 159.4469,-35.9149 140,-29 130.1523,-25.4984 119.3319,-22.2701 109.2048,-19.506"/>
 <polygon fill="#191970" stroke="#191970" points="195.6177,-56.2339 206.1508,-57.3767 198.6294,-49.9149 195.6177,-56.2339"/>
 </g>

@@ -21,7 +21,7 @@
 <!-- Node7 -->
 <g id="node2" class="node">
 <title>Node7</title>
-<g id="a_node2"><a xlink:href="Matrix_8hpp.html#a4d52dda400b179bc7cb4b9ba7fe3c0c8" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="Line_8hpp.html#a974a3a31d46a7379a41b2f20ff12916d" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="151,-.5 151,-19.5 195,-19.5 195,-.5 151,-.5"/>
 <text text-anchor="middle" x="173" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">round</text>
 </a>

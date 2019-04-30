@@ -9,108 +9,108 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 138)">
 <title>sum</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-138 395,-138 395,4 -4,4"/>
-<!-- Node74 -->
+<!-- Node75 -->
 <g id="node1" class="node">
-<title>Node74</title>
+<title>Node75</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="353,-57.5 353,-76.5 391,-76.5 391,-57.5 353,-57.5"/>
 <text text-anchor="middle" x="372" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">sum</text>
 </a>
 </g>
 </g>
-<!-- Node75 -->
+<!-- Node76 -->
 <g id="node2" class="node">
-<title>Node75</title>
+<title>Node76</title>
 <g id="a_node2"><a xlink:href="structSquare.html#a12c1f0ee0bd30021a5a7d7344538fef9" target="_top" xlink:title="Get the average angle of the sides of the square .">
 <polygon fill="#ffffff" stroke="#000000" points="217,-114.5 217,-133.5 317,-133.5 317,-114.5 217,-114.5"/>
 <text text-anchor="middle" x="267" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Square::getAngle</text>
 </a>
 </g>
 </g>
-<!-- Node74&#45;&gt;Node75 -->
+<!-- Node75&#45;&gt;Node76 -->
 <g id="edge1" class="edge">
-<title>Node74&#45;&gt;Node75</title>
+<title>Node75&#45;&gt;Node76</title>
 <path fill="none" stroke="#191970" d="M351.7398,-82.7502C341.6618,-90.1211 329.0779,-98.6525 317,-105 310.3417,-108.4992 302.8912,-111.6862 295.8164,-114.4083"/>
 <polygon fill="#191970" stroke="#191970" points="353.9705,-85.4523 359.8754,-76.6555 349.7736,-79.8499 353.9705,-85.4523"/>
 </g>
-<!-- Node77 -->
+<!-- Node78 -->
 <g id="node4" class="node">
-<title>Node77</title>
+<title>Node78</title>
 <g id="a_node4"><a xlink:href="HouseholderQR_8hpp.html#a16f7547f23439d1eda0fcbde69451ef9" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="221.5,-76.5 221.5,-95.5 312.5,-95.5 312.5,-76.5 221.5,-76.5"/>
 <text text-anchor="middle" x="267" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">householderQR</text>
 </a>
 </g>
 </g>
-<!-- Node74&#45;&gt;Node77 -->
+<!-- Node75&#45;&gt;Node78 -->
 <g id="edge3" class="edge">
-<title>Node74&#45;&gt;Node77</title>
+<title>Node75&#45;&gt;Node78</title>
 <path fill="none" stroke="#191970" d="M342.8222,-72.2798C333.4985,-73.9669 322.9431,-75.877 312.7348,-77.7242"/>
 <polygon fill="#191970" stroke="#191970" points="343.5244,-75.7096 352.7414,-70.4849 342.2779,-68.8215 343.5244,-75.7096"/>
 </g>
-<!-- Node78 -->
+<!-- Node79 -->
 <g id="node5" class="node">
-<title>Node78</title>
+<title>Node79</title>
 <g id="a_node5"><a xlink:href="LeastSquares_8hpp.html#a3e86962f655361a684f770b14c9fe1e2" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="70.5,-57.5 70.5,-76.5 178.5,-76.5 178.5,-57.5 70.5,-57.5"/>
 <text text-anchor="middle" x="124.5" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">solveLeastSquares</text>
 </a>
 </g>
 </g>
-<!-- Node74&#45;&gt;Node78 -->
+<!-- Node75&#45;&gt;Node79 -->
 <g id="edge6" class="edge">
-<title>Node74&#45;&gt;Node78</title>
+<title>Node75&#45;&gt;Node79</title>
 <path fill="none" stroke="#191970" d="M342.7872,-67C302.5061,-67 229.1722,-67 178.6984,-67"/>
 <polygon fill="#191970" stroke="#191970" points="342.9901,-70.5001 352.9901,-67 342.99,-63.5001 342.9901,-70.5001"/>
 </g>
-<!-- Node80 -->
+<!-- Node81 -->
 <g id="node7" class="node">
-<title>Node80</title>
+<title>Node81</title>
 <g id="a_node7"><a xlink:href="Matrix_8hpp.html#a341f99d67c7fef72e0432138c6d4fc34" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="235.5,-.5 235.5,-19.5 298.5,-19.5 298.5,-.5 235.5,-.5"/>
 <text text-anchor="middle" x="267" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">operator*</text>
 </a>
 </g>
 </g>
-<!-- Node74&#45;&gt;Node80 -->
+<!-- Node75&#45;&gt;Node81 -->
 <g id="edge7" class="edge">
-<title>Node74&#45;&gt;Node80</title>
+<title>Node75&#45;&gt;Node81</title>
 <path fill="none" stroke="#191970" d="M348.2094,-52.0676C338.6283,-46.2278 327.4018,-39.6013 317,-34 307.6745,-28.9782 297.1315,-23.8409 288.1391,-19.6145"/>
 <polygon fill="#191970" stroke="#191970" points="346.4608,-55.1012 356.8107,-57.3664 350.1324,-49.1413 346.4608,-55.1012"/>
 </g>
-<!-- Node76 -->
+<!-- Node77 -->
 <g id="node3" class="node">
-<title>Node76</title>
+<title>Node77</title>
 <g id="a_node3"><a xlink:href="Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="68,-114.5 68,-133.5 181,-133.5 181,-114.5 68,-114.5"/>
 <text text-anchor="middle" x="124.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">PYBIND11_MODULE</text>
 </a>
 </g>
 </g>
-<!-- Node75&#45;&gt;Node76 -->
+<!-- Node76&#45;&gt;Node77 -->
 <g id="edge2" class="edge">
-<title>Node75&#45;&gt;Node76</title>
+<title>Node76&#45;&gt;Node77</title>
 <path fill="none" stroke="#191970" d="M206.5842,-124C198.1303,-124 189.4679,-124 181.0884,-124"/>
 <polygon fill="#191970" stroke="#191970" points="206.7599,-127.5001 216.7598,-124 206.7598,-120.5001 206.7599,-127.5001"/>
 </g>
-<!-- Node77&#45;&gt;Node78 -->
+<!-- Node78&#45;&gt;Node79 -->
 <g id="edge4" class="edge">
-<title>Node77&#45;&gt;Node78</title>
+<title>Node78&#45;&gt;Node79</title>
 <path fill="none" stroke="#191970" d="M211.1015,-78.5469C200.4562,-77.1275 189.3309,-75.6441 178.7383,-74.2318"/>
 <polygon fill="#191970" stroke="#191970" points="210.7528,-82.0313 221.1277,-79.8837 211.678,-75.0927 210.7528,-82.0313"/>
 </g>
-<!-- Node79 -->
+<!-- Node80 -->
 <g id="node6" class="node">
-<title>Node79</title>
+<title>Node80</title>
 <g id="a_node6"><a xlink:href="LeastSquares_8hpp.html#abc455a395ab6414f5312b56e5b479195" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-57.5 0,-76.5 32,-76.5 32,-57.5 0,-57.5"/>
 <text text-anchor="middle" x="16" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">inv</text>
 </a>
 </g>
 </g>
-<!-- Node78&#45;&gt;Node79 -->
+<!-- Node79&#45;&gt;Node80 -->
 <g id="edge5" class="edge">
-<title>Node78&#45;&gt;Node79</title>
+<title>Node79&#45;&gt;Node80</title>
 <path fill="none" stroke="#191970" d="M60.1409,-67C49.7072,-67 39.7906,-67 32.0095,-67"/>
 <polygon fill="#191970" stroke="#191970" points="60.25,-70.5001 70.25,-67 60.25,-63.5001 60.25,-70.5001"/>
 </g>

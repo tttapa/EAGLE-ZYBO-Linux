@@ -9,57 +9,57 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100)">
 <title>Angle::resolution</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-100 297,-100 297,4 -4,4"/>
-<!-- Node88 -->
+<!-- Node96 -->
 <g id="node1" class="node">
-<title>Node88</title>
+<title>Node96</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="194,-38.5 194,-57.5 293,-57.5 293,-38.5 194,-38.5"/>
 <text text-anchor="middle" x="243.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle::resolution</text>
 </a>
 </g>
 </g>
-<!-- Node89 -->
+<!-- Node97 -->
 <g id="node2" class="node">
-<title>Node89</title>
+<title>Node97</title>
 <g id="a_node2"><a xlink:href="classAngle.html#aa9c7edb3027272ad1e45098383f0a94d" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-76.5 0,-95.5 158,-95.5 158,-76.5 0,-76.5"/>
 <text text-anchor="middle" x="79" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::perpendicular</text>
 </a>
 </g>
 </g>
-<!-- Node88&#45;&gt;Node89 -->
+<!-- Node96&#45;&gt;Node97 -->
 <g id="edge1" class="edge">
-<title>Node88&#45;&gt;Node89</title>
+<title>Node96&#45;&gt;Node97</title>
 <path fill="none" stroke="#191970" d="M192.0025,-59.8961C168.8803,-65.2374 141.9703,-71.4537 120.2118,-76.4799"/>
 <polygon fill="#191970" stroke="#191970" points="193.0341,-63.25 201.9897,-57.589 191.4585,-56.4296 193.0341,-63.25"/>
 </g>
-<!-- Node90 -->
+<!-- Node98 -->
 <g id="node3" class="node">
-<title>Node90</title>
+<title>Node98</title>
 <g id="a_node3"><a xlink:href="classAngle.html#aa4852a4dd80e8d12d8fc7da8e0e366c8" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="11.5,-38.5 11.5,-57.5 146.5,-57.5 146.5,-38.5 11.5,-38.5"/>
 <text text-anchor="middle" x="79" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::operator&#45;</text>
 </a>
 </g>
 </g>
-<!-- Node88&#45;&gt;Node90 -->
+<!-- Node96&#45;&gt;Node98 -->
 <g id="edge2" class="edge">
-<title>Node88&#45;&gt;Node90</title>
+<title>Node96&#45;&gt;Node98</title>
 <path fill="none" stroke="#191970" d="M183.3767,-48C171.4015,-48 158.7502,-48 146.5454,-48"/>
 <polygon fill="#191970" stroke="#191970" points="183.6982,-51.5001 193.6982,-48 183.6981,-44.5001 183.6982,-51.5001"/>
 </g>
-<!-- Node91 -->
+<!-- Node99 -->
 <g id="node4" class="node">
-<title>Node91</title>
+<title>Node99</title>
 <g id="a_node4"><a xlink:href="classAngle.html#a593164c63d4e2eedc8b473419c179f77" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="13.5,-.5 13.5,-19.5 144.5,-19.5 144.5,-.5 13.5,-.5"/>
 <text text-anchor="middle" x="79" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Angle&lt; 360 &gt;::average</text>
 </a>
 </g>
 </g>
-<!-- Node88&#45;&gt;Node91 -->
+<!-- Node96&#45;&gt;Node99 -->
 <g id="edge3" class="edge">
-<title>Node88&#45;&gt;Node91</title>
+<title>Node96&#45;&gt;Node99</title>
 <path fill="none" stroke="#191970" d="M192.0025,-36.1039C168.8803,-30.7626 141.9703,-24.5463 120.2118,-19.5201"/>
 <polygon fill="#191970" stroke="#191970" points="191.4585,-39.5704 201.9897,-38.411 193.0341,-32.75 191.4585,-39.5704"/>
 </g>

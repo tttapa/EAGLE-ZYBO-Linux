@@ -23,7 +23,6 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "EAGLE ZYBO Linux", "index.html", [
-    [ "PyMatrix", "md__home_pieter_GitHub_EAGLE-ZYBO-Linux_src_py-matrix_README.html", null ],
     [ "Getting Started", "md_Getting-Started.html", null ],
     [ "Status Quaestionis", "md_Status-Quaestionis.html", null ],
     [ "Structure", "md_Structure.html", null ],
@@ -41,11 +40,12 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ]
+        [ "Enumerator", "functions_eval.html", null ],
+        [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -64,8 +64,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ANSIColors_8hpp.html",
-"base64_8cpp.html#aefdbbbe5e08214a7698f981a63e24208",
-"structArray.html#a3cbf8f2bfa23eb494f638eaa609a92f4"
+"Time_8hpp_source.html",
+"functions_func_h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

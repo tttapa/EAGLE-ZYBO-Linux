@@ -8,9 +8,11 @@ var hierarchy =
     [ "Array< R, C >", "structArray.html", null ],
     [ "Array< T, R, C >", "structArray.html", null ],
     [ "Array< T, Rm, Cn >", "structArray.html", null ],
+    [ "BitString", "classBitString.html", null ],
     [ "BresenhamLine", "classBresenhamLine.html", null ],
     [ "CenterPointOutLineIterator", "classCenterPointOutLineIterator.html", null ],
     [ "CosSin", "structCosSin.html", null ],
+    [ "CryptoInstruction", "classCryptoInstruction.html", null ],
     [ "CryptoPoller", "classCryptoPoller.html", null ],
     [ "std::exception", null, [
       [ "CryptoException", "classCryptoException.html", null ]
@@ -28,9 +30,11 @@ var hierarchy =
     [ "GridFinder", "classGridFinder.html", null ],
     [ "HoughResult", "structHoughResult.html", null ],
     [ "Incrementor< T >", "classIncrementor.html", null ],
+    [ "Ketje", "classKetje.html", null ],
     [ "Line", "classLine.html", null ],
     [ "LineResult", "structLineResult.html", null ],
     [ "LocationFinder", "classLocationFinder.html", null ],
+    [ "LocationTracker", "classLocationTracker.html", null ],
     [ "Mask", "classMask.html", null ],
     [ "MatrixAssignmentHelper< T, R, C, RR_sz, CC_sz, RR_offset, CC_offset >", "structMatrixAssignmentHelper.html", null ],
     [ "MulticastSender", "classMulticastSender.html", null ],

@@ -28,8 +28,8 @@ single thread anyway.
 ✓ I also added a base64-decoder library for extracting the binary data from the 
 QR code.
 
-🗙 The next step is to write functions that are able to decode strings of data, as
-well as more elaborate test cases.
+🗙 The next step is to write functions that are able to decode strings of data, 
+as well as more elaborate test cases.
 
 The public API of the crypto code goes in `src/crypto/include/crypto.hpp`, and
 the implementations in `src/crypto/src/crypto.cpp`.  
@@ -41,6 +41,9 @@ This is not ideal, because it has a lot of overhead when reading large amounts
 of data. The code is simple enough, and adding a function for doing longer
 transactions to the FPGA is a good idea, instead of calling the `rmem()` and
 `wmem()` functions for each word separately.
+
+✓ Tuur and Cyriel are working on the code that reads and decodes the QR code, 
+and sends the data to crypto.
 
 ### Logging
 
@@ -74,27 +77,96 @@ could use that code instead.
 ✓ Reading the image from the HDMI input seems to be working. There is a purple
 line at the edge of the frame though, that I can't seem to get rid of.
 
-🗙 Next, we need a way to transform the points returned by GridFinder to get the
-global location of the drone, relative to the grid. I believe Cyriel finished
-the code, but didn't test it yet.
-I also added the code to get the orientation of a square. It still needs code to
-handle the case where not all four sides of the square are available.
+✓ Getting the absolute position of the drone seems to be working. The entire
+vision program runs at 60 fps on the ZYBO, but every two frames are the same,
+because the camera only updates at 30 fps.
 
-🗙 Finally, this location has to be sent to the BareMetal core.
-
-🗙 When BareMetal indicates that the target position has been reached, the image
-should be sent to the QR decoder and then the crypto code needs to be executed.
+🗙 Finally, this location has to be sent to the BareMetal core. This is trivial.
 
 ## ZYBO Baremetal
 
+### BaremetalImproved framework
+
+✓ src-vivado is rewritten  
+🗙 corrected functionality in src-vivado (e.g. IMU calibration, IMU reading,
+AHRS orientation, clamp RC inputs) needs to be verified  
+❓ src is nearly finished  
+🗙 the entire framework needs to be debugged  
+
 ### Controllers
 
-🗙 Status?
+✓ Controllers simulated  
+✓ Code generator working  
+❓ Attitude is tuned, but needs fine tuning for new battery  
+❓ Altitude is tuned, but needs fine tuning for new battery  
+❓ Navigation controller needs tuning  
+🗙 Observer for navigation that only uses the accelerometer measurements 
+(for taking off/landing when there's no vision data)
 
 ### Autopilot
 
-🗙 Status?
+❓ Autonomous navigation has been programmed, it will be tested as soon as we 
+finish tuning the navigation controller  
+❓ Automatic take-off and landing has been implemented, but not tested yet
 
 ### Logger
 
-🗙 Status?
+✓ Code generator working  
+❓ Update code generator with new BaremetalImproved  
+
+## Videos for technical milestones T4
+
+### 1. Flying
+
+✓ Stable flight demonstrated for 10s  
+✓ Pilot in control of flight moving left, right, forward, backward, up and down
+
+### 2. ESCs
+
+✓ Demonstrate at least one working and integrated ESC. The pilot is able to 
+control motor throttle via the remote controller.  
+🗙 Flying with own ESCs
+
+### 3. Altitude controller
+
+✓ Flying for 10s while only manually controlling X-Y  
+✓ Dito, but with very stable achieved (<30cm variation) at most 20 seconds after 
+enabling height control and maintained for at least 20 seconds
+
+### 4. Loitering
+
+🗙 Staying autonomously (more or less) within a 3x3 square grid without manual
+x-y control for 10s  
+🗙 Long term (>10s) stable location  within a single square, proven by
+automatic landing within a square (on the coil)
+
+### 5. Wireless video link
+
+❓ Wireless video link established and link performance analysis done  
+🗙 Wireless video link parameters tuned autonomously
+
+### 6. Logging
+
+❓ Real-time logging info during flight  
+🗙 Very informative and visually attractive logging, graphically plotting info
+at real time during flight
+
+### 7. Navigation (walking)
+
+🗙 Decode current X-Y coordinates in the grid at any square (also those without 
+QR code), and decode location targets from QR codes while walking over the grid 
+with drone, being correct over at least 10 squares and 2 QR codes. Results 
+should show up on GUI  
+🗙 Do the same with a hardware accelerated crypto implementation
+
+### 8. Navigation (flying)
+
+🗙 Real-time localization during actual flight  
+🗙 Flying/navigating fully autonomously following the QR trail of the mission
+
+### 9. WPT
+
+✓ Capable of fully lighting up the LED wall after manually putting the drone on 
+the coil, with on/off activation with the remote control.  
+✓ Lighting up the LED wall even when the two coils are aligned only 50%, e.g.
+after automated landing.

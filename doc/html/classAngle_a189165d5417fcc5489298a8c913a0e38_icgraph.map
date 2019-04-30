@@ -1,10 +1,12 @@
 <map id="Angle::getIndex" name="Angle::getIndex">
-<area shape="rect" id="node1" title=" " alt="" coords="436,132,560,159"/>
-<area shape="rect" id="node2" href="$classAngle.html#a90a26814a60b92e152667b921ef542a4" title=" " alt="" coords="217,5,375,32"/>
-<area shape="rect" id="node3" href="$classAngle.html#a50309ff78d5ce30e24c967c5684bad3b" title=" " alt="" coords="208,56,384,83"/>
-<area shape="rect" id="node4" href="$classAngle.html#a897da4bbf76522fea73951ea55c05ffb" title=" " alt="" coords="211,107,381,133"/>
-<area shape="rect" id="node5" href="$classAngleTracker.html#a513f5d6f5b1affe00dcc82a036a3dc61" title=" " alt="" coords="217,157,375,184"/>
-<area shape="rect" id="node7" href="$classGridFinder.html#afcc1eed83ee0292966c3c80883069634" title="Similar to findLineAngle, but is more accurate, because it uses the average of the range of angles wi..." alt="" coords="204,209,388,250"/>
-<area shape="rect" id="node8" href="$structSquare.html#a12c1f0ee0bd30021a5a7d7344538fef9" title="Get the average angle of the sides of the square ." alt="" coords="229,275,363,301"/>
-<area shape="rect" id="node6" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,216,156,243"/>
+<area shape="rect" id="node1" title=" " alt="" coords="956,132,1080,159"/>
+<area shape="rect" id="node2" href="$classAngle.html#a90a26814a60b92e152667b921ef542a4" title=" " alt="" coords="737,5,895,32"/>
+<area shape="rect" id="node3" href="$classAngle.html#a50309ff78d5ce30e24c967c5684bad3b" title=" " alt="" coords="728,56,904,83"/>
+<area shape="rect" id="node4" href="$classAngle.html#a897da4bbf76522fea73951ea55c05ffb" title=" " alt="" coords="731,107,901,133"/>
+<area shape="rect" id="node5" href="$classAngleTracker.html#a513f5d6f5b1affe00dcc82a036a3dc61" title=" " alt="" coords="737,157,895,184"/>
+<area shape="rect" id="node9" href="$classGridFinder.html#afcc1eed83ee0292966c3c80883069634" title="Similar to findLineAngle, but is more accurate, because it uses the average of the range of angles wi..." alt="" coords="724,209,908,250"/>
+<area shape="rect" id="node10" href="$structSquare.html#a12c1f0ee0bd30021a5a7d7344538fef9" title="Get the average angle of the sides of the square ." alt="" coords="509,267,643,293"/>
+<area shape="rect" id="node6" href="$classLocationFinder.html#a93be2c4b05b52c58f5fca5d1514dfbe9" title="Get the position of the center of the frame relative to the given square." alt="" coords="476,157,676,184"/>
+<area shape="rect" id="node8" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,208,156,235"/>
+<area shape="rect" id="node7" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,157,428,184"/>
 </map>

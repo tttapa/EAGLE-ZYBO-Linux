@@ -9,6 +9,8 @@ var searchData=
   ['checkline',['checkLine',['../classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d',1,'GridFinder']]],
   ['clamp',['clamp',['../Matrix_8hpp.html#adb959bd990ed4fd37ed02cd0202ca511',1,'Matrix.hpp']]],
   ['colvectorfromcpparray',['ColVectorFromCppArray',['../Matrix_8hpp.html#aeae40defd7db46d853d1b0411049d3df',1,'Matrix.hpp']]],
+  ['concatenate',['concatenate',['../classBitString.html#a39a133d9a366545e41d6a470255a1b64',1,'BitString']]],
+  ['concatenateandaddmultiratepadding',['concatenateAndAddMultiRatePadding',['../classBitString.html#afec85245f536cb86f2aca2f0300185dd',1,'BitString']]],
   ['constanttimefunctiont',['ConstantTimeFunctionT',['../structConstantTimeFunctionT.html#a289c13537754efc7e5de87cccf6bd10d',1,'ConstantTimeFunctionT']]],
   ['copyfromcarray',['copyFromCArray',['../Matrix_8hpp.html#a844f8cd83b4449ea49a4cbd2cc3ee72b',1,'Matrix.hpp']]],
   ['copytocarray',['copyToCArray',['../Matrix_8hpp.html#a18e9cd42efc4e01383b3cb257ef38fb5',1,'Matrix.hpp']]],
@@ -18,6 +20,7 @@ var searchData=
   ['count',['count',['../classPerfTimer.html#afa079be2d4ca5318665ee6337da2172e',1,'PerfTimer']]],
   ['cross',['cross',['../Matrix_8hpp.html#aaac3f553f87e00956b4736107cf40289',1,'Matrix.hpp']]],
   ['cryptoexception',['CryptoException',['../classCryptoException.html#a9d29714c7a71390a27ca2063a1755471',1,'CryptoException']]],
+  ['cryptoinstruction',['CryptoInstruction',['../classCryptoInstruction.html#afa456da248aefc3b738559fb7eed8776',1,'CryptoInstruction::CryptoInstruction(InstructionType instructionType, uint8_t x=0, uint8_t y=0)'],['../classCryptoInstruction.html#acb4ccf0ba2bface16caf86f4daa48443',1,'CryptoInstruction::CryptoInstruction(InstructionType instructionType, const std::vector&lt; uint8_t &gt; &amp;unknownData)']]],
   ['cryptopoller',['CryptoPoller',['../classCryptoPoller.html#ae86ce3e44f7fd294c276b088cd5bb5a4',1,'CryptoPoller']]],
   ['curr_5fz',['curr_z',['../wrapper_8h.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;wrapper.c'],['../wrapper_8c.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;wrapper.c']]]
 ];

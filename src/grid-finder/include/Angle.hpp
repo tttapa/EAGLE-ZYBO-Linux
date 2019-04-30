@@ -105,6 +105,7 @@ class Angle {
     [[nodiscard]] constexpr Angle operator-(Angle rhs) const {
         return normalize(this->angle_index + resolution() - rhs.angle_index);
     }
+    [[nodiscard]] constexpr Angle operator-() const { return Angle{0} - *this; }
 
     [[nodiscard]] constexpr Angle operator/(uint divisor) const {
         return Angle{angle_index / divisor};
@@ -141,9 +142,7 @@ class Angle {
         return normalize(angle);
     }
 
-    constexpr static uint indexof(Angle angle) {
-        return angle.getIndex();
-    }
+    constexpr static uint indexof(Angle angle) { return angle.getIndex(); }
 
     static constexpr int cos(uint angleIndex) {
         return std::round(std::cos(step() * angleIndex) *

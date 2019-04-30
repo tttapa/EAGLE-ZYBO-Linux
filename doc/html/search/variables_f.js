@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['value',['value',['../structgetArrayLengthBase.html#ad8ba7178014806c01250b4ff0d24d6df',1,'getArrayLengthBase::value()'],['../structgetArrayLengthBase_3_01Array_3_01T_00_01N_01_4_01_4.html#aef183b4cdcb4164ad84a8211aa881335',1,'getArrayLengthBase&lt; Array&lt; T, N &gt; &gt;::value()']]]
+  ['white',['white',['../namespaceANSIColors.html#a64eb07b702c6ae3733b81279158760c8',1,'ANSIColors']]],
+  ['whiteb',['whiteb',['../namespaceANSIColors.html#a39000c3f5f5fce1148a09cf92afc5f1f',1,'ANSIColors']]],
+  ['width',['width',['../structLineResult.html#aea3f1d76ba64d57500fc2f5fa1f3539b',1,'LineResult::width()'],['../structFirstLineEstimate.html#a372016adb853d8ae6262c348212266cf',1,'FirstLineEstimate::width()'],['../structGetMiddleResult.html#ab33ea10e015cf44a846b2bc1bf359584',1,'GetMiddleResult::width()'],['../namespaceMatrixPrinting.html#a3bff58fefc08aa073683feebf5ef23e1',1,'MatrixPrinting::width()']]]
 ];

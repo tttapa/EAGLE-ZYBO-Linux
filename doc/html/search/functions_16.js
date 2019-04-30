@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7emulticastsender',['~MulticastSender',['../classMulticastSender.html#afd6955e97ea8b4b727ab8639b41f8bc4',1,'MulticastSender']]]
+  ['xorstep',['xorStep',['../classCryptoPoller.html#acdb1c273556e4580a7263f98c3e736e8',1,'CryptoPoller']]],
+  ['xorstride',['xorStride',['../classCryptoPoller.html#a42cf6bf1e6b44256c5aef2a97027e62f',1,'CryptoPoller']]]
 ];
