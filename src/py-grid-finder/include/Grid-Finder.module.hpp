@@ -35,7 +35,7 @@ PYBIND11_MODULE(py_grid_finder, pygridmodule) {
     pybind11::class_<Square>(pygridmodule, "Square")
         .def_readonly("lines", &Square::lines)
         .def_readonly("points", &Square::points)
-        .def("getAngle", [](Square s) { return s.getAngle().rad(); })
+        .def("getAngle", [](Square &s) { return s.getAngle().rad(); })
         .def("__str__", [](const Square &sq) {
             std::ostringstream s;
             s << sq;
@@ -91,6 +91,8 @@ PYBIND11_MODULE(py_grid_finder, pygridmodule) {
              [](AngleTracker a, double rad) { return a.update(rad).rad(); });
 
     pybind11::class_<LocationFinder>(pygridmodule, "LocationFinder")
+        .def(pybind11::init<std::string>())
         .def(pybind11::init<int>())
-        .def("getLocation", &LocationFinder::getLocation);
+        .def("getLocation", &LocationFinder::getLocation)
+        .def("getAngle", [](LocationFinder l) { return l.getAngle().rad(); });
 }

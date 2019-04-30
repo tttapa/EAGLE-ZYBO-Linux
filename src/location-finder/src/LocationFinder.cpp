@@ -37,20 +37,28 @@ int test() {
 Point LocationFinder::getLocation() {
     if (!cap.isOpened())
         throw std::runtime_error("Capture is not opened");
-    cv::Mat img;
-    cap >> img;
+    cap >> image;
+    if (image.empty())
+        throw std::runtime_error("Unable to capture frame");
+#ifndef ZYBO
+    // cv::imwrite("img.bmp", image);
     cv::Mat rgbimg;
-    cv::cvtColor(img, rgbimg, cv::COLOR_BGR2RGB);
-    cv::imwrite("img.bmp", rgbimg);
-    Mask mask       = img;
-    cv::Mat maskimg = {img.rows, img.cols, CV_8UC1, mask.ptr()};
-    cv::imwrite("mask.bmp", maskimg);
+    cv::cvtColor(image, rgbimg, cv::COLOR_BGR2RGB);
+    image = rgbimg;
+#endif
+    Mask mask = image;
+    maskImage = {image.rows, image.cols, CV_8UC1, mask.ptr()};
+    // cv::imwrite("mask.bmp", maskImage);
     GridFinder gf = std::move(mask);
     Square sq     = gf.findSquare();
-    angle_t angle = sq.getAngle();
-    angle         = angleTracker.update(angle);
-    std::cout << sq << std::endl;
-    std::cout << angle << std::endl;
+    try {
+        angle_t newangle = sq.getAngle();
+        angle            = angleTracker.update(newangle);
+    } catch (std::runtime_error &) {
+    }
+
+    // std::cout << sq << std::endl;
+    // std::cout << angle << std::endl;
 
     using Vec2f = TColVector<float, 2>;
 
@@ -99,7 +107,15 @@ Point LocationFinder::getLocation() {
                   << ANSIColors::reset << std::endl;
         return Point::invalid();
     }
+#if 0
     Vec2f position = {0.5, 0.5};
     position += rotate(frameCenter - center, -angle).vec() / sideLen;
-    return Point{position} % 1.0;
+    return Point{position + Vec2f{1.0, 1.0}} % 1.0;
+#else
+    Vec2f position              = {0.5, 0.5};
+    Vec2f sqCenterToFrameCenter = frameCenter - center;
+    sqCenterToFrameCenter[1] *= -1;
+    position += rotate(sqCenterToFrameCenter, angle).vec() / sideLen;
+    return Point{position + Vec2f{1.0, 1.0}} % 1.0;
+#endif
 }

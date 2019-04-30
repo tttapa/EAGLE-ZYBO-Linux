@@ -5,6 +5,7 @@
 #include <Line.hpp>
 #include <Pixel.hpp>
 #include <optional>
+#include <vector>
 
 #pragma region Structs..........................................................
 
@@ -49,9 +50,9 @@ struct Square {
      * perpendicular.
      */
     angle_t getAngle() const {
-        if (!lines[0] || !lines[1] || !lines[2] || !lines[3] || !lines[4])
+        if (!lines[0] || !lines[1])
             throw std::runtime_error(
-                "Error: cannot determine angle: not all lines present");
+                "Error: cannot determine angle: no lines present");
 
         const int _45  = angle_t(45_deg).getIndex();
         const int _90  = angle_t(90_deg).getIndex();
@@ -60,12 +61,10 @@ struct Square {
         uint first_angle =
             angle_t::average(lines[0]->angle, lines[1]->angle.opposite())
                 .getIndex();
-        std::array<uint, 4> angles = {
-            first_angle,
-            lines[2]->angle.getIndex(),
-            lines[3]->angle.getIndex(),
-            lines[4]->angle.getIndex(),
-        };
+        std::vector<uint> angles = {first_angle};
+        for (auto line : lines)
+            if (line)
+                angles.push_back(line->angle.getIndex());
         uint sum = 0;
         for (uint angle : angles) {
             uint v = ((angle + _45 + _360 - first_angle) % _90) +
@@ -76,7 +75,7 @@ struct Square {
             sum += v;
         }
         // std::cout << std::endl;
-        return angle_t{(sum / 4) % _90};
+        return angle_t{uint(sum / angles.size() % _90)};
     }
 };
 

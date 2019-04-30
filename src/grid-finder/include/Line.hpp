@@ -54,6 +54,13 @@ constexpr Point rotate(Point p, Angle<R> a) {
     };
 }
 
+constexpr inline Point round(Point p) {
+    return {
+        std::round(p.x),
+        std::round(p.y),
+    };
+}
+
 #include <iostream>
 
 using std::cout;
