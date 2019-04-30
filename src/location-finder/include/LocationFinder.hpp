@@ -30,7 +30,7 @@ class LocationFinder {
      * @param   sq
      *          A square of the reference grid.
      * @param   frameCenter 
-     *          The center of the frame, i.e. the point that will be projcected
+     *          The center of the frame, i.e. the point that will be projected
      *          onto the sides of the square.
      * @return  The position of the frame center within the square, modulo 1.0.
      */
