@@ -30,17 +30,29 @@ BitString Ketje::unwrap(const BitString &associatedData,
     uint32_t result = cryptoPoller.normalStep(
         blockAssociatedData[blockAssociatedData.size() - 1]
             .concatenateAndAddMultiRatePadding(
-                0x10, 20,
+                0x02, 20,
                 blockAssociatedData[blockAssociatedData.size() - 1].getLength())
             .toUint32());
-    std::vector<BitString> blockCipherText;
+        std::vector<BitString> blockCipherText;
     cipherText.splitBlock(blockCipherText);
-    
+    BitString *bitStringResult = new BitString(result, blockCipherText[0].getLength());
+
     for (int i = 0; i < blockCipherText.size() - 1; i++) {
-        result = cryptoPoller.xorStep(
-            blockCipherText[i]
-                .concatenateAndAddMultiRatePadding(
-                    0x11, 20, blockCipherText[i].getLength())
+        bitStringResult->xorBitString(blockCipherText[i]);
+        delete bitStringResult;
+        bitStringResult = new BitString(result, blockCipherText[i].getLength());
+        result = cryptoPoller.normalStep(
+            bitStringResult
+                ->concatenateAndAddMultiRatePadding(
+                    0x03, 20, blockCipherText[i].getLength())
                 .toUint32());
     }
+
+    BitString bitStringResult(result, blockCipherText[].getLength());
+        bitStringResult.xorBitString(blockCipherText[i]);
+        result = cryptoPoller.normalStep(
+            bitStringResult
+                .concatenateAndAddMultiRatePadding(
+                    0x03, 20, blockCipherText[i].getLength())
+                .toUint32());
 }

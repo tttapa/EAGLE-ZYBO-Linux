@@ -11,28 +11,28 @@ class BitString {
 
   public:
     BitString(const std::vector<uint8_t> &input);
-    BitString(uint8_t l);
-    BitString(uint32_t data, uint8_t length);
+    BitString(uint32_t data, uint8_t nbBits);
+    BitString(uint16_t l);
+
+    void split(std::array<uint32_t, 10> &array) const;
+    void splitBlocks(std::vector<BitString> &vector) const;
+
+    void xorWith(const BitString &otherBitString);
 
     BitString &concatenate(const BitString &otherBitString);
-    void split(std::array<uint32_t, 10> &array);
-    void splitBlock(std::vector<BitString> &vector) const;
-
     BitString &addSimplePadding(int16_t r, int16_t MLength);
     BitString &addMultiRatePadding(int16_t r, int16_t MLength);
-
     BitString &concatenateAndAddMultiRatePadding(uint8_t concatenationBits,
                                                  int16_t r, int16_t MLength);
 
-    uint32_t toUint32();
+    uint16_t getLength() const;
+    void reserve(uint16_t nbBits);
 
-    void reserveBits(uint16_t nbBits);
+    uint32_t toUint32() const;
 
-    uint16_t getLength();
-
-    friend bool operator==(const BitString &bitstring1,
-                           const BitString &bitstring2);
+    friend bool operator==(const BitString &bitString1,
+                           const BitString &bitString2);
 
     friend std::ostream &operator<<(std::ostream &out,
-                                    const BitString &bitstring);
+                                    const BitString &bitString);
 };
