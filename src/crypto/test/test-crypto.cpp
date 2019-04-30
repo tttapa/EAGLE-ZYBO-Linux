@@ -1,3 +1,4 @@
+#include <bitString.hpp>
 #include <cryptoPoller.hpp>
 #include <gtest/gtest.h>
 
@@ -134,4 +135,29 @@ TEST(Crypto, CryptoPoller) {
     cryptoPoller.normalStep(0x02008);
 
     ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0xe1fb0);
+}
+
+TEST(Crypto, CryptoKeypack) {
+    BitString bitstring(176 + 16);
+    bitstring.concatenate(BitString(
+        {0xfe, 0x97, 0x30, 0xc9, 0x62, 0xfb, 0x94, 0x2d, 0xc6, 0x5f, 0xf8,
+         0x91, 0x2a, 0xc3, 0x5c, 0xf5, 0x8e, 0x27, 0xc0, 0x59, 0xf2, 0x8b}));
+    bitstring.addSimplePadding(176 + 16 - 8, 176);
+    bitstring.addMultiRatePadding(200, bitstring.getLength());
+    ASSERT_TRUE(bitstring ==
+                BitString({0x18, 0xfe, 0x97, 0x30, 0xc9, 0x62, 0xfb, 0x94, 0x2d,
+                           0xc6, 0x5f, 0xf8, 0x91, 0x2a, 0xc3, 0x5c, 0xf5, 0x8e,
+                           0x27, 0xc0, 0x59, 0xf2, 0x8b, 0x01, 0x81}));
+    std::array<uint32_t, 10> keypack;
+    bitstring.split(keypack);
+    ASSERT_EQ(keypack[0], 0x18fe9);
+    ASSERT_EQ(keypack[1], 0x730c9);
+    ASSERT_EQ(keypack[2], 0x62fb9);
+    ASSERT_EQ(keypack[3], 0x42dc6);
+    ASSERT_EQ(keypack[4], 0x5ff89);
+    ASSERT_EQ(keypack[5], 0x12ac3);
+    ASSERT_EQ(keypack[6], 0x5cf58);
+    ASSERT_EQ(keypack[7], 0xe27c0);
+    ASSERT_EQ(keypack[8], 0x59f28);
+    ASSERT_EQ(keypack[9], 0xb0181);
 }
