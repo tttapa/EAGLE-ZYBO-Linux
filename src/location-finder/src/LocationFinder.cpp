@@ -96,7 +96,7 @@ Point LocationFinder::getLocation(Square &sq, Vec2f frameCenter) {
         Vec2f diag = {diagAngle.cosf(), diagAngle.sinf()};
         center     = sideLen / sqrt(2) * diag + points[1]->vec();
     }
-    // === Three points ===
+    // === Two points ===
     // If only the first two points are valid
     else if (points[0] && points[1] && !points[2] && !points[3]) {
         sideLen    = Point::distance(*points[0], *points[1]);
