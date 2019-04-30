@@ -1,6 +1,8 @@
 var searchData=
 [
   ['abs',['abs',['../Array_8hpp.html#a54bae1a9c86ad6bc491b4f10495a759f',1,'Array.hpp']]],
+  ['addmultiratepadding',['addMultiRatePadding',['../classBitString.html#a2d6f24c79564db3cac48177fa3c0cc48',1,'BitString']]],
+  ['addsimplepadding',['addSimplePadding',['../classBitString.html#a87906322228e6bf43c0d29bd00190be4',1,'BitString']]],
   ['angle',['Angle',['../classAngle.html#aa14889913d6d90c55dbd8c727e7212ec',1,'Angle::Angle()'],['../classAngle.html#a881b02c2c1eca21c064b21fe97209c4b',1,'Angle::Angle(uint angleIndex)'],['../classAngle.html#a89687e7079f107975560dd598ef88d53',1,'Angle::Angle(int angleIndex)'],['../classAngle.html#a90a26814a60b92e152667b921ef542a4',1,'Angle::Angle(double angle)'],['../classAngle.html#afd42019f6f3747ee5824138c80f94fa1',1,'Angle::Angle(long double angle)']]],
   ['apply',['apply',['../structQR.html#aa61fe3635ba82acfc32da54920b79309',1,'QR']]],
   ['applymask',['applyMask',['../namespaceFallback.html#a505e4b4c630f9c62620d4308773ea4b7',1,'Fallback::applyMask()'],['../namespaceNEON.html#ad86177685f564f122f8862f9b0186107',1,'NEON::applyMask(const uint8_t *colors)'],['../namespaceNEON.html#a18e9c2e1570cbe37e0b164129acbff73',1,'NEON::applyMask(const uint8_t *colors, uint8_t *mask)']]],

@@ -1,13 +1,17 @@
 var searchData=
 [
-  ['tdiag',['Tdiag',['../Matrix_8hpp.html#ad69eac8317c3071180ddf9800753bbd9',1,'Tdiag(const TRowVector&lt; T, N &gt; &amp;diagElements):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a3ee2059404615886f7900fddb1969d7c',1,'Tdiag(const TColVector&lt; T, N &gt; &amp;diagElements):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a5f97b09a15977bbc33baffba2b38e541',1,'Tdiag(const TMatrix&lt; T, 1, 1 &gt; &amp;diagElements):&#160;Matrix.hpp']]],
-  ['test',['test',['../LocationFinder_8hpp.html#ac8da963855e09bf929c085486f4a3b47',1,'test():&#160;LocationFinder.cpp'],['../LocationFinder_8cpp.html#ac8da963855e09bf929c085486f4a3b47',1,'test():&#160;LocationFinder.cpp']]],
-  ['teye',['Teye',['../Matrix_8hpp.html#a8ea96ff7a9005c051acff866b2cba45c',1,'Matrix.hpp']]],
-  ['toarraypointer',['toArrayPointer',['../Matrix_8hpp.html#a41e84f690cb186f410d21dda49afb8fb',1,'toArrayPointer(TMatrix&lt; T, R, C &gt; &amp;matrix):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a163b69772ce94da616ed7693e8d5f14f',1,'toArrayPointer(const TMatrix&lt; T, R, C &gt; &amp;matrix):&#160;Matrix.hpp']]],
-  ['tocpparray',['toCppArray',['../Matrix_8hpp.html#a303d9181ce939c37af50fcc955d0ac1d',1,'toCppArray(TMatrix&lt; T, R, C &gt; &amp;matrix))[R *C]:&#160;Matrix.hpp'],['../Matrix_8hpp.html#a6f9c4c6ebd3cb279a3268c8667ed2146',1,'toCppArray(const TMatrix&lt; T, R, C &gt; &amp;matrix))[R *C]:&#160;Matrix.hpp']]],
-  ['tones',['Tones',['../Matrix_8hpp.html#a7e2edcf0adff5dd92023ba70c3d080c1',1,'Matrix.hpp']]],
-  ['torgb_5fptr',['toRGB_ptr',['../classMask.html#ada333d548ba4428ba67a0052821b0417',1,'Mask']]],
-  ['tostdarray',['toStdArray',['../Matrix_8hpp.html#a959be8d53cd66d399017fa11052da6fd',1,'toStdArray(TColVector&lt; T, R &gt; &amp;vector):&#160;Matrix.hpp'],['../Matrix_8hpp.html#ae6a6b7e9a54cb9418798b6c979e3dd48',1,'toStdArray(const TColVector&lt; T, R &gt; &amp;vector):&#160;Matrix.hpp']]],
-  ['transpose',['transpose',['../Matrix_8hpp.html#ae8d7f8a24d9759e2535e2ff13f13fe26',1,'Matrix.hpp']]],
-  ['tzeros',['Tzeros',['../Matrix_8hpp.html#a98fb6895f59d2e4d39ab391e55afc6a9',1,'Matrix.hpp']]]
+  ['send',['send',['../classMulticastSender.html#aa8f381568b0b483f7c93e0fc4755b4c7',1,'MulticastSender']]],
+  ['set',['set',['../classGridFinder.html#a376419f000b3be1e8db278726a2efbc1',1,'GridFinder::set()'],['../classMask.html#abd2577692522262d25fcaae6620582e3',1,'Mask::set()']]],
+  ['sign',['sign',['../HouseholderQR_8hpp.html#ae91f1ecebb987562f092671e0cb75c40',1,'HouseholderQR.hpp']]],
+  ['sin',['sin',['../classAngle.html#a3700fa4572ca0b7dfacf65cc11108668',1,'Angle::sin() const'],['../classAngle.html#adb9bfe045dd75dad8912cf1e741d2820',1,'Angle::sin(uint angleIndex)'],['../classBresenhamLine.html#a115d1f10a5ce1e0ef945258346b6f035',1,'BresenhamLine::sin()']]],
+  ['sind',['sind',['../structCosSin.html#a427ffa2ad48206dcbb22eb6d08e924d4',1,'CosSin::sind()'],['../classAngle.html#a8e1bd6c3c781fdd6ade99388cb394b5e',1,'Angle::sind()']]],
+  ['sinf',['sinf',['../structCosSin.html#a5bfa62f2c4c84de02d4c65f0cd2512d0',1,'CosSin::sinf()'],['../classAngle.html#a01897132cd9fd91aaddc870e50df157b',1,'Angle::sinf()']]],
+  ['solveleastsquares',['solveLeastSquares',['../LeastSquares_8hpp.html#a3e86962f655361a684f770b14c9fe1e2',1,'LeastSquares.hpp']]],
+  ['split',['split',['../classBitString.html#afcc7605baba0a187e6ca83d29093a910',1,'BitString']]],
+  ['splitblock',['splitBlock',['../classBitString.html#add54f8ea09dc2f7d21031944b2cae33a',1,'BitString']]],
+  ['sq',['sq',['../Square_8hpp.html#ace3999c20c4c886c00503d56c69ae204',1,'Square.hpp']]],
+  ['squareerror',['squareError',['../MeanSquareError_8hpp.html#a6d0454c404d0ec6ee8b5201e63812dc6',1,'MeanSquareError.hpp']]],
+  ['start',['start',['../classCryptoPoller.html#a275b05afda129bc41f85016d44330a4f',1,'CryptoPoller']]],
+  ['step',['step',['../classAngle.html#aaff4df6bab7baf6e798036a470e2cf0d',1,'Angle']]],
+  ['sum',['sum',['../Array_8hpp.html#a8210ee35a21cf8114e4f40920a6e0abf',1,'Array.hpp']]]
 ];

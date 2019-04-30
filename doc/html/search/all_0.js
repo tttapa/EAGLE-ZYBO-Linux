@@ -1,9 +1,11 @@
 var searchData=
 [
   ['abs',['abs',['../Array_8hpp.html#a54bae1a9c86ad6bc491b4f10495a759f',1,'Array.hpp']]],
+  ['addmultiratepadding',['addMultiRatePadding',['../classBitString.html#a2d6f24c79564db3cac48177fa3c0cc48',1,'BitString']]],
+  ['addsimplepadding',['addSimplePadding',['../classBitString.html#a87906322228e6bf43c0d29bd00190be4',1,'BitString']]],
   ['almostequal_2ehpp',['AlmostEqual.hpp',['../AlmostEqual_8hpp.html',1,'']]],
   ['amount_5fframes',['AMOUNT_FRAMES',['../wrapper_8c.html#a46658e5dedf04dda6e9e28cb38b26994',1,'wrapper.c']]],
-  ['angle',['Angle',['../classAngle.html',1,'Angle&lt; Resolution &gt;'],['../structHoughResult.html#ac574b6b6328bff793bf74f9860b6f2fd',1,'HoughResult::angle()'],['../structLineResult.html#ac85d64cfd27b3ae1684331f0c3cf8559',1,'LineResult::angle()'],['../classAngle.html#aa14889913d6d90c55dbd8c727e7212ec',1,'Angle::Angle()'],['../classAngle.html#a881b02c2c1eca21c064b21fe97209c4b',1,'Angle::Angle(uint angleIndex)'],['../classAngle.html#a89687e7079f107975560dd598ef88d53',1,'Angle::Angle(int angleIndex)'],['../classAngle.html#a90a26814a60b92e152667b921ef542a4',1,'Angle::Angle(double angle)'],['../classAngle.html#afd42019f6f3747ee5824138c80f94fa1',1,'Angle::Angle(long double angle)']]],
+  ['angle',['Angle',['../classAngle.html',1,'Angle&lt; Resolution &gt;'],['../classAngle.html#aa14889913d6d90c55dbd8c727e7212ec',1,'Angle::Angle()'],['../classAngle.html#a881b02c2c1eca21c064b21fe97209c4b',1,'Angle::Angle(uint angleIndex)'],['../classAngle.html#a89687e7079f107975560dd598ef88d53',1,'Angle::Angle(int angleIndex)'],['../classAngle.html#a90a26814a60b92e152667b921ef542a4',1,'Angle::Angle(double angle)'],['../classAngle.html#afd42019f6f3747ee5824138c80f94fa1',1,'Angle::Angle(long double angle)'],['../structHoughResult.html#ac574b6b6328bff793bf74f9860b6f2fd',1,'HoughResult::angle()'],['../structLineResult.html#ac85d64cfd27b3ae1684331f0c3cf8559',1,'LineResult::angle()']]],
   ['angle_2ehpp',['Angle.hpp',['../Angle_8hpp.html',1,'']]],
   ['angle_3c_20360_20_3e',['Angle&lt; 360 &gt;',['../classAngle.html',1,'']]],
   ['angle_5ft',['angle_t',['../Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e',1,'Angle.hpp']]],

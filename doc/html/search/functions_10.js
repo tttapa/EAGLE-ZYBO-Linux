@@ -1,16 +1,14 @@
 var searchData=
 [
-  ['send',['send',['../classMulticastSender.html#aa8f381568b0b483f7c93e0fc4755b4c7',1,'MulticastSender']]],
-  ['set',['set',['../classGridFinder.html#a376419f000b3be1e8db278726a2efbc1',1,'GridFinder::set()'],['../classMask.html#abd2577692522262d25fcaae6620582e3',1,'Mask::set()']]],
-  ['sign',['sign',['../HouseholderQR_8hpp.html#ae91f1ecebb987562f092671e0cb75c40',1,'HouseholderQR.hpp']]],
-  ['sin',['sin',['../classAngle.html#a3700fa4572ca0b7dfacf65cc11108668',1,'Angle::sin() const'],['../classAngle.html#adb9bfe045dd75dad8912cf1e741d2820',1,'Angle::sin(uint angleIndex)'],['../classBresenhamLine.html#a115d1f10a5ce1e0ef945258346b6f035',1,'BresenhamLine::sin()']]],
-  ['sind',['sind',['../structCosSin.html#a427ffa2ad48206dcbb22eb6d08e924d4',1,'CosSin::sind()'],['../classAngle.html#a8e1bd6c3c781fdd6ade99388cb394b5e',1,'Angle::sind()']]],
-  ['sinf',['sinf',['../structCosSin.html#a5bfa62f2c4c84de02d4c65f0cd2512d0',1,'CosSin::sinf()'],['../classAngle.html#a01897132cd9fd91aaddc870e50df157b',1,'Angle::sinf()']]],
-  ['solveleastsquares',['solveLeastSquares',['../LeastSquares_8hpp.html#a3e86962f655361a684f770b14c9fe1e2',1,'LeastSquares.hpp']]],
-  ['split',['split',['../classBitString.html#afcc7605baba0a187e6ca83d29093a910',1,'BitString']]],
-  ['sq',['sq',['../Square_8hpp.html#ace3999c20c4c886c00503d56c69ae204',1,'Square.hpp']]],
-  ['squareerror',['squareError',['../MeanSquareError_8hpp.html#a6d0454c404d0ec6ee8b5201e63812dc6',1,'MeanSquareError.hpp']]],
-  ['start',['start',['../classCryptoPoller.html#a275b05afda129bc41f85016d44330a4f',1,'CryptoPoller']]],
-  ['step',['step',['../classAngle.html#aaff4df6bab7baf6e798036a470e2cf0d',1,'Angle']]],
-  ['sum',['sum',['../Array_8hpp.html#a8210ee35a21cf8114e4f40920a6e0abf',1,'Array.hpp']]]
+  ['rad',['rad',['../structCosSin.html#aa8bc77753d0e90b1789787f54c73d8d7',1,'CosSin::rad()'],['../classAngle.html#a744ecdf452a755742b3c75aa7b100e89',1,'Angle::rad()']]],
+  ['randn',['randn',['../Randn_8hpp.html#a0dba89e43acc526c0214bfce4322f7b3',1,'randn(const Array&lt; double, N &gt; &amp;variance):&#160;Randn.hpp'],['../Randn_8hpp.html#afdb6a9bd247c361ce91fb2534cbdea52',1,'randn(const ColVector&lt; N &gt; &amp;variance):&#160;Randn.hpp'],['../Randn_8hpp.html#a38a49ad19801780f2ef2b40826f1f22c',1,'randn(const RowVector&lt; N &gt; &amp;variance):&#160;Randn.hpp']]],
+  ['read',['read',['../classCryptoPoller.html#a4ec2991daa90c4771c1b289800c8d2fd',1,'CryptoPoller']]],
+  ['reservebits',['reserveBits',['../classBitString.html#a45393e90dfcb67737fabb7c613fba08f',1,'BitString']]],
+  ['reset',['reset',['../classCryptoPoller.html#adec9d1073d8950d0a6a38c975b05cbab',1,'CryptoPoller::reset()'],['../classPerfTimer.html#a9d88e8916bfe284793237a726d81ca1c',1,'PerfTimer::reset()']]],
+  ['resolution',['resolution',['../classAngle.html#a84ce9a0e2a186ada6997077fd96d6e4c',1,'Angle']]],
+  ['rightofpoint',['rightOfPoint',['../classLine.html#a4cf8a0ce142d3896500f3f9384926100',1,'Line']]],
+  ['rmem',['rmem',['../wrapper_8h.html#a8efeb9db88385717fd8d78494188d11d',1,'rmem(uint64_t offset):&#160;wrapper.c'],['../wrapper_8c.html#a8efeb9db88385717fd8d78494188d11d',1,'rmem(uint64_t offset):&#160;wrapper.c']]],
+  ['rootmeansquareerror',['rootMeanSquareError',['../MeanSquareError_8hpp.html#a3866a47400c489446b64abc1cb71d11c',1,'MeanSquareError.hpp']]],
+  ['rotate',['rotate',['../Line_8hpp.html#aa04453ec6020fc09580f0a009ae1a4d2',1,'Line.hpp']]],
+  ['round',['round',['../Line_8hpp.html#a974a3a31d46a7379a41b2f20ff12916d',1,'round(Point p):&#160;Line.hpp'],['../Matrix_8hpp.html#a4d52dda400b179bc7cb4b9ba7fe3c0c8',1,'round(const Matrix&lt; R, C &gt; &amp;m, size_t digits):&#160;Matrix.hpp']]]
 ];

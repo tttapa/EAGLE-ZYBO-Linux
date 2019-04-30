@@ -14,13 +14,18 @@ var searchData=
   ['getfirsttwohalflines',['getFirstTwoHalfLines',['../classGridFinder.html#a7c330ed1431434a4a3726c341161bf39',1,'GridFinder']]],
   ['getimage',['getImage',['../classLocationFinder.html#a7a36dd23cbb1faad102cd239e4931cec',1,'LocationFinder']]],
   ['getindex',['getIndex',['../classAngle.html#a189165d5417fcc5489298a8c913a0e38',1,'Angle::getIndex() const'],['../classAngle.html#a63862e75b876b7b8555f05a54ac85628',1,'Angle::getIndex(double angle)']]],
+  ['getinstructiontype',['getInstructionType',['../classCryptoInstruction.html#abf404632060ee7fdf292868fb62cd786',1,'CryptoInstruction']]],
+  ['getlength',['getLength',['../classBitString.html#a8729df89a0465e5da57e4b32c5f79b8c',1,'BitString']]],
   ['getlocation',['getLocation',['../classLocationFinder.html#a93be2c4b05b52c58f5fca5d1514dfbe9',1,'LocationFinder']]],
   ['getmaskimage',['getMaskImage',['../classLocationFinder.html#a8b744cc11a3ea16520c0b0cbf4b6a140',1,'LocationFinder']]],
   ['getmiddle',['getMiddle',['../classGridFinder.html#abcd46f31e256080b2d5d2aee03c0e258',1,'GridFinder']]],
   ['getmiddlewithretries',['getMiddleWithRetries',['../classGridFinder.html#af830abf29ca6dc9c01197a38fe16e1e5',1,'GridFinder']]],
   ['getpaddedlength',['getPaddedLength',['../classMask.html#a5e07140c5f18883bf05b4b755bacbd6a',1,'Mask']]],
   ['getscalingfactor',['getScalingFactor',['../structCosSin.html#a749d8e9cc59e1cf72f4d1e93e4fcfe0d',1,'CosSin']]],
+  ['getunknowndata',['getUnknownData',['../classCryptoInstruction.html#ac16d178eea6a08b5257551ddf8fee912',1,'CryptoInstruction']]],
   ['getwidthatpointonline',['getWidthAtPointOnLine',['../classGridFinder.html#ab5c436911deb269a22a8d5525271fa4e',1,'GridFinder']]],
+  ['getxcoordinate',['getXCoordinate',['../classCryptoInstruction.html#ae110f8e98709f4a2e46e0fe2ba852be4',1,'CryptoInstruction']]],
+  ['getycoordinate',['getYCoordinate',['../classCryptoInstruction.html#a380d1bcc44217c483ddbcd3ac68d1f87',1,'CryptoInstruction']]],
   ['greet',['greet',['../Greet_8hpp.html#abd2ea45605ea70de845186c8a2366bd5',1,'greet(std::string name, std::ostream &amp;os=std::cout):&#160;Greet.cpp'],['../Greet_8cpp.html#a80b2901f1a33ab4ba3d294773c8e92c4',1,'greet(std::string name, std::ostream &amp;os):&#160;Greet.cpp']]],
   ['gridfinder',['GridFinder',['../classGridFinder.html#aedf6227abcdacca5a81838de72736776',1,'GridFinder::GridFinder(Mask &amp;&amp;mask)'],['../classGridFinder.html#a13b104fa62cde85e9269b60e543a826e',1,'GridFinder::GridFinder(const Mask &amp;mask)'],['../classGridFinder.html#ad3502a7dc40efd274cfd5a038765735e',1,'GridFinder::GridFinder()']]]
 ];

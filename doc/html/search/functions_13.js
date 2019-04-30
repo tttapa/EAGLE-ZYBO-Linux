@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vcat',['vcat',['../Matrix_8hpp.html#a6b703886d2a8afc3e2ae96a34f375ee1',1,'vcat(const TColVector&lt; T, R1 &gt; &amp;t, T b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#ae7c262a28886879e90372b013eaba545',1,'vcat(T t, const TColVector&lt; T, R1 &gt; &amp;b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#af15e4f88d4e60baf25c17dcbb90542a3',1,'vcat(const TMatrix&lt; T, R1, C &gt; &amp;t, const TMatrix&lt; T, R2, C &gt; &amp;b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a255a5dd5a07d823cfba97b4987637dee',1,'vcat(const TMatrix&lt; T, R, C &gt; &amp;t, Args... args) -&gt; decltype(vcat(t, vcat(args...))):&#160;Matrix.hpp']]],
-  ['vec',['vec',['../structPoint.html#afdb648a6a3a1c42aefcd6f435617ba85',1,'Point']]]
+  ['update',['update',['../classAngleTracker.html#a513f5d6f5b1affe00dcc82a036a3dc61',1,'AngleTracker::update()'],['../classLocationTracker.html#a259a52389d4d7c4a5fe80aca35b789ea',1,'LocationTracker::update()']]],
+  ['updatelocation',['updateLocation',['../classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522',1,'LocationFinder']]]
 ];

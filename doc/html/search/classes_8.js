@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['mask',['Mask',['../classMask.html',1,'']]],
-  ['matrixassignmenthelper',['MatrixAssignmentHelper',['../structMatrixAssignmentHelper.html',1,'']]],
-  ['multicastsender',['MulticastSender',['../classMulticastSender.html',1,'']]]
+  ['line',['Line',['../classLine.html',1,'']]],
+  ['lineresult',['LineResult',['../structLineResult.html',1,'']]],
+  ['locationfinder',['LocationFinder',['../classLocationFinder.html',1,'']]],
+  ['locationtracker',['LocationTracker',['../classLocationTracker.html',1,'']]]
 ];
