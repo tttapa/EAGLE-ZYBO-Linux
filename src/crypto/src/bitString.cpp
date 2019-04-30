@@ -53,35 +53,34 @@ void BitString::split(std::array<uint32_t, 10> &array) const {
     }
 }
 
-// TODO: implementatie is nog verkeerd.
 void BitString::splitBlocks(std::vector<BitString> &vector) const {
     if (bits.empty()) {
         vector.push_back(BitString({0x00}));
     } else {
+        vector.reserve((bits.size() / 4) + 1);
         for (uint16_t i = 0; i < bits.size() / 4; i++) {
-            vector.push_back(BitString({bits[4 * i], bits[4 * i + 1],
-                                        bits[4 * i + 2], bits[4 * i + 3]}));
+            BitString block({});
+            block.bits.reserve(4);
+            block.bits.push_back(bits[4 * i]);
+            block.bits.push_back(bits[4 * i + 1]);
+            block.bits.push_back(bits[4 * i + 2]);
+            block.bits.push_back(bits[4 * i + 3]);
+            vector.push_back(block);
         }
 
-        BitString lastBlock({});
-        lastBlock.reserve(bits.size() % 4);
-        switch (bits.size() % 4) {
-            case 1:
-                lastBlock.bits.push_back(bits[bits.size() - 1]);
-                vector.push_back(lastBlock);
-                break;
-            case 2:
-                lastBlock.bits.push_back(bits[bits.size() - 2]);
-                lastBlock.bits.push_back(bits[bits.size() - 1]);
-                vector.push_back(lastBlock);
-                break;
-            case 3:
-                lastBlock.bits.push_back(bits[bits.size() - 3]);
-                lastBlock.bits.push_back(bits[bits.size() - 2]);
-                lastBlock.bits.push_back(bits[bits.size() - 1]);
-                vector.push_back(lastBlock);
-                break;
-            default: break;
+        if (bits.size() % 4) {
+            BitString lastBlock({});
+            lastBlock.bits.reserve(bits.size() % 4);
+            std::deque<uint8_t> temporaryBits;
+
+            for (uint8_t i = 3; i > 0; i--)
+                if ((bits.size() % 4) >= i)
+                    temporaryBits.push_front(bits[bits.size() - i]);
+
+            for (uint8_t halfByte : temporaryBits)
+                lastBlock.bits.push_back(halfByte);
+
+            vector.push_back(lastBlock);
         }
     }
 }
@@ -181,7 +180,8 @@ bool operator==(const BitString &bitString1, const BitString &bitString2) {
 }
 
 std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
-    if (std::cout.flags() & std::ios::hex) {
+    if (out.flags() & std::ios::hex) {
+        out << std::hex;
         for (uint16_t i = 0; i < bitString.bits.size() / 2; i++) {
             uint8_t firstHalfByte  = bitString.bits[2 * i + 1] << 4;
             uint8_t secondHalfByte = bitString.bits[2 * i];
@@ -193,6 +193,7 @@ std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
         } else if (bitString.bits.size() % 16) {
             out << "\n";
         }
+        out << std::dec;
     } else {
         for (uint16_t i = 0; i < bitString.bits.size(); i++) {
             static const uint8_t masks[4] = {0x01, 0x02, 0x04, 0x08};

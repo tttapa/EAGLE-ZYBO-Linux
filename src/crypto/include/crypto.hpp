@@ -7,7 +7,9 @@
  * @brief   Decrypt the given QR code.
  * 
  * @param   qrCode
- *          The QR to decode.
+ *          The QR to decrypt. The QR code should be base64 decoded
+ *          already.
+ * 
  * @return  CryptoInstruction(CryptoInstruction::GOTO)
  *          This instruction tells the drone to move to the
  *          position (getXCoordinate(), getYCoordinate()).
@@ -17,6 +19,7 @@
  *          The decoded instruction could not be interpreted. The
  *          method getUnknownData() returns a raw array specifying a
  *          decoded instruction that is not yet supported.
+ * 
  * @throws  CryptoException(CryptoException::TIMEOUT_EXCEPTION)
  *          There is a problem with the FPGA. For multiple attempts, it took
  *          longer than a certain amount of time specifying the maximum
@@ -26,6 +29,7 @@
  *          The given QR code could not be decoded. You should run crypto again
  *          with a new picture.
  * @throws  CryptoException(CryptoException::UNKNOWN_ERROR_EXCEPTION)
- *          An unknown error has occurred. You should not run crypto again.
+ *          An unknown error has occurred. You can choose yourself whether
+ *          you run crypto again.
  */
 CryptoInstruction decrypt(const std::vector<uint8_t> &qrCode);
