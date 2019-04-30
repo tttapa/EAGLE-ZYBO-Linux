@@ -93,6 +93,6 @@ PYBIND11_MODULE(py_grid_finder, pygridmodule) {
     pybind11::class_<LocationFinder>(pygridmodule, "LocationFinder")
         .def(pybind11::init<std::string>())
         .def(pybind11::init<int>())
-        .def("getLocation", &LocationFinder::getLocation)
+        .def("updateLocation", &LocationFinder::updateLocation)
         .def("getAngle", [](LocationFinder l) { return l.getAngle().rad(); });
 }

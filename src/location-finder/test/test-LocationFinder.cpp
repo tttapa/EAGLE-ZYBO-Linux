@@ -71,7 +71,7 @@ TEST(MaskGridFinder, fromVideo) {
     try {
         cv::Mat locimg;
         while (true) {
-            Point locInSquare = lf.getLocation();
+            Point locInSquare = lf.updateLocation();
             Point location    = lt.update(locInSquare);
             cv::Mat maskimgrgb;
             cv::cvtColor(lf.getMaskImage(), maskimgrgb, cv::COLOR_GRAY2BGR);

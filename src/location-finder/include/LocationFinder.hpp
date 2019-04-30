@@ -13,7 +13,29 @@ class LocationFinder {
     LocationFinder(int i) : cap(i) {}
     LocationFinder(std::string s) : cap(s) {}
 
-    Point getLocation();
+    using Vec2f = TColVector<float, 2>;
+
+    /**
+     * @brief   Read a new frame, mask it, run GridFinder, and get the position
+     *          of the drone. The position is the position within the square, 
+     *          between 0.0 and 1.0.
+     * 
+     * @return  The position within the square.
+     */
+    Point updateLocation();
+    /**
+     * @brief   Get the position of the center of the frame relative to the
+     *          given square. 
+     * 
+     * @param   sq
+     *          A square of the reference grid.
+     * @param   frameCenter 
+     *          The center of the frame, i.e. the point that will be projcected
+     *          onto the sides of the square.
+     * @return  The position of the frame center within the square, modulo 1.0.
+     */
+    Point getLocation(Square &sq, Vec2f frameCenter);
+
     angle_t getAngle() const { return angle; }
     cv::Mat getImage() const { return image; }
     cv::Mat getMaskImage() const { return maskImage; }
