@@ -3,11 +3,17 @@
 #include <exception>
 
 class CryptoException : public std::exception {
+  public:
+    enum ExceptionType {
+        TIMEOUT_EXCEPTION,
+        UNSUCCESSFUL_DECODE_EXCEPTION,
+        UNKNOWN_ERROR_EXCEPTION
+    };
+
+  private:
+    ExceptionType exceptionType;
 
   public:
-    enum ExceptionType { TIMEOUT_EXCEPTION, UNSUCCESSFUL_DECODE_EXCEPTION };
-
-    ExceptionType exceptionType;
     CryptoException(ExceptionType exceptionType)
         : exceptionType(exceptionType) {}
 
