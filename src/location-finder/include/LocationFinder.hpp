@@ -17,6 +17,8 @@ class LocationFinder {
     Point findLocation(Point origin);
     bool isUsableImage(Square square);   
     Point getLocation();
+  
+    Point test1(Square square);
 
   private:
     cv::VideoCapture cap;

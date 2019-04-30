@@ -154,7 +154,7 @@ Point LocationFinder::getLocation() {
     return findLocation(origin);
 }
 
-Point test1(Square square) {
+Point LocationFinder::test1(Square square) {
     if (!previous_location){
         this->previous_location = {0.5,0.5};
     }
