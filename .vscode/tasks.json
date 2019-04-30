@@ -361,7 +361,7 @@
         {
             "label": "Copy all binaries to ZYBO",
             "type": "shell",
-            "command": "docker exec crypto-devenv sh -c '$WORKSPACE_ROOT/scripts/copy-binaries-zybo.sh ${workspaceFolder}/build-arm/bin /media'",
+            "command": "docker exec crypto-devenv sh -c '$WORKSPACE_ROOT/scripts/copy-binaries-zybo.sh $WORKSPACE_ROOT/build-arm/bin /media'",
             "options": {
                 "cwd": "${workspaceFolder}/scripts"
             },
