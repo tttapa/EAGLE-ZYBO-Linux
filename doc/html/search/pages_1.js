@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pymatrix',['PyMatrix',['../md__home_pieter_GitHub_EAGLE-ZYBO-Linux_src_py-matrix_README.html',1,'']]]
+  ['status_20quaestionis',['Status Quaestionis',['../md_Status-Quaestionis.html',1,'']]],
+  ['structure',['Structure',['../md_Structure.html',1,'']]]
 ];

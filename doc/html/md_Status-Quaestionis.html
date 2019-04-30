@@ -109,6 +109,7 @@ $(document).ready(function(){initNavTree('md_Status-Quaestionis.html','');});
 Test cases go in <code>src/crypto/test/test-crypto.cpp</code>.</p>
 <p>🗙 The reading and writing of the FPGA registers uses the provided code in <code><a class="el" href="wrapper_8c.html">src/comm/src/wrapper.c</a></code>, from <a href="https://www.xilinx.com/support/documentation/application_notes/xapp1078-amp-linux-bare-metal.pdf">Xilinx Application note 1078</a>. <br  />
 This is not ideal, because it has a lot of overhead when reading large amounts of data. The code is simple enough, and adding a function for doing longer transactions to the FPGA is a good idea, instead of calling the <code><a class="el" href="wrapper_8h.html#a8efeb9db88385717fd8d78494188d11d">rmem()</a></code> and <code><a class="el" href="wrapper_8h.html#a33eaf162ba3d16c401a1f37349d81fe3">wmem()</a></code> functions for each word separately.</p>
+<p>✓ Tuur and Cyriel are working on the code that reads and decodes the <a class="el" href="structQR.html">QR</a> code, and sends the data to crypto.</p>
 <h3>Logging</h3>
 <p>The logging on the Linux side is pretty basic: it just reads the size of the log entry from shared memory (<code><a class="el" href="wrapper_8h.html">wrapper.h</a></code>), and then reads this many words and sends them as a multicast UDP packet.</p>
 <p>✓ The multicast sender has been implemented and tested.</p>
@@ -121,16 +122,55 @@ This part is finished, and has been tested using videos.</p>
 <p>✓ I've completely re-written the red pixel detection for generating the masks. <br  />
 It now uses ARM <a class="el" href="namespaceNEON.html">NEON</a> SIMD vector instructions, so it can mask 16 pixels in parallel. There's also a function that's a bit more accurate, but a bit slower. If dark, washed-out red is detected as a line, and if this is a problem, we could use that code instead.</p>
 <p>✓ Reading the image from the HDMI input seems to be working. There is a purple line at the edge of the frame though, that I can't seem to get rid of.</p>
-<p>🗙 Next, we need a way to transform the points returned by <a class="el" href="classGridFinder.html" title="A class for finding the lines and intersections in an image of a grid.">GridFinder</a> to get the global location of the drone, relative to the grid. I believe Cyriel finished the code, but didn't test it yet. I also added the code to get the orientation of a square. It still needs code to handle the case where not all four sides of the square are available.</p>
-<p>🗙 Finally, this location has to be sent to the BareMetal core.</p>
-<p>🗙 When BareMetal indicates that the target position has been reached, the image should be sent to the <a class="el" href="structQR.html">QR</a> decoder and then the crypto code needs to be executed.</p>
+<p>✓ Getting the absolute position of the drone seems to be working. The entire vision program runs at 60 fps on the ZYBO, but every two frames are the same, because the camera only updates at 30 fps.</p>
+<p>🗙 Finally, this location has to be sent to the BareMetal core. This is trivial.</p>
 <h2>ZYBO Baremetal</h2>
-<h3>Controllers</h3>
-<p>🗙 Status?</p>
+<h3>BaremetalImproved framework</h3>
+<p>✓ src-vivado is rewritten <br  />
+🗙 corrected functionality in src-vivado (e.g. IMU calibration, IMU reading, AHRS orientation, clamp RC inputs) needs to be verified <br  />
+❓ src is nearly finished <br  />
+🗙 the entire framework needs to be debugged <br  />
+ </p><h3>Controllers</h3>
+<p>✓ Controllers simulated <br  />
+✓ Code generator working <br  />
+❓ Attitude is tuned, but needs fine tuning for new battery <br  />
+❓ Altitude is tuned, but needs fine tuning for new battery <br  />
+❓ Navigation controller needs tuning <br  />
+🗙 Observer for navigation that only uses the accelerometer measurements (for taking off/landing when there's no vision data)</p>
 <h3>Autopilot</h3>
-<p>🗙 Status?</p>
+<p>❓ Autonomous navigation has been programmed, it will be tested as soon as we finish tuning the navigation controller <br  />
+❓ Automatic take-off and landing has been implemented, but not tested yet</p>
 <h3>Logger</h3>
-<p>🗙 Status? </p>
+<p>✓ Code generator working <br  />
+❓ Update code generator with new BaremetalImproved <br  />
+ </p><h2>Videos for technical milestones T4</h2>
+<h3>1. Flying</h3>
+<p>✓ Stable flight demonstrated for 10s <br  />
+✓ Pilot in control of flight moving left, right, forward, backward, up and down</p>
+<h3>2. ESCs</h3>
+<p>✓ Demonstrate at least one working and integrated ESC. The pilot is able to control motor throttle via the remote controller. <br  />
+🗙 Flying with own ESCs</p>
+<h3>3. Altitude controller</h3>
+<p>✓ Flying for 10s while only manually controlling X-Y <br  />
+✓ Dito, but with very stable achieved (&lt;30cm variation) at most 20 seconds after enabling height control and maintained for at least 20 seconds</p>
+<h3>4. Loitering</h3>
+<p>🗙 Staying autonomously (more or less) within a 3x3 square grid without manual x-y control for 10s <br  />
+🗙 Long term (&gt;10s) stable location within a single square, proven by automatic landing within a square (on the coil)</p>
+<h3>5. Wireless video link</h3>
+<p>❓ Wireless video link established and link performance analysis done <br  />
+🗙 Wireless video link parameters tuned autonomously</p>
+<h3>6. Logging</h3>
+<p>❓ Real-time logging info during flight <br  />
+🗙 Very informative and visually attractive logging, graphically plotting info at real time during flight</p>
+<h3>7. Navigation (walking)</h3>
+<p>🗙 Decode current X-Y coordinates in the grid at any square (also those without <a class="el" href="structQR.html">QR</a> code), and decode location targets from <a class="el" href="structQR.html">QR</a> codes while walking over the grid with drone, being correct over at least 10 squares and 2 <a class="el" href="structQR.html">QR</a> codes. Results should show up on GUI <br  />
+🗙 Do the same with a hardware accelerated crypto implementation</p>
+<h3>8. Navigation (flying)</h3>
+<p>🗙 Real-time localization during actual flight <br  />
+🗙 Flying/navigating fully autonomously following the <a class="el" href="structQR.html">QR</a> trail of the mission</p>
+<h3>9. WPT</h3>
+<p>✓ Capable of fully lighting up the LED wall after manually putting the drone on the coil, with on/off activation with the remote control. <br  />
+✓ Lighting up the LED wall even when the two coils are aligned only 50%, e.g. after automated landing. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

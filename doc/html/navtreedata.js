@@ -23,7 +23,6 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "EAGLE ZYBO Linux", "index.html", [
-    [ "PyMatrix", "md__home_pieter_GitHub_EAGLE-ZYBO-Linux_src_py-matrix_README.html", null ],
     [ "Getting Started", "md_Getting-Started.html", null ],
     [ "Status Quaestionis", "md_Status-Quaestionis.html", null ],
     [ "Structure", "md_Structure.html", null ],

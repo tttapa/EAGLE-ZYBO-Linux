@@ -11,7 +11,6 @@ var searchData=
   ['randn',['randn',['../Randn_8hpp.html#a0dba89e43acc526c0214bfce4322f7b3',1,'randn(const Array&lt; double, N &gt; &amp;variance):&#160;Randn.hpp'],['../Randn_8hpp.html#afdb6a9bd247c361ce91fb2534cbdea52',1,'randn(const ColVector&lt; N &gt; &amp;variance):&#160;Randn.hpp'],['../Randn_8hpp.html#a38a49ad19801780f2ef2b40826f1f22c',1,'randn(const RowVector&lt; N &gt; &amp;variance):&#160;Randn.hpp']]],
   ['randn_2ehpp',['Randn.hpp',['../Randn_8hpp.html',1,'']]],
   ['read',['read',['../classCryptoPoller.html#a4ec2991daa90c4771c1b289800c8d2fd',1,'CryptoPoller']]],
-  ['readme_2emd',['README.md',['../README_8md.html',1,'']]],
   ['red',['red',['../namespaceANSIColors.html#ae8f007b9b1717af1703bd05d5f9619db',1,'ANSIColors']]],
   ['redb',['redb',['../namespaceANSIColors.html#a522acb9dcd3888cdac77214490578831',1,'ANSIColors']]],
   ['registers_2ehpp',['registers.hpp',['../registers_8hpp.html',1,'']]],

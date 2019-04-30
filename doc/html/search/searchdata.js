@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "e",
   8: "tu",
   9: "afoprstw",
-  10: "gps"
+  10: "gs"
 };
 
 var indexSectionNames =
