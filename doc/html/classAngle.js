@@ -15,6 +15,7 @@ var classAngle =
     [ "operator%", "classAngle.html#a92840ccf3f85a16f160a3a3a7e363ee2", null ],
     [ "operator*", "classAngle.html#a4f25f753746a43036e7ab7a3bd9915ab", null ],
     [ "operator+", "classAngle.html#ab9d2ba4fd0af98e0428736189fb4804a", null ],
+    [ "operator-", "classAngle.html#a404240c257b8559c3002bfa9b305f2d7", null ],
     [ "operator-", "classAngle.html#aa4852a4dd80e8d12d8fc7da8e0e366c8", null ],
     [ "operator/", "classAngle.html#a853716045a3a14a553d0dfe65cb974ec", null ],
     [ "operator==", "classAngle.html#a1f1503d8f95f0dc6ff16b03e679f4d9a", null ],

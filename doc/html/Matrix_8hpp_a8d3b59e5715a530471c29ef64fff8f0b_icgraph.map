@@ -1,5 +1,8 @@
 <map id="diagElements" name="diagElements">
-<area shape="rect" id="node1" title=" " alt="" coords="112,31,223,57"/>
-<area shape="rect" id="node2" href="$Matrix_8hpp.html#ad69eac8317c3071180ddf9800753bbd9" title=" " alt="" coords="5,5,64,32"/>
-<area shape="rect" id="node3" href="$Matrix_8hpp.html#af9bfdd6b415847d35ca735a8a2498652" title=" " alt="" coords="9,56,60,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="831,31,941,57"/>
+<area shape="rect" id="node2" href="$Matrix_8hpp.html#ad69eac8317c3071180ddf9800753bbd9" title=" " alt="" coords="724,5,783,32"/>
+<area shape="rect" id="node3" href="$Matrix_8hpp.html#af9bfdd6b415847d35ca735a8a2498652" title=" " alt="" coords="728,56,779,83"/>
+<area shape="rect" id="node4" href="$classLocationFinder.html#a93be2c4b05b52c58f5fca5d1514dfbe9" title="Get the position of the center of the frame relative to the given square." alt="" coords="476,56,676,83"/>
+<area shape="rect" id="node5" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,56,428,83"/>
+<area shape="rect" id="node6" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,56,156,83"/>
 </map>

@@ -11,5 +11,5 @@ var searchData=
   ['wmemf',['wmemf',['../wrapper_8h.html#a01d67d247029acc300bbf47226901198',1,'wmemf(uint64_t offset, float value):&#160;wrapper.c'],['../wrapper_8c.html#a01d67d247029acc300bbf47226901198',1,'wmemf(uint64_t offset, float value):&#160;wrapper.c']]],
   ['wrapper_2ec',['wrapper.c',['../wrapper_8c.html',1,'']]],
   ['wrapper_2eh',['wrapper.h',['../wrapper_8h.html',1,'']]],
-  ['writer0',['writeR0',['../crypto_8hpp.html#a5f62f9af28571dee937b4e41a47eddcd',1,'writeR0(uint32_t value):&#160;crypto.cpp'],['../crypto_8cpp.html#a5f62f9af28571dee937b4e41a47eddcd',1,'writeR0(uint32_t value):&#160;crypto.cpp']]]
+  ['write',['write',['../classCryptoPoller.html#a4ccd77899baffcc96e1a179b26e424f1',1,'CryptoPoller']]]
 ];

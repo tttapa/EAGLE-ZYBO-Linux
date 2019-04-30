@@ -9,6 +9,7 @@ var searchData=
   ['checkline',['checkLine',['../classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d',1,'GridFinder']]],
   ['clamp',['clamp',['../Matrix_8hpp.html#adb959bd990ed4fd37ed02cd0202ca511',1,'Matrix.hpp']]],
   ['colvectorfromcpparray',['ColVectorFromCppArray',['../Matrix_8hpp.html#aeae40defd7db46d853d1b0411049d3df',1,'Matrix.hpp']]],
+  ['concatenate',['concatenate',['../classBitString.html#ae04e94f200a0b1235dacaf7d22fbfe45',1,'BitString']]],
   ['constanttimefunctiont',['ConstantTimeFunctionT',['../structConstantTimeFunctionT.html#a289c13537754efc7e5de87cccf6bd10d',1,'ConstantTimeFunctionT']]],
   ['copyfromcarray',['copyFromCArray',['../Matrix_8hpp.html#a844f8cd83b4449ea49a4cbd2cc3ee72b',1,'Matrix.hpp']]],
   ['copytocarray',['copyToCArray',['../Matrix_8hpp.html#a18e9cd42efc4e01383b3cb257ef38fb5',1,'Matrix.hpp']]],

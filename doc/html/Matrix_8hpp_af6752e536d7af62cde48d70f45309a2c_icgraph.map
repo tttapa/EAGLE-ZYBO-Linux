@@ -1,7 +1,11 @@
 <map id="norm" name="norm">
-<area shape="rect" id="node1" title=" " alt="" coords="457,31,513,57"/>
-<area shape="rect" id="node2" href="$HouseholderQR_8hpp.html#a16f7547f23439d1eda0fcbde69451ef9" title=" " alt="" coords="288,5,409,32"/>
-<area shape="rect" id="node5" href="$Matrix_8hpp.html#aaee637901db7147a55dd417ba0fbf625" title=" " alt="" coords="305,56,392,83"/>
-<area shape="rect" id="node3" href="$LeastSquares_8hpp.html#a3e86962f655361a684f770b14c9fe1e2" title=" " alt="" coords="96,5,240,32"/>
-<area shape="rect" id="node4" href="$LeastSquares_8hpp.html#abc455a395ab6414f5312b56e5b479195" title=" " alt="" coords="5,5,48,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="893,56,949,83"/>
+<area shape="rect" id="node2" href="$structPoint.html#ab0fa03b5388829db9118785408deba75" title=" " alt="" coords="725,5,844,32"/>
+<area shape="rect" id="node6" href="$HouseholderQR_8hpp.html#a16f7547f23439d1eda0fcbde69451ef9" title=" " alt="" coords="724,56,845,83"/>
+<area shape="rect" id="node9" href="$Matrix_8hpp.html#aaee637901db7147a55dd417ba0fbf625" title=" " alt="" coords="741,107,828,133"/>
+<area shape="rect" id="node3" href="$classLocationFinder.html#a93be2c4b05b52c58f5fca5d1514dfbe9" title="Get the position of the center of the frame relative to the given square." alt="" coords="476,5,676,32"/>
+<area shape="rect" id="node4" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,5,428,32"/>
+<area shape="rect" id="node5" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node7" href="$LeastSquares_8hpp.html#a3e86962f655361a684f770b14c9fe1e2" title=" " alt="" coords="504,56,648,83"/>
+<area shape="rect" id="node8" href="$LeastSquares_8hpp.html#abc455a395ab6414f5312b56e5b479195" title=" " alt="" coords="295,56,337,83"/>
 </map>

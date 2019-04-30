@@ -1,12 +1,12 @@
 <map id="GridFinder::getWidthAtPointOnLine" name="GridFinder::getWidthAtPointOnLine">
-<area shape="rect" id="node1" title="Get the width of the line at a given point." alt="" coords="1153,35,1356,76"/>
-<area shape="rect" id="node2" href="$classGridFinder.html#abcd46f31e256080b2d5d2aee03c0e258" title="Find the middle of a line." alt="" coords="945,42,1105,69"/>
-<area shape="rect" id="node3" href="$classGridFinder.html#af830abf29ca6dc9c01197a38fe16e1e5" title="In exceptional cases, we might want to find the middle of a line in a point that happens to lie at th..." alt="" coords="707,5,897,47"/>
-<area shape="rect" id="node5" href="$classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d" title="Check if there could be a valid line going through the given point, and if so, find and return the ac..." alt="" coords="721,71,883,98"/>
-<area shape="rect" id="node4" href="$classGridFinder.html#aaea3af418ab7124f2b25bcc124fccaca" title="Get an estimate of the line through a given pixel. Find an estimate of the slope, then use that to de..." alt="" coords="484,5,655,47"/>
-<area shape="rect" id="node6" href="$classGridFinder.html#a54369e6368334eb2924ca70ee1f1d438" title="Follow the given line to find the line perpendicular to it. Move along the line for minDistance pixel..." alt="" coords="480,71,659,98"/>
-<area shape="rect" id="node7" href="$classGridFinder.html#a3edbd3ffbcfe6d373fbaf576e4dca51b" title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults." alt="" coords="253,46,432,73"/>
-<area shape="rect" id="node8" href="$classGridFinder.html#a8940ca681fac78274043cf5f1f1f5761" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="260,97,425,123"/>
-<area shape="rect" id="node9" href="$classLocationFinder.html#a398bb42565e1e2a499471765f569bc40" title=" " alt="" coords="5,71,205,98"/>
-<area shape="rect" id="node10" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="30,122,181,149"/>
+<area shape="rect" id="node1" title="Get the width of the line at a given point." alt="" coords="1376,35,1579,76"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#abcd46f31e256080b2d5d2aee03c0e258" title="Find the middle of a line." alt="" coords="1168,42,1328,69"/>
+<area shape="rect" id="node3" href="$classGridFinder.html#af830abf29ca6dc9c01197a38fe16e1e5" title="In exceptional cases, we might want to find the middle of a line in a point that happens to lie at th..." alt="" coords="929,5,1120,47"/>
+<area shape="rect" id="node5" href="$classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d" title="Check if there could be a valid line going through the given point, and if so, find and return the ac..." alt="" coords="944,71,1105,98"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#aaea3af418ab7124f2b25bcc124fccaca" title="Get an estimate of the line through a given pixel. Find an estimate of the slope, then use that to de..." alt="" coords="707,5,877,47"/>
+<area shape="rect" id="node6" href="$classGridFinder.html#a54369e6368334eb2924ca70ee1f1d438" title="Follow the given line to find the line perpendicular to it. Move along the line for minDistance pixel..." alt="" coords="703,71,881,98"/>
+<area shape="rect" id="node7" href="$classGridFinder.html#a3edbd3ffbcfe6d373fbaf576e4dca51b" title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults." alt="" coords="476,46,655,73"/>
+<area shape="rect" id="node8" href="$classGridFinder.html#a8940ca681fac78274043cf5f1f1f5761" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="483,97,648,123"/>
+<area shape="rect" id="node9" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,71,428,98"/>
+<area shape="rect" id="node10" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,97,156,123"/>
 </map>

@@ -9,57 +9,57 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100)">
 <title>transpose</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-100 182,-100 182,4 -4,4"/>
-<!-- Node168 -->
+<!-- Node176 -->
 <g id="node1" class="node">
-<title>Node168</title>
+<title>Node176</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="113,-38.5 113,-57.5 178,-57.5 178,-38.5 113,-38.5"/>
 <text text-anchor="middle" x="145.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">transpose</text>
 </a>
 </g>
 </g>
-<!-- Node169 -->
+<!-- Node177 -->
 <g id="node2" class="node">
-<title>Node169</title>
+<title>Node177</title>
 <g id="a_node2"><a xlink:href="Matrix_8hpp.html#abc557f2f1ce3f0e6c8456b41d2c5d852" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="5.5,-76.5 5.5,-95.5 71.5,-95.5 71.5,-76.5 5.5,-76.5"/>
 <text text-anchor="middle" x="38.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">operator^</text>
 </a>
 </g>
 </g>
-<!-- Node168&#45;&gt;Node169 -->
+<!-- Node176&#45;&gt;Node177 -->
 <g id="edge1" class="edge">
-<title>Node168&#45;&gt;Node169</title>
+<title>Node176&#45;&gt;Node177</title>
 <path fill="none" stroke="#191970" d="M108.9742,-60.9718C94.7188,-66.0344 78.6698,-71.7341 65.492,-76.4141"/>
 <polygon fill="#191970" stroke="#191970" points="110.2473,-64.2339 118.4994,-57.589 107.9047,-57.6375 110.2473,-64.2339"/>
 </g>
-<!-- Node170 -->
+<!-- Node178 -->
 <g id="node3" class="node">
-<title>Node170</title>
+<title>Node178</title>
 <g id="a_node3"><a xlink:href="Matrix_8hpp.html#a6ff4bfee4dd43e43bdaeb7dfbfd38ac7" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-38.5 0,-57.5 77,-57.5 77,-38.5 0,-38.5"/>
 <text text-anchor="middle" x="38.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">asrowvector</text>
 </a>
 </g>
 </g>
-<!-- Node168&#45;&gt;Node170 -->
+<!-- Node176&#45;&gt;Node178 -->
 <g id="edge2" class="edge">
-<title>Node168&#45;&gt;Node170</title>
+<title>Node176&#45;&gt;Node178</title>
 <path fill="none" stroke="#191970" d="M102.8135,-48C94.415,-48 85.6454,-48 77.3801,-48"/>
 <polygon fill="#191970" stroke="#191970" points="102.8151,-51.5001 112.8151,-48 102.815,-44.5001 102.8151,-51.5001"/>
 </g>
-<!-- Node171 -->
+<!-- Node179 -->
 <g id="node4" class="node">
-<title>Node171</title>
+<title>Node179</title>
 <g id="a_node4"><a xlink:href="Randn_8hpp.html#afdb6a9bd247c361ce91fb2534cbdea52" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="16.5,-.5 16.5,-19.5 60.5,-19.5 60.5,-.5 16.5,-.5"/>
 <text text-anchor="middle" x="38.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">randn</text>
 </a>
 </g>
 </g>
-<!-- Node168&#45;&gt;Node171 -->
+<!-- Node176&#45;&gt;Node179 -->
 <g id="edge3" class="edge">
-<title>Node168&#45;&gt;Node171</title>
+<title>Node176&#45;&gt;Node179</title>
 <path fill="none" stroke="#191970" d="M108.8988,-35.0015C92.9204,-29.3269 74.7008,-22.8564 60.8005,-17.9198"/>
 <polygon fill="#191970" stroke="#191970" points="107.9047,-38.3625 118.4994,-38.411 110.2473,-31.7661 107.9047,-38.3625"/>
 </g>

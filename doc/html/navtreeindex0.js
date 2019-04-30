@@ -106,6 +106,8 @@ var NAVTREEINDEX0 =
 "LeastSquares_8hpp.html#abc455a395ab6414f5312b56e5b479195":[6,0,0,8,0,4,0],
 "LeastSquares_8hpp_source.html":[6,0,0,8,0,4],
 "Line_8hpp.html":[6,0,0,4,0,6],
+"Line_8hpp.html#a974a3a31d46a7379a41b2f20ff12916d":[6,0,0,4,0,6,4],
+"Line_8hpp.html#aa04453ec6020fc09580f0a009ae1a4d2":[6,0,0,4,0,6,3],
 "Line_8hpp.html#aa9156371c8550a5d504e1719c810b7c1":[6,0,0,4,0,6,2],
 "Line_8hpp_source.html":[6,0,0,4,0,6],
 "LocationFinder_8cpp.html":[6,0,0,5,1,0],
@@ -114,6 +116,8 @@ var NAVTREEINDEX0 =
 "LocationFinder_8hpp.html":[6,0,0,5,0,0],
 "LocationFinder_8hpp.html#ac8da963855e09bf929c085486f4a3b47":[6,0,0,5,0,0,1],
 "LocationFinder_8hpp_source.html":[6,0,0,5,0,0],
+"LocationTracker_8hpp.html":[6,0,0,5,0,1],
+"LocationTracker_8hpp_source.html":[6,0,0,5,0,1],
 "Mask-Fallback_8hpp.html":[6,0,0,7,1,1],
 "Mask-Fallback_8hpp.html#a505e4b4c630f9c62620d4308773ea4b7":[6,0,0,7,1,1,0],
 "Mask-Fallback_8hpp_source.html":[6,0,0,7,1,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "TimeFunction_8hpp.html":[6,0,0,12,0,6],
 "TimeFunction_8hpp_source.html":[6,0,0,12,0,6],
 "Time_8hpp.html":[6,0,0,12,0,5],
-"Time_8hpp.html#a2b17458bbbd8104e688d17e08e985329":[6,0,0,12,0,5,0],
-"Time_8hpp_source.html":[6,0,0,12,0,5],
-"annotated.html":[5,0],
-"base64_8cpp.html":[6,0,0,0,1,0],
-"base64_8cpp.html#a5b4aba825d1b499a1a382e421b315af8":[6,0,0,0,1,0,2]
+"Time_8hpp.html#a2b17458bbbd8104e688d17e08e985329":[6,0,0,12,0,5,0]
 };
