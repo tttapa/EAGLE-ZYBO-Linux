@@ -18,4 +18,16 @@ class CryptoException : public std::exception {
         : exceptionType(exceptionType) {}
 
     ExceptionType getExceptionType() const { return exceptionType; }
+
+    const char *what() const noexcept override {
+        switch (getExceptionType()) {
+            case TIMEOUT_EXCEPTION: return "TIMEOUT_EXCEPTION";
+            case UNSUCCESSFUL_DECODE_EXCEPTION:
+                return "UNSUCCESSFUL_DECODE_EXCEPTION";
+            case UNKNOWN_ERROR_EXCEPTION: return "UNKNOWN_ERROR_EXCEPTION";
+            default:
+                return "Error: invalid enum state for "
+                       "CryptoException::ExceptionType";
+        }
+    }
 };
