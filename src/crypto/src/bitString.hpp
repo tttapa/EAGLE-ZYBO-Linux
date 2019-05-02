@@ -10,6 +10,7 @@ class BitString {
     std::vector<uint8_t> bits;
 
   public:
+    BitString() {}
     BitString(const std::vector<uint8_t> &input);
     BitString(uint32_t data, uint8_t nbBits);
     BitString(uint16_t l);

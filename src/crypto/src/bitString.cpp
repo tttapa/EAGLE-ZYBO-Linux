@@ -55,11 +55,11 @@ void BitString::split(std::array<uint32_t, 10> &array) const {
 
 void BitString::splitBlocks(std::vector<BitString> &vector) const {
     if (bits.empty()) {
-        vector.push_back(BitString({0x00}));
+        vector.push_back(BitString());
     } else {
         vector.reserve((bits.size() / 4) + 1);
         for (uint16_t i = 0; i < bits.size() / 4; i++) {
-            BitString block({});
+            BitString block;
             block.bits.reserve(4);
             block.bits.push_back(bits[4 * i]);
             block.bits.push_back(bits[4 * i + 1]);
@@ -69,7 +69,7 @@ void BitString::splitBlocks(std::vector<BitString> &vector) const {
         }
 
         if (bits.size() % 4) {
-            BitString lastBlock({});
+            BitString lastBlock;
             lastBlock.bits.reserve(bits.size() % 4);
             std::deque<uint8_t> temporaryBits;
 
@@ -160,16 +160,12 @@ void BitString::reserve(uint16_t nbBits) { bits.reserve(nbBits / 4); }
 uint32_t BitString::toUint32() const {
     uint32_t result = 0;
 
-    // Note: fallthrough is on purpose.
     switch (bits.size()) {
-        case 5: result = bits[4];
-        case 4:
-            return result | (bits[2] << 4) | (bits[3] << 8) | (bits[0] << 12) |
-                   (bits[1] << 16);
-            break;
-        case 3: result = (bits[2] << 8);
-        case 2: return result | (bits[0] << 12) | (bits[1] << 16); break;
-        case 1: return (bits[0] << 16); break;
+        case 5: result |= (uint32_t) bits[4];
+        case 4: result |= (((uint32_t) bits[3]) << 8);
+        case 3: result |= (((uint32_t) bits[2]) << 4);
+        case 2: result |= (((uint32_t) bits[1]) << 16);
+        case 1: return result | (((uint32_t) bits[0]) << 12);
         default: return 0; break;
     }
 }
@@ -185,15 +181,21 @@ std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
         for (uint16_t i = 0; i < bitString.bits.size() / 2; i++) {
             uint8_t firstHalfByte  = bitString.bits[2 * i + 1] << 4;
             uint8_t secondHalfByte = bitString.bits[2 * i];
-            out << (firstHalfByte | secondHalfByte)
+            if (firstHalfByte == 0)
+                out << '0';
+
+            out << ((unsigned int) (firstHalfByte | secondHalfByte))
                 << (((i + 1) % 16) ? " " : "\n");
         }
+
         if (bitString.bits.size() % 2) {
-            out << bitString.bits[bitString.bits.size() - 1] << "\n";
+            out << ((unsigned int) bitString.bits[bitString.bits.size() - 1])
+                << "\n";
         } else if (bitString.bits.size() % 16) {
             out << "\n";
         }
         out << std::dec;
+        out.flags(out.flags() | std::ios::hex);
     } else {
         for (uint16_t i = 0; i < bitString.bits.size(); i++) {
             static const uint8_t masks[4] = {0x01, 0x02, 0x04, 0x08};
