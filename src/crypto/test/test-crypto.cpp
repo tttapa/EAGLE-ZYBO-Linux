@@ -313,7 +313,8 @@ TEST(Crypto, TemporaryCryptoTest) {
          0x6a, 0xfb, 0x9b, 0xc3, 0x71, 0xbe, 0x99, 0x5d, 0x6e, 0x4e, 0xf5,
          0xe6, 0x25, 0xfa, 0x04, 0x21, 0x4e});
 
-    ASSERT_EQ(instruction.getInstructionType(), CryptoInstruction::GOTO);
+    ASSERT_EQ(instruction.getInstructionType(),
+              CryptoInstruction::InstructionType::GOTO);
     ASSERT_EQ(instruction.getXCoordinate(), 8);
     ASSERT_EQ(instruction.getYCoordinate(), 6);
 }
