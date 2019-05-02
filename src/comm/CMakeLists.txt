@@ -24,3 +24,7 @@ target_link_libraries(comm
     PUBLIC
         utilities
 )
+
+# Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
+# adds the tests.
+add_subdirectory(test) 

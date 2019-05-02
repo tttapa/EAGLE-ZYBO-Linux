@@ -1,9 +1,14 @@
-#pragma once
-
 #include <atomic>
-#include <chrono>
+#include <cmath>  // NAN
 #include <cstdint>
-#include <thread> // TODO: I don't think this works on Baremetal
+#include <iostream>
+#include <stdexcept>
+
+#ifdef BAREMETAL
+#include <ps7_cortexa9_1/include/sleep.h>
+#else
+#include <unistd.h>
+#endif
 
 using bool32 = uint32_t;
 
@@ -24,14 +29,36 @@ enum class FlightMode : int32_t {
     AUTONOMOUS    = 2,
 };
 
+struct Position {
+    float x = NAN, y = NAN;
+    explicit operator bool() const volatile {
+        return !(std::isnan(x) || std::isnan(y));
+    }
+#if 0
+	volatile Position& operator = (const Position& p) volatile {
+		this->x = p.x;
+		this->y = p.y;
+		return *this;
+	}
+#else
+    void operator=(const Position &p) volatile {
+        this->x = p.x;
+        this->y = p.y;
+    }
+#endif
+    Position() = default;
+    Position(float x, float y) : x{x}, y{y} {}
+    Position(const volatile Position &pos) : x{pos.x}, y{pos.y} {}
+    Position(const Position &pos) : x{pos.x}, y{pos.y} {}
+};
+
 class ScopedLock {
   public:
     ScopedLock(volatile std::atomic_flag &lock) : lock{lock} {
         bool failed = true;
         for (size_t i = 0; i < NUM_RETRIES; ++i) {
             if (failed = lock.test_and_set(); failed)
-                // TODO: can we sleep like this on baremetal?
-                std::this_thread::sleep_for(WAIT_TIME);
+                usleep(WAIT_TIME);
             else
                 break;
         }
@@ -46,9 +73,8 @@ class ScopedLock {
 
   private:
     volatile std::atomic_flag &lock;
-    constexpr static size_t NUM_RETRIES = 10;
-    constexpr static std::chrono::microseconds WAIT_TIME =
-        std::chrono::microseconds(500);
+    constexpr static size_t NUM_RETRIES   = 10;
+    constexpr static useconds_t WAIT_TIME = 500;
 };
 
 constexpr uintptr_t SHARED_MEM_START_ADDRESS = 0xFFFF0000;
@@ -57,28 +83,28 @@ constexpr uintptr_t SHARED_MEM_LAST_ADDRESS  = 0xFFFFFFFF;
 #define atomic_flag32 std::atomic_flag __attribute__((aligned(4)))
 
 /**
- * @brief   Struct for communication between the Linux core and the Baremetal 
+ * @brief   Struct for communication between the Linux core and the Baremetal
  *          core.
  */
 struct BaremetalCommStruct {
   private:
-    atomic_flag32 vision_lock;
+    mutable atomic_flag32 vision_lock;
 
   public:
-    FlightMode mode;
-    bool32 init;
-    bool32 inductive;
+    FlightMode mode    = FlightMode::MANUAL;
+    bool32 initialised = true;  // TODO: do we need a handshake?
+    bool32 inductive   = false;
 
   private:
-    float positionX, positionY;
+    Position position;
     float yawAngle;
 
   public:
     QRFSMState qrState;
 
   private:
-    atomic_flag32 crypto_lock;
-    float targetX, targetY;
+    mutable atomic_flag32 crypto_lock;
+    Position target;
 
   public:
     constexpr static uintptr_t address = SHARED_MEM_START_ADDRESS + 0x1000;
@@ -88,24 +114,34 @@ struct BaremetalCommStruct {
     /**
      * @brief   Construct the communication struct in shared memory.
      */
-    void init() {
+    static void init() {
         static_assert(address >= SHARED_MEM_START_ADDRESS);
-        static_assert(address <= SHARED_MEM_LAST_ADDRESS - sizeof(*this));
+        static_assert(address <=
+                      SHARED_MEM_LAST_ADDRESS - sizeof(BaremetalCommStruct));
         new ((void *) address) BaremetalCommStruct();
     }
 
 #endif
 
-    void setPosition(float x, float y) volatile {
+    void setVisionPosition(Position pos) volatile {
         ScopedLock lock(vision_lock);
-        this->positionX = x;
-        this->positionY = y;
+        this->position = pos;
+    }
+    void setVisionPosition(float x, float y) volatile {
+        setVisionPosition({x, y});
     }
 
-    void setTargetPosition(float x, float y) volatile {
+    void setTargetPosition(Position target) volatile {
         ScopedLock lock(crypto_lock);
-        this->targetX = x;
-        this->targetY = y;
+        this->target = target;
+    }
+    void setTargetPosition(float x, float y) volatile {
+        setTargetPosition({x, y});
+    }
+
+    Position getPosition() const volatile {
+        ScopedLock lock(vision_lock);
+        return this->position;
     }
 
 #ifdef ZYBO
@@ -115,5 +151,3 @@ struct BaremetalCommStruct {
     BaremetalCommStruct() = default;
 #endif
 };
-
-#undef atomic_flag32

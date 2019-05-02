@@ -14,8 +14,9 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
-const size_t PAGE_SIZE    = getpagesize();
-const uintptr_t PAGE_MASK = ~((uintptr_t) PAGE_SIZE - 1);
+const size_t PAGE_SIZE      = getpagesize();
+const uintptr_t PAGE_MASK   = ~((uintptr_t) PAGE_SIZE - 1);
+const uintptr_t OFFSET_MASK = (uintptr_t) PAGE_SIZE - 1;
 #else
 #include <memory>
 #endif
@@ -33,21 +34,24 @@ class SharedMemReferenceCounter {
         if (count == 0)  // If this was the last instance
             closeMem();  // the memory has to be closed
     }
+    // Delete copy constructor and copy assignment
+    SharedMemReferenceCounter(const SharedMemReferenceCounter &) = delete;
+    SharedMemReferenceCounter &
+    operator=(const SharedMemReferenceCounter &) = delete;
 
     int getFileDescriptor() const { return mem_fd; }
 
   private:
     void openMem() {
-        bool cached = false;
-        mem_fd      = open(                       //
-            "/dev/mem",                      // file
-            O_RDWR | (!cached ? O_SYNC : 0)  // oflags
+        mem_fd = open(       //
+            "/dev/mem",      // file path
+            O_RDWR | O_SYNC  // flags
         );
         if (mem_fd < 0) {
-            std::ostringstream oss;
-            oss << "open(/dev/mem) failed (" << errno << ")";
             std::cerr << ANSIColors::redb << "open(/dev/mem) failed (" << errno
                       << ")" << ANSIColors::reset << std::endl;
+            std::ostringstream oss;
+            oss << "open(/dev/mem) failed (" << errno << ")";
             throw std::runtime_error(oss.str());
         }
     }
@@ -65,20 +69,23 @@ class BaremetalShared {
     BaremetalShared() {
 #ifdef ZYBO
         // Get the base address of the page, and the offset within the page.
-        uintptr_t offset = T::address;
-        uintptr_t base   = offset & PAGE_MASK;
-        offset &= ~PAGE_MASK;
-        assert(offset + sizeof(T) <=  // TODO <= or < ?
-               PAGE_SIZE);
+        uintptr_t base   = T::address & PAGE_MASK;
+        uintptr_t offset = T::address & OFFSET_MASK;
+        assert(offset + sizeof(T) <= PAGE_SIZE);
+
+        std::cout << std::hex << std::showbase << "base = " << base
+                  << ", offset = " << offset << ", PAGE_SIZE = " << PAGE_SIZE
+                  << ", T::address = " << T::address << std::dec
+                  << std::noshowbase << std::endl;
 
         // Map the hardware address of the shared memory region into the virtual
         // address space of the program.
-        // TODO: should the offset should be aligned to a page? Can we map just 
-        // the size of the struct, or do we have to map the entire page?
+        // Offset should be aligned to a page, and size should be a multiple of
+        // the page size.
         memmap = mmap(                      //
             nullptr,                        // address
             PAGE_SIZE,                      // length
-            PROT_READ | PROT_WRITE,         // prot
+            PROT_READ | PROT_WRITE,         // protection
             MAP_SHARED,                     // flags
             sharedMem.getFileDescriptor(),  // file descriptor
             base                            // offset

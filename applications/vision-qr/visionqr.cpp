@@ -49,5 +49,7 @@ void loop() {
         cout << "Position: " << location << endl;
         cout << "Vision duration: " << 1e-3 * duration << " ms → "
              << 1e6 / duration << " fps" << endl;
+
+        baremetal->setVisionPosition(location.x, location.y);
     }
 }
