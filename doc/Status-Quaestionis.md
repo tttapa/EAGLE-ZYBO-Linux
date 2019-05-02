@@ -36,7 +36,8 @@ the implementations in `src/crypto/src/crypto.cpp`.
 Test cases go in `src/crypto/test/test-crypto.cpp`.
 
 🗙 The reading and writing of the FPGA registers uses the provided code in
-`src/comm/src/wrapper.c`, from [Xilinx Application note 1078](https://www.xilinx.com/support/documentation/application_notes/xapp1078-amp-linux-bare-metal.pdf).  
+`src/comm/src/wrapper.c` from [Xilinx Application note 1078](https://www.xilinx
+.com/support/documentation/application_notes/xapp1078-amp-linux-bare-metal.pdf).  
 This is not ideal, because it has a lot of overhead when reading large amounts
 of data. The code is simple enough, and adding a function for doing longer
 transactions to the FPGA is a good idea, instead of calling the `rmem()` and

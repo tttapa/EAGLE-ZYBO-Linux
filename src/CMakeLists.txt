@@ -9,6 +9,7 @@ add_subdirectory(mask)
 add_subdirectory(location-finder)
 add_subdirectory(qr-decode)
 add_subdirectory(base64)
+add_subdirectory(qr-crypto-manager)
 
 if (NOT CMAKE_CROSSCOMPILING)
 add_subdirectory(py-matrix)

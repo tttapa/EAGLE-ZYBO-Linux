@@ -18,3 +18,8 @@ target_include_directories(comm
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
+
+target_link_libraries(comm
+    PUBLIC
+        utilities
+)
