@@ -1,4 +1,5 @@
 #include <bitString.hpp>
+#include <crypto.hpp>
 #include <cryptoPoller.hpp>
 #include <gtest/gtest.h>
 
@@ -155,7 +156,7 @@ TEST(Crypto, CryptoKeypack) {
                                 0x8e, 0x27, 0xc0, 0x59, 0xf2, 0x8b}))
         .addSimplePadding(l - 8, keyLength)
         .addMultiRatePadding(200, keypack.getLength());
-    
+
     std::cout.flags(std::cout.flags() | std::ios::hex);
     std::cout << "\n" << keypack << "\n";
     std::cout.flags(std::cout.flags() & ~std::ios::hex);
@@ -179,4 +180,140 @@ TEST(Crypto, CryptoKeypack) {
     ASSERT_EQ(splittedKeypack[7], 0xe27c0);
     ASSERT_EQ(splittedKeypack[8], 0x59f28);
     ASSERT_EQ(splittedKeypack[9], 0xb0181);
+}
+
+/**
+ * @brief   Test BitString constructor and output operator.
+ */
+TEST(Crypto, BitStringConstructorOutput) {
+    std::stringstream stream("");
+    stream.flags(stream.flags() | std::ios::hex);
+
+    const char *results[5] = {"b\n", "ab \n", "ab d\n", "ab cd \n",
+                              "ab cd e\n"};
+    for (int8_t i = 0; i < 5; i++) {
+        BitString bitString(0xABCDE, 4 * (i + 1));
+        stream << bitString;
+        ASSERT_EQ(stream.str(), results[i]);
+        stream.str("");
+    }
+}
+
+/**
+ * @brief   Test splitBlocks method of BitString class.
+ */
+TEST(Crypto, BitStringSplitBlocks1) {
+    BitString bitString({0x01, 0x23, 0x45, 0x67});
+    std::vector<BitString> vector;
+    bitString.splitBlocks(vector);
+    BitString result1(std::vector<uint8_t>({0x01, 0x23}));
+    BitString result2(std::vector<uint8_t>({0x45, 0x67}));
+    ASSERT_EQ(vector[0], result1);
+    ASSERT_EQ(vector[1], result2);
+}
+
+/**
+ * @brief   Test splitBlocks method of BitString class.
+ */
+TEST(Crypto, BitStringSplitBlocks2) {
+    BitString bitString;
+    std::vector<BitString> vector;
+    bitString.splitBlocks(vector);
+    BitString result;
+    ASSERT_EQ(vector[0], result);
+}
+
+/**
+ * @brief   Test splitBlocks method of BitString class and 
+ *          concatenate together with multi-rate padding.
+ */
+TEST(Crypto, BitStringSplitBlocks3) {
+    std::vector<uint8_t> vector1({0x12, 0x34});
+    BitString bitString(vector1);
+    bitString.concatenateAndAddMultiRatePadding(0x03, 20, 16);
+    std::vector<BitString> vector2;
+    bitString.splitBlocks(vector2);
+    std::stringstream stream("");
+    stream.flags(stream.flags() | std::ios::hex);
+    stream << vector2[0];
+    ASSERT_EQ(stream.str(), "12 34 \n");
+    stream.str("");
+    stream << vector2[1];
+    ASSERT_EQ(stream.str(), "f\n");
+}
+
+/**
+ * @brief   Test splitBlocks method of BitString class and 
+ *          concatenate together with multi-rate padding.
+ */
+TEST(Crypto, BitStringSplitBlocks4) {
+    std::vector<uint8_t> vector1({0x12, 0x34});
+    BitString bitString(vector1);
+    bitString.concatenateAndAddMultiRatePadding(0x01, 20, 16);
+    std::vector<BitString> vector2;
+    bitString.splitBlocks(vector2);
+    std::stringstream stream("");
+    stream.flags(stream.flags() | std::ios::hex);
+    stream << vector2[0];
+    ASSERT_EQ(stream.str(), "12 34 \n");
+    stream.str("");
+    stream << vector2[1];
+    ASSERT_EQ(stream.str(), "d\n");
+}
+
+/**
+ * @brief   Test xorWith method of BitString class.
+ */
+TEST(Crypto, BitStringXor) {
+    std::vector<uint8_t> vector1({0x01, 0x4A});
+    BitString bitString1(vector1);
+
+    std::vector<uint8_t> vector2({0x10, 0x7F});
+    BitString bitString2(vector2);
+
+    bitString1.xorWith(bitString2);
+
+    std::vector<uint8_t> vector3({0x11, 0x35});
+    BitString bitString3(vector3);
+
+    ASSERT_EQ(bitString1, bitString3);
+}
+
+/**
+ * @brief   Test toUint32 method of BitString class.
+ */
+TEST(Crypto, BitStringtoUint32) {
+    std::vector<uint8_t> vector1({0x01, 0x4A});
+    BitString bitString1(vector1);
+
+    ASSERT_EQ(bitString1.toUint32(), 0x014A0);
+
+    std::vector<uint8_t> vector2({0x01, 0x4A});
+    BitString bitString2(vector2);
+    bitString2.concatenateAndAddMultiRatePadding(0x03, 20, 16);
+
+    ASSERT_EQ(bitString2.toUint32(), 0x014AF);
+
+    std::vector<uint8_t> vector3({0x01});
+    BitString bitString3(vector3);
+    bitString3.concatenateAndAddMultiRatePadding(0x03, 12, 8);
+
+    ASSERT_EQ(bitString3.toUint32(), 0x010F0);
+}
+
+/**
+ * @brief   Test fictional QR codes.
+ */
+TEST(Crypto, TemporaryCryptoTest) {
+    CryptoInstruction instruction = decrypt(
+        {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+         0x00, 0x00, 0x00, 0x00, 0x04, 0x02, 0x07, 0x04, 0x00, 0x02, 0x13,
+         0xf9, 0x34, 0x5b, 0x49, 0x1e, 0xa1, 0xdf, 0xe2, 0x25, 0x8c, 0xbc,
+         0x6d, 0xeb, 0x85, 0x01, 0x80, 0xf4, 0x9a, 0x3b, 0x13, 0xa1, 0x63,
+         0x6a, 0xfb, 0x9b, 0xc3, 0x71, 0xbe, 0x99, 0x5d, 0x6e, 0x4e, 0xf5,
+         0xe6, 0x25, 0xfa, 0x04, 0x21, 0x4e});
+
+    ASSERT_EQ(instruction.getInstructionType(), CryptoInstruction::GOTO);
+    ASSERT_EQ(instruction.getXCoordinate(), 8);
+    ASSERT_EQ(instruction.getYCoordinate(), 6);
 }
