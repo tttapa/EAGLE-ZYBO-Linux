@@ -5,4 +5,5 @@ add_executable(vision vision.cpp)
 target_link_libraries(vision
     location_finder
     utilities
+    comm
 )

@@ -39,17 +39,23 @@ void QRCryptoManager::decodeCrypto(const std::string &QRdata) {
     try {
         CryptoInstruction instr = decrypt(base64Decoded);
         switch (instr.getInstructionType()) {
-            case CryptoInstruction::InstructionType::GOTO:
+            case CryptoInstruction::InstructionType::GOTO: {
                 baremetal->qrState = QRFSMState::NEW_TARGET;
-                // TODO: set target
-                break;
-            case CryptoInstruction::InstructionType::LAND:
+                baremetal->setTargetPosition(instr.getXCoordinate(),
+                                             instr.getYCoordinate());
+            } break;
+            case CryptoInstruction::InstructionType::LAND: {
                 baremetal->qrState = QRFSMState::LAND;
-                break;
-            case CryptoInstruction::InstructionType::UNKNOWN:
+            } break;
+            case CryptoInstruction::InstructionType::UNKNOWN: {
                 baremetal->qrState = QRFSMState::QR_UNKNOWN;
-                break;
-            default: baremetal->qrState = QRFSMState::ERROR;
+                auto &vecdata      = instr.getUnknownData();
+                // TODO: print as hex?
+                string data = {vecdata.begin(), vecdata.end()};
+                cerr << ANSIColors::yellowb
+                     << "Warning: Unknown crypto data: " << data << endl;
+            } break;
+            default: { baremetal->qrState = QRFSMState::ERROR; }
         }
     } catch (CryptoException &e) {
         cerr << ANSIColors::redb << e.what() << ANSIColors::reset << endl;

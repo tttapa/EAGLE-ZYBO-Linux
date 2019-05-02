@@ -1,5 +1,6 @@
 #pragma once
 
+#include <BaremetalCommunicationDef.hpp>
 #include <SharedMem.hpp>
 #include <future>
 #include <opencv2/core/mat.hpp>

@@ -1,7 +1,9 @@
 #include <ANSIColors.hpp>
+#include <BaremetalCommunicationDef.hpp>
 #include <LocationFinder.hpp>
 #include <LocationTracker.hpp>
 #include <PerfTimer.hpp>
+#include <SharedMem.hpp>
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <string>
@@ -23,7 +25,6 @@ int main() {
 
 void loop() {
     LocationFinder lf = cv::VideoCapture(0);
-    LocationTracker lt;
 
     cv::VideoCapture &cap = lf.getCapture();
     int frame_width       = cap.get(cv::CAP_PROP_FRAME_WIDTH);
@@ -33,7 +34,9 @@ void loop() {
     cout << "Frame dimensions: (" << frame_width << "×" << frame_height << ")\n"
          << "Frame rate      : " << fps << " fps" << std::endl;
 
-    cv::Mat locimg;
+    LocationTracker lt;
+    BaremetalShared<BaremetalCommStruct> baremetal;
+
     while (true) {
         PerfTimer pt;
         Point locInSquare = lf.updateLocation();

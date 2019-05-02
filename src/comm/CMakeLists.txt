@@ -1,6 +1,7 @@
 # Create library target and specify the implementation files to compile.
 add_library(comm 
     src/wrapper.c
+    src/SharedMem.cpp
 )
 
 # Set target include directories 
