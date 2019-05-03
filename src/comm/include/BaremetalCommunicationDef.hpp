@@ -55,26 +55,28 @@ struct Position {
 class ScopedLock {
   public:
     ScopedLock(volatile std::atomic_flag &lock) : lock{lock} {
-        bool failed = true;
+        bool locked = true;
         for (size_t i = 0; i < NUM_RETRIES; ++i) {
-            if (failed = lock.test_and_set(); failed)
+            locked = lock.test_and_set(std::memory_order_acquire);
+            std::cout << "locked = " << locked << std::endl;
+            if (locked)
                 usleep(WAIT_TIME);
             else
                 break;
         }
-        if (failed)
+        if (locked)
             throw std::runtime_error("Timeout: Could not acquire lock");
     }
-    ScopedLock(
-        volatile decltype(std::atomic_flag::__atomic_flag_base::_M_i) &lock)
-        : ScopedLock{reinterpret_cast<volatile std::atomic_flag &>(lock)} {}
 
-    ~ScopedLock() { lock.clear(); }
+    ~ScopedLock() {
+        lock.clear(std::memory_order_release);
+        std::cout << "released" << std::endl;
+    }
 
   private:
     volatile std::atomic_flag &lock;
     constexpr static size_t NUM_RETRIES   = 10;
-    constexpr static useconds_t WAIT_TIME = 500;
+    constexpr static useconds_t WAIT_TIME = 50;
 };
 
 constexpr uintptr_t SHARED_MEM_START_ADDRESS = 0xFFFF0000;
@@ -151,3 +153,5 @@ struct BaremetalCommStruct {
     BaremetalCommStruct() = default;
 #endif
 };
+
+// #undef atomic_flag32

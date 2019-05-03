@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      network: host
+      # network: host
       target: linux
     ports:
       - "2000:2000"
@@ -19,4 +19,4 @@ services:
     volumes:
       - "../../:${PWD}/../../"
     extra_hosts: 
-      - "drone:10.42.0.2"
+      - "drone:192.168.0.200"

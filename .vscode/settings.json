@@ -73,9 +73,7 @@
         "cuchar": "cpp",
         "memory_resource": "cpp",
         "variant": "cpp",
-        "forward_list": "cpp",
-        "list": "cpp",
-        "unordered_set": "cpp"
+        "cassert": "cpp"
     },
     "explorer.sortOrder": "filesFirst",
     "C_Cpp.default.cppStandard": "c++17",
@@ -116,4 +114,5 @@
         "docker-include": true,
         "docs": true
     },
+    "files.defaultLanguage": "cpp",
 }

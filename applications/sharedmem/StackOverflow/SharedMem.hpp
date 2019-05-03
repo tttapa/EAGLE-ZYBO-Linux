@@ -4,7 +4,6 @@
 #include <iomanip>
 #include <iostream>
 
-#ifdef ZYBO
 #include <cassert>
 #include <cerrno>
 #include <fcntl.h>
@@ -19,11 +18,6 @@ const size_t PAGE_SIZE      = getpagesize();
 const uintptr_t PAGE_MASK   = ~((uintptr_t) PAGE_SIZE - 1);
 const uintptr_t OFFSET_MASK = (uintptr_t) PAGE_SIZE - 1;
 
-#else
-#include <memory>
-#endif
-
-#ifdef ZYBO
 class SharedMemReferenceCounter {
   public:
     SharedMemReferenceCounter() {
@@ -63,13 +57,11 @@ class SharedMemReferenceCounter {
     static size_t count;
     static int mem_fd;
 };
-#endif
 
 template <class T>
 class BaremetalShared {
   public:
     BaremetalShared() {
-#ifdef ZYBO
         // Get the base address of the page, and the offset within the page.
         uintptr_t base   = T::address & PAGE_MASK;
         uintptr_t offset = T::address & OFFSET_MASK;
@@ -114,31 +106,18 @@ class BaremetalShared {
             std::cout << data << " ";
         }
         std::cout << std::dec << std::noshowbase << std::endl;
-#else
-        structdata = std::make_unique<T>();
-#endif
     }
-
-#ifdef ZYBO
-    ~BaremetalShared() { munmap(memmap, PAGE_SIZE); }
-#endif
 
     BaremetalShared(const BaremetalShared &) = delete;
     BaremetalShared &operator=(const BaremetalShared &) = delete;
-    volatile T *ptr() { return structdata; }
 
-#ifdef ZYBO
+    ~BaremetalShared() { munmap(memmap, PAGE_SIZE); }
+
+    volatile T *ptr() { return structdata; }
     volatile T *operator->() { return structdata; }
-#else
-    volatile T *operator->() { return structdata.get(); }
-#endif
 
   private:
-#ifdef ZYBO
     volatile T *structdata;
     void *memmap;
     SharedMemReferenceCounter sharedMem;
-#else
-    std::unique_ptr<volatile T> structdata;
-#endif
 };
