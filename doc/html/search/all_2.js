@@ -33,7 +33,7 @@ var searchData=
   ['cryptopoller',['CryptoPoller',['../classCryptoPoller.html',1,'CryptoPoller'],['../classCryptoPoller.html#ae86ce3e44f7fd294c276b088cd5bb5a4',1,'CryptoPoller::CryptoPoller()']]],
   ['cryptopoller_2ecpp',['cryptoPoller.cpp',['../cryptoPoller_8cpp.html',1,'']]],
   ['cryptopoller_2ehpp',['cryptoPoller.hpp',['../cryptoPoller_8hpp.html',1,'']]],
-  ['curr_5fz',['curr_z',['../wrapper_8h.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;original-wrapper.c'],['../original-wrapper_8c.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;original-wrapper.c'],['../wrapper_8c.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;wrapper.c']]],
+  ['curr_5fz',['curr_z',['../baremetal-comm_2include_2wrapper_8h.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;original-wrapper.c'],['../comm_2include_2wrapper_8h.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;original-wrapper.c'],['../original-wrapper_8c.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;original-wrapper.c'],['../wrapper_8c.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;wrapper.c']]],
   ['cyan',['cyan',['../namespaceANSIColors.html#ac8edbda75e4b7262606228b663a53c6f',1,'ANSIColors']]],
   ['cyanb',['cyanb',['../namespaceANSIColors.html#a8e1ae7751ffd3389c6a8e557c482a705',1,'ANSIColors']]]
 ];

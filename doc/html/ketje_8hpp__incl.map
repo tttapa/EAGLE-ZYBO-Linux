@@ -1,12 +1,12 @@
 <map id="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/crypto/src/ketje.hpp" name="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/crypto/src/ketje.hpp">
 <area shape="rect" id="node1" title=" " alt="" coords="205,5,377,61"/>
 <area shape="rect" id="node2" href="$bitString_8hpp.html" title=" " alt="" coords="169,109,274,136"/>
-<area shape="rect" id="node7" href="$cryptoPoller_8hpp.html" title=" " alt="" coords="339,109,466,136"/>
+<area shape="rect" id="node7" href="$cryptoPoller_8hpp.html" title=" " alt="" coords="333,109,459,136"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,184,61,211"/>
 <area shape="rect" id="node4" title=" " alt="" coords="277,184,344,211"/>
 <area shape="rect" id="node5" title=" " alt="" coords="85,184,165,211"/>
 <area shape="rect" id="node6" title=" " alt="" coords="190,184,253,211"/>
-<area shape="rect" id="node8" href="$cryptoException_8hpp.html" title=" " alt="" coords="368,184,523,211"/>
-<area shape="rect" id="node10" href="$registers_8hpp.html" title=" " alt="" coords="547,184,653,211"/>
-<area shape="rect" id="node9" title=" " alt="" coords="402,259,489,285"/>
+<area shape="rect" id="node8" title=" " alt="" coords="369,184,495,211"/>
+<area shape="rect" id="node9" href="$cryptoException_8hpp.html" title=" " alt="" coords="520,184,675,211"/>
+<area shape="rect" id="node10" title=" " alt="" coords="554,259,641,285"/>
 </map>

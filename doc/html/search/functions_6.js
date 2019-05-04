@@ -10,6 +10,7 @@ var searchData=
   ['getcurrentlength',['getCurrentLength',['../classBresenhamLine.html#ad93a4adf0535a9b4e649bce5ade1bc5e',1,'BresenhamLine']]],
   ['getduration',['getDuration',['../classPerfTimer.html#a4d76e90eda37bbfeb0cb1b79292d9640',1,'PerfTimer']]],
   ['getexceptiontype',['getExceptionType',['../classCryptoException.html#a7992bed5c54db81f763ed99d6342ca55',1,'CryptoException']]],
+  ['getfiledescriptor',['getFileDescriptor',['../classSharedMemReferenceCounter.html#a17b5e94e9bd71d5ebcf8cde21e1d3baa',1,'SharedMemReferenceCounter::getFileDescriptor() const'],['../classSharedMemReferenceCounter.html#a17b5e94e9bd71d5ebcf8cde21e1d3baa',1,'SharedMemReferenceCounter::getFileDescriptor() const']]],
   ['getfirstlineestimate',['getFirstLineEstimate',['../classGridFinder.html#aaea3af418ab7124f2b25bcc124fccaca',1,'GridFinder::getFirstLineEstimate(Pixel point) const'],['../classGridFinder.html#ae84004386cbee9606f9a46872cb67be8',1,'GridFinder::getFirstLineEstimate(uint x) const'],['../classGridFinder.html#afa715db70f6b6d2a864bc0674fb5abb6',1,'GridFinder::getFirstLineEstimate() const']]],
   ['getfirsttwohalflines',['getFirstTwoHalfLines',['../classGridFinder.html#a7c330ed1431434a4a3726c341161bf39',1,'GridFinder']]],
   ['getimage',['getImage',['../classLocationFinder.html#a7a36dd23cbb1faad102cd239e4931cec',1,'LocationFinder']]],

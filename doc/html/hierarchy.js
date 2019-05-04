@@ -9,9 +9,6 @@ var hierarchy =
     [ "Array< T, R, C >", "structArray.html", null ],
     [ "Array< T, Rm, Cn >", "structArray.html", null ],
     [ "Baremetal2Linux", "structBaremetal2Linux.html", null ],
-    [ "BaremetalShared< T >", "classBaremetalShared.html", null ],
-    [ "BaremetalShared< AccessControlledSharedStruct >", "classBaremetalShared.html", null ],
-    [ "BaremetalShared< QRCommStruct >", "classBaremetalShared.html", null ],
     [ "BitString", "classBitString.html", null ],
     [ "BresenhamLine", "classBresenhamLine.html", null ],
     [ "CenterPointOutLineIterator", "classCenterPointOutLineIterator.html", null ],
@@ -58,6 +55,11 @@ var hierarchy =
     [ "PythonDroneLogEntry", "structPythonDroneLogEntry.html", null ],
     [ "QR< T, Rm, Cn >", "structQR.html", null ],
     [ "QRCryptoManager", "classQRCryptoManager.html", null ],
+    [ "SharedMemory< T >", "classSharedMemory.html", null ],
+    [ "SharedMemory< AccessControlledSharedStruct >", "classSharedMemory.html", null ],
+    [ "SharedMemory< FPGARegisters >", "classSharedMemory.html", null ],
+    [ "SharedMemory< QRCommStruct >", "classSharedMemory.html", null ],
+    [ "SharedMemReferenceCounter", "classSharedMemReferenceCounter.html", null ],
     [ "SharedStruct< T >", "structSharedStruct.html", null ],
     [ "SharedStruct< AccessControlledSharedStruct< T, Dir, Addr > >", "structSharedStruct.html", [
       [ "AccessControlledSharedStruct< T, Dir, Addr >", "structAccessControlledSharedStruct.html", null ]

@@ -2,9 +2,6 @@ var searchData=
 [
   ['baremetal2linux',['Baremetal2Linux',['../structBaremetal2Linux.html',1,'']]],
   ['baremetalcommunicationdef_2ehpp',['BaremetalCommunicationDef.hpp',['../BaremetalCommunicationDef_8hpp.html',1,'']]],
-  ['baremetalshared',['BaremetalShared',['../classBaremetalShared.html',1,'BaremetalShared&lt; T &gt;'],['../classBaremetalShared.html#ab7c801dd3a1ea6523d441bf3c15be904',1,'BaremetalShared::BaremetalShared(uintptr_t address)'],['../classBaremetalShared.html#a9acc04b5f1e2c7e246b505ab663d56e6',1,'BaremetalShared::BaremetalShared()'],['../classBaremetalShared.html#a3f3ff4fc097c4a9494397439eccf9a54',1,'BaremetalShared::BaremetalShared(const BaremetalShared &amp;)=delete']]],
-  ['baremetalshared_3c_20accesscontrolledsharedstruct_20_3e',['BaremetalShared&lt; AccessControlledSharedStruct &gt;',['../classBaremetalShared.html',1,'']]],
-  ['baremetalshared_3c_20qrcommstruct_20_3e',['BaremetalShared&lt; QRCommStruct &gt;',['../classBaremetalShared.html',1,'']]],
   ['base64',['Base64',['../namespaceBase64.html',1,'']]],
   ['base64_2ecpp',['base64.cpp',['../base64_8cpp.html',1,'']]],
   ['base64_2ehpp',['base64.hpp',['../base64_8hpp.html',1,'']]],

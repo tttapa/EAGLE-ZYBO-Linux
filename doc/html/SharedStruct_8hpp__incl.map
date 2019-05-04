@@ -1,8 +1,8 @@
-<map id="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/comm/include/SharedStruct.hpp" name="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/comm/include/SharedStruct.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="117,5,350,61"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,109,75,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="99,109,165,136"/>
-<area shape="rect" id="node4" title=" " alt="" coords="190,109,277,136"/>
-<area shape="rect" id="node5" title=" " alt="" coords="301,109,360,136"/>
-<area shape="rect" id="node6" title=" " alt="" coords="385,109,477,136"/>
+<map id="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/baremetal&#45;comm/include/SharedStruct.hpp" name="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/baremetal&#45;comm/include/SharedStruct.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="138,5,329,76"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,124,75,151"/>
+<area shape="rect" id="node3" title=" " alt="" coords="99,124,165,151"/>
+<area shape="rect" id="node4" title=" " alt="" coords="190,124,277,151"/>
+<area shape="rect" id="node5" title=" " alt="" coords="301,124,360,151"/>
+<area shape="rect" id="node6" title=" " alt="" coords="385,124,477,151"/>
 </map>

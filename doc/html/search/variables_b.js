@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['saturation_5fthres',['SATURATION_THRES',['../Threshold_8hpp.html#a3dd7783fcf1ee28e1fec445596f2ec10',1,'Threshold.hpp']]],
-  ['saturation_5fthres_5fshift',['SATURATION_THRES_SHIFT',['../Threshold_8hpp.html#af859189ab69190c66e2d325b99be9a2d',1,'Threshold.hpp']]],
-  ['shared_5fmem_5flast_5faddress',['SHARED_MEM_LAST_ADDRESS',['../SharedStruct_8hpp.html#a227867db790f015614bc16fe7e616e41',1,'SharedStruct.hpp']]],
-  ['shared_5fmem_5fstart_5faddress',['SHARED_MEM_START_ADDRESS',['../SharedStruct_8hpp.html#a7af91af8db822b6a9615379153f05488',1,'SharedStruct.hpp']]],
-  ['sin',['sin',['../structCosSin.html#adfe44e3bd6b28b94cf80608cf02e8c23',1,'CosSin']]],
-  ['sines',['sines',['../classAngle.html#afc86b54fad04ab9bfcd3f534d7e77dfb',1,'Angle']]],
-  ['start',['start',['../classPerfTimer.html#aee43e0006daa2bc29c25bd725a7fd78d',1,'PerfTimer']]]
+  ['r',['R',['../structQR.html#ab91e0bf9d76e3bdbbff95fda21e76c2e',1,'QR']]],
+  ['r0_5faddr',['R0_ADDR',['../registers_8hpp.html#aa8dbc049b35e3155a57cd531cfdb7f01',1,'registers.hpp']]],
+  ['r1_5faddr',['R1_ADDR',['../registers_8hpp.html#a3682b3a513dfa0716c1024a2cc204531',1,'registers.hpp']]],
+  ['reader',['reader',['../structBaremetal2Linux.html#a87311f457235f873b6cadaaa7b5a48b3',1,'Baremetal2Linux::reader()'],['../structLinux2Baremetal.html#a3cc3d162512a863481d536182665d920',1,'Linux2Baremetal::reader()']]],
+  ['red',['red',['../namespaceANSIColors.html#ae8f007b9b1717af1703bd05d5f9619db',1,'ANSIColors']]],
+  ['redb',['redb',['../namespaceANSIColors.html#a522acb9dcd3888cdac77214490578831',1,'ANSIColors']]],
+  ['reset',['reset',['../namespaceANSIColors.html#a923babbed800df1b01db512486cba2ff',1,'ANSIColors']]],
+  ['retry_5fjump_5fdistance',['RETRY_JUMP_DISTANCE',['../classGridFinder.html#ae77fc2ece4b93b0b6c68a97997513298',1,'GridFinder']]]
 ];

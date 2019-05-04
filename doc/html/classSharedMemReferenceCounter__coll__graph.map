@@ -1,0 +1,3 @@
+<map id="SharedMemReferenceCounter" name="SharedMemReferenceCounter">
+<area shape="rect" id="node1" title="This class keeps track of how many objects are using the /dev/mem file. It&#39;s not strictly necessary,..." alt="" coords="5,5,256,215"/>
+</map>

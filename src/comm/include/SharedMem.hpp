@@ -24,23 +24,39 @@ const uintptr_t OFFSET_MASK = (uintptr_t) PAGE_SIZE - 1;
 #endif
 
 #ifdef ZYBO
+/**
+ * @brief   This class keeps track of how many objects are using the /dev/mem
+ *          file. It's not strictly necessary, since we could just close it 
+ *          after `mmap`ing the memory, but I had already written this class
+ *          when I found that out, and it saves some `open` and `close` system
+ *          calls, so I just kept it.
+ */
 class SharedMemReferenceCounter {
   public:
+    /**
+     * @brief   Open /dev/mem if there are no active instances.
+     */
     SharedMemReferenceCounter() {
         if (count == 0)  // If this is the first instance
             openMem();   // the memory has to be opened
         ++count;
     }
+    /**
+     * @brief   Close /dev/mem if this is the last active instance.
+     */
     ~SharedMemReferenceCounter() {
         --count;
         if (count == 0)  // If this was the last instance
             closeMem();  // the memory has to be closed
     }
-    // Delete copy constructor and copy assignment
+    // Delete the copy constructor and copy assignment
     SharedMemReferenceCounter(const SharedMemReferenceCounter &) = delete;
     SharedMemReferenceCounter &
     operator=(const SharedMemReferenceCounter &) = delete;
 
+    /**
+     * @brief Get a file descriptor to /dev/mem.
+     */
     int getFileDescriptor() const { return mem_fd; }
 
   private:
@@ -65,9 +81,25 @@ class SharedMemReferenceCounter {
 };
 #endif
 
+/**
+ * @brief   A class that manages a mapping to an address in shared memory.
+ *          It maps the physical address to an address in virtual memory, and
+ *          manages this pointer, unmapping it when the object goes out of 
+ *          scope.
+ * @tparam  T
+ *          The type of the shared object to manage.
+ */
 template <class T>
 class SharedMemory {
   public:
+    /**
+     * @brief   Construct a new SharedMemory object. Uses `mmap` to map the page
+     *          containing the address.
+     * 
+     * @param   address
+     *          The physical address to map. The object should not cross any 
+     *          page boundaries.
+     */
     SharedMemory(uintptr_t address) {
 #ifdef ZYBO
         // Get the base address of the page, and the offset within the page.
@@ -119,10 +151,17 @@ class SharedMemory {
         structdata = std::make_unique<T>();
 #endif
     }
-
+    /**
+     * @brief   Construct a new SharedMemory object. Uses `mmap` to map the page
+     *          containing the address. It uses the default address of the type
+     *          `T`: `T::address`.
+     */
     SharedMemory() : SharedMemory{T::address} {}
 
 #ifdef ZYBO
+    /**
+     * @brief   Destroy the SharedMemory object. Uses `munmap`.
+     */
     ~SharedMemory() { munmap(memmap, PAGE_SIZE); }
 #endif
 
@@ -131,6 +170,9 @@ class SharedMemory {
     volatile T *ptr() { return structdata; }
 
 #ifdef ZYBO
+    /**
+     * @brief   Proxy for the managed shared object.
+     */
     volatile T *operator->() { return structdata; }
 #else
     volatile T *operator->() { return structdata.get(); }
