@@ -6,13 +6,13 @@
 using namespace std;
 
 void QRCryptoManager::update(const cv::Mat &image) {
-    switch (baremetal->qrState) {
+    switch (baremetal->getQRState()) {
         // QR reading is requested, start reading
         case QRFSMState::QR_READ_REQUEST: {
             willBeDecoded = async(launch::async, QR::decode, image.clone());
             // Use a clone of the image, because it will be updated by
             // vision, and this will confuse the QR decoder.
-            baremetal->qrState = QRFSMState::QR_READING_BUSY;
+            baremetal->setQRStateBusy();
         } break;
 
         // If the QR reader has been started, check if it's finished yet
@@ -32,7 +32,7 @@ void QRCryptoManager::decodeCrypto(const std::string &QRdata) {
     if (QRdata.empty()) {
         cerr << ANSIColors::magenta << "Could not decode QR code"
              << ANSIColors::reset << endl;
-        baremetal->qrState = QRFSMState::ERROR;
+        baremetal->setQRStateError();
         return;
     }
     vector<uint8_t> base64Decoded = Base64::decode(QRdata);
@@ -40,26 +40,25 @@ void QRCryptoManager::decodeCrypto(const std::string &QRdata) {
         CryptoInstruction instr = decrypt(base64Decoded);
         switch (instr.getInstructionType()) {
             case CryptoInstruction::InstructionType::GOTO: {
-                baremetal->qrState = QRFSMState::NEW_TARGET;
                 baremetal->setTargetPosition(instr.getXCoordinate(),
                                              instr.getYCoordinate());
             } break;
             case CryptoInstruction::InstructionType::LAND: {
-                baremetal->qrState = QRFSMState::LAND;
+                baremetal->setQRStateLand();
             } break;
             case CryptoInstruction::InstructionType::UNKNOWN: {
-                baremetal->qrState = QRFSMState::QR_UNKNOWN;
-                auto &vecdata      = instr.getUnknownData();
+                baremetal->setQRStateUnkown();
+                auto &vecdata = instr.getUnknownData();
                 // TODO: print as hex?
                 string data = {vecdata.begin(), vecdata.end()};
                 cerr << ANSIColors::yellowb
                      << "Warning: Unknown crypto data: " << data << endl;
             } break;
-            default: { baremetal->qrState = QRFSMState::ERROR; }
+            default: { baremetal->setQRStateError(); }
         }
     } catch (CryptoException &e) {
         cerr << ANSIColors::redb << e.what() << ANSIColors::reset << endl;
-        baremetal->qrState = QRFSMState::ERROR;
+        baremetal->setQRStateError();
     }
 }
 

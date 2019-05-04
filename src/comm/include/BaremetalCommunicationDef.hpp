@@ -1,15 +1,8 @@
 #include <LogEntry.h>
-#include <atomic>
 #include <cmath>  // NAN
 #include <cstdint>
 #include <iostream>
 #include <stdexcept>
-
-#ifdef BAREMETAL
-#include <ps7_cortexa9_1/include/sleep.h>
-#else
-#include <unistd.h>
-#endif
 
 using bool32 = uint32_t;
 
@@ -17,11 +10,10 @@ enum class QRFSMState : int32_t {
     IDLE            = 0,
     QR_READ_REQUEST = 1,
     QR_READING_BUSY = 2,
-    CRYPTO_BUSY     = 3,
-    NEW_TARGET      = 4,
-    LAND            = 5,
-    QR_UNKNOWN      = 6,
-    ERROR           = 7,
+    NEW_TARGET      = 3,
+    LAND            = 4,
+    QR_UNKNOWN      = 5,
+    ERROR           = -1,
 };
 
 enum class FlightMode : int32_t {
@@ -47,37 +39,8 @@ struct Position {
     Position(const Position &pos) : x{pos.x}, y{pos.y} {}
 };
 
-class ScopedLock {
-  public:
-    ScopedLock(volatile std::atomic_flag &lock) : lock{lock} {
-        bool locked = true;
-        for (size_t i = 0; i < NUM_RETRIES; ++i) {
-            locked = lock.test_and_set(std::memory_order_acquire);
-            std::cout << "locked = " << locked << std::endl;
-            if (locked)
-                usleep(WAIT_TIME);
-            else
-                break;
-        }
-        if (locked)
-            throw std::runtime_error("Timeout: Could not acquire lock");
-    }
-
-    ~ScopedLock() {
-        lock.clear(std::memory_order_release);
-        std::cout << "released" << std::endl;
-    }
-
-  private:
-    volatile std::atomic_flag &lock;
-    constexpr static size_t NUM_RETRIES   = 10;
-    constexpr static useconds_t WAIT_TIME = 50;
-};
-
 constexpr uintptr_t SHARED_MEM_START_ADDRESS = 0xFFFF0000;
 constexpr uintptr_t SHARED_MEM_LAST_ADDRESS  = 0xFFFFFFFF;
-
-#define atomic_flag32 std::atomic_flag __attribute__((aligned(4)))
 
 template <class T>
 struct SharedStruct {
@@ -95,55 +58,101 @@ struct SharedStruct {
     }
 #endif
 
+    bool isInitialized() const volatile {
+        return initialized == INIT_MAGIC_NUM;  // TODO: do we need a handshake?
+    }
+    void checkInitialized() const volatile {
+        if (!isInitialized())
+            throw std::runtime_error("Error: Baremetal not yet initialized");
+    }
+
   protected:
     SharedStruct() = default;
+
+  private:
+    uint32_t initialized                     = INIT_MAGIC_NUM;
+    constexpr static uint32_t INIT_MAGIC_NUM = 0xDEADBEEF;
 };
 
 struct BaremetalCommStruct : SharedStruct<BaremetalCommStruct> {
-  private:
-    mutable atomic_flag32 vision_lock = ATOMIC_FLAG_INIT;
-
   public:
-    FlightMode mode    = FlightMode::MANUAL;
-    bool32 initialised = true;  // TODO: do we need a handshake?
-    bool32 inductive   = false;
+    FlightMode mode  = FlightMode::MANUAL;
+    bool32 inductive = false;
+
+  private:
+    enum class VisionState : bool32 {
+        BAREMETAL_READING_DONE,
+        VISION_WRITING_DONE,
+    } mutable visionState = VisionState::BAREMETAL_READING_DONE;
 
   private:
     Position position;
     float yawAngle;
 
-  public:
-    QRFSMState qrState;
-
-  private:
-    mutable atomic_flag32 crypto_lock = ATOMIC_FLAG_INIT;
+    mutable QRFSMState qrState;
     Position target;
 
   public:
     constexpr static uintptr_t address = SHARED_MEM_START_ADDRESS + 0x1000;
 
-    BaremetalCommStruct() { static_assert(sizeof(*this) == 11 * 4); }
+    BaremetalCommStruct() { static_assert(sizeof(*this) == 10 * 4); }
 
+    VisionState getVisionState() const volatile { return visionState; }
+    QRFSMState getQRState() const volatile { return qrState; }
+
+#ifndef BAREMETAL
     void setVisionPosition(Position pos) volatile {
-        ScopedLock lock(vision_lock);
+        checkInitialized();
+        if (getVisionState() != VisionState::BAREMETAL_READING_DONE)
+            throw std::runtime_error("Error: illegal setVisionPosition call: "
+                                     "Baremetal not yet done reading");
         this->position = pos;
+        visionState    = VisionState::VISION_WRITING_DONE;
     }
     void setVisionPosition(float x, float y) volatile {
         setVisionPosition({x, y});
     }
 
     void setTargetPosition(Position target) volatile {
-        ScopedLock lock(crypto_lock);
+        checkInitialized();
+        if (getQRState() == QRFSMState::NEW_TARGET)
+            throw std::runtime_error("Error: illegal setTargetPosition call: "
+                                     "Baremetal not yet done reading");
         this->target = target;
+        qrState      = QRFSMState::NEW_TARGET;
     }
     void setTargetPosition(float x, float y) volatile {
         setTargetPosition({x, y});
     }
 
-    Position getPosition() const volatile {
-        ScopedLock lock(vision_lock);
-        return this->position;
+    void setQRStateBusy() volatile {
+        if (getQRState() != QRFSMState::QR_READ_REQUEST)
+            throw std::runtime_error("Error: illegal QR state transition: "
+                                     "Only QR_READ_REQUEST → QR_READING_BUSY "
+                                     "is allowed");
+        qrState = QRFSMState::QR_READING_BUSY;
     }
+    void setQRStateError() volatile { qrState = QRFSMState::ERROR; }
+    void setQRStateUnkown() volatile { qrState = QRFSMState::QR_UNKNOWN; }
+    void setQRStateLand() volatile { qrState = QRFSMState::LAND; }
+#else
+    Position getVisionPosition() const volatile {
+        if (getVisionState() != VisionState::VISION_WRITING_DONE)
+            throw std::runtime_error("Error: illegal getVisionPosition call: "
+                                     "Vision not yet done writing");
+        Position position = this->position;
+        visionState       = VisionState::BAREMETAL_READING_DONE;
+        return position;
+    }
+    Position getTargetPosition() const volatile {
+        if (getQRState() != QRFSMState::NEW_TARGET)
+            throw std::runtime_error("Error: illegal getTargetPosition call: "
+                                     "No new target available");
+        Position target = this->target;
+        qrState         = QRFSMState::IDLE;
+        return target;
+    }
+#endif
 };
 
 struct AccessControlledLogEntry : SharedStruct<AccessControlledLogEntry> {

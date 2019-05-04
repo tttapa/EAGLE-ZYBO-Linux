@@ -6,6 +6,7 @@
 #include <chrono>
 #include <iostream>
 #include <opencv2/opencv.hpp>
+#include <unistd.h>  // usleep
 
 using namespace std;
 
@@ -37,6 +38,12 @@ void loop() {
     LocationTracker lt;  // Tracks the XY position of the drone
     BaremetalShared<BaremetalCommStruct> baremetal;
     QRCryptoManager qrCryptoMgr = baremetal;
+
+    cout << "Waiting for Baremetal to be initialized ..." << endl;
+    while (!baremetal->isInitialized())
+        usleep(10'000);
+    cout << ANSIColors::greenb << "Baremetal initialization done!"
+         << ANSIColors::reset << endl;
 
     while (true) {
         PerfTimer pt;
