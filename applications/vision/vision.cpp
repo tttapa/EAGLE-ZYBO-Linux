@@ -46,6 +46,14 @@ void loop() {
         cout << "Vision duration: " << duration << " µs → " << 1e6 / duration
              << " fps" << endl;
 
-        visionComm->setVisionPosition(location.x, location.y);
+        if (visionComm->isDoneReading())
+            visionComm->write({
+                {location.x, location.y},
+                lf.getAngle().rad(),
+            });
+        else
+            cerr << ANSIColors::magenta
+                 << "Warning: Baremetal didn't read previous vision data"
+                 << ANSIColors::reset << endl;
     }
 }

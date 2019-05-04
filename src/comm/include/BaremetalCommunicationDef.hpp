@@ -2,6 +2,7 @@
 #include <SharedStruct.hpp>
 #include <cassert>
 #include <cmath>  // NAN
+#include <ostream>
 
 enum class QRFSMState : int32_t {
     IDLE            = 0,
@@ -32,53 +33,21 @@ struct Position {
 
     Position() = default;
     Position(float x, float y) : x{x}, y{y} {}
-    Position(const volatile Position &pos) : x{pos.x}, y{pos.y} {}
-    Position(const Position &pos) : x{pos.x}, y{pos.y} {}
+    Position(const volatile Position &p) : x{p.x}, y{p.y} {}
 };
 
-struct VisionCommStruct : SharedStruct<VisionCommStruct> {
-  public:
-    FlightMode mode  = FlightMode::MANUAL;
-    bool32 inductive = false;
+inline std::ostream &operator<<(std::ostream &os, Position pos) {
+    return os << "(" << pos.x << ", " << pos.y << ")";
+}
 
-  private:
-    enum class VisionState : bool32 {
-        BAREMETAL_READING_DONE,
-        VISION_WRITING_DONE,
-    } mutable visionState = VisionState::BAREMETAL_READING_DONE;
-
-  private:
+struct VisionData {
     Position position;
-    float yawAngle;
-
-  public:
-    constexpr static uintptr_t address = SHARED_MEM_START_ADDRESS;
-
-    VisionState getVisionState() const volatile { return visionState; }
-
-#ifndef BAREMETAL
-    void setVisionPosition(Position pos) volatile {
-        checkInitialized();
-        if (getVisionState() != VisionState::BAREMETAL_READING_DONE)
-            throw std::runtime_error("Error: illegal setVisionPosition call: "
-                                     "Baremetal not yet done reading");
-        this->position = pos;
-        visionState    = VisionState::VISION_WRITING_DONE;
-    }
-    void setVisionPosition(float x, float y) volatile {
-        setVisionPosition({x, y});
-    }
-#else
-    Position getVisionPosition() const volatile {
-        if (getVisionState() != VisionState::VISION_WRITING_DONE)
-            throw std::runtime_error("Error: illegal getVisionPosition call: "
-                                     "Vision not yet done writing");
-        Position position = this->position;
-        visionState       = VisionState::BAREMETAL_READING_DONE;
-        return position;
-    }
-#endif
+    double yawAngle;
 };
+
+using VisionCommStruct =
+    AccessControlledSharedStruct<VisionData, Linux2Baremetal,
+                                 SHARED_MEM_START_ADDRESS>;
 
 struct QRCommStruct : SharedStruct<QRCommStruct> {
   private:
