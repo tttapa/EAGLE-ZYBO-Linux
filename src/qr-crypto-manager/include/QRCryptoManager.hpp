@@ -8,8 +8,6 @@
 
 class QRCryptoManager {
   public:
-    QRCryptoManager(BaremetalShared<BaremetalCommStruct> &baremetal)
-        : baremetal{baremetal} {}
     void update(const cv::Mat &image);
     void decodeCrypto(const std::string &QRdata);
     bool isQRReady() const;
@@ -17,5 +15,5 @@ class QRCryptoManager {
   private:
     /// Result of the QR decoder (asynchronous)
     std::future<std::string> willBeDecoded;
-    BaremetalShared<BaremetalCommStruct> &baremetal;
+    BaremetalShared<QRCommStruct> qrComm;
 };

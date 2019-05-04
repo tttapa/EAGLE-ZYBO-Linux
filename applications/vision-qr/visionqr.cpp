@@ -24,8 +24,21 @@ int main() {
 }
 
 void loop() {
+    // Initialize communication with Bare-metal
+    BaremetalShared<VisionCommStruct> visionComm;
+    QRCryptoManager qrCryptoMgr;
+
+    cout << "Waiting for Baremetal to be initialized ..." << endl;
+    while (!visionComm->isInitialized())
+        usleep(10'000);
+    cout << ANSIColors::greenb << "Baremetal initialization done!"
+         << ANSIColors::reset << endl;
+
     // Open camera 0
+    cout << "Waiting for camera to be initialized ..." << endl;
     LocationFinder lf = cv::VideoCapture(0);
+    cout << ANSIColors::greenb << "Camera initialization done!"
+         << ANSIColors::reset << endl;
 
     // Print some details about the video input
     cv::VideoCapture &cap = lf.getCapture();
@@ -36,14 +49,6 @@ void loop() {
          << "Frame rate      : " << fps << " fps" << std::endl;
 
     LocationTracker lt;  // Tracks the XY position of the drone
-    BaremetalShared<BaremetalCommStruct> baremetal;
-    QRCryptoManager qrCryptoMgr = baremetal;
-
-    cout << "Waiting for Baremetal to be initialized ..." << endl;
-    while (!baremetal->isInitialized())
-        usleep(10'000);
-    cout << ANSIColors::greenb << "Baremetal initialization done!"
-         << ANSIColors::reset << endl;
 
     while (true) {
         PerfTimer pt;
@@ -57,6 +62,6 @@ void loop() {
         cout << "Vision duration: " << 1e-3 * duration << " ms → "
              << 1e6 / duration << " fps" << endl;
 
-        baremetal->setVisionPosition(location.x, location.y);
+        visionComm->setVisionPosition(location.x, location.y);
     }
 }

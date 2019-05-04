@@ -35,7 +35,7 @@ void loop() {
          << "Frame rate      : " << fps << " fps" << std::endl;
 
     LocationTracker lt;
-    BaremetalShared<BaremetalCommStruct> baremetal;
+    BaremetalShared<VisionCommStruct> visionComm;
 
     while (true) {
         PerfTimer pt;
@@ -46,6 +46,6 @@ void loop() {
         cout << "Vision duration: " << duration << " µs → " << 1e6 / duration
              << " fps" << endl;
 
-        baremetal->setVisionPosition(location.x, location.y);
+        visionComm->setVisionPosition(location.x, location.y);
     }
 }

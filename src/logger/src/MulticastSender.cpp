@@ -1,7 +1,7 @@
+#include <MulticastSender.hpp>
 #include <arpa/inet.h>
 #include <cerrno>
 #include <iostream>
-#include <MulticastSender.hpp>
 #include <netinet/in.h>
 #include <stdexcept>
 #include <sys/types.h>
@@ -80,10 +80,10 @@ MulticastSender::~MulticastSender() {
     close(socket);
 }
 
-size_t MulticastSender::send(const std::vector<uint8_t> &data) {
-    ssize_t nbytes = sendto(socket,                    //
-                            data.data(), data.size(),  //
-                            0,                         //
+size_t MulticastSender::send(const uint8_t *data, size_t size) {
+    ssize_t nbytes = sendto(socket,      //
+                            data, size,  //
+                            0,           //
                             (struct sockaddr *) &address, sizeof(address));
     if (nbytes < 0)
         throw std::runtime_error("Error sending data: " +

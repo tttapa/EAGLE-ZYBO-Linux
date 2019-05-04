@@ -1,11 +1,7 @@
 #include <LogEntry.h>
+#include <SharedStruct.hpp>
 #include <cassert>
 #include <cmath>  // NAN
-#include <cstdint>
-#include <iostream>
-#include <stdexcept>
-
-using bool32 = uint32_t;
 
 enum class QRFSMState : int32_t {
     IDLE            = 0,
@@ -40,42 +36,7 @@ struct Position {
     Position(const Position &pos) : x{pos.x}, y{pos.y} {}
 };
 
-constexpr uintptr_t SHARED_MEM_START_ADDRESS = 0xFFFF0000;
-constexpr uintptr_t SHARED_MEM_LAST_ADDRESS  = 0xFFFFFFFF;
-
-template <class T>
-struct SharedStruct {
-#ifdef BAREMETAL  // Only Baremetal can initialize the shared memory
-  public:
-    static volatile T *init(uintptr_t address) {
-        assert(address >= SHARED_MEM_START_ADDRESS);
-        assert(address <= SHARED_MEM_LAST_ADDRESS - sizeof(T));
-        return new ((void *) address) T();
-    }
-    static volatile T *init() {
-        static_assert(T::address >= SHARED_MEM_START_ADDRESS);
-        static_assert(T::address <= SHARED_MEM_LAST_ADDRESS - sizeof(T));
-        return new ((void *) T::address) T();
-    }
-#endif
-
-    bool isInitialized() const volatile {
-        return initialized == INIT_MAGIC_NUM;  // TODO: do we need a handshake?
-    }
-    void checkInitialized() const volatile {
-        if (!isInitialized())
-            throw std::runtime_error("Error: Baremetal not yet initialized");
-    }
-
-  protected:
-    SharedStruct() = default;
-
-  private:
-    uint32_t initialized                     = INIT_MAGIC_NUM;
-    constexpr static uint32_t INIT_MAGIC_NUM = 0xDEADBEEF;
-};
-
-struct BaremetalCommStruct : SharedStruct<BaremetalCommStruct> {
+struct VisionCommStruct : SharedStruct<VisionCommStruct> {
   public:
     FlightMode mode  = FlightMode::MANUAL;
     bool32 inductive = false;
@@ -90,16 +51,10 @@ struct BaremetalCommStruct : SharedStruct<BaremetalCommStruct> {
     Position position;
     float yawAngle;
 
-    mutable QRFSMState qrState;
-    Position target;
-
   public:
-    constexpr static uintptr_t address = SHARED_MEM_START_ADDRESS + 0x1000;
-
-    BaremetalCommStruct() { static_assert(sizeof(*this) == 10 * 4); }
+    constexpr static uintptr_t address = SHARED_MEM_START_ADDRESS;
 
     VisionState getVisionState() const volatile { return visionState; }
-    QRFSMState getQRState() const volatile { return qrState; }
 
 #ifndef BAREMETAL
     void setVisionPosition(Position pos) volatile {
@@ -113,7 +68,29 @@ struct BaremetalCommStruct : SharedStruct<BaremetalCommStruct> {
     void setVisionPosition(float x, float y) volatile {
         setVisionPosition({x, y});
     }
+#else
+    Position getVisionPosition() const volatile {
+        if (getVisionState() != VisionState::VISION_WRITING_DONE)
+            throw std::runtime_error("Error: illegal getVisionPosition call: "
+                                     "Vision not yet done writing");
+        Position position = this->position;
+        visionState       = VisionState::BAREMETAL_READING_DONE;
+        return position;
+    }
+#endif
+};
 
+struct QRCommStruct : SharedStruct<QRCommStruct> {
+  private:
+    mutable QRFSMState qrState;
+    Position target;
+
+  public:
+    constexpr static uintptr_t address = VisionCommStruct::nextFreeAddress();
+
+    QRFSMState getQRState() const volatile { return qrState; }
+
+#ifndef BAREMETAL
     void setTargetPosition(Position target) volatile {
         checkInitialized();
         if (getQRState() == QRFSMState::NEW_TARGET)
@@ -137,14 +114,6 @@ struct BaremetalCommStruct : SharedStruct<BaremetalCommStruct> {
     void setQRStateUnkown() volatile { qrState = QRFSMState::QR_UNKNOWN; }
     void setQRStateLand() volatile { qrState = QRFSMState::LAND; }
 #else
-    Position getVisionPosition() const volatile {
-        if (getVisionState() != VisionState::VISION_WRITING_DONE)
-            throw std::runtime_error("Error: illegal getVisionPosition call: "
-                                     "Vision not yet done writing");
-        Position position = this->position;
-        visionState       = VisionState::BAREMETAL_READING_DONE;
-        return position;
-    }
     Position getTargetPosition() const volatile {
         if (getQRState() != QRFSMState::NEW_TARGET)
             throw std::runtime_error("Error: illegal getTargetPosition call: "
@@ -156,38 +125,6 @@ struct BaremetalCommStruct : SharedStruct<BaremetalCommStruct> {
 #endif
 };
 
-struct AccessControlledLogEntry : SharedStruct<AccessControlledLogEntry> {
-  private:
-    // Initialize to true, so it triggers a log write
-    mutable bool32 doneReading = true;
-    LogEntry logEntry;
-
-  public:
-#ifdef BAREMETAL
-    void write(const LogEntry &logEntry) const volatile {
-        if (!isDoneReading())
-            throw std::runtime_error("Error: illegal LogEntry write");
-        // The logEntry shouldn't change when doneReading == true, so we can
-        // safely cast away the volatile qualifier.
-        const_cast<LogEntry &>(this->logEntry) = logEntry;
-        doneReading                            = false;
-    }
-#else
-    LogEntry read() const volatile {
-        if (!isDoneWriting())
-            throw std::runtime_error("Error: illegal LogEntry read");
-        // The logEntry shouldn't change when doneReading == false, so we can
-        // safely cast away the volatile qualifier.
-        LogEntry tmp = const_cast<const LogEntry &>(logEntry);
-        doneReading  = true;
-        return tmp;
-    }
-#endif
-
-    bool isDoneReading() const volatile { return doneReading; }
-    bool isDoneWriting() const volatile { return !doneReading; }
-
-    constexpr static uintptr_t address = SHARED_MEM_START_ADDRESS + 0x3000;
-};
-
-// #undef atomic_flag32
+using AccessControlledLogEntry =
+    AccessControlledSharedStruct<LogEntry, Baremetal2Linux,
+                                 SHARED_MEM_START_ADDRESS + 0x1000>;
