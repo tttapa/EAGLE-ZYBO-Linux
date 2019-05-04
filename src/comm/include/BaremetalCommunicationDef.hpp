@@ -1,4 +1,5 @@
 #include <LogEntry.h>
+#include <cassert>
 #include <cmath>  // NAN
 #include <cstdint>
 #include <iostream>
