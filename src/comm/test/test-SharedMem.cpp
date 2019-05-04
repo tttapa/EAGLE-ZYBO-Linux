@@ -1,3 +1,4 @@
+#ifdef ZYBO
 
 #include <BaremetalCommunicationDef.hpp>
 #include <SharedMem.hpp>
@@ -206,5 +207,7 @@ int main() {
         usleep(1'000'000);
     }
 }
+
+#endif
 
 #endif

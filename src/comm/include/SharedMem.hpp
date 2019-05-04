@@ -68,15 +68,15 @@ class SharedMemReferenceCounter {
 template <class T>
 class BaremetalShared {
   public:
-    BaremetalShared() {
+    BaremetalShared(uintptr_t address) {
 #ifdef ZYBO
         // Get the base address of the page, and the offset within the page.
-        uintptr_t base   = T::address & PAGE_MASK;
-        uintptr_t offset = T::address & OFFSET_MASK;
+        uintptr_t base   = address & PAGE_MASK;
+        uintptr_t offset = address & OFFSET_MASK;
         // Make sure we don't cross the page boundary
         assert(offset + sizeof(T) <= PAGE_SIZE);
 
-        std::cout << std::hex << std::showbase << "T::address = " << T::address
+        std::cout << std::hex << std::showbase << "address = " << address
                   << ", base = " << base << ", offset = " << offset
                   << ", PAGE_SIZE = " << PAGE_SIZE
                   << ", PAGE_MASK = " << PAGE_MASK << std::dec
@@ -115,9 +115,12 @@ class BaremetalShared {
         }
         std::cout << std::dec << std::noshowbase << std::endl;
 #else
+        (void) address;
         structdata = std::make_unique<T>();
 #endif
     }
+
+    BaremetalShared() : BaremetalShared{T::address} {}
 
 #ifdef ZYBO
     ~BaremetalShared() { munmap(memmap, PAGE_SIZE); }
