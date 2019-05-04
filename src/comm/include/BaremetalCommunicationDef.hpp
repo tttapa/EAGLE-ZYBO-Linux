@@ -1,3 +1,4 @@
+#include <LogEntry.h>
 #include <atomic>
 #include <cmath>  // NAN
 #include <cstdint>
@@ -14,7 +15,7 @@ using bool32 = uint32_t;
 
 enum class QRFSMState : int32_t {
     IDLE            = 0,
-    QR_READ         = 1,
+    QR_READ_REQUEST = 1,
     QR_READING_BUSY = 2,
     CRYPTO_BUSY     = 3,
     NEW_TARGET      = 4,
@@ -34,18 +35,12 @@ struct Position {
     explicit operator bool() const volatile {
         return !(std::isnan(x) || std::isnan(y));
     }
-#if 0
-	volatile Position& operator = (const Position& p) volatile {
-		this->x = p.x;
-		this->y = p.y;
-		return *this;
-	}
-#else
+
     void operator=(const Position &p) volatile {
         this->x = p.x;
         this->y = p.y;
     }
-#endif
+
     Position() = default;
     Position(float x, float y) : x{x}, y{y} {}
     Position(const volatile Position &pos) : x{pos.x}, y{pos.y} {}
@@ -84,13 +79,29 @@ constexpr uintptr_t SHARED_MEM_LAST_ADDRESS  = 0xFFFFFFFF;
 
 #define atomic_flag32 std::atomic_flag __attribute__((aligned(4)))
 
-/**
- * @brief   Struct for communication between the Linux core and the Baremetal
- *          core.
- */
-struct BaremetalCommStruct {
+template <class T>
+struct SharedStruct {
+#ifdef BAREMETAL  // Only Baremetal can initialize the shared memory
+  public:
+    static volatile T *init(uintptr_t address) {
+        assert(address >= SHARED_MEM_START_ADDRESS);
+        assert(address <= SHARED_MEM_LAST_ADDRESS - sizeof(T));
+        return new ((void *) address) T();
+    }
+    static volatile T *init() {
+        static_assert(T::address >= SHARED_MEM_START_ADDRESS);
+        static_assert(T::address <= SHARED_MEM_LAST_ADDRESS - sizeof(T));
+        return new ((void *) T::address) T();
+    }
+#endif
+
+  protected:
+    SharedStruct() = default;
+};
+
+struct BaremetalCommStruct : SharedStruct<BaremetalCommStruct> {
   private:
-    mutable atomic_flag32 vision_lock;
+    mutable atomic_flag32 vision_lock = ATOMIC_FLAG_INIT;
 
   public:
     FlightMode mode    = FlightMode::MANUAL;
@@ -105,25 +116,13 @@ struct BaremetalCommStruct {
     QRFSMState qrState;
 
   private:
-    mutable atomic_flag32 crypto_lock;
+    mutable atomic_flag32 crypto_lock = ATOMIC_FLAG_INIT;
     Position target;
 
   public:
     constexpr static uintptr_t address = SHARED_MEM_START_ADDRESS + 0x1000;
 
-#ifdef BAREMETAL  // Only Baremetal can initialize the shared memory
-
-    /**
-     * @brief   Construct the communication struct in shared memory.
-     */
-    static void init() {
-        static_assert(address >= SHARED_MEM_START_ADDRESS);
-        static_assert(address <=
-                      SHARED_MEM_LAST_ADDRESS - sizeof(BaremetalCommStruct));
-        new ((void *) address) BaremetalCommStruct();
-    }
-
-#endif
+    BaremetalCommStruct() { static_assert(sizeof(*this) == 11 * 4); }
 
     void setVisionPosition(Position pos) volatile {
         ScopedLock lock(vision_lock);
@@ -145,13 +144,40 @@ struct BaremetalCommStruct {
         ScopedLock lock(vision_lock);
         return this->position;
     }
+};
 
-#ifdef ZYBO
+struct AccessControlledLogEntry : SharedStruct<AccessControlledLogEntry> {
   private:
-    BaremetalCommStruct() { static_assert(sizeof(*this) == 11 * 4); }
+    // Initialize to true, so it triggers a log write
+    mutable bool32 doneReading = true;
+    LogEntry logEntry;
+
+  public:
+#ifdef BAREMETAL
+    void write(const LogEntry &logEntry) const volatile {
+        if (!isDoneReading())
+            throw std::runtime_error("Error: illegal LogEntry write");
+        // The logEntry shouldn't change when doneReading == true, so we can
+        // safely cast away the volatile qualifier.
+        const_cast<LogEntry &>(this->logEntry) = logEntry;
+        doneReading                            = false;
+    }
 #else
-    BaremetalCommStruct() = default;
+    LogEntry read() const volatile {
+        if (!isDoneWriting())
+            throw std::runtime_error("Error: illegal LogEntry read");
+        // The logEntry shouldn't change when doneReading == false, so we can
+        // safely cast away the volatile qualifier.
+        LogEntry tmp = const_cast<const LogEntry &>(logEntry);
+        doneReading  = true;
+        return tmp;
+    }
 #endif
+
+    bool isDoneReading() const volatile { return doneReading; }
+    bool isDoneWriting() const volatile { return !doneReading; }
+
+    constexpr static uintptr_t address = SHARED_MEM_START_ADDRESS + 0x3000;
 };
 
 // #undef atomic_flag32

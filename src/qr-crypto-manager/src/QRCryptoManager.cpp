@@ -8,7 +8,7 @@ using namespace std;
 void QRCryptoManager::update(const cv::Mat &image) {
     switch (baremetal->qrState) {
         // QR reading is requested, start reading
-        case QRFSMState::QR_READ: {
+        case QRFSMState::QR_READ_REQUEST: {
             willBeDecoded = async(launch::async, QR::decode, image.clone());
             // Use a clone of the image, because it will be updated by
             // vision, and this will confuse the QR decoder.

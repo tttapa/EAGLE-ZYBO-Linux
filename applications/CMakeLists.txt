@@ -1,4 +1,6 @@
 add_subdirectory(hello-world)
 add_subdirectory(vision)
 add_subdirectory(vision-qr)
+if(CMAKE_CROSSCOMPILING)
 add_subdirectory(sharedmem)
+endif()

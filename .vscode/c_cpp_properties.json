@@ -9,7 +9,8 @@
                 "${workspaceFolder}/docker-include/arm/8.3.0/**",
                 "${workspaceFolder}/docker-include/opencv4/**",
                 "${workspaceFolder}/docker-include/zbar",
-                "${workspaceFolder}/docker-include/python3.7m"
+                "${workspaceFolder}/docker-include/python3.7m",
+                "${workspaceFolder}/build-arm/src/logentry/include-generated"
             ],
             "defines": [
                 "__AVX__",

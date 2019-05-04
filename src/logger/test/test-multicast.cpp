@@ -1,6 +1,6 @@
 #include <arpa/inet.h>
 #include <gtest/gtest.h>
-#include <multicast.hpp>
+#include <MulticastSender.hpp>
 
 TEST(MulticastSender, send) {
     const char *group = "239.0.0.1";

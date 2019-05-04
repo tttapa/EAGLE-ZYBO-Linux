@@ -1,6 +1,7 @@
 add_subdirectory(greet)
 add_subdirectory(comm)
 add_subdirectory(crypto)
+add_subdirectory(logentry)
 add_subdirectory(logger)
 add_subdirectory(matrix)
 add_subdirectory(utilities)

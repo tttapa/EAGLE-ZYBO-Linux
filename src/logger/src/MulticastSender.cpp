@@ -1,7 +1,7 @@
 #include <arpa/inet.h>
 #include <cerrno>
 #include <iostream>
-#include <multicast.hpp>
+#include <MulticastSender.hpp>
 #include <netinet/in.h>
 #include <stdexcept>
 #include <sys/types.h>
