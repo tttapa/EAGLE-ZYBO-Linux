@@ -36,6 +36,7 @@ struct Position {
     Position() = default;
     Position(float x, float y) : x{x}, y{y} {}
     Position(const volatile Position &p) : x{p.x}, y{p.y} {}
+    Position(const Position &p) : x{p.x}, y{p.y} {}
 };
 
 inline std::ostream &operator<<(std::ostream &os, Position pos) {
