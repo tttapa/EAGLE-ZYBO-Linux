@@ -21,7 +21,7 @@ struct TestStruct : SharedStruct<TestStruct> {
  * has been updated by Baremetal to the value of l2b + 1.
  */
 TEST(Comm, SharedMem) {
-    BaremetalShared<TestStruct> baremetal;
+    SharedMemory<TestStruct> baremetal;
     while (!baremetal->isInitialized())
         usleep(10'000);
     uint32_t test  = 0x12345678;

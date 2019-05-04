@@ -1,5 +1,6 @@
 add_subdirectory(greet)
 add_subdirectory(comm)
+add_subdirectory(baremetal-comm)
 add_subdirectory(crypto)
 add_subdirectory(logentry)
 add_subdirectory(logger)

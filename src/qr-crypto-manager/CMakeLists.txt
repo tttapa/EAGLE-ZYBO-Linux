@@ -34,6 +34,7 @@ target_compile_features(qr-crypto-manager PUBLIC cxx_std_17)
 target_link_libraries(qr-crypto-manager 
     PUBLIC
         comm
+        baremetal-comm
     PRIVATE 
         ${OpenCV_LIBS}
         qr-decode

@@ -26,7 +26,7 @@ int main() {
 
 void loop() {
     // Initialize communication with Bare-metal and Logger
-    BaremetalShared<VisionCommStruct> visionComm;
+    SharedMemory<VisionCommStruct> visionComm;
     QRCryptoManager qrCryptoMgr;
     Logger logger("239.0.0.2", 5003);
     logger.begin();

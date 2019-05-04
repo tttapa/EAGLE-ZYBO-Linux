@@ -6,4 +6,5 @@ target_link_libraries(vision
     location_finder
     utilities
     comm
+    baremetal-comm
 )

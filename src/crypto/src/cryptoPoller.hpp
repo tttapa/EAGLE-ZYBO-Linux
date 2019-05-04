@@ -1,8 +1,8 @@
 #pragma once
 
+#include <SharedMem.hpp>
 #include <cryptoException.hpp>
 #include <cstdint>
-#include <registers.hpp>
 
 class CryptoPoller {
 
@@ -21,13 +21,21 @@ class CryptoPoller {
     uint32_t hashSqueeze();
 
   private:
+    struct FPGARegisters {
+        uint32_t R0 = 0;  // Default initialization just keeps the compiler
+        const uint32_t R1 = 0;  // happy, it isn't used.
+
+        constexpr static uintptr_t address = 0x43C70000;
+    };
+    SharedMemory<FPGARegisters> fpga;
+
     static bool isInitialized;
     static uint32_t currentBitFlip;
     uint16_t timeoutMilliseconds;
 
-    static void writeR0(uint32_t value);
-    static uint32_t readR0();
-    static uint32_t readR1();
+    void writeR0(uint32_t value);
+    uint32_t readR0();
+    uint32_t readR1();
 
     uint32_t poll(uint32_t mask, uint32_t previousValue);
     void initialize();

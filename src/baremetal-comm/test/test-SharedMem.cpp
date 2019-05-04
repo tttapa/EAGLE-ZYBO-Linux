@@ -21,7 +21,7 @@ struct TestStruct : SharedStruct<TestStruct> {
  * has been updated by Baremetal to the value of l2b + 1.
  */
 TEST(Comm, SharedMem) {
-    BaremetalShared<TestStruct> baremetal;
+    SharedMemory<TestStruct> baremetal;
     size_t timeout = 10'000;  // timeout in milliseconds
     while (!baremetal->isInitialized()) {
         if (--timeout == 0)

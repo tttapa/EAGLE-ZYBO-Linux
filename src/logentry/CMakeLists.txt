@@ -69,7 +69,8 @@ if(NOT CMAKE_CROSSCOMPILING)
 
     add_custom_target(PythonDroneLogger
         COMMAND
-            ${PYTHON_EXECUTABLE} setup.py bdist_wheel
+            ${PYTHON_EXECUTABLE} setup.py bdist_wheel &&
+            ${PYTHON_EXECUTABLE} -m pip install --user --upgrade dist/*.whl
         DEPENDS
             logentry
             src-generated/DroneLogger.py.c

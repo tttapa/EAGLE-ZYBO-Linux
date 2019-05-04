@@ -14,5 +14,5 @@ class Logger {
 
   private:
     MulticastSender sender;
-    BaremetalShared<AccessControlledLogEntry> acLogEntry;
+    SharedMemory<AccessControlledLogEntry> acLogEntry;
 };

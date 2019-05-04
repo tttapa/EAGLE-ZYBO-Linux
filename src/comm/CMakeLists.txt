@@ -23,9 +23,8 @@ target_include_directories(comm
 target_link_libraries(comm
     PUBLIC
         utilities
-        logentry
 )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
 # adds the tests.
-add_subdirectory(test) 
+# add_subdirectory(test) 

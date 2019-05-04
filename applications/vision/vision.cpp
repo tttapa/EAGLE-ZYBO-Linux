@@ -35,7 +35,7 @@ void loop() {
          << "Frame rate      : " << fps << " fps" << std::endl;
 
     LocationTracker lt;
-    BaremetalShared<VisionCommStruct> visionComm;
+    SharedMemory<VisionCommStruct> visionComm;
 
     while (true) {
         PerfTimer pt;

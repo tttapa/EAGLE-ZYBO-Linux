@@ -13,9 +13,9 @@ CryptoPoller::CryptoPoller(uint16_t timeoutMilliseconds)
     }
 }
 
-void CryptoPoller::writeR0(uint32_t value) { wmem(R0_ADDR, value); }
-uint32_t CryptoPoller::readR0() { return rmem(R0_ADDR); }
-uint32_t CryptoPoller::readR1() { return rmem(R1_ADDR); }
+void CryptoPoller::writeR0(uint32_t value) { fpga->R0 = value; }
+uint32_t CryptoPoller::readR0() { return fpga->R0; }
+uint32_t CryptoPoller::readR1() { return fpga->R1; }
 
 uint32_t CryptoPoller::execute(uint32_t instruction) {
     writeR0(instruction);

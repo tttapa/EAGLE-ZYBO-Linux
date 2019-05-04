@@ -15,5 +15,5 @@ class QRCryptoManager {
   private:
     /// Result of the QR decoder (asynchronous)
     std::future<std::string> willBeDecoded;
-    BaremetalShared<QRCommStruct> qrComm;
+    SharedMemory<QRCommStruct> qrComm;
 };
