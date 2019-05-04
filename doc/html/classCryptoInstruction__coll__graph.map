@@ -1,3 +1,6 @@
 <map id="CryptoInstruction" name="CryptoInstruction">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,172,156"/>
+<area shape="rect" id="node1" title=" " alt="" coords="160,160,327,325"/>
+<area shape="rect" id="node2" href="$structCryptoInstruction_1_1UNKNOWN__t.html" title=" " alt="" coords="5,5,148,97"/>
+<area shape="rect" id="node3" href="$structCryptoInstruction_1_1LAND__t.html" title=" " alt="" coords="172,5,315,97"/>
+<area shape="rect" id="node4" href="$structCryptoInstruction_1_1GOTO__t.html" title=" " alt="" coords="339,5,481,97"/>
 </map>

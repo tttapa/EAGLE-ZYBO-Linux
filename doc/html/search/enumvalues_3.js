@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['unknown',['UNKNOWN',['../classCryptoInstruction.html#a966f06da8010704b61028f241138b0b1a9791bae2336b32fb3d8a39f9bd11f6fb',1,'CryptoInstruction']]],
-  ['unknown_5ferror_5fexception',['UNKNOWN_ERROR_EXCEPTION',['../classCryptoException.html#ab8222b36d5b9edb38ec6c9d3816ac5a9a0d3a72f67e6dcd8c9545bfb6d1134c54',1,'CryptoException']]],
-  ['unsuccessful_5fdecode_5fexception',['UNSUCCESSFUL_DECODE_EXCEPTION',['../classCryptoException.html#ab8222b36d5b9edb38ec6c9d3816ac5a9a6e63afe5b339a88bd3bcbfd46a021c2d',1,'CryptoException']]]
+  ['idle',['IDLE',['../BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643caa5daf7f2ebbba4975d61dab1c40188c7',1,'BaremetalCommunicationDef.hpp']]]
 ];

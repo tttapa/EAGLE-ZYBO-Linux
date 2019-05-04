@@ -17,7 +17,7 @@ var searchData=
   ['tones',['Tones',['../Matrix_8hpp.html#a7e2edcf0adff5dd92023ba70c3d080c1',1,'Matrix.hpp']]],
   ['torgb_5fptr',['toRGB_ptr',['../classMask.html#ada333d548ba4428ba67a0052821b0417',1,'Mask']]],
   ['tostdarray',['toStdArray',['../Matrix_8hpp.html#a959be8d53cd66d399017fa11052da6fd',1,'toStdArray(TColVector&lt; T, R &gt; &amp;vector):&#160;Matrix.hpp'],['../Matrix_8hpp.html#ae6a6b7e9a54cb9418798b6c979e3dd48',1,'toStdArray(const TColVector&lt; T, R &gt; &amp;vector):&#160;Matrix.hpp']]],
-  ['touint32',['toUint32',['../classBitString.html#abe80c189133713cd97061d4acf0360d0',1,'BitString']]],
+  ['touint32',['toUint32',['../classBitString.html#a3631ed7c281c0dede581ff4259c51f6c',1,'BitString']]],
   ['transpose',['transpose',['../Matrix_8hpp.html#ae8d7f8a24d9759e2535e2ff13f13fe26',1,'Matrix.hpp']]],
   ['transposestruct',['TransposeStruct',['../structMatrices_1_1TransposeStruct.html',1,'Matrices']]],
   ['trowvector',['TRowVector',['../Matrix_8hpp.html#a9080fd1212d23d3758c7023612148f5a',1,'Matrix.hpp']]],

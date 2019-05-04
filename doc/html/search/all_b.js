@@ -3,6 +3,7 @@ var searchData=
   ['m',['m',['../structMatrixAssignmentHelper.html#ac0605b614e7a1b70c74c68dcb52b8f73',1,'MatrixAssignmentHelper']]],
   ['magenta',['magenta',['../namespaceANSIColors.html#a843f93289e3e92050e1b9a863df9ce19',1,'ANSIColors']]],
   ['magentab',['magentab',['../namespaceANSIColors.html#ae10ecab37f0f5bf5f83c4eb0f743a9df',1,'ANSIColors']]],
+  ['manual',['MANUAL',['../BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465aa60a6a471c0681e5a49c4f5d00f6bc5a',1,'BaremetalCommunicationDef.hpp']]],
   ['map',['map',['../Array_8hpp.html#a301d6114927faa3bda607b86c47b7439',1,'map(const T &amp;t, F &amp;&amp;f):&#160;Array.hpp'],['../Array_8hpp.html#a6bf495656c2aebd8cab9847a3182422f',1,'map(const Array&lt; T, N &gt; &amp;a, F &amp;&amp;f):&#160;Array.hpp']]],
   ['mask',['Mask',['../classMask.html',1,'Mask'],['../classMask.html#a6e8f3b4b77d759653359dea264c9554d',1,'Mask::Mask(const uint8_t *imgRGB, uint rows, uint cols)'],['../classMask.html#a302473de9ad7f1b21195f0140208703c',1,'Mask::Mask(const cv::Mat &amp;imgRGB)'],['../classMask.html#a209448a82e47f6ebf89f5b6fb8267dfa',1,'Mask::Mask()']]],
   ['mask_2dfallback_2ehpp',['Mask-Fallback.hpp',['../Mask-Fallback_8hpp.html',1,'']]],
@@ -27,7 +28,7 @@ var searchData=
   ['minimum_5fstart_5fline_5fwidth',['MINIMUM_START_LINE_WIDTH',['../classGridFinder.html#a75001d71e7ef1313c09f955fceda9a18',1,'GridFinder']]],
   ['move',['move',['../classGridFinder.html#af8bdc28d95e295618c2f345f2d7eb758',1,'GridFinder']]],
   ['mt',['MT',['../structpybind11_1_1detail_1_1type__caster_3_01TMatrix_3_01T_00_01R_00_01C_01_4_01_4.html#a42b4128c450a83a84ccb125044130948',1,'pybind11::detail::type_caster&lt; TMatrix&lt; T, R, C &gt; &gt;']]],
-  ['multicast_2ecpp',['multicast.cpp',['../multicast_8cpp.html',1,'']]],
-  ['multicast_2ehpp',['multicast.hpp',['../multicast_8hpp.html',1,'']]],
-  ['multicastsender',['MulticastSender',['../classMulticastSender.html',1,'MulticastSender'],['../classMulticastSender.html#a14b2b7cbac669d3298db4995b73a853f',1,'MulticastSender::MulticastSender()']]]
+  ['multicastsender',['MulticastSender',['../classMulticastSender.html',1,'MulticastSender'],['../classMulticastSender.html#a14b2b7cbac669d3298db4995b73a853f',1,'MulticastSender::MulticastSender()']]],
+  ['multicastsender_2ecpp',['MulticastSender.cpp',['../MulticastSender_8cpp.html',1,'']]],
+  ['multicastsender_2ehpp',['MulticastSender.hpp',['../MulticastSender_8hpp.html',1,'']]]
 ];

@@ -10,6 +10,6 @@ var searchData=
   ['asrowvector',['asrowvector',['../Matrix_8hpp.html#a5396ac0689ea8f47e7ba2726b3b79357',1,'asrowvector(const ColVector&lt; N &gt; &amp;v, const char *sep=&quot; &quot;, size_t precision=2):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a6ff4bfee4dd43e43bdaeb7dfbfd38ac7',1,'asrowvector(const RowVector&lt; N &gt; &amp;v, const char *sep=&quot; &quot;, size_t precision=2):&#160;Matrix.hpp']]],
   ['assignblock',['assignBlock',['../Matrix_8hpp.html#aa7a0a009ff4ef0cc5545c80716559f36',1,'Matrix.hpp']]],
   ['astex',['asTeX',['../Matrix_8hpp.html#a2639e3ccd6ca3fc71cbe8d24dc96ec6f',1,'Matrix.hpp']]],
-  ['attitude',['attitude',['../wrapper_8h.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;wrapper.c'],['../wrapper_8c.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;wrapper.c']]],
+  ['attitude',['attitude',['../wrapper_8h.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;original-wrapper.c'],['../original-wrapper_8c.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;original-wrapper.c'],['../wrapper_8c.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;wrapper.c']]],
   ['average',['average',['../classAngle.html#a593164c63d4e2eedc8b473419c179f77',1,'Angle::average()'],['../structPoint.html#a1da0707b7db8d7a162e52f13c1809e34',1,'Point::average()'],['../structPixel.html#ac3b82b3e3cd3b812dc1a0bccb474511f',1,'Pixel::average()']]]
 ];

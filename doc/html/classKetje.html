@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('classKetje.html','');});
 <div class="dynheader">
 Collaboration diagram for Ketje:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classKetje__coll__graph.svg" width="107" height="103"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classKetje__coll__graph.svg" width="114" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -112,8 +112,10 @@ Collaboration diagram for Ketje:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ced38e52fcb885632938041d40c46eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKetje.html#a9ced38e52fcb885632938041d40c46eb">Ketje</a> (const <a class="el" href="classBitString.html">BitString</a> &amp;key)</td></tr>
 <tr class="separator:a9ced38e52fcb885632938041d40c46eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e77cf21b003cd8b70a079020689510"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKetje.html#ad9e77cf21b003cd8b70a079020689510">decrypt</a> (const <a class="el" href="classBitString.html">BitString</a> &amp;associatedData, const <a class="el" href="classBitString.html">BitString</a> &amp;cipherText, const <a class="el" href="classBitString.html">BitString</a> &amp;tag, const <a class="el" href="classBitString.html">BitString</a> &amp;nonce)</td></tr>
-<tr class="separator:ad9e77cf21b003cd8b70a079020689510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aaeeaf71dcf9d83d7c8694154a02117"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKetje.html#a2aaeeaf71dcf9d83d7c8694154a02117">initialize</a> (const <a class="el" href="classBitString.html">BitString</a> &amp;nonce)</td></tr>
+<tr class="separator:a2aaeeaf71dcf9d83d7c8694154a02117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4e54ac3a43763223844c3e315012362"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBitString.html">BitString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKetje.html#ac4e54ac3a43763223844c3e315012362">unwrap</a> (const <a class="el" href="classBitString.html">BitString</a> &amp;associatedData, const <a class="el" href="classBitString.html">BitString</a> &amp;cipherText, const <a class="el" href="classBitString.html">BitString</a> &amp;tag)</td></tr>
+<tr class="separator:ac4e54ac3a43763223844c3e315012362"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -143,19 +145,45 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ketje_8hpp_source.html#l00008">8</a> of file <a class="el" href="ketje_8hpp_source.html">ketje.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ketje_8hpp_source.html#l00013">13</a> of file <a class="el" href="ketje_8hpp_source.html">ketje.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad9e77cf21b003cd8b70a079020689510"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9e77cf21b003cd8b70a079020689510">&#9670;&nbsp;</a></span>decrypt()</h2>
+<a id="a2aaeeaf71dcf9d83d7c8694154a02117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aaeeaf71dcf9d83d7c8694154a02117">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Ketje::decrypt </td>
+          <td class="memname">void Ketje::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classBitString.html">BitString</a> &amp;&#160;</td>
+          <td class="paramname"><em>nonce</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ketje_8cpp_source.html#l00003">3</a> of file <a class="el" href="ketje_8cpp_source.html">ketje.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classKetje_a2aaeeaf71dcf9d83d7c8694154a02117_cgraph.svg" width="328" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac4e54ac3a43763223844c3e315012362"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4e54ac3a43763223844c3e315012362">&#9670;&nbsp;</a></span>unwrap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBitString.html">BitString</a> Ketje::unwrap </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classBitString.html">BitString</a> &amp;&#160;</td>
           <td class="paramname"><em>associatedData</em>, </td>
@@ -170,13 +198,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classBitString.html">BitString</a> &amp;&#160;</td>
-          <td class="paramname"><em>tag</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classBitString.html">BitString</a> &amp;&#160;</td>
-          <td class="paramname"><em>nonce</em>&#160;</td>
+          <td class="paramname"><em>tag</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -186,7 +208,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ketje_8cpp_source.html#l00003">3</a> of file <a class="el" href="ketje_8cpp_source.html">ketje.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ketje_8cpp_source.html#l00018">18</a> of file <a class="el" href="ketje_8cpp_source.html">ketje.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classKetje_ac4e54ac3a43763223844c3e315012362_cgraph.svg" width="546" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>

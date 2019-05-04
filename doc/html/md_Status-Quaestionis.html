@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('md_Status-Quaestionis.html','');});
 <p>✓ I included the ZBar library for decoding the <a class="el" href="structQR.html">QR</a> code. I also tried the OpenCV <a class="el" href="structQR.html">QR</a> decoder, but ZBar seems to work better. I added a test as an example to run it asynchronously, that is, vision keeps on refreshing while the <a class="el" href="structQR.html">QR</a> decoder is running. It remains to be seen if this is a good idea, because we only have a single thread anyway.</p>
 <p>✓ I also added a base64-decoder library for extracting the binary data from the <a class="el" href="structQR.html">QR</a> code.</p>
 <p>🗙 The next step is to write functions that are able to decode strings of data, as well as more elaborate test cases.</p>
-<p>The public API of the crypto code goes in <code><a class="el" href="crypto_8hpp.html">src/crypto/include/crypto.hpp</a></code>, and the implementations in <code>src/crypto/src/crypto.cpp</code>. <br  />
+<p>The public API of the crypto code goes in <code><a class="el" href="crypto_8hpp.html">src/crypto/include/crypto.hpp</a></code>, and the implementations in <code><a class="el" href="crypto_8cpp.html">src/crypto/src/crypto.cpp</a></code>. <br  />
 Test cases go in <code>src/crypto/test/test-crypto.cpp</code>.</p>
 <p>🗙 The reading and writing of the FPGA registers uses the provided code in <code><a class="el" href="wrapper_8c.html">src/comm/src/wrapper.c</a></code> from <a href="https://www.xilinx
 .com/support/documentation/application_notes/xapp1078-amp-linux-bare-metal.pdf">Xilinx Application note 1078</a>. <br  />
@@ -141,7 +141,7 @@ It now uses ARM <a class="el" href="namespaceNEON.html">NEON</a> SIMD vector ins
 <h3>Autopilot</h3>
 <p>❓ Autonomous navigation has been programmed, it will be tested as soon as we finish tuning the navigation controller <br  />
 ❓ Automatic take-off and landing has been implemented, but not tested yet</p>
-<h3>Logger</h3>
+<h3><a class="el" href="classLogger.html">Logger</a></h3>
 <p>✓ Code generator working <br  />
 ❓ Update code generator with new BaremetalImproved <br  />
  </p><h2>Videos for technical milestones T4</h2>

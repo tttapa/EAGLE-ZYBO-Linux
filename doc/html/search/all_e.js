@@ -1,8 +1,8 @@
 var searchData=
 [
   ['detail',['detail',['../namespacepybind11_1_1detail.html',1,'pybind11']]],
-  ['page_5fmask',['PAGE_MASK',['../wrapper_8c.html#ae4aa620ce57c7c3171b916de2c5f09f2',1,'wrapper.c']]],
-  ['page_5fsize',['PAGE_SIZE',['../wrapper_8c.html#a7d467c1d283fdfa1f2081ba1e0d01b6e',1,'wrapper.c']]],
+  ['page_5fmask',['PAGE_MASK',['../original-wrapper_8c.html#ae4aa620ce57c7c3171b916de2c5f09f2',1,'PAGE_MASK():&#160;original-wrapper.c'],['../wrapper_8c.html#ae4aa620ce57c7c3171b916de2c5f09f2',1,'PAGE_MASK():&#160;wrapper.c']]],
+  ['page_5fsize',['PAGE_SIZE',['../original-wrapper_8c.html#a7d467c1d283fdfa1f2081ba1e0d01b6e',1,'PAGE_SIZE():&#160;original-wrapper.c'],['../wrapper_8c.html#a7d467c1d283fdfa1f2081ba1e0d01b6e',1,'PAGE_SIZE():&#160;wrapper.c']]],
   ['perftimer',['PerfTimer',['../classPerfTimer.html',1,'PerfTimer'],['../classPerfTimer.html#a73d9eb85b4ef3955f61435355181b0a0',1,'PerfTimer::PerfTimer()']]],
   ['perftimer_2ehpp',['PerfTimer.hpp',['../PerfTimer_8hpp.html',1,'']]],
   ['perpendicular',['perpendicular',['../structCosSin.html#adb1d000cc58879b65a63fac849408bfe',1,'CosSin::perpendicular()'],['../classAngle.html#aa9c7edb3027272ad1e45098383f0a94d',1,'Angle::perpendicular()']]],
@@ -10,6 +10,7 @@ var searchData=
   ['pixel_2ehpp',['Pixel.hpp',['../Pixel_8hpp.html',1,'']]],
   ['point',['Point',['../structPoint.html',1,'Point'],['../structPoint.html#a64564e224c446877ff0416643afca133',1,'Point::Point()'],['../structPoint.html#a522740f19dc9b573fd43515f03319d7d',1,'Point::Point(float x, float y)'],['../structPoint.html#af5665a5f9e448f4c59b3d8207bbe1c2f',1,'Point::Point(Pixel px)'],['../structPoint.html#ab50806683020e8c506f3be5e934a62ce',1,'Point::Point(const TColVector&lt; float, 2 &gt; &amp;vec)']]],
   ['points',['points',['../structSquare.html#a80f3757c73679490ebf2a37b64d23e02',1,'Square']]],
+  ['position',['Position',['../structPosition.html',1,'Position'],['../structVisionData.html#a53fc408e7ee4d317450253b426472471',1,'VisionData::position()'],['../structPosition.html#ab16e66a71993dcdbbaced25a39542882',1,'Position::Position()=default'],['../structPosition.html#ab8cea37259e0b6735633fb3305146374',1,'Position::Position(float x, float y)'],['../structPosition.html#a8ea8d72b8299f1754ea39e2a696dd02d',1,'Position::Position(const volatile Position &amp;p)'],['../structPosition.html#a5255897fdac77bf6b461ff46b0fbdad2',1,'Position::Position(const Position &amp;p)']]],
   ['precision',['precision',['../namespaceMatrixPrinting.html#a2ce16d565f6520e849131b4ebcb863ee',1,'MatrixPrinting']]],
   ['print',['print',['../classGridFinder.html#a671392ebb7c1324bd9a4e8d321475619',1,'GridFinder::print()'],['../structPrintable.html#aa58027a1611ba7d97959a971f9b68dd4',1,'Printable::print()'],['../classPrintAsTeX__t.html#afd6e1c9d021e9708129195920a8d2d92',1,'PrintAsTeX_t::print()'],['../classPrintAsRowVector__t.html#a2446f36d427bc74e8238f37b52b7eee0',1,'PrintAsRowVector_t::print()']]],
   ['printable',['Printable',['../structPrintable.html',1,'']]],
@@ -18,9 +19,11 @@ var searchData=
   ['printc',['printC',['../Matrix_8hpp.html#af124090d434bb1925fcb403c0368f8f4',1,'printC(std::ostream &amp;os, const TMatrix&lt; T, R, C &gt; &amp;matrix):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a5e4905c082f78fbd8996ee01666cfd1e',1,'printC(std::ostream &amp;os, const TMatrix&lt; T, R, C &gt; &amp;matrix, const std::string &amp;name):&#160;Matrix.hpp']]],
   ['printcpp',['printCpp',['../Matrix_8hpp.html#a91bd79a505f6a675b8124cbc591ff9b3',1,'printCpp(std::ostream &amp;os, const TMatrix&lt; T, R, C &gt; &amp;matrix):&#160;Matrix.hpp'],['../Matrix_8hpp.html#aa79a5e13f33252911f0470f3aae0df0a',1,'printCpp(std::ostream &amp;os, const TMatrix&lt; T, R, C &gt; &amp;matrix, const std::string &amp;name):&#160;Matrix.hpp']]],
   ['printmatlab',['printMATLAB',['../Matrix_8hpp.html#a0c34b4e7902f6f0047940f386854c6be',1,'printMATLAB(std::ostream &amp;os, const TMatrix&lt; T, R, C &gt; &amp;matrix):&#160;Matrix.hpp'],['../Matrix_8hpp.html#af4c359cda9dcb2515820af04ae3b2b37',1,'printMATLAB(std::ostream &amp;os, const TMatrix&lt; T, R, C &gt; &amp;matrix, const std::string &amp;name):&#160;Matrix.hpp']]],
-  ['ptr',['ptr',['../classMask.html#aa0a965ed4da7d946e842d02ee0166ec3',1,'Mask::ptr() const'],['../classMask.html#a928df83c76b9563241c710fed21713f2',1,'Mask::ptr()']]],
+  ['ptr',['ptr',['../classBaremetalShared.html#a1a22ff1d7a2de2574eb25c57333ade5d',1,'BaremetalShared::ptr()'],['../classMask.html#aa0a965ed4da7d946e842d02ee0166ec3',1,'Mask::ptr() const'],['../classMask.html#a928df83c76b9563241c710fed21713f2',1,'Mask::ptr()']]],
   ['pybind11',['pybind11',['../namespacepybind11.html',1,'']]],
   ['pybind11_5fmodule',['PYBIND11_MODULE',['../Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767',1,'Grid-Finder.module.hpp']]],
   ['pybind11_5ftype_5fcaster',['PYBIND11_TYPE_CASTER',['../structpybind11_1_1detail_1_1type__caster_3_01TMatrix_3_01T_00_01R_00_01C_01_4_01_4.html#acbfb2bc9c195772957bf0637234cc27f',1,'pybind11::detail::type_caster&lt; TMatrix&lt; T, R, C &gt; &gt;']]],
-  ['pymatrix_2ehpp',['PyMatrix.hpp',['../PyMatrix_8hpp.html',1,'']]]
+  ['pyinit_5fdronelogger',['PyInit_DroneLogger',['../DroneLogger_8py_8template_8c.html#a57e8c96dfc54ebc5b49bdd219eccdbe8',1,'DroneLogger.py.template.c']]],
+  ['pymatrix_2ehpp',['PyMatrix.hpp',['../PyMatrix_8hpp.html',1,'']]],
+  ['pythondronelogentry',['PythonDroneLogEntry',['../structPythonDroneLogEntry.html',1,'']]]
 ];

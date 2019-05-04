@@ -6,11 +6,13 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "greet", "dir_9f42a264daae6f1215a4a8774a60c231.html", "dir_9f42a264daae6f1215a4a8774a60c231" ],
     [ "grid-finder", "dir_920a55bcfa35c5c1cf06a9da66085a54.html", "dir_920a55bcfa35c5c1cf06a9da66085a54" ],
     [ "location-finder", "dir_8f9e3926995673004d1bb228b2422cc7.html", "dir_8f9e3926995673004d1bb228b2422cc7" ],
+    [ "logentry", "dir_d471c9e7d7d2cd1463b667d184ac6f80.html", "dir_d471c9e7d7d2cd1463b667d184ac6f80" ],
     [ "logger", "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html", "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801" ],
     [ "mask", "dir_d2da34f738933fa17ec589dd95f08c72.html", "dir_d2da34f738933fa17ec589dd95f08c72" ],
     [ "matrix", "dir_40d7732de2983c682bb99d86585a563c.html", "dir_40d7732de2983c682bb99d86585a563c" ],
     [ "py-grid-finder", "dir_78013b9138429c0bcb36eab7f16ba065.html", "dir_78013b9138429c0bcb36eab7f16ba065" ],
     [ "py-matrix", "dir_e933f813a55dc21e057ace61f7557bd3.html", "dir_e933f813a55dc21e057ace61f7557bd3" ],
+    [ "qr-crypto-manager", "dir_2b5615639a780788a137586f580a6a22.html", "dir_2b5615639a780788a137586f580a6a22" ],
     [ "qr-decode", "dir_a6001fb970975ebb58a93b6f2462248e.html", "dir_a6001fb970975ebb58a93b6f2462248e" ],
     [ "utilities", "dir_7b5d38f1875f1b693f62ca6a108a1129.html", "dir_7b5d38f1875f1b693f62ca6a108a1129" ]
 ];

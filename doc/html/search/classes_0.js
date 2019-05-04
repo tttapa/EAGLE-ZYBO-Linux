@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['accesscontrolledsharedstruct',['AccessControlledSharedStruct',['../structAccessControlledSharedStruct.html',1,'']]],
   ['angle',['Angle',['../classAngle.html',1,'']]],
   ['angle_3c_20360_20_3e',['Angle&lt; 360 &gt;',['../classAngle.html',1,'']]],
   ['angletracker',['AngleTracker',['../classAngleTracker.html',1,'']]],

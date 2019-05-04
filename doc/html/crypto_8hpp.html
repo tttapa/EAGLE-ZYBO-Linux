@@ -103,7 +103,13 @@ $(document).ready(function(){initNavTree('crypto_8hpp.html','');});
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for crypto.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="crypto_8hpp__incl.svg" width="351" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="crypto_8hpp__incl.svg" width="411" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="crypto_8hpp__dep__incl.svg" width="379" height="186"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -135,7 +141,7 @@ Functions</h2></td></tr>
 <p>Decrypt the given <a class="el" href="structQR.html">QR</a> code. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">qrCode</td><td>The <a class="el" href="structQR.html">QR</a> to decode. </td></tr>
+    <tr><td class="paramname">qrCode</td><td>The <a class="el" href="structQR.html">QR</a> to decrypt. The <a class="el" href="structQR.html">QR</a> code should be base64 decoded already.</td></tr>
   </table>
   </dd>
 </dl>
@@ -143,15 +149,23 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="classCryptoInstruction.html">CryptoInstruction(CryptoInstruction::LAND)</a> This instruction tells the drone to land. </dd>
 <dd>
-<a class="el" href="classCryptoInstruction.html">CryptoInstruction(CryptoInstruction::UNKNOWN_INSTRUCTION)</a> The decoded instruction could not be interpreted. The method getUnknownData() returns a raw array specifying a decoded instruction that is not yet supported. </dd></dl>
+<a class="el" href="classCryptoInstruction.html">CryptoInstruction(CryptoInstruction::UNKNOWN_INSTRUCTION)</a> The decoded instruction could not be interpreted. The method getUnknownData() returns a raw array specifying a decoded instruction that is not yet supported.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classCryptoException.html">CryptoException(CryptoException::TIMEOUT_EXCEPTION)</a></td><td>There is a problem with the FPGA. For multiple attempts, it took longer than a certain amount of time specifying the maximum time needed to decrypt the instruction. You should not run crypto again. </td></tr>
     <tr><td class="paramname"><a class="el" href="classCryptoException.html">CryptoException(CryptoException::UNSUCCESSFUL_DECODE_EXCEPTION)</a></td><td>The given <a class="el" href="structQR.html">QR</a> code could not be decoded. You should run crypto again with a new picture. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classCryptoException.html">CryptoException(CryptoException::UNKNOWN_ERROR_EXCEPTION)</a></td><td>An unknown error has occurred. You should not run crypto again. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classCryptoException.html">CryptoException(CryptoException::UNKNOWN_ERROR_EXCEPTION)</a></td><td>An unknown error has occurred. You can choose yourself whether you run crypto again. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="crypto_8cpp_source.html#l00003">3</a> of file <a class="el" href="crypto_8cpp_source.html">crypto.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="crypto_8hpp_ac7aec84cd9b29bd73046db2ea5a8a020_icgraph.svg" width="367" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>

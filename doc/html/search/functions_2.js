@@ -6,6 +6,7 @@ var searchData=
   ['center',['center',['../classGridFinder.html#ace2a9cb90cc19a295d0fbe934a79b7e0',1,'GridFinder']]],
   ['centerpointoutlineiterator',['CenterPointOutLineIterator',['../classCenterPointOutLineIterator.html#a1c3e333fca03afce181df6ed43153836',1,'CenterPointOutLineIterator']]],
   ['checkimagetype',['checkImageType',['../classMask.html#a278f890f8063043a92dd8d8104733661',1,'Mask']]],
+  ['checkinitialized',['checkInitialized',['../structSharedStruct.html#ab84d9ff23f09b19bb8cf7f72ec9901fe',1,'SharedStruct']]],
   ['checkline',['checkLine',['../classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d',1,'GridFinder']]],
   ['clamp',['clamp',['../Matrix_8hpp.html#adb959bd990ed4fd37ed02cd0202ca511',1,'Matrix.hpp']]],
   ['colvectorfromcpparray',['ColVectorFromCppArray',['../Matrix_8hpp.html#aeae40defd7db46d853d1b0411049d3df',1,'Matrix.hpp']]],
@@ -20,7 +21,7 @@ var searchData=
   ['count',['count',['../classPerfTimer.html#afa079be2d4ca5318665ee6337da2172e',1,'PerfTimer']]],
   ['cross',['cross',['../Matrix_8hpp.html#aaac3f553f87e00956b4736107cf40289',1,'Matrix.hpp']]],
   ['cryptoexception',['CryptoException',['../classCryptoException.html#a9d29714c7a71390a27ca2063a1755471',1,'CryptoException']]],
-  ['cryptoinstruction',['CryptoInstruction',['../classCryptoInstruction.html#afa456da248aefc3b738559fb7eed8776',1,'CryptoInstruction::CryptoInstruction(InstructionType instructionType, uint8_t x=0, uint8_t y=0)'],['../classCryptoInstruction.html#acb4ccf0ba2bface16caf86f4daa48443',1,'CryptoInstruction::CryptoInstruction(InstructionType instructionType, const std::vector&lt; uint8_t &gt; &amp;unknownData)']]],
+  ['cryptoinstruction',['CryptoInstruction',['../classCryptoInstruction.html#a739265d092432ede8e2c61bcda94f202',1,'CryptoInstruction::CryptoInstruction(GOTO_t, uint8_t x, uint8_t y)'],['../classCryptoInstruction.html#aad46e1c655c29001d9aa7c4abbc04d1c',1,'CryptoInstruction::CryptoInstruction(LAND_t)'],['../classCryptoInstruction.html#a6b1fb6a6c6a63234cb7348df4b2f005d',1,'CryptoInstruction::CryptoInstruction(UNKNOWN_t, const std::vector&lt; uint8_t &gt; &amp;unknownData)']]],
   ['cryptopoller',['CryptoPoller',['../classCryptoPoller.html#ae86ce3e44f7fd294c276b088cd5bb5a4',1,'CryptoPoller']]],
-  ['curr_5fz',['curr_z',['../wrapper_8h.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;wrapper.c'],['../wrapper_8c.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;wrapper.c']]]
+  ['curr_5fz',['curr_z',['../wrapper_8h.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;original-wrapper.c'],['../original-wrapper_8c.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;original-wrapper.c'],['../wrapper_8c.html#a5e327bd665923c55634d1a0482ecb303',1,'curr_z():&#160;wrapper.c']]]
 ];
