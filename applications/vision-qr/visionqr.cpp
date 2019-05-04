@@ -1,6 +1,7 @@
 #include <ANSIColors.hpp>
 #include <LocationFinder.hpp>
 #include <LocationTracker.hpp>
+#include <Logger.hpp>
 #include <PerfTimer.hpp>
 #include <QRCryptoManager.hpp>
 #include <chrono>
@@ -24,9 +25,11 @@ int main() {
 }
 
 void loop() {
-    // Initialize communication with Bare-metal
+    // Initialize communication with Bare-metal and Logger
     BaremetalShared<VisionCommStruct> visionComm;
     QRCryptoManager qrCryptoMgr;
+    Logger logger("239.0.0.2", 5003);
+    logger.begin();
 
     cout << "Waiting for Baremetal to be initialized ..." << endl;
     while (!visionComm->isInitialized())
@@ -71,5 +74,8 @@ void loop() {
             cerr << ANSIColors::magenta
                  << "Warning: Baremetal didn't read previous vision data"
                  << ANSIColors::reset << endl;
+
+        // TODO: should we use a different thread for the logger?
+        logger.update();
     }
 }

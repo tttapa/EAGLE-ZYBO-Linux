@@ -1,3 +1,5 @@
+#pragma once
+
 #include <LogEntry.h>
 #include <SharedStruct.hpp>
 #include <cassert>

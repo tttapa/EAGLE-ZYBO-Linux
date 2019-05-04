@@ -6,4 +6,5 @@ target_link_libraries(vision-qr
     location_finder
     utilities
     qr-crypto-manager
+    logger
 )
