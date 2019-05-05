@@ -10,6 +10,7 @@
 #include <unistd.h>  // usleep
 
 using namespace std;
+using namespace chrono_literals;
 
 void loop();
 
@@ -25,17 +26,27 @@ int main() {
 }
 
 void loop() {
-    // Initialize communication with Bare-metal and Logger
+    // Initialize communication with Bare-metal
     SharedMemory<VisionCommStruct> visionComm;
     QRCryptoManager qrCryptoMgr;
-    Logger logger("239.0.0.2", 5003);
-    logger.begin();
 
     cout << "Waiting for Baremetal to be initialized ..." << endl;
     while (!visionComm->isInitialized())
         usleep(10'000);
     cout << ANSIColors::greenb << "Baremetal initialization done!"
          << ANSIColors::reset << endl;
+
+    // Initialize the logger
+    Logger logger("239.0.0.2", 5003);
+    logger.begin();
+    promise<void> loggerStop;
+    // And start it in a new thread, updating every 5ms, until loggerStop is set
+    thread loggerThread(
+        [&logger](auto loggerStop) {
+            while (loggerStop.wait_for(5ms) != future_status::ready)
+                logger.update();
+        },
+        move(loggerStop.get_future()));
 
     // Open camera 0
     cout << "Waiting for camera to be initialized ..." << endl;
@@ -65,17 +76,20 @@ void loop() {
         cout << "Vision duration: " << 1e-3 * duration << " ms → "
              << 1e6 / duration << " fps" << endl;
 
-        if (visionComm->isDoneReading())
-            visionComm->write({
-                {location.x, location.y},
-                lf.getAngle().rad(),
-            });
-        else
-            cerr << ANSIColors::magenta
-                 << "Warning: Baremetal didn't read previous vision data"
-                 << ANSIColors::reset << endl;
-
-        // TODO: should we use a different thread for the logger?
-        logger.update();
+        if (locInSquare) {  // If we have a new position measurement
+            if (visionComm->isDoneReading()) {
+                visionComm->write({
+                    {location.x, location.y},
+                    lf.getAngle().rad(),
+                });
+            } else {
+                cerr << ANSIColors::magenta
+                     << "Warning: Baremetal didn't read previous vision data"
+                     << ANSIColors::reset << endl;
+            }
+        }
     }
+
+    loggerStop.set_value();  // Tell the logger thread to stop
+    loggerThread.join();     // TODO: is this necessary?
 }

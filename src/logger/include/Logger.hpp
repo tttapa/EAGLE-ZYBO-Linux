@@ -11,6 +11,8 @@ class Logger {
 
     void begin();
     void update();
+    bool isInitialized() const { return acLogEntry->isInitialized(); }
+    void checkInitialized() const { acLogEntry->checkInitialized(); }
 
   private:
     MulticastSender sender;

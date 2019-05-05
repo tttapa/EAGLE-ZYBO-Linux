@@ -99,17 +99,28 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
     }
 
     void setQRStateBusy() volatile {
+        checkInitialized();
         if (getQRState() != QRFSMState::QR_READ_REQUEST)
             throw std::runtime_error("Error: illegal QR state transition: "
                                      "Only QR_READ_REQUEST → QR_READING_BUSY "
                                      "is allowed");
         qrState = QRFSMState::QR_READING_BUSY;
     }
-    void setQRStateError() volatile { qrState = QRFSMState::ERROR; }
-    void setQRStateUnkown() volatile { qrState = QRFSMState::QR_UNKNOWN; }
-    void setQRStateLand() volatile { qrState = QRFSMState::LAND; }
+    void setQRStateError() volatile {
+        checkInitialized();
+        qrState = QRFSMState::ERROR;
+    }
+    void setQRStateUnkown() volatile {
+        checkInitialized();
+        qrState = QRFSMState::QR_UNKNOWN;
+    }
+    void setQRStateLand() volatile {
+        checkInitialized();
+        qrState = QRFSMState::LAND;
+    }
 #else
     Position getTargetPosition() const volatile {
+        checkInitialized();
         if (getQRState() != QRFSMState::NEW_TARGET)
             throw std::runtime_error("Error: illegal getTargetPosition call: "
                                      "No new target available");

@@ -22,8 +22,8 @@ class CryptoPoller {
 
   private:
     struct FPGARegisters {
-        uint32_t R0 = 0;  // Default initialization just keeps the compiler
-        const uint32_t R1 = 0;  // happy, it isn't used.
+        uint32_t R0       = 0;  // Default initialization just keeps the
+        const uint32_t R1 = 0;  // compiler happy, it isn't used.
 
         constexpr static uintptr_t address = 0x43C70000;
     };

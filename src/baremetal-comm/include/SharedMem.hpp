@@ -132,8 +132,10 @@ class SharedMemory {
 
 #ifdef ZYBO
     volatile T *operator->() { return structdata; }
+    const volatile T *operator->() const { return structdata; }
 #else
     volatile T *operator->() { return structdata.get(); }
+    const volatile T *operator->() const { return structdata.get(); }
 #endif
 
   private:
