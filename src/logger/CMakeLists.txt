@@ -2,6 +2,7 @@
 add_library(logger 
     src/MulticastSender.cpp
     src/Logger.cpp
+    src/ThreadedLogger.cpp
 )
 
 # Set target include directories 
