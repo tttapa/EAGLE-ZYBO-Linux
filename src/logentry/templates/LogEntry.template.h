@@ -39,4 +39,12 @@ $c_prototypes
 #endif
 #endif
 
-#endif  // LOGGER_H 
+#ifdef __cplusplus
+static_assert(sizeof(LogEntry) == sizeof(float) * $size, 
+              "Error: packing of LogEntry is incorrect");
+#else
+_Static_assert(sizeof(LogEntry) == sizeof(float) * $size, 
+              "Error: packing of LogEntry is incorrect");
+#endif
+
+#endif  // LOGGER_H

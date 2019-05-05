@@ -44,18 +44,18 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
 
         LoggingThreadedUDPRequestHandler.ctr += 1
         if LoggingThreadedUDPRequestHandler.ctr == self.print_subsample:
-            print('frame time:          ', logentry.frametime)
-            print('reference location:  ', logentry.reference_location)
-            print('measurement location:', logentry.measurement_location)
-            print('nav ctrl output qr1: ', logentry.reference_orientation[1])
-            print('nav ctrl output qr2: ', logentry.reference_orientation[2])
+            print('frame time:          ', logentry.framecounter)
+            # print('reference location:  ', logentry.reference_location)
+            # print('measurement location:', logentry.measurement_location)
+            # print('nav ctrl output qr1: ', logentry.reference_orientation[1])
+            # print('nav ctrl output qr2: ', logentry.reference_orientation[2])
             # print('observer state:      ', logentry.navigation_observer_state)
             # print('control signal:      ', logentry.motor_control_signals)
-            print('sonar measurement:   ', logentry.measurement_height)
+            # print('sonar measurement:   ', logentry.measurement_height)
             # print('alt observer state:  ', logentry.altitude_observer_state)
             # print('hov thrust:          ', logentry.hover_thrust)
             # print('rc thrust:           ', logentry.rc_throttle)
-            print('measurement orientation: ', logentry.measurement_orientation)
+            # print('measurement orientation: ', logentry.measurement_orientation)
             print()
             
             LoggingThreadedUDPRequestHandler.ctr = 0
@@ -84,7 +84,7 @@ class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServ
 if __name__ == "__main__":
     ts = datetime.datetime.now().strftime('%Y-%m-%d.%H.%M.%S')
     # fname = "/home/pieter/GitHub/EAGLE/DroneLogs/eagle-" + ts + ".dat"
-    fname = "/media/btamm12/GeneralHDD/DroneLogs/eagle-" + ts + ".dat"
+    fname = "/tmp/eagle-" + ts + ".dat"
     with LoggingThreadedUDPServer(fname, (MCAST_GRP, MCAST_PORT), LoggingThreadedUDPRequestHandler) as server:
         server_thread = threading.Thread(target=server.serve_forever)
         server_thread.daemon = True

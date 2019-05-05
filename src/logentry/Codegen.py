@@ -6,11 +6,14 @@ import re
 import sys
 from CodegenSnippets import *
 
+# Check the alignment of u64 entries!
+
 datamembers = [
     # Logging
     ('u', "size", "$size"),
     ('u', "mode", "check_mode()"),
-    ('f', "frametime", "frame_time"),
+    ('u64', "frametime", "frame_time"),
+    ('u', "framecounter", "frame_ctr"),
 
     # Configuration
     ('i', "droneConfig", "currentDroneConfiguration"),
@@ -68,7 +71,8 @@ size = 0
 
 typedefs = set()
 
-types = {'u': "uint32_t", 'i': "int32_t", 'f': "float"}
+types = {'u': "uint32_t", 'u64': "uint64_t", 'i': "int32_t", 'f': "float"}
+sizes = {'u': 1, 'u64': 2, 'i': 1, 'f': 1}
 
 for datamember in datamembers:
     type = types[datamember[0]]
@@ -88,7 +92,7 @@ for datamember in datamembers:
         c_python_functions += c_python_setter(name, type) + 2 * lineEnding
         c_python_getsets += c_python_getset(name) + lineEnding
         members += "    " + type + ' ' + name + ";" + lineEnding
-        size += 1
+        size += sizes[datamember[0]]
 
     elif len(datamember) == 4:  # length → array type
         length = datamember[2]
@@ -107,7 +111,7 @@ for datamember in datamembers:
         c_python_functions += c_python_setter_array(name, type, length) + 2 * lineEnding
         c_python_getsets += c_python_getset(name) + lineEnding
         members += "    " + type + ' ' + name + '[' + str(length) + "];" + lineEnding
-        size += length
+        size += length * sizes[datamember[0]]
 
 
 typedefs = map(lambda t: t[1], typedefs)
@@ -138,11 +142,11 @@ with open(join(template_dir, 'LogEntry.template.h'), 'r') as template_header_fil
     template_header = template_header.replace('$members', members)
     template_header = template_header.replace('$cpp_methods', cpp_methods)
     template_header = template_header.replace('$c_prototypes', c_prototypes)
+    template_header = template_header.replace('$size', str(size))
 
     header_file.write(template_header)
 
     template_cpp = template_cpp.replace('$c_functions', c_functions)
-    template_cpp = template_cpp.replace('$size', str(size))
 
     cpp_file.write(template_cpp)
 

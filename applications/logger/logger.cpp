@@ -46,9 +46,8 @@ void loop() {
         },
         move(loggerStop.get_future()));
 
-    cout << "Press any key to restart the logger.";
+    cout << "Press any key to restart the logger" << endl;
     cin.ignore();
-    cin.get();
 
     loggerStop.set_value();  // Tell the logger thread to stop
     loggerThread.join();     // TODO: is this necessary?

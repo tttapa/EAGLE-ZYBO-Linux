@@ -116,9 +116,9 @@ def cpp_assignment(name: str, cpp_assign: str):
     return 2 * "    " + "logEntry." + settername(name) + "(" + cpp_assign + ");"
 
 
-c_python_types = {"float": "PyFloat", "uint32_t": "PyLong", "int32_t": "PyLong"}
-to_c_python_types = {"float": "PyFloat_FromDouble", "uint32_t": "PyLong_FromUnsignedLong", "int32_t": "PyLong_FromLong"}
-from_c_python_types = {"float": "PyFloat_AsDouble", "uint32_t": "PyLong_AsUnsignedLong", "int32_t": "PyLong_AsLong"}
+c_python_types = {"float": "PyFloat", "uint32_t": "PyLong", "uint64_t": "PyLong", "int32_t": "PyLong"}
+to_c_python_types = {"float": "PyFloat_FromDouble", "uint32_t": "PyLong_FromUnsignedLong", "uint64_t": "PyLong_FromUnsignedLongLong", "int32_t": "PyLong_FromLong"}
+from_c_python_types = {"float": "PyFloat_AsDouble", "uint32_t": "PyLong_AsUnsignedLong", "uint64_t": "PyLong_AsUnsignedLongLong", "int32_t": "PyLong_AsLong"}
 
 
 def c_python_getter(name: str, type: str):

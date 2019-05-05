@@ -102,7 +102,7 @@ struct AccessControlledSharedStruct
   private:
     // Initialize to true, so it triggers a write when updated.
     mutable bool32 doneReading = true;
-    T data;
+    T data = {};
 
   public:
 #ifdef BAREMETAL
