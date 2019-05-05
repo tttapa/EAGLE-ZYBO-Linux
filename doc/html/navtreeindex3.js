@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"original-wrapper_8c_source.html":[5,0,0,2,1,0],
+"pages.html":[],
+"registers_8hpp.html":[5,0,0,3,1,7],
+"registers_8hpp.html#a3682b3a513dfa0716c1024a2cc204531":[5,0,0,3,1,7,1],
+"registers_8hpp.html#aa8dbc049b35e3155a57cd531cfdb7f01":[5,0,0,3,1,7,0],
 "registers_8hpp_source.html":[5,0,0,3,1,7],
 "structAccessControlledSharedStruct.html":[4,0,2],
 "structAccessControlledSharedStruct.html#a0be743fe67c59afa646557b410256ac7":[4,0,2,4],

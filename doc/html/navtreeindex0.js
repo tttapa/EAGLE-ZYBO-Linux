@@ -142,6 +142,7 @@ var NAVTREEINDEX0 =
 "LogEntry_8template_8cpp.html#a56a2ba09e76a6e44d7637fb56c8f2790":[5,0,0,7,0,1,0],
 "LogEntry_8template_8cpp_source.html":[5,0,0,7,0,1],
 "LogEntry_8template_8h.html":[5,0,0,7,0,2],
+"LogEntry_8template_8h.html#a8f2f32ba49115cb4e3163cec7c2771bb":[5,0,0,7,0,2,1],
 "LogEntry_8template_8h_source.html":[5,0,0,7,0,2],
 "Logger_8cpp.html":[5,0,0,8,1,0],
 "Logger_8cpp_source.html":[5,0,0,8,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "MulticastSender_8hpp.html":[5,0,0,8,0,1],
 "MulticastSender_8hpp_source.html":[5,0,0,8,0,1],
 "NEON-PrintHelpers_8hpp.html":[5,0,0,9,1,4],
-"NEON-PrintHelpers_8hpp.html#a207cd822106fe3d8f5091a365ae82216":[5,0,0,9,1,4,0],
-"NEON-PrintHelpers_8hpp.html#ac32840bdab1fd7cffffa6263b7dda76b":[5,0,0,9,1,4,1]
+"NEON-PrintHelpers_8hpp.html#a207cd822106fe3d8f5091a365ae82216":[5,0,0,9,1,4,0]
 };

@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['next',['next',['../classBresenhamLine.html#a10d505e30945f42a5cd0270c315b104f',1,'BresenhamLine::next()'],['../classCenterPointOutLineIterator.html#a89580e1393d0dfc3ff12c7a5af2a4374',1,'CenterPointOutLineIterator::next()']]],
-  ['nextfreeaddress',['nextFreeAddress',['../structSharedStruct.html#a78e385bc8b0e68d2648adb812de43f24',1,'SharedStruct']]],
-  ['norm',['norm',['../Matrix_8hpp.html#af6752e536d7af62cde48d70f45309a2c',1,'norm(const TRowVector&lt; T, R &gt; &amp;rowvector):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a3c0725070fcd2f1e17b6acac484846c3',1,'norm(const TColVector&lt; T, C &gt; &amp;colvector):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a458915271837bedd719942910e881ec2',1,'norm(const Array&lt; T, N &gt; &amp;vector):&#160;Matrix.hpp']]],
-  ['normalize',['normalize',['../classAngle.html#ab24ea1b21d1302d6ff2a1be7341201de',1,'Angle::normalize()'],['../Matrix_8hpp.html#aaee637901db7147a55dd417ba0fbf625',1,'normalize(const TColVector&lt; T, N &gt; &amp;vector):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a5eef6d03e50a5a9af4ea0b5f5d962e94',1,'normalize(const TRowVector&lt; T, N &gt; &amp;vector):&#160;Matrix.hpp'],['../Matrix_8hpp.html#ae28b977f2eddef6149836944d6f5236d',1,'normalize(const Array&lt; T, N &gt; &amp;vector):&#160;Matrix.hpp']]],
-  ['normalstep',['normalStep',['../classCryptoPoller.html#a7bcfbc4dda8626c3a61ada489d6dd51c',1,'CryptoPoller']]],
-  ['normalstride',['normalStride',['../classCryptoPoller.html#a02b4bddba5ffddcd2528fa7e2f78a86b',1,'CryptoPoller']]],
-  ['normsq',['normsq',['../Matrix_8hpp.html#a49ccaf0f0f1746a2824dc79538165c9c',1,'normsq(const TRowVector&lt; T, R &gt; &amp;rowvector):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a07eaab32e13ce696513662395d4c0cc2',1,'normsq(const TColVector&lt; T, C &gt; &amp;colvector):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a6dfb1eb8ae8f5686db70a77275174d08',1,'normsq(const Array&lt; T, N &gt; &amp;vector):&#160;Matrix.hpp']]],
-  ['numberofsamplesintimerange',['numberOfSamplesInTimeRange',['../Time_8hpp.html#a2b17458bbbd8104e688d17e08e985329',1,'Time.hpp']]]
+  ['map',['map',['../Array_8hpp.html#a301d6114927faa3bda607b86c47b7439',1,'map(const T &amp;t, F &amp;&amp;f):&#160;Array.hpp'],['../Array_8hpp.html#a6bf495656c2aebd8cab9847a3182422f',1,'map(const Array&lt; T, N &gt; &amp;a, F &amp;&amp;f):&#160;Array.hpp']]],
+  ['mask',['Mask',['../classMask.html#a6e8f3b4b77d759653359dea264c9554d',1,'Mask::Mask(const uint8_t *imgRGB, uint rows, uint cols)'],['../classMask.html#a302473de9ad7f1b21195f0140208703c',1,'Mask::Mask(const cv::Mat &amp;imgRGB)'],['../classMask.html#a209448a82e47f6ebf89f5b6fb8267dfa',1,'Mask::Mask()']]],
+  ['maxsquareerror',['maxSquareError',['../MeanSquareError_8hpp.html#aaea5e00a8cb283ab17b1d5d89be6fc48',1,'MeanSquareError.hpp']]],
+  ['meansquareerror',['meanSquareError',['../MeanSquareError_8hpp.html#a8e251cbd6c24d1b635c2380bc53f39f6',1,'MeanSquareError.hpp']]],
+  ['move',['move',['../classGridFinder.html#af8bdc28d95e295618c2f345f2d7eb758',1,'GridFinder']]],
+  ['multicastsender',['MulticastSender',['../classMulticastSender.html#a14b2b7cbac669d3298db4995b73a853f',1,'MulticastSender']]]
 ];

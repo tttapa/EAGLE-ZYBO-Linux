@@ -65,9 +65,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ANSIColors_8hpp.html",
-"NEON-PrintHelpers_8hpp_source.html",
-"classPrintAsRowVector__t.html",
-"registers_8hpp_source.html"
+"NEON-PrintHelpers_8hpp.html#ac32840bdab1fd7cffffa6263b7dda76b",
+"classPerfTimer.html#a9d88e8916bfe284793237a726d81ca1c",
+"original-wrapper_8c_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

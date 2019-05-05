@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('classSharedMemory.html','');});
 <div class="dynheader">
 Collaboration diagram for SharedMemory&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSharedMemory__coll__graph.svg" width="170" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSharedMemory__coll__graph.svg" width="170" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -127,6 +127,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1a6d03d87b8503b362217c4b1604b038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17308a6a59a89018ae11586969abfc5d"><td class="memItemLeft" align="right" valign="top">volatile T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSharedMemory.html#a17308a6a59a89018ae11586969abfc5d">operator-&gt;</a> ()</td></tr>
 <tr class="separator:a17308a6a59a89018ae11586969abfc5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9daba149de39e640837c3ca38f5d9390"><td class="memItemLeft" align="right" valign="top">const volatile T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSharedMemory.html#a9daba149de39e640837c3ca38f5d9390">operator-&gt;</a> () const</td></tr>
+<tr class="separator:a9daba149de39e640837c3ca38f5d9390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad574873e9d896232e5b1cc5aed6fe755"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSharedMemory.html#ad574873e9d896232e5b1cc5aed6fe755">SharedMemory</a> (uintptr_t address)</td></tr>
 <tr class="memdesc:ad574873e9d896232e5b1cc5aed6fe755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classSharedMemory.html" title="A class that manages a mapping to an address in shared memory. It maps the physical address to an add...">SharedMemory</a> object. Uses <code>mmap</code> to map the page containing the address.  <a href="classSharedMemory.html#ad574873e9d896232e5b1cc5aed6fe755">More...</a><br /></td></tr>
 <tr class="separator:ad574873e9d896232e5b1cc5aed6fe755"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -409,7 +411,7 @@ template&lt;class T&gt; </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a17308a6a59a89018ae11586969abfc5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17308a6a59a89018ae11586969abfc5d">&#9670;&nbsp;</a></span>operator-&gt;() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a17308a6a59a89018ae11586969abfc5d">&#9670;&nbsp;</a></span>operator-&gt;() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,7 +440,7 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <a id="a17308a6a59a89018ae11586969abfc5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17308a6a59a89018ae11586969abfc5d">&#9670;&nbsp;</a></span>operator-&gt;() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a17308a6a59a89018ae11586969abfc5d">&#9670;&nbsp;</a></span>operator-&gt;() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,7 +471,36 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <a id="a9daba149de39e640837c3ca38f5d9390"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9daba149de39e640837c3ca38f5d9390">&#9670;&nbsp;</a></span>operator-&gt;() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9daba149de39e640837c3ca38f5d9390">&#9670;&nbsp;</a></span>operator-&gt;() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const volatile T* <a class="el" href="classSharedMemory.html">SharedMemory</a>&lt; T &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="baremetal-comm_2include_2SharedMem_8hpp_source.html#l00135">135</a> of file <a class="el" href="baremetal-comm_2include_2SharedMem_8hpp_source.html">SharedMem.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9daba149de39e640837c3ca38f5d9390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9daba149de39e640837c3ca38f5d9390">&#9670;&nbsp;</a></span>operator-&gt;() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

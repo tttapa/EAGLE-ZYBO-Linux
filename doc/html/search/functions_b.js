@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['map',['map',['../Array_8hpp.html#a301d6114927faa3bda607b86c47b7439',1,'map(const T &amp;t, F &amp;&amp;f):&#160;Array.hpp'],['../Array_8hpp.html#a6bf495656c2aebd8cab9847a3182422f',1,'map(const Array&lt; T, N &gt; &amp;a, F &amp;&amp;f):&#160;Array.hpp']]],
-  ['mask',['Mask',['../classMask.html#a6e8f3b4b77d759653359dea264c9554d',1,'Mask::Mask(const uint8_t *imgRGB, uint rows, uint cols)'],['../classMask.html#a302473de9ad7f1b21195f0140208703c',1,'Mask::Mask(const cv::Mat &amp;imgRGB)'],['../classMask.html#a209448a82e47f6ebf89f5b6fb8267dfa',1,'Mask::Mask()']]],
-  ['maxsquareerror',['maxSquareError',['../MeanSquareError_8hpp.html#aaea5e00a8cb283ab17b1d5d89be6fc48',1,'MeanSquareError.hpp']]],
-  ['meansquareerror',['meanSquareError',['../MeanSquareError_8hpp.html#a8e251cbd6c24d1b635c2380bc53f39f6',1,'MeanSquareError.hpp']]],
-  ['move',['move',['../classGridFinder.html#af8bdc28d95e295618c2f345f2d7eb758',1,'GridFinder']]],
-  ['multicastsender',['MulticastSender',['../classMulticastSender.html#a14b2b7cbac669d3298db4995b73a853f',1,'MulticastSender']]]
+  ['leftofpoint',['leftOfPoint',['../classLine.html#ade63ea812bc1673307538a83b82da577',1,'Line']]],
+  ['length',['length',['../structArray.html#aac41e8914e639052f99def786107e824',1,'Array']]],
+  ['line',['Line',['../classLine.html#a7ba5776ab6b39324440cf1d26a9f779a',1,'Line::Line(ColVec3f homogCoordinates)'],['../classLine.html#a5787b2d9bfde75c663aafded9d29c6a5',1,'Line::Line(Pixel p, CosSin slope)']]],
+  ['load',['load',['../structpybind11_1_1detail_1_1type__caster_3_01TMatrix_3_01T_00_01R_00_01C_01_4_01_4.html#a5abe098069b3f8359e43696f9a7dbee2',1,'pybind11::detail::type_caster&lt; TMatrix&lt; T, R, C &gt; &gt;']]],
+  ['locationfinder',['LocationFinder',['../classLocationFinder.html#a34247bb662b8dd33c83a4462415d7c72',1,'LocationFinder::LocationFinder(cv::VideoCapture &amp;&amp;cap)'],['../classLocationFinder.html#a1ad23622468a2a0ed185c79297f7c9ee',1,'LocationFinder::LocationFinder(const cv::VideoCapture &amp;cap)'],['../classLocationFinder.html#a2d8719d8e45ffbb386aacd159511f79e',1,'LocationFinder::LocationFinder(int i)'],['../classLocationFinder.html#a18c0643258b7c195b55a9815d1678645',1,'LocationFinder::LocationFinder(std::string s)']]],
+  ['log_5fdata',['log_data',['../logger_8drone_8template_8cpp.html#a66d17868f5a5bcc68dc70243bb439959',1,'logger.drone.template.cpp']]],
+  ['logger',['Logger',['../classLogger.html#ac63949ee1dff6af25583db0ae4854465',1,'Logger']]]
 ];

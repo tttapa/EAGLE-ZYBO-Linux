@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"NEON-PrintHelpers_8hpp.html#ac32840bdab1fd7cffffa6263b7dda76b":[5,0,0,9,1,4,1],
 "NEON-PrintHelpers_8hpp_source.html":[5,0,0,9,1,4],
 "PerfTimer_8hpp.html":[5,0,0,15,0,3],
 "PerfTimer_8hpp_source.html":[5,0,0,15,0,3],
@@ -224,9 +225,11 @@ var NAVTREEINDEX1 =
 "classLocationTracker.html":[4,0,33],
 "classLocationTracker.html#a259a52389d4d7c4a5fe80aca35b789ea":[4,0,33,0],
 "classLogger.html":[4,0,35],
+"classLogger.html#a2b9adb1b8cbb5f92dde6149a5d0622ce":[4,0,35,2],
+"classLogger.html#a7c2769fb989bec4ea28ea1497a10a709":[4,0,35,3],
 "classLogger.html#aad628291154b62e38901798e39558839":[4,0,35,1],
 "classLogger.html#ac63949ee1dff6af25583db0ae4854465":[4,0,35,0],
-"classLogger.html#ad905325c0f6a7f835e7e54c66e7300b2":[4,0,35,2],
+"classLogger.html#ad905325c0f6a7f835e7e54c66e7300b2":[4,0,35,4],
 "classMask.html":[4,0,36],
 "classMask.html#a209448a82e47f6ebf89f5b6fb8267dfa":[4,0,36,2],
 "classMask.html#a24f3c4e9b7197d2d72b590fb30c4ea10":[4,0,36,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "classMulticastSender.html#afd6955e97ea8b4b727ab8639b41f8bc4":[4,0,38,1],
 "classPerfTimer.html":[4,0,39],
 "classPerfTimer.html#a4d76e90eda37bbfeb0cb1b79292d9640":[4,0,39,2],
-"classPerfTimer.html#a73d9eb85b4ef3955f61435355181b0a0":[4,0,39,0],
-"classPerfTimer.html#a9d88e8916bfe284793237a726d81ca1c":[4,0,39,3],
-"classPerfTimer.html#aee43e0006daa2bc29c25bd725a7fd78d":[4,0,39,4],
-"classPerfTimer.html#afa079be2d4ca5318665ee6337da2172e":[4,0,39,1]
+"classPerfTimer.html#a73d9eb85b4ef3955f61435355181b0a0":[4,0,39,0]
 };
