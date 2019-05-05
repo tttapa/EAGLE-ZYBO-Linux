@@ -12,7 +12,7 @@
 <!-- Node4 -->
 <g id="node1" class="node">
 <title>Node4</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Check if the other party is done writing.">
 <polygon fill="#bfbfbf" stroke="#000000" points="199,-.5 199,-30.5 362,-30.5 362,-.5 199,-.5"/>
 <text text-anchor="start" x="207" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">AccessControlledSharedStruct</text>
 <text text-anchor="middle" x="280.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::isDoneWriting</text>
@@ -22,7 +22,7 @@
 <!-- Node5 -->
 <g id="node2" class="node">
 <title>Node5</title>
-<g id="a_node2"><a xlink:href="structAccessControlledSharedStruct.html#a477e70ae625da319ea9009728d3a5891" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="structAccessControlledSharedStruct.html#a477e70ae625da319ea9009728d3a5891" target="_top" xlink:title="Read data from the communication struct.">
 <polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-30.5 163,-30.5 163,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">AccessControlledSharedStruct</text>
 <text text-anchor="middle" x="81.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">::read</text>

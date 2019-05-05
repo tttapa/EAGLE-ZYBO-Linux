@@ -1,4 +1,4 @@
 <map id="AccessControlledSharedStruct&lt; T, Dir, Addr &gt;" name="AccessControlledSharedStruct&lt; T, Dir, Addr &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="13,189,230,325"/>
+<area shape="rect" id="node1" title="A struct that adds access control to a communication struct. It ensures that data can only flow in th..." alt="" coords="13,189,230,325"/>
 <area shape="rect" id="node2" href="$structSharedStruct.html" title=" " alt="" coords="5,5,237,141"/>
 </map>

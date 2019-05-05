@@ -123,24 +123,31 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharedStruct.html">SharedStruct&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A base class for structs that are shared between Linux and Baremetal. It checks initialization.  <a href="structSharedStruct.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaremetal2Linux.html">Baremetal2Linux</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option for one-way communication structs that send data from Baremetal to Linux.  <a href="structBaremetal2Linux.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLinux2Baremetal.html">Linux2Baremetal</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option for one-way communication structs that send data from Linux to Baremetal.  <a href="structLinux2Baremetal.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAccessControlledSharedStruct.html">AccessControlledSharedStruct&lt; T, Dir, Addr &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct that adds access control to a communication struct. It ensures that data can only flow in the specified direction, and that no reads or writes occur unless the other party is ready.  <a href="structAccessControlledSharedStruct.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a880ca5c0beef58fcf3aaa4d29db46d12"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SharedStruct_8hpp.html#a880ca5c0beef58fcf3aaa4d29db46d12">bool32</a> = uint32_t</td></tr>
+<tr class="memdesc:a880ca5c0beef58fcf3aaa4d29db46d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 32-bit boolean type to ensure alignment and packing of the shared structs.  <a href="SharedStruct_8hpp.html#a880ca5c0beef58fcf3aaa4d29db46d12">More...</a><br /></td></tr>
 <tr class="separator:a880ca5c0beef58fcf3aaa4d29db46d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a7af91af8db822b6a9615379153f05488"><td class="memItemLeft" align="right" valign="top">constexpr uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SharedStruct_8hpp.html#a7af91af8db822b6a9615379153f05488">SHARED_MEM_START_ADDRESS</a> = 0xFFFF0000</td></tr>
+<tr class="memdesc:a7af91af8db822b6a9615379153f05488"><td class="mdescLeft">&#160;</td><td class="mdescRight">The start address of the shared memory region in the On-Chip Memory (OCM).  <a href="SharedStruct_8hpp.html#a7af91af8db822b6a9615379153f05488">More...</a><br /></td></tr>
 <tr class="separator:a7af91af8db822b6a9615379153f05488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a227867db790f015614bc16fe7e616e41"><td class="memItemLeft" align="right" valign="top">constexpr uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SharedStruct_8hpp.html#a227867db790f015614bc16fe7e616e41">SHARED_MEM_LAST_ADDRESS</a> = 0xFFFFFFFF</td></tr>
+<tr class="memdesc:a227867db790f015614bc16fe7e616e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">The last valid address of the shared memory region in th On-Chip Memory.  <a href="SharedStruct_8hpp.html#a227867db790f015614bc16fe7e616e41">More...</a><br /></td></tr>
 <tr class="separator:a227867db790f015614bc16fe7e616e41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -156,7 +163,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SharedStruct_8hpp_source.html#l00009">9</a> of file <a class="el" href="SharedStruct_8hpp_source.html">SharedStruct.hpp</a>.</p>
+<p>A 32-bit boolean type to ensure alignment and packing of the shared structs. </p>
+
+<p class="definition">Definition at line <a class="el" href="SharedStruct_8hpp_source.html#l00010">10</a> of file <a class="el" href="SharedStruct_8hpp_source.html">SharedStruct.hpp</a>.</p>
 
 </div>
 </div>
@@ -181,7 +190,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SharedStruct_8hpp_source.html#l00012">12</a> of file <a class="el" href="SharedStruct_8hpp_source.html">SharedStruct.hpp</a>.</p>
+<p>The last valid address of the shared memory region in th On-Chip Memory. </p>
+
+<p class="definition">Definition at line <a class="el" href="SharedStruct_8hpp_source.html#l00015">15</a> of file <a class="el" href="SharedStruct_8hpp_source.html">SharedStruct.hpp</a>.</p>
 
 </div>
 </div>
@@ -205,7 +216,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SharedStruct_8hpp_source.html#l00011">11</a> of file <a class="el" href="SharedStruct_8hpp_source.html">SharedStruct.hpp</a>.</p>
+<p>The start address of the shared memory region in the On-Chip Memory (OCM). </p>
+
+<p class="definition">Definition at line <a class="el" href="SharedStruct_8hpp_source.html#l00013">13</a> of file <a class="el" href="SharedStruct_8hpp_source.html">SharedStruct.hpp</a>.</p>
 
 </div>
 </div>

@@ -174,8 +174,13 @@ class SharedMemory {
      * @brief   Proxy for the managed shared object.
      */
     volatile T *operator->() { return structdata; }
+    /**
+     * @brief   Const proxy for the managed shared object.
+     */
+    const volatile T *operator->() const { return structdata; }
 #else
     volatile T *operator->() { return structdata.get(); }
+    const volatile T *operator->() const { return structdata.get(); }
 #endif
 
   private:

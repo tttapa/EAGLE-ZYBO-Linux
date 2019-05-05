@@ -34,8 +34,8 @@ class CryptoPoller {
     uint16_t timeoutMilliseconds;
 
     void writeR0(uint32_t value);
-    uint32_t readR0();
-    uint32_t readR1();
+    uint32_t readR0() const;
+    uint32_t readR1() const;
 
     uint32_t poll(uint32_t mask, uint32_t previousValue);
     void initialize();

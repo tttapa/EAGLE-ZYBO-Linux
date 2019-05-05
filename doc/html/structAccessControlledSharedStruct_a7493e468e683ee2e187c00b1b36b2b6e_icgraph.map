@@ -1,4 +1,4 @@
 <map id="AccessControlledSharedStruct::isDoneWriting" name="AccessControlledSharedStruct::isDoneWriting">
-<area shape="rect" id="node1" title=" " alt="" coords="271,5,488,47"/>
-<area shape="rect" id="node2" href="$structAccessControlledSharedStruct.html#a477e70ae625da319ea9009728d3a5891" title=" " alt="" coords="5,5,223,47"/>
+<area shape="rect" id="node1" title="Check if the other party is done writing." alt="" coords="271,5,488,47"/>
+<area shape="rect" id="node2" href="$structAccessControlledSharedStruct.html#a477e70ae625da319ea9009728d3a5891" title="Read data from the communication struct." alt="" coords="5,5,223,47"/>
 </map>

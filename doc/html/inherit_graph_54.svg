@@ -22,7 +22,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="structAccessControlledSharedStruct.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="structAccessControlledSharedStruct.html" target="_top" xlink:title="A struct that adds access control to a communication struct. It ensures that data can only flow in th...">
 <polygon fill="#ffffff" stroke="#000000" points="210,-.5 210,-30.5 373,-30.5 373,-.5 210,-.5"/>
 <text text-anchor="start" x="218" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">AccessControlledSharedStruct</text>
 <text text-anchor="middle" x="291.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">&lt; T, Dir, Addr &gt;</text>
