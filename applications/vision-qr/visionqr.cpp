@@ -35,8 +35,11 @@ void loop() {
          << ANSIColors::reset << endl;
 
     // Initialize the logger
-    ThreadedLogger logger("239.0.0.2", 5003);
-    logger.begin(5ms);  // Spawns another thread and cleans up when destructed.
+    ThreadedLogger logger = Logger{"239.0.0.2", 5003};
+    // Make sure that Baremetal has initialized the logger
+    logger.checkInitialized();
+    // Spawns another thread, is cleaned up when destructed. Update every 5ms.
+    logger.begin(5ms);
 
     // Open camera 0
     cout << "Waiting for camera to be initialized ..." << endl;

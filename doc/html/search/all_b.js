@@ -21,7 +21,7 @@ var searchData=
   ['logentry',['LogEntry',['../structLogEntry.html',1,'LogEntry'],['../structPythonDroneLogEntry.html#a91147a06d6ece57b26bb0c206f6ca642',1,'PythonDroneLogEntry::logEntry()']]],
   ['logentry_2etemplate_2ecpp',['LogEntry.template.cpp',['../LogEntry_8template_8cpp.html',1,'']]],
   ['logentry_2etemplate_2eh',['LogEntry.template.h',['../LogEntry_8template_8h.html',1,'']]],
-  ['logger',['Logger',['../classLogger.html',1,'Logger'],['../classLogger.html#ac63949ee1dff6af25583db0ae4854465',1,'Logger::Logger()']]],
+  ['logger',['Logger',['../classLogger.html',1,'Logger'],['../classLogger.html#ac63949ee1dff6af25583db0ae4854465',1,'Logger::Logger(const char *group, int port)'],['../classLogger.html#a99a912d497c8163e1ff8c75d1a72cd7a',1,'Logger::Logger(Logger &amp;&amp;)=default']]],
   ['logger_2ecpp',['Logger.cpp',['../Logger_8cpp.html',1,'']]],
   ['logger_2edrone_2etemplate_2ecpp',['logger.drone.template.cpp',['../logger_8drone_8template_8cpp.html',1,'']]],
   ['logger_2ehpp',['Logger.hpp',['../Logger_8hpp.html',1,'']]],

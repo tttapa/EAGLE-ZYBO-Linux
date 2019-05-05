@@ -229,11 +229,12 @@ var NAVTREEINDEX1 =
 "classLocationTracker.html":[4,0,33],
 "classLocationTracker.html#a259a52389d4d7c4a5fe80aca35b789ea":[4,0,33,0],
 "classLogger.html":[4,0,35],
-"classLogger.html#a2b9adb1b8cbb5f92dde6149a5d0622ce":[4,0,35,2],
-"classLogger.html#a7c2769fb989bec4ea28ea1497a10a709":[4,0,35,3],
-"classLogger.html#aad628291154b62e38901798e39558839":[4,0,35,1],
+"classLogger.html#a2b9adb1b8cbb5f92dde6149a5d0622ce":[4,0,35,3],
+"classLogger.html#a7c2769fb989bec4ea28ea1497a10a709":[4,0,35,4],
+"classLogger.html#a99a912d497c8163e1ff8c75d1a72cd7a":[4,0,35,1],
+"classLogger.html#aad628291154b62e38901798e39558839":[4,0,35,2],
 "classLogger.html#ac63949ee1dff6af25583db0ae4854465":[4,0,35,0],
-"classLogger.html#ad905325c0f6a7f835e7e54c66e7300b2":[4,0,35,4],
+"classLogger.html#ad905325c0f6a7f835e7e54c66e7300b2":[4,0,35,5],
 "classMask.html":[4,0,36],
 "classMask.html#a209448a82e47f6ebf89f5b6fb8267dfa":[4,0,36,2],
 "classMask.html#a24f3c4e9b7197d2d72b590fb30c4ea10":[4,0,36,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classMulticastSender.html#a14b2b7cbac669d3298db4995b73a853f":[4,0,38,0],
 "classMulticastSender.html#a5dcdca39b45d2ca2e9c4627e960b6543":[4,0,38,4],
 "classMulticastSender.html#a789af3078fda563d6bb42b57a0ae5860":[4,0,38,5],
-"classMulticastSender.html#aa8f381568b0b483f7c93e0fc4755b4c7":[4,0,38,3],
-"classMulticastSender.html#ace8a13e9e68d3283062012df734ef204":[4,0,38,2]
+"classMulticastSender.html#aa8f381568b0b483f7c93e0fc4755b4c7":[4,0,38,3]
 };

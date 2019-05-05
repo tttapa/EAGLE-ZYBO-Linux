@@ -13,7 +13,7 @@ var searchData=
   ['isdonereading',['isDoneReading',['../structAccessControlledSharedStruct.html#ad8d58bd2049de9862ed36161bfb69404',1,'AccessControlledSharedStruct']]],
   ['isdonewriting',['isDoneWriting',['../structAccessControlledSharedStruct.html#a7493e468e683ee2e187c00b1b36b2b6e',1,'AccessControlledSharedStruct']]],
   ['isfinite',['isfinite',['../Array_8hpp.html#ab8a62286cf94935432fb15208c352d31',1,'Array.hpp']]],
-  ['isinitialized',['isInitialized',['../structSharedStruct.html#a6fc794134e699aa911382434d622e574',1,'SharedStruct::isInitialized()'],['../classLogger.html#a7c2769fb989bec4ea28ea1497a10a709',1,'Logger::isInitialized()']]],
+  ['isinitialized',['isInitialized',['../structSharedStruct.html#a6fc794134e699aa911382434d622e574',1,'SharedStruct::isInitialized()'],['../classLogger.html#a7c2769fb989bec4ea28ea1497a10a709',1,'Logger::isInitialized()'],['../classThreadedLogger.html#a4020c7a75f2ed7babfa9ee8177a75a59',1,'ThreadedLogger::isInitialized()']]],
   ['isqrready',['isQRReady',['../classQRCryptoManager.html#ac8322fafb7446800cf03117da4419ae1',1,'QRCryptoManager']]],
   ['isvalid',['isValid',['../structPixel.html#abfc8b21cd9bddb9c24829e83fa9095ba',1,'Pixel']]]
 ];

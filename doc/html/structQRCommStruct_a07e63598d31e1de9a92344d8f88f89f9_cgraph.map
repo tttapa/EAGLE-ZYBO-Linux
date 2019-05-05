@@ -1,5 +1,5 @@
 <map id="QRCommStruct::setQRStateBusy" name="QRCommStruct::setQRStateBusy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,42,240,69"/>
+<area shape="rect" id="node1" title="Change the state to QR_READING_BUSY." alt="" coords="5,42,240,69"/>
 <area shape="rect" id="node2" href="$structSharedStruct.html#ab84d9ff23f09b19bb8cf7f72ec9901fe" title=" " alt="" coords="288,5,507,47"/>
-<area shape="rect" id="node3" href="$structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" title=" " alt="" coords="296,71,499,98"/>
+<area shape="rect" id="node3" href="$structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" title="Get the current state of the QR/Crypto FSM." alt="" coords="296,71,499,98"/>
 </map>

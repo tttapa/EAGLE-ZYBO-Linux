@@ -1,8 +1,8 @@
 #pragma once
 
 #include <Logger.hpp>
-#include <future>
 #include <chrono>
+#include <future>
 
 /**
  * @brief   A class that manages a Logger and continuously updates it in a
@@ -13,12 +13,10 @@ class ThreadedLogger {
     /**
      * @brief   Construct a new ThreadedLogger object.
      * 
-     * @param   address 
-     *          The address to send the logging data to.
-     * @param   port 
-     *          The port to send the logging data to.
+     * @param   logger
+     *          The logger to manage.
      */
-    ThreadedLogger(const char *address, int port);
+    ThreadedLogger(Logger &&logger);
 
     /**
      * @brief   Destroy the ThreadedLogger object. This gracefully stops the 
@@ -34,6 +32,11 @@ class ThreadedLogger {
      *          The interval of the update rate.
      */
     void begin(std::chrono::microseconds interval);
+
+    /// @see    Logger::isInitialized
+    bool isInitialized() const { return logger.isInitialized(); }
+    /// @see    Logger::checkInitialized
+    void checkInitialized() const { logger.checkInitialized(); }
 
   private:
     bool started = false;

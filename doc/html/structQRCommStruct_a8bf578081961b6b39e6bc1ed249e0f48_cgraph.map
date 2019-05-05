@@ -1,6 +1,6 @@
 <map id="QRCommStruct::setTargetPosition" name="QRCommStruct::setTargetPosition">
 <area shape="rect" id="node1" title=" " alt="" coords="5,42,247,69"/>
-<area shape="rect" id="node2" href="$structQRCommStruct.html#ac39d369524dee12d352f73186a24d057" title=" " alt="" coords="295,42,536,69"/>
+<area shape="rect" id="node2" href="$structQRCommStruct.html#ac39d369524dee12d352f73186a24d057" title="Set the new target position, and change the state to NEW_TARGET." alt="" coords="295,42,536,69"/>
 <area shape="rect" id="node3" href="$structSharedStruct.html#ab84d9ff23f09b19bb8cf7f72ec9901fe" title=" " alt="" coords="584,5,803,47"/>
-<area shape="rect" id="node4" href="$structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" title=" " alt="" coords="592,71,795,98"/>
+<area shape="rect" id="node4" href="$structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" title="Get the current state of the QR/Crypto FSM." alt="" coords="592,71,795,98"/>
 </map>

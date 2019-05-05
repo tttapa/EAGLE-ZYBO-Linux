@@ -121,18 +121,24 @@ Collaboration diagram for QRCommStruct:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ada773a7d6d56a5539e2b99705d0b9dcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643c">QRFSMState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc">getQRState</a> () const volatile</td></tr>
+<tr class="memdesc:ada773a7d6d56a5539e2b99705d0b9dcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current state of the QR/Crypto FSM.  <a href="structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc">More...</a><br /></td></tr>
 <tr class="separator:ada773a7d6d56a5539e2b99705d0b9dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac39d369524dee12d352f73186a24d057"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQRCommStruct.html#ac39d369524dee12d352f73186a24d057">setTargetPosition</a> (<a class="el" href="structPosition.html">Position</a> target) volatile</td></tr>
+<tr class="memdesc:ac39d369524dee12d352f73186a24d057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the new target position, and change the state to NEW_TARGET.  <a href="structQRCommStruct.html#ac39d369524dee12d352f73186a24d057">More...</a><br /></td></tr>
 <tr class="separator:ac39d369524dee12d352f73186a24d057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bf578081961b6b39e6bc1ed249e0f48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQRCommStruct.html#a8bf578081961b6b39e6bc1ed249e0f48">setTargetPosition</a> (float x, float y) volatile</td></tr>
 <tr class="separator:a8bf578081961b6b39e6bc1ed249e0f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07e63598d31e1de9a92344d8f88f89f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQRCommStruct.html#a07e63598d31e1de9a92344d8f88f89f9">setQRStateBusy</a> () volatile</td></tr>
+<tr class="memdesc:a07e63598d31e1de9a92344d8f88f89f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the state to QR_READING_BUSY.  <a href="structQRCommStruct.html#a07e63598d31e1de9a92344d8f88f89f9">More...</a><br /></td></tr>
 <tr class="separator:a07e63598d31e1de9a92344d8f88f89f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f42a02288c7c26f81f732e3954fb334"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQRCommStruct.html#a3f42a02288c7c26f81f732e3954fb334">setQRStateError</a> () volatile</td></tr>
+<tr class="memdesc:a3f42a02288c7c26f81f732e3954fb334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the state to ERROR.  <a href="structQRCommStruct.html#a3f42a02288c7c26f81f732e3954fb334">More...</a><br /></td></tr>
 <tr class="separator:a3f42a02288c7c26f81f732e3954fb334"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a665691ffc37e14b2c4e88efae6446ef9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQRCommStruct.html#a665691ffc37e14b2c4e88efae6446ef9">setQRStateUnkown</a> () volatile</td></tr>
+<tr class="memdesc:a665691ffc37e14b2c4e88efae6446ef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the state to QR_UNKNOWN.  <a href="structQRCommStruct.html#a665691ffc37e14b2c4e88efae6446ef9">More...</a><br /></td></tr>
 <tr class="separator:a665691ffc37e14b2c4e88efae6446ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a525b111a30c2597762caf1faa8e26d85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQRCommStruct.html#a525b111a30c2597762caf1faa8e26d85">setQRStateLand</a> () volatile</td></tr>
+<tr class="memdesc:a525b111a30c2597762caf1faa8e26d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the state to LAND.  <a href="structQRCommStruct.html#a525b111a30c2597762caf1faa8e26d85">More...</a><br /></td></tr>
 <tr class="separator:a525b111a30c2597762caf1faa8e26d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structSharedStruct"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structSharedStruct')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structSharedStruct.html">SharedStruct&lt; QRCommStruct &gt;</a></td></tr>
 <tr class="memitem:a6fc794134e699aa911382434d622e574 inherit pub_methods_structSharedStruct"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSharedStruct.html#a6fc794134e699aa911382434d622e574">isInitialized</a> () const volatile</td></tr>
@@ -159,7 +165,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The struct for communication between QR/Crypto and ANC. </p>
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00078">78</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00081">81</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ada773a7d6d56a5539e2b99705d0b9dcc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada773a7d6d56a5539e2b99705d0b9dcc">&#9670;&nbsp;</a></span>getQRState()</h2>
@@ -184,7 +190,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00086">86</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p>Get the current state of the QR/Crypto FSM. </p>
+<dl class="section return"><dt>Returns</dt><dd>QRFSMState The state of the QR/Crypto FSM. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00095">95</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -217,7 +226,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00101">101</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p>Change the state to QR_READING_BUSY. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>The communication struct is not initialized yet. </td></tr>
+    <tr><td class="paramname">std::logic_error</td><td>The current state is not QR_READ_REQUEST. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00130">130</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -250,7 +268,15 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00109">109</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p>Change the state to ERROR. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>The communication struct is not initialized yet. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00144">144</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -283,7 +309,15 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00117">117</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p>Change the state to LAND. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>The communication struct is not initialized yet. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00164">164</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -316,7 +350,15 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00113">113</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p>Change the state to QR_UNKNOWN. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>The communication struct is not initialized yet. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00154">154</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -359,8 +401,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd>setTargetPosition(Position) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00097">97</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00118">118</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -394,7 +437,22 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00089">89</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p>Set the new target position, and change the state to NEW_TARGET. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>The new target position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>The communication struct is not initialized yet. </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Baremetal has not yet finished reading the previous target position. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00109">109</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -431,7 +489,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00084">84</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00087">87</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 
 </div>
 </div>

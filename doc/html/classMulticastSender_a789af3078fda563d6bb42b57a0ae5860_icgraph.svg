@@ -36,7 +36,7 @@
 <!-- Node16 -->
 <g id="node3" class="node">
 <title>Node16</title>
-<g id="a_node3"><a xlink:href="classLogger.html#ad905325c0f6a7f835e7e54c66e7300b2" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classLogger.html#ad905325c0f6a7f835e7e54c66e7300b2" target="_top" xlink:title="Update the logger: check if there is new logging data from Baremetal, and if so, send it over UDP.">
 <polygon fill="#ffffff" stroke="#000000" points="17.5,-.5 17.5,-19.5 106.5,-19.5 106.5,-.5 17.5,-.5"/>
 <text text-anchor="middle" x="62" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Logger::update</text>
 </a>

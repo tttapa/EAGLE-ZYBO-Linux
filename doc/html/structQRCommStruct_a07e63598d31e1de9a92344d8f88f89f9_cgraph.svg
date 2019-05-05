@@ -12,7 +12,7 @@
 <!-- Node5 -->
 <g id="node1" class="node">
 <title>Node5</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Change the state to QR_READING_BUSY.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-22.5 0,-41.5 176,-41.5 176,-22.5 0,-22.5"/>
 <text text-anchor="middle" x="88" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QRCommStruct::setQRStateBusy</text>
 </a>
@@ -37,7 +37,7 @@
 <!-- Node7 -->
 <g id="node3" class="node">
 <title>Node7</title>
-<g id="a_node3"><a xlink:href="structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" target="_top" xlink:title="Get the current state of the QR/Crypto FSM.">
 <polygon fill="#ffffff" stroke="#000000" points="218,-.5 218,-19.5 370,-19.5 370,-.5 218,-.5"/>
 <text text-anchor="middle" x="294" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QRCommStruct::getQRState</text>
 </a>

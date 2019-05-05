@@ -1,7 +1,7 @@
 #include <ThreadedLogger.hpp>
 
-ThreadedLogger::ThreadedLogger(const char *address, int port)
-    : logger(address, port) {}
+ThreadedLogger::ThreadedLogger(Logger &&logger)
+    : logger{std::move(logger)} {}
 
 ThreadedLogger::~ThreadedLogger() {
     if (started) {

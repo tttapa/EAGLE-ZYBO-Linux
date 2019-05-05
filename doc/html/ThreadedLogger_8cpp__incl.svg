@@ -13,10 +13,10 @@
 <g id="node1" class="node">
 <title>Node0</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="#000000" points="300,-280.5 300,-321.5 469,-321.5 469,-280.5 300,-280.5"/>
-<text text-anchor="start" x="308" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/pieter/GitHub</text>
-<text text-anchor="start" x="308" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/EAGLE&#45;ZYBO&#45;Linux/src</text>
-<text text-anchor="middle" x="384.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/logger/src/ThreadedLogger.cpp</text>
+<polygon fill="#bfbfbf" stroke="#000000" points="302,-280.5 302,-321.5 471,-321.5 471,-280.5 302,-280.5"/>
+<text text-anchor="start" x="310" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/pieter/GitHub</text>
+<text text-anchor="start" x="310" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/EAGLE&#45;ZYBO&#45;Linux/src</text>
+<text text-anchor="middle" x="386.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/logger/src/ThreadedLogger.cpp</text>
 </a>
 </g>
 </g>
@@ -24,16 +24,16 @@
 <g id="node2" class="node">
 <title>Node1</title>
 <g id="a_node2"><a xlink:href="ThreadedLogger_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="#ffffff" stroke="#000000" points="326.5,-224.5 326.5,-243.5 442.5,-243.5 442.5,-224.5 326.5,-224.5"/>
-<text text-anchor="middle" x="384.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ThreadedLogger.hpp</text>
+<polygon fill="#ffffff" stroke="#000000" points="328.5,-224.5 328.5,-243.5 444.5,-243.5 444.5,-224.5 328.5,-224.5"/>
+<text text-anchor="middle" x="386.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ThreadedLogger.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node0&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node0&#45;&gt;Node1</title>
-<path fill="none" stroke="#191970" d="M384.5,-280.168C384.5,-271.8226 384.5,-262.2471 384.5,-253.9879"/>
-<polygon fill="#191970" stroke="#191970" points="388.0001,-253.7804 384.5,-243.7805 381.0001,-253.7805 388.0001,-253.7804"/>
+<path fill="none" stroke="#191970" d="M386.5,-280.168C386.5,-271.8226 386.5,-262.2471 386.5,-253.9879"/>
+<polygon fill="#191970" stroke="#191970" points="390.0001,-253.7804 386.5,-243.7805 383.0001,-253.7805 390.0001,-253.7804"/>
 </g>
 <!-- Node2 -->
 <g id="node3" class="node">
@@ -47,38 +47,38 @@
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="#191970" d="M371.2618,-224.2455C359.819,-215.814 343.0704,-203.4729 329.7525,-193.6598"/>
-<polygon fill="#191970" stroke="#191970" points="331.7133,-190.757 321.5865,-187.6427 327.5609,-196.3924 331.7133,-190.757"/>
+<path fill="none" stroke="#191970" d="M372.9134,-224.2455C361.1695,-215.814 343.9801,-203.4729 330.3118,-193.6598"/>
+<polygon fill="#191970" stroke="#191970" points="332.0954,-190.6316 321.9309,-187.6427 328.0129,-196.3179 332.0954,-190.6316"/>
 </g>
 <!-- Node17 -->
 <g id="node18" class="node">
 <title>Node17</title>
 <g id="a_node18"><a xlink:title=" ">
-<polygon fill="#ffffff" stroke="#bfbfbf" points="361.5,-168.5 361.5,-187.5 407.5,-187.5 407.5,-168.5 361.5,-168.5"/>
-<text text-anchor="middle" x="384.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">future</text>
+<polygon fill="#ffffff" stroke="#bfbfbf" points="361.5,-168.5 361.5,-187.5 411.5,-187.5 411.5,-168.5 361.5,-168.5"/>
+<text text-anchor="middle" x="386.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">chrono</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node17 -->
 <g id="edge20" class="edge">
 <title>Node1&#45;&gt;Node17</title>
-<path fill="none" stroke="#191970" d="M384.5,-224.2455C384.5,-216.9382 384.5,-206.6944 384.5,-197.7046"/>
-<polygon fill="#191970" stroke="#191970" points="388.0001,-197.6426 384.5,-187.6427 381.0001,-197.6427 388.0001,-197.6426"/>
+<path fill="none" stroke="#191970" d="M386.5,-224.2455C386.5,-216.9382 386.5,-206.6944 386.5,-197.7046"/>
+<polygon fill="#191970" stroke="#191970" points="390.0001,-197.6426 386.5,-187.6427 383.0001,-197.6427 390.0001,-197.6426"/>
 </g>
 <!-- Node18 -->
 <g id="node19" class="node">
 <title>Node18</title>
 <g id="a_node19"><a xlink:title=" ">
-<polygon fill="#ffffff" stroke="#bfbfbf" points="425.5,-168.5 425.5,-187.5 475.5,-187.5 475.5,-168.5 425.5,-168.5"/>
-<text text-anchor="middle" x="450.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">chrono</text>
+<polygon fill="#ffffff" stroke="#bfbfbf" points="429.5,-168.5 429.5,-187.5 475.5,-187.5 475.5,-168.5 429.5,-168.5"/>
+<text text-anchor="middle" x="452.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">future</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node18 -->
 <g id="edge21" class="edge">
 <title>Node1&#45;&gt;Node18</title>
-<path fill="none" stroke="#191970" d="M395.9963,-224.2455C405.7442,-215.9746 419.9259,-203.9416 431.3798,-194.2232"/>
-<polygon fill="#191970" stroke="#191970" points="433.7747,-196.7813 439.1354,-187.6427 429.2459,-191.4437 433.7747,-196.7813"/>
+<path fill="none" stroke="#191970" d="M397.9963,-224.2455C407.7442,-215.9746 421.9259,-203.9416 433.3798,-194.2232"/>
+<polygon fill="#191970" stroke="#191970" points="435.7747,-196.7813 441.1354,-187.6427 431.2459,-191.4437 435.7747,-196.7813"/>
 </g>
 <!-- Node3 -->
 <g id="node4" class="node">
