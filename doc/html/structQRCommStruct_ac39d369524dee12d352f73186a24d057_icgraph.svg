@@ -12,7 +12,7 @@
 <!-- Node26 -->
 <g id="node1" class="node">
 <title>Node26</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Set the new target position, and change the state to NEW_TARGET.">
 <polygon fill="#bfbfbf" stroke="#000000" points="217,-.5 217,-19.5 398,-19.5 398,-.5 217,-.5"/>
 <text text-anchor="middle" x="307.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QRCommStruct::setTargetPosition</text>
 </a>

@@ -6,7 +6,7 @@ var searchData=
   ['center',['center',['../classGridFinder.html#ace2a9cb90cc19a295d0fbe934a79b7e0',1,'GridFinder']]],
   ['centerpointoutlineiterator',['CenterPointOutLineIterator',['../classCenterPointOutLineIterator.html#a1c3e333fca03afce181df6ed43153836',1,'CenterPointOutLineIterator']]],
   ['checkimagetype',['checkImageType',['../classMask.html#a278f890f8063043a92dd8d8104733661',1,'Mask']]],
-  ['checkinitialized',['checkInitialized',['../structSharedStruct.html#ab84d9ff23f09b19bb8cf7f72ec9901fe',1,'SharedStruct::checkInitialized()'],['../classLogger.html#a2b9adb1b8cbb5f92dde6149a5d0622ce',1,'Logger::checkInitialized()']]],
+  ['checkinitialized',['checkInitialized',['../structSharedStruct.html#ab84d9ff23f09b19bb8cf7f72ec9901fe',1,'SharedStruct::checkInitialized()'],['../classLogger.html#a2b9adb1b8cbb5f92dde6149a5d0622ce',1,'Logger::checkInitialized()'],['../classThreadedLogger.html#a12f00d01430f9cb026a43b0fcee649ae',1,'ThreadedLogger::checkInitialized()']]],
   ['checkline',['checkLine',['../classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d',1,'GridFinder']]],
   ['clamp',['clamp',['../Matrix_8hpp.html#adb959bd990ed4fd37ed02cd0202ca511',1,'Matrix.hpp']]],
   ['colvectorfromcpparray',['ColVectorFromCppArray',['../Matrix_8hpp.html#aeae40defd7db46d853d1b0411049d3df',1,'Matrix.hpp']]],

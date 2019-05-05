@@ -139,6 +139,7 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:ab3b6c7182154fd6aa17ac01d951d5fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The struct for communication between vision and ANC.  <a href="BaremetalCommunicationDef_8hpp.html#ab3b6c7182154fd6aa17ac01d951d5fbd">More...</a><br /></td></tr>
 <tr class="separator:ab3b6c7182154fd6aa17ac01d951d5fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1adba5b348f415898b688242a6a28927"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="BaremetalCommunicationDef_8hpp.html#a1adba5b348f415898b688242a6a28927">AccessControlledLogEntry</a> = <a class="el" href="structAccessControlledSharedStruct.html">AccessControlledSharedStruct</a>&lt; <a class="el" href="structLogEntry.html">LogEntry</a>, <a class="el" href="structBaremetal2Linux.html">Baremetal2Linux</a>, <a class="el" href="SharedStruct_8hpp.html#a7af91af8db822b6a9615379153f05488">SHARED_MEM_START_ADDRESS</a>+0x1000 &gt;</td></tr>
+<tr class="memdesc:a1adba5b348f415898b688242a6a28927"><td class="mdescLeft">&#160;</td><td class="mdescRight">The struct for communicating logging data from Baremetal to Linux.  <a href="BaremetalCommunicationDef_8hpp.html#a1adba5b348f415898b688242a6a28927">More...</a><br /></td></tr>
 <tr class="separator:a1adba5b348f415898b688242a6a28927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -181,7 +182,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00136">136</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p>The struct for communicating logging data from Baremetal to Linux. </p>
+
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00224">224</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 
 </div>
 </div>
@@ -199,7 +202,7 @@ Functions</h2></td></tr>
 
 <p>The struct for communication between vision and ANC. </p>
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00073">73</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00076">76</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 
 </div>
 </div>
@@ -226,9 +229,12 @@ Functions</h2></td></tr>
 
 <p>The different flight modes of the drone. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6a60337a24d8bfef665223e69b81c465aa60a6a471c0681e5a49c4f5d00f6bc5a"></a>MANUAL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6a60337a24d8bfef665223e69b81c465a3c2854eaaa72c35445317d8505a9e388"></a>ALTITUDE_HOLD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6a60337a24d8bfef665223e69b81c465ade7d660fc991e08c2d3526fec8a46c4a"></a>AUTONOMOUS&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6a60337a24d8bfef665223e69b81c465aa60a6a471c0681e5a49c4f5d00f6bc5a"></a>MANUAL&#160;</td><td class="fielddoc"><p>Flying using just the attitude controller. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a6a60337a24d8bfef665223e69b81c465a3c2854eaaa72c35445317d8505a9e388"></a>ALTITUDE_HOLD&#160;</td><td class="fielddoc"><p>Flying using the attitude and altitude controllers. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a6a60337a24d8bfef665223e69b81c465ade7d660fc991e08c2d3526fec8a46c4a"></a>AUTONOMOUS&#160;</td><td class="fielddoc"><p>Flying autonomously, using the camera as well. </p>
+</td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00032">32</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
@@ -312,7 +318,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00056">56</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BaremetalCommunicationDef_8hpp_source.html#l00059">59</a> of file <a class="el" href="BaremetalCommunicationDef_8hpp_source.html">BaremetalCommunicationDef.hpp</a>.</p>
 
 </div>
 </div>

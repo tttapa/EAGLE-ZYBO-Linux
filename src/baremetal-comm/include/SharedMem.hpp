@@ -40,6 +40,10 @@ class SharedMemReferenceCounter {
     SharedMemReferenceCounter(const SharedMemReferenceCounter &) = delete;
     SharedMemReferenceCounter &
     operator=(const SharedMemReferenceCounter &) = delete;
+    // Keep move constructor and assignment
+    SharedMemReferenceCounter(SharedMemReferenceCounter &&) = default;
+    SharedMemReferenceCounter &
+    operator=(SharedMemReferenceCounter &&) = default;
 
     int getFileDescriptor() const { return mem_fd; }
 
@@ -128,6 +132,9 @@ class SharedMemory {
 
     SharedMemory(const SharedMemory &) = delete;
     SharedMemory &operator=(const SharedMemory &) = delete;
+    SharedMemory(SharedMemory &&)                 = default;
+    SharedMemory &operator=(SharedMemory &&) = default;
+
     volatile T *ptr() { return structdata; }
 
 #ifdef ZYBO

@@ -21,7 +21,7 @@
 <!-- Node19 -->
 <g id="node2" class="node">
 <title>Node19</title>
-<g id="a_node2"><a xlink:href="structQRCommStruct.html#ac39d369524dee12d352f73186a24d057" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="structQRCommStruct.html#ac39d369524dee12d352f73186a24d057" target="_top" xlink:title="Set the new target position, and change the state to NEW_TARGET.">
 <polygon fill="#ffffff" stroke="#000000" points="217,-22.5 217,-41.5 398,-41.5 398,-22.5 217,-22.5"/>
 <text text-anchor="middle" x="307.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QRCommStruct::setTargetPosition</text>
 </a>
@@ -52,7 +52,7 @@
 <!-- Node21 -->
 <g id="node4" class="node">
 <title>Node21</title>
-<g id="a_node4"><a xlink:href="structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" target="_top" xlink:title="Get the current state of the QR/Crypto FSM.">
 <polygon fill="#ffffff" stroke="#000000" points="440,-.5 440,-19.5 592,-19.5 592,-.5 440,-.5"/>
 <text text-anchor="middle" x="516" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QRCommStruct::getQRState</text>
 </a>

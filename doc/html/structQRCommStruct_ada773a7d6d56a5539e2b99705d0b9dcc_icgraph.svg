@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Get the current state of the QR/Crypto FSM.">
 <polygon fill="#bfbfbf" stroke="#000000" points="434,-19.5 434,-38.5 586,-38.5 586,-19.5 434,-19.5"/>
 <text text-anchor="middle" x="510" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QRCommStruct::getQRState</text>
 </a>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structQRCommStruct.html#ac39d369524dee12d352f73186a24d057" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="structQRCommStruct.html#ac39d369524dee12d352f73186a24d057" target="_top" xlink:title="Set the new target position, and change the state to NEW_TARGET.">
 <polygon fill="#ffffff" stroke="#000000" points="217,-38.5 217,-57.5 398,-57.5 398,-38.5 217,-38.5"/>
 <text text-anchor="middle" x="307.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QRCommStruct::setTargetPosition</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="structQRCommStruct.html#a07e63598d31e1de9a92344d8f88f89f9" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="structQRCommStruct.html#a07e63598d31e1de9a92344d8f88f89f9" target="_top" xlink:title="Change the state to QR_READING_BUSY.">
 <polygon fill="#ffffff" stroke="#000000" points="219.5,-.5 219.5,-19.5 395.5,-19.5 395.5,-.5 219.5,-.5"/>
 <text text-anchor="middle" x="307.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QRCommStruct::setQRStateBusy</text>
 </a>

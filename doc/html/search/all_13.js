@@ -6,7 +6,7 @@ var searchData=
   ['template_5fgridfinder',['TEMPLATE_GRIDFINDER',['../Grid-Finder_8module_8hpp.html#a62a46c0a2ad2b30811763a9a921da02e',1,'Grid-Finder.module.hpp']]],
   ['test',['test',['../LocationFinder_8hpp.html#ac8da963855e09bf929c085486f4a3b47',1,'test():&#160;LocationFinder.cpp'],['../LocationFinder_8cpp.html#ac8da963855e09bf929c085486f4a3b47',1,'test():&#160;LocationFinder.cpp']]],
   ['teye',['Teye',['../Matrix_8hpp.html#a8ea96ff7a9005c051acff866b2cba45c',1,'Matrix.hpp']]],
-  ['threadedlogger',['ThreadedLogger',['../classThreadedLogger.html',1,'ThreadedLogger'],['../classThreadedLogger.html#a5e46fd5c0256d88723c5ed6612c77c5e',1,'ThreadedLogger::ThreadedLogger()']]],
+  ['threadedlogger',['ThreadedLogger',['../classThreadedLogger.html',1,'ThreadedLogger'],['../classThreadedLogger.html#a17519c47925ff6ab93d363678f4b084f',1,'ThreadedLogger::ThreadedLogger()']]],
   ['threadedlogger_2ecpp',['ThreadedLogger.cpp',['../ThreadedLogger_8cpp.html',1,'']]],
   ['threadedlogger_2ehpp',['ThreadedLogger.hpp',['../ThreadedLogger_8hpp.html',1,'']]],
   ['threshold_2ehpp',['Threshold.hpp',['../Threshold_8hpp.html',1,'']]],

@@ -1,0 +1,4 @@
+<map id="Logger::checkInitialized" name="Logger::checkInitialized">
+<area shape="rect" id="node1" title="Make sure that the logger is initialized by Baremetal." alt="" coords="291,5,467,32"/>
+<area shape="rect" id="node2" href="$classThreadedLogger.html#a12f00d01430f9cb026a43b0fcee649ae" title=" " alt="" coords="5,5,243,32"/>
+</map>

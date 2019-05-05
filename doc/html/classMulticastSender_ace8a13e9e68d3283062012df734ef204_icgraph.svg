@@ -21,7 +21,7 @@
 <!-- Node6 -->
 <g id="node2" class="node">
 <title>Node6</title>
-<g id="a_node2"><a xlink:href="classLogger.html#aad628291154b62e38901798e39558839" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classLogger.html#aad628291154b62e38901798e39558839" target="_top" xlink:title="Initialize the logger.">
 <polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-19.5 83,-19.5 83,-.5 0,-.5"/>
 <text text-anchor="middle" x="41.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Logger::begin</text>
 </a>
