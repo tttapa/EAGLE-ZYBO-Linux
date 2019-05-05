@@ -68,6 +68,7 @@ var hierarchy =
       [ "QRCommStruct", "structQRCommStruct.html", null ]
     ] ],
     [ "Square", "structSquare.html", null ],
+    [ "ThreadedLogger", "classThreadedLogger.html", null ],
     [ "TimeFunctionT< T >", "structTimeFunctionT.html", [
       [ "ConstantTimeFunctionT< T >", "structConstantTimeFunctionT.html", null ],
       [ "FunctionalTimeFunctionT< T >", "structFunctionalTimeFunctionT.html", null ],

@@ -1,0 +1,3 @@
+<map id="ThreadedLogger" name="ThreadedLogger">
+<area shape="rect" id="node1" title="A class that manages a Logger and continuously updates it in a different thread, until it is destroye..." alt="" coords="5,5,168,112"/>
+</map>

@@ -1,12 +1,14 @@
 <map id="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/comm/include/SharedMem.hpp" name="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/comm/include/SharedMem.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="323,5,550,61"/>
+<area shape="rect" id="node1" title=" " alt="" coords="327,5,554,61"/>
 <area shape="rect" id="node2" href="$SharedMem_8cpp.html" title=" " alt="" coords="5,117,204,173"/>
 <area shape="rect" id="node3" href="$cryptoPoller_8hpp.html" title=" " alt="" coords="228,117,427,173"/>
-<area shape="rect" id="node7" href="$Logger_8hpp.html" title=" " alt="" coords="451,117,644,173"/>
-<area shape="rect" id="node9" href="$QRCryptoManager_8hpp.html" title=" " alt="" coords="668,109,867,180"/>
-<area shape="rect" id="node4" href="$cryptoPoller_8cpp.html" title=" " alt="" coords="31,235,229,291"/>
-<area shape="rect" id="node5" href="$ketje_8hpp.html" title=" " alt="" coords="253,235,425,291"/>
-<area shape="rect" id="node6" href="$ketje_8cpp.html" title=" " alt="" coords="253,347,425,403"/>
-<area shape="rect" id="node8" href="$Logger_8cpp.html" title=" " alt="" coords="461,235,633,291"/>
-<area shape="rect" id="node10" href="$QRCryptoManager_8cpp.html" title=" " alt="" coords="681,228,853,299"/>
+<area shape="rect" id="node7" href="$Logger_8hpp.html" title=" " alt="" coords="459,117,652,173"/>
+<area shape="rect" id="node11" href="$QRCryptoManager_8hpp.html" title=" " alt="" coords="783,109,981,180"/>
+<area shape="rect" id="node4" href="$cryptoPoller_8cpp.html" title=" " alt="" coords="9,235,208,291"/>
+<area shape="rect" id="node5" href="$ketje_8hpp.html" title=" " alt="" coords="232,235,404,291"/>
+<area shape="rect" id="node6" href="$ketje_8cpp.html" title=" " alt="" coords="232,347,404,403"/>
+<area shape="rect" id="node8" href="$ThreadedLogger_8hpp.html" title=" " alt="" coords="428,235,683,291"/>
+<area shape="rect" id="node10" href="$Logger_8cpp.html" title=" " alt="" coords="707,235,879,291"/>
+<area shape="rect" id="node9" href="$ThreadedLogger_8cpp.html" title=" " alt="" coords="443,347,668,403"/>
+<area shape="rect" id="node12" href="$QRCryptoManager_8cpp.html" title=" " alt="" coords="903,228,1075,299"/>
 </map>

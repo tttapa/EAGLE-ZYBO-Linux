@@ -54,6 +54,7 @@ var annotated_dup =
     [ "SharedMemReferenceCounter", "classSharedMemReferenceCounter.html", "classSharedMemReferenceCounter" ],
     [ "SharedStruct", "structSharedStruct.html", "structSharedStruct" ],
     [ "Square", "structSquare.html", "structSquare" ],
+    [ "ThreadedLogger", "classThreadedLogger.html", "classThreadedLogger" ],
     [ "TimeFunctionT", "structTimeFunctionT.html", "structTimeFunctionT" ],
     [ "VisionData", "structVisionData.html", "structVisionData" ]
 ];

@@ -5,7 +5,8 @@
 #include <chrono>
 
 /**
- * @brief   A class that manages a logger and updates it in a different thread.
+ * @brief   A class that manages a Logger and continuously updates it in a
+ *          different thread, until it is destroyed.
  */
 class ThreadedLogger {
   public:

@@ -1,18 +1,20 @@
 <map id="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/utilities/include/ANSIColors.hpp" name="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/utilities/include/ANSIColors.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="432,5,663,61"/>
-<area shape="rect" id="node2" href="$baremetal-comm_2include_2SharedMem_8hpp.html" title=" " alt="" coords="219,109,409,180"/>
-<area shape="rect" id="node3" href="$comm_2include_2SharedMem_8hpp.html" title=" " alt="" coords="434,117,661,173"/>
-<area shape="rect" id="node13" href="$GridFinder_8hpp.html" title=" " alt="" coords="872,117,1113,173"/>
+<area shape="rect" id="node1" title=" " alt="" coords="441,5,672,61"/>
+<area shape="rect" id="node2" href="$baremetal-comm_2include_2SharedMem_8hpp.html" title=" " alt="" coords="228,109,419,180"/>
+<area shape="rect" id="node3" href="$comm_2include_2SharedMem_8hpp.html" title=" " alt="" coords="443,117,670,173"/>
+<area shape="rect" id="node15" href="$GridFinder_8hpp.html" title=" " alt="" coords="881,117,1123,173"/>
 <area shape="rect" id="node4" href="$SharedMem_8cpp.html" title=" " alt="" coords="5,235,204,291"/>
 <area shape="rect" id="node5" href="$cryptoPoller_8hpp.html" title=" " alt="" coords="228,235,427,291"/>
-<area shape="rect" id="node9" href="$Logger_8hpp.html" title=" " alt="" coords="451,235,644,291"/>
-<area shape="rect" id="node11" href="$QRCryptoManager_8hpp.html" title=" " alt="" coords="668,228,867,299"/>
-<area shape="rect" id="node6" href="$cryptoPoller_8cpp.html" title=" " alt="" coords="31,354,229,410"/>
-<area shape="rect" id="node7" href="$ketje_8hpp.html" title=" " alt="" coords="253,354,425,410"/>
-<area shape="rect" id="node8" href="$ketje_8cpp.html" title=" " alt="" coords="253,465,425,521"/>
-<area shape="rect" id="node10" href="$Logger_8cpp.html" title=" " alt="" coords="461,354,633,410"/>
-<area shape="rect" id="node12" href="$QRCryptoManager_8cpp.html" title=" " alt="" coords="681,347,853,417"/>
-<area shape="rect" id="node14" href="$LocationFinder_8cpp.html" title=" " alt="" coords="891,228,1094,299"/>
-<area shape="rect" id="node15" href="$Grid-Finder_8module_8hpp.html" title=" " alt="" coords="1119,228,1296,299"/>
-<area shape="rect" id="node16" href="$Grid-Finder_8module_8cpp.html" title=" " alt="" coords="1121,347,1293,417"/>
+<area shape="rect" id="node9" href="$Logger_8hpp.html" title=" " alt="" coords="460,235,653,291"/>
+<area shape="rect" id="node13" href="$QRCryptoManager_8hpp.html" title=" " alt="" coords="677,228,876,299"/>
+<area shape="rect" id="node6" href="$cryptoPoller_8cpp.html" title=" " alt="" coords="11,354,209,410"/>
+<area shape="rect" id="node7" href="$ketje_8hpp.html" title=" " alt="" coords="233,354,405,410"/>
+<area shape="rect" id="node8" href="$ketje_8cpp.html" title=" " alt="" coords="233,465,405,521"/>
+<area shape="rect" id="node10" href="$ThreadedLogger_8hpp.html" title=" " alt="" coords="429,354,684,410"/>
+<area shape="rect" id="node12" href="$Logger_8cpp.html" title=" " alt="" coords="708,354,880,410"/>
+<area shape="rect" id="node11" href="$ThreadedLogger_8cpp.html" title=" " alt="" coords="444,465,669,521"/>
+<area shape="rect" id="node14" href="$QRCryptoManager_8cpp.html" title=" " alt="" coords="904,347,1076,417"/>
+<area shape="rect" id="node16" href="$LocationFinder_8cpp.html" title=" " alt="" coords="901,228,1103,299"/>
+<area shape="rect" id="node17" href="$Grid-Finder_8module_8hpp.html" title=" " alt="" coords="1128,228,1305,299"/>
+<area shape="rect" id="node18" href="$Grid-Finder_8module_8cpp.html" title=" " alt="" coords="1131,347,1303,417"/>
 </map>

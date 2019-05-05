@@ -66,8 +66,8 @@ var NAVTREEINDEX =
 [
 "ANSIColors_8hpp.html",
 "NEON-PrintHelpers_8hpp.html#ac32840bdab1fd7cffffa6263b7dda76b",
-"classPerfTimer.html#a9d88e8916bfe284793237a726d81ca1c",
-"original-wrapper_8c_source.html"
+"classMulticastSender.html#afd6955e97ea8b4b727ab8639b41f8bc4",
+"original-wrapper_8c.html#a85819fedb3e10c38a2ecab098c12294a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

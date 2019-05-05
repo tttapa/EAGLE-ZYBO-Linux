@@ -34,6 +34,10 @@ var NAVTREEINDEX1 =
 "Square_8hpp.html":[5,0,0,15,0,4],
 "Square_8hpp.html#ace3999c20c4c886c00503d56c69ae204":[5,0,0,15,0,4,0],
 "Square_8hpp_source.html":[5,0,0,15,0,4],
+"ThreadedLogger_8cpp.html":[5,0,0,8,1,2],
+"ThreadedLogger_8cpp_source.html":[5,0,0,8,1,2],
+"ThreadedLogger_8hpp.html":[5,0,0,8,0,2],
+"ThreadedLogger_8hpp_source.html":[5,0,0,8,0,2],
 "Threshold_8hpp.html":[5,0,0,9,1,5],
 "Threshold_8hpp.html#a08244d068ef200746f5f2b693268c711":[5,0,0,9,1,5,1],
 "Threshold_8hpp.html#a2a9190a6a918e4b958f900c155f94420":[5,0,0,9,1,5,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "classMulticastSender.html#a5dcdca39b45d2ca2e9c4627e960b6543":[4,0,38,4],
 "classMulticastSender.html#a789af3078fda563d6bb42b57a0ae5860":[4,0,38,5],
 "classMulticastSender.html#aa8f381568b0b483f7c93e0fc4755b4c7":[4,0,38,3],
-"classMulticastSender.html#ace8a13e9e68d3283062012df734ef204":[4,0,38,2],
-"classMulticastSender.html#afd6955e97ea8b4b727ab8639b41f8bc4":[4,0,38,1],
-"classPerfTimer.html":[4,0,39],
-"classPerfTimer.html#a4d76e90eda37bbfeb0cb1b79292d9640":[4,0,39,2],
-"classPerfTimer.html#a73d9eb85b4ef3955f61435355181b0a0":[4,0,39,0]
+"classMulticastSender.html#ace8a13e9e68d3283062012df734ef204":[4,0,38,2]
 };
