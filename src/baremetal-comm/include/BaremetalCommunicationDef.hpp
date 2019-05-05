@@ -10,32 +10,69 @@
  * @brief   The states of the QR/Crypto state machine.
  */
 enum class QRFSMState : int32_t {
-    /// Not doing anything
+    /// No group is busy with QR codes.
     IDLE = 0,
-    /// ANC requests a QR code read
+    /// The ANC team has requested a QR code to be read.
     READ_REQUEST = 1,
-    /// The QR reader is busy reading
+    /// The Image Processing team is busy reading the QR code.
     READING_BUSY = 2,
-    /// Crypto read a new target
+    /// The Cryptography team has decoded a new target.
     NEW_TARGET = 3,
-    /// Crypto read a land command
+    /// The Cryptography team has decoded a landing instruction.
     LAND = 4,
-    /// Crypto read an unknown QR code
+    /// The Cryptography team has decoded an unknown instruction.
     UNKNOWN = 5,
-    /// An error has occurred
+    /// The Cryptography team could not decode the image sent to them.
     ERROR = -1,
 };
 
 /**
- * @brief   The different flight modes of the drone.
+ * Struct containing the four different flight modes. First, the drone begins in
+ * the UNINITIALIZED flight mode. After the first cycle, the drone will enter
+ * the current flight mode, as specified by the RC. In MANUAL_MODE, the pilot
+ * has full control over the drone's orientation and the common thrust. In
+ * ALTITUDE_HOLD_MODE, the pilot still has control over the drone's orientation,
+ * but the altitude controller takes over the common thrust in order to keep the
+ * drone at a constant height. Finally, in AUTONOMOUS_MODE, the pilot has no
+ * control over the attitude or altitude of the drone. The drone will navigate
+ * autonomously to successive QR codes and land at its final code. As a safety
+ * precaution, if the pilot sets the throttle to zero during the autonomous
+ * flight, the drone will land at its current location.
  */
 enum class FlightMode : int32_t {
-    /// Flying using just the attitude controller
-    MANUAL        = 0,
-    /// Flying using the attitude and altitude controllers
-    ALTITUDE_HOLD = 1,
-    /// Flying autonomously, using the camera as well
-    AUTONOMOUS    = 2,
+
+    /**
+     * The drone is in its first clock cycle and has not yet entered a flight
+     * mode.
+     */
+    UNINITIALIZED = 0,
+
+    /**
+     * The drone is in "manual mode". The pilot has control over the drone's
+     * orientation and the common thrust.
+     */
+    MANUAL = 1,
+
+    /**
+     * The drone is in "altitude-hold mode". The pilot has control over drone's
+     * orientation, but the altitude controller takes over the common thrust in
+     * order to keep the drone at a constant altitude.
+     */
+    ALTITUDE_HOLD = 2,
+
+    /**
+     * The drone is in "autonomous mode". The pilot has no control over the
+     * attitude or altitude of the drone. If the drone is grounded when entering
+     * this flight mode, then it will take off as soon as the pilot raises the
+     * throttle above the predetermined threshold (see Autonomous.hpp). If the
+     * drone was already airborne when entering this flight mode, then this step
+     * will be skipped. Then, the drone will loiter at its current position for
+     * a predetermined time (see Autonomous.hpp). After that, it will navigate
+     * autonomously to successive QR codes and finally land at its final code.
+     * As a safety precaution, if the pilot sets the throttle to zero during the
+     * autonomous flight, the drone will land at its current location.
+     */
+    AUTONOMOUS = 3,
 };
 
 /**
