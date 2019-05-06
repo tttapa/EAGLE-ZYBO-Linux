@@ -34,6 +34,11 @@ class BitString {
     friend bool operator==(const BitString &bitString1,
                            const BitString &bitString2);
 
+    friend bool operator!=(const BitString &bitString1,
+                           const BitString &bitString2);
+
     friend std::ostream &operator<<(std::ostream &out,
                                     const BitString &bitString);
+
+    BitString &operator=(const BitString bitString);
 };
