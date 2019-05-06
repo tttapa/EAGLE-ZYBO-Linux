@@ -25,6 +25,7 @@ var searchData=
   ['getinstructiontype',['getInstructionType',['../classCryptoInstruction.html#abf404632060ee7fdf292868fb62cd786',1,'CryptoInstruction']]],
   ['getlength',['getLength',['../classBitString.html#a39bc6a3bef8f84d2dec75174b35abf89',1,'BitString']]],
   ['getlocation',['getLocation',['../classLocationFinder.html#a93be2c4b05b52c58f5fca5d1514dfbe9',1,'LocationFinder']]],
+  ['getlogdata',['getLogData',['../logger_8drone_8template_8cpp.html#a77bc7fd7984cccf33ce927a54d026216',1,'logger.drone.template.cpp']]],
   ['getmaskimage',['getMaskImage',['../classLocationFinder.html#a8b744cc11a3ea16520c0b0cbf4b6a140',1,'LocationFinder']]],
   ['getmiddle',['getMiddle',['../classGridFinder.html#abcd46f31e256080b2d5d2aee03c0e258',1,'GridFinder']]],
   ['getmiddleresult',['GetMiddleResult',['../structGetMiddleResult.html',1,'']]],

@@ -223,7 +223,7 @@ var NAVTREEINDEX2 =
 "ketje_8hpp.html":[5,0,0,3,1,6],
 "ketje_8hpp_source.html":[5,0,0,3,1,6],
 "logger_8drone_8template_8cpp.html":[5,0,0,7,0,3],
-"logger_8drone_8template_8cpp.html#a66d17868f5a5bcc68dc70243bb439959":[5,0,0,7,0,3,0],
+"logger_8drone_8template_8cpp.html#a77bc7fd7984cccf33ce927a54d026216":[5,0,0,7,0,3,0],
 "logger_8drone_8template_8cpp_source.html":[5,0,0,7,0,3],
 "md_Getting-Started.html":[0],
 "md_Status-Quaestionis.html":[1],

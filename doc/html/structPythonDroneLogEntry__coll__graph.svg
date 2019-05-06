@@ -25,7 +25,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structLogEntry.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="structLogEntry.html" target="_top" xlink:title="A struct for encapsulating all logging data. It has Python bindings, so it can be used with the GUI d...">
 <polygon fill="#ffffff" stroke="#000000" points="31.5,-105.5 31.5,-162.5 90.5,-162.5 90.5,-105.5 31.5,-105.5"/>
 <text text-anchor="middle" x="61" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">LogEntry</text>
 <polyline fill="none" stroke="#000000" points="31.5,-143.5 90.5,-143.5 "/>

@@ -1,4 +1,5 @@
-# Code generator for logger
+#-------------------------- Code generator for logger -------------------------#
+#------------------------------------------------------------------------------#
 
 add_custom_command(
     OUTPUT
@@ -16,6 +17,9 @@ add_custom_command(
         templates/logger.drone.template.cpp
         templates/LogEntry.template.h
 )
+
+#------------------------------- Library target -------------------------------#
+#------------------------------------------------------------------------------#
 
 # Create library target and specify the implementation files to compile.
 add_library(logentry
@@ -49,31 +53,42 @@ target_compile_features(logentry PUBLIC cxx_std_17)
 #   Libraries that are used in the public header files should be public,
 #   libraries that are only used in the implementation files should be private.
 # target_link_libraries(logentry
-#     PRIVATE 
-#         comm
+#     PUBLIC
+#         ...
+#     PRIVATE
+#         ...
 # )
+
+#--------------------------------- Unit tests ---------------------------------#
+#------------------------------------------------------------------------------#
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
 # adds the tests.
-# add_subdirectory(test)
+# add_subdirectory(test) # TODO
 
-# Python Logger module for Toby
+#------------------------ Python Logger module for GUI ------------------------#
+#------------------------------------------------------------------------------#
 
 if(NOT CMAKE_CROSSCOMPILING)
 
-    set(DRONELOGGER_INCLUDE_DIR 
-        include-generated)
-    set(DRONELOGGER_MODULE_SOURCE 
-        src-generated/DroneLogger.py.c)
-    configure_file(setup.py.in setup.py @ONLY)
+set(DRONELOGGER_INCLUDE_DIR 
+    include-generated)
+set(DRONELOGGER_MODULE_SOURCE 
+    src-generated/DroneLogger.py.c)
+configure_file(setup.py.in setup.py @ONLY)
 
-    add_custom_target(PythonDroneLogger
-        COMMAND
-            ${PYTHON_EXECUTABLE} setup.py bdist_wheel &&
-            ${PYTHON_EXECUTABLE} -m pip install --user --upgrade dist/*.whl
-        DEPENDS
-            logentry
-            src-generated/DroneLogger.py.c
-    )
+add_custom_target(PythonDroneLogger
+    COMMAND
+        ${PYTHON_EXECUTABLE} setup.py bdist_wheel &&
+        ${PYTHON_EXECUTABLE} -m pip install --user --upgrade dist/*.whl
+    DEPENDS
+        logentry
+        src-generated/DroneLogger.py.c
+)
 
 endif()
+
+#-------------------- Installation for use with Baremetal ---------------------#
+#------------------------------------------------------------------------------#
+
+# install() # TODO

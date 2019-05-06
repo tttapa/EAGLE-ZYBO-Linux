@@ -17,7 +17,6 @@ var searchData=
   ['locationfinder_2ehpp',['LocationFinder.hpp',['../LocationFinder_8hpp.html',1,'']]],
   ['locationtracker',['LocationTracker',['../classLocationTracker.html',1,'']]],
   ['locationtracker_2ehpp',['LocationTracker.hpp',['../LocationTracker_8hpp.html',1,'']]],
-  ['log_5fdata',['log_data',['../logger_8drone_8template_8cpp.html#a66d17868f5a5bcc68dc70243bb439959',1,'logger.drone.template.cpp']]],
   ['logentry',['LogEntry',['../structLogEntry.html',1,'LogEntry'],['../structPythonDroneLogEntry.html#a91147a06d6ece57b26bb0c206f6ca642',1,'PythonDroneLogEntry::logEntry()']]],
   ['logentry_2etemplate_2ecpp',['LogEntry.template.cpp',['../LogEntry_8template_8cpp.html',1,'']]],
   ['logentry_2etemplate_2eh',['LogEntry.template.h',['../LogEntry_8template_8h.html',1,'']]],

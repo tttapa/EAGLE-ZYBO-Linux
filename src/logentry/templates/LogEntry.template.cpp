@@ -2,4 +2,4 @@
 #include <LogEntry.h>
 #include <cstring>  // memcpy
 
-$c_functions 
+$c_functions

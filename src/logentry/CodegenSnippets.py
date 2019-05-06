@@ -109,11 +109,11 @@ def c_get_array_length(name: str):
 
 
 def c_assignment(name: str, c_assign: str):
-    return 2 * "    " + settername(name) + "(logEntry, " + c_assign + ");"
+    return "    " + settername(name) + "(logEntry, " + c_assign + ");"
 
 
 def cpp_assignment(name: str, cpp_assign: str):
-    return 2 * "    " + "logEntry." + settername(name) + "(" + cpp_assign + ");"
+    return "    " + "logEntry." + settername(name) + "(" + cpp_assign + ");"
 
 
 c_python_types = {"float": "PyFloat", "uint32_t": "PyLong", "uint64_t": "PyLong", "int32_t": "PyLong"}
