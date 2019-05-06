@@ -1,4 +1,4 @@
 <map id="PythonDroneLogEntry" name="PythonDroneLogEntry">
 <area shape="rect" id="node1" title=" " alt="" coords="5,145,168,223"/>
-<area shape="rect" id="node2" href="$structLogEntry.html" title=" " alt="" coords="47,5,126,83"/>
+<area shape="rect" id="node2" href="$structLogEntry.html" title="A struct for encapsulating all logging data. It has Python bindings, so it can be used with the GUI d..." alt="" coords="47,5,126,83"/>
 </map>

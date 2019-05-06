@@ -11,45 +11,45 @@ from CodegenSnippets import *
 datamembers = [
     # Logging
     ('u', "size", "$size"),
-    ('u', "mode", "check_mode()"),
-    ('u64', "frametime", "frame_time"),
-    ('u', "framecounter", "frame_ctr"),
+    ('u', "mode", "getFlightMode()"),
+    ('u64', "frametime", "{} /* TODO */"), # TODO
+    ('u', "framecounter", "{} /* TODO */"), # TODO
 
     # Configuration
-    ('i', "droneConfig", "currentDroneConfiguration"),
+    ('i', "droneConfig", "{} /* TODO */"), # TODO
 
     # RC controls
-    ('f', "rcTuning", "rtune"),
-    ('f', "rcThrottle", "currentRCThrottle"),
-    ('f', "rcRoll", "currentRCRoll"),
-    ('f', "rcPitch", "currentRCPitch"),
-    ('f', "rcYaw", "currentRCYaw"),
+    ('f', "rcTuning", "getRCTuner()"),
+    ('f', "rcThrottle", "getRCThrottle()"),
+    ('f', "rcRoll", "getRCRoll()"),
+    ('f', "rcPitch", "getRCPitch()"),
+    ('f', "rcYaw", "getRCYaw()"),
 
     # Reference
-    ('f', "referenceOrientation", 4, "r"),
-    ('f', "referenceHeight", "target_z"),
-    ('f', "referenceLocation", 2, "nav_ref_blocks"),
+    ('f', "referenceOrientation", 4, "toCppArray(attitude.getReference())"),
+    ('f', "referenceHeight", "altitude.getReference()"),
+    ('f', "referenceLocation", 2, "toCppArray(position.getReference())"),
 
     # Measurements
-    ('f', "measurementOrientation", 4 ,"q"),
-    ('f', "measurementAngularVelocity", 3 ,"w"),
-    ('f', "measurementHeight", "pz"),
-    ('f', "measurementLocation", 2, "navMeasurement"),
+    ('f', "measurementOrientation", 4 ,"{} /* TODO */"), # TODO
+    ('f', "measurementAngularVelocity", 3 ,"{} /* TODO */"), # TODO
+    ('f', "measurementHeight", "{} /* TODO */"), # TODO
+    ('f', "measurementLocation", 2, "{} /* TODO */"), # TODO
 
     # Observers
-    ('f', "attitudeObserverState", 10 ,"att_hat"),
-    ('f', "altitudeObserverState", 3, "alt_hat"),
-    ('f', "navigationObserverState", 6, "nav_hat"),
-    ('f', "attitudeYawOffset", "att_total_dyaw_rads"),
+    ('f', "attitudeObserverState", 10 ,"toCppArray(attitude.getState())"),
+    ('f', "altitudeObserverState", 3, "toCppArray(altitude.getState())"),
+    ('f', "navigationObserverState", 6, "toCppArray(position.getState())"),
+    ('f', "attitudeYawOffset", "{} /* TODO */"), # TODO
 
     # Controller outputs
-    ('f', "attitudeControlSignals", 3, "att_u"),
-    ('f', "altitudeControlSignal", "u_thrust"),
-    ('f', "motorControlSignals", 4, "v"),
+    ('f', "attitudeControlSignals", 3, "toCppArray(attitude.getControl())"),
+    ('f', "altitudeControlSignal", "altitude.getController()"),
+    ('f', "motorControlSignals", 4, "{} /* TODO */"), # TODO
 
     # Thrust
-    ('f', "commonThrust", "thrust"),
-    ('f', "hoverThrust", "c_h"),
+    ('f', "commonThrust", "{} /* TODO */"), # TODO
+    ('f', "hoverThrust", "{} /* TODO */"), # TODO
 ]
 
 if len(sys.argv) > 1:
@@ -77,6 +77,9 @@ sizes = {'u': 1, 'u64': 2, 'i': 1, 'f': 1}
 for datamember in datamembers:
     type = types[datamember[0]]
     name = datamember[1]
+    if size % sizes[datamember[0]] != 0:
+        raise RuntimeError("""Alignment of `{} {}` is incorrect 
+(should be aligned to {} bytes)""".format(type, name, sizes[datamember[0]] * 4))
 
     if len(datamember) == 3:  # no lenght → value type
         c_assign = datamember[2]
@@ -124,14 +127,15 @@ if not os.path.exists('include-generated'):
     os.makedirs('include-generated')
 
 template_dir = join(inputdir, 'templates')
-with open(join(template_dir, 'LogEntry.template.h'), 'r') as template_header_file, \
-        open(join(template_dir, 'LogEntry.template.cpp'), 'r') as template_cpp_file, \
-        open(join(template_dir, 'logger.drone.template.cpp'), 'r') as template_drone_cpp_file, \
-        open(join(template_dir, 'DroneLogger.py.template.c'), 'r') as template_c_python_file, \
-        open('include-generated/LogEntry.h', 'w') as header_file, \
-        open('src-generated/LogEntry.cpp', 'w') as cpp_file, \
-        open('src-generated/logger.drone.cpp', 'w') as drone_cpp_file, \
-        open('src-generated/DroneLogger.py.c', 'w') as c_python_file:
+with \
+    open(join(template_dir, 'LogEntry.template.h'), 'r') as template_header_file, \
+    open(join(template_dir, 'LogEntry.template.cpp'), 'r') as template_cpp_file, \
+    open(join(template_dir, 'logger.drone.template.cpp'), 'r') as template_drone_cpp_file, \
+    open(join(template_dir, 'DroneLogger.py.template.c'), 'r') as template_c_python_file, \
+    open('include-generated/LogEntry.h', 'w') as header_file, \
+    open('src-generated/LogEntry.cpp', 'w') as cpp_file, \
+    open('src-generated/logger.drone.cpp', 'w') as drone_cpp_file, \
+    open('src-generated/DroneLogger.py.c', 'w') as c_python_file:
 
     template_header = template_header_file.read()
     template_cpp = template_cpp_file.read()

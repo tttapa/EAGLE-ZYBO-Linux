@@ -1,4 +1,4 @@
 var logger_8drone_8template_8cpp =
 [
-    [ "log_data", "logger_8drone_8template_8cpp.html#a66d17868f5a5bcc68dc70243bb439959", null ]
+    [ "getLogData", "logger_8drone_8template_8cpp.html#a77bc7fd7984cccf33ce927a54d026216", null ]
 ];
