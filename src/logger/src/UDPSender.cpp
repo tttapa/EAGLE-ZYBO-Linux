@@ -1,4 +1,4 @@
-#include <MulticastSender.hpp>
+#include <UDPSender.hpp>
 #include <arpa/inet.h>
 #include <cerrno>
 #include <iostream>
@@ -7,13 +7,13 @@
 #include <sys/types.h>
 #include <unistd.h>  // close
 
-MulticastSender::MulticastSender(const char *group, int port) : address{} {
+UDPSender::UDPSender(const char *group, int port) : address{} {
     address.sin_family      = AF_INET;
     address.sin_addr.s_addr = inet_addr(group);
     address.sin_port        = htons(port);
 }
 
-void MulticastSender::begin() {
+void UDPSender::begin() {
     socket = ::socket(AF_INET, SOCK_DGRAM, 0);
     if (socket < 0) {
         switch (errno) {
@@ -55,7 +55,7 @@ void MulticastSender::begin() {
     }
 }
 
-MulticastSender::~MulticastSender() {
+UDPSender::~UDPSender() {
 #if 0
     int result = shutdown(socket, 2);
     if (result < 0) {
@@ -80,7 +80,7 @@ MulticastSender::~MulticastSender() {
     close(socket);
 }
 
-size_t MulticastSender::send(const uint8_t *data, size_t size) {
+size_t UDPSender::send(const uint8_t *data, size_t size) {
     ssize_t nbytes = sendto(socket,      //
                             data, size,  //
                             0,           //

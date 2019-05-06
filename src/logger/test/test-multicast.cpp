@@ -1,8 +1,8 @@
 #include <arpa/inet.h>
 #include <gtest/gtest.h>
-#include <MulticastSender.hpp>
+#include <UDPSender.hpp>
 
-TEST(MulticastSender, send) {
+TEST(UDPSender, sendMulticast) {
     const char *group = "239.0.0.1";
     int port          = 77585;
 
@@ -36,7 +36,45 @@ TEST(MulticastSender, send) {
         FAIL() << "Error joining multicast group server: " << errno;
 
     // create sender
-    MulticastSender sender = {group, port};
+    UDPSender sender = {group, port};
+    sender.begin();
+    std::vector<uint8_t> data = {0x00, 0x10, 0x20, 0x00, 0xAA, 0x55};
+    sender.send(data);
+
+    // receive data
+    std::vector<uint8_t> received(8);
+    socklen_t addrlen = sizeof(addr);
+    ssize_t nbytes = recvfrom(serversock, received.data(), received.size(), 0,
+                              (struct sockaddr *) &addr, &addrlen);
+    if (nbytes < 0)
+        FAIL() << "Error receiving data: " << errno;
+
+    received.resize(nbytes);
+
+    ASSERT_EQ(data, received);
+}
+
+TEST(UDPSender, sendUnicast) {
+    const char *dest = "127.0.0.1";
+    int port          = 77586;
+
+    // create a UDP socket
+    int serversock = socket(AF_INET, SOCK_DGRAM, 0);
+    if (serversock < 0)
+        FAIL() << "Error opening server socket: " << errno;
+
+    // set up destination address
+    struct sockaddr_in addr {};
+    addr.sin_family      = AF_INET;
+    addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    addr.sin_port        = htons(port);
+
+    // bind to receive address
+    if (bind(serversock, (struct sockaddr *) &addr, sizeof(addr)) < 0)
+        FAIL() << "Error binding server socket: " << errno;
+
+    // create sender
+    UDPSender sender = {dest, port};
     sender.begin();
     std::vector<uint8_t> data = {0x00, 0x10, 0x20, 0x00, 0xAA, 0x55};
     sender.send(data);

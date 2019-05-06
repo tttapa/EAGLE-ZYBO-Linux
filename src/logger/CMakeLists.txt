@@ -1,6 +1,6 @@
 # Create library target and specify the implementation files to compile.
 add_library(logger 
-    src/MulticastSender.cpp
+    src/UDPSender.cpp
     src/Logger.cpp
     src/ThreadedLogger.cpp
 )

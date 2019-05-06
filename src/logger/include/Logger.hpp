@@ -2,7 +2,7 @@
 
 #include <BaremetalCommunicationDef.hpp>
 #include <LogEntry.h>
-#include <MulticastSender.hpp>
+#include <UDPSender.hpp>
 #include <SharedMem.hpp>
 
 /**
@@ -45,6 +45,6 @@ class Logger {
     void checkInitialized() const { acLogEntry->checkInitialized(); }
 
   private:
-    MulticastSender sender;
+    UDPSender sender;
     SharedMemory<AccessControlledLogEntry> acLogEntry;
 };

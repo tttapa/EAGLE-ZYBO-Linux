@@ -4,10 +4,10 @@
 #include <netinet/in.h>
 #include <vector>
 
-class MulticastSender {
+class UDPSender {
   public:
-    MulticastSender(const char *group, int port);
-    ~MulticastSender();
+    UDPSender(const char *group, int port);
+    ~UDPSender();
 
     void begin();
     size_t send(const uint8_t *data, size_t size);
