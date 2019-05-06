@@ -13,15 +13,15 @@ enum class QRFSMState : int32_t {
     /// No group is busy with QR codes.
     IDLE = 0,
     /// The ANC team has requested a QR code to be read.
-    READ_REQUEST = 1,
+    QR_READ_REQUEST = 1,
     /// The Image Processing team is busy reading the QR code.
-    READING_BUSY = 2,
+    QR_READING_BUSY = 2,
     /// The Cryptography team has decoded a new target.
     NEW_TARGET = 3,
     /// The Cryptography team has decoded a landing instruction.
     LAND = 4,
     /// The Cryptography team has decoded an unknown instruction.
-    UNKNOWN = 5,
+    QR_UNKNOWN = 5,
     /// The Cryptography team could not decode the image sent to them.
     ERROR = -1,
 };
