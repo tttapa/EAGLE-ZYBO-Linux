@@ -1,5 +1,6 @@
-#include <PerfTimer.hpp>
 #include <cryptoPoller.hpp>
+
+#include <PerfTimer.hpp>
 #include <wrapper.h>
 
 bool CryptoPoller::isInitialized      = false;
@@ -42,7 +43,8 @@ uint32_t CryptoPoller::poll(uint32_t mask, uint32_t previousValue) {
 
     if (!instructionDone) {
         isInitialized = false;
-        throw CryptoException(CryptoException::TIMEOUT_EXCEPTION);
+        throw CryptoException(
+            CryptoException::ExceptionType::TIMEOUT_EXCEPTION);
     }
 
     currentBitFlip = currentR1 & 0x80'00'00'00;

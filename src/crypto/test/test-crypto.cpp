@@ -230,7 +230,7 @@ TEST(Crypto, BitStringSplitBlocks2) {
 TEST(Crypto, BitStringSplitBlocks3) {
     std::vector<uint8_t> vector1({0x12, 0x34});
     BitString bitString(vector1);
-    bitString.concatenateAndAddMultiRatePadding(0x03, 20, 16);
+    bitString.concatenateAndAddMultiRatePadding(0x11, 20, 16);
     std::vector<BitString> vector2;
     bitString.splitBlocks(vector2);
     std::stringstream stream("");
@@ -249,6 +249,25 @@ TEST(Crypto, BitStringSplitBlocks3) {
 TEST(Crypto, BitStringSplitBlocks4) {
     std::vector<uint8_t> vector1({0x12, 0x34});
     BitString bitString(vector1);
+    bitString.concatenateAndAddMultiRatePadding(0x00, 20, 16);
+    std::vector<BitString> vector2;
+    bitString.splitBlocks(vector2);
+    std::stringstream stream("");
+    stream.flags(stream.flags() | std::ios::hex);
+    stream << vector2[0];
+    ASSERT_EQ(stream.str(), "12 34 \n");
+    stream.str("");
+    stream << vector2[1];
+    ASSERT_EQ(stream.str(), "c\n");
+}
+
+/**
+ * @brief   Test splitBlocks method of BitString class and 
+ *          concatenate together with multi-rate padding.
+ */
+TEST(Crypto, BitStringSplitBlocks5) {
+    std::vector<uint8_t> vector1({0x12, 0x34});
+    BitString bitString(vector1);
     bitString.concatenateAndAddMultiRatePadding(0x01, 20, 16);
     std::vector<BitString> vector2;
     bitString.splitBlocks(vector2);
@@ -259,6 +278,23 @@ TEST(Crypto, BitStringSplitBlocks4) {
     stream.str("");
     stream << vector2[1];
     ASSERT_EQ(stream.str(), "d\n");
+}
+
+/**
+ * @brief   Test splitBlocks method of BitString class.
+ */
+TEST(Crypto, BitStringSplitBlocks6) {
+    std::vector<uint8_t> vector1({0x12, 0x34, 0x56});
+    BitString bitString(vector1);
+    std::vector<BitString> vector2;
+    bitString.splitBlocks(vector2);
+    std::stringstream stream("");
+    stream.flags(stream.flags() | std::ios::hex);
+    stream << vector2[0];
+    ASSERT_EQ(stream.str(), "12 34 \n");
+    stream.str("");
+    stream << vector2[1];
+    ASSERT_EQ(stream.str(), "56 \n");
 }
 
 /**

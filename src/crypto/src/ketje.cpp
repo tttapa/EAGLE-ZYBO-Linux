@@ -69,7 +69,7 @@ BitString Ketje::unwrap(const BitString &associatedData,
         bitStringResult = BitString(result, blockTag[i].getLength());
         if (bitStringResult != blockTag[i])
             throw CryptoException(
-                CryptoException::UNSUCCESSFUL_DECODE_EXCEPTION);
+                CryptoException::ExceptionType::UNSUCCESSFUL_DECODE_EXCEPTION);
 
         if (i + 1 == blockTag.size())
             break;
