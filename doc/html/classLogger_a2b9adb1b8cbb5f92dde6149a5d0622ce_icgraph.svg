@@ -9,27 +9,27 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>Logger::checkInitialized</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-24 350,-24 350,4 -4,4"/>
-<!-- Node8 -->
+<!-- Node9 -->
 <g id="node1" class="node">
-<title>Node8</title>
+<title>Node9</title>
 <g id="a_node1"><a xlink:title="Make sure that the logger is initialized by Baremetal.">
 <polygon fill="#bfbfbf" stroke="#000000" points="214,-.5 214,-19.5 346,-19.5 346,-.5 214,-.5"/>
 <text text-anchor="middle" x="280" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Logger::checkInitialized</text>
 </a>
 </g>
 </g>
-<!-- Node9 -->
+<!-- Node10 -->
 <g id="node2" class="node">
-<title>Node9</title>
+<title>Node10</title>
 <g id="a_node2"><a xlink:href="classThreadedLogger.html#a12f00d01430f9cb026a43b0fcee649ae" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-19.5 178,-19.5 178,-.5 0,-.5"/>
 <text text-anchor="middle" x="89" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ThreadedLogger::checkInitialized</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node9 -->
+<!-- Node9&#45;&gt;Node10 -->
 <g id="edge1" class="edge">
-<title>Node8&#45;&gt;Node9</title>
+<title>Node9&#45;&gt;Node10</title>
 <path fill="none" stroke="#191970" d="M203.5968,-10C195.1876,-10 186.5724,-10 178.0267,-10"/>
 <polygon fill="#191970" stroke="#191970" points="203.7335,-13.5001 213.7335,-10 203.7335,-6.5001 203.7335,-13.5001"/>
 </g>

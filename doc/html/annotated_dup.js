@@ -38,7 +38,6 @@ var annotated_dup =
     [ "Logger", "classLogger.html", "classLogger" ],
     [ "Mask", "classMask.html", "classMask" ],
     [ "MatrixAssignmentHelper", "structMatrixAssignmentHelper.html", "structMatrixAssignmentHelper" ],
-    [ "MulticastSender", "classMulticastSender.html", "classMulticastSender" ],
     [ "PerfTimer", "classPerfTimer.html", "classPerfTimer" ],
     [ "Pixel", "structPixel.html", "structPixel" ],
     [ "Point", "structPoint.html", "structPoint" ],
@@ -56,5 +55,6 @@ var annotated_dup =
     [ "Square", "structSquare.html", "structSquare" ],
     [ "ThreadedLogger", "classThreadedLogger.html", "classThreadedLogger" ],
     [ "TimeFunctionT", "structTimeFunctionT.html", "structTimeFunctionT" ],
+    [ "UDPSender", "classUDPSender.html", "classUDPSender" ],
     [ "VisionData", "structVisionData.html", "structVisionData" ]
 ];

@@ -43,7 +43,6 @@ var hierarchy =
     [ "Logger", "classLogger.html", null ],
     [ "Mask", "classMask.html", null ],
     [ "MatrixAssignmentHelper< T, R, C, RR_sz, CC_sz, RR_offset, CC_offset >", "structMatrixAssignmentHelper.html", null ],
-    [ "MulticastSender", "classMulticastSender.html", null ],
     [ "PerfTimer", "classPerfTimer.html", null ],
     [ "Pixel", "structPixel.html", null ],
     [ "Point", "structPoint.html", null ],
@@ -76,6 +75,7 @@ var hierarchy =
     ] ],
     [ "Matrices::TransposeStruct", "structMatrices_1_1TransposeStruct.html", null ],
     [ "pybind11::detail::type_caster< TMatrix< T, R, C > >", "structpybind11_1_1detail_1_1type__caster_3_01TMatrix_3_01T_00_01R_00_01C_01_4_01_4.html", null ],
+    [ "UDPSender", "classUDPSender.html", null ],
     [ "CryptoInstruction::UNKNOWN_t", "structCryptoInstruction_1_1UNKNOWN__t.html", null ],
     [ "VisionData", "structVisionData.html", null ]
 ];

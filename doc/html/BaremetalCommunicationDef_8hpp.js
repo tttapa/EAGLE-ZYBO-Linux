@@ -6,6 +6,7 @@ var BaremetalCommunicationDef_8hpp =
     [ "AccessControlledLogEntry", "BaremetalCommunicationDef_8hpp.html#a1adba5b348f415898b688242a6a28927", null ],
     [ "VisionCommStruct", "BaremetalCommunicationDef_8hpp.html#ab3b6c7182154fd6aa17ac01d951d5fbd", null ],
     [ "FlightMode", "BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465", [
+      [ "UNINITIALIZED", "BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465add652546039b18970b8dcf2cff824268", null ],
       [ "MANUAL", "BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465aa60a6a471c0681e5a49c4f5d00f6bc5a", null ],
       [ "ALTITUDE_HOLD", "BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465a3c2854eaaa72c35445317d8505a9e388", null ],
       [ "AUTONOMOUS", "BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465ade7d660fc991e08c2d3526fec8a46c4a", null ]

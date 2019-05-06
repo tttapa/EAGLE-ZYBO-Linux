@@ -5,7 +5,7 @@ var searchData=
   ['safe_5farray_5findices',['SAFE_ARRAY_INDICES',['../Array_8hpp.html#a67632019ab1c030f8eaea555aaa768da',1,'Array.hpp']]],
   ['saturation_5fthres',['SATURATION_THRES',['../Threshold_8hpp.html#a3dd7783fcf1ee28e1fec445596f2ec10',1,'Threshold.hpp']]],
   ['saturation_5fthres_5fshift',['SATURATION_THRES_SHIFT',['../Threshold_8hpp.html#af859189ab69190c66e2d325b99be9a2d',1,'Threshold.hpp']]],
-  ['send',['send',['../classMulticastSender.html#a789af3078fda563d6bb42b57a0ae5860',1,'MulticastSender::send(const uint8_t *data, size_t size)'],['../classMulticastSender.html#aa8f381568b0b483f7c93e0fc4755b4c7',1,'MulticastSender::send(const std::vector&lt; uint8_t &gt; &amp;data)'],['../classMulticastSender.html#a5dcdca39b45d2ca2e9c4627e960b6543',1,'MulticastSender::send(const T &amp;data)']]],
+  ['send',['send',['../classUDPSender.html#a2fe3db1c77fb8d4166b180a9abae63e0',1,'UDPSender::send(const uint8_t *data, size_t size)'],['../classUDPSender.html#a455676c7839f546e9027f00b1cd7fc1b',1,'UDPSender::send(const std::vector&lt; uint8_t &gt; &amp;data)'],['../classUDPSender.html#a836a898ede92f231dabe2430198cd3f6',1,'UDPSender::send(const T &amp;data)']]],
   ['set',['set',['../classGridFinder.html#a376419f000b3be1e8db278726a2efbc1',1,'GridFinder::set()'],['../classMask.html#abd2577692522262d25fcaae6620582e3',1,'Mask::set()']]],
   ['setqrstatebusy',['setQRStateBusy',['../structQRCommStruct.html#a07e63598d31e1de9a92344d8f88f89f9',1,'QRCommStruct']]],
   ['setqrstateerror',['setQRStateError',['../structQRCommStruct.html#a3f42a02288c7c26f81f732e3954fb334',1,'QRCommStruct']]],

@@ -1,8 +1,12 @@
 var searchData=
 [
   ['u',['U',['../structQR.html#a099679dcd460fd4ae34a31be9900f37e',1,'QR']]],
+  ['udpsender',['UDPSender',['../classUDPSender.html',1,'UDPSender'],['../classUDPSender.html#a081c028249bb3bcc9c9da962adfe70a1',1,'UDPSender::UDPSender()']]],
+  ['udpsender_2ecpp',['UDPSender.cpp',['../UDPSender_8cpp.html',1,'']]],
+  ['udpsender_2ehpp',['UDPSender.hpp',['../UDPSender_8hpp.html',1,'']]],
   ['uint',['uint',['../uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d',1,'uint.hpp']]],
   ['uint_2ehpp',['uint.hpp',['../uint_8hpp.html',1,'']]],
+  ['uninitialized',['UNINITIALIZED',['../BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465add652546039b18970b8dcf2cff824268',1,'BaremetalCommunicationDef.hpp']]],
   ['unknown',['UNKNOWN',['../classCryptoInstruction.html#a5b416ef517098ce105707f7124834747',1,'CryptoInstruction::UNKNOWN()'],['../classCryptoInstruction.html#a966f06da8010704b61028f241138b0b1a696b031073e74bf2cb98e5ef201d4aa3',1,'CryptoInstruction::UNKNOWN()']]],
   ['unknown_5ferror_5fexception',['UNKNOWN_ERROR_EXCEPTION',['../classCryptoException.html#ab8222b36d5b9edb38ec6c9d3816ac5a9a0d3a72f67e6dcd8c9545bfb6d1134c54',1,'CryptoException']]],
   ['unknown_5ft',['UNKNOWN_t',['../structCryptoInstruction_1_1UNKNOWN__t.html',1,'CryptoInstruction']]],

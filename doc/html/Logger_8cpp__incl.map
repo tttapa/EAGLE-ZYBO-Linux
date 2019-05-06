@@ -1,10 +1,11 @@
 <map id="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/logger/src/Logger.cpp" name="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/logger/src/Logger.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="331,5,503,61"/>
-<area shape="rect" id="node2" href="$Logger_8hpp.html" title=" " alt="" coords="370,109,463,136"/>
-<area shape="rect" id="node3" href="$BaremetalCommunicationDef_8hpp.html" title=" " alt="" coords="150,184,393,211"/>
+<area shape="rect" id="node1" title=" " alt="" coords="372,5,544,61"/>
+<area shape="rect" id="node2" href="$Logger_8hpp.html" title=" " alt="" coords="411,109,505,136"/>
+<area shape="rect" id="node3" href="$BaremetalCommunicationDef_8hpp.html" title=" " alt="" coords="118,184,361,211"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,259,95,285"/>
-<area shape="rect" id="node13" href="$MulticastSender_8hpp.html" title=" " alt="" coords="452,184,605,211"/>
-<area shape="rect" id="node16" title=" " alt="" coords="629,184,756,211"/>
+<area shape="rect" id="node13" title=" " alt="" coords="395,184,521,211"/>
+<area shape="rect" id="node14" href="$UDPSender_8hpp.html" title=" " alt="" coords="550,184,673,211"/>
+<area shape="rect" id="node16" title=" " alt="" coords="687,259,749,285"/>
 <area shape="rect" id="node5" href="$SharedStruct_8hpp.html" title=" " alt="" coords="170,259,303,285"/>
 <area shape="rect" id="node6" title=" " alt="" coords="90,333,159,360"/>
 <area shape="rect" id="node11" title=" " alt="" coords="328,259,391,285"/>
@@ -13,6 +14,5 @@
 <area shape="rect" id="node8" title=" " alt="" coords="184,333,271,360"/>
 <area shape="rect" id="node9" title=" " alt="" coords="295,333,354,360"/>
 <area shape="rect" id="node10" title=" " alt="" coords="379,333,471,360"/>
-<area shape="rect" id="node14" title=" " alt="" coords="566,259,662,285"/>
-<area shape="rect" id="node15" title=" " alt="" coords="687,259,749,285"/>
+<area shape="rect" id="node15" title=" " alt="" coords="566,259,662,285"/>
 </map>
