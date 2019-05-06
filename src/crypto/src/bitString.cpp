@@ -175,6 +175,10 @@ bool operator==(const BitString &bitString1, const BitString &bitString2) {
     return bitString1.bits == bitString2.bits;
 }
 
+bool operator!=(const BitString &bitString1, const BitString &bitString2) {
+    return bitString1.bits != bitString2.bits;
+}
+
 std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
     if (out.flags() & std::ios::hex) {
         out << std::hex;
@@ -221,4 +225,9 @@ std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
     }
 
     return out;
+}
+
+BitString &BitString::operator=(const BitString bitString) {
+    bits = bitString.bits;
+    return *this;
 }

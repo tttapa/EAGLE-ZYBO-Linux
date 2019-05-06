@@ -110,5 +110,6 @@ CryptoInstruction decrypt(const std::vector<uint8_t> &qrCode) {
         if (qrCode == qrCodes[i])
             return instructions[i];
 
-    throw CryptoException(CryptoException::UNSUCCESSFUL_DECODE_EXCEPTION);
+    throw CryptoException(
+        CryptoException::ExceptionType::UNSUCCESSFUL_DECODE_EXCEPTION);
 }

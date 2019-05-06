@@ -32,22 +32,25 @@ class CryptoInstruction {
         : instructionType(InstructionType::UNKNOWN), unknownData(unknownData) {}
 
     InstructionType getInstructionType() const { return instructionType; }
+
     uint8_t getXCoordinate() const {
         if (getInstructionType() != InstructionType::GOTO)
             throw std::logic_error(
-                "Error: Only GOTO instructions have a valid x-coordinate");
+                "Error: only GOTO instructions have a valid x-coordinate");
         return x;
     }
+
     uint8_t getYCoordinate() const {
         if (getInstructionType() != InstructionType::GOTO)
             throw std::logic_error(
-                "Error: Only GOTO instructions have a valid y-coordinate");
+                "Error: only GOTO instructions have a valid y-coordinate");
         return y;
     }
+
     const std::vector<uint8_t> &getUnknownData() const {
-        if (getInstructionType() != InstructionType::GOTO)
+        if (getInstructionType() != InstructionType::UNKNOWN)
             throw std::logic_error(
-                "Error: Only UNKNOWN instructions have valid unknown data");
+                "Error: only UNKNOWN instructions have valid unknown data");
         return unknownData;
     }
 };
