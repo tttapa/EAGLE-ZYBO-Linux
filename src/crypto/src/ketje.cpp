@@ -20,7 +20,7 @@ BitString Ketje::unwrap(const BitString &associatedData,
     std::vector<BitString> blockAssociatedData;
     associatedData.splitBlocks(blockAssociatedData);
 
-    for (int16_t i = 0; i < blockAssociatedData.size() - 2; i++) {
+    for (int16_t i = 0; i + 1 < blockAssociatedData.size(); i++) {
         cryptoPoller.normalStep(
             blockAssociatedData[i]
                 .concatenateAndAddMultiRatePadding(
@@ -41,7 +41,7 @@ BitString Ketje::unwrap(const BitString &associatedData,
     BitString bitStringResult(result, blockCipherText[0].getLength());
 
     BitString plainText;
-    for (int16_t i = 0; i < blockCipherText.size() - 2; i++) {
+    for (int16_t i = 0; i + 1 < blockCipherText.size(); i++) {
         bitStringResult.xorWith(blockCipherText[i]);
         plainText.concatenate(bitStringResult);
 
@@ -65,15 +65,15 @@ BitString Ketje::unwrap(const BitString &associatedData,
     std::vector<BitString> blockTag;
     tag.splitBlocks(blockTag);
 
-    for (uint16_t i = 0; i < blockTag.size() - 1; i++) {
+    for (uint16_t i = 0; i < blockTag.size(); i++) {
         bitStringResult = BitString(result, blockTag[i].getLength());
         if (bitStringResult != blockTag[i])
             throw CryptoException(
                 CryptoException::UNSUCCESSFUL_DECODE_EXCEPTION);
 
-        if (i == (blockTag.size() - 1))
+        if (i + 1 == blockTag.size())
             break;
-        
+
         result = cryptoPoller.normalStep(0x00'00'00'00);
     }
 

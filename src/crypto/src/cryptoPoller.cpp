@@ -40,8 +40,10 @@ uint32_t CryptoPoller::poll(uint32_t mask, uint32_t previousValue) {
             break;
     }
 
-    if (!instructionDone)
+    if (!instructionDone) {
+        isInitialized = false;
         throw CryptoException(CryptoException::TIMEOUT_EXCEPTION);
+    }
 
     currentBitFlip = currentR1 & 0x80'00'00'00;
     return currentR1;
