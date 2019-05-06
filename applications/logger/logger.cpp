@@ -27,7 +27,10 @@ int main() {
 
 void loop() {
     // Create a logger, and wait for Baremetal to initialize it.
-    ThreadedLogger logger = Logger{"239.0.0.2", 5003};
+    ThreadedLogger logger = Logger{{
+        {"239.0.0.2", 5003},      // Multicast
+        {"192.168.4.100", 5001},  // Unicast
+    }};
     cout << "Waiting for Baremetal to be initialized ..." << endl;
     while (!logger.isInitialized())
         this_thread::sleep_for(10ms);

@@ -35,7 +35,10 @@ void loop() {
          << ANSIColors::reset << endl;
 
     // Initialize the logger
-    ThreadedLogger logger = Logger{"239.0.0.2", 5003};
+    ThreadedLogger logger = Logger{{
+        {"239.0.0.2", 5003},      // Multicast
+        {"192.168.4.100", 5001},  // Unicast
+    }};
     // Make sure that Baremetal has initialized the logger
     logger.checkInitialized();
     // Spawns another thread, is cleaned up when destructed. Update every 5ms.

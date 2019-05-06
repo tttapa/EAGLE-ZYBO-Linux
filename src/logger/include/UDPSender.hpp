@@ -21,5 +21,5 @@ class UDPSender {
 
   private:
     struct sockaddr_in address;
-    int socket;
+    int socket = -1;
 };

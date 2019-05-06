@@ -76,8 +76,8 @@ UDPSender::~UDPSender() {
         }
     }
 #endif
-
-    close(socket);
+    if (socket >= 0)
+        close(socket);
 }
 
 size_t UDPSender::send(const uint8_t *data, size_t size) {

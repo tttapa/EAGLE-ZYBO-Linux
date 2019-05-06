@@ -2,8 +2,9 @@
 
 #include <BaremetalCommunicationDef.hpp>
 #include <LogEntry.h>
-#include <UDPSender.hpp>
 #include <SharedMem.hpp>
+#include <UDPSender.hpp>
+#include <vector>
 
 /**
  * @brief   A class that reads the logging data from shared memory, and sends it
@@ -12,14 +13,26 @@
 class Logger {
   public:
     /**
-     * @brief   Construct a new Logger object.
+     * @brief   Construct a new Logger object that sends out logging packets to
+     *          a single address (multicast or unicast).
      * 
-     * @param   group
-     *          The group address to send to.
+     * @param   addr
+     *          The (group) address to send to.
      * @param   port 
      *          The port number to send to.
      */
-    Logger(const char *group, int port) : sender{group, port} {}
+    Logger(const char *addr, int port) : senders{{addr, port}} {}
+    /**
+     * @brief   Construct a new Logger object that sends out logging packets to
+     *          multiple addresses (multicast or unicast).
+     * 
+     * @param   senders
+     *          A vector of senders.
+     */
+    Logger(const std::vector<UDPSender> &senders) : senders{senders} {}
+    /**
+     * @brief   Move constructor.
+     */
     Logger(Logger &&) = default;
 
     /**
@@ -45,6 +58,6 @@ class Logger {
     void checkInitialized() const { acLogEntry->checkInitialized(); }
 
   private:
-    UDPSender sender;
+    std::vector<UDPSender> senders;
     SharedMemory<AccessControlledLogEntry> acLogEntry;
 };
