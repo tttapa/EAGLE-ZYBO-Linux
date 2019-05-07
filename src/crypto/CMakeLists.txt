@@ -4,6 +4,7 @@ add_library(crypto
     src/cryptoPoller.cpp
     src/crypto.cpp
     src/ketje.cpp
+    src/keccak.cpp
 )
 
 # Set target include directories 
