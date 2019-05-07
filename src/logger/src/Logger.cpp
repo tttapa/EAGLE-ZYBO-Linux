@@ -12,5 +12,8 @@ void Logger::update() {
             sender.send(logEntry);
         std::cout << "Logger: framecounter = " << logEntry.framecounter
                   << std::endl;
+        std::cout << "        frametime    = " << logEntry.frametime
+                  << std::endl;
+        std::cout << "        size         = " << logEntry.size << std::endl;
     }
 }

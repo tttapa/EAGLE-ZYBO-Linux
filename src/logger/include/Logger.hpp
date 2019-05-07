@@ -33,7 +33,10 @@ class Logger {
     /**
      * @brief   Move constructor.
      */
-    Logger(Logger &&) = default;
+    Logger(Logger &&other) {
+        std::swap(this->senders, other.senders);
+        std::swap(this->acLogEntry, other.acLogEntry);
+    };
 
     /**
      * @brief   Initialize the logger.
@@ -59,5 +62,5 @@ class Logger {
 
   private:
     std::vector<UDPSender> senders;
-    SharedMemory<AccessControlledLogEntry> acLogEntry;
+    SharedMemory<AccessControlledLogEntry> acLogEntry = {};
 };

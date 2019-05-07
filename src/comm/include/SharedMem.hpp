@@ -53,6 +53,10 @@ class SharedMemReferenceCounter {
     SharedMemReferenceCounter(const SharedMemReferenceCounter &) = delete;
     SharedMemReferenceCounter &
     operator=(const SharedMemReferenceCounter &) = delete;
+    // Keep the move constructor and assignment
+    SharedMemReferenceCounter(SharedMemReferenceCounter &&) = default;
+    SharedMemReferenceCounter &
+    operator=(SharedMemReferenceCounter &&) = default;
 
     /**
      * @brief Get a file descriptor to /dev/mem.
@@ -102,6 +106,9 @@ class SharedMemory {
      */
     SharedMemory(uintptr_t address) {
 #ifdef ZYBO
+        std::cout << __PRETTY_FUNCTION__ << ": " << std::hex << std::showbase
+                  << (uintptr_t) address << std::dec << std::noshowbase
+                  << std::endl;
         // Get the base address of the page, and the offset within the page.
         uintptr_t base   = address & PAGE_MASK;
         uintptr_t offset = address & OFFSET_MASK;
@@ -162,18 +169,35 @@ class SharedMemory {
     /**
      * @brief   Destroy the SharedMemory object. Uses `munmap`.
      */
-    ~SharedMemory() { munmap(memmap, PAGE_SIZE); }
+    ~SharedMemory() {
+        if (memmap != nullptr) {
+            std::cout << __PRETTY_FUNCTION__ << ": " << std::hex
+                      << std::showbase << (uintptr_t) memmap << std::dec
+                      << std::noshowbase << std::endl;
+            munmap(memmap, PAGE_SIZE);
+        }
+    }
 #endif
 
     SharedMemory(const SharedMemory &) = delete;
     SharedMemory &operator=(const SharedMemory &) = delete;
+
+    SharedMemory(SharedMemory &&other) { *this = std::move(other); }
+    SharedMemory &operator=(SharedMemory &&other) {
+        std::swap(this->structdata, other.structdata);
+        std::swap(this->memmap, other.memmap);
+        return *this;
+    }
+
     volatile T *ptr() { return structdata; }
+    const volatile T *ptr() const { return structdata; }
 
 #ifdef ZYBO
     /**
      * @brief   Proxy for the managed shared object.
      */
     volatile T *operator->() { return structdata; }
+
     /**
      * @brief   Const proxy for the managed shared object.
      */
@@ -184,11 +208,11 @@ class SharedMemory {
 #endif
 
   private:
+    void *memmap = nullptr;
 #ifdef ZYBO
-    volatile T *structdata;
-    void *memmap;
-    SharedMemReferenceCounter sharedMem;
+    SharedMemReferenceCounter sharedMem = {};
+    volatile T *structdata              = nullptr;
 #else
-    std::unique_ptr<volatile T> structdata;
+    std::unique_ptr<volatile T> structdata = {};
 #endif
 };

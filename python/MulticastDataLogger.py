@@ -31,7 +31,6 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
         data = self.request[0]
-        print(len(data))
         new_entry = ComparableLogEntry(bytes(data))
         if len(LoggingThreadedUDPRequestHandler.queue) >= BUFFER_SIZE:
             logentry = heapq.heappushpop(

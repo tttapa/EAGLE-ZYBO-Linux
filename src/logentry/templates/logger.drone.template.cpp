@@ -2,6 +2,7 @@
 
 #include <RC.hpp>
 #include <Instances.hpp>
+#include <Configuration.hpp>
 
 /**
  * @brief   Rather sketchy conversion from a struct of primitives of the same
