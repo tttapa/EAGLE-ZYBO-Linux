@@ -1,2 +1,4 @@
 docker/toolchain/config text eol=lf
+src/logentry/Codegen.py text eol=lf
+src/logentry/CodegenSnippets.py text eol=lf
 scripts/* text eol=lf
