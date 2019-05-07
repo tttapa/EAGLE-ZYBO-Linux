@@ -27,6 +27,7 @@ class CryptoPoller {
 
         constexpr static uintptr_t address = 0x43C70000;
     };
+    
     SharedMemory<FPGARegisters> fpga;
 
     static bool isInitialized;

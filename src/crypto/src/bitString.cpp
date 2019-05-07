@@ -1,5 +1,6 @@
-#include <algorithm>
 #include <bitString.hpp>
+
+#include <algorithm>
 #include <deque>
 
 BitString::BitString(const std::vector<uint8_t> &input) {
@@ -71,14 +72,9 @@ void BitString::splitBlocks(std::vector<BitString> &vector) const {
         if (bits.size() % 4) {
             BitString lastBlock;
             lastBlock.bits.reserve(bits.size() % 4);
-            std::deque<uint8_t> temporaryBits;
 
-            for (uint8_t i = 3; i > 0; i--)
-                if ((bits.size() % 4) >= i)
-                    temporaryBits.push_front(bits[bits.size() - i]);
-
-            for (uint8_t halfByte : temporaryBits)
-                lastBlock.bits.push_back(halfByte);
+            for (uint8_t i = (bits.size() % 4); i > 0; i--)
+                lastBlock.bits.push_back(bits[bits.size() - i]);
 
             vector.push_back(lastBlock);
         }
@@ -119,7 +115,7 @@ BitString &BitString::addMultiRatePadding(int16_t r, int16_t MLength) {
         bits.push_back(0x09);
     else {
         bits.push_back(0x01);
-        for (int i = 0; i < nbHalfBytes - 2; i++)
+        for (int16_t i = 0; i < nbHalfBytes - 2; i++)
             bits.push_back(0x00);
 
         bits.push_back(0x08);
@@ -133,8 +129,8 @@ BitString::concatenateAndAddMultiRatePadding(uint8_t concatenationBits,
                                              int16_t r, int16_t MLength) {
     concatenationBits &= 0x03;
 
-    uint16_t q           = (((-MLength - 4) % r) + r) % r;
-    uint16_t nbHalfBytes = (q + 4) / 4;
+    int16_t q           = (((-MLength - 4) % r) + r) % r;
+    int16_t nbHalfBytes = (q + 4) / 4;
 
     bits.reserve(bits.size() + nbHalfBytes);
 
@@ -142,7 +138,7 @@ BitString::concatenateAndAddMultiRatePadding(uint8_t concatenationBits,
         bits.push_back(concatenationBits | 0x0C);
     else {
         bits.push_back(concatenationBits | 0x04);
-        for (uint16_t i = 0; i < nbHalfBytes - 2; i++)
+        for (int16_t i = 0; i < nbHalfBytes - 2; i++)
             bits.push_back(0x00);
 
         bits.push_back(0x08);
@@ -182,6 +178,7 @@ bool operator!=(const BitString &bitString1, const BitString &bitString2) {
 std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
     if (out.flags() & std::ios::hex) {
         out << std::hex;
+
         for (uint16_t i = 0; i < bitString.bits.size() / 2; i++) {
             uint8_t firstHalfByte  = bitString.bits[2 * i + 1] << 4;
             uint8_t secondHalfByte = bitString.bits[2 * i];
@@ -198,6 +195,7 @@ std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
         } else if (bitString.bits.size() % 16) {
             out << "\n";
         }
+        
         out << std::dec;
         out.flags(out.flags() | std::ios::hex);
     } else {

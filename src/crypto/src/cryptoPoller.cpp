@@ -1,5 +1,6 @@
-#include <PerfTimer.hpp>
 #include <cryptoPoller.hpp>
+
+#include <PerfTimer.hpp>
 #include <wrapper.h>
 
 bool CryptoPoller::isInitialized      = false;
