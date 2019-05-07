@@ -52,9 +52,9 @@ target_include_directories(crypto_given
         include_given
 )
 
-link_directories(
-    ${CMAKE_CURRENT_SOURCE_DIRECTORY}/lib
-)
+add_library(cryptosw SHARED IMPORTED)
+set_property(TARGET cryptosw 
+    PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/lib/libcryptosw.so)
 
 target_link_libraries(crypto_given
     PRIVATE

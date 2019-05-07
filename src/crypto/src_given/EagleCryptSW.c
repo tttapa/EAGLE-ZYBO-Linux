@@ -60,7 +60,7 @@ int init(
 }
 
 int
-encrypt(
+given_encrypt(
     const unsigned char*    ad,
     const unsigned int      adByteLen,
     const unsigned char*    pt,
