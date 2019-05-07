@@ -1,4 +1,3 @@
-//#include <EagleCrypt.h>
 #include <bitString.hpp>
 #include <crypto.hpp>
 

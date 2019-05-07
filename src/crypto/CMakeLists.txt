@@ -35,6 +35,7 @@ target_link_libraries(crypto
     PRIVATE 
         comm
         utilities
+        cryptosw
 )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
