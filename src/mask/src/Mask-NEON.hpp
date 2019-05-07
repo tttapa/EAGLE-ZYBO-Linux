@@ -55,6 +55,8 @@ namespace NEON {
  * @image   html Colors-Mask-Dark.png
  * @image   html Colors-Mask-Gradient.png
  * 
+ * @todo    Update this documentation for the fourth condition.
+ * 
  * @param   colors
  *          A pointer to an array of at least 16 RGB pixels (or 48 bytes).
  */
@@ -86,8 +88,14 @@ inline uint8x16_t applyMask(const uint8_t *colors) {
     // bool val_cond = max > BRIGHTNESS_THRES;
     uint8x16_t val_cond = vcgtq_u8(max, vdupq_n_u8(BRIGHTNESS_THRES));
 
+    // TODO: comment
+    uint8x16_t valsat_cond = vcgtq_u8(
+        vhaddq_u8(vmulq_u8(vshrq_n_u8(max, 4), vshrq_n_u8(max, 5)), delta),
+        vshrq_n_u8(max, 4));
+
     // All conditions must be satisfied, so AND them all together.
-    return vandq_u8(vandq_u8(sat_cond, val_cond), hue_cond);
+    return vandq_u8(vandq_u8(sat_cond, val_cond),
+                    vandq_u8(hue_cond, valsat_cond));
 }
 
 /**

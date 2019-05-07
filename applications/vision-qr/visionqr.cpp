@@ -42,7 +42,7 @@ void loop() {
     // Make sure that Baremetal has initialized the logger
     logger.checkInitialized();
     // Spawns another thread, is cleaned up when destructed. Update every 5ms.
-    logger.begin(5ms);
+    logger.begin(17ms);
 
     // Open camera 0
     cout << "Waiting for camera to be initialized ..." << endl;
@@ -64,6 +64,9 @@ void loop() {
         PerfTimer pt;
         Point locInSquare = lf.updateLocation();
         Point location    = lt.update(locInSquare);
+
+        // cv::imwrite("mask.bmp", lf.getMaskImage());
+        // cv::imwrite("image.bmp", lf.getImage());
 
         qrCryptoMgr.update(lf.getImage());
 

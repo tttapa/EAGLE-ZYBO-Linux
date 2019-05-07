@@ -37,7 +37,7 @@ void loop() {
     cout << ANSIColors::greenb << "Baremetal initialization done!"
          << ANSIColors::reset << endl;
     // Spawns another thread, is cleaned up when destructed. Update every 5ms.
-    logger.begin(500ms);
+    logger.begin(17ms);
 
     cout << "Press any key to restart the logger" << endl;
     cin.ignore();  // Wait for user input
