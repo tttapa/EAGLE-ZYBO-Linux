@@ -1,18 +1,18 @@
 #include <ketje.hpp>
 
 void Ketje::initialize(const BitString &nonce) {
-    BitString bitString(key.getLength() + 16);
-    bitString.reserve(200);
-    bitString.concatenate(key);
-    bitString.addSimplePadding(key.getLength() + 16 - 8, key.getLength());
-    bitString.concatenate(nonce);
-    bitString.addMultiRatePadding(200, bitString.getLength());
+    BitString keyPack(key.getLength() + 16);
+    keyPack.reserve(200);
+    keyPack.concatenate(key);
+    keyPack.addSimplePadding(key.getLength() + 16 - 8, key.getLength());
+    keyPack.concatenate(nonce);
+    keyPack.addMultiRatePadding(200, keyPack.getLength());
 
-    std::array<uint32_t, 10> keypack;
-    bitString.split(keypack);
+    std::array<uint32_t, 10> splittedKeyPack;
+    keyPack.split(splittedKeyPack);
 
     for (int8_t i = 0; i < 10; i++)
-        cryptoPoller.write(9 - i, keypack[i]);
+        cryptoPoller.write(9 - i, splittedKeyPack[i]);
 
     cryptoPoller.start();
 }

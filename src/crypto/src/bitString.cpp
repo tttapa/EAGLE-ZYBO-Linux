@@ -3,11 +3,15 @@
 #include <algorithm>
 #include <deque>
 
-BitString::BitString(const std::vector<uint8_t> &input) {
-    bits.reserve(2 * input.size());
-    for (uint8_t byte : input) {
-        bits.push_back(byte & 0x0F);
-        bits.push_back((byte & 0xF0) >> 4);
+BitString::BitString(const std::vector<uint8_t> &input, int16_t start,
+                     int16_t end) {
+    if (end == -1)
+        end = input.size();
+
+    bits.reserve(2 * (end - start));
+    for (int16_t i = start; i < end; i++) {
+        bits.push_back(input[i] & 0x0F);
+        bits.push_back((input[i] & 0xF0) >> 4);
     }
 }
 
