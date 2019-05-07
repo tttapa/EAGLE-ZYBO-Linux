@@ -3,11 +3,15 @@
 #include <algorithm>
 #include <deque>
 
-BitString::BitString(const std::vector<uint8_t> &input) {
-    bits.reserve(2 * input.size());
-    for (uint8_t byte : input) {
-        bits.push_back(byte & 0x0F);
-        bits.push_back((byte & 0xF0) >> 4);
+BitString::BitString(const std::vector<uint8_t> &input, int16_t start,
+                     int16_t end) {
+    if (end == -1)
+        end = input.size();
+
+    bits.reserve(2 * (end - start));
+    for (int16_t i = start; i < end; i++) {
+        bits.push_back(input[i] & 0x0F);
+        bits.push_back((input[i] & 0xF0) >> 4);
     }
 }
 
@@ -177,8 +181,6 @@ bool operator!=(const BitString &bitString1, const BitString &bitString2) {
 
 std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
     if (out.flags() & std::ios::hex) {
-        out << std::hex;
-
         for (uint16_t i = 0; i < bitString.bits.size() / 2; i++) {
             uint8_t firstHalfByte  = bitString.bits[2 * i + 1] << 4;
             uint8_t secondHalfByte = bitString.bits[2 * i];
@@ -195,9 +197,6 @@ std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
         } else if (bitString.bits.size() % 16) {
             out << "\n";
         }
-        
-        out << std::dec;
-        out.flags(out.flags() | std::ios::hex);
     } else {
         for (uint16_t i = 0; i < bitString.bits.size(); i++) {
             static const uint8_t masks[4] = {0x01, 0x02, 0x04, 0x08};

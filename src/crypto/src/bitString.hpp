@@ -11,7 +11,8 @@ class BitString {
 
   public:
     BitString() {}
-    BitString(const std::vector<uint8_t> &input);
+    BitString(const std::vector<uint8_t> &input, int16_t start = 0,
+              int16_t end = -1);
     BitString(uint32_t data, uint8_t nbBits);
     BitString(uint16_t l);
 
