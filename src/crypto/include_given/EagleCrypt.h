@@ -78,7 +78,7 @@ int init(
   @return 0 if successful, 1 otherwise
   */
 int
-encrypt(
+given_encrypt(
     const unsigned char*    ad,
     const unsigned int      adByteLen,
     const unsigned char*    pt,
