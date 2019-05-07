@@ -1,8 +1,8 @@
 #include <LogEntry.h>
 
-#include <RC.hpp>
-#include <Instances.hpp>
 #include <Configuration.hpp>
+#include <Instances.hpp>
+#include <RC.hpp>
 
 /**
  * @brief   Rather sketchy conversion from a struct of primitives of the same
@@ -19,8 +19,9 @@ template <class ArrayElementType = float, class StructType = void>
 static ArrayElementType (&toCppArray(
     StructType &data))[sizeof(StructType) / sizeof(ArrayElementType)] {
     static_assert(sizeof(StructType) % sizeof(ArrayElementType) == 0);
-    return reinterpret_cast<&(
-        ArrayElementType)[sizeof(StructType) / sizeof(ArrayElementType)]>(data);
+    return reinterpret_cast<
+        ArrayElementType(&)[sizeof(StructType) / sizeof(ArrayElementType)]>(
+        data);
 }
 
 /**
@@ -38,8 +39,8 @@ template <class ArrayElementType = float, class StructType = void>
 static const ArrayElementType (&toCppArray(
     const StructType &data))[sizeof(StructType) / sizeof(ArrayElementType)] {
     static_assert(sizeof(StructType) % sizeof(ArrayElementType) == 0);
-    return reinterpret_cast<&(
-        ArrayElementType)[sizeof(StructType) / sizeof(ArrayElementType)]>(data);
+    return reinterpret_cast<
+        ArrayElementType(&)[sizeof(StructType) / sizeof(ArrayElementType)]>(data);
 }
 
 /**
@@ -58,6 +59,5 @@ LogEntry getLogData() {
     RCValues rc = readRC();
 
     LogEntry logEntry;
-$cpp_assignments
-    return logEntry;
+    $cpp_assignments return logEntry;
 }
