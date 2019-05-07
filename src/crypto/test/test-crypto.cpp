@@ -354,3 +354,12 @@ TEST(Crypto, TemporaryCryptoTest) {
     ASSERT_EQ(instruction.getXCoordinate(), 8);
     ASSERT_EQ(instruction.getYCoordinate(), 6);
 }
+
+#include <EagleCrypt.h>
+
+/**
+ * @brief   Test Link libraries.
+ */
+TEST(Crypto, LinkTest) {
+    init(0, 0, 0, 0);
+}
