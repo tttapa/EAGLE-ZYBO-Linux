@@ -5,8 +5,8 @@ BitString hash(BitString digest) {
     digest.concatenateAndAddMultiRatePadding(0x02, 16, digest.getLength());
     std::vector<BitString> blockDigest;
     digest.splitBlocks(blockDigest);
-    
+    CryptoPoller cryptopoller;
     for (BitString digestBlock : blockDigest) {
-
+        
     }
 }
