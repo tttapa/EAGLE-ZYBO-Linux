@@ -37,6 +37,9 @@ hash(
     unsigned char*          digest, 
     const unsigned int      digestByteLen
 ) {
+    (void) data;
+    (void) dataByteLen;
+
     int retValue;
 
     retValue = KeccakWidth200_SpongeInitialize(&sponge, RateSizeInBits, StateSizeInBits - RateSizeInBits);

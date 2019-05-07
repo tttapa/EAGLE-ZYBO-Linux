@@ -19,6 +19,10 @@
 //               :                                                              
 // =============================================================================
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define RateSizeInBits          16
 #define RateSizeInBytes         (RateSizeInBits / 8)
 #define StateSizeInBits         200
@@ -107,3 +111,7 @@ decrypt(
     unsigned char*          tag,
     const unsigned int      tagByteLen
 );
+
+#ifdef __cplusplus
+}
+#endif

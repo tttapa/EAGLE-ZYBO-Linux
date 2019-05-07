@@ -34,8 +34,29 @@ target_link_libraries(crypto
     PRIVATE 
         comm
         utilities
+        crypto_given
 )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
 # adds the tests.
 add_subdirectory(test) 
+
+add_library(crypto_given
+    src_given/EagleCryptSW.c
+)
+
+target_include_directories(crypto_given
+    PRIVATE
+        headers
+    PUBLIC
+        include_given
+)
+
+link_directories(
+    ${CMAKE_CURRENT_SOURCE_DIRECTORY}/lib
+)
+
+target_link_libraries(crypto_given
+    PRIVATE
+        cryptosw
+)

@@ -3,6 +3,7 @@
 #include <cryptoPoller.hpp>
 #include <gtest/gtest.h>
 #include <ketje.hpp>
+#include <EagleCrypt.h>
 
 /**
  * @brief   Testbench provided by TAs.
@@ -394,4 +395,11 @@ TEST(Crypto, KetjeTest) {
                   BitString({0xe4, 0x85, 0x40, 0x90, 0xed, 0xf6, 0x2a, 0x84,
                              0x9a, 0x6e, 0xe2, 0x4b, 0x85, 0x96, 0x1b, 0x4d})),
               BitString());
+}
+
+/**
+ * @brief   Test Link libraries.
+ */
+TEST(Crypto, LinkTest) {
+    init(0, 0, 0, 0);
 }
