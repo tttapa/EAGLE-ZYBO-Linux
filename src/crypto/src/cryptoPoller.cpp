@@ -20,6 +20,7 @@ uint32_t CryptoPoller::readR1() const { return fpga->R1; }
 
 uint32_t CryptoPoller::execute(uint32_t instruction) {
     writeR0(instruction);
+    std::cout<< "\n" << std::hex << instruction << "\n";
     return poll(0x80'00'00'00, currentBitFlip);
 }
 
@@ -100,7 +101,7 @@ uint32_t CryptoPoller::xorStride(uint32_t data) {
 
 uint32_t CryptoPoller::hashAbsorb(uint32_t data) {
     data &= fullMask;
-    return execute(data | 0x02'00'00'00);
+    return execute(data | 0x92'00'00'00);
 }
 
-uint32_t CryptoPoller::hashSqueeze() { return execute(0x04'00'00'00); }
+uint32_t CryptoPoller::hashSqueeze() { return execute(0x94'00'00'00); }

@@ -1,4 +1,3 @@
-#include <EagleCrypt.h>
 #include <bitString.hpp>
 #include <crypto.hpp>
 #include <cryptoPoller.hpp>
@@ -414,7 +413,9 @@ TEST(Crypto, KetjeTest) {
  * @brief   Test Keccak key derivation.
  */
 TEST(Crypto, HashTest) {
-    std::cout << hash(BitString({0xae, 0xb6, 0x93, 0x1d, 0x55, 0xdf, 0x17,
+    BitString hash2 = hash(BitString({0xae, 0xb6, 0x93, 0x1d, 0x55, 0xdf, 0x17,
                                  0x2e, 0xac, 0x78, 0x0f, 0xa6, 0x7e, 0xe4,
                                  0xdd, 0xf3, 0x04, 0x04, 0xfc, 0x00}));
+    std::cout << std::hex << "\nHash: "
+              << hash2;
 }

@@ -1,4 +1,4 @@
 #pragma once 
 #include <bitString.hpp>
 
-BitString hash(const BitString &digest);
+BitString hash(BitString digest);
