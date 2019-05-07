@@ -106,3 +106,5 @@ install(TARGETS logentry
 install(EXPORT logentry DESTINATION lib)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LogEntry.h
         DESTINATION include)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/src-generated/logger.drone.cpp
+        DESTINATION src)
