@@ -40,3 +40,5 @@ target_link_libraries(crypto
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
 # adds the tests.
 add_subdirectory(test) 
+
+add_subdirectory(xkcp)
