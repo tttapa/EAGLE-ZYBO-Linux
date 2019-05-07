@@ -38,7 +38,7 @@ target_include_directories(logentry
     PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        ${CMAKE_CURRENT_BINARY_DIR}/include-generated
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include-generated>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         src-generated
@@ -77,18 +77,32 @@ set(DRONELOGGER_MODULE_SOURCE
     src-generated/DroneLogger.py.c)
 configure_file(setup.py.in setup.py @ONLY)
 
-add_custom_target(PythonDroneLogger
+add_custom_target(PythonDroneLogger ALL
     COMMAND
-        ${PYTHON_EXECUTABLE} setup.py bdist_wheel &&
-        ${PYTHON_EXECUTABLE} -m pip install --user --upgrade dist/*.whl
+        ${PYTHON_EXECUTABLE} setup.py bdist_wheel
     DEPENDS
         logentry
         src-generated/DroneLogger.py.c
 )
+
+install(DIRECTORY 
+            ${CMAKE_CURRENT_BINARY_DIR}/dist
+            ${CMAKE_CURRENT_BINARY_DIR}/DroneLogger.egg-info
+        DESTINATION PythonDroneLogger)
+install(CODE
+    "execute_process(COMMAND
+        \"${PYTHON_EXECUTABLE} -m pip install --user --upgrade 
+        ${CMAKE_CURRENT_BINARY_DIR}/dist/*.whl\")")
 
 endif()
 
 #-------------------- Installation for use with Baremetal ---------------------#
 #------------------------------------------------------------------------------#
 
-# install() # TODO
+install(TARGETS logentry
+        EXPORT logentry
+        ARCHIVE DESTINATION lib
+        INCLUDES DESTINATION include)
+install(EXPORT logentry DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LogEntry.h
+        DESTINATION include)

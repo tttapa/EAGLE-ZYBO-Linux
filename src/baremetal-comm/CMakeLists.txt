@@ -17,11 +17,22 @@ target_include_directories(baremetal-comm
 
 target_link_libraries(baremetal-comm
     INTERFACE
-        utilities
         logentry
-        comm
 )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
 # adds the tests.
-add_subdirectory(test) 
+add_subdirectory(test)
+
+#-------------------- Installation for use with Baremetal ---------------------#
+#------------------------------------------------------------------------------#
+
+install(TARGETS baremetal-comm
+        EXPORT baremetal-comm
+        ARCHIVE DESTINATION lib
+        INCLUDES DESTINATION include)
+install(EXPORT baremetal-comm DESTINATION lib)
+install(FILES 
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/BaremetalCommunicationDef.hpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/include/SharedStruct.hpp
+        DESTINATION include)

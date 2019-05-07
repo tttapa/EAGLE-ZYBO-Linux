@@ -2,7 +2,7 @@
 add_executable(sharedmem.test test-SharedMem.cpp)
 # Link the test executable with the Google Test main entry point and the library
 # under test
-target_link_libraries(sharedmem.test gtest_main baremetal-comm)
+target_link_libraries(sharedmem.test gtest_main baremetal-comm comm)
 
 # Add the tests to Google Test
 include(GoogleTest)

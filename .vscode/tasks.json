@@ -82,18 +82,59 @@
         {
             "label": "Run CMake x86-64 (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake -DPYBIND11_PYTHON_VERSION=3.7 -DPYTHON_EXECUTABLE=/home/develop/.local/bin/python3 ..",
+            "command": "docker",
+            "args": [
+                "exec",
+                "-it",
+                "-w",
+                "${workspaceFolder}/build",
+                "crypto-devenv",
+                "cmake",
+                "-DPYBIND11_PYTHON_VERSION=3.7",
+                "-DPYTHON_EXECUTABLE=/home/develop/.local/bin/python3",
+                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/install-x86",
+                ".."
+            ],
             "windows": {
-                "command": "docker exec -it -w  /home/develop/eagle/build crypto-devenv sh -c 'cmake -DPYBIND11_PYTHON_VERSION=3.7 -DPYTHON_EXECUTABLE=/home/develop/.local/bin/python3 ..'",
+                "args": [
+                    "exec",
+                    "-it",
+                    "-w",
+                    "/home/develop/eagle/build",
+                    "crypto-devenv",
+                    "sh",
+                    "-c",
+                    "'cmake -DPYBIND11_PYTHON_VERSION=3.7 -DPYTHON_EXECUTABLE=/home/develop/.local/bin/python3 -DCMAKE_INSTALL_PREFIX=/home/develop/eagle/install-x86 ..'"
+                ],
             },
             "problemMatcher": [],
         },
         {
             "label": "Run CMake ARMv7 ZYBO (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w ${workspaceFolder}/build-arm crypto-devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
+            "command": "docker",
+            "args": [
+                "exec",
+                "-it",
+                "-w",
+                "${workspaceFolder}/build-arm",
+                "crypto-devenv",
+                "cmake",
+                "-DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake",
+                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/install-arm",
+                ".."
+            ],
             "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build-arm crypto-devenv sh -c 'cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..'",
+                "args": [
+                    "exec",
+                    "-it",
+                    "-w",
+                    "/home/develop/eagle/build-arm",
+                    "crypto-devenv",
+                    "sh",
+                    "-c",
+                    "'cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake -DCMAKE_INSTALL_PREFIX=/home/develop/eagle/install-arm ..'"
+                ],
             },
             "problemMatcher": [],
         },
@@ -109,28 +150,28 @@
         //#endregion
         //#region Building......................................................
         {
-            "label": "Build All x86-64 (Docker)",
+            "label": "Build and Export All x86-64 (Docker)",
             "type": "shell",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make -j$(nproc)",
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make -j$(nproc) install",
             "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make -j $(nproc)'",
+                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make -j $(nproc) install'",
             },
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Build All ARMv7 ZYBO (Docker)",
+            "label": "Build and Export All ARMv7 ZYBO (Docker)",
             "type": "shell",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "command": "docker exec -it -w  ${workspaceFolder}/build-arm crypto-devenv make -j$(nproc)",
+            "command": "docker exec -it -w  ${workspaceFolder}/build-arm crypto-devenv make -j$(nproc) install",
             "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build-arm crypto-devenv sh -c 'make -j $(nproc)'",
+                "command": "docker exec -it -w /home/develop/eagle/build-arm crypto-devenv sh -c 'make -j $(nproc) install'",
             },
             "problemMatcher": "$gcc"
         },
@@ -343,7 +384,7 @@
         {
             "label": "Start GDB Server (ZYBO)",
             "type": "shell",
-            "command": "docker exec -it crypto-devenv ssh root@drone 'source /media/ldpath.sh && /mnt/usr/bin/gdbserver localhost:2000 /media/location_finder.test'",
+            "command": "docker exec -it crypto-devenv ssh root@drone 'source /media/ldpath.sh && /mnt/usr/bin/gdbserver localhost:2000 /media/loggerbin'",
             "problemMatcher": []
         },
         //#endregion
@@ -378,7 +419,7 @@
             "options": {
                 "cwd": "${workspaceFolder}/scripts"
             },
-            "dependsOn": "Build All ARMv7 ZYBO (Docker)",
+            "dependsOn": "Build and Export All ARMv7 ZYBO (Docker)",
             "problemMatcher": []
         },
         //#endregion

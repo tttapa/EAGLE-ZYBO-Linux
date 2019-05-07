@@ -16,7 +16,7 @@ datamembers = [
     ('u', "framecounter", "{} /* TODO */"), # TODO
 
     # Configuration
-    ('i', "droneConfig", "{} /* TODO */"), # TODO
+    ('i', "droneConfig", "getDroneConfiguration() /* TODO */"), # TODO
 
     # RC controls
     ('f', "rcTuning", "getRCTuner()"),
@@ -25,7 +25,7 @@ datamembers = [
     ('f', "rcPitch", "getRCPitch()"),
     ('f', "rcYaw", "getRCYaw()"),
 
-    # Reference
+    # Reference 
     ('f', "referenceOrientation", 4, "toCppArray(attitude.getReference())"),
     ('f', "referenceHeight", "altitude.getReference()"),
     ('f', "referenceLocation", 2, "toCppArray(position.getReference())"),
@@ -44,7 +44,8 @@ datamembers = [
 
     # Controller outputs
     ('f', "attitudeControlSignals", 3, "toCppArray(attitude.getControl())"),
-    ('f', "altitudeControlSignal", "altitude.getController()"),
+    ('f', "altitudeControlSignal", "altitude.getControl()"),
+    ('f', "positionControlSignal", 2, "position.getControl()"),
     ('f', "motorControlSignals", 4, "{} /* TODO */"), # TODO
 
     # Thrust
