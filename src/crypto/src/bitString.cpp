@@ -177,8 +177,6 @@ bool operator!=(const BitString &bitString1, const BitString &bitString2) {
 
 std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
     if (out.flags() & std::ios::hex) {
-        out << std::hex;
-
         for (uint16_t i = 0; i < bitString.bits.size() / 2; i++) {
             uint8_t firstHalfByte  = bitString.bits[2 * i + 1] << 4;
             uint8_t secondHalfByte = bitString.bits[2 * i];
@@ -195,9 +193,6 @@ std::ostream &operator<<(std::ostream &out, const BitString &bitString) {
         } else if (bitString.bits.size() % 16) {
             out << "\n";
         }
-        
-        out << std::dec;
-        out.flags(out.flags() | std::ios::hex);
     } else {
         for (uint16_t i = 0; i < bitString.bits.size(); i++) {
             static const uint8_t masks[4] = {0x01, 0x02, 0x04, 0x08};

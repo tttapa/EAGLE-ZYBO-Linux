@@ -3,6 +3,7 @@ add_library(crypto
     src/bitString.cpp
     src/cryptoPoller.cpp
     src/crypto.cpp
+    src/ketje.cpp
 )
 
 # Set target include directories 
