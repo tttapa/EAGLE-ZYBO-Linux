@@ -3,6 +3,8 @@ add_library(crypto
     src/bitString.cpp
     src/cryptoPoller.cpp
     src/crypto.cpp
+    src/ketje.cpp
+    src/keccak.cpp
 )
 
 # Set target include directories 
@@ -33,6 +35,7 @@ target_link_libraries(crypto
     PRIVATE 
         comm
         utilities
+        cryptosw
 )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that

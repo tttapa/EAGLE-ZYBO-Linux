@@ -10,10 +10,10 @@ void Logger::update() {
         LogEntry logEntry = acLogEntry->read();
         for (auto &sender : senders)
             sender.send(logEntry);
-        std::cout << "Logger: framecounter = " << logEntry.framecounter
-                  << std::endl;
-        std::cout << "        frametime    = " << logEntry.frametime
-                  << std::endl;
-        std::cout << "        size         = " << logEntry.size << std::endl;
+        // std::cout << "Logger: framecounter = " << logEntry.framecounter
+        //           << std::endl;
+        // std::cout << "        frametime    = " << logEntry.frametime
+        //           << std::endl;
+        // std::cout << "        size         = " << logEntry.size << std::endl;
     }
 }

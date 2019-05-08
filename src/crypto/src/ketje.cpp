@@ -1,16 +1,18 @@
 #include <ketje.hpp>
 
 void Ketje::initialize(const BitString &nonce) {
-    BitString bitString(key.getLength() + 16);
-    bitString.reserve(200);
-    bitString.concatenate(key);
-    bitString.addMultiRatePadding(200, bitString.getLength());
+    BitString keyPack(key.getLength() + 16);
+    keyPack.reserve(200);
+    keyPack.concatenate(key);
+    keyPack.addSimplePadding(key.getLength() + 16 - 8, key.getLength());
+    keyPack.concatenate(nonce);
+    keyPack.addMultiRatePadding(200, keyPack.getLength());
 
-    std::array<uint32_t, 10> keypack;
-    bitString.split(keypack);
+    std::array<uint32_t, 10> splittedKeyPack;
+    keyPack.split(splittedKeyPack);
 
     for (int8_t i = 0; i < 10; i++)
-        cryptoPoller.write(9 - i, keypack[i]);
+        cryptoPoller.write(9 - i, splittedKeyPack[i]);
 
     cryptoPoller.start();
 }
@@ -20,7 +22,7 @@ BitString Ketje::unwrap(const BitString &associatedData,
     std::vector<BitString> blockAssociatedData;
     associatedData.splitBlocks(blockAssociatedData);
 
-    for (int16_t i = 0; i + 1 < blockAssociatedData.size(); i++) {
+    for (uint16_t i = 0; i + 1 < (uint16_t) blockAssociatedData.size(); i++) {
         cryptoPoller.normalStep(
             blockAssociatedData[i]
                 .concatenateAndAddMultiRatePadding(
@@ -41,7 +43,7 @@ BitString Ketje::unwrap(const BitString &associatedData,
     BitString bitStringResult(result, blockCipherText[0].getLength());
 
     BitString plainText;
-    for (int16_t i = 0; i + 1 < blockCipherText.size(); i++) {
+    for (uint16_t i = 0; i + 1 < (uint16_t) blockCipherText.size(); i++) {
         bitStringResult.xorWith(blockCipherText[i]);
         plainText.concatenate(bitStringResult);
 
@@ -50,7 +52,7 @@ BitString Ketje::unwrap(const BitString &associatedData,
                 .concatenateAndAddMultiRatePadding(0x03, 20,
                                                    bitStringResult.getLength())
                 .toUint32());
-        bitStringResult = BitString(result, blockCipherText[i].getLength());
+        bitStringResult = BitString(result, blockCipherText[i + 1].getLength());
     }
 
     bitStringResult.xorWith(blockCipherText[blockCipherText.size() - 1]);
@@ -67,14 +69,15 @@ BitString Ketje::unwrap(const BitString &associatedData,
 
     for (uint16_t i = 0; i < blockTag.size(); i++) {
         bitStringResult = BitString(result, blockTag[i].getLength());
+
         if (bitStringResult != blockTag[i])
             throw CryptoException(
                 CryptoException::ExceptionType::UNSUCCESSFUL_DECODE_EXCEPTION);
 
-        if (i + 1 == blockTag.size())
+        if (i + 1 == (uint16_t) blockTag.size())
             break;
 
-        result = cryptoPoller.normalStep(0x00'00'00'00);
+        result = cryptoPoller.normalStep(0x00'00'20'08);
     }
 
     return plainText;

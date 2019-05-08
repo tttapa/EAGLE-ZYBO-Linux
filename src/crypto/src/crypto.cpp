@@ -1,3 +1,4 @@
+#include <bitString.hpp>
 #include <crypto.hpp>
 
 CryptoInstruction decrypt(const std::vector<uint8_t> &qrCode) {
@@ -112,4 +113,23 @@ CryptoInstruction decrypt(const std::vector<uint8_t> &qrCode) {
 
     throw CryptoException(
         CryptoException::ExceptionType::UNSUCCESSFUL_DECODE_EXCEPTION);
+
+    //SOFTWARE
+
+    //TODO: DMKEY uit bestand lezen.
+    /*
+       BitString dmKey;
+       BitString nonce(qrCode, 0, 10);
+       BitString wx(qrCode, 10,11);
+       BitString wy(qrCode,11,12);
+       BitString wid(qrCode, 12,14);
+       BitString ad (qrCode, 10,15);
+       BitString keyMaterial(dmKey);
+       keyMaterial.concatenate(wx).concatenate(wy).concatenate(wid);
+       int nbInstruction = (int) qrCode[14];
+
+       int currentIndex = 15;
+
+       hash(0,0,keyMaterial,96/8);
+       */
 }

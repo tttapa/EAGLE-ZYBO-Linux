@@ -1,7 +1,10 @@
+#include <EagleCrypt.h>
 #include <bitString.hpp>
 #include <crypto.hpp>
 #include <cryptoPoller.hpp>
 #include <gtest/gtest.h>
+#include <keccak.hpp>
+#include <ketje.hpp>
 
 /**
  * @brief   Testbench provided by TAs.
@@ -157,10 +160,8 @@ TEST(Crypto, CryptoKeypack) {
         .addSimplePadding(l - 8, keyLength)
         .addMultiRatePadding(200, keypack.getLength());
 
-    std::cout.flags(std::cout.flags() | std::ios::hex);
-    std::cout << "\n" << keypack << "\n";
-    std::cout.flags(std::cout.flags() & ~std::ios::hex);
-    std::cout << keypack << "\n";
+    std::cout << std::hex << "\n" << keypack << "\n";
+    std::cout << std::dec << keypack << "\n";
 
     ASSERT_EQ(keypack,
               BitString({0x18, 0xfe, 0x97, 0x30, 0xc9, 0x62, 0xfb, 0x94, 0x2d,
@@ -187,13 +188,12 @@ TEST(Crypto, CryptoKeypack) {
  */
 TEST(Crypto, BitStringConstructorOutput) {
     std::stringstream stream("");
-    stream.flags(stream.flags() | std::ios::hex);
 
     const char *results[5] = {"b\n", "ab \n", "ab d\n", "ab cd \n",
                               "ab cd e\n"};
     for (int8_t i = 0; i < 5; i++) {
         BitString bitString(0xABCDE, 4 * (i + 1));
-        stream << bitString;
+        stream << std::hex << bitString;
         ASSERT_EQ(stream.str(), results[i]);
         stream.str("");
     }
@@ -230,12 +230,11 @@ TEST(Crypto, BitStringSplitBlocks2) {
 TEST(Crypto, BitStringSplitBlocks3) {
     std::vector<uint8_t> vector1({0x12, 0x34});
     BitString bitString(vector1);
-    bitString.concatenateAndAddMultiRatePadding(0x11, 20, 16);
+    bitString.concatenateAndAddMultiRatePadding(0x03, 20, 16);
     std::vector<BitString> vector2;
     bitString.splitBlocks(vector2);
     std::stringstream stream("");
-    stream.flags(stream.flags() | std::ios::hex);
-    stream << vector2[0];
+    stream << std::hex << vector2[0];
     ASSERT_EQ(stream.str(), "12 34 \n");
     stream.str("");
     stream << vector2[1];
@@ -253,8 +252,7 @@ TEST(Crypto, BitStringSplitBlocks4) {
     std::vector<BitString> vector2;
     bitString.splitBlocks(vector2);
     std::stringstream stream("");
-    stream.flags(stream.flags() | std::ios::hex);
-    stream << vector2[0];
+    stream << std::hex << vector2[0];
     ASSERT_EQ(stream.str(), "12 34 \n");
     stream.str("");
     stream << vector2[1];
@@ -272,8 +270,7 @@ TEST(Crypto, BitStringSplitBlocks5) {
     std::vector<BitString> vector2;
     bitString.splitBlocks(vector2);
     std::stringstream stream("");
-    stream.flags(stream.flags() | std::ios::hex);
-    stream << vector2[0];
+    stream << std::hex << vector2[0];
     ASSERT_EQ(stream.str(), "12 34 \n");
     stream.str("");
     stream << vector2[1];
@@ -289,8 +286,7 @@ TEST(Crypto, BitStringSplitBlocks6) {
     std::vector<BitString> vector2;
     bitString.splitBlocks(vector2);
     std::stringstream stream("");
-    stream.flags(stream.flags() | std::ios::hex);
-    stream << vector2[0];
+    stream << std::hex << vector2[0];
     ASSERT_EQ(stream.str(), "12 34 \n");
     stream.str("");
     stream << vector2[1];
@@ -355,11 +351,91 @@ TEST(Crypto, TemporaryCryptoTest) {
     ASSERT_EQ(instruction.getYCoordinate(), 6);
 }
 
-#include <EagleCrypt.h>
+/**
+ * @brief   Test Ketje initialize and unwrap.
+ */
+TEST(Crypto, KetjeTest) {
+    Ketje ketje(BitString({0xfe, 0x97, 0x30, 0xc9, 0x62, 0xfb, 0x94, 0x2d,
+                           0xc6, 0x5f, 0xf8, 0x91, 0x2a, 0xc3, 0x5c, 0xf5,
+                           0x8e, 0x27, 0xc0, 0x59, 0xf2, 0x8b}));
+
+    ketje.initialize(BitString());
+    ASSERT_EQ(ketje.unwrap(
+                  BitString(), BitString(),
+                  BitString({0x1a, 0x9a, 0x90, 0xe0, 0x39, 0x37, 0x19, 0xf7,
+                             0x29, 0xb0, 0x46, 0xa4, 0x98, 0x9a, 0xa5, 0x11})),
+              BitString());
+
+    std::cout << std::endl << std::endl;
+
+    ASSERT_EQ(ketje.unwrap(
+                  BitString(),
+                  BitString({0xf7, 0x37, 0xdf, 0x7b, 0x9e, 0x0f, 0x80, 0xb4,
+                             0x79, 0xce, 0xb7}),
+                  BitString({0xf5, 0xf5, 0x91, 0x4f, 0x1e, 0x10, 0x68, 0x5e,
+                             0x6b, 0xc5, 0x84, 0xdd, 0x28, 0x14, 0xf7, 0x21})),
+              BitString({0x4b, 0x6c, 0xec, 0x0d, 0x8d, 0xae, 0x2e, 0x4f, 0xcf,
+                         0xf0, 0x70}));
+
+    ASSERT_EQ(
+        ketje.unwrap(
+            BitString(),
+            BitString({0xcc, 0x7d, 0x26, 0x44, 0x20, 0xd9, 0xc9, 0xf1, 0xed,
+                       0xcf, 0x54, 0xf8, 0x93, 0x9b, 0x04, 0x34, 0x2f, 0xd1,
+                       0x7b, 0x54, 0xa0, 0xe9, 0x44, 0xb6, 0xeb, 0x37, 0xcf}),
+            BitString({0xdc, 0x52, 0xc8, 0x99, 0xb1, 0x75, 0x00, 0x75, 0xf9,
+                       0xf7, 0x8b, 0x29, 0xaf, 0x5c, 0xa9, 0xb0})),
+        BitString({0x6b, 0x8c, 0x0c, 0x2d, 0xad, 0xce, 0x4e, 0x6f, 0xef,
+                   0x10, 0x90, 0xb1, 0x31, 0x52, 0xd2, 0xf3, 0x73, 0x94,
+                   0x14, 0x35, 0xb5, 0xd6, 0x56, 0x77, 0xf7, 0x18, 0x98}));
+
+    ASSERT_EQ(ketje.unwrap(
+                  BitString({0x3a, 0xcb, 0x5c, 0xed, 0x7e, 0x0f, 0xa0, 0x31,
+                             0xc2, 0x53, 0xe4}),
+                  BitString(),
+                  BitString({0xe4, 0x85, 0x40, 0x90, 0xed, 0xf6, 0x2a, 0x84,
+                             0x9a, 0x6e, 0xe2, 0x4b, 0x85, 0x96, 0x1b, 0x4d})),
+              BitString());
+
+    ASSERT_EQ(ketje.unwrap(
+                  BitString({0x51, 0xe2, 0x73, 0x04, 0x95, 0x26, 0xb7, 0x48,
+                             0xd9, 0x6a, 0xfb}),
+                  BitString({0x3f, 0x78, 0x85, 0xb4, 0x38, 0x3f, 0xa3, 0xef,
+                             0x6e, 0x8d, 0xb5, 0xb8, 0x2a, 0x72, 0xdf, 0xe7,
+                             0x20, 0x68, 0x06, 0x80, 0x12, 0x79, 0xae}),
+                  BitString({0x41, 0xe3, 0xda, 0x56, 0x2c, 0x81, 0x9e, 0xec,
+                             0xdd, 0x3f, 0x84, 0xd0, 0xb5, 0xdb, 0xe1, 0xfb})),
+              BitString({0xee, 0x0f, 0x8f, 0xb0, 0x30, 0x51, 0xd1, 0xf2,
+                         0x72, 0x93, 0x13, 0x34, 0xb4, 0xd5, 0x55, 0x76,
+                         0xf6, 0x17, 0x97, 0xb8, 0x38, 0x59, 0xd9}));
+}
 
 /**
- * @brief   Test Link libraries.
+ * @brief   Test Keccak key derivation.
  */
-TEST(Crypto, LinkTest) {
-    init(0, 0, 0, 0);
+/*
+TEST(Crypto, HashTest) {
+    ASSERT_EQ(hash(BitString({0xae, 0xb6, 0x93, 0x1d, 0x55, 0xdf, 0x17,
+                              0x2e, 0xac, 0x78, 0x0f, 0xa6, 0x7e, 0xe4,
+                              0xdd, 0xf3, 0x04, 0x04, 0xfc, 0x00})),
+              BitString({0x0a, 0x62, 0x85, 0xc7, 0x27, 0x98, 0x10, 0x22, 0x66,
+                         0x1f, 0x7c, 0x04}));
+}
+*/
+
+/**
+ * @brief   Test the given SW implementation.
+ */
+TEST(Crypto, SWTest) {
+    unsigned char digest[20] = {0xae, 0xb6, 0x93, 0x1d, 0x55, 0xdf, 0x17,
+                                0x2e, 0xac, 0x78, 0x0f, 0xa6, 0x7e, 0xe4,
+                                0xdd, 0xf3, 0x04, 0x04, 0xfc, 0x00};
+
+    unsigned char key[96 / 8] = {0x0a, 0x62, 0x85, 0xc7, 0x27, 0x98,
+                                 0x10, 0x22, 0x66, 0x1f, 0x7c, 0x04};
+
+    hash(0, 0, digest, 96 / 8);
+
+    for (int16_t i = 0; i < 96 / 8; i++)
+        ASSERT_EQ(digest[i], key[i]);
 }

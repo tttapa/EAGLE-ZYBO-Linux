@@ -9,6 +9,9 @@ import datetime
 import sys
 from DroneLogger import LogEntry
 import heapq
+import numpy as np
+import cv2 as cv
+import matplotlib
 
 MCAST_GRP = '239.0.0.2'
 MCAST_PORT = 5003
@@ -27,7 +30,7 @@ class ComparableLogEntry(LogEntry):
 class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
     queue = []
     ctr = 0
-    print_subsample = 5
+    print_subsample = 10
 
     def handle(self):
         data = self.request[0]
@@ -60,6 +63,8 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
             
             LoggingThreadedUDPRequestHandler.ctr = 0
 
+scale = 10
+offset = 200
 
 class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServer):
     allow_reuse_address = True
@@ -67,6 +72,8 @@ class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServ
     def __init__(self, filename: str, *args):
         super().__init__(*args)
         self.filename = filename
+
+        self.image = np.zeros((640,480,3), np.uint8)
 
     def __enter__(self):
         print("Opening file: " + self.filename)
@@ -79,6 +86,12 @@ class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServ
 
     def log(self, logentry: LogEntry):
         self.file.write(bytes(logentry))
+
+        point = (int(round(logentry.measurement_location[0] * scale)) + offset,
+                 int(round(logentry.measurement_location[0] * scale)) + offset)
+        cv.circle(self.image, tuple(point), 5, (255, 255, 255), -1)
+        cv.imshow("image", self.image)
+        cv.waitKey(1)
 
 
 if __name__ == "__main__":
