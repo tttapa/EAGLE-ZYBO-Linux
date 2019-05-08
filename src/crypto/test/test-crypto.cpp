@@ -425,11 +425,13 @@ TEST(Crypto, KetjeTest2) {
                              0x4a, 0x0d, 0xab, 0x59, 0x5c, 0x65, 0xa2, 0x26})),
               BitString());
 
+    std::vector<uint8_t> cipherText({0xe0});
+    std::vector<uint8_t> plainText({0xf7});
     ASSERT_EQ(ketje.unwrap(
-                  BitString(), BitString({0xe0}),
+                  BitString(), BitString(cipherText),
                   BitString({0xab, 0xde, 0x67, 0x18, 0x8f, 0x43, 0x72, 0xe1,
                              0xfc, 0x83, 0x5d, 0xe2, 0x5e, 0x9f, 0x82, 0xb3})),
-              BitString({0xf7}));
+              BitString(plainText));
 }
 
 /**
@@ -442,8 +444,11 @@ TEST(Crypto, KetjeTest3) {
 
     ketje.initialize(BitString(
         {0x53, 0x9d, 0x08, 0x8b, 0xc0, 0x13, 0xfe, 0x89, 0x96, 0x39}));
+
+    std::vector<uint8_t> cipherText({0x9c});
+    std::vector<uint8_t> plainText({0x7f});
     ASSERT_EQ(ketje.unwrap(BitString({0x04, 0x04, 0xfc, 0x00, 0x08}),
-                           BitString({0x9c}),
+                           BitString(cipherText),
                            BitString({0x94, 0xcb, 0x04, 0x8a})),
-              BitString({0x7f}));
+              BitString(plainText));
 }
