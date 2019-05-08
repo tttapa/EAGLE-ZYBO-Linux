@@ -2,4 +2,4 @@
 
 #include <bitString.hpp>
 
-BitString hash(BitString digest);
+BitString hash(BitString message);
