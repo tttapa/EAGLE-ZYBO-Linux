@@ -3,6 +3,7 @@
 #include <Configuration.hpp>
 #include <Instances.hpp>
 #include <RC.hpp>
+#include <Time.hpp>
 
 /**
  * @brief   Rather sketchy conversion from a struct of primitives of the same

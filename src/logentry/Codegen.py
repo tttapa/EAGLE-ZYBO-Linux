@@ -12,35 +12,35 @@ datamembers = [
     # Logging
     ('u', "size", "$size"),
     ('u', "mode", "getFlightMode()"),
-    ('u64', "frametime", "{} /* TODO */"), # TODO
-    ('u', "framecounter", "{} /* TODO */"), # TODO
-
+    ('u64', "frametime", "getMillis()"),
+    ('u', "framecounter", "getTickCount()"),
     # Configuration
-    ('i', "droneConfig", "getDroneConfiguration() /* TODO */"), # TODO
+    ('i', "droneConfig", "configManager.getControllerConfiguration()"),
 
     # RC controls
-    ('f', "rcTuning", "getRCTuner()"),
-    ('f', "rcThrottle", "getRCThrottle()"),
-    ('f', "rcRoll", "getRCRoll()"),
-    ('f', "rcPitch", "getRCPitch()"),
-    ('f', "rcYaw", "getRCYaw()"),
+    ('f', "rcTuning", "getTuner()"),
+    ('f', "rcThrottle", "getThrottle()"),
+    ('f', "rcRoll", "getRoll()"),
+    ('f', "rcPitch", "getPitch()"),
+    ('f', "rcYaw", "getYaw()"),
 
     # Reference 
-    ('f', "referenceOrientation", 4, "toCppArray(attitude.getReference())"),
-    ('f', "referenceHeight", "altitude.getReference()"),
-    ('f', "referenceLocation", 2, "toCppArray(position.getReference())"),
+    ('f', "referenceOrientation", 4, "toCppArray(attitudeController.getReferenceQuat())"),
+    ('f', "referenceOrientation", 3, "toCppArray(attitudeController.getReferenceEuler())"),
+    ('f', "referenceHeight", "altitudeController.getReferenceHeight()"),
+    ('f', "referenceLocation", 2, "toCppArray(position.getReferencePosition())"),
 
     # Measurements
-    ('f', "measurementOrientation", 4 ,"{} /* TODO */"), # TODO
-    ('f', "measurementAngularVelocity", 3 ,"{} /* TODO */"), # TODO
-    ('f', "measurementHeight", "{} /* TODO */"), # TODO
-    ('f', "measurementLocation", 2, "{} /* TODO */"), # TODO
+    ('f', "measurementOrientation", 4 ,"getAHRSQuat()"),
+    ('f', "measurementAngularVelocity", 3 ,"getGyroMeasurement()"),
+    ('f', "measurementHeight", "getCorrectedSonarMeasurement()"),
+    ('f', "measurementLocation", 2, "getCorrectedPosition()"),
 
     # Observers
     ('f', "attitudeObserverState", 10 ,"toCppArray(attitude.getState())"),
     ('f', "altitudeObserverState", 3, "toCppArray(altitude.getState())"),
     ('f', "navigationObserverState", 6, "toCppArray(position.getState())"),
-    ('f', "attitudeYawOffset", "{} /* TODO */"), # TODO
+    ('f', "attitudeYawOffset", "getYawJump()"),
 
     # Controller outputs
     ('f', "attitudeControlSignals", 3, "toCppArray(attitude.getControl())"),
@@ -50,7 +50,7 @@ datamembers = [
 
     # Thrust
     ('f', "commonThrust", "{} /* TODO */"), # TODO
-    ('f', "hoverThrust", "{} /* TODO */"), # TODO
+    ('f', "hoverThrust", "inputBias.getThrustBias()"), # TODO
 ]
 
 if len(sys.argv) > 1:
