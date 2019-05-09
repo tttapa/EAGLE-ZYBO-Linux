@@ -4,6 +4,7 @@
 #include <gtest/gtest.h>
 #include <keccak.hpp>
 #include <ketje.hpp>
+#include <swImplementation.hpp>
 
 /**
  * @brief   Testbench provided by TAs.
@@ -450,4 +451,29 @@ TEST(Crypto, KetjeTest3) {
                            BitString(cipherText),
                            BitString({0x94, 0xcb, 0x04, 0x8a})),
               BitString(plainText));
+}
+
+/**
+ * @brief   Test BitString conversion to byte array.
+ */
+TEST(Crypto, BitStringToByteArray) {
+    BitString string({0x08, 0x59, 0xd4, 0x56, 0x78, 0xfd});
+    unsigned char buffer[6];
+    string.toByteArray(buffer, 6);
+
+    std::stringstream stream;
+    stream << std::hex << string;
+
+    ASSERT_EQ(stream.str(), "08 59 d4 56 78 fd \n");
+}
+
+/**
+ * @brief   Test SW implementation.
+ */
+TEST(Crypto, TemporaryTestSWImplementation) {
+    std::vector<uint8_t> message = {0x00};
+    BitString messageBitString   = SWImplementation::hash(BitString(message));
+    ASSERT_EQ(messageBitString,
+              BitString({0x0a, 0x62, 0x85, 0xc7, 0x27, 0x98, 0x10, 0x22, 0x66,
+                         0x1f, 0x7c, 0x04}));
 }

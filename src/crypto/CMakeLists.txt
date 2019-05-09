@@ -5,6 +5,7 @@ add_library(crypto
     src/crypto.cpp
     src/ketje.cpp
     src/keccak.cpp
+    src/swImplementation.cpp
 )
 
 # Set target include directories 
