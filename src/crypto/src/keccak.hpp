@@ -2,4 +2,4 @@
 
 #include <bitString.hpp>
 
-BitString hash(BitString message);
+BitString keccak(BitString message);

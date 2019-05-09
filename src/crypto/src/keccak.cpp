@@ -2,7 +2,7 @@
 
 #include <cryptoPoller.hpp>
 
-BitString hash(BitString message) {
+BitString keccak(BitString message) {
     message.concatenateAndAddMultiRatePadding(0x02, 16, message.getLength());
 
     std::vector<BitString> blockMessage;
