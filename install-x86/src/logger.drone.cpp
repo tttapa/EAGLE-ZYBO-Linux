@@ -60,7 +60,7 @@ LogEntry getLogData() {
     RCValues rc = readRC();
 
     LogEntry logEntry;
-        logEntry.setSize(60);
+    logEntry.setSize(64);
     logEntry.setMode(getFlightMode());
     logEntry.setFrametime(getMillis());
     logEntry.setFramecounter(getTickCount());
@@ -71,6 +71,8 @@ LogEntry getLogData() {
     logEntry.setRcPitch(getPitch());
     logEntry.setRcYaw(getYaw());
     logEntry.setReferenceOrientation(toCppArray(attitudeController.getReferenceQuat()));
+    logEntry.setReferenceOrientationEuler(toCppArray(attitudeController.getReferenceEuler()));
+    logEntry.set__pad0({0});
     logEntry.setReferenceHeight(altitudeController.getReferenceHeight());
     logEntry.setReferenceLocation(toCppArray(position.getReferencePosition()));
     logEntry.setMeasurementOrientation(getAHRSQuat());
@@ -87,5 +89,6 @@ LogEntry getLogData() {
     logEntry.setMotorControlSignals({} /* TODO */);
     logEntry.setCommonThrust({} /* TODO */);
     logEntry.setHoverThrust(inputBias.getThrustBias());
- return logEntry;
+ 
+    return logEntry;
 }

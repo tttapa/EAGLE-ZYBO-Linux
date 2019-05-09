@@ -60,5 +60,6 @@ LogEntry getLogData() {
     RCValues rc = readRC();
 
     LogEntry logEntry;
-    $cpp_assignments return logEntry;
+$cpp_assignments 
+    return logEntry;
 }
