@@ -1,4 +1,3 @@
-#include <EagleCrypt.h>
 #include <bitString.hpp>
 #include <crypto.hpp>
 #include <cryptoPoller.hpp>
@@ -423,6 +422,10 @@ TEST(Crypto, HashTest) {
 }
 */
 
+#ifdef ZYBO
+
+#include <EagleCrypt.hpp>
+
 /**
  * @brief   Test the given SW implementation.
  */
@@ -439,3 +442,5 @@ TEST(Crypto, SWTest) {
     for (int16_t i = 0; i < 96 / 8; i++)
         ASSERT_EQ(digest[i], key[i]);
 }
+
+#endif // ZYBO

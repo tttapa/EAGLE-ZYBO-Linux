@@ -26,7 +26,7 @@ datamembers = [
 
     # Reference 
     ('f', "referenceOrientation", 4, "toCppArray(attitudeController.getReferenceQuat())"),
-    ('f', "referenceOrientation", 3, "toCppArray(attitudeController.getReferenceEuler())"),
+    # ('f', "referenceOrientationEuler", 3, "toCppArray(attitudeController.getReferenceEuler())"),
     ('f', "referenceHeight", "altitudeController.getReferenceHeight()"),
     ('f', "referenceLocation", 2, "toCppArray(position.getReferencePosition())"),
 

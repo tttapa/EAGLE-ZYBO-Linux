@@ -35,8 +35,11 @@ target_link_libraries(crypto
     PRIVATE 
         comm
         utilities
-        cryptosw
 )
+
+if (CMAKE_CROSSCOMPILING)
+target_link_libraries(crypto PRIVATE cryptosw)
+endif()
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
 # adds the tests.

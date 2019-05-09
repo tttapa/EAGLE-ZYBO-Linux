@@ -8,7 +8,7 @@ import time
 import datetime
 import sys
 from DroneLogger import LogEntry
-import heapq
+import heapq    
 import numpy as np
 import cv2 as cv
 import matplotlib

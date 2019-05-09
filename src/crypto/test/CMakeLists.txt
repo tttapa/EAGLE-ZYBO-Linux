@@ -2,8 +2,12 @@
 add_executable(crypto.test test-crypto.cpp)
 # Link the test executable with the Google Test main entry point and the library
 # under test
-target_link_libraries(crypto.test gtest_main crypto comm cryptosw)
+target_link_libraries(crypto.test gtest_main crypto comm)
 target_include_directories(crypto.test PRIVATE ../src)
+
+if (CMAKE_CROSSCOMPILING)
+target_link_libraries(crypto.test cryptosw)
+endif()
 
 # Add the tests to Google Test
 include(GoogleTest)
