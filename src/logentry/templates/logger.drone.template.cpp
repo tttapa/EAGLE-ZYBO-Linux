@@ -1,8 +1,11 @@
 #include <LogEntry.h>
 
-#include <Configuration.hpp>
-#include <Instances.hpp>
-#include <RC.hpp>
+#include <ConfigurationManager.hpp>
+#include <ControllerInstances.hpp>
+#include <MiscInstances.hpp>
+#include <OutputValues.hpp>
+#include <RCValues.hpp>
+#include <SensorValues.hpp>
 #include <Time.hpp>
 
 /**
@@ -41,7 +44,8 @@ static const ArrayElementType (&toCppArray(
     const StructType &data))[sizeof(StructType) / sizeof(ArrayElementType)] {
     static_assert(sizeof(StructType) % sizeof(ArrayElementType) == 0);
     return reinterpret_cast<
-        ArrayElementType(&)[sizeof(StructType) / sizeof(ArrayElementType)]>(data);
+        ArrayElementType(&)[sizeof(StructType) / sizeof(ArrayElementType)]>(
+        data);
 }
 
 /**
@@ -60,6 +64,6 @@ LogEntry getLogData() {
     RCValues rc = readRC();
 
     LogEntry logEntry;
-$cpp_assignments 
+$cpp_assignments
     return logEntry;
 }

@@ -27,7 +27,7 @@ datamembers = [
     # Reference 
     ('f', "referenceOrientation", 4, "toCppArray(attitudeController.getReferenceQuat())"),
     ('f', "referenceOrientationEuler", 3, "toCppArray(attitudeController.getReferenceEuler())"),
-    ('f', "__pad0", "{0}"),
+    ('f', "__pad0", "0"),
     ('f', "referenceHeight", "altitudeController.getReferenceHeight()"),
     ('f', "referenceLocation", 2, "toCppArray(position.getReferencePosition())"),
 
@@ -38,20 +38,20 @@ datamembers = [
     ('f', "measurementLocation", 2, "getCorrectedPosition()"),
 
     # Observers
-    ('f', "attitudeObserverState", 10 ,"toCppArray(attitude.getState())"),
-    ('f', "altitudeObserverState", 3, "toCppArray(altitude.getState())"),
-    ('f', "navigationObserverState", 6, "toCppArray(position.getState())"),
+    ('f', "attitudeObserverState", 10 ,"toCppArray(attitude.getStateEstimate())"),
+    ('f', "altitudeObserverState", 3, "toCppArray(altitude.getStateEstimate())"),
+    ('f', "navigationObserverState", 6, "toCppArray(position.getStateEstimate())"),
     ('f', "attitudeYawOffset", "getYawJump()"),
 
     # Controller outputs
-    ('f', "attitudeControlSignals", 3, "toCppArray(attitude.getControl())"),
-    ('f', "altitudeControlSignal", "altitude.getControl()"),
-    ('f', "positionControlSignal", 2, "position.getControl()"),
-    ('f', "motorControlSignals", 4, "{} /* TODO */"), # TODO
+    ('f', "attitudeControlSignals", 3, "toCppArray(attitude.getControlSignal())"),
+    ('f', "altitudeControlSignal", "altitude.getControlSignal()"),
+    ('f', "positionControlSignal", 2, "position.getControlSignal()"),
+    ('f', "motorControlSignals", 4, "toCppArray(getMotorSignals())"),
 
     # Thrust
-    ('f', "commonThrust", "{} /* TODO */"), # TODO
-    ('f', "hoverThrust", "inputBias.getThrustBias()"), # TODO
+    ('f', "commonThrust", "getCommonThrust()"),
+    ('f', "hoverThrust", "inputBias.getThrustBias()"),
 ]
 
 if len(sys.argv) > 1:

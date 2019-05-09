@@ -210,6 +210,16 @@
             },
             "problemMatcher": "$gcc"
         },
+        {
+            "label": "Export Shared Source Files to BaremetalImproved",
+            "type": "shell",
+            "command": "rsync -ra ${workspaceFolder}/install-arm/ ${workspaceFolder}/../BaremetalImproved/shared-linux",
+            "windows": {
+                "command": "exit 1",
+            },
+            "dependsOn": "Build and Export All ARMv7 ZYBO (Docker)",
+            "problemMatcher": []
+        },
         //#endregion
         //#region Running.......................................................
         {

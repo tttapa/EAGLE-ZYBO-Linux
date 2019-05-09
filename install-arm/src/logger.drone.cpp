@@ -1,8 +1,11 @@
 #include <LogEntry.h>
 
-#include <Configuration.hpp>
-#include <Instances.hpp>
-#include <RC.hpp>
+#include <ConfigurationManager.hpp>
+#include <ControllerInstances.hpp>
+#include <MiscInstances.hpp>
+#include <OutputValues.hpp>
+#include <RCValues.hpp>
+#include <SensorValues.hpp>
 #include <Time.hpp>
 
 /**
@@ -41,7 +44,8 @@ static const ArrayElementType (&toCppArray(
     const StructType &data))[sizeof(StructType) / sizeof(ArrayElementType)] {
     static_assert(sizeof(StructType) % sizeof(ArrayElementType) == 0);
     return reinterpret_cast<
-        ArrayElementType(&)[sizeof(StructType) / sizeof(ArrayElementType)]>(data);
+        ArrayElementType(&)[sizeof(StructType) / sizeof(ArrayElementType)]>(
+        data);
 }
 
 /**
@@ -72,23 +76,23 @@ LogEntry getLogData() {
     logEntry.setRcYaw(getYaw());
     logEntry.setReferenceOrientation(toCppArray(attitudeController.getReferenceQuat()));
     logEntry.setReferenceOrientationEuler(toCppArray(attitudeController.getReferenceEuler()));
-    logEntry.set__pad0({0});
+    logEntry.set__pad0(0);
     logEntry.setReferenceHeight(altitudeController.getReferenceHeight());
     logEntry.setReferenceLocation(toCppArray(position.getReferencePosition()));
     logEntry.setMeasurementOrientation(getAHRSQuat());
     logEntry.setMeasurementAngularVelocity(getGyroMeasurement());
     logEntry.setMeasurementHeight(getCorrectedSonarMeasurement());
     logEntry.setMeasurementLocation(getCorrectedPosition());
-    logEntry.setAttitudeObserverState(toCppArray(attitude.getState()));
-    logEntry.setAltitudeObserverState(toCppArray(altitude.getState()));
-    logEntry.setNavigationObserverState(toCppArray(position.getState()));
+    logEntry.setAttitudeObserverState(toCppArray(attitude.getStateEstimate()));
+    logEntry.setAltitudeObserverState(toCppArray(altitude.getStateEstimate()));
+    logEntry.setNavigationObserverState(toCppArray(position.getStateEstimate()));
     logEntry.setAttitudeYawOffset(getYawJump());
-    logEntry.setAttitudeControlSignals(toCppArray(attitude.getControl()));
-    logEntry.setAltitudeControlSignal(altitude.getControl());
-    logEntry.setPositionControlSignal(position.getControl());
-    logEntry.setMotorControlSignals({} /* TODO */);
-    logEntry.setCommonThrust({} /* TODO */);
+    logEntry.setAttitudeControlSignals(toCppArray(attitude.getControlSignal()));
+    logEntry.setAltitudeControlSignal(altitude.getControlSignal());
+    logEntry.setPositionControlSignal(position.getControlSignal());
+    logEntry.setMotorControlSignals(toCppArray(getMotorSignals()));
+    logEntry.setCommonThrust(getCommonThrust());
     logEntry.setHoverThrust(inputBias.getThrustBias());
- 
+
     return logEntry;
 }

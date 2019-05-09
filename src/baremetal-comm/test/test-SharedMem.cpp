@@ -3,13 +3,6 @@
 #include <BaremetalCommunicationDef.hpp>
 #include <iostream>
 
-struct TestStruct : SharedStruct<TestStruct> {
-    uint32_t l2b = 0;
-    uint32_t b2l = 0;
-
-    constexpr static uintptr_t address = SHARED_MEM_START_ADDRESS + 0xF000;
-};
-
 #ifndef BAREMETAL
 
 #include <SharedMem.hpp>
