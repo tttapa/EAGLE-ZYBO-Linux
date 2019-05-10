@@ -1,5 +1,7 @@
+if(CMAKE_CROSSCOMPILING)
+
 add_library(cryptosw
-    EagleCryptSW.c)
+    EagleCryptSW.cpp)
 
 target_include_directories(cryptosw
     PUBLIC
@@ -14,3 +16,5 @@ target_link_libraries(cryptosw
         ${CMAKE_CURRENT_SOURCE_DIR}/EAGLE-Hash.a
         ${CMAKE_CURRENT_SOURCE_DIR}/EAGLE-KetjeJr.a
 )
+
+endif()

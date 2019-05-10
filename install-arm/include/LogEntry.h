@@ -9,8 +9,10 @@
 using float_6_const_ref = const float(&)[6];
 using float_10_const_ref = const float(&)[10];
 using float_2_const_ref = const float(&)[2];
+using float_3_const_ref = const float(&)[3];
 using float_4_const_ref = const float(&)[4];
 using float_3_const_ref = const float(&)[3];
+using float_10_const_ref = const float(&)[10];
 #else
 #include <stdint.h> // uint32_t, int32_t
 #endif
@@ -29,7 +31,7 @@ struct LogEntry {
     LogEntry() : size(getExpectedNumberOfWords()) {}
 
     uint32_t size;
-    uint32_t mode;
+    int32_t mode;
     uint64_t frametime;
     uint32_t framecounter;
     int32_t droneConfig;
@@ -39,6 +41,8 @@ struct LogEntry {
     float rcPitch;
     float rcYaw;
     float referenceOrientation[4];
+    float referenceOrientationEuler[3];
+    float __pad0;
     float referenceHeight;
     float referenceLocation[2];
     float measurementOrientation[4];
@@ -56,11 +60,11 @@ struct LogEntry {
     float commonThrust;
     float hoverThrust;
 
-    constexpr static size_t getExpectedNumberOfWords() { return 60; }
+    constexpr static size_t getExpectedNumberOfWords() { return 64; }
     void setSize(uint32_t size) { this->size = size; }
     uint32_t getSize() const { return this->size; }
-    void setMode(uint32_t mode) { this->mode = mode; }
-    uint32_t getMode() const { return this->mode; }
+    void setMode(int32_t mode) { this->mode = mode; }
+    int32_t getMode() const { return this->mode; }
     void setFrametime(uint64_t frametime) { this->frametime = frametime; }
     uint64_t getFrametime() const { return this->frametime; }
     void setFramecounter(uint32_t framecounter) { this->framecounter = framecounter; }
@@ -83,6 +87,14 @@ struct LogEntry {
               std::begin(this->referenceOrientation));
     }
     float_4_const_ref getReferenceOrientation() const { return this->referenceOrientation; }
+    void setReferenceOrientationEuler(float_3_const_ref referenceOrientationEuler) {
+        std::copy(std::begin(referenceOrientationEuler),
+              std::end(referenceOrientationEuler), 
+              std::begin(this->referenceOrientationEuler));
+    }
+    float_3_const_ref getReferenceOrientationEuler() const { return this->referenceOrientationEuler; }
+    void set__pad0(float __pad0) { this->__pad0 = __pad0; }
+    float get__pad0() const { return this->__pad0; }
     void setReferenceHeight(float referenceHeight) { this->referenceHeight = referenceHeight; }
     float getReferenceHeight() const { return this->referenceHeight; }
     void setReferenceLocation(float_2_const_ref referenceLocation) {
@@ -161,7 +173,7 @@ struct LogEntry {
 typedef struct {
 
     uint32_t size;
-    uint32_t mode;
+    int32_t mode;
     uint64_t frametime;
     uint32_t framecounter;
     int32_t droneConfig;
@@ -171,6 +183,8 @@ typedef struct {
     float rcPitch;
     float rcYaw;
     float referenceOrientation[4];
+    float referenceOrientationEuler[3];
+    float __pad0;
     float referenceHeight;
     float referenceLocation[2];
     float measurementOrientation[4];
@@ -198,8 +212,8 @@ extern "C" {
 
 uint32_t getSize(const LogEntry *logEntry);
 void setSize(LogEntry *logEntry, uint32_t size);
-uint32_t getMode(const LogEntry *logEntry);
-void setMode(LogEntry *logEntry, uint32_t mode);
+int32_t getMode(const LogEntry *logEntry);
+void setMode(LogEntry *logEntry, int32_t mode);
 uint64_t getFrametime(const LogEntry *logEntry);
 void setFrametime(LogEntry *logEntry, uint64_t frametime);
 uint32_t getFramecounter(const LogEntry *logEntry);
@@ -219,6 +233,11 @@ void setRcYaw(LogEntry *logEntry, float rcYaw);
 const float *getReferenceOrientation(const LogEntry *logEntry);
 void setReferenceOrientation(LogEntry *logEntry, const float *referenceOrientation);
 size_t getReferenceOrientationSize(void);
+const float *getReferenceOrientationEuler(const LogEntry *logEntry);
+void setReferenceOrientationEuler(LogEntry *logEntry, const float *referenceOrientationEuler);
+size_t getReferenceOrientationEulerSize(void);
+float get__pad0(const LogEntry *logEntry);
+void set__pad0(LogEntry *logEntry, float __pad0);
 float getReferenceHeight(const LogEntry *logEntry);
 void setReferenceHeight(LogEntry *logEntry, float referenceHeight);
 const float *getReferenceLocation(const LogEntry *logEntry);
@@ -268,10 +287,10 @@ void setHoverThrust(LogEntry *logEntry, float hoverThrust);
 #endif
 
 #ifdef __cplusplus
-static_assert(sizeof(LogEntry) == sizeof(float) * 60, 
+static_assert(sizeof(LogEntry) == sizeof(float) * 64, 
               "Error: packing of LogEntry is incorrect");
 #else
-_Static_assert(sizeof(LogEntry) == sizeof(float) * 60, 
+_Static_assert(sizeof(LogEntry) == sizeof(float) * 64, 
               "Error: packing of LogEntry is incorrect");
 #endif
 

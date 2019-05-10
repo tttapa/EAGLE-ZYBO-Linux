@@ -19,12 +19,15 @@
 //               :
 // =============================================================================
 
+extern "C" {
+#include "KeccakSpongeWidth200.h"
 #include "KeccakSponge-common.h"
 #include "KeccakSpongeWidth200.h"
 #include "Ketje-common.h"
 #include "KetjeJr.h"
+};
 
-#include "EagleCrypt.h"
+#include "EagleCrypt.hpp"
 #include <stdio.h>
 
 KetjeJr_Instance ketjeJr;

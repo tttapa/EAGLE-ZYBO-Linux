@@ -68,7 +68,7 @@ set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE) # LTO
 
 # Compiler flags for C++
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
--O0 -g3 \
+-O3 -g3 \
 -Wall -Wextra -Werror \
 -Wsuggest-override \
 -Wno-register \

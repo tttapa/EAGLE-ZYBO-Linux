@@ -11,46 +11,47 @@ from CodegenSnippets import *
 datamembers = [
     # Logging
     ('u', "size", "$size"),
-    ('u', "mode", "getFlightMode()"),
-    ('u64', "frametime", "{} /* TODO */"), # TODO
-    ('u', "framecounter", "{} /* TODO */"), # TODO
-
+    ('i', "mode", "int32_t(getFlightMode())"),
+    ('u64', "frametime", "getMillis()"),
+    ('u', "framecounter", "getTickCount()"),
     # Configuration
-    ('i', "droneConfig", "getDroneConfiguration() /* TODO */"), # TODO
+    ('i', "droneConfig", "configManager.getControllerConfiguration()"),
 
     # RC controls
-    ('f', "rcTuning", "getRCTuner()"),
-    ('f', "rcThrottle", "getRCThrottle()"),
-    ('f', "rcRoll", "getRCRoll()"),
-    ('f', "rcPitch", "getRCPitch()"),
-    ('f', "rcYaw", "getRCYaw()"),
+    ('f', "rcTuning", "getTuner()"),
+    ('f', "rcThrottle", "getThrottle()"),
+    ('f', "rcRoll", "getRoll()"),
+    ('f', "rcPitch", "getPitch()"),
+    ('f', "rcYaw", "getYaw()"),
 
     # Reference 
-    ('f', "referenceOrientation", 4, "toCppArray(attitude.getReference())"),
-    ('f', "referenceHeight", "altitude.getReference()"),
-    ('f', "referenceLocation", 2, "toCppArray(position.getReference())"),
+    ('f', "referenceOrientation", 4, "toCppArray(attitudeController.getReferenceQuat())"),
+    ('f', "referenceOrientationEuler", 3, "toCppArray(attitudeController.getReferenceEuler())"),
+    ('f', "__pad0", "0"),
+    ('f', "referenceHeight", "altitudeController.getReferenceHeight()"),
+    ('f', "referenceLocation", 2, "toCppArray(positionController.getReferencePosition())"),
 
     # Measurements
-    ('f', "measurementOrientation", 4 ,"{} /* TODO */"), # TODO
-    ('f', "measurementAngularVelocity", 3 ,"{} /* TODO */"), # TODO
-    ('f', "measurementHeight", "{} /* TODO */"), # TODO
-    ('f', "measurementLocation", 2, "{} /* TODO */"), # TODO
+    ('f', "measurementOrientation", 4 ,"toCppArray(getAHRSQuat())"),
+    ('f', "measurementAngularVelocity", 3 ,"toCppArray(getGyroMeasurement())"),
+    ('f', "measurementHeight", "getCorrectedSonarMeasurement()"),
+    ('f', "measurementLocation", 2, "toCppArray(getCorrectedPositionMeasurement())"),
 
     # Observers
-    ('f', "attitudeObserverState", 10 ,"toCppArray(attitude.getState())"),
-    ('f', "altitudeObserverState", 3, "toCppArray(altitude.getState())"),
-    ('f', "navigationObserverState", 6, "toCppArray(position.getState())"),
-    ('f', "attitudeYawOffset", "{} /* TODO */"), # TODO
+    ('f', "attitudeObserverState", 10 ,"toCppArray(attitudeController.getStateEstimate())"),
+    ('f', "altitudeObserverState", 3, "toCppArray(altitudeController.getStateEstimate())"),
+    ('f', "navigationObserverState", 6, "toCppArray(positionController.getStateEstimate())"),
+    ('f', "attitudeYawOffset", "getYawJump()"),
 
     # Controller outputs
-    ('f', "attitudeControlSignals", 3, "toCppArray(attitude.getControl())"),
-    ('f', "altitudeControlSignal", "altitude.getControl()"),
-    ('f', "positionControlSignal", 2, "position.getControl()"),
-    ('f', "motorControlSignals", 4, "{} /* TODO */"), # TODO
+    ('f', "attitudeControlSignals", 3, "toCppArray(attitudeController.getControlSignal())"),
+    ('f', "altitudeControlSignal", "altitudeController.getControlSignal().ut"),
+    ('f', "positionControlSignal", 2, "toCppArray(positionController.getControlSignal())"),
+    ('f', "motorControlSignals", 4, "toCppArray(getMotorSignals())"),
 
     # Thrust
-    ('f', "commonThrust", "{} /* TODO */"), # TODO
-    ('f', "hoverThrust", "{} /* TODO */"), # TODO
+    ('f', "commonThrust", "getCommonThrust()"),
+    ('f', "hoverThrust", "inputBias.getThrustBias()"),
 ]
 
 if len(sys.argv) > 1:

@@ -4,6 +4,8 @@
 #include <netinet/in.h>
 #include <vector>
 
+#include <iostream>
+
 class UDPSender {
   public:
     UDPSender(const char *group, int port);
