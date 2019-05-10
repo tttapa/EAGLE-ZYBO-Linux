@@ -1,12 +1,6 @@
 #include <logger.drone.hpp>
 
-#include <ConfigurationManager.hpp>
-#include <ControllerInstances.hpp>
-#include <MiscInstances.hpp>
-#include <OutputValues.hpp>
-#include <RCValues.hpp>
-#include <SensorValues.hpp>
-#include <Time.hpp>
+#include <LoggerValues.hpp>
 
 /**
  * @brief   Rather sketchy conversion from a struct of primitives of the same
