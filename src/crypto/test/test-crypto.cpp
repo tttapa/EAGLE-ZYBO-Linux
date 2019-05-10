@@ -2,9 +2,9 @@
 #include <crypto.hpp>
 #include <cryptoPoller.hpp>
 #include <gtest/gtest.h>
+#include <hwImplementation.hpp>
 #include <keccak.hpp>
 #include <ketje.hpp>
-#include <swImplementation.hpp>
 
 /**
  * @brief   Testbench provided by TAs.
@@ -468,12 +468,24 @@ TEST(Crypto, BitStringToByteArray) {
 }
 
 /**
- * @brief   Test SW implementation.
+ * @brief   Test HW implementation.
  */
-TEST(Crypto, TemporaryTestSWImplementation) {
-    std::vector<uint8_t> message = {0x00};
-    BitString messageBitString   = SWImplementation::hash(BitString(message));
+TEST(Crypto, TestHWImplementation) {
+    std::vector<uint8_t> message = {0xae, 0xb6, 0x93, 0x1d, 0x55, 0xdf, 0x17,
+                                    0x2e, 0xac, 0x78, 0x0f, 0xa6, 0x7e, 0xe4,
+                                    0xdd, 0xf3, 0x03, 0x00, 0xf0, 0x00};
+    BitString messageBitString   = HWImplementation::hash(BitString(message));
     ASSERT_EQ(messageBitString,
-              BitString({0x0a, 0x62, 0x85, 0xc7, 0x27, 0x98, 0x10, 0x22, 0x66,
-                         0x1f, 0x7c, 0x04}));
+              BitString({0x23, 0xdc, 0x24, 0xd4, 0x24, 0x81, 0x33, 0x52, 0x82,
+                         0x30, 0x9a, 0x6e}));
+
+    Ketje ketje(BitString({0x23, 0xdc, 0x24, 0xd4, 0x24, 0x81, 0x33, 0x52, 0x82,
+                           0x30, 0x9a, 0x6e}));
+    ketje.initialize(BitString(
+        {0x5d, 0xa4, 0xa2, 0x8f, 0x6b, 0x13, 0x19, 0xe4, 0x77, 0x1c}));
+
+    ASSERT_EQ(ketje.unwrap(BitString({0x03, 0x00, 0xf0, 0x00, 0x08}),
+                           BitString({0x8d, 0x8b, 0x92}),
+                           BitString({0x2a, 0x0f, 0xde, 0xe9})),
+              BitString({0x70, 0x06, 0x02}));
 }
