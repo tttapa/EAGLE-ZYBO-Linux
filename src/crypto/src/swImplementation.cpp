@@ -1,6 +1,6 @@
 #include <swImplementation.hpp>
 
-#include <EagleCrypt.h>
+#include <EagleCrypt.hpp>
 #include <cryptoException.hpp>
 
 BitString SWImplementation::hash(const BitString &message) {
