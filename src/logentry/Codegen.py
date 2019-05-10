@@ -11,7 +11,7 @@ from CodegenSnippets import *
 datamembers = [
     # Logging
     ('u', "size", "$size"),
-    ('u', "mode", "getFlightMode()"),
+    ('i', "mode", "int32_t(getFlightMode())"),
     ('u64', "frametime", "getMillis()"),
     ('u', "framecounter", "getTickCount()"),
     # Configuration
@@ -29,24 +29,24 @@ datamembers = [
     ('f', "referenceOrientationEuler", 3, "toCppArray(attitudeController.getReferenceEuler())"),
     ('f', "__pad0", "0"),
     ('f', "referenceHeight", "altitudeController.getReferenceHeight()"),
-    ('f', "referenceLocation", 2, "toCppArray(position.getReferencePosition())"),
+    ('f', "referenceLocation", 2, "toCppArray(positionController.getReferencePosition())"),
 
     # Measurements
-    ('f', "measurementOrientation", 4 ,"getAHRSQuat()"),
-    ('f', "measurementAngularVelocity", 3 ,"getGyroMeasurement()"),
+    ('f', "measurementOrientation", 4 ,"toCppArray(getAHRSQuat())"),
+    ('f', "measurementAngularVelocity", 3 ,"toCppArray(getGyroMeasurement())"),
     ('f', "measurementHeight", "getCorrectedSonarMeasurement()"),
-    ('f', "measurementLocation", 2, "getCorrectedPosition()"),
+    ('f', "measurementLocation", 2, "toCppArray(getCorrectedPositionMeasurement())"),
 
     # Observers
-    ('f', "attitudeObserverState", 10 ,"toCppArray(attitude.getStateEstimate())"),
-    ('f', "altitudeObserverState", 3, "toCppArray(altitude.getStateEstimate())"),
-    ('f', "navigationObserverState", 6, "toCppArray(position.getStateEstimate())"),
+    ('f', "attitudeObserverState", 10 ,"toCppArray(attitudeController.getStateEstimate())"),
+    ('f', "altitudeObserverState", 3, "toCppArray(altitudeController.getStateEstimate())"),
+    ('f', "navigationObserverState", 6, "toCppArray(positionController.getStateEstimate())"),
     ('f', "attitudeYawOffset", "getYawJump()"),
 
     # Controller outputs
-    ('f', "attitudeControlSignals", 3, "toCppArray(attitude.getControlSignal())"),
-    ('f', "altitudeControlSignal", "altitude.getControlSignal()"),
-    ('f', "positionControlSignal", 2, "position.getControlSignal()"),
+    ('f', "attitudeControlSignals", 3, "toCppArray(attitudeController.getControlSignal())"),
+    ('f', "altitudeControlSignal", "altitudeController.getControlSignal().ut"),
+    ('f', "positionControlSignal", 2, "toCppArray(positionController.getControlSignal())"),
     ('f', "motorControlSignals", 4, "toCppArray(getMotorSignals())"),
 
     # Thrust

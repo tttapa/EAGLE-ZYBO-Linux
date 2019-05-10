@@ -50,7 +50,7 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
             # print('nav ctrl output qr1: ', logentry.reference_orientation[1])
             # print('nav ctrl output qr2: ', logentry.reference_orientation[2])
             # print('observer state:      ', logentry.navigation_observer_state)
-            # print('control signal:      ', logentry.motor_control_signals)
+            print('control signal:      ', logentry.motor_control_signals)
             # print('sonar measurement:   ', logentry.measurement_height)
             # print('alt observer state:  ', logentry.altitude_observer_state)
             # print('hov thrust:          ', logentry.hover_thrust)

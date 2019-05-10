@@ -6,11 +6,11 @@
 #include <cstdint>   // uint32_t, int32_t
 #include <iterator>  // begin, end
 
-using float_4_const_ref = const float(&)[4];
-using float_10_const_ref = const float(&)[10];
+using float_6_const_ref = const float(&)[6];
 using float_2_const_ref = const float(&)[2];
 using float_3_const_ref = const float(&)[3];
-using float_6_const_ref = const float(&)[6];
+using float_4_const_ref = const float(&)[4];
+using float_10_const_ref = const float(&)[10];
 #else
 #include <stdint.h> // uint32_t, int32_t
 #endif
@@ -29,7 +29,7 @@ struct LogEntry {
     LogEntry() : size(getExpectedNumberOfWords()) {}
 
     uint32_t size;
-    uint32_t mode;
+    int32_t mode;
     uint64_t frametime;
     uint32_t framecounter;
     int32_t droneConfig;
@@ -61,8 +61,8 @@ struct LogEntry {
     constexpr static size_t getExpectedNumberOfWords() { return 64; }
     void setSize(uint32_t size) { this->size = size; }
     uint32_t getSize() const { return this->size; }
-    void setMode(uint32_t mode) { this->mode = mode; }
-    uint32_t getMode() const { return this->mode; }
+    void setMode(int32_t mode) { this->mode = mode; }
+    int32_t getMode() const { return this->mode; }
     void setFrametime(uint64_t frametime) { this->frametime = frametime; }
     uint64_t getFrametime() const { return this->frametime; }
     void setFramecounter(uint32_t framecounter) { this->framecounter = framecounter; }
@@ -171,7 +171,7 @@ struct LogEntry {
 typedef struct {
 
     uint32_t size;
-    uint32_t mode;
+    int32_t mode;
     uint64_t frametime;
     uint32_t framecounter;
     int32_t droneConfig;
@@ -210,8 +210,8 @@ extern "C" {
 
 uint32_t getSize(const LogEntry *logEntry);
 void setSize(LogEntry *logEntry, uint32_t size);
-uint32_t getMode(const LogEntry *logEntry);
-void setMode(LogEntry *logEntry, uint32_t mode);
+int32_t getMode(const LogEntry *logEntry);
+void setMode(LogEntry *logEntry, int32_t mode);
 uint64_t getFrametime(const LogEntry *logEntry);
 void setFrametime(LogEntry *logEntry, uint64_t frametime);
 uint32_t getFramecounter(const LogEntry *logEntry);

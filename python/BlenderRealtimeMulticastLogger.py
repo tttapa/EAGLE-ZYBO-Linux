@@ -4,6 +4,7 @@ import sys
 import struct
 import socketserver, socket, threading, time
 from mathutils import Quaternion, Euler
+import heapq
 
 print(sys.version_info)
 
@@ -18,6 +19,13 @@ motor2 = bpy.data.objects["motor2"]
 motor3 = bpy.data.objects["motor3"]
 motor4 = bpy.data.objects["motor4"]
 
+BUFFER_SIZE = 5
+
+
+class ComparableLogEntry(LogEntry):
+    def __lt__(self, other: LogEntry):
+        return self.frametime < other.frametime
+
 class ThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
     queue = []
     ctr = 0
@@ -25,19 +33,17 @@ class ThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
         data = self.request[0]
-        new_entry = ComparableLogEntry(bytes(data))
-        if len(LoggingThreadedUDPRequestHandler.queue) >= BUFFER_SIZE:
+        logentry = ComparableLogEntry(bytes(data))
+        if len(ThreadedUDPRequestHandler.queue) >= BUFFER_SIZE:
             logentry = heapq.heappushpop(
-                LoggingThreadedUDPRequestHandler.queue, new_entry)
+                ThreadedUDPRequestHandler.queue, logentry)
             self.handle_entry(logentry)
         else:
-            heapq.heappush(LoggingThreadedUDPRequestHandler.queue, new_entry)
+            heapq.heappush(ThreadedUDPRequestHandler.queue, logentry)
 
     def handle_entry(self, logentry: LogEntry):
-        self.server.log(logentry)
-
-        LoggingThreadedUDPRequestHandler.ctr += 1
-        if LoggingThreadedUDPRequestHandler.ctr == self.print_subsample:
+        ThreadedUDPRequestHandler.ctr += 1
+        if ThreadedUDPRequestHandler.ctr == self.print_subsample:
             print('frame time:          ', logentry.framecounter)
             # print('reference location:  ', logentry.reference_location)
             print('measurement location:', logentry.measurement_location)
@@ -55,16 +61,16 @@ class ThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
             q = Quaternion(logentry.attitude_observer_state[0:4])
             eul = q.to_euler()
             eul.z = -eul.z
-            eul.z += new_entry.attitude_yaw_offset
+            eul.z += logentry.attitude_yaw_offset
             drone.rotation_quaternion = eul.to_quaternion()
             fac = 0.2
-            motorthrust = new_entry.motor_control_signals
+            motorthrust = logentry.motor_control_signals
             motor1.dimensions[2] = motorthrust[0] * fac
             motor2.dimensions[2] = motorthrust[1] * fac
             motor3.dimensions[2] = motorthrust[2] * fac
             motor4.dimensions[2] = motorthrust[3] * fac
             
-            LoggingThreadedUDPRequestHandler.ctr = 0
+            ThreadedUDPRequestHandler.ctr = 0
 
 
 class ThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServer):
