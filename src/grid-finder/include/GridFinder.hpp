@@ -35,7 +35,7 @@ class GridFinder {
 
     /// When this many consecutive black pixels are encountered, stop following
     /// the line.
-    constexpr static uint HOUGH_MAX_GAP = 16;
+    constexpr static uint HOUGH_MAX_GAP = 64;
 
     /**
      * @brief   Starting from the given pixel, move in the direction of the 
@@ -877,44 +877,49 @@ class GridFinder {
             direction      = mathLine.leftOfPoint(center());
 
             // Try finding the first two corners multiple times. We'll remember the
-            // ones closest to the frame center, so if there's a hole in the image's
+            // ones closest to the initial point, so if there's a hole in the image's
             // line, one of the Bresenham lines will still likely find the correct
             // perpendicular line.
             bool firstCornerFound  = false;
             bool secondCornerFound = false;
-            float dist1, dist2, currentDistance;
+            float dist1 = 0.0, dist2 = 0.0, currentDistance;
+            uint jump1 = 0, jump2 = 0;
             Point initialPoint = sq.lines[0]->lineCenter;
-            Point temp;
+            Point tempPoint;
+            std::optional<LineResult> tempLine;
             for (uint i = 0; i < initialTries; i++) {
-                // Second & third line...
-                uint jump1 =
-                    i * std::round(initialTriesFactor * sq.lines[2]->width);
-                uint jump2 =
-                    i * std::round(initialTriesFactor * sq.lines[3]->width);
-                sq.lines[2] = findNextLine(sq.lines[0], direction, jump1);
-                sq.lines[3] = findNextLine(sq.lines[1], !direction, jump2);
 
-                // First corner: remember closest point to the frame center.
-                if (sq.lines[2].has_value()) {
-                    temp = intersect(*sq.lines[0], *sq.lines[2]);
+                // Jump initialTriesFactor times the initial line width.
+                uint jump =
+                    i * std::round(initialTriesFactor * sq.lines[0]->width);
+
+                // First corner: remember closest point to the initial point.
+                tempLine = findNextLine(sq.lines[0], direction, jump);
+                if (tempLine.has_value()) {
+                    tempPoint = intersect(*sq.lines[0], *tempLine);
                     currentDistance =
-                        Point::distanceSquared(initialPoint, temp);
+                        Point::distanceSquared(initialPoint, tempPoint);
                     if (!firstCornerFound || currentDistance < dist1) {
                         firstCornerFound = true;
                         dist1            = currentDistance;
-                        sq.points[0]     = temp;
+                        sq.points[0]     = tempPoint;
+                        sq.lines[2]      = tempLine;
+                        jump1            = jump;
                     }
                 }
 
-                // Second corner: remember closest point to the frame center.
-                if (sq.lines[3].has_value()) {
-                    temp = intersect(*sq.lines[1], *sq.lines[3]);
+                // Second corner: remember closest point to the initial point.
+                tempLine = findNextLine(sq.lines[1], !direction, jump);
+                if (tempLine.has_value()) {
+                    tempPoint = intersect(*sq.lines[1], *tempLine);
                     currentDistance =
-                        Point::distanceSquared(initialPoint, temp);
+                        Point::distanceSquared(initialPoint, tempPoint);
                     if (!secondCornerFound || currentDistance < dist2) {
                         secondCornerFound = true;
                         dist2             = currentDistance;
-                        sq.points[1]      = temp;
+                        sq.points[1]      = tempPoint;
+                        sq.lines[3]       = tempLine;
+                        jump2             = jump;
                     }
                 }
             }
@@ -928,7 +933,6 @@ class GridFinder {
                 uint minDistance = std::floor(
                     std::max(std::abs(sq.points[0]->x - sq.points[1]->x),
                              std::abs(sq.points[0]->y - sq.points[1]->y)));
-                std::cout << "minDistance = " << minDistance << std::endl;
                 // Use 3/4 of this distance as a minimum distance for where to
                 // start looking for the fourth line, as it's very likely that
                 // the other sides of the square are roughly the same length as
@@ -943,11 +947,11 @@ class GridFinder {
                 while (!sq.lines[4].has_value() && offset < maxOffset) {
                     sq.lines[4] =  // find the fourth line along the second
                         findNextLine(sq.lines[2], direction, offset,
-                                     minDistance);
+                                     std::max(minDistance - jump1, 0u));
                     if (!sq.lines[4].has_value())  // if not found along second
                         sq.lines[4] =  // find the fourth line along the third
                             findNextLine(sq.lines[3], !direction, offset,
-                                         minDistance);
+                                         std::max(minDistance - jump2, 0u));
                     // next time, try again with a different offset
                     offset += offsetIncr;
                 }

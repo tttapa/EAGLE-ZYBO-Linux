@@ -60,7 +60,7 @@ TEST(MaskGridFinder, fromVideo) {
     cv::VideoCapture &video = lf.getCapture();
     int frame_width         = int(video.get(3));
     int frame_height        = int(video.get(4));
-    double fps              = video.get(cv::CAP_PROP_FPS) / 4;
+    double fps              = video.get(cv::CAP_PROP_FPS) / 2;
     cv::VideoWriter out     = {filename + ".out.mp4",
                            cv::VideoWriter::fourcc('M', 'P', '4', 'V'), fps,
                            cv::Size{frame_width * 3, frame_height}};
