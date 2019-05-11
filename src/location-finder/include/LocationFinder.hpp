@@ -37,6 +37,9 @@ class LocationFinder {
     Point getLocation(Square &sq, Vec2f frameCenter);
 
     angle_t getAngle() const { return angle; }
+    float getSideLength() const { return sideLen; }
+    Square getSquare() const { return square; }
+    Point getSquareCenter() const { return squareCenter; }
     cv::Mat getImage() const { return image; }
     cv::Mat getMaskImage() const { return maskImage; }
     cv::VideoCapture &getCapture() { return cap; }
@@ -45,6 +48,8 @@ class LocationFinder {
     cv::VideoCapture cap;
     cv::Mat image;
     cv::Mat maskImage;
+    Point squareCenter;
+    Square square;
     bool hasImage = false;
     AngleTracker angleTracker;
     float sideLen = 0.0;

@@ -52,29 +52,38 @@ TEST(MaskGridFinder, fromVideo) {
     string imagePath =
         string(getenv("WORKSPACE_ROOT")) + "/Video/" + filename + ".mp4";
 #endif
-    constexpr float MAX_LOC = 6;
+    constexpr size_t GRIDSIZE = 48;
 
     LocationFinder lf = imagePath;
     LocationTracker lt;
 
     cv::VideoCapture &video = lf.getCapture();
-    int frame_width         = int(video.get(3)) * 3;
+    int frame_width         = int(video.get(3));
     int frame_height        = int(video.get(4));
-    double fps              = video.get(cv::CAP_PROP_FPS) / 1;
-    cv::VideoWriter out     = {filename + ".out.avi",
-                           cv::VideoWriter::fourcc('M', 'J', 'P', 'G'), fps,
-                           cv::Size{frame_width, frame_height}};
+    double fps              = video.get(cv::CAP_PROP_FPS) / 4;
+    cv::VideoWriter out     = {filename + ".out.mp4",
+                           cv::VideoWriter::fourcc('M', 'P', '4', 'V'), fps,
+                           cv::Size{frame_width * 3, frame_height}};
 
     constexpr float alpha = 0.99;
     constexpr float beta  = 0.0;
 
     try {
         cv::Mat locimg;
+        size_t framectr = 0;
         while (true) {
             Point locInSquare = lf.updateLocation();
             Point location    = lt.update(locInSquare);
             cv::Mat maskimgrgb;
             cv::cvtColor(lf.getMaskImage(), maskimgrgb, cv::COLOR_GRAY2BGR);
+            cv::circle(
+                maskimgrgb,
+                cv::Point(lf.getSquareCenter().x, lf.getSquareCenter().y), 5,
+                cv::Scalar(255, 0, 255), -1);
+            for (auto &p : lf.getSquare().points)
+                if (p)
+                    cv::circle(maskimgrgb, cv::Point(p->x, p->y), 5,
+                               cv::Scalar(0, 255, 0), -1);
             cv::Mat outimg;
             cv::hconcat(lf.getImage(), maskimgrgb, outimg);
             cv::Size size = lf.getImage().size();
@@ -91,18 +100,32 @@ TEST(MaskGridFinder, fromVideo) {
                         }
                     }
                 }
-            int mindim      = std::min(size.height, size.width);
             cv::Point point = {
-                int(std::round(size.width / 2.0f +
-                               mindim / 2.0f * location.x / MAX_LOC)),
-                int(std::round(size.height / 2.0f -
-                               mindim / 2.0f * location.y / MAX_LOC)),
+                int(std::round(size.width / 2.0f + location.x * GRIDSIZE)),
+                int(std::round(size.height / 2.0f - location.y * GRIDSIZE)),
             };
             cv::circle(locimg, point, 3, cv::Scalar(255, 0, 0), -1);
-            cv::hconcat(outimg, locimg, outimg);
+
+            auto font    = cv::FONT_HERSHEY_SIMPLEX;
+            auto locimgo = locimg.clone();
+            auto color   = cv::Scalar(255, 128, 128);
+            for (size_t y = 0; y < size.height / GRIDSIZE + 1; ++y) {
+                size_t yy = y * GRIDSIZE + (size.height / 2) % GRIDSIZE;
+                cv::line(locimgo, cv::Point(0, yy), cv::Point(size.width, yy),
+                         color, 1);
+            }
+            for (size_t x = 0; x < size.width / GRIDSIZE + 1; ++x) {
+                size_t xx = x * GRIDSIZE + (size.width / 2) % GRIDSIZE;
+                cv::line(locimgo, cv::Point(xx, 0), cv::Point(xx, size.height),
+                         color, 1);
+            }
+            cv::putText(locimgo, std::to_string(++framectr),
+                        cv::Point(16, size.height - 16), font, 1,
+                        cv::Scalar(0, 100, 255), 2, cv::LINE_AA);
+            cv::hconcat(outimg, locimgo, outimg);
             cv::cvtColor(outimg, outimg, cv::COLOR_RGB2BGR);
             out.write(outimg);
-            cout << location << endl;
+            // cout << location << endl;
         }
     } catch (std::runtime_error &e) {
         cerr << ANSIColors::red << e.what() << ANSIColors::reset << endl;

@@ -4,12 +4,15 @@
 #include <PerfTimer.hpp>
 #include <QRCryptoManager.hpp>
 #include <ThreadedLogger.hpp>
+#include <fstream>
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <unistd.h>  // usleep
 
 using namespace std;
 using namespace chrono_literals;
+
+string to_padded_string(int i, uint8_t n_zero = 4);
 
 void loop();
 
@@ -61,13 +64,18 @@ void loop() {
 
     LocationTracker lt;  // Tracks the XY position of the drone
 
+    ofstream squares("squares.csv");
+    ofstream locs("locs.csv");
+    size_t i = 0;
     while (true) {
         PerfTimer pt;
         Point locInSquare = lf.updateLocation();
         Point location    = lt.update(locInSquare);
 
-        // cv::imwrite("mask.bmp", lf.getMaskImage());
-        // cv::imwrite("image.bmp", lf.getImage());
+        // cv::imwrite(string("mask") + to_padded_string(i) + ".bmp",
+        //             lf.getMaskImage());
+        // cv::imwrite(string("image") + to_padded_string(i) + ".bmp",
+        //             lf.getImage());
 
         qrCryptoMgr.update(lf.getImage());
 
@@ -88,5 +96,17 @@ void loop() {
                      << ANSIColors::reset << endl;
             }
         }
+        squares << i << ",";
+        for (auto point : lf.getSquare().points)
+            if (point)
+                squares << point->x << "," << point->y << ",";
+        squares << endl;
+        locs << i << "," << location.x << "," << location.y << endl;
+        i++;
     }
+}
+
+string to_padded_string(int i, uint8_t n_zero) {
+    string str = to_string(i);
+    return string(n_zero - str.length(), '0') + str;
 }

@@ -99,39 +99,69 @@ float log2(float x) {
 
 /*
 final int SATURATION_THRES       = 32;
-final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
-final int BRIGHTNESS_THRES       = 32;
-final int HUE_THRES_DEGREES      = 30;
-final int HUE_THRES_SHIFT        = round(log2(60 / HUE_THRES_DEGREES));
+ final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
+ final int BRIGHTNESS_THRES       = 32;
+ final int HUE_THRES_DEGREES      = 30;
+ final int HUE_THRES_SHIFT        = round(log2(60 / HUE_THRES_DEGREES));
+ 
+ color f(float r, float g, float b) {
+ int max = int(round(max(max(r, g), b)));
+ int min = int(round(min(min(r, g), b)));
+ int delta = max - min;
+ boolean cond = delta > max >> SATURATION_THRES_SHIFT // saturation
+ && max > BRIGHTNESS_THRES // brightness
+ && r == max && delta >> HUE_THRES_SHIFT > abs(g - b) // hue
+ && ((max / 16) * (max / 32) + delta) / 2 > max / 4;
+ return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
+ } // */
 
-color f(float r, float g, float b) {
-  int max = int(round(max(max(r, g), b)));
-  int min = int(round(min(min(r, g), b)));
-  int delta = max - min;
-  boolean cond = delta > max >> SATURATION_THRES_SHIFT // saturation
-    && max > BRIGHTNESS_THRES // brightness
-    && r == max && delta >> HUE_THRES_SHIFT > abs(g - b) // hue
-    && ((max / 16) * (max / 32) + delta) / 2 > max / 4;
-  return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
-} // */
 
+/*
+final int SATURATION_THRES       = 32;
+ final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
+ final int BRIGHTNESS_THRES       = 30;
+ final int HUE_THRES_DEGREES      = 30;
+ final int HUE_THRES_SHIFT        = round(log2(60 / HUE_THRES_DEGREES));
+ 
+ color f(float r, float g, float b) {
+ int max = int(round(max(max(r, g), b)));
+ int min = int(round(min(min(r, g), b)));
+ int delta = max - min;
+ boolean cond = delta > max >> SATURATION_THRES_SHIFT // saturation
+ && max > BRIGHTNESS_THRES // brightness
+ && r == max && delta >> HUE_THRES_SHIFT > abs(g - b); // hue
+ return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
+ } // */
 
-// /*
+/// The minimum saturation of the lines @f$ s \in {2, 4, 8, 16, 32, 64, 128} @f$.
 final int SATURATION_THRES       = 32;
 final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
-final int BRIGHTNESS_THRES       = 30;
-final int HUE_THRES_DEGREES      = 30;
-final int HUE_THRES_SHIFT        = round(log2(60 / HUE_THRES_DEGREES));
+/// The minimum brightness of the lines @f$ b \in [0, 255] @f$.
+final int BRIGHTNESS_THRES = 60;
+/// The maximum absolute hue angle of the lines in degrees
+/// @f$ h \in {3.75, 7.5, 15, 30, 60} @f$.
+final float HUE_THRES_DEGREES = 30;
+final int HUE_THRES_SHIFT     = round(log2(60 / HUE_THRES_DEGREES));
+
 
 color f(float r, float g, float b) {
-  int max = int(round(max(max(r, g), b)));
-  int min = int(round(min(min(r, g), b)));
+  int max   = round(max(max(r, g), b));
+  int min   = round(min(min(r, g), b));
   int delta = max - min;
-  boolean cond = delta > max >> SATURATION_THRES_SHIFT // saturation
-    && max > BRIGHTNESS_THRES // brightness
-    && r == max && delta >> HUE_THRES_SHIFT > abs(g - b); // hue
+
+  // Condition for saturation: thres < s = delta / max
+  boolean sat_cond = delta > (max >> SATURATION_THRES_SHIFT);
+  // Condition for value/brightness
+  boolean val_cond = max > BRIGHTNESS_THRES;
+  // Condition for hue
+  boolean hue_cond = (r == max) && (delta >> HUE_THRES_SHIFT > abs(g - b));
+
+  // TODO: comment
+  boolean valsat_cond = ((max >> 4) * (max >> 5) + delta) / 2 > (max >> 2);
+
+  boolean cond = sat_cond && val_cond && hue_cond && valsat_cond;
   return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
-} // */
+}
 
 void draw() {
 }

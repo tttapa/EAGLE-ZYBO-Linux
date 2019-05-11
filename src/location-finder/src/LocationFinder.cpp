@@ -59,10 +59,10 @@ Point LocationFinder::updateLocation() {
     // Find a square of the grid using GridFinder
     // ------------------------------------------
     GridFinder gf     = std::move(mask);
-    Square sq         = gf.findSquare();
+    square            = gf.findSquare();
     Point frameCenter = gf.center();
 
-    return getLocation(sq, frameCenter);
+    return getLocation(square, frameCenter);
 }
 
 Point LocationFinder::getLocation(Square &sq, Vec2f frameCenter) {
@@ -122,6 +122,9 @@ Point LocationFinder::getLocation(Square &sq, Vec2f frameCenter) {
     // Wie deelt door nul is een snul
     if (sideLen == 0)
         return Point::invalid();
+
+    // Remember the center of the square
+    this->squareCenter = center;
 
     // Transform the position vector from the camera's frame of reference to
     // the grid axes

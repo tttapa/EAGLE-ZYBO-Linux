@@ -6,14 +6,14 @@ import py_grid_finder as gr
 from math import cos, sin
 from timeit import default_timer as timer
 
-def main(filename):
-    video = cv2.VideoCapture("../Video/"+filename+".mp4")
+def main(outname, filename, bgr = False):
+    video = cv2.VideoCapture(filename)
     if not video.isOpened():
-        raise RuntimeError("Unable to open video file " + filename + ".mp4")
+        raise RuntimeError("Unable to open video file " + filename)
     frame_width = int(video.get(3)) * 2
     frame_height = int(video.get(4))
     fps = video.get(cv2.CAP_PROP_FPS) / 4
-    out = cv2.VideoWriter(filename+'.out.avi', cv2.VideoWriter_fourcc(
+    out = cv2.VideoWriter(outname+'.out.avi', cv2.VideoWriter_fourcc(
         'M', 'J', 'P', 'G'), fps, (frame_width, frame_height))
 
     gr_time = 0
@@ -23,7 +23,8 @@ def main(filename):
     angleTracker = gr.AngleTracker()
     result, image = video.read()
     while result and video.isOpened():
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        if not bgr:
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         mask, mask_duration = redmask(image)
         mask_time += mask_duration
         processed, angle, time = processFrame(image, mask)
@@ -106,5 +107,6 @@ def redmask(image):
 
 
 if __name__ == '__main__':
-    main('DroneCam')
-    main('easy')
+    # main('DroneCam', '../Videos/DroneCam.mp4')
+    main('easy', '../Video/easy.mp4')
+    main('drone-images', 'drone-images/image%4d.bmp', bgr=True)

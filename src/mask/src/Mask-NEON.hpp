@@ -91,7 +91,7 @@ inline uint8x16_t applyMask(const uint8_t *colors) {
     // TODO: comment
     uint8x16_t valsat_cond = vcgtq_u8(
         vhaddq_u8(vmulq_u8(vshrq_n_u8(max, 4), vshrq_n_u8(max, 5)), delta),
-        vshrq_n_u8(max, 4));
+        vshrq_n_u8(max, 2));
 
     // All conditions must be satisfied, so AND them all together.
     return vandq_u8(vandq_u8(sat_cond, val_cond),

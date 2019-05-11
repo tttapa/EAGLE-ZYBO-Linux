@@ -115,6 +115,7 @@ inline std::ostream &operator<<(std::ostream &os, Position pos) {
 struct VisionData {
     Position position;
     double yawAngle;
+    // float sideLen;
 };
 
 /**

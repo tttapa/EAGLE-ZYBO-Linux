@@ -33,7 +33,10 @@ inline void applyMask(const uint8_t *colors, uint8_t *mask) {
         // Condition for hue
         bool hue_cond = (r == max) && (delta >> HUE_THRES_SHIFT > abs(g - b));
 
-        mask[i] = sat_cond && val_cond && hue_cond ? 0xFF : 0x00;
+        // TODO: comment
+        bool valsat_cond = ((max >> 4) * (max >> 5) + delta) / 2 > (max >> 2);
+
+        mask[i] = sat_cond && val_cond && hue_cond && valsat_cond ? 0xFF : 0x00;
     }
 }
 
