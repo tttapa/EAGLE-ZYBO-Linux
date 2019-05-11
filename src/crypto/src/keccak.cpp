@@ -2,20 +2,20 @@
 
 #include <cryptoPoller.hpp>
 
-BitString hash(BitString digest) {
-    digest.concatenateAndAddMultiRatePadding(0x02, 16, digest.getLength());
+BitString keccak(BitString message) {
+    message.concatenateAndAddMultiRatePadding(0x02, 16, message.getLength());
 
-    std::vector<BitString> blockDigest;
-    digest.splitBlocks(blockDigest);
+    std::vector<BitString> blockMessage;
+    message.splitBlocks(blockMessage);
 
     CryptoPoller cryptoPoller;
     cryptoPoller.reset();
 
-    for (uint16_t i = 0; i + 1 < (uint16_t) blockDigest.size(); i++)
-        cryptoPoller.hashAbsorb(blockDigest[i].toUint32());
+    for (uint16_t i = 0; i + 1 < (uint16_t) blockMessage.size(); i++)
+        cryptoPoller.hashAbsorb(blockMessage[i].toUint32());
 
     BitString key(cryptoPoller.hashAbsorb(
-                      (blockDigest[blockDigest.size() - 1]).toUint32()),
+                      (blockMessage[blockMessage.size() - 1]).toUint32()),
                   16);
     key.reserve(96);
 

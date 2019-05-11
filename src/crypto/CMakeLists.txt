@@ -5,6 +5,8 @@ add_library(crypto
     src/crypto.cpp
     src/ketje.cpp
     src/keccak.cpp
+    src/swImplementation.cpp
+    src/hwImplementation.cpp
 )
 
 # Set target include directories 
@@ -35,11 +37,8 @@ target_link_libraries(crypto
     PRIVATE 
         comm
         utilities
+        cryptosw
 )
-
-if (CMAKE_CROSSCOMPILING)
-target_link_libraries(crypto PRIVATE cryptosw)
-endif()
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
 # adds the tests.

@@ -1,28 +1,16 @@
 # Add an executable with tests, and specify the source files to compile
-add_executable(crypto.test test-crypto.cpp)
+if(CMAKE_CROSSCOMPILING)
+add_executable(crypto.test test-crypto.cpp test-crypto-PC.cpp)
+else()
+add_executable(crypto.test test-crypto-PC.cpp)
+endif()
 # Link the test executable with the Google Test main entry point and the library
 # under test
-target_link_libraries(crypto.test gtest_main crypto comm)
+target_link_libraries(crypto.test gtest_main crypto comm cryptosw)
 target_include_directories(crypto.test PRIVATE ../src)
-
-if (CMAKE_CROSSCOMPILING)
-target_link_libraries(crypto.test cryptosw)
-endif()
 
 # Add the tests to Google Test
 include(GoogleTest)
-if (NOT CMAKE_CROSSCOMPILING AND FALSE) # Testing crypto on x64 is not very useful, I think?
+if (NOT CMAKE_CROSSCOMPILING)
 gtest_discover_tests(crypto.test)
 endif()
-
-# # Add an executable with tests, and specify the source files to compile
-# add_executable(crypto-pc.test test-crypto-pc.cpp)
-# # Link the test executable with the Google Test main entry point and the library
-# # under test
-# target_link_libraries(crypto-pc.test gtest_main crypto)
-# 
-# # Add the tests to Google Test
-# include(GoogleTest)
-# if (NOT CMAKE_CROSSCOMPILING) # Testing crypto on x64 is not very useful, I think?
-# gtest_discover_tests(crypto-pc.test)
-# endif()

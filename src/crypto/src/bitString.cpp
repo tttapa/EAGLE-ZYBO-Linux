@@ -171,6 +171,13 @@ uint32_t BitString::toUint32() const {
 }
 #pragma GCC diagnostic pop
 
+void BitString::toByteArray(unsigned char *buffer,
+                            uint16_t bufferLength) const {
+    for (uint16_t i = 0;
+         i < std::min((uint16_t)(bits.size() / 2), bufferLength); i++)
+        buffer[i] = (bits[2 * i] | (bits[2 * i + 1] << 4));
+}
+
 bool operator==(const BitString &bitString1, const BitString &bitString2) {
     return bitString1.bits == bitString2.bits;
 }

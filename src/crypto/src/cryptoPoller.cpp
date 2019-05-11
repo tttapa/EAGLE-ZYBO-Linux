@@ -80,22 +80,22 @@ void CryptoPoller::start() { execute(0x00'40'00'00); }
 
 uint32_t CryptoPoller::normalStep(uint32_t data) {
     data &= fullMask;
-    return execute(data | 0x00'80'00'00);
+    return execute(data | 0x90'80'00'00);
 }
 
 uint32_t CryptoPoller::xorStep(uint32_t data) {
     data &= fullMask;
-    return execute(data | 0x00'90'00'00);
+    return execute(data | 0x90'90'00'00);
 }
 
 uint32_t CryptoPoller::normalStride(uint32_t data) {
     data &= fullMask;
-    return execute(data | 0x01'00'00'00);
+    return execute(data | 0x91'00'00'00);
 }
 
 uint32_t CryptoPoller::xorStride(uint32_t data) {
     data &= fullMask;
-    return execute(data | 0x01'10'00'00);
+    return execute(data | 0x91'10'00'00);
 }
 
 uint32_t CryptoPoller::hashAbsorb(uint32_t data) {

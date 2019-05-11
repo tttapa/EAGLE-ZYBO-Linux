@@ -75,6 +75,18 @@ enum class FlightMode : int32_t {
     AUTONOMOUS = 3,
 };
 
+enum WPTMode {
+    OFF = 0,  ///< Wireless Power Transfer is turned off.
+    ON  = 1,  ///< Wireless Power Transfer is turned on.
+};
+
+struct TestStruct : SharedStruct<TestStruct> {
+    uint32_t l2b = 0;
+    uint32_t b2l = 0;
+
+    constexpr static uintptr_t address = SHARED_MEM_START_ADDRESS + 0xF000;
+};
+
 /**
  * @brief   A struct for x and y coordinates of vision/QR positions.
  */
@@ -103,6 +115,7 @@ inline std::ostream &operator<<(std::ostream &os, Position pos) {
 struct VisionData {
     Position position;
     double yawAngle;
+    // float sideLen;
 };
 
 /**

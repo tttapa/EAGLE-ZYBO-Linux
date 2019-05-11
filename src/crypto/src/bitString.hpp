@@ -32,6 +32,8 @@ class BitString {
 
     uint32_t toUint32() const;
 
+    void toByteArray(unsigned char *buffer, uint16_t bufferLength) const;
+
     friend bool operator==(const BitString &bitString1,
                            const BitString &bitString2);
 
