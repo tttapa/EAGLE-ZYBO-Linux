@@ -74,6 +74,7 @@ TEST(MaskGridFinder, fromVideo) {
         while (true) {
             Point locInSquare = lf.updateLocation();
             Point location    = lt.update(locInSquare);
+            Square square     = lf.getSquare();
             cv::Mat maskimgrgb;
             cv::cvtColor(lf.getMaskImage(), maskimgrgb, cv::COLOR_GRAY2BGR);
             cv::circle(
@@ -84,8 +85,35 @@ TEST(MaskGridFinder, fromVideo) {
                 if (p)
                     cv::circle(maskimgrgb, cv::Point(p->x, p->y), 5,
                                cv::Scalar(0, 255, 0), -1);
+            cv::Mat image = lf.getImage();
+
+            std::array<cv::Scalar, 5> colors = {{
+                {0, 80, 255},
+                {0, 200, 255},
+                {0, 255, 0},
+                {255, 255, 0},
+                {255, 150, 0},
+            }};
+            size_t c                         = 0;
+            for (auto &line : square.lines) {
+                auto &color = colors[c++];
+                if (line) {
+                    cv::Point p1 = {
+                        int(line->lineCenter.x),
+                        int(line->lineCenter.y),
+                    };
+                    cv::Point p2 = {
+                        int(line->lineCenter.x) +
+                            int(round(lf.getSideLength() * line->angle.cosf())),
+                        int(line->lineCenter.y) +
+                            int(round(lf.getSideLength() * line->angle.sinf())),
+                    };
+                    cv::line(image, p1, p2, color, 3);
+                }
+            }
+
             cv::Mat outimg;
-            cv::hconcat(lf.getImage(), maskimgrgb, outimg);
+            cv::hconcat(image, maskimgrgb, outimg);
             cv::Size size = lf.getImage().size();
             if (locimg.empty())
                 locimg = {size, lf.getImage().type(), cv::Scalar(0)};

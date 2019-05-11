@@ -38,7 +38,12 @@ struct Point {
 
     static Point invalid() { return {}; }
 
-    static float distance(Point a, Point b) { return norm(a.vec() - b.vec()); }
+    static float distance(Point a, Point b) {
+        return sqrtf(distanceSquared(a, b));
+    }
+    static float distanceSquared(Point a, Point b) {
+        return normsq(a.vec() - b.vec());
+    }
     static Point average(Point a, Point b) { return (a.vec() + b.vec()) / 2.0; }
 };
 
