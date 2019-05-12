@@ -37,7 +37,7 @@ TEST(Crypto, CryptoPoller) {
 
     cryptoPoller.start();
 
-    // FIRST ENCRYPTION:
+    // FIRST ENCRYPTION
 
     cryptoPoller.normalStep(0x06008);
     cryptoPoller.normalStride(0x05008);
@@ -50,7 +50,7 @@ TEST(Crypto, CryptoPoller) {
 
     ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0xa5110);
 
-    // SECOND ENCRYPTION:
+    // SECOND ENCRYPTION
 
     cryptoPoller.normalStep(0x06008);
     cryptoPoller.xorStep(0x4b6cf);
@@ -68,7 +68,7 @@ TEST(Crypto, CryptoPoller) {
 
     ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0xf7210);
 
-    // THIRD ENCRYPTION:
+    // THIRD ENCRYPTION
 
     cryptoPoller.normalStep(0x06008);
     cryptoPoller.xorStep(0x6b8cf);
@@ -94,7 +94,7 @@ TEST(Crypto, CryptoPoller) {
 
     ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0xa9b00);
 
-    // FOURTH ENCRYPTION:
+    // FOURTH ENCRYPTION
 
     cryptoPoller.normalStep(0x3acbc);
     cryptoPoller.normalStep(0x5cedc);
@@ -112,7 +112,7 @@ TEST(Crypto, CryptoPoller) {
 
     ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0x1b4d0);
 
-    // FIFTH ENCRYPTION:
+    // FIFTH ENCRYPTION
 
     cryptoPoller.normalStep(0x51e2c);
     cryptoPoller.normalStep(0x7304c);
@@ -140,24 +140,6 @@ TEST(Crypto, CryptoPoller) {
     cryptoPoller.normalStep(0x02008);
 
     ASSERT_EQ(cryptoPoller.normalStep(0x02008) & partialMask, 0xe1fb0);
-}
-
-/**
- * @brief   Test fictional QR codes.
- */
-TEST(Crypto, TemporaryCryptoTest) {
-    CryptoInstruction instruction = decrypt(
-        {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-         0x00, 0x00, 0x00, 0x00, 0x04, 0x02, 0x07, 0x04, 0x00, 0x02, 0x13,
-         0xf9, 0x34, 0x5b, 0x49, 0x1e, 0xa1, 0xdf, 0xe2, 0x25, 0x8c, 0xbc,
-         0x6d, 0xeb, 0x85, 0x01, 0x80, 0xf4, 0x9a, 0x3b, 0x13, 0xa1, 0x63,
-         0x6a, 0xfb, 0x9b, 0xc3, 0x71, 0xbe, 0x99, 0x5d, 0x6e, 0x4e, 0xf5,
-         0xe6, 0x25, 0xfa, 0x04, 0x21, 0x4e});
-
-    ASSERT_EQ(instruction.getInstructionType(),
-              CryptoInstruction::InstructionType::GOTO);
-    ASSERT_EQ(instruction.getXCoordinate(), 8);
-    ASSERT_EQ(instruction.getYCoordinate(), 6);
 }
 
 /**
