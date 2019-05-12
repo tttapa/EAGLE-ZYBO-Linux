@@ -7,46 +7,79 @@
 We have completely re-written the original C code for the drone controller. 
 We're using a **modern GCC toolchain**, instead of the outdated version that came 
 with the Xilinx SDK. Using modern **C++** allowed us to write much **cleaner, easier
-to read code, with fewer bugs**. The most important bug fix was the **sensor system**.
-Large mathematical errors were not seen by the authors, and because of this the
-orientation measurement finished. **Many small bugs from the original code are now
-fixed** and **extra structure and functionality** has been added. The
-we fixed and some mathematical errors were somehow not seen by the original authors.were some **bugs and mathematical errors** in 
-the sensor system that we fixed.
+to read code with fewer bugs**. The most important bug fix was the **sensor system**.
+Large mathematical errors were not seen by the authors, which caused the measurement
+orientation to drift. Now, the IMU calibration and AHRS update are mathematically
+correct, and the system is equipped with a beefy Madgwick sensor-fusion filter, so
+**there is absolutely no drift**. Furthermore, many small bugs from the original code
+have been fixed, and **extra structure and functionality** has been added. The structure
+of the code has been improved in the several ways.
 
+ - **DOCUMENTATION!!! For the love of god...**.
+ - **NO MORE GLOBALS BEING WRITTEN & READ ALL OVER THE CODE!** The flow of data can
+ clearly be followed in *MainInterrupt.cpp*.
+ - **Separation of src-vivado/ and src/**. The first directory contains code to start
+ the Xilinx platform, read from inputs (IMU/AHRS, RC, SONAR) and write to outputs
+ (BUZZER, MOTORS, WPT).
+ - **Class representation** of the three controllers (ATTITUDE, ALTITUDE, POSITION);
+ - **Clear distinction between controllers flight modes** (MANUAL, ALTITUDE-HOLD,
+ AUTONOMOUS).
+ - Struct representation of input measurements, control system types and output signals;
+  - **Autonomous-FSM** using the states IDLE_GROUND, PRE_TAKEOFF, TAKEOFF, LOITERING,
+ NAVIGATING, CONVERGING, LANDING, WPT and ERROR. If autonomous mode is started during
+ flight, then the drone will begin in the LOITERING state. Otherwise, it will begin in
+ the IDLE_GROUND state.
+ - **QR-FSM** to facilitate the communication between ANC, IMP and CRYPTO when
+ decrypting QR codes. This includes the states IDLE, QR_READ_REQUEST, QR_READ_BUSY,
+ NEW_TARGET, QR_LAND, QR_UNKNOWN, and ERROR.
+
+Some aspects of the assignment have been extended. Firstly, during altitude-hold mode,
+the pilot is able to adjust the reference height with the RC throttle. A more significant
+change is the **rework of the autonomous mode**. Aside from switching to autonomous mode
+after stable altitude-hold flight, **the pilot now has the option to start this mode from
+the ground**. If the drone is grounded and in autonomous mode, then the pilot can start
+autonomous flight by raising the RC throttle. The drone will perform a pre-takeoff routine
+(ESC script for example), and then **it will take off autonomously**. As soon as
+it reaches the reference height, it will begin loitering. After that, it will follow the
+QR trail and automatically land. The pilot can then flip the WPT switch to power the LED
+wall.
+
+In addition, many extra functionalites have been added to the framework.
+
+ - **Adjustable IMU configuration**. The frequency of the IMU, and therefore the entire
+ framework, can be set to 119, 238, 476 or 952 Hz. The resolution of the IMU can also
+ be adjusted: the maximum value of the gyroscope can be set to 245, 500 or 2000 deg/s,
+ and that of the accelerometer can be set to 2, 4, 8, or 16 g.
+ - The drone comes equipped with **five controller configurations**. Using the tuner
+ knob, the pilot can change the controller configuration without having to reboot the
+ Zybo. This allows for rapid testing of various parameters and **calibration of the ESCs**,
+ which is set to configuration 5.
+ - If the hardware team requires special PWM signals or timings to start properly, the
+ framework is provided to add a **custom ESC startup script**.
+ - **Gradual thrust change** prevents rapid thrust change when switching from altitude-
+ hold mode to manual mode, or when the ESC startup script has finished and the drone
+ assumes the thrust provided by the RC.
+ - The **buzzer** now plays sounds for initiation, arming, disarming, controller
+ configuration, Autonomous/QR error states (TODO) and WPT (TODO).
+
+
+// TODO: created or used? \
 We used a complete cross-compilation toolchain with a cross-platform build 
 system, so we can develop and run unit tests on our computer.
 
 We have done **performance checks** on the new and old programs, and we can confirm
 that after switching to C++, our program still runs at exactly the same speed, 
-and the increase in readability and maintainability is huge.
+and the increase in readability and maintainability is huge. The rework has even
+allowed us to run the IMU at 952 Hz instead of 238 Hz. This resulted in a better
+orientation estimate and a more stable control system.
 
-We're using a different **sensor fusion algorithm** for the IMU, that performs much 
-better than the given code.
+The **controller code is automatically generated** using a MATLAB script, and the
+boot image can be immediately copied to the drone using `SCP`. Then the Zybo is
+rebooted over `SSH`. Before doing this, we had to unplug the battery, remove the SD
+card, run to a computer, copy the new boot image, run back to the drone, insert the
+SD card, plug in the battery, wait for the Zybo to boot and finally wait for the
+WiFi router to boot (5 minutes). **This has improved our process flow so much**.
 
-We are now able to run the IMU input attitude controller at almost **1 kHz**
-instead of the original 238 Hz, so we get less drift, and a more stable 
-controller.
-
-The **controller code is automatically generated** using a MATLAB script that allows
-us to **easily tune any parameter**. However, uploading the new code to the drone 
-was a tedious task (creating a boot image in Vivado on an ESAT PC, turn off the
-drone, take out the SD card, run to the computer with it, copy the boot image to
-the SD card, safely remove, run back to the drone, plug it in, wait for it to
-boot, etc.)
-
-Our solution to this problem is two-fold: 1) use a faster way to upload new code
-2) tune without having to re-upload code.
-
-For **faster uploads**, we use **SSH**. This means that we don't need physical access to
-the drone, and we don't have to unplug the battery. We just use `SCP` to upload
-the boot image, and then reboot the ZYBO over `SSH`. Because we don't unplug the
-battery, we don't have to wait over five minutes for the WiFi router to boot.
-
-We also added **multiple slots of controllers** to our code generator. So we can 
-try multiple controllers by changing the configuration using the tune knob on 
-the remote controller. This means that we don't have to re-upload for every
-tuning setting we want to try. 
 
 ### Vision
 
