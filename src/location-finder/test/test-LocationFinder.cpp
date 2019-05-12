@@ -12,6 +12,8 @@ using std::string;
 
 // TEST(OpenCV, test) { ASSERT_EQ(test(), 0); }
 
+#ifndef ZYBO
+
 TEST(MaskGridFinder, fromImage) {
 #ifdef ZYBO
     string imagePath = "/media/TEST-LocationFinder_getLocation.bmp";
@@ -49,10 +51,12 @@ TEST(MaskGridFinder, fromVideo) {
 #ifdef ZYBO
     string imagePath = "/media/" + filename + ".mp4";
 #else
+    // string imagePath =
+    //     string(getenv("WORKSPACE_ROOT")) + "/Video/" + filename + ".mp4";
     string imagePath =
-        string(getenv("WORKSPACE_ROOT")) + "/Video/" + filename + ".mp4";
+        string(getenv("WORKSPACE_ROOT")) + "/python/drone-images/image%04d.bmp";
 #endif
-    constexpr size_t GRIDSIZE = 48;
+    constexpr size_t GRIDSIZE = 48 * 4;
 
     LocationFinder lf = imagePath;
     LocationTracker lt;
@@ -67,6 +71,8 @@ TEST(MaskGridFinder, fromVideo) {
 
     constexpr float alpha = 0.99;
     constexpr float beta  = 0.0;
+
+    const auto font = cv::FONT_HERSHEY_SIMPLEX;
 
     try {
         cv::Mat locimg;
@@ -86,6 +92,7 @@ TEST(MaskGridFinder, fromVideo) {
                     cv::circle(maskimgrgb, cv::Point(p->x, p->y), 5,
                                cv::Scalar(0, 255, 0), -1);
             cv::Mat image = lf.getImage();
+            cv::Size size = image.size();
 
             std::array<cv::Scalar, 5> colors = {{
                 {0, 80, 255},
@@ -111,10 +118,12 @@ TEST(MaskGridFinder, fromVideo) {
                     cv::line(image, p1, p2, color, 3);
                 }
             }
+            cv::putText(image, std::to_string(lf.getSideLength()),
+                        cv::Point(16, size.height - 16), font, 1,
+                        cv::Scalar(0, 100, 255), 2, cv::LINE_AA);
 
             cv::Mat outimg;
             cv::hconcat(image, maskimgrgb, outimg);
-            cv::Size size = lf.getImage().size();
             if (locimg.empty())
                 locimg = {size, lf.getImage().type(), cv::Scalar(0)};
             else
@@ -134,7 +143,6 @@ TEST(MaskGridFinder, fromVideo) {
             };
             cv::circle(locimg, point, 3, cv::Scalar(255, 0, 0), -1);
 
-            auto font    = cv::FONT_HERSHEY_SIMPLEX;
             auto locimgo = locimg.clone();
             auto color   = cv::Scalar(255, 128, 128);
             for (size_t y = 0; y < size.height / GRIDSIZE + 1; ++y) {
@@ -159,3 +167,5 @@ TEST(MaskGridFinder, fromVideo) {
         cerr << ANSIColors::red << e.what() << ANSIColors::reset << endl;
     }
 }
+
+#endif

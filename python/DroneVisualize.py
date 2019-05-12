@@ -6,27 +6,33 @@ import py_grid_finder as gr
 from math import cos, sin
 from timeit import default_timer as timer
 
-GRIDSIZE = 100
+GRIDSIZE = 24
 
-def main(outname, filename, bgr = False):
-    video = cv2.VideoCapture(filename)
+def main(outname, foldername, bgr = False):
+    videofiles = foldername + "/image%04d.bmp"
+    video = cv2.VideoCapture(videofiles)
     if not video.isOpened():
-        raise RuntimeError("Unable to open video file " + filename)
+        raise RuntimeError("Unable to open video file " + videofiles)
+    maskfiles = foldername + "/mask%04d.bmp"
+    masks = cv2.VideoCapture(maskfiles)
+    if not masks.isOpened():
+        raise RuntimeError("Unable to open video file " + maskfiles)
     frame_width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
     frame_height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = video.get(cv2.CAP_PROP_FPS) / 4
-    out = cv2.VideoWriter(outname+'.out.avi', cv2.VideoWriter_fourcc(
-        'M', 'J', 'P', 'G'), fps, (frame_width * 2, frame_height))
+    out = cv2.VideoWriter(outname+'.out.mp4', cv2.VideoWriter_fourcc(
+        'M', 'P', '4', 'V'), fps, (frame_width * 3, frame_height))
 
-    with open("drone-images/squares.csv") as f:
+    with open(foldername + "/squares.csv") as f:
         squares = f.read().split("\n")
-    with open("drone-images/locs.csv") as f:
+    with open(foldername + "/locs.csv") as f:
         locs = f.read().split("\n")
 
     i = 0
     posimage = np.zeros((frame_height, frame_width, 3), np.uint8)
-    result, image = video.read()
-    while result:
+    videoresult, image = video.read()
+    maskresult, mask = masks.read()
+    while maskresult and videoresult:
         if bgr:
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         t = squares[i].split(',')
@@ -57,12 +63,13 @@ def main(outname, filename, bgr = False):
         cv2.putText(image, str(i), (16, frame_height - 16),
                     font, 1, (0, 100, 255), 2, cv2.LINE_AA)
 
-        outimg = np.concatenate((image, posimage), axis=1)
+        outimg = np.concatenate((image, mask, posimage), axis=1)
         out.write(outimg)
-        result, image = video.read()
+        videoresult, image = video.read()
+        maskresult, mask = masks.read()
         i += 1
 
     video.release()
     out.release()
 
-main('drone-images', 'drone-images/image%4d.bmp', bgr=True)
+main('drone-images-sunlight+mask', 'drone-images-sunlight', bgr=True)

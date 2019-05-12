@@ -5,6 +5,11 @@
 #include <Pixel.hpp>
 #include <ostream>
 
+#include <iostream>  // TODO
+
+struct Point;
+inline std::ostream &operator<<(std::ostream &os, Point p);
+
 struct Point {
     float x;
     float y;
@@ -13,12 +18,8 @@ struct Point {
         return this->x == rhs.x && this->y == rhs.y;
     }
 
-    operator TColVector<float, 2> &() { return vec(); }
-
-    TColVector<float, 2> &vec() {
-        static_assert(sizeof(*this) == sizeof(TColVector<float, 2>));
-        return *reinterpret_cast<TColVector<float, 2> *>(this);
-    }
+    operator TColVector<float, 2>() const { return vec(); }
+    TColVector<float, 2> vec() const { return {x, y}; }
 
     constexpr Point() : x{nan("")}, y{nan("")} {}
     constexpr Point(float x, float y) : x{x}, y{y} {}
@@ -39,10 +40,19 @@ struct Point {
     static Point invalid() { return {}; }
 
     static float distance(Point a, Point b) {
-        return sqrtf(distanceSquared(a, b));
+        auto result = sqrtf(distanceSquared(a, b));
+        // std::cout << "sqrtf(distanceSquared(a, b)) = " << result << std::endl;
+        return result;
     }
     static float distanceSquared(Point a, Point b) {
-        return normsq(a.vec() - b.vec());
+        using namespace std;
+        // cout << __PRETTY_FUNCTION__ << endl;
+        // cout << "a = " << a << ", b = " << b << endl;
+        auto diff = a.vec() - b.vec();
+        // cout << "diff = " << Point(diff) << endl;
+        auto result = normsq(diff);
+        // cout << "normsq(diff) = " << result << endl;
+        return result;
     }
     static Point average(Point a, Point b) { return (a.vec() + b.vec()) / 2.0; }
 };
@@ -65,11 +75,6 @@ constexpr inline Point round(Point p) {
         std::round(p.y),
     };
 }
-
-#include <iostream>
-
-using std::cout;
-using std::endl;
 
 class Line {
     using ColVec3f = TColVector<float, 3>;
