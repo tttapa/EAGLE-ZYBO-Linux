@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="structPoint.html#afdb648a6a3a1c42aefcd6f435617ba85" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="structPoint.html#a482c5bbc38af3c934eac31cb645aeba1" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="169,-38.5 169,-57.5 234,-57.5 234,-38.5 169,-38.5"/>
 <text text-anchor="middle" x="201.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Point::vec</text>
 </a>

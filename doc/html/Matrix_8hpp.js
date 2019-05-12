@@ -40,6 +40,7 @@ var Matrix_8hpp =
     [ "normsq", "Matrix_8hpp.html#a07eaab32e13ce696513662395d4c0cc2", null ],
     [ "normsq", "Matrix_8hpp.html#a49ccaf0f0f1746a2824dc79538165c9c", null ],
     [ "ones", "Matrix_8hpp.html#af93271278cb695a2eddfce3fdf96560f", null ],
+    [ "operator%", "Matrix_8hpp.html#a102947bd16df4bfe1da868ff5ba4107b", null ],
     [ "operator*", "Matrix_8hpp.html#a341f99d67c7fef72e0432138c6d4fc34", null ],
     [ "operator*", "Matrix_8hpp.html#a74ed64dbe33c9fd513d40f26960a164e", null ],
     [ "operator+", "Matrix_8hpp.html#a7d3c3ae6206ad2461c2af849dca396fb", null ],

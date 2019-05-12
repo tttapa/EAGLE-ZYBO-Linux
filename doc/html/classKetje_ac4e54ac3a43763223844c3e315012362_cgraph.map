@@ -1,7 +1,10 @@
 <map id="Ketje::unwrap" name="Ketje::unwrap">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,116,83"/>
-<area shape="rect" id="node2" href="$classBitString.html#a9f592521af8d36d2d45f46661d86db2b" title=" " alt="" coords="178,5,335,32"/>
-<area shape="rect" id="node4" href="$classCryptoPoller.html#a7bcfbc4dda8626c3a61ada489d6dd51c" title=" " alt="" coords="164,56,349,83"/>
-<area shape="rect" id="node5" href="$classBitString.html#a3771ed3de6f9941e5d30ac6c1758d180" title=" " alt="" coords="188,107,325,133"/>
-<area shape="rect" id="node3" href="$classBitString.html#a129b293aa7369637810c1d54471e1258" title=" " alt="" coords="397,5,540,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,116,159"/>
+<area shape="rect" id="node2" href="$classBitString.html#a9f592521af8d36d2d45f46661d86db2b" title=" " alt="" coords="183,5,340,32"/>
+<area shape="rect" id="node4" href="$classCryptoPoller.html#a7bcfbc4dda8626c3a61ada489d6dd51c" title=" " alt="" coords="169,56,354,83"/>
+<area shape="rect" id="node5" href="$classBitString.html#a3771ed3de6f9941e5d30ac6c1758d180" title=" " alt="" coords="193,107,330,133"/>
+<area shape="rect" id="node6" href="$classBitString.html#a39a133d9a366545e41d6a470255a1b64" title=" " alt="" coords="178,157,345,184"/>
+<area shape="rect" id="node7" href="$classBitString.html#a39bc6a3bef8f84d2dec75174b35abf89" title=" " alt="" coords="186,208,337,235"/>
+<area shape="rect" id="node8" href="$classCryptoPoller.html#a02b4bddba5ffddcd2528fa7e2f78a86b" title=" " alt="" coords="164,259,359,285"/>
+<area shape="rect" id="node3" href="$classBitString.html#a129b293aa7369637810c1d54471e1258" title=" " alt="" coords="407,5,549,32"/>
 </map>

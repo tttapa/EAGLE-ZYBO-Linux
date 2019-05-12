@@ -119,9 +119,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6822a801df00e3d4f8a338e26d762b1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a6822a801df00e3d4f8a338e26d762b1d">Logger</a> (const std::vector&lt; <a class="el" href="classUDPSender.html">UDPSender</a> &gt; &amp;senders)</td></tr>
 <tr class="memdesc:a6822a801df00e3d4f8a338e26d762b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classLogger.html" title="A class that reads the logging data from shared memory, and sends it it over UDP.">Logger</a> object that sends out logging packets to multiple addresses (multicast or unicast).  <a href="classLogger.html#a6822a801df00e3d4f8a338e26d762b1d">More...</a><br /></td></tr>
 <tr class="separator:a6822a801df00e3d4f8a338e26d762b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99a912d497c8163e1ff8c75d1a72cd7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a99a912d497c8163e1ff8c75d1a72cd7a">Logger</a> (<a class="el" href="classLogger.html">Logger</a> &amp;&amp;)=default</td></tr>
-<tr class="memdesc:a99a912d497c8163e1ff8c75d1a72cd7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <a href="classLogger.html#a99a912d497c8163e1ff8c75d1a72cd7a">More...</a><br /></td></tr>
-<tr class="separator:a99a912d497c8163e1ff8c75d1a72cd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c232dde4aa18f4ec99b503827fae653"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a8c232dde4aa18f4ec99b503827fae653">Logger</a> (<a class="el" href="classLogger.html">Logger</a> &amp;&amp;other)</td></tr>
+<tr class="memdesc:a8c232dde4aa18f4ec99b503827fae653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <a href="classLogger.html#a8c232dde4aa18f4ec99b503827fae653">More...</a><br /></td></tr>
+<tr class="separator:a8c232dde4aa18f4ec99b503827fae653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad628291154b62e38901798e39558839"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#aad628291154b62e38901798e39558839">begin</a> ()</td></tr>
 <tr class="memdesc:aad628291154b62e38901798e39558839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the logger.  <a href="classLogger.html#aad628291154b62e38901798e39558839">More...</a><br /></td></tr>
 <tr class="separator:aad628291154b62e38901798e39558839"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,8 +223,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a99a912d497c8163e1ff8c75d1a72cd7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99a912d497c8163e1ff8c75d1a72cd7a">&#9670;&nbsp;</a></span>Logger() <span class="overload">[3/3]</span></h2>
+<a id="a8c232dde4aa18f4ec99b503827fae653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c232dde4aa18f4ec99b503827fae653">&#9670;&nbsp;</a></span>Logger() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,18 +236,20 @@ Public Member Functions</h2></td></tr>
           <td class="memname">Logger::Logger </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classLogger.html">Logger</a> &amp;&amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Move constructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="Logger_8hpp_source.html#l00036">36</a> of file <a class="el" href="Logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>
@@ -299,7 +301,7 @@ Public Member Functions</h2></td></tr>
 <p>Make sure that the logger is initialized by Baremetal. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structSharedStruct.html#ab84d9ff23f09b19bb8cf7f72ec9901fe">SharedStruct::checkInitialized</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Logger_8hpp_source.html#l00058">58</a> of file <a class="el" href="Logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Logger_8hpp_source.html#l00061">61</a> of file <a class="el" href="Logger_8hpp_source.html">Logger.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -335,7 +337,7 @@ Here is the caller graph for this function:</div>
 <p>Check if the logger is initialized by Baremetal. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structSharedStruct.html#a6fc794134e699aa911382434d622e574" title="Check if the data structure has been initialized by Baremetal.">SharedStruct::isInitialized</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Logger_8hpp_source.html#l00052">52</a> of file <a class="el" href="Logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Logger_8hpp_source.html#l00055">55</a> of file <a class="el" href="Logger_8hpp_source.html">Logger.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

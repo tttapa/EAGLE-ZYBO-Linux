@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['l2b',['l2b',['../structTestStruct.html#ae8f48b2ea3e6ff8e1aa4dcce8758a07c',1,'TestStruct']]],
   ['land',['LAND',['../classCryptoInstruction.html#a550bb7dab52d2b63644414710e84cc74',1,'CryptoInstruction::LAND()'],['../classCryptoInstruction.html#a966f06da8010704b61028f241138b0b1a479a809c0b6eaaefd3b1df16f976df06',1,'CryptoInstruction::LAND()'],['../BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643ca479a809c0b6eaaefd3b1df16f976df06',1,'LAND():&#160;BaremetalCommunicationDef.hpp']]],
   ['land_5ft',['LAND_t',['../structCryptoInstruction_1_1LAND__t.html',1,'CryptoInstruction']]],
   ['leastsquares_2ehpp',['LeastSquares.hpp',['../LeastSquares_8hpp.html',1,'']]],
@@ -20,7 +21,7 @@ var searchData=
   ['logentry',['LogEntry',['../structLogEntry.html',1,'LogEntry'],['../structPythonDroneLogEntry.html#a91147a06d6ece57b26bb0c206f6ca642',1,'PythonDroneLogEntry::logEntry()']]],
   ['logentry_2etemplate_2ecpp',['LogEntry.template.cpp',['../LogEntry_8template_8cpp.html',1,'']]],
   ['logentry_2etemplate_2eh',['LogEntry.template.h',['../LogEntry_8template_8h.html',1,'']]],
-  ['logger',['Logger',['../classLogger.html',1,'Logger'],['../classLogger.html#a6a8156ed7fe85aad72e782f7662661a7',1,'Logger::Logger(const char *addr, int port)'],['../classLogger.html#a6822a801df00e3d4f8a338e26d762b1d',1,'Logger::Logger(const std::vector&lt; UDPSender &gt; &amp;senders)'],['../classLogger.html#a99a912d497c8163e1ff8c75d1a72cd7a',1,'Logger::Logger(Logger &amp;&amp;)=default']]],
+  ['logger',['Logger',['../classLogger.html',1,'Logger'],['../classLogger.html#a6a8156ed7fe85aad72e782f7662661a7',1,'Logger::Logger(const char *addr, int port)'],['../classLogger.html#a6822a801df00e3d4f8a338e26d762b1d',1,'Logger::Logger(const std::vector&lt; UDPSender &gt; &amp;senders)'],['../classLogger.html#a8c232dde4aa18f4ec99b503827fae653',1,'Logger::Logger(Logger &amp;&amp;other)']]],
   ['logger_2ecpp',['Logger.cpp',['../Logger_8cpp.html',1,'']]],
   ['logger_2edrone_2etemplate_2ecpp',['logger.drone.template.cpp',['../logger_8drone_8template_8cpp.html',1,'']]],
   ['logger_2ehpp',['Logger.hpp',['../Logger_8hpp.html',1,'']]],

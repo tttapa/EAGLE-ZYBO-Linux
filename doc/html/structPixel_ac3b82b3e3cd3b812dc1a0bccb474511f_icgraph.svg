@@ -21,7 +21,7 @@
 <!-- Node6 -->
 <g id="node2" class="node">
 <title>Node6</title>
-<g id="a_node2"><a xlink:href="classGridFinder.html#a54369e6368334eb2924ca70ee1f1d438" target="_top" xlink:title="Follow the given line to find the line perpendicular to it. Move along the line for minDistance pixel...">
+<g id="a_node2"><a xlink:href="classGridFinder.html#a6dec96f8c6ed97647f692fa9f9908595" target="_top" xlink:title="Follow the given line to find the line perpendicular to it. Move along the line for minDistance pixel...">
 <polygon fill="#ffffff" stroke="#000000" points="523,-19.5 523,-38.5 657,-38.5 657,-19.5 523,-19.5"/>
 <text text-anchor="middle" x="590" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::findNextLine</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node7 -->
 <g id="node3" class="node">
 <title>Node7</title>
-<g id="a_node3"><a xlink:href="classGridFinder.html#a3edbd3ffbcfe6d373fbaf576e4dca51b" target="_top" xlink:title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults.">
+<g id="a_node3"><a xlink:href="classGridFinder.html#ad1a5448de0df9a84f989f64b55025843" target="_top" xlink:title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults.">
 <polygon fill="#ffffff" stroke="#000000" points="353,-38.5 353,-57.5 487,-57.5 487,-38.5 353,-38.5"/>
 <text text-anchor="middle" x="420" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::findNextLine</text>
 </a>
@@ -51,7 +51,7 @@
 <!-- Node8 -->
 <g id="node4" class="node">
 <title>Node8</title>
-<g id="a_node4"><a xlink:href="classGridFinder.html#a8940ca681fac78274043cf5f1f1f5761" target="_top" xlink:title="This is the main function: it looks for a complete square of the grid, as close to the center of the ...">
+<g id="a_node4"><a xlink:href="classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" target="_top" xlink:title="This is the main function: it looks for a complete square of the grid, as close to the center of the ...">
 <polygon fill="#ffffff" stroke="#000000" points="358,-.5 358,-19.5 482,-19.5 482,-.5 358,-.5"/>
 <text text-anchor="middle" x="420" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::findSquare</text>
 </a>

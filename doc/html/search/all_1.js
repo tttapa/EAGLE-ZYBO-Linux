@@ -4,8 +4,10 @@ var searchData=
   ['accesscontrolledlogentry',['AccessControlledLogEntry',['../BaremetalCommunicationDef_8hpp.html#a1adba5b348f415898b688242a6a28927',1,'BaremetalCommunicationDef.hpp']]],
   ['accesscontrolledsharedstruct',['AccessControlledSharedStruct',['../structAccessControlledSharedStruct.html',1,'']]],
   ['addmultiratepadding',['addMultiRatePadding',['../classBitString.html#a2d6f24c79564db3cac48177fa3c0cc48',1,'BitString']]],
-  ['address',['address',['../structQRCommStruct.html#aa7442a0a44be0f0b358f8de1faca627f',1,'QRCommStruct::address()'],['../structAccessControlledSharedStruct.html#a38c0ccbe90853714511b9a33a3f3a711',1,'AccessControlledSharedStruct::address()']]],
+  ['address',['address',['../structTestStruct.html#ae98cd8fb96d9f9241a5890c3a535bbd4',1,'TestStruct::address()'],['../structQRCommStruct.html#aa7442a0a44be0f0b358f8de1faca627f',1,'QRCommStruct::address()'],['../structAccessControlledSharedStruct.html#a38c0ccbe90853714511b9a33a3f3a711',1,'AccessControlledSharedStruct::address()']]],
   ['addsimplepadding',['addSimplePadding',['../classBitString.html#a87906322228e6bf43c0d29bd00190be4',1,'BitString']]],
+  ['align',['ALIGN',['../EAGLE-Hash_8a_8headers_2align_8h.html#abe7f8cd9a0ce69b71567a3870415be66',1,'ALIGN():&#160;align.h'],['../EAGLE-KetjeJr_8a_8headers_2align_8h.html#abe7f8cd9a0ce69b71567a3870415be66',1,'ALIGN():&#160;align.h']]],
+  ['align_2eh',['align.h',['../EAGLE-Hash_8a_8headers_2align_8h.html',1,'(Global Namespace)'],['../EAGLE-KetjeJr_8a_8headers_2align_8h.html',1,'(Global Namespace)']]],
   ['almostequal_2ehpp',['AlmostEqual.hpp',['../AlmostEqual_8hpp.html',1,'']]],
   ['altitude_5fhold',['ALTITUDE_HOLD',['../BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465a3c2854eaaa72c35445317d8505a9e388',1,'BaremetalCommunicationDef.hpp']]],
   ['amount_5fframes',['AMOUNT_FRAMES',['../original-wrapper_8c.html#a46658e5dedf04dda6e9e28cb38b26994',1,'AMOUNT_FRAMES():&#160;original-wrapper.c'],['../wrapper_8c.html#a46658e5dedf04dda6e9e28cb38b26994',1,'AMOUNT_FRAMES():&#160;wrapper.c']]],
@@ -32,7 +34,7 @@ var searchData=
   ['asrowvector',['asrowvector',['../Matrix_8hpp.html#a5396ac0689ea8f47e7ba2726b3b79357',1,'asrowvector(const ColVector&lt; N &gt; &amp;v, const char *sep=&quot; &quot;, size_t precision=2):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a6ff4bfee4dd43e43bdaeb7dfbfd38ac7',1,'asrowvector(const RowVector&lt; N &gt; &amp;v, const char *sep=&quot; &quot;, size_t precision=2):&#160;Matrix.hpp']]],
   ['assignblock',['assignBlock',['../Matrix_8hpp.html#aa7a0a009ff4ef0cc5545c80716559f36',1,'Matrix.hpp']]],
   ['astex',['asTeX',['../Matrix_8hpp.html#a2639e3ccd6ca3fc71cbe8d24dc96ec6f',1,'Matrix.hpp']]],
-  ['attitude',['attitude',['../baremetal-comm_2include_2wrapper_8h.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;original-wrapper.c'],['../comm_2include_2wrapper_8h.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;original-wrapper.c'],['../original-wrapper_8c.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;original-wrapper.c'],['../wrapper_8c.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;wrapper.c']]],
+  ['attitude',['attitude',['../wrapper_8h.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;original-wrapper.c'],['../original-wrapper_8c.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;original-wrapper.c'],['../wrapper_8c.html#aaf5a1e92e99a3ae98a276cff314267a2',1,'attitude(int arg):&#160;wrapper.c']]],
   ['autonomous',['AUTONOMOUS',['../BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465ade7d660fc991e08c2d3526fec8a46c4a',1,'BaremetalCommunicationDef.hpp']]],
   ['average',['average',['../classAngle.html#a593164c63d4e2eedc8b473419c179f77',1,'Angle::average()'],['../structPoint.html#a1da0707b7db8d7a162e52f13c1809e34',1,'Point::average()'],['../structPixel.html#ac3b82b3e3cd3b812dc1a0bccb474511f',1,'Pixel::average()']]]
 ];

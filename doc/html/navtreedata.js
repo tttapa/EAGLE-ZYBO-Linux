@@ -24,8 +24,10 @@ var NAVTREE =
 [
   [ "EAGLE ZYBO Linux", "index.html", [
     [ "Getting Started", "md_Getting-Started.html", null ],
+    [ "Presentation", "md_Presentation.html", null ],
     [ "Status Quaestionis", "md_Status-Quaestionis.html", null ],
     [ "Structure", "md_Structure.html", null ],
+    [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -44,7 +46,6 @@ var NAVTREE =
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -56,6 +57,7 @@ var NAVTREE =
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -65,9 +67,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ANSIColors_8hpp.html",
-"PerfTimer_8hpp_source.html",
-"classPerfTimer.html#a9d88e8916bfe284793237a726d81ca1c",
-"original-wrapper_8c.html#a33eaf162ba3d16c401a1f37349d81fe3"
+"LogEntry_8template_8cpp_source.html",
+"classCryptoException.html#ab8222b36d5b9edb38ec6c9d3816ac5a9a2b2ac70c61304caea0312f5481539cd4",
+"functions_h.html",
+"structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

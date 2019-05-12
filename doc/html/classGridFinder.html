@@ -188,18 +188,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c330ed1431434a4a3726c341161bf39"><td class="memItemLeft" align="right" valign="top">std::array&lt; optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a7c330ed1431434a4a3726c341161bf39">getFirstTwoHalfLines</a> ()</td></tr>
 <tr class="memdesc:a7c330ed1431434a4a3726c341161bf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first two lines. These are the two half lines that make up the line closest to the center of the frame.  <a href="classGridFinder.html#a7c330ed1431434a4a3726c341161bf39">More...</a><br /></td></tr>
 <tr class="separator:a7c330ed1431434a4a3726c341161bf39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54369e6368334eb2924ca70ee1f1d438"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a54369e6368334eb2924ca70ee1f1d438">findNextLine</a> (<a class="el" href="structLineResult.html">LineResult</a> line, bool direction, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minDistance=0, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> offset=0) const</td></tr>
-<tr class="memdesc:a54369e6368334eb2924ca70ee1f1d438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Follow the given line to find the line perpendicular to it. Move along the line for <code>minDistance</code> pixels, then move away from the line, perpendicular to it for twice its width plus the given offset. Then move from this point parallel to the original line, and search for the next white pixel, which is probably part of the line perpendicular to the given line.  <a href="classGridFinder.html#a54369e6368334eb2924ca70ee1f1d438">More...</a><br /></td></tr>
-<tr class="separator:a54369e6368334eb2924ca70ee1f1d438"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3edbd3ffbcfe6d373fbaf576e4dca51b"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a3edbd3ffbcfe6d373fbaf576e4dca51b">findNextLine</a> (optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt; line, bool direction, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minDistance=0, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> offset=0) const</td></tr>
-<tr class="memdesc:a3edbd3ffbcfe6d373fbaf576e4dca51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional <a class="el" href="structLineResult.html">LineResult</a>s.  <a href="classGridFinder.html#a3edbd3ffbcfe6d373fbaf576e4dca51b">More...</a><br /></td></tr>
-<tr class="separator:a3edbd3ffbcfe6d373fbaf576e4dca51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dec96f8c6ed97647f692fa9f9908595"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a6dec96f8c6ed97647f692fa9f9908595">findNextLine</a> (<a class="el" href="structLineResult.html">LineResult</a> line, bool direction, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> offset=0, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minDistance=0) const</td></tr>
+<tr class="memdesc:a6dec96f8c6ed97647f692fa9f9908595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Follow the given line to find the line perpendicular to it. Move along the line for <code>minDistance</code> pixels, then move away from the line, perpendicular to it for twice its width plus the given offset. Then move from this point parallel to the original line, and search for the next white pixel, which is probably part of the line perpendicular to the given line.  <a href="classGridFinder.html#a6dec96f8c6ed97647f692fa9f9908595">More...</a><br /></td></tr>
+<tr class="separator:a6dec96f8c6ed97647f692fa9f9908595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a5448de0df9a84f989f64b55025843"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ad1a5448de0df9a84f989f64b55025843">findNextLine</a> (optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt; line, bool direction, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> offset=0, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minDistance=0) const</td></tr>
+<tr class="memdesc:ad1a5448de0df9a84f989f64b55025843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional <a class="el" href="structLineResult.html">LineResult</a>s.  <a href="classGridFinder.html#ad1a5448de0df9a84f989f64b55025843">More...</a><br /></td></tr>
+<tr class="separator:ad1a5448de0df9a84f989f64b55025843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae12ca7921b02b37417d87fc737f0134d"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d">checkLine</a> (<a class="el" href="structPixel.html">Pixel</a> pixel, <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">angle_t</a> angle, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minWidth) const</td></tr>
 <tr class="memdesc:ae12ca7921b02b37417d87fc737f0134d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there could be a valid line going through the given point, and if so, find and return the actual line.  <a href="classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d">More...</a><br /></td></tr>
 <tr class="separator:ae12ca7921b02b37417d87fc737f0134d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8940ca681fac78274043cf5f1f1f5761"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSquare.html">Square</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a8940ca681fac78274043cf5f1f1f5761">findSquare</a> ()</td></tr>
-<tr class="memdesc:a8940ca681fac78274043cf5f1f1f5761"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main function: it looks for a complete square of the grid, as close to the center of the frame as possible.  <a href="classGridFinder.html#a8940ca681fac78274043cf5f1f1f5761">More...</a><br /></td></tr>
-<tr class="separator:a8940ca681fac78274043cf5f1f1f5761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701c0c1e70d01bb8773a89a29f6673a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSquare.html">Square</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0">findSquare</a> (<a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> initialTries=1, float initialTriesFactor=2.0f)</td></tr>
+<tr class="memdesc:a701c0c1e70d01bb8773a89a29f6673a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main function: it looks for a complete square of the grid, as close to the center of the frame as possible.  <a href="classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0">More...</a><br /></td></tr>
+<tr class="separator:a701c0c1e70d01bb8773a89a29f6673a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -209,7 +209,7 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:acca475189fa9ea36e12451a88d0e4915"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#acca475189fa9ea36e12451a88d0e4915">HOUGH_MAX_GAP</a> = 16</td></tr>
+<tr class="memitem:acca475189fa9ea36e12451a88d0e4915"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#acca475189fa9ea36e12451a88d0e4915">HOUGH_MAX_GAP</a> = 64</td></tr>
 <tr class="separator:acca475189fa9ea36e12451a88d0e4915"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66cb42fc8cf46471b4489f5158ab488"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ae66cb42fc8cf46471b4489f5158ab488">MAX_GAP</a> = 10</td></tr>
 <tr class="memdesc:ae66cb42fc8cf46471b4489f5158ab488"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of pixels that can be black within a line, while still being detected correctly.  <a href="classGridFinder.html#ae66cb42fc8cf46471b4489f5158ab488">More...</a><br /></td></tr>
@@ -664,8 +664,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a54369e6368334eb2924ca70ee1f1d438"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54369e6368334eb2924ca70ee1f1d438">&#9670;&nbsp;</a></span>findNextLine() <span class="overload">[1/2]</span></h2>
+<a id="a6dec96f8c6ed97647f692fa9f9908595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dec96f8c6ed97647f692fa9f9908595">&#9670;&nbsp;</a></span>findNextLine() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -689,13 +689,13 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
-          <td class="paramname"><em>minDistance</em> = <code>0</code>, </td>
+          <td class="paramname"><em>offset</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
-          <td class="paramname"><em>offset</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>minDistance</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -716,8 +716,8 @@ Here is the call graph for this function:</div>
     <tr><td class="paramname">line</td><td>The line to follow. </td></tr>
     <tr><td class="paramname">direction</td><td>Should 90° be added or subtracted to get the perpendicular direction? <br  />
 </td></tr>
-    <tr><td class="paramname">minDistance</td><td>The minimum distance between the given center point of the line and the perpendicular line. Essentially moves the starting point of the search along the line for this distance. </td></tr>
-    <tr><td class="paramname">offset</td><td>The offset of the search path, measured perpendicularly from the line. </td></tr>
+    <tr><td class="paramname">offset</td><td>The offset of the search path, measured perpendicularly from the </td></tr>
+    <tr><td class="paramname">minDistance</td><td>The minimum distance between the given center point of the line and the perpendicular line. Essentially moves the starting point of the search along the line for this distance. line. </td></tr>
   </table>
   </dd>
 </dl>
@@ -727,20 +727,20 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a54369e6368334eb2924ca70ee1f1d438_cgraph.svg" width="1528" height="687"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a6dec96f8c6ed97647f692fa9f9908595_cgraph.svg" width="1528" height="687"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a54369e6368334eb2924ca70ee1f1d438_icgraph.svg" width="887" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a6dec96f8c6ed97647f692fa9f9908595_icgraph.svg" width="887" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a3edbd3ffbcfe6d373fbaf576e4dca51b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3edbd3ffbcfe6d373fbaf576e4dca51b">&#9670;&nbsp;</a></span>findNextLine() <span class="overload">[2/2]</span></h2>
+<a id="ad1a5448de0df9a84f989f64b55025843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a5448de0df9a84f989f64b55025843">&#9670;&nbsp;</a></span>findNextLine() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -764,13 +764,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
-          <td class="paramname"><em>minDistance</em> = <code>0</code>, </td>
+          <td class="paramname"><em>offset</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
-          <td class="paramname"><em>offset</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>minDistance</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -791,14 +791,14 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a3edbd3ffbcfe6d373fbaf576e4dca51b_cgraph.svg" width="1755" height="687"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ad1a5448de0df9a84f989f64b55025843_cgraph.svg" width="1755" height="687"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a8940ca681fac78274043cf5f1f1f5761"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8940ca681fac78274043cf5f1f1f5761">&#9670;&nbsp;</a></span>findSquare()</h2>
+<a id="a701c0c1e70d01bb8773a89a29f6673a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a701c0c1e70d01bb8773a89a29f6673a0">&#9670;&nbsp;</a></span>findSquare()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -809,8 +809,19 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="structSquare.html">Square</a> GridFinder::findSquare </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
+          <td class="paramname"><em>initialTries</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>initialTriesFactor</em> = <code>2.0f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -824,19 +835,26 @@ Here is the call graph for this function:</div>
 <div class="image">
 <img src="square.png" alt=""/>
 </div>
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initialTries</td><td>(default: 1) When finding the first two corners, this many Bresenham lines will run parallel to the initial line in order to prevent a bad result because of a small gap in the line. </td></tr>
+    <tr><td class="paramname">initialTriesFactor</td><td>(default: 2.0) When finding the first two corners, the parallel Bresenham lines be separated by this factor multiplied by the initial line width.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>// TODO </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00847">847</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00854">854</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a8940ca681fac78274043cf5f1f1f5761_cgraph.svg" width="1776" height="895"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a701c0c1e70d01bb8773a89a29f6673a0_cgraph.svg" width="1776" height="976"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a8940ca681fac78274043cf5f1f1f5761_icgraph.svg" width="647" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a701c0c1e70d01bb8773a89a29f6673a0_icgraph.svg" width="647" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1721,7 +1739,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::HOUGH_MAX_GAP = 16</td>
+          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::HOUGH_MAX_GAP = 64</td>
         </tr>
       </table>
   </td>

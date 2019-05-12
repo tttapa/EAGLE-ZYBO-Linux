@@ -1,0 +1,13 @@
+<map id="Point::vec" name="Point::vec">
+<area shape="rect" id="node1" title=" " alt="" coords="1129,147,1216,174"/>
+<area shape="rect" id="node2" href="$structPoint.html#a4095f170d4a6225a2d0dea604fdb2101" title=" " alt="" coords="891,5,1081,47"/>
+<area shape="rect" id="node3" href="$structPoint.html#ab50806683020e8c506f3be5e934a62ce" title=" " alt="" coords="938,71,1034,98"/>
+<area shape="rect" id="node4" href="$structPoint.html#a94f25dd17cb1d1cefb726eaa673a8505" title=" " alt="" coords="901,122,1071,149"/>
+<area shape="rect" id="node9" href="$classLocationFinder.html#a93be2c4b05b52c58f5fca5d1514dfbe9" title="Get the position of the center of the frame relative to the given square." alt="" coords="476,161,676,187"/>
+<area shape="rect" id="node10" href="$structPoint.html#a1da0707b7db8d7a162e52f13c1809e34" title=" " alt="" coords="725,223,841,250"/>
+<area shape="rect" id="node11" href="$classLocationTracker.html#a259a52389d4d7c4a5fe80aca35b789ea" title=" " alt="" coords="897,274,1075,301"/>
+<area shape="rect" id="node5" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="493,85,659,111"/>
+<area shape="rect" id="node8" href="$structPoint.html#ab0fa03b5388829db9118785408deba75" title=" " alt="" coords="724,122,843,149"/>
+<area shape="rect" id="node6" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,135,428,162"/>
+<area shape="rect" id="node7" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,110,156,137"/>
+</map>

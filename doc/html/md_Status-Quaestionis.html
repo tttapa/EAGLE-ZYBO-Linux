@@ -109,10 +109,10 @@ $(document).ready(function(){initNavTree('md_Status-Quaestionis.html','');});
 Test cases go in <code>src/crypto/test/test-crypto.cpp</code>.</p>
 <p>🗙 The reading and writing of the FPGA registers uses the provided code in <code><a class="el" href="wrapper_8c.html">src/comm/src/wrapper.c</a></code> from <a href="https://www.xilinx
 .com/support/documentation/application_notes/xapp1078-amp-linux-bare-metal.pdf">Xilinx Application note 1078</a>. <br  />
-This is not ideal, because it has a lot of overhead when reading large amounts of data. The code is simple enough, and adding a function for doing longer transactions to the FPGA is a good idea, instead of calling the <code><a class="el" href="baremetal-comm_2include_2wrapper_8h.html#a8efeb9db88385717fd8d78494188d11d">rmem()</a></code> and <code><a class="el" href="baremetal-comm_2include_2wrapper_8h.html#a33eaf162ba3d16c401a1f37349d81fe3">wmem()</a></code> functions for each word separately.</p>
+This is not ideal, because it has a lot of overhead when reading large amounts of data. The code is simple enough, and adding a function for doing longer transactions to the FPGA is a good idea, instead of calling the <code><a class="el" href="wrapper_8h.html#a8efeb9db88385717fd8d78494188d11d">rmem()</a></code> and <code><a class="el" href="wrapper_8h.html#a33eaf162ba3d16c401a1f37349d81fe3">wmem()</a></code> functions for each word separately.</p>
 <p>✓ Tuur and Cyriel are working on the code that reads and decodes the <a class="el" href="structQR.html">QR</a> code, and sends the data to crypto.</p>
 <h3>Logging</h3>
-<p>The logging on the Linux side is pretty basic: it just reads the size of the log entry from shared memory (<code>wrapper.h</code>), and then reads this many words and sends them as a multicast UDP packet.</p>
+<p>The logging on the Linux side is pretty basic: it just reads the size of the log entry from shared memory (<code><a class="el" href="wrapper_8h.html">wrapper.h</a></code>), and then reads this many words and sends them as a multicast UDP packet.</p>
 <p>✓ The multicast sender has been implemented and tested.</p>
 <p>🗙 The part that reads from shared memory is trivial, but not finished yet, we'll have to finish the logger in Baremetal first. <br  />
 It's important that we use different locks for logging and vision.</p>

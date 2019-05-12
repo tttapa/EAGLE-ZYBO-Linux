@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 202)">
 <title>/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/logger/include/Logger.hpp</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-202 342,-202 342,4 -4,4"/>
-<!-- Node15 -->
+<!-- Node26 -->
 <g id="node1" class="node">
-<title>Node15</title>
+<title>Node26</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="112,-156.5 112,-197.5 257,-197.5 257,-156.5 112,-156.5"/>
 <text text-anchor="start" x="120" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/pieter/GitHub</text>
@@ -20,9 +20,9 @@
 </a>
 </g>
 </g>
-<!-- Node16 -->
+<!-- Node27 -->
 <g id="node2" class="node">
-<title>Node16</title>
+<title>Node27</title>
 <g id="a_node2"><a xlink:href="ThreadedLogger_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-78.5 0,-119.5 191,-119.5 191,-78.5 0,-78.5"/>
 <text text-anchor="start" x="8" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/pieter/GitHub</text>
@@ -31,15 +31,15 @@
 </a>
 </g>
 </g>
-<!-- Node15&#45;&gt;Node16 -->
+<!-- Node26&#45;&gt;Node27 -->
 <g id="edge1" class="edge">
-<title>Node15&#45;&gt;Node16</title>
+<title>Node26&#45;&gt;Node27</title>
 <path fill="none" stroke="#191970" d="M152.8126,-149.229C141.7062,-139.4953 129.4357,-128.7414 119.1076,-119.6898"/>
 <polygon fill="#191970" stroke="#191970" points="150.8222,-152.1386 160.6496,-156.0974 155.436,-146.8742 150.8222,-152.1386"/>
 </g>
-<!-- Node18 -->
+<!-- Node29 -->
 <g id="node4" class="node">
-<title>Node18</title>
+<title>Node29</title>
 <g id="a_node4"><a xlink:href="Logger_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="209,-78.5 209,-119.5 338,-119.5 338,-78.5 209,-78.5"/>
 <text text-anchor="start" x="217" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/pieter/GitHub</text>
@@ -48,15 +48,15 @@
 </a>
 </g>
 </g>
-<!-- Node15&#45;&gt;Node18 -->
+<!-- Node26&#45;&gt;Node29 -->
 <g id="edge3" class="edge">
-<title>Node15&#45;&gt;Node18</title>
+<title>Node26&#45;&gt;Node29</title>
 <path fill="none" stroke="#191970" d="M216.1874,-149.229C227.2938,-139.4953 239.5643,-128.7414 249.8924,-119.6898"/>
 <polygon fill="#191970" stroke="#191970" points="213.564,-146.8742 208.3504,-156.0974 218.1778,-152.1386 213.564,-146.8742"/>
 </g>
-<!-- Node17 -->
+<!-- Node28 -->
 <g id="node3" class="node">
-<title>Node17</title>
+<title>Node28</title>
 <g id="a_node3"><a xlink:href="ThreadedLogger_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="11,-.5 11,-41.5 180,-41.5 180,-.5 11,-.5"/>
 <text text-anchor="start" x="19" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/pieter/GitHub</text>
@@ -65,9 +65,9 @@
 </a>
 </g>
 </g>
-<!-- Node16&#45;&gt;Node17 -->
+<!-- Node27&#45;&gt;Node28 -->
 <g id="edge2" class="edge">
-<title>Node16&#45;&gt;Node17</title>
+<title>Node27&#45;&gt;Node28</title>
 <path fill="none" stroke="#191970" d="M95.5,-68.0789C95.5,-59.2178 95.5,-49.7747 95.5,-41.6898"/>
 <polygon fill="#191970" stroke="#191970" points="92.0001,-68.0974 95.5,-78.0974 99.0001,-68.0975 92.0001,-68.0974"/>
 </g>

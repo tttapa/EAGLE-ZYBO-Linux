@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger_5finclude_5fc_5fwrappers',['LOGGER_INCLUDE_C_WRAPPERS',['../LogEntry_8template_8cpp.html#a56a2ba09e76a6e44d7637fb56c8f2790',1,'LogEntry.template.cpp']]]
+  ['global_5fposition',['GLOBAL_POSITION',['../LocationTracker_8hpp.html#aa29948ab070c204054d8230a74ebdbaa',1,'LocationTracker.hpp']]]
 ];

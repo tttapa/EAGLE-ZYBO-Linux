@@ -51,12 +51,14 @@ TEST(MaskGridFinder, fromVideo) {
 #ifdef ZYBO
     string imagePath = "/media/" + filename + ".mp4";
 #else
-    // string imagePath =
-    //     string(getenv("WORKSPACE_ROOT")) + "/Video/" + filename + ".mp4";
     string imagePath =
-        string(getenv("WORKSPACE_ROOT")) + "/python/drone-images/image%04d.bmp";
+        string(getenv("WORKSPACE_ROOT")) + "/Video/" + filename + ".mp4";
+    // string imagePath =
+    //     string(getenv("WORKSPACE_ROOT")) + "/python/drone-images/image%04d.bmp";
 #endif
-    constexpr size_t GRIDSIZE = 48 * 4;
+    constexpr size_t GRIDSIZE = 48 * 1.5;
+    constexpr float OFFSET_X  = 2;
+    constexpr float OFFSET_Y  = 2;
 
     LocationFinder lf = imagePath;
     LocationTracker lt;
@@ -64,9 +66,9 @@ TEST(MaskGridFinder, fromVideo) {
     cv::VideoCapture &video = lf.getCapture();
     int frame_width         = int(video.get(3));
     int frame_height        = int(video.get(4));
-    double fps              = video.get(cv::CAP_PROP_FPS) / 2;
+    double fps              = video.get(cv::CAP_PROP_FPS) / 1.5;
     cv::VideoWriter out     = {filename + ".out.mp4",
-                           cv::VideoWriter::fourcc('M', 'P', '4', 'V'), fps,
+                           cv::VideoWriter::fourcc('m', 'p', '4', 'v'), fps,
                            cv::Size{frame_width * 3, frame_height}};
 
     constexpr float alpha = 0.99;
@@ -90,7 +92,7 @@ TEST(MaskGridFinder, fromVideo) {
             for (auto &p : lf.getSquare().points)
                 if (p)
                     cv::circle(maskimgrgb, cv::Point(p->x, p->y), 5,
-                               cv::Scalar(0, 255, 0), -1);
+                               cv::Scalar(20, 180, 0), -1);
             cv::Mat image = lf.getImage();
             cv::Size size = image.size();
 
@@ -138,8 +140,10 @@ TEST(MaskGridFinder, fromVideo) {
                     }
                 }
             cv::Point point = {
-                int(std::round(size.width / 2.0f + location.x * GRIDSIZE)),
-                int(std::round(size.height / 2.0f - location.y * GRIDSIZE)),
+                int(std::round(size.width / 2.0f +
+                               (location.x + OFFSET_X) * GRIDSIZE)),
+                int(std::round(size.height / 2.0f -
+                               (location.y + OFFSET_Y) * GRIDSIZE)),
             };
             cv::circle(locimg, point, 3, cv::Scalar(255, 0, 0), -1);
 

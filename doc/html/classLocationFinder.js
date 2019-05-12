@@ -10,5 +10,8 @@ var classLocationFinder =
     [ "getImage", "classLocationFinder.html#a7a36dd23cbb1faad102cd239e4931cec", null ],
     [ "getLocation", "classLocationFinder.html#a93be2c4b05b52c58f5fca5d1514dfbe9", null ],
     [ "getMaskImage", "classLocationFinder.html#a8b744cc11a3ea16520c0b0cbf4b6a140", null ],
+    [ "getSideLength", "classLocationFinder.html#a42a9d8c50934ddcdb7a6f5b194ea86e8", null ],
+    [ "getSquare", "classLocationFinder.html#aaee6256c612456c4aefb54267738abd7", null ],
+    [ "getSquareCenter", "classLocationFinder.html#ae309c2ab43f3ca9ac271b0223201d73a", null ],
     [ "updateLocation", "classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522", null ]
 ];

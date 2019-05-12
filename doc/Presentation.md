@@ -113,8 +113,8 @@ parts are overexposed by direct sunlight, gaps in the lines, curved lines due
 to lens distortion, and it is mathematically correct even when turning the drone
 360° around the z-axis.
 
-[Video sunlight]()
-[Video 360°]()
+[Video sunlight](drone-images-sunlight+mask.out.mp4)  
+[Video 360°](DroneCam-Spinning.out.mp4)
 
 The final Linux application consists of three main parts: the vision algorithm
 for the localization, the QR decoding using ZBar and the algorithm developed by

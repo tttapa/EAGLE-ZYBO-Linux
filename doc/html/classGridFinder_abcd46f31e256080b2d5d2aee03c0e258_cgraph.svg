@@ -9,48 +9,48 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 323)">
 <title>GridFinder::getMiddle</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-323 795,-323 795,4 -4,4"/>
-<!-- Node245 -->
+<!-- Node249 -->
 <g id="node1" class="node">
-<title>Node245</title>
+<title>Node249</title>
 <g id="a_node1"><a xlink:title="Find the middle of a line.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-184.5 0,-203.5 120,-203.5 120,-184.5 0,-184.5"/>
 <text text-anchor="middle" x="60" y="-191.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::getMiddle</text>
 </a>
 </g>
 </g>
-<!-- Node246 -->
+<!-- Node250 -->
 <g id="node2" class="node">
-<title>Node246</title>
+<title>Node250</title>
 <g id="a_node2"><a xlink:href="classGridFinder.html#afbed8951f70923626b73abdbe05236da" target="_top" xlink:title="Get the value of the given pixel.">
 <polygon fill="#ffffff" stroke="#000000" points="375,-281.5 375,-300.5 463,-300.5 463,-281.5 375,-281.5"/>
 <text text-anchor="middle" x="419" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::get</text>
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node246 -->
+<!-- Node249&#45;&gt;Node250 -->
 <g id="edge1" class="edge">
-<title>Node245&#45;&gt;Node246</title>
+<title>Node249&#45;&gt;Node250</title>
 <path fill="none" stroke="#191970" d="M68.0149,-203.7467C83.1072,-221.2891 117.691,-257.7678 156,-273 224.1201,-300.0854 309.9575,-300.3235 364.6729,-296.7068"/>
 <polygon fill="#191970" stroke="#191970" points="365.1317,-300.1827 374.851,-295.9656 364.6232,-293.2012 365.1317,-300.1827"/>
 </g>
-<!-- Node247 -->
+<!-- Node251 -->
 <g id="node3" class="node">
-<title>Node247</title>
+<title>Node251</title>
 <g id="a_node3"><a xlink:href="structCosSin.html#a4c63ac2c483b5caa4012f8c27d58dd96" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="183,-244.5 183,-263.5 281,-263.5 281,-244.5 183,-244.5"/>
 <text text-anchor="middle" x="232" y="-251.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">CosSin::opposite</text>
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node247 -->
+<!-- Node249&#45;&gt;Node251 -->
 <g id="edge3" class="edge">
-<title>Node245&#45;&gt;Node247</title>
+<title>Node249&#45;&gt;Node251</title>
 <path fill="none" stroke="#191970" d="M84.3347,-203.532C103.6639,-211.0047 131.4339,-221.5216 156,-230 167.2291,-233.8754 179.474,-237.8507 190.7905,-241.423"/>
 <polygon fill="#191970" stroke="#191970" points="189.8585,-244.7987 200.4474,-244.4459 191.9497,-238.1183 189.8585,-244.7987"/>
 </g>
-<!-- Node248 -->
+<!-- Node252 -->
 <g id="node4" class="node">
-<title>Node248</title>
+<title>Node252</title>
 <g id="a_node4"><a xlink:href="classGridFinder.html#ab5c436911deb269a22a8d5525271fa4e" target="_top" xlink:title="Get the width of the line at a given point.">
 <polygon fill="#ffffff" stroke="#000000" points="156,-157 156,-187 308,-187 308,-157 156,-157"/>
 <text text-anchor="start" x="164" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::getWidthAtPoint</text>
@@ -58,138 +58,138 @@
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node248 -->
+<!-- Node249&#45;&gt;Node252 -->
 <g id="edge4" class="edge">
-<title>Node245&#45;&gt;Node248</title>
+<title>Node249&#45;&gt;Node252</title>
 <path fill="none" stroke="#191970" d="M120.1573,-186.3055C128.4431,-185.2457 137.0817,-184.1407 145.7241,-183.0353"/>
 <polygon fill="#191970" stroke="#191970" points="146.3751,-186.4806 155.8502,-181.7401 145.4869,-179.5372 146.3751,-186.4806"/>
 </g>
-<!-- Node253 -->
+<!-- Node257 -->
 <g id="node9" class="node">
-<title>Node253</title>
+<title>Node257</title>
 <g id="a_node9"><a xlink:href="structCosSin.html#adb1d000cc58879b65a63fac849408bfe" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="358,-240.5 358,-259.5 480,-259.5 480,-240.5 358,-240.5"/>
 <text text-anchor="middle" x="419" y="-247.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">CosSin::perpendicular</text>
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node253 -->
+<!-- Node249&#45;&gt;Node257 -->
 <g id="edge17" class="edge">
-<title>Node245&#45;&gt;Node253</title>
+<title>Node249&#45;&gt;Node257</title>
 <path fill="none" stroke="#191970" d="M120.0885,-203.3731C182.8373,-213.1612 281.2163,-228.5073 347.8173,-238.8963"/>
 <polygon fill="#191970" stroke="#191970" points="347.3937,-242.3725 357.8137,-240.4556 348.4727,-235.4561 347.3937,-242.3725"/>
 </g>
-<!-- Node258 -->
+<!-- Node262 -->
 <g id="node14" class="node">
-<title>Node258</title>
+<title>Node262</title>
 <g id="a_node14"><a xlink:href="Array_8hpp.html#a54bae1a9c86ad6bc491b4f10495a759f" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="215,-118.5 215,-137.5 249,-137.5 249,-118.5 215,-118.5"/>
 <text text-anchor="middle" x="232" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">abs</text>
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node258 -->
+<!-- Node249&#45;&gt;Node262 -->
 <g id="edge16" class="edge">
-<title>Node245&#45;&gt;Node258</title>
+<title>Node249&#45;&gt;Node262</title>
 <path fill="none" stroke="#191970" d="M76.8646,-184.387C95.6722,-173.9916 127.2388,-157.5029 156,-147 171.8315,-141.2187 190.1445,-136.5824 204.8268,-133.3372"/>
 <polygon fill="#191970" stroke="#191970" points="205.733,-136.723 214.7888,-131.2236 204.2801,-129.8754 205.733,-136.723"/>
 </g>
-<!-- Node259 -->
+<!-- Node263 -->
 <g id="node15" class="node">
-<title>Node259</title>
+<title>Node263</title>
 <g id="a_node15"><a xlink:href="classGridFinder.html#af8bdc28d95e295618c2f345f2d7eb758" target="_top" xlink:title="Move a pixel in a given direction for a given distance.">
 <polygon fill="#ffffff" stroke="#000000" points="182,-80.5 182,-99.5 282,-99.5 282,-80.5 182,-80.5"/>
 <text text-anchor="middle" x="232" y="-87.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::move</text>
 </a>
 </g>
 </g>
-<!-- Node245&#45;&gt;Node259 -->
+<!-- Node249&#45;&gt;Node263 -->
 <g id="edge18" class="edge">
-<title>Node245&#45;&gt;Node259</title>
+<title>Node249&#45;&gt;Node263</title>
 <path fill="none" stroke="#191970" d="M67.9097,-184.4538C83.0925,-166.7725 118.1851,-128.92 156,-109 160.9636,-106.3853 166.3009,-104.1199 171.7625,-102.1591"/>
 <polygon fill="#191970" stroke="#191970" points="173.2389,-105.36 181.6739,-98.9491 171.082,-98.7006 173.2389,-105.36"/>
 </g>
-<!-- Node246&#45;&gt;Node246 -->
+<!-- Node250&#45;&gt;Node250 -->
 <g id="edge2" class="edge">
-<title>Node246&#45;&gt;Node246</title>
+<title>Node250&#45;&gt;Node250</title>
 <path fill="none" stroke="#191970" d="M391.2568,-300.7571C377.7601,-309.5653 387.0078,-319 419,-319 440.9946,-319 452.239,-314.5406 452.733,-308.8913"/>
 <polygon fill="#191970" stroke="#191970" points="455.4911,-306.7341 446.7432,-300.7571 449.8544,-310.8848 455.4911,-306.7341"/>
 </g>
-<!-- Node248&#45;&gt;Node246 -->
+<!-- Node252&#45;&gt;Node250 -->
 <g id="edge15" class="edge">
-<title>Node248&#45;&gt;Node246</title>
+<title>Node252&#45;&gt;Node250</title>
 <path fill="none" stroke="#191970" d="M251.0246,-187.2015C266.5724,-199.7597 289.0059,-218.1894 308,-235 324.4803,-249.5858 324.913,-258.0441 344,-269 350.4727,-272.7153 357.626,-275.8497 364.8687,-278.4812"/>
 <polygon fill="#191970" stroke="#191970" points="364.1514,-281.9311 374.745,-281.7654 366.3602,-275.2887 364.1514,-281.9311"/>
 </g>
-<!-- Node249 -->
+<!-- Node253 -->
 <g id="node5" class="node">
-<title>Node249</title>
+<title>Node253</title>
 <g id="a_node5"><a xlink:href="classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c" target="_top" xlink:title="Get the width of the frame.">
 <polygon fill="#ffffff" stroke="#000000" points="369.5,-76.5 369.5,-95.5 468.5,-95.5 468.5,-76.5 369.5,-76.5"/>
 <text text-anchor="middle" x="419" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::width</text>
 </a>
 </g>
 </g>
-<!-- Node248&#45;&gt;Node249 -->
+<!-- Node252&#45;&gt;Node253 -->
 <g id="edge5" class="edge">
-<title>Node248&#45;&gt;Node249</title>
+<title>Node252&#45;&gt;Node253</title>
 <path fill="none" stroke="#191970" d="M289.2246,-156.9942C295.8132,-154.172 302.2291,-150.8638 308,-147 328.4293,-133.3219 323.1067,-117.9581 344,-105 348.78,-102.0354 354.003,-99.5323 359.3962,-97.419"/>
 <polygon fill="#191970" stroke="#191970" points="360.9206,-100.5954 369.2286,-94.0207 358.6339,-93.9794 360.9206,-100.5954"/>
 </g>
-<!-- Node251 -->
+<!-- Node255 -->
 <g id="node7" class="node">
-<title>Node251</title>
+<title>Node255</title>
 <g id="a_node7"><a xlink:href="classGridFinder.html#affd9ae441c8d86b1856a9ef31190e9ab" target="_top" xlink:title="Get the height of the frame.">
 <polygon fill="#ffffff" stroke="#000000" points="367.5,-.5 367.5,-19.5 470.5,-19.5 470.5,-.5 367.5,-.5"/>
 <text text-anchor="middle" x="419" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::height</text>
 </a>
 </g>
 </g>
-<!-- Node248&#45;&gt;Node251 -->
+<!-- Node252&#45;&gt;Node255 -->
 <g id="edge7" class="edge">
-<title>Node248&#45;&gt;Node251</title>
+<title>Node252&#45;&gt;Node255</title>
 <path fill="none" stroke="#191970" d="M293.4444,-156.9797C298.7051,-154.198 303.664,-150.9028 308,-147 336.9794,-120.9157 319.7302,-97.5152 344,-67 357.5308,-49.9873 377.2287,-35.2753 393.0423,-25.0609"/>
 <polygon fill="#191970" stroke="#191970" points="395.1942,-27.8439 401.8283,-19.5832 391.4907,-21.9038 395.1942,-27.8439"/>
 </g>
-<!-- Node248&#45;&gt;Node253 -->
+<!-- Node252&#45;&gt;Node257 -->
 <g id="edge9" class="edge">
-<title>Node248&#45;&gt;Node253</title>
+<title>Node252&#45;&gt;Node257</title>
 <path fill="none" stroke="#191970" d="M274.9206,-187.1072C285.911,-191.4703 297.5676,-196.5425 308,-202 325.0389,-210.9136 326.6752,-217.6557 344,-226 352.8673,-230.2709 362.6786,-234.0377 372.2018,-237.2461"/>
 <polygon fill="#191970" stroke="#191970" points="371.3785,-240.6578 381.9699,-240.3853 373.5203,-233.9935 371.3785,-240.6578"/>
 </g>
-<!-- Node254 -->
+<!-- Node258 -->
 <g id="node10" class="node">
-<title>Node254</title>
+<title>Node258</title>
 <g id="a_node10"><a xlink:href="classBresenhamLine.html#aba0822ee20811d67cd9539ccbe1cd346" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="530,-164.5 530,-183.5 669,-183.5 669,-164.5 530,-164.5"/>
 <text text-anchor="middle" x="599.5" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BresenhamLine::hasNext</text>
 </a>
 </g>
 </g>
-<!-- Node248&#45;&gt;Node254 -->
+<!-- Node252&#45;&gt;Node258 -->
 <g id="edge10" class="edge">
-<title>Node248&#45;&gt;Node254</title>
+<title>Node252&#45;&gt;Node258</title>
 <path fill="none" stroke="#191970" d="M301.0221,-187.0136C315.1711,-189.506 330.0141,-191.7002 344,-193 410.3806,-199.1694 427.5977,-198.9316 494,-193 511.1929,-191.4642 529.7761,-188.5472 546.4853,-185.4515"/>
 <polygon fill="#191970" stroke="#191970" points="547.4544,-188.8296 556.6178,-183.5116 546.1381,-181.9544 547.4544,-188.8296"/>
 </g>
-<!-- Node256 -->
+<!-- Node260 -->
 <g id="node12" class="node">
-<title>Node256</title>
+<title>Node260</title>
 <g id="a_node12"><a xlink:href="classBresenhamLine.html#a10d505e30945f42a5cd0270c315b104f" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="359,-164.5 359,-183.5 479,-183.5 479,-164.5 359,-164.5"/>
 <text text-anchor="middle" x="419" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BresenhamLine::next</text>
 </a>
 </g>
 </g>
-<!-- Node248&#45;&gt;Node256 -->
+<!-- Node252&#45;&gt;Node260 -->
 <g id="edge12" class="edge">
-<title>Node248&#45;&gt;Node256</title>
+<title>Node252&#45;&gt;Node260</title>
 <path fill="none" stroke="#191970" d="M308.0601,-172.8135C321.5165,-172.9574 335.4727,-173.1067 348.7596,-173.2488"/>
 <polygon fill="#191970" stroke="#191970" points="348.7336,-176.7486 358.7705,-173.3558 348.8085,-169.749 348.7336,-176.7486"/>
 </g>
-<!-- Node257 -->
+<!-- Node261 -->
 <g id="node13" class="node">
-<title>Node257</title>
+<title>Node261</title>
 <g id="a_node13"><a xlink:href="classBresenhamLine.html#ad93a4adf0535a9b4e649bce5ade1bc5e" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="344,-115 344,-145 494,-145 494,-115 344,-115"/>
 <text text-anchor="start" x="352" y="-133" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">BresenhamLine::getCurrent</text>
@@ -197,90 +197,90 @@
 </a>
 </g>
 </g>
-<!-- Node248&#45;&gt;Node257 -->
+<!-- Node252&#45;&gt;Node261 -->
 <g id="edge14" class="edge">
-<title>Node248&#45;&gt;Node257</title>
+<title>Node252&#45;&gt;Node261</title>
 <path fill="none" stroke="#191970" d="M298.9831,-156.9557C313.0329,-153.8001 327.9535,-150.449 342.3256,-147.221"/>
 <polygon fill="#191970" stroke="#191970" points="343.1805,-150.6162 352.1705,-145.0098 341.6465,-143.7864 343.1805,-150.6162"/>
 </g>
-<!-- Node250 -->
+<!-- Node254 -->
 <g id="node6" class="node">
-<title>Node250</title>
+<title>Node254</title>
 <g id="a_node6"><a xlink:href="classMask.html#a4124a2daa1f7501d4fd80775b6217679" target="_top" xlink:title="Get the width of the mask in pixels.">
 <polygon fill="#ffffff" stroke="#000000" points="562,-76.5 562,-95.5 637,-95.5 637,-76.5 562,-76.5"/>
 <text text-anchor="middle" x="599.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Mask::width</text>
 </a>
 </g>
 </g>
-<!-- Node249&#45;&gt;Node250 -->
+<!-- Node253&#45;&gt;Node254 -->
 <g id="edge6" class="edge">
-<title>Node249&#45;&gt;Node250</title>
+<title>Node253&#45;&gt;Node254</title>
 <path fill="none" stroke="#191970" d="M468.8002,-86C494.6634,-86 526.1146,-86 551.6829,-86"/>
 <polygon fill="#191970" stroke="#191970" points="551.8862,-89.5001 561.8861,-86 551.8861,-82.5001 551.8862,-89.5001"/>
 </g>
-<!-- Node252 -->
+<!-- Node256 -->
 <g id="node8" class="node">
-<title>Node252</title>
+<title>Node256</title>
 <g id="a_node8"><a xlink:href="classMask.html#af845b7d3220b707c8b4c48bf87d045bb" target="_top" xlink:title="Get the height of the mask in pixels.">
 <polygon fill="#ffffff" stroke="#000000" points="560,-.5 560,-19.5 639,-19.5 639,-.5 560,-.5"/>
 <text text-anchor="middle" x="599.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Mask::height</text>
 </a>
 </g>
 </g>
-<!-- Node251&#45;&gt;Node252 -->
+<!-- Node255&#45;&gt;Node256 -->
 <g id="edge8" class="edge">
-<title>Node251&#45;&gt;Node252</title>
+<title>Node255&#45;&gt;Node256</title>
 <path fill="none" stroke="#191970" d="M470.7241,-10C495.5176,-10 525.0868,-10 549.6343,-10"/>
 <polygon fill="#191970" stroke="#191970" points="549.8188,-13.5001 559.8187,-10 549.8187,-6.5001 549.8188,-13.5001"/>
 </g>
-<!-- Node255 -->
+<!-- Node259 -->
 <g id="node11" class="node">
-<title>Node255</title>
+<title>Node259</title>
 <g id="a_node11"><a xlink:href="structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="705,-164.5 705,-183.5 791,-183.5 791,-164.5 705,-164.5"/>
 <text text-anchor="middle" x="748" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Pixel::inRange</text>
 </a>
 </g>
 </g>
-<!-- Node254&#45;&gt;Node255 -->
+<!-- Node258&#45;&gt;Node259 -->
 <g id="edge11" class="edge">
-<title>Node254&#45;&gt;Node255</title>
+<title>Node258&#45;&gt;Node259</title>
 <path fill="none" stroke="#191970" d="M669.4016,-174C677.8647,-174 686.4033,-174 694.5758,-174"/>
 <polygon fill="#191970" stroke="#191970" points="694.6984,-177.5001 704.6984,-174 694.6984,-170.5001 694.6984,-177.5001"/>
 </g>
-<!-- Node256&#45;&gt;Node254 -->
+<!-- Node260&#45;&gt;Node258 -->
 <g id="edge13" class="edge">
-<title>Node256&#45;&gt;Node254</title>
+<title>Node260&#45;&gt;Node258</title>
 <path fill="none" stroke="#191970" d="M479.1039,-174C492.0978,-174 506.0336,-174 519.6494,-174"/>
 <polygon fill="#191970" stroke="#191970" points="519.9783,-177.5001 529.9782,-174 519.9782,-170.5001 519.9783,-177.5001"/>
 </g>
-<!-- Node259&#45;&gt;Node249 -->
+<!-- Node263&#45;&gt;Node253 -->
 <g id="edge19" class="edge">
-<title>Node259&#45;&gt;Node249</title>
+<title>Node263&#45;&gt;Node253</title>
 <path fill="none" stroke="#191970" d="M282.1126,-88.9281C305.8841,-88.4196 334.4633,-87.8083 359.3456,-87.276"/>
 <polygon fill="#191970" stroke="#191970" points="359.4747,-90.7742 369.3975,-87.061 359.3249,-83.7758 359.4747,-90.7742"/>
 </g>
-<!-- Node259&#45;&gt;Node251 -->
+<!-- Node263&#45;&gt;Node255 -->
 <g id="edge20" class="edge">
-<title>Node259&#45;&gt;Node251</title>
+<title>Node263&#45;&gt;Node255</title>
 <path fill="none" stroke="#191970" d="M249.0765,-80.4234C270.7146,-68.533 309.3687,-48.101 344,-34 354.0751,-29.8977 365.1328,-26.0269 375.589,-22.6401"/>
 <polygon fill="#191970" stroke="#191970" points="376.8958,-25.8979 385.3779,-19.5494 374.7881,-19.2227 376.8958,-25.8979"/>
 </g>
-<!-- Node259&#45;&gt;Node254 -->
+<!-- Node263&#45;&gt;Node258 -->
 <g id="edge21" class="edge">
-<title>Node259&#45;&gt;Node254</title>
+<title>Node263&#45;&gt;Node258</title>
 <path fill="none" stroke="#191970" d="M256.3401,-80.4472C304.1231,-63.2546 412.626,-31.9984 494,-67 515.3713,-76.1925 513.7432,-88.3581 530,-105 547.6434,-123.0614 568.2038,-143.3866 582.3602,-157.2718"/>
 <polygon fill="#191970" stroke="#191970" points="579.9125,-159.7735 589.5068,-164.2679 584.8093,-154.7714 579.9125,-159.7735"/>
 </g>
-<!-- Node259&#45;&gt;Node256 -->
+<!-- Node263&#45;&gt;Node260 -->
 <g id="edge23" class="edge">
-<title>Node259&#45;&gt;Node256</title>
+<title>Node263&#45;&gt;Node260</title>
 <path fill="none" stroke="#191970" d="M282.1685,-97.6094C291.2055,-100.3234 300.2164,-104.0053 308,-109 329.556,-122.8325 322.5527,-139.9996 344,-154 347.849,-156.5126 352.0038,-158.7107 356.3146,-160.6335"/>
 <polygon fill="#191970" stroke="#191970" points="355.3554,-164.017 365.9426,-164.4183 357.9164,-157.5023 355.3554,-164.017"/>
 </g>
-<!-- Node259&#45;&gt;Node257 -->
+<!-- Node263&#45;&gt;Node261 -->
 <g id="edge22" class="edge">
-<title>Node259&#45;&gt;Node257</title>
+<title>Node263&#45;&gt;Node261</title>
 <path fill="none" stroke="#191970" d="M276.7912,-99.581C295.3536,-103.5516 317.4697,-108.2823 338.6648,-112.816"/>
 <polygon fill="#191970" stroke="#191970" points="338.1369,-116.2822 348.6478,-114.9514 339.6012,-109.437 338.1369,-116.2822"/>
 </g>
