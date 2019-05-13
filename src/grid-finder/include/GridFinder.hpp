@@ -197,11 +197,11 @@ class GridFinder {
             std::find_if(max,  //
                          houghRes.end(), predicateLessThanSevenEighths);
 
-        if (first_max == houghRes.rend() || last_max == houghRes.end())
-            cerr << ANSIColors::yellow
-                 << "Warning: angle with maximum count could lie outside of "
-                    "the specified range\r\n"
-                 << ANSIColors::reset;
+        // if (first_max == houghRes.rend() || last_max == houghRes.end())
+        //     cerr << ANSIColors::yellow
+        //          << "Warning: angle with maximum count could lie outside of "
+        //             "the specified range\r\n"
+        //          << ANSIColors::reset;
 
         if (first_max != houghRes.rbegin())
             --first_max;

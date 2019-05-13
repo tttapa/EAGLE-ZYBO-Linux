@@ -64,19 +64,23 @@ void loop() {
 
     LocationTracker lt = {};  // Tracks the XY position of the drone
 
+#ifdef DEBUG_VISION
     ofstream squares("squares.csv");
     ofstream locs("locs.csv");
     ofstream sidelens("sidelens.csv");
     size_t i = 0;
+#endif
     while (true) {
-        PerfTimer pt;
+        // PerfTimer pt;
         Point locInSquare = lf.updateLocation();
         Point location    = lt.update(locInSquare);
 
+#ifdef DEBUG_VISION
         cv::imwrite(string("mask") + to_padded_string(i) + ".bmp",
                     lf.getMaskImage());
         cv::imwrite(string("image") + to_padded_string(i) + ".bmp",
                     lf.getImage());
+#endif
 
         qrCryptoMgr.update(lf.getImage());
 
@@ -92,6 +96,7 @@ void loop() {
                      << ANSIColors::reset << endl;
             }
         }
+#ifdef DEBUG_VISION
         squares << i << ",";
         for (auto point : lf.getSquare().points)
             if (point)
@@ -100,14 +105,12 @@ void loop() {
         locs << i << "," << location.x << "," << location.y << endl;
         sidelens << i << "," << lf.getSideLength() << endl;
         i++;
+#endif
 
-        // std::cout << "sleep" << std::endl;
-        // this_thread::sleep_for(100ms);
-
-        auto duration = pt.getDuration<chrono::microseconds>();
-        cout << "Position: " << location << endl;
-        cout << "Vision duration: " << 1e-3 * duration << " ms → "
-             << 1e6 / duration << " fps" << endl;
+        // auto duration = pt.getDuration<chrono::microseconds>();
+        // cout << "Position: " << location << endl;
+        // cout << "Vision duration: " << 1e-3 * duration << " ms → "
+        //      << 1e6 / duration << " fps" << endl;
     }
 }
 
