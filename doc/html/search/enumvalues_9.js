@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['uninitialized',['UNINITIALIZED',['../BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465add652546039b18970b8dcf2cff824268',1,'BaremetalCommunicationDef.hpp']]],
-  ['unknown',['UNKNOWN',['../classCryptoInstruction.html#a966f06da8010704b61028f241138b0b1a696b031073e74bf2cb98e5ef201d4aa3',1,'CryptoInstruction']]],
-  ['unknown_5ferror_5fexception',['UNKNOWN_ERROR_EXCEPTION',['../classCryptoException.html#ab8222b36d5b9edb38ec6c9d3816ac5a9a0d3a72f67e6dcd8c9545bfb6d1134c54',1,'CryptoException']]],
-  ['unsuccessful_5fdecode_5fexception',['UNSUCCESSFUL_DECODE_EXCEPTION',['../classCryptoException.html#ab8222b36d5b9edb38ec6c9d3816ac5a9a6e63afe5b339a88bd3bcbfd46a021c2d',1,'CryptoException']]]
+  ['qr_5fread_5frequest',['QR_READ_REQUEST',['../BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643ca743af726e40f0c97e44679081dd9fc48',1,'BaremetalCommunicationDef.hpp']]],
+  ['qr_5freading_5fbusy',['QR_READING_BUSY',['../BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643ca8e1f0793b927d70ec0410b7493fa40d0',1,'BaremetalCommunicationDef.hpp']]],
+  ['qr_5funknown',['QR_UNKNOWN',['../BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643cabfe8ada1ba2df5fa37b2890a6a8cdd1f',1,'BaremetalCommunicationDef.hpp']]]
 ];

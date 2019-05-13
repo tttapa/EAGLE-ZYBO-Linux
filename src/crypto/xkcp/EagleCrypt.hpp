@@ -30,7 +30,7 @@
   * @param  dataByteLen         The size of the data in bytes.
   * @param  digest              Pointer to the digest buffer of at least 
   *                             DigestSizeInBytes must not overlap with 
-  *                             @param data.
+  *                             @p data.
   * @param  digestByteLen       The size of the digest in bytes.
   *
   * @return 0 if successful, 1 otherwise.

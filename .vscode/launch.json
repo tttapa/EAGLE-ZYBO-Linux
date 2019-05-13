@@ -5,11 +5,15 @@
             "name": "Launch C++ Local Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/loggerbin",
+            "program": "${workspaceFolder}/build/bin/location_finder.test",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
+            "environment": [
+                {
+                    "WORKSPACE_ROOT": "${workspaceFolder}"
+                },
+            ],
             "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [

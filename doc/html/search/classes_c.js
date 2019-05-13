@@ -8,5 +8,6 @@ var searchData=
   ['sharedstruct',['SharedStruct',['../structSharedStruct.html',1,'']]],
   ['sharedstruct_3c_20accesscontrolledsharedstruct_3c_20t_2c_20dir_2c_20addr_20_3e_20_3e',['SharedStruct&lt; AccessControlledSharedStruct&lt; T, Dir, Addr &gt; &gt;',['../structSharedStruct.html',1,'']]],
   ['sharedstruct_3c_20qrcommstruct_20_3e',['SharedStruct&lt; QRCommStruct &gt;',['../structSharedStruct.html',1,'']]],
+  ['sharedstruct_3c_20teststruct_20_3e',['SharedStruct&lt; TestStruct &gt;',['../structSharedStruct.html',1,'']]],
   ['square',['Square',['../structSquare.html',1,'']]]
 ];

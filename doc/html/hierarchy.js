@@ -66,6 +66,9 @@ var hierarchy =
     [ "SharedStruct< QRCommStruct >", "structSharedStruct.html", [
       [ "QRCommStruct", "structQRCommStruct.html", null ]
     ] ],
+    [ "SharedStruct< TestStruct >", "structSharedStruct.html", [
+      [ "TestStruct", "structTestStruct.html", null ]
+    ] ],
     [ "Square", "structSquare.html", null ],
     [ "ThreadedLogger", "classThreadedLogger.html", null ],
     [ "TimeFunctionT< T >", "structTimeFunctionT.html", [

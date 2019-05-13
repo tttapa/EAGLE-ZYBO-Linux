@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['ketje_2ecpp',['ketje.cpp',['../ketje_8cpp.html',1,'']]],
-  ['ketje_2ehpp',['ketje.hpp',['../ketje_8hpp.html',1,'']]]
+  ['helperstructs_2ehpp',['HelperStructs.hpp',['../HelperStructs_8hpp.html',1,'']]],
+  ['householderqr_2ehpp',['HouseholderQR.hpp',['../HouseholderQR_8hpp.html',1,'']]],
+  ['hwimplementation_2ecpp',['hwImplementation.cpp',['../hwImplementation_8cpp.html',1,'']]],
+  ['hwimplementation_2ehpp',['hwImplementation.hpp',['../hwImplementation_8hpp.html',1,'']]]
 ];

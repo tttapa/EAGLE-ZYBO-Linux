@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['neon',['NEON',['../namespaceNEON.html',1,'']]]
+  ['matrices',['Matrices',['../namespaceMatrices.html',1,'']]],
+  ['matrixprinting',['MatrixPrinting',['../namespaceMatrixPrinting.html',1,'']]]
 ];

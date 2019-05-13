@@ -1,5 +1,6 @@
 var BaremetalCommunicationDef_8hpp =
 [
+    [ "TestStruct", "structTestStruct.html", "structTestStruct" ],
     [ "Position", "structPosition.html", "structPosition" ],
     [ "VisionData", "structVisionData.html", "structVisionData" ],
     [ "QRCommStruct", "structQRCommStruct.html", "structQRCommStruct" ],
@@ -19,6 +20,10 @@ var BaremetalCommunicationDef_8hpp =
       [ "LAND", "BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643ca479a809c0b6eaaefd3b1df16f976df06", null ],
       [ "QR_UNKNOWN", "BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643cabfe8ada1ba2df5fa37b2890a6a8cdd1f", null ],
       [ "ERROR", "BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643cabb1ca97ec761fc37101737ba0aa2e7c5", null ]
+    ] ],
+    [ "WPTMode", "BaremetalCommunicationDef_8hpp.html#ab7a76423712b76a869e2644f9067623f", [
+      [ "OFF", "BaremetalCommunicationDef_8hpp.html#ab7a76423712b76a869e2644f9067623faac132f2982b98bcaa3445e535a03ff75", null ],
+      [ "ON", "BaremetalCommunicationDef_8hpp.html#ab7a76423712b76a869e2644f9067623fa977d478dacaae531f95695750d1e9d03", null ]
     ] ],
     [ "operator<<", "BaremetalCommunicationDef_8hpp.html#ae7f25dd504eb0194037c169397b9d171", null ]
 ];

@@ -183,8 +183,6 @@ TEST(GridFinder, getStartingPointNoWhitePixels) {
     }
 }
 
-#endif
-
 TEST(GridFinder, Hough) {
     constexpr uint W = 410;
     constexpr uint H = 308;
@@ -668,3 +666,5 @@ TEST(GridFinder, getFirstLines) {
     EXPECT_EQ(firstLine.angle, angle);
 }
 */
+
+#endif

@@ -48,22 +48,26 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
         LoggingThreadedUDPRequestHandler.ctr += 1
         if LoggingThreadedUDPRequestHandler.ctr == self.print_subsample:
             print('frame time:          ', logentry.framecounter)
+            print('mode:                ', logentry.mode)
             # print('reference location:  ', logentry.reference_location)
             print('measurement location:', logentry.measurement_location)
             # print('nav ctrl output qr1: ', logentry.reference_orientation[1])
             # print('nav ctrl output qr2: ', logentry.reference_orientation[2])
             # print('observer state:      ', logentry.navigation_observer_state)
-            # print('control signal:      ', logentry.motor_control_signals)
-            # print('sonar measurement:   ', logentry.measurement_height)
+            print('alt control signal:  ', logentry.altitude_control_signal)
+            print('sonar measurement:   ', logentry.measurement_height)
             # print('alt observer state:  ', logentry.altitude_observer_state)
-            # print('hov thrust:          ', logentry.hover_thrust)
+            print('hov thrust:          ', logentry.hover_thrust)
             # print('rc thrust:           ', logentry.rc_throttle)
-            # print('measurement orientation: ', logentry.measurement_orientation)
+            print('measurement orientation: ', logentry.measurement_orientation)
+            print('measurement ang vel:     ', logentry.measurement_angular_velocity)
+            print('motor controls:          ', logentry.motor_control_signals)
+            print('common thrust:           ', logentry.common_thrust)
             print()
             
             LoggingThreadedUDPRequestHandler.ctr = 0
 
-scale = 10
+GRIDSIZE = 48
 offset = 200
 
 class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServer):
@@ -87,11 +91,33 @@ class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServ
     def log(self, logentry: LogEntry):
         self.file.write(bytes(logentry))
 
-        point = (int(round(logentry.measurement_location[0] * scale)) + offset,
-                 int(round(logentry.measurement_location[0] * scale)) + offset)
-        cv.circle(self.image, tuple(point), 5, (255, 255, 255), -1)
-        cv.imshow("image", self.image)
-        cv.waitKey(1)
+        try:
+
+            frame_width = np.size(self.image, 1)
+            frame_height = np.size(self.image, 0)
+
+            loc = (int(round(float(logentry.measurement_location[0]) * GRIDSIZE + frame_width/2)), 
+                int(round(float(logentry.measurement_location[1]) * GRIDSIZE + frame_height/2)))
+            cv.circle(self.image, loc, 3, (255, 255, 255), -1)
+
+            dispimage = self.image
+
+            self.image = self.image * 0.95
+
+            color = (128, 255, 255)
+            for y in range(frame_height//GRIDSIZE + 1):
+                y *= GRIDSIZE
+                y += (frame_height//2) % GRIDSIZE
+                cv.line(dispimage, (0, y), (frame_width, y), color, 1)
+            for x in range(frame_width//GRIDSIZE + 1):
+                x *= GRIDSIZE
+                x += (frame_width//2) % GRIDSIZE
+                cv.line(dispimage, (x, 0), (x, frame_height), color, 1)
+            cv.imshow("image", dispimage)
+            cv.waitKey(1)
+
+        except:
+            pass
 
 
 if __name__ == "__main__":

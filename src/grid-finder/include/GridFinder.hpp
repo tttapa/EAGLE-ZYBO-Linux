@@ -35,7 +35,7 @@ class GridFinder {
 
     /// When this many consecutive black pixels are encountered, stop following
     /// the line.
-    constexpr static uint HOUGH_MAX_GAP = 16;
+    constexpr static uint HOUGH_MAX_GAP = 64;
 
     /**
      * @brief   Starting from the given pixel, move in the direction of the 
@@ -520,7 +520,7 @@ class GridFinder {
 
     /// Don't use vertical lines as the first line, as this can result in
     /// finding a first square that's not in the center of the frame.
-    constexpr static uint MAXIMUM_VERTICAL_START_LINE_WIDTH = 32; // TODO
+    constexpr static uint MAXIMUM_VERTICAL_START_LINE_WIDTH = 32;  // TODO
 
     /**
      * @brief   Find the vertical range of white pixels closest to the center of
@@ -742,18 +742,18 @@ class GridFinder {
      * @param   direction
      *          Should 90° be added or subtracted to get the perpendicular
      *          direction?     
+     * @param   offset
+     *          The offset of the search path, measured perpendicularly from the
      * @param   minDistance 
      *          The minimum distance between the given center point of the line
      *          and the perpendicular line. Essentially moves the starting point
      *          of the search along the line for this distance.
-     * @param   offset
-     *          The offset of the search path, measured perpendicularly from the
      *          line.
      * @return  // TODO
      */
     optional<LineResult> findNextLine(LineResult line, bool direction,
-                                      uint minDistance = 0,
-                                      uint offset      = 0) const {
+                                      uint offset      = 0,
+                                      uint minDistance = 0) const {
         angle_t angle = line.angle;
         angle_t perp  = angle.perpendicular(direction);
 
@@ -798,10 +798,10 @@ class GridFinder {
      *          but also supports optional #LineResult%s.
      */
     optional<LineResult> findNextLine(optional<LineResult> line, bool direction,
-                                      uint minDistance = 0,
-                                      uint offset      = 0) const {
+                                      uint offset      = 0,
+                                      uint minDistance = 0) const {
         return line.has_value()
-                   ? findNextLine(*line, direction, minDistance, offset)
+                   ? findNextLine(*line, direction, offset, minDistance)
                    : std::nullopt;
     }
 
@@ -841,11 +841,20 @@ class GridFinder {
      *          grid, as close to the center of the frame as possible.
      * 
      * @image   html square.png
+     * @param   initialTries (default: 1)
+     *          When finding the first two corners, this many Bresenham lines will
+     *          run parallel to the initial line in order to prevent a bad result
+     *          because of a small gap in the line.
+     * @param   initialTriesFactor (default: 2.0)
+     *          When finding the first two corners, the parallel Bresenham lines
+     *          be separated by this factor multiplied by the initial line width.
      * 
      * @return  // TODO 
      */
-    Square findSquare() {
-        Square sq;
+    Square findSquare(uint initialTries = 1, float initialTriesFactor = 2.0f) {
+        assert(initialTries >= 1);
+        assert(initialTries > 0.0f);
+        Square sq = {};
 
         try {
             // Get the line closest to the center of the frame.
@@ -855,25 +864,68 @@ class GridFinder {
             sq.lines[0]     = firstLines[0];
             sq.lines[1]     = firstLines[1];
 
+            // Return empty square if we couldn't find the first line.
+            if (!sq.lines[0].has_value())
+                return sq;
+
             // Determine the direction to turn in (+90° or -90°)
             // Check if the first line lies left or right of the center of the frame
             // and pick the direction that will result in the square containing the
             // center point (if possible)
             bool direction = false;
-            if (sq.lines[0].has_value()) {
-                Line mathLine = {sq.lines[0]->lineCenter, sq.lines[0]->angle};
-                direction     = mathLine.leftOfPoint(center());
+            Line mathLine  = {sq.lines[0]->lineCenter, sq.lines[0]->angle};
+            direction      = mathLine.leftOfPoint(center());
+
+            // Try finding the first two corners multiple times. We'll remember the
+            // ones closest to the initial point, so if there's a hole in the image's
+            // line, one of the Bresenham lines will still likely find the correct
+            // perpendicular line.
+            bool firstCornerFound  = false;
+            bool secondCornerFound = false;
+            float dist1 = 0.0, dist2 = 0.0, currentDistance;
+            uint jump1 = 0, jump2 = 0;
+            Point initialPoint = sq.lines[0]->lineCenter;
+            Point tempPoint;
+            std::optional<LineResult> tempLine;
+            for (uint i = 0; i < initialTries; i++) {
+
+                // Jump initialTriesFactor times the initial line width.
+                uint jump =
+                    i * std::round(initialTriesFactor * sq.lines[0]->width);
+
+                // First corner: remember closest point to the initial point.
+                tempLine = findNextLine(sq.lines[0], direction, jump);
+                if (tempLine.has_value()) {
+                    tempPoint = intersect(*sq.lines[0], *tempLine);
+                    currentDistance =
+                        Point::distanceSquared(initialPoint, tempPoint);
+                    if (!firstCornerFound || currentDistance < dist1) {
+                        firstCornerFound = true;
+                        dist1            = currentDistance;
+                        sq.points[0]     = tempPoint;
+                        sq.lines[2]      = tempLine;
+                        jump1            = jump;
+                    }
+                }
+
+                // Second corner: remember closest point to the initial point.
+                tempLine = findNextLine(sq.lines[1], !direction, jump);
+                if (tempLine.has_value()) {
+                    tempPoint = intersect(*sq.lines[1], *tempLine);
+                    currentDistance =
+                        Point::distanceSquared(initialPoint, tempPoint);
+                    if (!secondCornerFound || currentDistance < dist2) {
+                        secondCornerFound = true;
+                        dist2             = currentDistance;
+                        sq.points[1]      = tempPoint;
+                        sq.lines[3]       = tempLine;
+                        jump2             = jump;
+                    }
+                }
             }
 
-            // Find the two lines perpendicular to the first half lines
-            // TODO: maybe try again once with a different offset if it fails?
-            sq.lines[2] = findNextLine(sq.lines[0], direction);   // second line
-            sq.lines[3] = findNextLine(sq.lines[1], !direction);  // third line
-
             // If we found all lines so far (first two, second, and third)
-            if (sq.lines[2].has_value() && sq.lines[3].has_value()) {
-                sq.points[0] = intersect(*sq.lines[0], *sq.lines[2]);
-                sq.points[1] = intersect(*sq.lines[1], *sq.lines[3]);
+            if (firstCornerFound && secondCornerFound) {
 
                 // Calculate the distance between the first two points
                 // (note that this is not the Euclidian distance, but the
@@ -894,12 +946,12 @@ class GridFinder {
                 // Search for the fourth line
                 while (!sq.lines[4].has_value() && offset < maxOffset) {
                     sq.lines[4] =  // find the fourth line along the second
-                        findNextLine(sq.lines[2], direction, minDistance,
-                                     offset);
+                        findNextLine(sq.lines[2], direction, offset,
+                                     std::max(minDistance - jump1, 0u));
                     if (!sq.lines[4].has_value())  // if not found along second
                         sq.lines[4] =  // find the fourth line along the third
-                            findNextLine(sq.lines[3], !direction, minDistance,
-                                         offset);
+                            findNextLine(sq.lines[3], !direction, offset,
+                                         std::max(minDistance - jump2, 0u));
                     // next time, try again with a different offset
                     offset += offsetIncr;
                 }

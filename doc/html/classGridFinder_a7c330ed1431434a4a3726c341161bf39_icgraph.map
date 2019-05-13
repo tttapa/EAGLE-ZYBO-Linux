@@ -1,6 +1,6 @@
 <map id="GridFinder::getFirstTwoHalfLines" name="GridFinder::getFirstTwoHalfLines">
 <area shape="rect" id="node1" title="Get the first two lines. These are the two half lines that make up the line closest to the center of ..." alt="" coords="689,23,885,65"/>
-<area shape="rect" id="node2" href="$classGridFinder.html#a8940ca681fac78274043cf5f1f1f5761" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="476,31,641,57"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="476,31,641,57"/>
 <area shape="rect" id="node3" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,5,428,32"/>
 <area shape="rect" id="node4" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,31,156,57"/>
 </map>

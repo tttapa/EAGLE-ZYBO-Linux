@@ -45,7 +45,7 @@ void loop() {
     cout << "logger : " << logger.isInitialized() << endl;
     // Make sure that Baremetal has initialized the logger
     logger.checkInitialized();
-    // Spawns another thread, is cleaned up when destructed. Update every 5ms.
+    // Spawns another thread, is cleaned up when destructed. Update every 17ms.
     logger.begin(17ms);
 
     // Open camera 0
@@ -62,27 +62,23 @@ void loop() {
     cout << "Frame dimensions: (" << frame_width << "×" << frame_height << ")\n"
          << "Frame rate      : " << fps << " fps" << std::endl;
 
-    LocationTracker lt;  // Tracks the XY position of the drone
+    LocationTracker lt = {};  // Tracks the XY position of the drone
 
     ofstream squares("squares.csv");
     ofstream locs("locs.csv");
+    ofstream sidelens("sidelens.csv");
     size_t i = 0;
     while (true) {
         PerfTimer pt;
         Point locInSquare = lf.updateLocation();
         Point location    = lt.update(locInSquare);
 
-        // cv::imwrite(string("mask") + to_padded_string(i) + ".bmp",
-        //             lf.getMaskImage());
-        // cv::imwrite(string("image") + to_padded_string(i) + ".bmp",
-        //             lf.getImage());
+        cv::imwrite(string("mask") + to_padded_string(i) + ".bmp",
+                    lf.getMaskImage());
+        cv::imwrite(string("image") + to_padded_string(i) + ".bmp",
+                    lf.getImage());
 
         qrCryptoMgr.update(lf.getImage());
-
-        auto duration = pt.getDuration<chrono::microseconds>();
-        cout << "Position: " << location << endl;
-        cout << "Vision duration: " << 1e-3 * duration << " ms → "
-             << 1e6 / duration << " fps" << endl;
 
         if (locInSquare) {  // If we have a new position measurement
             if (visionComm->isDoneReading()) {
@@ -102,7 +98,16 @@ void loop() {
                 squares << point->x << "," << point->y << ",";
         squares << endl;
         locs << i << "," << location.x << "," << location.y << endl;
+        sidelens << i << "," << lf.getSideLength() << endl;
         i++;
+
+        // std::cout << "sleep" << std::endl;
+        // this_thread::sleep_for(100ms);
+
+        auto duration = pt.getDuration<chrono::microseconds>();
+        cout << "Position: " << location << endl;
+        cout << "Vision duration: " << 1e-3 * duration << " ms → "
+             << 1e6 / duration << " fps" << endl;
     }
 }
 

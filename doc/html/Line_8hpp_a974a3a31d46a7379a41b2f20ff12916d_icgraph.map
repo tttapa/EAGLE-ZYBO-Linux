@@ -1,10 +1,12 @@
 <map id="round" name="round">
-<area shape="rect" id="node1" title=" " alt="" coords="232,157,291,184"/>
-<area shape="rect" id="node2" href="$classAngle.html#aa2ce213e9b45424e62d818ec6769a71b" title=" " alt="" coords="23,5,166,32"/>
-<area shape="rect" id="node3" href="$classAngle.html#adb9bfe045dd75dad8912cf1e741d2820" title=" " alt="" coords="25,56,165,83"/>
-<area shape="rect" id="node4" href="$classAngle.html#a63862e75b876b7b8555f05a54ac85628" title=" " alt="" coords="5,107,184,133"/>
-<area shape="rect" id="node5" href="$classBresenhamLine.html#ae4b0dd9c534a550583ae812695bbac59" title=" " alt="" coords="18,157,171,184"/>
-<area shape="rect" id="node6" href="$classBresenhamLine.html#a115d1f10a5ce1e0ef945258346b6f035" title=" " alt="" coords="19,208,170,235"/>
-<area shape="rect" id="node7" href="$classLocationTracker.html#a259a52389d4d7c4a5fe80aca35b789ea" title=" " alt="" coords="6,259,183,285"/>
-<area shape="rect" id="node8" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="19,309,170,336"/>
+<area shape="rect" id="node1" title=" " alt="" coords="703,183,761,209"/>
+<area shape="rect" id="node2" href="$classAngle.html#aa2ce213e9b45424e62d818ec6769a71b" title=" " alt="" coords="494,5,637,32"/>
+<area shape="rect" id="node3" href="$classAngle.html#adb9bfe045dd75dad8912cf1e741d2820" title=" " alt="" coords="495,56,635,83"/>
+<area shape="rect" id="node4" href="$classAngle.html#a63862e75b876b7b8555f05a54ac85628" title=" " alt="" coords="476,107,655,133"/>
+<area shape="rect" id="node5" href="$classBresenhamLine.html#ae4b0dd9c534a550583ae812695bbac59" title=" " alt="" coords="489,157,642,184"/>
+<area shape="rect" id="node6" href="$classBresenhamLine.html#a115d1f10a5ce1e0ef945258346b6f035" title=" " alt="" coords="490,208,641,235"/>
+<area shape="rect" id="node7" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="483,259,648,285"/>
+<area shape="rect" id="node9" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,259,156,285"/>
+<area shape="rect" id="node10" href="$classLocationTracker.html#a259a52389d4d7c4a5fe80aca35b789ea" title=" " alt="" coords="477,360,654,387"/>
+<area shape="rect" id="node8" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,208,428,235"/>
 </map>

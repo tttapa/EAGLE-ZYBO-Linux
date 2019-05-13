@@ -10,9 +10,13 @@
 #include <pybind11/stl.h>
 #include <sstream>
 
+using namespace pybind11::literals;
+
 PYBIND11_MODULE(py_grid_finder, pygridmodule) {
     pybind11::class_<GridFinder>(pygridmodule, "GridFinder")
         .def(pybind11::init<const Mask &>())
+        .def("findSquare", &GridFinder::findSquare, "initialTries"_a = 1,
+             "initialTriesFactor"_a = 2.0)
         .def("findSquare", &GridFinder::findSquare);
 
     pybind11::class_<LineResult>(pygridmodule, "LineResult")

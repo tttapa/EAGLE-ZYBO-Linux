@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['b2l',['b2l',['../structTestStruct.html#abbff6f54d115580b74008f50ebfcd9bf',1,'TestStruct']]],
   ['black',['black',['../namespaceANSIColors.html#a1e9bbc477cb8dbf585e5cd37a633f981',1,'ANSIColors']]],
   ['blackb',['blackb',['../namespaceANSIColors.html#a008f76b3ac1cdaafa10debc3d9f5ffb2',1,'ANSIColors']]],
   ['blue',['blue',['../namespaceANSIColors.html#a2b83736d36bd9217b46f58988274cc5c',1,'ANSIColors']]],
