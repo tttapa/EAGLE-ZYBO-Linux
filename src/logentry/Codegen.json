@@ -1,0 +1,38 @@
+{
+    "structs": {
+        "AttitudeState": {
+            "documentation": [
+                "@todo",
+                "this is a very, very long comment to check if the",
+                "code generator breaks correctly"
+            ],
+            "members": {
+                "q": {
+                    "type": "Quaternion",
+                    "default": "Quaternion::unit()",
+                    "documentation": "The orientation of the drone"
+                },
+                "w": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": "The angular velocity of the drone"
+                },
+                "n": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": "The angular velocity of the motors"
+                }
+            },
+            "logger": {
+                "attitudeObserverState": {
+                    "value": "attitudeController.getObserverState()"
+                }
+            }
+        }
+    },
+    "others": {
+        "mode": {
+            "type": "int32_t"
+        }
+    }
+}
