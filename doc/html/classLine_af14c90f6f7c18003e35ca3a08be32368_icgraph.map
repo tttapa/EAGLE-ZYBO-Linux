@@ -1,5 +1,7 @@
 <map id="Line::intersect" name="Line::intersect">
-<area shape="rect" id="node1" title=" " alt="" coords="420,5,535,32"/>
-<area shape="rect" id="node2" href="$classGridFinder.html#a5657aed220771995d8fd1b9e3779b226" title="Get the point of intersection of two lines." alt="" coords="219,5,372,32"/>
-<area shape="rect" id="node3" href="$classGridFinder.html#a3104d4fe44099faf5179674ecb55cb52" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="891,81,1005,108"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#ac7202be6727634054a169022b5ce3e01" title="Get the point of intersection of two lines." alt="" coords="689,56,843,83"/>
+<area shape="rect" id="node5" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,56,156,83"/>
+<area shape="rect" id="node3" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="476,56,641,83"/>
+<area shape="rect" id="node4" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,5,428,32"/>
 </map>

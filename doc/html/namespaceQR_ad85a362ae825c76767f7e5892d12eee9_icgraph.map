@@ -1,0 +1,4 @@
+<map id="QR::decode" name="QR::decode">
+<area shape="rect" id="node1" title="Try to detect and decode the QR code in the given RGB image." alt="" coords="245,5,341,32"/>
+<area shape="rect" id="node2" href="$classQRCryptoManager.html#a9a08c5f0afea16d209467e6fc27048ae" title=" " alt="" coords="5,5,197,32"/>
+</map>

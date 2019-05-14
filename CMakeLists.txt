@@ -61,8 +61,7 @@ enable_testing()
 set(CMAKE_CXX_STANDARD 17)
 
 # Optimize during linking stage
-# set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE) # LTO
-# I had to disable LTO, because otherwise GCC has an internal compiler error ...
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE) # LTO
 
 # Allow linking the compiled code into a shared library (for Python modules)
 # set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -80,6 +79,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
 
 if(NOT CMAKE_CROSSCOMPILING)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+  set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 endif()
 
 # Compiler flags for C
@@ -98,3 +98,13 @@ add_subdirectory("src")
 ################################################################################
 
 add_subdirectory("applications")
+
+################################################################################
+################################ Python modules ################################
+################################################################################
+
+# Builds a Python Wheel package and installs it using Pip
+add_custom_target(python
+    "${CMAKE_CURRENT_LIST_DIR}/scripts/install-python-module.sh"
+    "${PYTHON_EXECUTABLE}"
+    WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/python-module")

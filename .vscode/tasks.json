@@ -6,12 +6,14 @@
         {
             "label": "Start Docker Container",
             "type": "shell",
-            "command": "docker-compose -f docker-compose.yml run --service-ports --name crypto-devenv dev-image bash",
-            "windows": {
-                "command": "docker-compose -f docker-compose.win.yml run --service-ports --name crypto-devenv dev-image bash",
-            },
+            "command": "docker-compose run --service-ports --name crypto-devenv dev-image bash",
             "options": {
-                "cwd": "${workspaceFolder}/docker/build"
+                "cwd": "${workspaceFolder}/docker/linux"
+            },
+            "windows": {
+                "options": {
+                    "cwd": "${workspaceFolder}/docker/windows"
+                },
             },
             "problemMatcher": [],
             "dependsOn": "Stop Docker Container", // Restart if already running
@@ -30,12 +32,14 @@
         {
             "label": "Stop Docker Container",
             "type": "shell",
-            "command": "docker-compose -f docker-compose.yml down",
-            "windows": {
-                "command": "docker-compose -f docker-compose.win.yml down",
-            },
+            "command": "docker-compose down",
             "options": {
-                "cwd": "${workspaceFolder}/docker/build"
+                "cwd": "${workspaceFolder}/docker/linux"
+            },
+            "windows": {
+                "options": {
+                    "cwd": "${workspaceFolder}/docker/windows"
+                },
             },
             "problemMatcher": [],
             "presentation": {
@@ -52,21 +56,24 @@
         {
             "label": "Build Docker Image",
             "type": "shell",
-            "command": "docker-compose -f docker-compose.yml build --build-arg WORKSPACE_ROOT=${workspaceFolder} dev-image",
-            "windows": {
-                "command": "docker-compose -f docker-compose.win.yml build dev-image",
-            },
+            "command": "docker-compose build --build-arg WORKSPACE_ROOT=${workspaceFolder} dev-image",
             "options": {
-                "cwd": "docker/build"
+                "cwd": "docker/linux"
+            },
+            "windows": {
+                "command": "docker-compose build dev-image",
+                "options": {
+                    "cwd": "docker/windows"
+                },
             },
             "problemMatcher": []
         },
         {
-            "label": "Build Docker Image (crosstool-NG)",
+            "label": "Build Docker Image (Toolchain)",
             "type": "shell",
-            "command": "docker-compose -f docker-compose.yml build",
+            "command": "docker-compose build toolchain",
             "options": {
-                "cwd": "docker/crosstool-NG"
+                "cwd": "docker/toolchain"
             },
             "problemMatcher": []
         },
@@ -75,18 +82,59 @@
         {
             "label": "Run CMake x86-64 (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv cmake ..",
+            "command": "docker",
+            "args": [
+                "exec",
+                "-it",
+                "-w",
+                "${workspaceFolder}/build",
+                "crypto-devenv",
+                "cmake",
+                "-DPYBIND11_PYTHON_VERSION=3.7",
+                "-DPYTHON_EXECUTABLE=/home/develop/.local/bin/python3",
+                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/install-x86",
+                ".."
+            ],
             "windows": {
-                "command": "docker exec -it -w  /home/develop/eagle/build crypto-devenv sh -c 'cmake ..'",
+                "args": [
+                    "exec",
+                    "-it",
+                    "-w",
+                    "/home/develop/eagle/build",
+                    "crypto-devenv",
+                    "sh",
+                    "-c",
+                    "'cmake -DPYBIND11_PYTHON_VERSION=3.7 -DPYTHON_EXECUTABLE=/home/develop/.local/bin/python3 -DCMAKE_INSTALL_PREFIX=/home/develop/eagle/install-x86 ..'"
+                ],
             },
             "problemMatcher": [],
         },
         {
             "label": "Run CMake ARMv7 ZYBO (Docker)",
             "type": "shell",
-            "command": "docker exec -it -w ${workspaceFolder}/build-arm crypto-devenv cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..",
+            "command": "docker",
+            "args": [
+                "exec",
+                "-it",
+                "-w",
+                "${workspaceFolder}/build-arm",
+                "crypto-devenv",
+                "cmake",
+                "-DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake",
+                "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/install-arm",
+                ".."
+            ],
             "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build-arm crypto-devenv sh -c 'cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake ..'",
+                "args": [
+                    "exec",
+                    "-it",
+                    "-w",
+                    "/home/develop/eagle/build-arm",
+                    "crypto-devenv",
+                    "sh",
+                    "-c",
+                    "'cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-ARMv7-ZYBO.cmake -DCMAKE_INSTALL_PREFIX=/home/develop/eagle/install-arm ..'"
+                ],
             },
             "problemMatcher": [],
         },
@@ -102,28 +150,28 @@
         //#endregion
         //#region Building......................................................
         {
-            "label": "Build All x86-64 (Docker)",
+            "label": "Build and Export All x86-64 (Docker)",
             "type": "shell",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make -j$(nproc)",
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make -j$(nproc) install",
             "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make -j $(nproc)'",
+                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make -j $(nproc) install'",
             },
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Build All ARMv7 ZYBO (Docker)",
+            "label": "Build and Export All ARMv7 ZYBO (Docker)",
             "type": "shell",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "command": "docker exec -it -w  ${workspaceFolder}/build-arm crypto-devenv make -j$(nproc)",
+            "command": "docker exec -it -w  ${workspaceFolder}/build-arm crypto-devenv make -j$(nproc) install",
             "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build-arm crypto-devenv sh -c 'make -j $(nproc)'",
+                "command": "docker exec -it -w /home/develop/eagle/build-arm crypto-devenv sh -c 'make -j $(nproc) install'",
             },
             "problemMatcher": "$gcc"
         },
@@ -135,6 +183,42 @@
                 "cwd": "${workspaceFolder}/build"
             },
             "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build & Install Python GridFinder Module x86-64 (Docker)",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make python",
+            "windows": {
+                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make python'",
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build & Install Python LogEntry Module x86-64 (Docker)",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make PythonDroneLogger",
+            "windows": {
+                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make PythonDroneLogger'",
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Export Shared Source Files to BaremetalImproved",
+            "type": "shell",
+            "command": "rsync -ra ${workspaceFolder}/install-arm/ ${workspaceFolder}/../BaremetalImproved/shared-linux",
+            "windows": {
+                "command": "exit 1",
+            },
+            "dependsOn": "Build and Export All ARMv7 ZYBO (Docker)",
+            "problemMatcher": []
         },
         //#endregion
         //#region Running.......................................................
@@ -161,6 +245,17 @@
             "problemMatcher": "$gcc"
         },
         {
+            "label": "Run Tests (ZYBO)",
+            "type": "shell",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "command": "docker exec -it crypto-devenv sh -c 'ssh root@drone /media/run-all-tests.sh /media'",
+            "dependsOn": "Copy all binaries to ZYBO",
+            "problemMatcher": "$gcc"
+        },
+        {
             "label": "Run Application (Docker)",
             "type": "shell",
             "command": "docker exec -it crypto-devenv ${workspaceFolder}/build/bin/hello-world",
@@ -181,6 +276,40 @@
             "command": "./hello-world",
             "options": {
                 "cwd": "${workspaceFolder}/build/bin"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Python Vision Script (Docker)",
+            "type": "shell",
+            "command": "docker exec -it -w ${workspaceFolder}/python crypto-devenv ./VideoLines.py",
+            "problemMatcher": []
+        },
+        {
+            "label": "Launch Jupyter Notebook (Docker)",
+            "type": "shell",
+            "command": "docker exec -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0 --NotebookApp.token='' --NotebookApp.password=''",
+            "options": {
+                "cwd": "${workspaceFolder}/build/bin"
+            },
+            "windows": {
+                "command": "docker exec -w ${workspaceFolder}/python crypto-devenv python3 -m jupyter notebook --port 9999 --ip=0.0.0.0 --NotebookApp.token='' --NotebookApp.password=''",
+            },
+            "dependsOn": "Build & Install Python Module x86-64 (Docker)",
+            "problemMatcher": []
+        },
+        {
+            "label": "Open Jupyter Notebook in Browser",
+            "type": "shell",
+            "command": "sensible-browser http://localhost:9999",
+            "options": {
+                "cwd": "${workspaceFolder}/build/bin"
+            },
+            "windows": {
+                "command": "Start-Process \"http://localhost:9999\"",
+            },
+            "osx": {
+                "command": "open \"http://localhost:9999\"",
             },
             "problemMatcher": []
         },
@@ -262,6 +391,12 @@
             },
             "problemMatcher": []
         },
+        {
+            "label": "Start GDB Server (ZYBO)",
+            "type": "shell",
+            "command": "docker exec -it crypto-devenv ssh root@drone 'source /media/ldpath.sh && /mnt/usr/bin/gdbserver localhost:2000 /media/loggerbin'",
+            "problemMatcher": []
+        },
         //#endregion
         //#region Documentation.................................................
         {
@@ -285,6 +420,32 @@
             },
             "problemMatcher": []
         },
+        //#endregion
+        //#region Copying files to the ZYBO.....................................
+        {
+            "label": "Copy all binaries to ZYBO",
+            "type": "shell",
+            "command": "docker exec crypto-devenv sh -c '$WORKSPACE_ROOT/scripts/copy-binaries-zybo.sh $WORKSPACE_ROOT/build-arm/bin /media'",
+            "options": {
+                "cwd": "${workspaceFolder}/scripts"
+            },
+            "dependsOn": "Build and Export All ARMv7 ZYBO (Docker)",
+            "problemMatcher": []
+        },
+        //#endregion
+        //#region ZYBO..........................................................
+        {
+            "label": "Reboot ZYBO",
+            "type": "shell",
+            "command": "docker exec crypto-devenv sh -c 'ssh root@drone /sbin/reboot'",
+            "problemMatcher": []
+        },
+        {
+            "label": "ZYBO Shell",
+            "type": "shell",
+            "command": "docker exec -it crypto-devenv sh -c 'ssh root@drone'",
+            "problemMatcher": []
+        }
         //#endregion
     ]
 }

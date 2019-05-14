@@ -1,5 +1,8 @@
 <map id="sq" name="sq">
-<area shape="rect" id="node1" title=" " alt="" coords="219,31,257,57"/>
-<area shape="rect" id="node2" href="$classGridFinder.html#a3104d4fe44099faf5179674ecb55cb52" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="5,5,171,32"/>
-<area shape="rect" id="node3" href="$HelperStructs_8hpp.html#a8d72795c613cf90fdae6c7de87343593" title=" " alt="" coords="39,56,137,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="724,46,763,73"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="493,21,659,48"/>
+<area shape="rect" id="node4" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,21,156,48"/>
+<area shape="rect" id="node5" href="$HelperStructs_8hpp.html#a8d72795c613cf90fdae6c7de87343593" title=" " alt="" coords="527,72,625,98"/>
+<area shape="rect" id="node6" href="$classLocationFinder.html#a93be2c4b05b52c58f5fca5d1514dfbe9" title="Get the position of the center of the frame relative to the given square." alt="" coords="476,122,676,149"/>
+<area shape="rect" id="node3" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,72,428,98"/>
 </map>

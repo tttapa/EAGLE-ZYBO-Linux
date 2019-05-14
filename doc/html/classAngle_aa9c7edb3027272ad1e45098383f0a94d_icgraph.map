@@ -1,6 +1,8 @@
 <map id="Angle::perpendicular" name="Angle::perpendicular">
-<area shape="rect" id="node1" title=" " alt="" coords="459,31,615,57"/>
-<area shape="rect" id="node2" href="$classGridFinder.html#a79b62fc48a9db94ad0530e76ed2c3306" title="Follow the given line to find the line perpendicular to it. Move along the line for minDistance pixel..." alt="" coords="232,31,411,57"/>
-<area shape="rect" id="node3" href="$classGridFinder.html#ad75180aa82b12c7054e0015adc44a331" title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults." alt="" coords="5,5,184,32"/>
-<area shape="rect" id="node4" href="$classGridFinder.html#a3104d4fe44099faf5179674ecb55cb52" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="12,56,177,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="929,31,1085,57"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#a6dec96f8c6ed97647f692fa9f9908595" title="Follow the given line to find the line perpendicular to it. Move along the line for minDistance pixel..." alt="" coords="703,31,881,57"/>
+<area shape="rect" id="node3" href="$classGridFinder.html#ad1a5448de0df9a84f989f64b55025843" title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults." alt="" coords="476,5,655,32"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="483,56,648,83"/>
+<area shape="rect" id="node5" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,31,428,57"/>
+<area shape="rect" id="node6" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,56,156,83"/>
 </map>

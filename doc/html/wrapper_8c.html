@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/SVG"],
+});
+</script><script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -110,12 +116,14 @@ Include dependency graph for wrapper.c:</div>
 <div class="center"><iframe scrolling="no" frameborder="0" src="wrapper_8c__incl.svg" width="1092" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="wrapper_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a7d467c1d283fdfa1f2081ba1e0d01b6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wrapper_8c.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>&#160;&#160;&#160;((size_t) getpagesize())</td></tr>
 <tr class="separator:a7d467c1d283fdfa1f2081ba1e0d01b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4aa620ce57c7c3171b916de2c5f09f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wrapper_8c.html#ae4aa620ce57c7c3171b916de2c5f09f2">PAGE_MASK</a>&#160;&#160;&#160;((uint64_t)(long) ~(<a class="el" href="wrapper_8c.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a> - 1))</td></tr>
+<tr class="memitem:ae4aa620ce57c7c3171b916de2c5f09f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wrapper_8c.html#ae4aa620ce57c7c3171b916de2c5f09f2">PAGE_MASK</a>&#160;&#160;&#160;((uint64_t)(long) ~(<a class="el" href="SharedMem_8hpp.html#a21f4011b21dda75d660f93b143e7f5a8">PAGE_SIZE</a> - 1))</td></tr>
 <tr class="separator:ae4aa620ce57c7c3171b916de2c5f09f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5de116c31dfef5a8768d88f5af091dc9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wrapper_8c.html#a5de116c31dfef5a8768d88f5af091dc9">FRAME_PTR_0</a>&#160;&#160;&#160;(0x430000AC)</td></tr>
 <tr class="separator:a5de116c31dfef5a8768d88f5af091dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,6 +182,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00039">39</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
+
 </div>
 </div>
 <a id="a5de116c31dfef5a8768d88f5af091dc9"></a>
@@ -187,6 +197,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00036">36</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 
 </div>
 </div>
@@ -202,6 +214,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00037">37</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
+
 </div>
 </div>
 <a id="a2c1689546ba984eac529c5320535287f"></a>
@@ -215,6 +229,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00050">50</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 
 </div>
 </div>
@@ -230,6 +246,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00048">48</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
+
 </div>
 </div>
 <a id="ae4aa620ce57c7c3171b916de2c5f09f2"></a>
@@ -239,10 +257,12 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PAGE_MASK&#160;&#160;&#160;((uint64_t)(long) ~(<a class="el" href="wrapper_8c.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a> - 1))</td>
+          <td class="memname">#define PAGE_MASK&#160;&#160;&#160;((uint64_t)(long) ~(<a class="el" href="SharedMem_8hpp.html#a21f4011b21dda75d660f93b143e7f5a8">PAGE_SIZE</a> - 1))</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00034">34</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 
 </div>
 </div>
@@ -258,6 +278,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00033">33</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
+
 </div>
 </div>
 <a id="ab1d35c090dce5afba4ef5d4f36d77ec9"></a>
@@ -271,6 +293,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00040">40</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 
 </div>
 </div>
@@ -286,6 +310,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00041">41</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
+
 </div>
 </div>
 <a id="a1a82d2aea096158dd87a3459f579c3d4"></a>
@@ -299,6 +325,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00042">42</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 
 </div>
 </div>
@@ -314,6 +342,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00043">43</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
+
 </div>
 </div>
 <a id="aa62092992b57b85a3ea290d0bf1ee7af"></a>
@@ -327,6 +357,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00044">44</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 
 </div>
 </div>
@@ -342,6 +374,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00045">45</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
+
 </div>
 </div>
 <a id="aa21c26c8bafd4725ae2ff57ae1c28fab"></a>
@@ -356,6 +390,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00046">46</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
+
 </div>
 </div>
 <a id="a37e24370422abf5fb304121fc59952ab"></a>
@@ -369,6 +405,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00047">47</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 
 </div>
 </div>
@@ -388,6 +426,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00064">64</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -411,6 +451,8 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00085">85</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -434,6 +476,8 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00074">74</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -480,6 +524,8 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00078">78</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -504,10 +550,12 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00087">87</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="wrapper_8c_a8efeb9db88385717fd8d78494188d11d_icgraph.svg" width="219" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="wrapper_8c_a8efeb9db88385717fd8d78494188d11d_icgraph.svg" width="219" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -538,12 +586,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="wrapper_8c_a33eaf162ba3d16c401a1f37349d81fe3_icgraph.svg" width="198" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00156">156</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 
 </div>
 </div>
@@ -572,6 +616,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wrapper_8c_source.html#l00123">123</a> of file <a class="el" href="wrapper_8c_source.html">wrapper.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

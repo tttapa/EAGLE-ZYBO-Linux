@@ -1,19 +1,15 @@
 var searchData=
 [
-  ['generatedarray',['generatedArray',['../ArrayHelpers_8hpp.html#a302eae526b10a18783bc2623ee9fe646',1,'ArrayHelpers.hpp']]],
-  ['get',['get',['../classGridFinder.html#a53cfbafaf3cd06baac2a19eeee0cfb73',1,'GridFinder::get(uint x, uint y) const'],['../classGridFinder.html#a5c92616aa110bf9172b35573e47d5ac4',1,'GridFinder::get(Pixel px) const']]],
-  ['getangle',['getAngle',['../classAngle.html#a4486234b2b0b80fa167cec8d28ee9af0',1,'Angle']]],
-  ['getblock',['getBlock',['../Matrix_8hpp.html#ac22a7b23f073e89c19e08274655bbbd4',1,'Matrix.hpp']]],
-  ['getcenter',['getCenter',['../classCenterPointOutLineIterator.html#a4f03738d6ec01d1e3b15b6efeea6c16c',1,'CenterPointOutLineIterator']]],
-  ['getcurrentlength',['getCurrentLength',['../classBresenhamLine.html#ad93a4adf0535a9b4e649bce5ade1bc5e',1,'BresenhamLine']]],
-  ['getduration',['getDuration',['../classPerfTimer.html#a4d76e90eda37bbfeb0cb1b79292d9640',1,'PerfTimer']]],
-  ['getfirstlineestimate',['getFirstLineEstimate',['../classGridFinder.html#ac78760540b520bc08f716ef77127f1fc',1,'GridFinder::getFirstLineEstimate(Pixel point) const'],['../classGridFinder.html#a05628935998785212ee5320a7e146f2b',1,'GridFinder::getFirstLineEstimate(uint x) const'],['../classGridFinder.html#a0de487d16731e34827c6dbc08c0eeb1b',1,'GridFinder::getFirstLineEstimate() const']]],
-  ['getfirsttwohalflines',['getFirstTwoHalfLines',['../classGridFinder.html#a8ac6a50ff32685b1e958cbb0a88ca4dc',1,'GridFinder']]],
-  ['getindex',['getIndex',['../classAngle.html#a189165d5417fcc5489298a8c913a0e38',1,'Angle::getIndex() const'],['../classAngle.html#a63862e75b876b7b8555f05a54ac85628',1,'Angle::getIndex(double angle)']]],
-  ['getmiddle',['getMiddle',['../classGridFinder.html#a187e8c44c7f99237645b49dc2c6745c8',1,'GridFinder']]],
-  ['getmiddlewithretries',['getMiddleWithRetries',['../classGridFinder.html#a504ddc8af3a0cc68b68de387ac1a90ea',1,'GridFinder']]],
-  ['getscalingfactor',['getScalingFactor',['../structCosSin.html#a749d8e9cc59e1cf72f4d1e93e4fcfe0d',1,'CosSin']]],
-  ['getwidthatpointonline',['getWidthAtPointOnLine',['../classGridFinder.html#a83b31c2192a137e56e91d13661f1c658',1,'GridFinder']]],
-  ['greet',['greet',['../Greet_8hpp.html#abd2ea45605ea70de845186c8a2366bd5',1,'greet(std::string name, std::ostream &amp;os=std::cout):&#160;Greet.cpp'],['../Greet_8cpp.html#a80b2901f1a33ab4ba3d294773c8e92c4',1,'greet(std::string name, std::ostream &amp;os):&#160;Greet.cpp']]],
-  ['gridfinder',['GridFinder',['../classGridFinder.html#a268bfb67d2d118590843a688baf4e398',1,'GridFinder::GridFinder(const Img_t &amp;mask)'],['../classGridFinder.html#aa707b822d64e428cfc31726dbdcb8b7a',1,'GridFinder::GridFinder()']]]
+  ['filledarray',['filledArray',['../ArrayHelpers_8hpp.html#a021512d0f49f5f3ac08ebac9bb547cfc',1,'ArrayHelpers.hpp']]],
+  ['filledmatrix',['filledMatrix',['../MatrixHelpers_8hpp.html#a0143e59b28ca53207a87f0a2d0873bf4',1,'MatrixHelpers.hpp']]],
+  ['filledtmatrix',['filledTMatrix',['../MatrixHelpers_8hpp.html#a97dc20f082415c3707e56be3bec40f33',1,'MatrixHelpers.hpp']]],
+  ['findlineangle',['findLineAngle',['../classGridFinder.html#a04e1362c95151ac77477844a952af0f9',1,'GridFinder']]],
+  ['findlineangleaccuraterange',['findLineAngleAccurateRange',['../classGridFinder.html#afcc1eed83ee0292966c3c80883069634',1,'GridFinder']]],
+  ['findnextline',['findNextLine',['../classGridFinder.html#a6dec96f8c6ed97647f692fa9f9908595',1,'GridFinder::findNextLine(LineResult line, bool direction, uint offset=0, uint minDistance=0) const'],['../classGridFinder.html#ad1a5448de0df9a84f989f64b55025843',1,'GridFinder::findNextLine(optional&lt; LineResult &gt; line, bool direction, uint offset=0, uint minDistance=0) const']]],
+  ['findsquare',['findSquare',['../classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0',1,'GridFinder']]],
+  ['flight_5fmode',['flight_mode',['../wrapper_8h.html#a647003f1ea2f8e97c1c41fdc18008bfd',1,'flight_mode():&#160;original-wrapper.c'],['../original-wrapper_8c.html#a647003f1ea2f8e97c1c41fdc18008bfd',1,'flight_mode():&#160;original-wrapper.c'],['../wrapper_8c.html#a647003f1ea2f8e97c1c41fdc18008bfd',1,'flight_mode():&#160;wrapper.c']]],
+  ['fromcarray',['fromCArray',['../structArray.html#acca20d951f89e064f92c64d357e7bb6f',1,'Array']]],
+  ['fromcpparray',['fromCppArray',['../structArray.html#a30692f2d1c23322027a90fd0cc2df449',1,'Array']]],
+  ['functionaltimefunctiont',['FunctionalTimeFunctionT',['../structFunctionalTimeFunctionT.html#aa6bb6764d37a76419928c31e1cd7705b',1,'FunctionalTimeFunctionT']]],
+  ['functionpointertimefunctiont',['FunctionPointerTimeFunctionT',['../structFunctionPointerTimeFunctionT.html#a2eec1de78d8547b6d4c8bfbc5f3de217',1,'FunctionPointerTimeFunctionT']]]
 ];

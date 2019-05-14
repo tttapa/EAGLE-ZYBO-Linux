@@ -1,0 +1,5 @@
+<map id="decrypt" name="decrypt">
+<area shape="rect" id="node1" title="Decrypt the given QR code." alt="" coords="291,31,361,57"/>
+<area shape="rect" id="node2" href="$namespaceSWImplementation.html#a1da38cf84c412dc43617d7afdcb8efdb" title=" " alt="" coords="22,5,226,32"/>
+<area shape="rect" id="node3" href="$classQRCryptoManager.html#adce85dbb0a3457d79025813c2dea59df" title=" " alt="" coords="5,56,243,83"/>
+</map>

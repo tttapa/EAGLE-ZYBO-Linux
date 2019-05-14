@@ -1,4 +1,8 @@
 <map id="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/grid&#45;finder/include/HelperStructs.hpp" name="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/grid&#45;finder/include/HelperStructs.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,269,61"/>
-<area shape="rect" id="node2" href="$GridFinder_8hpp.html" title=" " alt="" coords="17,109,258,165"/>
+<area shape="rect" id="node1" title=" " alt="" coords="109,5,373,61"/>
+<area shape="rect" id="node2" href="$GridFinder_8hpp.html" title=" " alt="" coords="5,117,247,173"/>
+<area shape="rect" id="node6" href="$LocationFinder_8hpp.html" title=" " alt="" coords="271,109,443,180"/>
+<area shape="rect" id="node3" href="$LocationFinder_8cpp.html" title=" " alt="" coords="33,228,235,299"/>
+<area shape="rect" id="node4" href="$Grid-Finder_8module_8hpp.html" title=" " alt="" coords="264,228,441,299"/>
+<area shape="rect" id="node5" href="$Grid-Finder_8module_8cpp.html" title=" " alt="" coords="267,347,439,417"/>
 </map>

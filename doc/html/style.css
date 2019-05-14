@@ -16,3 +16,7 @@ code {
     background-color: #eee;
     padding: 0px 3px;
 }
+
+img {
+    max-width: 100%;
+}

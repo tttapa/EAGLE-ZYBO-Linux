@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['linecenter',['lineCenter',['../structLineResult.html#a4f4eb45bef4c29991d2e65255ca4cd05',1,'LineResult']]],
-  ['lines',['lines',['../structSquare.html#a607175e290abd2d00bc2d5eda6b205a9',1,'Square']]]
+  ['initialtriesfactorgridfinder',['initialTriesFactorGridFinder',['../LocationFinder_8cpp.html#a3f3288bcaa2d95a659586d26134e83be',1,'LocationFinder.cpp']]],
+  ['initialtriesgridfinder',['initialTriesGridFinder',['../LocationFinder_8cpp.html#a08d74073afa535187e738cb905bf9949',1,'LocationFinder.cpp']]]
 ];

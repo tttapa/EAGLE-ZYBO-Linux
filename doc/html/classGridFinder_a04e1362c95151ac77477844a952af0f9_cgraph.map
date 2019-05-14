@@ -1,0 +1,14 @@
+<map id="GridFinder::findLineAngle" name="GridFinder::findLineAngle">
+<area shape="rect" id="node1" title="Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not ve..." alt="" coords="5,107,189,133"/>
+<area shape="rect" id="node2" href="$classAngle.html#a84ce9a0e2a186ada6997077fd96d6e4c" title=" " alt="" coords="237,81,424,108"/>
+<area shape="rect" id="node3" href="$classGridFinder.html#ace2c24a54244e7e92618d3fe7ec62fdc" title="Starting from the given pixel, move in the direction of the given angle, and count the number of whit..." alt="" coords="263,132,399,159"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c" title="Get the width of the frame." alt="" coords="506,5,638,32"/>
+<area shape="rect" id="node6" href="$classGridFinder.html#affd9ae441c8d86b1856a9ef31190e9ab" title="Get the height of the frame." alt="" coords="503,56,641,83"/>
+<area shape="rect" id="node8" href="$classBresenhamLine.html#aba0822ee20811d67cd9539ccbe1cd346" title=" " alt="" coords="720,132,905,159"/>
+<area shape="rect" id="node10" href="$classBresenhamLine.html#a10d505e30945f42a5cd0270c315b104f" title=" " alt="" coords="492,157,652,184"/>
+<area shape="rect" id="node11" href="$classGridFinder.html#afbed8951f70923626b73abdbe05236da" title="Get the value of the given pixel." alt="" coords="513,232,631,259"/>
+<area shape="rect" id="node12" href="$classBresenhamLine.html#ad93a4adf0535a9b4e649bce5ade1bc5e" title=" " alt="" coords="472,283,672,325"/>
+<area shape="rect" id="node5" href="$classMask.html#a4124a2daa1f7501d4fd80775b6217679" title="Get the width of the mask in pixels." alt="" coords="763,5,863,32"/>
+<area shape="rect" id="node7" href="$classMask.html#af845b7d3220b707c8b4c48bf87d045bb" title="Get the height of the mask in pixels." alt="" coords="760,56,865,83"/>
+<area shape="rect" id="node9" href="$structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" title=" " alt="" coords="953,132,1068,159"/>
+</map>

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['w_5foffset_5fthrust',['W_OFFSET_THRUST',['../wrapper_8c.html#aa62092992b57b85a3ea290d0bf1ee7af',1,'wrapper.c']]],
-  ['w_5foffset_5fx',['W_OFFSET_X',['../wrapper_8c.html#a0fedaab1653246adc5cbc796860ccb2b',1,'wrapper.c']]],
-  ['w_5foffset_5fy',['W_OFFSET_Y',['../wrapper_8c.html#aa21c26c8bafd4725ae2ff57ae1c28fab',1,'wrapper.c']]],
-  ['w_5foffset_5fz',['W_OFFSET_Z',['../wrapper_8c.html#a37e24370422abf5fb304121fc59952ab',1,'wrapper.c']]]
+  ['offset_5faltitude',['OFFSET_ALTITUDE',['../original-wrapper_8c.html#a2c1689546ba984eac529c5320535287f',1,'OFFSET_ALTITUDE():&#160;original-wrapper.c'],['../wrapper_8c.html#a2c1689546ba984eac529c5320535287f',1,'OFFSET_ALTITUDE():&#160;wrapper.c']]],
+  ['offset_5fnav',['OFFSET_NAV',['../original-wrapper_8c.html#a40ed9cd36fb5137694440f37ec7d8f45',1,'OFFSET_NAV():&#160;original-wrapper.c'],['../wrapper_8c.html#a40ed9cd36fb5137694440f37ec7d8f45',1,'OFFSET_NAV():&#160;wrapper.c']]]
 ];

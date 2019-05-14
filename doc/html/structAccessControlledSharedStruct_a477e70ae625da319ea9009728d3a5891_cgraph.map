@@ -1,0 +1,5 @@
+<map id="AccessControlledSharedStruct::read" name="AccessControlledSharedStruct::read">
+<area shape="rect" id="node1" title="Read data from the communication struct." alt="" coords="5,50,223,91"/>
+<area shape="rect" id="node2" href="$structSharedStruct.html#ab84d9ff23f09b19bb8cf7f72ec9901fe" title=" " alt="" coords="271,5,503,61"/>
+<area shape="rect" id="node3" href="$structAccessControlledSharedStruct.html#a7493e468e683ee2e187c00b1b36b2b6e" title="Check if the other party is done writing." alt="" coords="278,86,495,127"/>
+</map>

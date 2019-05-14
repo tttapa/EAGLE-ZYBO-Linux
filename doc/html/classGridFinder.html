@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EAGLE ZYBO Linux: GridFinder&lt; W, H &gt; Class Template Reference</title>
+<title>EAGLE ZYBO Linux: GridFinder Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,6 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/SVG"],
+});
+</script><script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -87,13 +93,12 @@ $(document).ready(function(){initNavTree('classGridFinder.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classGridFinder-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GridFinder&lt; W, H &gt; Class Template Reference</div>  </div>
+<div class="title">GridFinder Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,181 +107,149 @@ $(document).ready(function(){initNavTree('classGridFinder.html','');});
 
 <p><code>#include &lt;<a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for GridFinder&lt; W, H &gt;:</div>
+Collaboration diagram for GridFinder:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder__coll__graph.svg" width="244" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder__coll__graph.svg" width="244" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:aae7eee7825bd21227ead0a043c8255d6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#aae7eee7825bd21227ead0a043c8255d6">Img_t</a> = <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt; uint8_t, H, W &gt;</td></tr>
-<tr class="memdesc:aae7eee7825bd21227ead0a043c8255d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the image mask.  <a href="#aae7eee7825bd21227ead0a043c8255d6">More...</a><br /></td></tr>
-<tr class="separator:aae7eee7825bd21227ead0a043c8255d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a268bfb67d2d118590843a688baf4e398"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a268bfb67d2d118590843a688baf4e398">GridFinder</a> (const <a class="el" href="classGridFinder.html#aae7eee7825bd21227ead0a043c8255d6">Img_t</a> &amp;mask)</td></tr>
-<tr class="memdesc:a268bfb67d2d118590843a688baf4e398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from a given mask.  <a href="#a268bfb67d2d118590843a688baf4e398">More...</a><br /></td></tr>
-<tr class="separator:a268bfb67d2d118590843a688baf4e398"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa707b822d64e428cfc31726dbdcb8b7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#aa707b822d64e428cfc31726dbdcb8b7a">GridFinder</a> ()</td></tr>
-<tr class="memdesc:aa707b822d64e428cfc31726dbdcb8b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor (creates a mask of all zeros).  <a href="#aa707b822d64e428cfc31726dbdcb8b7a">More...</a><br /></td></tr>
-<tr class="separator:aa707b822d64e428cfc31726dbdcb8b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae562737b4e1d28a7888aedb53449e0e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHoughResult.html">HoughResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ae562737b4e1d28a7888aedb53449e0e7">hough</a> (<a class="el" href="structPixel.html">Pixel</a> px, <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">angle_t</a> angle) const</td></tr>
-<tr class="memdesc:ae562737b4e1d28a7888aedb53449e0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starting from the given pixel, move in the direction of the given angle, and count the number of white pixels, weighing them more as the distance increases. When more than <a class="el" href="classGridFinder.html#aec832be8ddb869f875e3e440e84625e5">HOUGH_MAX_GAP</a> consecutive black pixels are encountered, stop looking any farther.  <a href="#ae562737b4e1d28a7888aedb53449e0e7">More...</a><br /></td></tr>
-<tr class="separator:ae562737b4e1d28a7888aedb53449e0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20f10e8136febf04c3a1987a35860ef1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHoughResult.html">HoughResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a20f10e8136febf04c3a1987a35860ef1">findLineAngle</a> (<a class="el" href="structPixel.html">Pixel</a> px) const</td></tr>
-<tr class="memdesc:a20f10e8136febf04c3a1987a35860ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not very accurate, as it doesn't handle the case where multiple angles have the same maximum count. <br  />
- On the other hand, it's a bit faster than the more accurate alternatives, making it a good candidate for finding the first angle estimate, to narrow down the search space.  <a href="#a20f10e8136febf04c3a1987a35860ef1">More...</a><br /></td></tr>
-<tr class="separator:a20f10e8136febf04c3a1987a35860ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ec79b247bf5e64bb9c456eebf420577"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHoughResult.html">HoughResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a1ec79b247bf5e64bb9c456eebf420577">findLineAngleAccurate</a> (<a class="el" href="structPixel.html">Pixel</a> px)</td></tr>
-<tr class="separator:a1ec79b247bf5e64bb9c456eebf420577"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1dc2d7760adcd45c649f0c8a303563e"><td class="memTemplParams" colspan="2">template&lt;uint N&gt; </td></tr>
-<tr class="memitem:aa1dc2d7760adcd45c649f0c8a303563e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structHoughResult.html">HoughResult</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGridFinder.html#aa1dc2d7760adcd45c649f0c8a303563e">findLineAngleAccurateRange</a> (<a class="el" href="structPixel.html">Pixel</a> px, <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">angle_t</a> centerAngle) const</td></tr>
-<tr class="memdesc:aa1dc2d7760adcd45c649f0c8a303563e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classGridFinder.html#a20f10e8136febf04c3a1987a35860ef1" title="Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not ve...">findLineAngle</a>, but is more accurate, because it uses the average of the range of angles with the hightest vote counts. It also doesn't scan 360°, but takes 2<code>N</code> samples around a given center angle.  <a href="#aa1dc2d7760adcd45c649f0c8a303563e">More...</a><br /></td></tr>
-<tr class="separator:aa1dc2d7760adcd45c649f0c8a303563e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83b31c2192a137e56e91d13661f1c658"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a83b31c2192a137e56e91d13661f1c658">getWidthAtPointOnLine</a> (<a class="el" href="structPixel.html">Pixel</a> pixel, <a class="el" href="structCosSin.html">CosSin</a> angle, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> maxLineGap=<a class="el" href="classGridFinder.html#aefccfda1ff7d039edab855b6f7eafd54">MAX_GAP</a>, bool plus90deg=true) const</td></tr>
-<tr class="memdesc:a83b31c2192a137e56e91d13661f1c658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the width of the line at a given point.  <a href="#a83b31c2192a137e56e91d13661f1c658">More...</a><br /></td></tr>
-<tr class="separator:a83b31c2192a137e56e91d13661f1c658"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a187e8c44c7f99237645b49dc2c6745c8"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structGetMiddleResult.html">GetMiddleResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a187e8c44c7f99237645b49dc2c6745c8">getMiddle</a> (<a class="el" href="structPixel.html">Pixel</a> pointOnLine, <a class="el" href="structCosSin.html">CosSin</a> lineAngle, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> maxLineGap=<a class="el" href="classGridFinder.html#aefccfda1ff7d039edab855b6f7eafd54">MAX_GAP</a>) const</td></tr>
-<tr class="memdesc:a187e8c44c7f99237645b49dc2c6745c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the middle of a line.  <a href="#a187e8c44c7f99237645b49dc2c6745c8">More...</a><br /></td></tr>
-<tr class="separator:a187e8c44c7f99237645b49dc2c6745c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a504ddc8af3a0cc68b68de387ac1a90ea"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structGetMiddleResult.html">GetMiddleResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a504ddc8af3a0cc68b68de387ac1a90ea">getMiddleWithRetries</a> (<a class="el" href="structPixel.html">Pixel</a> start, <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">angle_t</a> angle) const</td></tr>
-<tr class="memdesc:a504ddc8af3a0cc68b68de387ac1a90ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">In exceptional cases, we might want to find the middle of a line in a point that happens to lie at the intersection of the line with another line. In that case, we first have to move along the line to a point away from the intersection, and calculate the middle in this point. Otherwise, the width would be extremely large.  <a href="#a504ddc8af3a0cc68b68de387ac1a90ea">More...</a><br /></td></tr>
-<tr class="separator:a504ddc8af3a0cc68b68de387ac1a90ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53cfbafaf3cd06baac2a19eeee0cfb73"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a53cfbafaf3cd06baac2a19eeee0cfb73">get</a> (<a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> x, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> y) const</td></tr>
-<tr class="memdesc:a53cfbafaf3cd06baac2a19eeee0cfb73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the given pixel.  <a href="#a53cfbafaf3cd06baac2a19eeee0cfb73">More...</a><br /></td></tr>
-<tr class="separator:a53cfbafaf3cd06baac2a19eeee0cfb73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c92616aa110bf9172b35573e47d5ac4"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a5c92616aa110bf9172b35573e47d5ac4">get</a> (<a class="el" href="structPixel.html">Pixel</a> px) const</td></tr>
-<tr class="memdesc:a5c92616aa110bf9172b35573e47d5ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the given pixel.  <a href="#a5c92616aa110bf9172b35573e47d5ac4">More...</a><br /></td></tr>
-<tr class="separator:a5c92616aa110bf9172b35573e47d5ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fef4e6faa3242e689a3ecb6ef21fb1f"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a5fef4e6faa3242e689a3ecb6ef21fb1f">set</a> (<a class="el" href="structPixel.html">Pixel</a> px, uint8_t value=0xFF)</td></tr>
-<tr class="memdesc:a5fef4e6faa3242e689a3ecb6ef21fb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of the given pixel.  <a href="#a5fef4e6faa3242e689a3ecb6ef21fb1f">More...</a><br /></td></tr>
-<tr class="separator:a5fef4e6faa3242e689a3ecb6ef21fb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa786429bfa49bf25e792eeeb8795e081"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#aa786429bfa49bf25e792eeeb8795e081">print</a> (std::ostream &amp;os) const</td></tr>
-<tr class="memdesc:aa786429bfa49bf25e792eeeb8795e081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the mask as "pixels" to the given output stream.  <a href="#aa786429bfa49bf25e792eeeb8795e081">More...</a><br /></td></tr>
-<tr class="separator:aa786429bfa49bf25e792eeeb8795e081"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a926aed1d675bcd1a308265f233a112dd"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a926aed1d675bcd1a308265f233a112dd">printMaskMatrix</a> (std::ostream &amp;os) const</td></tr>
-<tr class="memdesc:a926aed1d675bcd1a308265f233a112dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the mask as a C++ Matrix to the given output stream.  <a href="#a926aed1d675bcd1a308265f233a112dd">More...</a><br /></td></tr>
-<tr class="separator:a926aed1d675bcd1a308265f233a112dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a052706dc431a652170442a8995a0e864"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a052706dc431a652170442a8995a0e864">drawLine</a> (<a class="el" href="structPixel.html">Pixel</a> pixel, int cos, int sin)</td></tr>
-<tr class="memdesc:a052706dc431a652170442a8995a0e864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a line on the mask. Used only for testing.  <a href="#a052706dc431a652170442a8995a0e864">More...</a><br /></td></tr>
-<tr class="separator:a052706dc431a652170442a8995a0e864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae01e82a5f2ac5832d9b931aa305854b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ae01e82a5f2ac5832d9b931aa305854b8">drawLine</a> (<a class="el" href="classBresenhamLine.html">BresenhamLine</a> line)</td></tr>
-<tr class="memdesc:ae01e82a5f2ac5832d9b931aa305854b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a line on the mask. Used only for testing.  <a href="#ae01e82a5f2ac5832d9b931aa305854b8">More...</a><br /></td></tr>
-<tr class="separator:ae01e82a5f2ac5832d9b931aa305854b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7296afac0b1184604dcdd5d62bcaebd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ae7296afac0b1184604dcdd5d62bcaebd">drawLine</a> (<a class="el" href="structPixel.html">Pixel</a> pixel, <a class="el" href="structCosSin.html">CosSin</a> angle)</td></tr>
-<tr class="memdesc:ae7296afac0b1184604dcdd5d62bcaebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a line on the mask. Used only for testing.  <a href="#ae7296afac0b1184604dcdd5d62bcaebd">More...</a><br /></td></tr>
-<tr class="separator:ae7296afac0b1184604dcdd5d62bcaebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b31ec7807efc6e1fde49f5a56c0d0fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPixel.html">Pixel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a9b31ec7807efc6e1fde49f5a56c0d0fa">move</a> (<a class="el" href="structPixel.html">Pixel</a> start, <a class="el" href="structCosSin.html">CosSin</a> angle, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> distance) const</td></tr>
-<tr class="memdesc:a9b31ec7807efc6e1fde49f5a56c0d0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move a pixel in a given direction for a given distance.  <a href="#a9b31ec7807efc6e1fde49f5a56c0d0fa">More...</a><br /></td></tr>
-<tr class="separator:a9b31ec7807efc6e1fde49f5a56c0d0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac78760540b520bc08f716ef77127f1fc"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ac78760540b520bc08f716ef77127f1fc">getFirstLineEstimate</a> (<a class="el" href="structPixel.html">Pixel</a> point) const</td></tr>
-<tr class="memdesc:ac78760540b520bc08f716ef77127f1fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an estimate of the line through a given pixel. Find an estimate of the slope, then use that to determine the middle and the width of the line.  <a href="#ac78760540b520bc08f716ef77127f1fc">More...</a><br /></td></tr>
-<tr class="separator:ac78760540b520bc08f716ef77127f1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05628935998785212ee5320a7e146f2b"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a05628935998785212ee5320a7e146f2b">getFirstLineEstimate</a> (<a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> x) const</td></tr>
-<tr class="memdesc:a05628935998785212ee5320a7e146f2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the vertical range of white pixels closest to the center of the given column, then try to find an estimate of the line going through the center of this range.  <a href="#a05628935998785212ee5320a7e146f2b">More...</a><br /></td></tr>
-<tr class="separator:a05628935998785212ee5320a7e146f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0de487d16731e34827c6dbc08c0eeb1b"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a0de487d16731e34827c6dbc08c0eeb1b">getFirstLineEstimate</a> () const</td></tr>
-<tr class="memdesc:a0de487d16731e34827c6dbc08c0eeb1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an estimate of the first line. Searches in multiple columns, starting from the center, taking jumps of <a class="el" href="classGridFinder.html#ae4270fc0b855381f98ac7ef00c81a85e">FIRST_LINE_INVALID_HORIZONTAL_JUMP</a> pixels if no valid line is found in the currenc column.  <a href="#a0de487d16731e34827c6dbc08c0eeb1b">More...</a><br /></td></tr>
-<tr class="separator:a0de487d16731e34827c6dbc08c0eeb1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ac6a50ff32685b1e958cbb0a88ca4dc"><td class="memItemLeft" align="right" valign="top">std::array&lt; optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a8ac6a50ff32685b1e958cbb0a88ca4dc">getFirstTwoHalfLines</a> ()</td></tr>
-<tr class="memdesc:a8ac6a50ff32685b1e958cbb0a88ca4dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first two lines. These are the two half lines that make up the line closest to the center of the frame.  <a href="#a8ac6a50ff32685b1e958cbb0a88ca4dc">More...</a><br /></td></tr>
-<tr class="separator:a8ac6a50ff32685b1e958cbb0a88ca4dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79b62fc48a9db94ad0530e76ed2c3306"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a79b62fc48a9db94ad0530e76ed2c3306">findNextLine</a> (<a class="el" href="structLineResult.html">LineResult</a> line, bool direction, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minDistance=0, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> offset=0) const</td></tr>
-<tr class="memdesc:a79b62fc48a9db94ad0530e76ed2c3306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Follow the given line to find the line perpendicular to it. Move along the line for <code>minDistance</code> pixels, then move away from the line, perpendicular to it for twice its width plus the given offset. Then move from this point parallel to the original line, and search for the next white pixel, which is probably part of the line perpendicular to the given line.  <a href="#a79b62fc48a9db94ad0530e76ed2c3306">More...</a><br /></td></tr>
-<tr class="separator:a79b62fc48a9db94ad0530e76ed2c3306"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad75180aa82b12c7054e0015adc44a331"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ad75180aa82b12c7054e0015adc44a331">findNextLine</a> (optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt; line, bool direction, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minDistance=0, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> offset=0) const</td></tr>
-<tr class="memdesc:ad75180aa82b12c7054e0015adc44a331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional <a class="el" href="structLineResult.html">LineResult</a>s.  <a href="#ad75180aa82b12c7054e0015adc44a331">More...</a><br /></td></tr>
-<tr class="separator:ad75180aa82b12c7054e0015adc44a331"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9050aab45d10d2c2d4859af19b4987b4"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a9050aab45d10d2c2d4859af19b4987b4">checkLine</a> (<a class="el" href="structPixel.html">Pixel</a> pixel, <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">angle_t</a> angle, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minWidth) const</td></tr>
-<tr class="memdesc:a9050aab45d10d2c2d4859af19b4987b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there could be a valid line going through the given point, and if so, find and return the actual line.  <a href="#a9050aab45d10d2c2d4859af19b4987b4">More...</a><br /></td></tr>
-<tr class="separator:a9050aab45d10d2c2d4859af19b4987b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3104d4fe44099faf5179674ecb55cb52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSquare.html">Square</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a3104d4fe44099faf5179674ecb55cb52">findSquare</a> ()</td></tr>
-<tr class="memdesc:a3104d4fe44099faf5179674ecb55cb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main function: it looks for a complete square of the grid, as close to the center of the frame as possible.  <a href="#a3104d4fe44099faf5179674ecb55cb52">More...</a><br /></td></tr>
-<tr class="separator:a3104d4fe44099faf5179674ecb55cb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf6227abcdacca5a81838de72736776"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#aedf6227abcdacca5a81838de72736776">GridFinder</a> (<a class="el" href="classMask.html">Mask</a> &amp;&amp;mask)</td></tr>
+<tr class="memdesc:aedf6227abcdacca5a81838de72736776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from a given mask.  <a href="classGridFinder.html#aedf6227abcdacca5a81838de72736776">More...</a><br /></td></tr>
+<tr class="separator:aedf6227abcdacca5a81838de72736776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13b104fa62cde85e9269b60e543a826e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a13b104fa62cde85e9269b60e543a826e">GridFinder</a> (const <a class="el" href="classMask.html">Mask</a> &amp;mask)</td></tr>
+<tr class="separator:a13b104fa62cde85e9269b60e543a826e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3502a7dc40efd274cfd5a038765735e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ad3502a7dc40efd274cfd5a038765735e">GridFinder</a> ()</td></tr>
+<tr class="memdesc:ad3502a7dc40efd274cfd5a038765735e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor (creates a mask of all zeros).  <a href="classGridFinder.html#ad3502a7dc40efd274cfd5a038765735e">More...</a><br /></td></tr>
+<tr class="separator:ad3502a7dc40efd274cfd5a038765735e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2c24a54244e7e92618d3fe7ec62fdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHoughResult.html">HoughResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ace2c24a54244e7e92618d3fe7ec62fdc">hough</a> (<a class="el" href="structPixel.html">Pixel</a> px, <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">angle_t</a> angle) const</td></tr>
+<tr class="memdesc:ace2c24a54244e7e92618d3fe7ec62fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starting from the given pixel, move in the direction of the given angle, and count the number of white pixels, weighing them more as the distance increases. When more than <a class="el" href="classGridFinder.html#acca475189fa9ea36e12451a88d0e4915">HOUGH_MAX_GAP</a> consecutive black pixels are encountered, stop looking any farther.  <a href="classGridFinder.html#ace2c24a54244e7e92618d3fe7ec62fdc">More...</a><br /></td></tr>
+<tr class="separator:ace2c24a54244e7e92618d3fe7ec62fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e1362c95151ac77477844a952af0f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHoughResult.html">HoughResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a04e1362c95151ac77477844a952af0f9">findLineAngle</a> (<a class="el" href="structPixel.html">Pixel</a> px) const</td></tr>
+<tr class="memdesc:a04e1362c95151ac77477844a952af0f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not very accurate, as it doesn't handle the case where multiple angles have the same maximum count. <br  />
+ On the other hand, it's a bit faster than the more accurate alternatives, making it a good candidate for finding the first angle estimate, to narrow down the search space.  <a href="classGridFinder.html#a04e1362c95151ac77477844a952af0f9">More...</a><br /></td></tr>
+<tr class="separator:a04e1362c95151ac77477844a952af0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc1eed83ee0292966c3c80883069634"><td class="memTemplParams" colspan="2">template&lt;uint N&gt; </td></tr>
+<tr class="memitem:afcc1eed83ee0292966c3c80883069634"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structHoughResult.html">HoughResult</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGridFinder.html#afcc1eed83ee0292966c3c80883069634">findLineAngleAccurateRange</a> (<a class="el" href="structPixel.html">Pixel</a> px, <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">angle_t</a> centerAngle) const</td></tr>
+<tr class="memdesc:afcc1eed83ee0292966c3c80883069634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classGridFinder.html#a04e1362c95151ac77477844a952af0f9" title="Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not ve...">findLineAngle</a>, but is more accurate, because it uses the average of the range of angles with the hightest vote counts. It also doesn't scan 360°, but takes 2<code>N</code> samples around a given center angle.  <a href="classGridFinder.html#afcc1eed83ee0292966c3c80883069634">More...</a><br /></td></tr>
+<tr class="separator:afcc1eed83ee0292966c3c80883069634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c436911deb269a22a8d5525271fa4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ab5c436911deb269a22a8d5525271fa4e">getWidthAtPointOnLine</a> (<a class="el" href="structPixel.html">Pixel</a> pixel, <a class="el" href="structCosSin.html">CosSin</a> angle, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> maxLineGap=<a class="el" href="classGridFinder.html#ae66cb42fc8cf46471b4489f5158ab488">MAX_GAP</a>, bool plus90deg=true) const</td></tr>
+<tr class="memdesc:ab5c436911deb269a22a8d5525271fa4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the width of the line at a given point.  <a href="classGridFinder.html#ab5c436911deb269a22a8d5525271fa4e">More...</a><br /></td></tr>
+<tr class="separator:ab5c436911deb269a22a8d5525271fa4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd46f31e256080b2d5d2aee03c0e258"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structGetMiddleResult.html">GetMiddleResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#abcd46f31e256080b2d5d2aee03c0e258">getMiddle</a> (<a class="el" href="structPixel.html">Pixel</a> pointOnLine, <a class="el" href="structCosSin.html">CosSin</a> lineAngle, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> maxLineGap=<a class="el" href="classGridFinder.html#ae66cb42fc8cf46471b4489f5158ab488">MAX_GAP</a>) const</td></tr>
+<tr class="memdesc:abcd46f31e256080b2d5d2aee03c0e258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the middle of a line.  <a href="classGridFinder.html#abcd46f31e256080b2d5d2aee03c0e258">More...</a><br /></td></tr>
+<tr class="separator:abcd46f31e256080b2d5d2aee03c0e258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af830abf29ca6dc9c01197a38fe16e1e5"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structGetMiddleResult.html">GetMiddleResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#af830abf29ca6dc9c01197a38fe16e1e5">getMiddleWithRetries</a> (<a class="el" href="structPixel.html">Pixel</a> start, <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">angle_t</a> angle) const</td></tr>
+<tr class="memdesc:af830abf29ca6dc9c01197a38fe16e1e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">In exceptional cases, we might want to find the middle of a line in a point that happens to lie at the intersection of the line with another line. In that case, we first have to move along the line to a point away from the intersection, and calculate the middle in this point. Otherwise, the width would be extremely large.  <a href="classGridFinder.html#af830abf29ca6dc9c01197a38fe16e1e5">More...</a><br /></td></tr>
+<tr class="separator:af830abf29ca6dc9c01197a38fe16e1e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbed8951f70923626b73abdbe05236da"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#afbed8951f70923626b73abdbe05236da">get</a> (<a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> x, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> y) const</td></tr>
+<tr class="memdesc:afbed8951f70923626b73abdbe05236da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the given pixel.  <a href="classGridFinder.html#afbed8951f70923626b73abdbe05236da">More...</a><br /></td></tr>
+<tr class="separator:afbed8951f70923626b73abdbe05236da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d847c0d5e11314641f84afa0f2ca05"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a05d847c0d5e11314641f84afa0f2ca05">get</a> (<a class="el" href="structPixel.html">Pixel</a> px) const</td></tr>
+<tr class="memdesc:a05d847c0d5e11314641f84afa0f2ca05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the given pixel.  <a href="classGridFinder.html#a05d847c0d5e11314641f84afa0f2ca05">More...</a><br /></td></tr>
+<tr class="separator:a05d847c0d5e11314641f84afa0f2ca05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a376419f000b3be1e8db278726a2efbc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a376419f000b3be1e8db278726a2efbc1">set</a> (<a class="el" href="structPixel.html">Pixel</a> px, uint8_t value=0xFF)</td></tr>
+<tr class="memdesc:a376419f000b3be1e8db278726a2efbc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of the given pixel.  <a href="classGridFinder.html#a376419f000b3be1e8db278726a2efbc1">More...</a><br /></td></tr>
+<tr class="separator:a376419f000b3be1e8db278726a2efbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a671392ebb7c1324bd9a4e8d321475619"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a671392ebb7c1324bd9a4e8d321475619">print</a> (std::ostream &amp;os) const</td></tr>
+<tr class="memdesc:a671392ebb7c1324bd9a4e8d321475619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the mask as "pixels" to the given output stream.  <a href="classGridFinder.html#a671392ebb7c1324bd9a4e8d321475619">More...</a><br /></td></tr>
+<tr class="separator:a671392ebb7c1324bd9a4e8d321475619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb4d1d344f4830de77ecf1615878656"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a0cb4d1d344f4830de77ecf1615878656">drawLine</a> (<a class="el" href="structPixel.html">Pixel</a> pixel, int cos, int sin)</td></tr>
+<tr class="memdesc:a0cb4d1d344f4830de77ecf1615878656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a line on the mask. Used only for testing.  <a href="classGridFinder.html#a0cb4d1d344f4830de77ecf1615878656">More...</a><br /></td></tr>
+<tr class="separator:a0cb4d1d344f4830de77ecf1615878656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b5caee289831bd2207db3ec542be2b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a3b5caee289831bd2207db3ec542be2b0">drawLine</a> (<a class="el" href="classBresenhamLine.html">BresenhamLine</a> line)</td></tr>
+<tr class="memdesc:a3b5caee289831bd2207db3ec542be2b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a line on the mask. Used only for testing.  <a href="classGridFinder.html#a3b5caee289831bd2207db3ec542be2b0">More...</a><br /></td></tr>
+<tr class="separator:a3b5caee289831bd2207db3ec542be2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38cc6124693e5f533e1598587272f92a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a38cc6124693e5f533e1598587272f92a">drawLine</a> (<a class="el" href="structPixel.html">Pixel</a> pixel, <a class="el" href="structCosSin.html">CosSin</a> angle)</td></tr>
+<tr class="memdesc:a38cc6124693e5f533e1598587272f92a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a line on the mask. Used only for testing.  <a href="classGridFinder.html#a38cc6124693e5f533e1598587272f92a">More...</a><br /></td></tr>
+<tr class="separator:a38cc6124693e5f533e1598587272f92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8bdc28d95e295618c2f345f2d7eb758"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPixel.html">Pixel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#af8bdc28d95e295618c2f345f2d7eb758">move</a> (<a class="el" href="structPixel.html">Pixel</a> start, <a class="el" href="structCosSin.html">CosSin</a> angle, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> distance) const</td></tr>
+<tr class="memdesc:af8bdc28d95e295618c2f345f2d7eb758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move a pixel in a given direction for a given distance.  <a href="classGridFinder.html#af8bdc28d95e295618c2f345f2d7eb758">More...</a><br /></td></tr>
+<tr class="separator:af8bdc28d95e295618c2f345f2d7eb758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadfce89f171d55f954a19d700b43ff5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c">width</a> () const</td></tr>
+<tr class="memdesc:aadfce89f171d55f954a19d700b43ff5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the width of the frame.  <a href="classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c">More...</a><br /></td></tr>
+<tr class="separator:aadfce89f171d55f954a19d700b43ff5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd9ae441c8d86b1856a9ef31190e9ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#affd9ae441c8d86b1856a9ef31190e9ab">height</a> () const</td></tr>
+<tr class="memdesc:affd9ae441c8d86b1856a9ef31190e9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the height of the frame.  <a href="classGridFinder.html#affd9ae441c8d86b1856a9ef31190e9ab">More...</a><br /></td></tr>
+<tr class="separator:affd9ae441c8d86b1856a9ef31190e9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2a9cb90cc19a295d0fbe934a79b7e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPixel.html">Pixel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ace2a9cb90cc19a295d0fbe934a79b7e0">center</a> () const</td></tr>
+<tr class="memdesc:ace2a9cb90cc19a295d0fbe934a79b7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the center pixel of the frame.  <a href="classGridFinder.html#ace2a9cb90cc19a295d0fbe934a79b7e0">More...</a><br /></td></tr>
+<tr class="separator:ace2a9cb90cc19a295d0fbe934a79b7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea3af418ab7124f2b25bcc124fccaca"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#aaea3af418ab7124f2b25bcc124fccaca">getFirstLineEstimate</a> (<a class="el" href="structPixel.html">Pixel</a> point) const</td></tr>
+<tr class="memdesc:aaea3af418ab7124f2b25bcc124fccaca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an estimate of the line through a given pixel. Find an estimate of the slope, then use that to determine the middle and the width of the line.  <a href="classGridFinder.html#aaea3af418ab7124f2b25bcc124fccaca">More...</a><br /></td></tr>
+<tr class="separator:aaea3af418ab7124f2b25bcc124fccaca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84004386cbee9606f9a46872cb67be8"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ae84004386cbee9606f9a46872cb67be8">getFirstLineEstimate</a> (<a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> x) const</td></tr>
+<tr class="memdesc:ae84004386cbee9606f9a46872cb67be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the vertical range of white pixels closest to the center of the given column, then try to find an estimate of the line going through the center of this range.  <a href="classGridFinder.html#ae84004386cbee9606f9a46872cb67be8">More...</a><br /></td></tr>
+<tr class="separator:ae84004386cbee9606f9a46872cb67be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa715db70f6b6d2a864bc0674fb5abb6"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#afa715db70f6b6d2a864bc0674fb5abb6">getFirstLineEstimate</a> () const</td></tr>
+<tr class="memdesc:afa715db70f6b6d2a864bc0674fb5abb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an estimate of the first line. Searches in multiple columns, starting from the center, taking jumps of <a class="el" href="classGridFinder.html#a62770d16d5b99e80457f5496baad7680">FIRST_LINE_INVALID_HORIZONTAL_JUMP</a> pixels if no valid line is found in the currenc column.  <a href="classGridFinder.html#afa715db70f6b6d2a864bc0674fb5abb6">More...</a><br /></td></tr>
+<tr class="separator:afa715db70f6b6d2a864bc0674fb5abb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c330ed1431434a4a3726c341161bf39"><td class="memItemLeft" align="right" valign="top">std::array&lt; optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a7c330ed1431434a4a3726c341161bf39">getFirstTwoHalfLines</a> ()</td></tr>
+<tr class="memdesc:a7c330ed1431434a4a3726c341161bf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first two lines. These are the two half lines that make up the line closest to the center of the frame.  <a href="classGridFinder.html#a7c330ed1431434a4a3726c341161bf39">More...</a><br /></td></tr>
+<tr class="separator:a7c330ed1431434a4a3726c341161bf39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dec96f8c6ed97647f692fa9f9908595"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a6dec96f8c6ed97647f692fa9f9908595">findNextLine</a> (<a class="el" href="structLineResult.html">LineResult</a> line, bool direction, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> offset=0, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minDistance=0) const</td></tr>
+<tr class="memdesc:a6dec96f8c6ed97647f692fa9f9908595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Follow the given line to find the line perpendicular to it. Move along the line for <code>minDistance</code> pixels, then move away from the line, perpendicular to it for twice its width plus the given offset. Then move from this point parallel to the original line, and search for the next white pixel, which is probably part of the line perpendicular to the given line.  <a href="classGridFinder.html#a6dec96f8c6ed97647f692fa9f9908595">More...</a><br /></td></tr>
+<tr class="separator:a6dec96f8c6ed97647f692fa9f9908595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a5448de0df9a84f989f64b55025843"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ad1a5448de0df9a84f989f64b55025843">findNextLine</a> (optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt; line, bool direction, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> offset=0, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minDistance=0) const</td></tr>
+<tr class="memdesc:ad1a5448de0df9a84f989f64b55025843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional <a class="el" href="structLineResult.html">LineResult</a>s.  <a href="classGridFinder.html#ad1a5448de0df9a84f989f64b55025843">More...</a><br /></td></tr>
+<tr class="separator:ad1a5448de0df9a84f989f64b55025843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae12ca7921b02b37417d87fc737f0134d"><td class="memItemLeft" align="right" valign="top">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d">checkLine</a> (<a class="el" href="structPixel.html">Pixel</a> pixel, <a class="el" href="Angle_8hpp.html#a4cce452d97e7ee5145be7e6479b5713e">angle_t</a> angle, <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> minWidth) const</td></tr>
+<tr class="memdesc:ae12ca7921b02b37417d87fc737f0134d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there could be a valid line going through the given point, and if so, find and return the actual line.  <a href="classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d">More...</a><br /></td></tr>
+<tr class="separator:ae12ca7921b02b37417d87fc737f0134d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701c0c1e70d01bb8773a89a29f6673a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSquare.html">Square</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0">findSquare</a> (<a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> initialTries=1, float initialTriesFactor=2.0f)</td></tr>
+<tr class="memdesc:a701c0c1e70d01bb8773a89a29f6673a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main function: it looks for a complete square of the grid, as close to the center of the frame as possible.  <a href="classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0">More...</a><br /></td></tr>
+<tr class="separator:a701c0c1e70d01bb8773a89a29f6673a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af5906137a7b42eeeb983781128fcd463"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="structPixel.html">Pixel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#af5906137a7b42eeeb983781128fcd463">center</a> ()</td></tr>
-<tr class="memdesc:af5906137a7b42eeeb983781128fcd463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the center pixel of the frame.  <a href="#af5906137a7b42eeeb983781128fcd463">More...</a><br /></td></tr>
-<tr class="separator:af5906137a7b42eeeb983781128fcd463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5657aed220771995d8fd1b9e3779b226"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a5657aed220771995d8fd1b9e3779b226">intersect</a> (<a class="el" href="structLineResult.html">LineResult</a> a, <a class="el" href="structLineResult.html">LineResult</a> b)</td></tr>
-<tr class="memdesc:a5657aed220771995d8fd1b9e3779b226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the point of intersection of two lines.  <a href="#a5657aed220771995d8fd1b9e3779b226">More...</a><br /></td></tr>
-<tr class="separator:a5657aed220771995d8fd1b9e3779b226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7202be6727634054a169022b5ce3e01"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ac7202be6727634054a169022b5ce3e01">intersect</a> (<a class="el" href="structLineResult.html">LineResult</a> a, <a class="el" href="structLineResult.html">LineResult</a> b)</td></tr>
+<tr class="memdesc:ac7202be6727634054a169022b5ce3e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the point of intersection of two lines.  <a href="classGridFinder.html#ac7202be6727634054a169022b5ce3e01">More...</a><br /></td></tr>
+<tr class="separator:ac7202be6727634054a169022b5ce3e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:aec832be8ddb869f875e3e440e84625e5"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#aec832be8ddb869f875e3e440e84625e5">HOUGH_MAX_GAP</a> = 16</td></tr>
-<tr class="separator:aec832be8ddb869f875e3e440e84625e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefccfda1ff7d039edab855b6f7eafd54"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#aefccfda1ff7d039edab855b6f7eafd54">MAX_GAP</a> = 10</td></tr>
-<tr class="memdesc:aefccfda1ff7d039edab855b6f7eafd54"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of pixels that can be black within a line, while still being detected correctly.  <a href="#aefccfda1ff7d039edab855b6f7eafd54">More...</a><br /></td></tr>
-<tr class="separator:aefccfda1ff7d039edab855b6f7eafd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28d7a596362603d50b5affe909acdd2b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a28d7a596362603d50b5affe909acdd2b">MAX_LINE_WIDTH</a> = 32</td></tr>
-<tr class="memdesc:a28d7a596362603d50b5affe909acdd2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Lines" that are wider than this value are ignored, to prevent white blobs (of sunlight, for example) from being detected as random lines.  <a href="#a28d7a596362603d50b5affe909acdd2b">More...</a><br /></td></tr>
-<tr class="separator:a28d7a596362603d50b5affe909acdd2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b976d83dc517faa4d46c2b6c6b79540"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a2b976d83dc517faa4d46c2b6c6b79540">RETRY_JUMP_DISTANCE</a> = <a class="el" href="classGridFinder.html#a28d7a596362603d50b5affe909acdd2b">MAX_LINE_WIDTH</a></td></tr>
-<tr class="separator:a2b976d83dc517faa4d46c2b6c6b79540"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fe2f1f6d59b9c0e58465b18c7898e82"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a2fe2f1f6d59b9c0e58465b18c7898e82">MINIMUM_START_LINE_WIDTH</a> = 10</td></tr>
-<tr class="memdesc:a2fe2f1f6d59b9c0e58465b18c7898e82"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum width the first line must have.  <a href="#a2fe2f1f6d59b9c0e58465b18c7898e82">More...</a><br /></td></tr>
-<tr class="separator:a2fe2f1f6d59b9c0e58465b18c7898e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd2205d36a2fb2d60a62878c1f6c028"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a4cd2205d36a2fb2d60a62878c1f6c028">MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT</a> = (W + H) / 10</td></tr>
-<tr class="separator:a4cd2205d36a2fb2d60a62878c1f6c028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af667c56bec981faf7ff1aec38010d54b"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#af667c56bec981faf7ff1aec38010d54b">MAXIMUM_VERTICAL_START_LINE_WIDTH</a> = 32</td></tr>
-<tr class="separator:af667c56bec981faf7ff1aec38010d54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4270fc0b855381f98ac7ef00c81a85e"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ae4270fc0b855381f98ac7ef00c81a85e">FIRST_LINE_INVALID_HORIZONTAL_JUMP</a> = 10</td></tr>
-<tr class="separator:ae4270fc0b855381f98ac7ef00c81a85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4be7329c5a370ef93092c320e5a60c41"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a4be7329c5a370ef93092c320e5a60c41">MINIMIM_LINE_WEIGHTED_VOTE_COUNT</a> = (W + H) / 10</td></tr>
-<tr class="memdesc:a4be7329c5a370ef93092c320e5a60c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perpendicular lines have to be long enough to be counted as a real line.  <a href="#a4be7329c5a370ef93092c320e5a60c41">More...</a><br /></td></tr>
-<tr class="separator:a4be7329c5a370ef93092c320e5a60c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acca475189fa9ea36e12451a88d0e4915"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#acca475189fa9ea36e12451a88d0e4915">HOUGH_MAX_GAP</a> = 64</td></tr>
+<tr class="separator:acca475189fa9ea36e12451a88d0e4915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66cb42fc8cf46471b4489f5158ab488"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ae66cb42fc8cf46471b4489f5158ab488">MAX_GAP</a> = 10</td></tr>
+<tr class="memdesc:ae66cb42fc8cf46471b4489f5158ab488"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of pixels that can be black within a line, while still being detected correctly.  <a href="classGridFinder.html#ae66cb42fc8cf46471b4489f5158ab488">More...</a><br /></td></tr>
+<tr class="separator:ae66cb42fc8cf46471b4489f5158ab488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc673088877fbccd3f29a1db89135c1"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a5bc673088877fbccd3f29a1db89135c1">MAX_LINE_WIDTH</a> = 32</td></tr>
+<tr class="memdesc:a5bc673088877fbccd3f29a1db89135c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Lines" that are wider than this value are ignored, to prevent white blobs (of sunlight, for example) from being detected as random lines.  <a href="classGridFinder.html#a5bc673088877fbccd3f29a1db89135c1">More...</a><br /></td></tr>
+<tr class="separator:a5bc673088877fbccd3f29a1db89135c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae77fc2ece4b93b0b6c68a97997513298"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ae77fc2ece4b93b0b6c68a97997513298">RETRY_JUMP_DISTANCE</a> = <a class="el" href="classGridFinder.html#a5bc673088877fbccd3f29a1db89135c1">MAX_LINE_WIDTH</a></td></tr>
+<tr class="separator:ae77fc2ece4b93b0b6c68a97997513298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75001d71e7ef1313c09f955fceda9a18"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a75001d71e7ef1313c09f955fceda9a18">MINIMUM_START_LINE_WIDTH</a> = 10</td></tr>
+<tr class="memdesc:a75001d71e7ef1313c09f955fceda9a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum width the first line must have.  <a href="classGridFinder.html#a75001d71e7ef1313c09f955fceda9a18">More...</a><br /></td></tr>
+<tr class="separator:a75001d71e7ef1313c09f955fceda9a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6387b8a031f63ccd0aa5b26f18a3a167"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a6387b8a031f63ccd0aa5b26f18a3a167">MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT</a> = 100</td></tr>
+<tr class="separator:a6387b8a031f63ccd0aa5b26f18a3a167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0d8d7680aa31bafa11fec57bd0ab370"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#ad0d8d7680aa31bafa11fec57bd0ab370">MAXIMUM_VERTICAL_START_LINE_WIDTH</a> = 32</td></tr>
+<tr class="separator:ad0d8d7680aa31bafa11fec57bd0ab370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62770d16d5b99e80457f5496baad7680"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#a62770d16d5b99e80457f5496baad7680">FIRST_LINE_INVALID_HORIZONTAL_JUMP</a> = 10</td></tr>
+<tr class="separator:a62770d16d5b99e80457f5496baad7680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcae8b722dc8b7593c0fe67dbcd49b42"><td class="memItemLeft" align="right" valign="top">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGridFinder.html#adcae8b722dc8b7593c0fe67dbcd49b42">MINIMIM_LINE_WEIGHTED_VOTE_COUNT</a> = 80</td></tr>
+<tr class="memdesc:adcae8b722dc8b7593c0fe67dbcd49b42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perpendicular lines have to be long enough to be counted as a real line.  <a href="classGridFinder.html#adcae8b722dc8b7593c0fe67dbcd49b42">More...</a><br /></td></tr>
+<tr class="separator:adcae8b722dc8b7593c0fe67dbcd49b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;size_t W, size_t H&gt;<br />
-class GridFinder&lt; W, H &gt;</h3>
+<div class="textblock"><p>A class for finding the lines and intersections in an image of a grid. </p>
 
-<p>A class for finding the lines and intersections in an image of a grid. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">W</td><td>The width of the image in pixels. </td></tr>
-    <tr><td class="paramname">H</td><td>The height of the image in pixels. </td></tr>
-  </table>
-  </dd>
-</dl>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="aae7eee7825bd21227ead0a043c8255d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae7eee7825bd21227ead0a043c8255d6">&#9670;&nbsp;</a></span>Img_t</h2>
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00026">26</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aedf6227abcdacca5a81838de72736776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedf6227abcdacca5a81838de72736776">&#9670;&nbsp;</a></span>GridFinder() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::<a class="el" href="classGridFinder.html#aae7eee7825bd21227ead0a043c8255d6">Img_t</a> =  <a class="el" href="Matrix_8hpp.html#a0f99629ecd4baa67407ecda9f834708d">TMatrix</a>&lt;uint8_t, H, W&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The type of the image mask. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a268bfb67d2d118590843a688baf4e398"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a268bfb67d2d118590843a688baf4e398">&#9670;&nbsp;</a></span>GridFinder() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::<a class="el" href="classGridFinder.html">GridFinder</a> </td>
+          <td class="memname">GridFinder::GridFinder </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classGridFinder.html#aae7eee7825bd21227ead0a043c8255d6">Img_t</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classMask.html">Mask</a> &amp;&amp;&#160;</td>
           <td class="paramname"><em>mask</em></td><td>)</td>
           <td></td>
         </tr>
@@ -290,21 +263,49 @@ template&lt;size_t W, size_t H&gt; </div>
 
 <p>Constructor from a given mask. </p>
 
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00029">29</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
 </div>
 </div>
-<a id="aa707b822d64e428cfc31726dbdcb8b7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa707b822d64e428cfc31726dbdcb8b7a">&#9670;&nbsp;</a></span>GridFinder() <span class="overload">[2/2]</span></h2>
+<a id="a13b104fa62cde85e9269b60e543a826e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13b104fa62cde85e9269b60e543a826e">&#9670;&nbsp;</a></span>GridFinder() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::<a class="el" href="classGridFinder.html">GridFinder</a> </td>
+          <td class="memname">GridFinder::GridFinder </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMask.html">Mask</a> &amp;&#160;</td>
+          <td class="paramname"><em>mask</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00030">30</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad3502a7dc40efd274cfd5a038765735e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3502a7dc40efd274cfd5a038765735e">&#9670;&nbsp;</a></span>GridFinder() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GridFinder::GridFinder </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -319,57 +320,63 @@ template&lt;size_t W, size_t H&gt; </div>
 
 <p>Default constructor (creates a mask of all zeros). </p>
 
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00032">32</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af5906137a7b42eeeb983781128fcd463"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5906137a7b42eeeb983781128fcd463">&#9670;&nbsp;</a></span>center()</h2>
+<a id="ace2a9cb90cc19a295d0fbe934a79b7e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace2a9cb90cc19a295d0fbe934a79b7e0">&#9670;&nbsp;</a></span>center()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="structPixel.html">Pixel</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::center </td>
+          <td class="memname"><a class="el" href="structPixel.html">Pixel</a> GridFinder::center </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Get the center pixel of the frame. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00468">468</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ace2a9cb90cc19a295d0fbe934a79b7e0_cgraph.svg" width="487" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_af5906137a7b42eeeb983781128fcd463_icgraph.svg" width="362" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ace2a9cb90cc19a295d0fbe934a79b7e0_icgraph.svg" width="832" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a9050aab45d10d2c2d4859af19b4987b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9050aab45d10d2c2d4859af19b4987b4">&#9670;&nbsp;</a></span>checkLine()</h2>
+<a id="ae12ca7921b02b37417d87fc737f0134d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae12ca7921b02b37417d87fc737f0134d">&#9670;&nbsp;</a></span>checkLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">optional&lt;<a class="el" href="structLineResult.html">LineResult</a>&gt; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::checkLine </td>
+          <td class="memname">optional&lt;<a class="el" href="structLineResult.html">LineResult</a>&gt; GridFinder::checkLine </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>pixel</em>, </td>
@@ -409,34 +416,34 @@ template&lt;size_t W, size_t H&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>// TODO </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00820">820</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a9050aab45d10d2c2d4859af19b4987b4_cgraph.svg" width="1302" height="307"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ae12ca7921b02b37417d87fc737f0134d_cgraph.svg" width="1302" height="436"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a9050aab45d10d2c2d4859af19b4987b4_icgraph.svg" width="626" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ae12ca7921b02b37417d87fc737f0134d_icgraph.svg" width="1096" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="ae01e82a5f2ac5832d9b931aa305854b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae01e82a5f2ac5832d9b931aa305854b8">&#9670;&nbsp;</a></span>drawLine() <span class="overload">[1/3]</span></h2>
+<a id="a3b5caee289831bd2207db3ec542be2b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b5caee289831bd2207db3ec542be2b0">&#9670;&nbsp;</a></span>drawLine() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::drawLine </td>
+          <td class="memname"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::drawLine </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classBresenhamLine.html">BresenhamLine</a>&#160;</td>
           <td class="paramname"><em>line</em></td><td>)</td>
@@ -451,28 +458,28 @@ template&lt;size_t W, size_t H&gt; </div>
 </div><div class="memdoc">
 
 <p>Draw a line on the mask. Used only for testing. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00428">428</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ae01e82a5f2ac5832d9b931aa305854b8_cgraph.svg" width="810" height="175"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a3b5caee289831bd2207db3ec542be2b0_cgraph.svg" width="810" height="175"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="ae7296afac0b1184604dcdd5d62bcaebd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7296afac0b1184604dcdd5d62bcaebd">&#9670;&nbsp;</a></span>drawLine() <span class="overload">[2/3]</span></h2>
+<a id="a38cc6124693e5f533e1598587272f92a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38cc6124693e5f533e1598587272f92a">&#9670;&nbsp;</a></span>drawLine() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::drawLine </td>
+          <td class="memname"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::drawLine </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>pixel</em>, </td>
@@ -497,28 +504,28 @@ template&lt;size_t W, size_t H&gt; </div>
 </div><div class="memdoc">
 
 <p>Draw a line on the mask. Used only for testing. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00434">434</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ae7296afac0b1184604dcdd5d62bcaebd_cgraph.svg" width="368" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a38cc6124693e5f533e1598587272f92a_cgraph.svg" width="707" height="100"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a052706dc431a652170442a8995a0e864"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a052706dc431a652170442a8995a0e864">&#9670;&nbsp;</a></span>drawLine() <span class="overload">[3/3]</span></h2>
+<a id="a0cb4d1d344f4830de77ecf1615878656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb4d1d344f4830de77ecf1615878656">&#9670;&nbsp;</a></span>drawLine() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::drawLine </td>
+          <td class="memname"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::drawLine </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>pixel</em>, </td>
@@ -549,28 +556,34 @@ template&lt;size_t W, size_t H&gt; </div>
 </div><div class="memdoc">
 
 <p>Draw a line on the mask. Used only for testing. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00423">423</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a0cb4d1d344f4830de77ecf1615878656_cgraph.svg" width="504" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a052706dc431a652170442a8995a0e864_icgraph.svg" width="368" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a0cb4d1d344f4830de77ecf1615878656_icgraph.svg" width="368" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a20f10e8136febf04c3a1987a35860ef1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20f10e8136febf04c3a1987a35860ef1">&#9670;&nbsp;</a></span>findLineAngle()</h2>
+<a id="a04e1362c95151ac77477844a952af0f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e1362c95151ac77477844a952af0f9">&#9670;&nbsp;</a></span>findLineAngle()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structHoughResult.html">HoughResult</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::findLineAngle </td>
+          <td class="memname"><a class="el" href="structHoughResult.html">HoughResult</a> GridFinder::findLineAngle </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>px</em></td><td>)</td>
@@ -586,62 +599,28 @@ template&lt;size_t W, size_t H&gt; </div>
 
 <p>Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not very accurate, as it doesn't handle the case where multiple angles have the same maximum count. <br  />
  On the other hand, it's a bit faster than the more accurate alternatives, making it a good candidate for finding the first angle estimate, to narrow down the search space. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00074">74</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a20f10e8136febf04c3a1987a35860ef1_cgraph.svg" width="1074" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a04e1362c95151ac77477844a952af0f9_cgraph.svg" width="1074" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a20f10e8136febf04c3a1987a35860ef1_icgraph.svg" width="414" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a04e1362c95151ac77477844a952af0f9_icgraph.svg" width="414" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a1ec79b247bf5e64bb9c456eebf420577"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ec79b247bf5e64bb9c456eebf420577">&#9670;&nbsp;</a></span>findLineAngleAccurate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structHoughResult.html">HoughResult</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::findLineAngleAccurate </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
-          <td class="paramname"><em>px</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a1ec79b247bf5e64bb9c456eebf420577_cgraph.svg" width="1074" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="aa1dc2d7760adcd45c649f0c8a303563e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1dc2d7760adcd45c649f0c8a303563e">&#9670;&nbsp;</a></span>findLineAngleAccurateRange()</h2>
+<a id="afcc1eed83ee0292966c3c80883069634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcc1eed83ee0292966c3c80883069634">&#9670;&nbsp;</a></span>findLineAngleAccurateRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <div class="memtemplate">
 template&lt;uint N&gt; </div>
 <table class="mlabels">
@@ -649,7 +628,7 @@ template&lt;uint N&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structHoughResult.html">HoughResult</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::findLineAngleAccurateRange </td>
+          <td class="memname"><a class="el" href="structHoughResult.html">HoughResult</a> GridFinder::findLineAngleAccurateRange </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>px</em>, </td>
@@ -673,29 +652,29 @@ template&lt;uint N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Similar to <a class="el" href="classGridFinder.html#a20f10e8136febf04c3a1987a35860ef1" title="Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not ve...">findLineAngle</a>, but is more accurate, because it uses the average of the range of angles with the hightest vote counts. It also doesn't scan 360°, but takes 2<code>N</code> samples around a given center angle. </p>
+<p>Similar to <a class="el" href="classGridFinder.html#a04e1362c95151ac77477844a952af0f9" title="Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not ve...">findLineAngle</a>, but is more accurate, because it uses the average of the range of angles with the hightest vote counts. It also doesn't scan 360°, but takes 2<code>N</code> samples around a given center angle. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00123">123</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_aa1dc2d7760adcd45c649f0c8a303563e_cgraph.svg" width="1074" height="231"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_afcc1eed83ee0292966c3c80883069634_cgraph.svg" width="1074" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a79b62fc48a9db94ad0530e76ed2c3306"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79b62fc48a9db94ad0530e76ed2c3306">&#9670;&nbsp;</a></span>findNextLine() <span class="overload">[1/2]</span></h2>
+<a id="a6dec96f8c6ed97647f692fa9f9908595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dec96f8c6ed97647f692fa9f9908595">&#9670;&nbsp;</a></span>findNextLine() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">optional&lt;<a class="el" href="structLineResult.html">LineResult</a>&gt; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::findNextLine </td>
+          <td class="memname">optional&lt;<a class="el" href="structLineResult.html">LineResult</a>&gt; GridFinder::findNextLine </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structLineResult.html">LineResult</a>&#160;</td>
           <td class="paramname"><em>line</em>, </td>
@@ -710,13 +689,13 @@ template&lt;size_t W, size_t H&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
-          <td class="paramname"><em>minDistance</em> = <code>0</code>, </td>
+          <td class="paramname"><em>offset</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
-          <td class="paramname"><em>offset</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>minDistance</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -737,40 +716,40 @@ template&lt;size_t W, size_t H&gt; </div>
     <tr><td class="paramname">line</td><td>The line to follow. </td></tr>
     <tr><td class="paramname">direction</td><td>Should 90° be added or subtracted to get the perpendicular direction? <br  />
 </td></tr>
-    <tr><td class="paramname">minDistance</td><td>The minimum distance between the given center point of the line and the perpendicular line. Essentially moves the starting point of the search along the line for this distance. </td></tr>
-    <tr><td class="paramname">offset</td><td>The offset of the search path, measured perpendicularly from the line. </td></tr>
+    <tr><td class="paramname">offset</td><td>The offset of the search path, measured perpendicularly from the </td></tr>
+    <tr><td class="paramname">minDistance</td><td>The minimum distance between the given center point of the line and the perpendicular line. Essentially moves the starting point of the search along the line for this distance. line. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>// TODO </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00754">754</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a79b62fc48a9db94ad0530e76ed2c3306_cgraph.svg" width="1528" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a6dec96f8c6ed97647f692fa9f9908595_cgraph.svg" width="1528" height="687"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a79b62fc48a9db94ad0530e76ed2c3306_icgraph.svg" width="416" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a6dec96f8c6ed97647f692fa9f9908595_icgraph.svg" width="887" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="ad75180aa82b12c7054e0015adc44a331"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad75180aa82b12c7054e0015adc44a331">&#9670;&nbsp;</a></span>findNextLine() <span class="overload">[2/2]</span></h2>
+<a id="ad1a5448de0df9a84f989f64b55025843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a5448de0df9a84f989f64b55025843">&#9670;&nbsp;</a></span>findNextLine() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">optional&lt;<a class="el" href="structLineResult.html">LineResult</a>&gt; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::findNextLine </td>
+          <td class="memname">optional&lt;<a class="el" href="structLineResult.html">LineResult</a>&gt; GridFinder::findNextLine </td>
           <td>(</td>
           <td class="paramtype">optional&lt; <a class="el" href="structLineResult.html">LineResult</a> &gt;&#160;</td>
           <td class="paramname"><em>line</em>, </td>
@@ -785,13 +764,13 @@ template&lt;size_t W, size_t H&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
-          <td class="paramname"><em>minDistance</em> = <code>0</code>, </td>
+          <td class="paramname"><em>offset</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
-          <td class="paramname"><em>offset</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>minDistance</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -807,31 +786,42 @@ template&lt;size_t W, size_t H&gt; </div>
 </div><div class="memdoc">
 
 <p>Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional <a class="el" href="structLineResult.html">LineResult</a>s. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00800">800</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ad75180aa82b12c7054e0015adc44a331_cgraph.svg" width="1755" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ad1a5448de0df9a84f989f64b55025843_cgraph.svg" width="1755" height="687"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a3104d4fe44099faf5179674ecb55cb52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3104d4fe44099faf5179674ecb55cb52">&#9670;&nbsp;</a></span>findSquare()</h2>
+<a id="a701c0c1e70d01bb8773a89a29f6673a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a701c0c1e70d01bb8773a89a29f6673a0">&#9670;&nbsp;</a></span>findSquare()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structSquare.html">Square</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::findSquare </td>
+          <td class="memname"><a class="el" href="structSquare.html">Square</a> GridFinder::findSquare </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
+          <td class="paramname"><em>initialTries</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>initialTriesFactor</em> = <code>2.0f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -845,29 +835,42 @@ template&lt;size_t W, size_t H&gt; </div>
 <div class="image">
 <img src="square.png" alt=""/>
 </div>
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initialTries</td><td>(default: 1) When finding the first two corners, this many Bresenham lines will run parallel to the initial line in order to prevent a bad result because of a small gap in the line. </td></tr>
+    <tr><td class="paramname">initialTriesFactor</td><td>(default: 2.0) When finding the first two corners, the parallel Bresenham lines be separated by this factor multiplied by the initial line width.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>// TODO </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00854">854</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a3104d4fe44099faf5179674ecb55cb52_cgraph.svg" width="1778" height="716"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a701c0c1e70d01bb8773a89a29f6673a0_cgraph.svg" width="1776" height="976"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a701c0c1e70d01bb8773a89a29f6673a0_icgraph.svg" width="647" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a5c92616aa110bf9172b35573e47d5ac4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c92616aa110bf9172b35573e47d5ac4">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
+<a id="a05d847c0d5e11314641f84afa0f2ca05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d847c0d5e11314641f84afa0f2ca05">&#9670;&nbsp;</a></span>get() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr uint8_t <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::get </td>
+          <td class="memname">uint8_t GridFinder::get </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>px</em></td><td>)</td>
@@ -876,7 +879,7 @@ template&lt;size_t W, size_t H&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -889,34 +892,28 @@ template&lt;size_t W, size_t H&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the given pixel. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00397">397</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a5c92616aa110bf9172b35573e47d5ac4_cgraph.svg" width="128" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a5c92616aa110bf9172b35573e47d5ac4_icgraph.svg" width="128" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a05d847c0d5e11314641f84afa0f2ca05_cgraph.svg" width="424" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a53cfbafaf3cd06baac2a19eeee0cfb73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53cfbafaf3cd06baac2a19eeee0cfb73">&#9670;&nbsp;</a></span>get() <span class="overload">[2/2]</span></h2>
+<a id="afbed8951f70923626b73abdbe05236da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbed8951f70923626b73abdbe05236da">&#9670;&nbsp;</a></span>get() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr uint8_t <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::get </td>
+          <td class="memname">uint8_t GridFinder::get </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -935,7 +932,7 @@ template&lt;size_t W, size_t H&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -949,28 +946,34 @@ template&lt;size_t W, size_t H&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the given pixel. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00389">389</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_afbed8951f70923626b73abdbe05236da_cgraph.svg" width="128" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a53cfbafaf3cd06baac2a19eeee0cfb73_icgraph.svg" width="1303" height="362"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_afbed8951f70923626b73abdbe05236da_icgraph.svg" width="1774" height="323"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a0de487d16731e34827c6dbc08c0eeb1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0de487d16731e34827c6dbc08c0eeb1b">&#9670;&nbsp;</a></span>getFirstLineEstimate() <span class="overload">[1/3]</span></h2>
+<a id="afa715db70f6b6d2a864bc0674fb5abb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa715db70f6b6d2a864bc0674fb5abb6">&#9670;&nbsp;</a></span>getFirstLineEstimate() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">optional&lt;<a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a>&gt; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::getFirstLineEstimate </td>
+          <td class="memname">optional&lt;<a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a>&gt; GridFinder::getFirstLineEstimate </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -983,36 +986,36 @@ template&lt;size_t W, size_t H&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get an estimate of the first line. Searches in multiple columns, starting from the center, taking jumps of <a class="el" href="classGridFinder.html#ae4270fc0b855381f98ac7ef00c81a85e">FIRST_LINE_INVALID_HORIZONTAL_JUMP</a> pixels if no valid line is found in the currenc column. </p>
+<p>Get an estimate of the first line. Searches in multiple columns, starting from the center, taking jumps of <a class="el" href="classGridFinder.html#a62770d16d5b99e80457f5496baad7680">FIRST_LINE_INVALID_HORIZONTAL_JUMP</a> pixels if no valid line is found in the currenc column. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns no result if no valid lines are found across the entire frame. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00678">678</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a0de487d16731e34827c6dbc08c0eeb1b_cgraph.svg" width="426" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_afa715db70f6b6d2a864bc0674fb5abb6_cgraph.svg" width="574" height="170"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a0de487d16731e34827c6dbc08c0eeb1b_icgraph.svg" width="639" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_afa715db70f6b6d2a864bc0674fb5abb6_icgraph.svg" width="1110" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="ac78760540b520bc08f716ef77127f1fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac78760540b520bc08f716ef77127f1fc">&#9670;&nbsp;</a></span>getFirstLineEstimate() <span class="overload">[2/3]</span></h2>
+<a id="aaea3af418ab7124f2b25bcc124fccaca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea3af418ab7124f2b25bcc124fccaca">&#9670;&nbsp;</a></span>getFirstLineEstimate() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">optional&lt;<a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a>&gt; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::getFirstLineEstimate </td>
+          <td class="memname">optional&lt;<a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a>&gt; GridFinder::getFirstLineEstimate </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>point</em></td><td>)</td>
@@ -1033,30 +1036,30 @@ template&lt;size_t W, size_t H&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns no result if no line can be found that has a vote count higher than <a class="el" href="classGridFinder.html#a4cd2205d36a2fb2d60a62878c1f6c028">MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT</a>, or if the line candidate has a width that's less than <a class="el" href="classGridFinder.html#a2fe2f1f6d59b9c0e58465b18c7898e82" title="The minimum width the first line must have.">MINIMUM_START_LINE_WIDTH</a>. <br  />
- Also doesn't return an estimate if <a class="el" href="classGridFinder.html#a504ddc8af3a0cc68b68de387ac1a90ea" title="In exceptional cases, we might want to find the middle of a line in a point that happens to lie at th...">getMiddleWithRetries</a> fails. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns no result if no line can be found that has a vote count higher than <a class="el" href="classGridFinder.html#a6387b8a031f63ccd0aa5b26f18a3a167">MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT</a>, or if the line candidate has a width that's less than <a class="el" href="classGridFinder.html#a75001d71e7ef1313c09f955fceda9a18" title="The minimum width the first line must have.">MINIMUM_START_LINE_WIDTH</a>. <br  />
+ Also doesn't return an estimate if <a class="el" href="classGridFinder.html#af830abf29ca6dc9c01197a38fe16e1e5" title="In exceptional cases, we might want to find the middle of a line in a point that happens to lie at th...">getMiddleWithRetries</a> fails. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00501">501</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ac78760540b520bc08f716ef77127f1fc_cgraph.svg" width="1547" height="408"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_aaea3af418ab7124f2b25bcc124fccaca_cgraph.svg" width="1547" height="495"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a05628935998785212ee5320a7e146f2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05628935998785212ee5320a7e146f2b">&#9670;&nbsp;</a></span>getFirstLineEstimate() <span class="overload">[3/3]</span></h2>
+<a id="ae84004386cbee9606f9a46872cb67be8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84004386cbee9606f9a46872cb67be8">&#9670;&nbsp;</a></span>getFirstLineEstimate() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">optional&lt;<a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a>&gt; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::getFirstLineEstimate </td>
+          <td class="memname">optional&lt;<a class="el" href="structFirstLineEstimate.html">FirstLineEstimate</a>&gt; GridFinder::getFirstLineEstimate </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -1084,29 +1087,29 @@ However, notice how we ended up in a square that's farther away from the center 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><br  />
  Returns no result if the vertical range of white pixels is too long, which would indicate a vertical line. <br  />
- Also returns no result if <a class="el" href="classGridFinder.html#ac78760540b520bc08f716ef77127f1fc" title="Get an estimate of the line through a given pixel. Find an estimate of the slope, then use that to de...">getFirstLineEstimate</a> fails, or if no white pixels are found in the given column. </dd></dl>
+ Also returns no result if <a class="el" href="classGridFinder.html#aaea3af418ab7124f2b25bcc124fccaca" title="Get an estimate of the line through a given pixel. Find an estimate of the slope, then use that to de...">getFirstLineEstimate</a> fails, or if no white pixels are found in the given column. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00575">575</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a05628935998785212ee5320a7e146f2b_cgraph.svg" width="670" height="255"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ae84004386cbee9606f9a46872cb67be8_cgraph.svg" width="818" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a8ac6a50ff32685b1e958cbb0a88ca4dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ac6a50ff32685b1e958cbb0a88ca4dc">&#9670;&nbsp;</a></span>getFirstTwoHalfLines()</h2>
+<a id="a7c330ed1431434a4a3726c341161bf39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c330ed1431434a4a3726c341161bf39">&#9670;&nbsp;</a></span>getFirstTwoHalfLines()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;optional&lt;<a class="el" href="structLineResult.html">LineResult</a>&gt;, 2&gt; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::getFirstTwoHalfLines </td>
+          <td class="memname">std::array&lt;optional&lt;<a class="el" href="structLineResult.html">LineResult</a>&gt;, 2&gt; GridFinder::getFirstTwoHalfLines </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1123,34 +1126,34 @@ template&lt;size_t W, size_t H&gt; </div>
 <p>We use two lines here instead of one, because their slopes don't differ by exactly 180°, because of lense distortion. <br  />
 This makes our intersection a bit more accurate, and it's not too expensive.</p>
 <dl class="section return"><dt>Returns</dt><dd>Returns no result if <code>getFirstLineEstimate</code> fails. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00701">701</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a8ac6a50ff32685b1e958cbb0a88ca4dc_cgraph.svg" width="686" height="138"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a7c330ed1431434a4a3726c341161bf39_cgraph.svg" width="834" height="170"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a8ac6a50ff32685b1e958cbb0a88ca4dc_icgraph.svg" width="420" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a7c330ed1431434a4a3726c341161bf39_icgraph.svg" width="891" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a187e8c44c7f99237645b49dc2c6745c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a187e8c44c7f99237645b49dc2c6745c8">&#9670;&nbsp;</a></span>getMiddle()</h2>
+<a id="abcd46f31e256080b2d5d2aee03c0e258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd46f31e256080b2d5d2aee03c0e258">&#9670;&nbsp;</a></span>getMiddle()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">optional&lt;<a class="el" href="structGetMiddleResult.html">GetMiddleResult</a>&gt; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::getMiddle </td>
+          <td class="memname">optional&lt;<a class="el" href="structGetMiddleResult.html">GetMiddleResult</a>&gt; GridFinder::getMiddle </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>pointOnLine</em>, </td>
@@ -1165,7 +1168,7 @@ template&lt;size_t W, size_t H&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
-          <td class="paramname"><em>maxLineGap</em> = <code><a class="el" href="classGridFinder.html#aefccfda1ff7d039edab855b6f7eafd54">MAX_GAP</a></code>&#160;</td>
+          <td class="paramname"><em>maxLineGap</em> = <code><a class="el" href="classGridFinder.html#ae66cb42fc8cf46471b4489f5158ab488">MAX_GAP</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1190,34 +1193,34 @@ template&lt;size_t W, size_t H&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>// TODO </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00304">304</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a187e8c44c7f99237645b49dc2c6745c8_cgraph.svg" width="1066" height="307"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_abcd46f31e256080b2d5d2aee03c0e258_cgraph.svg" width="1066" height="436"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a187e8c44c7f99237645b49dc2c6745c8_icgraph.svg" width="863" height="130"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_abcd46f31e256080b2d5d2aee03c0e258_icgraph.svg" width="1334" height="130"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a504ddc8af3a0cc68b68de387ac1a90ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a504ddc8af3a0cc68b68de387ac1a90ea">&#9670;&nbsp;</a></span>getMiddleWithRetries()</h2>
+<a id="af830abf29ca6dc9c01197a38fe16e1e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af830abf29ca6dc9c01197a38fe16e1e5">&#9670;&nbsp;</a></span>getMiddleWithRetries()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">optional&lt;<a class="el" href="structGetMiddleResult.html">GetMiddleResult</a>&gt; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::getMiddleWithRetries </td>
+          <td class="memname">optional&lt;<a class="el" href="structGetMiddleResult.html">GetMiddleResult</a>&gt; GridFinder::getMiddleWithRetries </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>start</em>, </td>
@@ -1250,34 +1253,34 @@ template&lt;size_t W, size_t H&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>// TODO </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00365">365</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a504ddc8af3a0cc68b68de387ac1a90ea_cgraph.svg" width="1304" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_af830abf29ca6dc9c01197a38fe16e1e5_cgraph.svg" width="1304" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a504ddc8af3a0cc68b68de387ac1a90ea_icgraph.svg" width="420" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_af830abf29ca6dc9c01197a38fe16e1e5_icgraph.svg" width="420" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a83b31c2192a137e56e91d13661f1c658"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83b31c2192a137e56e91d13661f1c658">&#9670;&nbsp;</a></span>getWidthAtPointOnLine()</h2>
+<a id="ab5c436911deb269a22a8d5525271fa4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c436911deb269a22a8d5525271fa4e">&#9670;&nbsp;</a></span>getWidthAtPointOnLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::getWidthAtPointOnLine </td>
+          <td class="memname"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::getWidthAtPointOnLine </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>pixel</em>, </td>
@@ -1292,7 +1295,7 @@ template&lt;size_t W, size_t H&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a>&#160;</td>
-          <td class="paramname"><em>maxLineGap</em> = <code><a class="el" href="classGridFinder.html#aefccfda1ff7d039edab855b6f7eafd54">MAX_GAP</a></code>, </td>
+          <td class="paramname"><em>maxLineGap</em> = <code><a class="el" href="classGridFinder.html#ae66cb42fc8cf46471b4489f5158ab488">MAX_GAP</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1316,7 +1319,7 @@ template&lt;size_t W, size_t H&gt; </div>
 <p>Get the width of the line at a given point. </p>
 <p>Start at the given pixel, and move in the given direction for <code>maxLineGap</code> pixels, in each pixel, move in the perpendicular direction until a black pixel is encountered. At this point, the half width of the line from the base line is known. <br  />
 Finally, the maximum of all distances is returned.</p>
-<p>If the width at any point exceeds the <a class="el" href="classGridFinder.html#a28d7a596362603d50b5affe909acdd2b" title="&quot;Lines&quot; that are wider than this value are ignored, to prevent white blobs (of sunlight,...">MAX_LINE_WIDTH</a>, <a class="el" href="classGridFinder.html#a28d7a596362603d50b5affe909acdd2b" title="&quot;Lines&quot; that are wider than this value are ignored, to prevent white blobs (of sunlight,...">MAX_LINE_WIDTH</a> is returned.</p>
+<p>If the width at any point exceeds the <a class="el" href="classGridFinder.html#a5bc673088877fbccd3f29a1db89135c1" title="&quot;Lines&quot; that are wider than this value are ignored, to prevent white blobs (of sunlight,...">MAX_LINE_WIDTH</a>, <a class="el" href="classGridFinder.html#a5bc673088877fbccd3f29a1db89135c1" title="&quot;Lines&quot; that are wider than this value are ignored, to prevent white blobs (of sunlight,...">MAX_LINE_WIDTH</a> is returned.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pixel</td><td>A point on the line. </td></tr>
@@ -1328,34 +1331,75 @@ Finally, the maximum of all distances is returned.</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><br  />
  The maximum half width of the line, over the <code>maxLineGap</code> pixels along the given line. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00260">260</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a83b31c2192a137e56e91d13661f1c658_cgraph.svg" width="858" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ab5c436911deb269a22a8d5525271fa4e_cgraph.svg" width="858" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a83b31c2192a137e56e91d13661f1c658_icgraph.svg" width="1114" height="130"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ab5c436911deb269a22a8d5525271fa4e_icgraph.svg" width="1584" height="130"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="ae562737b4e1d28a7888aedb53449e0e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae562737b4e1d28a7888aedb53449e0e7">&#9670;&nbsp;</a></span>hough()</h2>
+<a id="affd9ae441c8d86b1856a9ef31190e9ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affd9ae441c8d86b1856a9ef31190e9ab">&#9670;&nbsp;</a></span>height()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structHoughResult.html">HoughResult</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::hough </td>
+          <td class="memname"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the height of the frame. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00465">465</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_affd9ae441c8d86b1856a9ef31190e9ab_cgraph.svg" width="302" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_affd9ae441c8d86b1856a9ef31190e9ab_icgraph.svg" width="1794" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ace2c24a54244e7e92618d3fe7ec62fdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace2c24a54244e7e92618d3fe7ec62fdc">&#9670;&nbsp;</a></span>hough()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structHoughResult.html">HoughResult</a> GridFinder::hough </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>px</em>, </td>
@@ -1379,7 +1423,7 @@ template&lt;size_t W, size_t H&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Starting from the given pixel, move in the direction of the given angle, and count the number of white pixels, weighing them more as the distance increases. When more than <a class="el" href="classGridFinder.html#aec832be8ddb869f875e3e440e84625e5">HOUGH_MAX_GAP</a> consecutive black pixels are encountered, stop looking any farther. </p>
+<p>Starting from the given pixel, move in the direction of the given angle, and count the number of white pixels, weighing them more as the distance increases. When more than <a class="el" href="classGridFinder.html#acca475189fa9ea36e12451a88d0e4915">HOUGH_MAX_GAP</a> consecutive black pixels are encountered, stop looking any farther. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">px</td><td>The starting point. </td></tr>
@@ -1387,34 +1431,34 @@ template&lt;size_t W, size_t H&gt; </div>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00051">51</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ae562737b4e1d28a7888aedb53449e0e7_cgraph.svg" width="791" height="180"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ace2c24a54244e7e92618d3fe7ec62fdc_cgraph.svg" width="791" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ae562737b4e1d28a7888aedb53449e0e7_icgraph.svg" width="598" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ace2c24a54244e7e92618d3fe7ec62fdc_icgraph.svg" width="598" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a5657aed220771995d8fd1b9e3779b226"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5657aed220771995d8fd1b9e3779b226">&#9670;&nbsp;</a></span>intersect()</h2>
+<a id="ac7202be6727634054a169022b5ce3e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7202be6727634054a169022b5ce3e01">&#9670;&nbsp;</a></span>intersect()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="structPoint.html">Point</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::intersect </td>
+          <td class="memname">static <a class="el" href="structPoint.html">Point</a> GridFinder::intersect </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structLineResult.html">LineResult</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -1439,34 +1483,34 @@ template&lt;size_t W, size_t H&gt; </div>
 </div><div class="memdoc">
 
 <p>Get the point of intersection of two lines. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00471">471</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a5657aed220771995d8fd1b9e3779b226_cgraph.svg" width="431" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ac7202be6727634054a169022b5ce3e01_cgraph.svg" width="431" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a5657aed220771995d8fd1b9e3779b226_icgraph.svg" width="378" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_ac7202be6727634054a169022b5ce3e01_icgraph.svg" width="848" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a9b31ec7807efc6e1fde49f5a56c0d0fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b31ec7807efc6e1fde49f5a56c0d0fa">&#9670;&nbsp;</a></span>move()</h2>
+<a id="af8bdc28d95e295618c2f345f2d7eb758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8bdc28d95e295618c2f345f2d7eb758">&#9670;&nbsp;</a></span>move()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structPixel.html">Pixel</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::move </td>
+          <td class="memname"><a class="el" href="structPixel.html">Pixel</a> GridFinder::move </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>start</em>, </td>
@@ -1506,34 +1550,34 @@ template&lt;size_t W, size_t H&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The pixel after the move. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00454">454</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a9b31ec7807efc6e1fde49f5a56c0d0fa_cgraph.svg" width="788" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_af8bdc28d95e295618c2f345f2d7eb758_cgraph.svg" width="788" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a9b31ec7807efc6e1fde49f5a56c0d0fa_icgraph.svg" width="1044" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_af8bdc28d95e295618c2f345f2d7eb758_icgraph.svg" width="1515" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="aa786429bfa49bf25e792eeeb8795e081"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa786429bfa49bf25e792eeeb8795e081">&#9670;&nbsp;</a></span>print()</h2>
+<a id="a671392ebb7c1324bd9a4e8d321475619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a671392ebb7c1324bd9a4e8d321475619">&#9670;&nbsp;</a></span>print()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::print </td>
+          <td class="memname">std::ostream&amp; GridFinder::print </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em></td><td>)</td>
@@ -1548,58 +1592,28 @@ template&lt;size_t W, size_t H&gt; </div>
 </div><div class="memdoc">
 
 <p>Print the mask as "pixels" to the given output stream. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00413">413</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_aa786429bfa49bf25e792eeeb8795e081_cgraph.svg" width="303" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a671392ebb7c1324bd9a4e8d321475619_cgraph.svg" width="476" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a926aed1d675bcd1a308265f233a112dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a926aed1d675bcd1a308265f233a112dd">&#9670;&nbsp;</a></span>printMaskMatrix()</h2>
+<a id="a376419f000b3be1e8db278726a2efbc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a376419f000b3be1e8db278726a2efbc1">&#9670;&nbsp;</a></span>set()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream&amp; <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::printMaskMatrix </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Print the mask as a C++ Matrix to the given output stream. </p>
-
-</div>
-</div>
-<a id="a5fef4e6faa3242e689a3ecb6ef21fb1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fef4e6faa3242e689a3ecb6ef21fb1f">&#9670;&nbsp;</a></span>set()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr void <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::set </td>
+          <td class="memname">void GridFinder::set </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPixel.html">Pixel</a>&#160;</td>
           <td class="paramname"><em>px</em>, </td>
@@ -1618,7 +1632,7 @@ template&lt;size_t W, size_t H&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1631,29 +1645,76 @@ template&lt;size_t W, size_t H&gt; </div>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00406">406</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a376419f000b3be1e8db278726a2efbc1_cgraph.svg" width="422" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a5fef4e6faa3242e689a3ecb6ef21fb1f_icgraph.svg" width="330" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_a376419f000b3be1e8db278726a2efbc1_icgraph.svg" width="330" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aadfce89f171d55f954a19d700b43ff5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadfce89f171d55f954a19d700b43ff5c">&#9670;&nbsp;</a></span>width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the width of the frame. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00463">463</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_aadfce89f171d55f954a19d700b43ff5c_cgraph.svg" width="291" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGridFinder_aadfce89f171d55f954a19d700b43ff5c_icgraph.svg" width="1788" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae4270fc0b855381f98ac7ef00c81a85e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4270fc0b855381f98ac7ef00c81a85e">&#9670;&nbsp;</a></span>FIRST_LINE_INVALID_HORIZONTAL_JUMP</h2>
+<a id="a62770d16d5b99e80457f5496baad7680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62770d16d5b99e80457f5496baad7680">&#9670;&nbsp;</a></span>FIRST_LINE_INVALID_HORIZONTAL_JUMP</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::FIRST_LINE_INVALID_HORIZONTAL_JUMP = 10</td>
+          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::FIRST_LINE_INVALID_HORIZONTAL_JUMP = 10</td>
         </tr>
       </table>
   </td>
@@ -1664,21 +1725,21 @@ template&lt;size_t W, size_t H&gt; </div>
 </div><div class="memdoc">
 <p>If no valid first line is found in a column, don't try the column right next to it, but go a little farther. </p>
 
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00667">667</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
 </div>
 </div>
-<a id="aec832be8ddb869f875e3e440e84625e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec832be8ddb869f875e3e440e84625e5">&#9670;&nbsp;</a></span>HOUGH_MAX_GAP</h2>
+<a id="acca475189fa9ea36e12451a88d0e4915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acca475189fa9ea36e12451a88d0e4915">&#9670;&nbsp;</a></span>HOUGH_MAX_GAP</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::HOUGH_MAX_GAP = 16</td>
+          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::HOUGH_MAX_GAP = 64</td>
         </tr>
       </table>
   </td>
@@ -1689,21 +1750,21 @@ template&lt;size_t W, size_t H&gt; </div>
 </div><div class="memdoc">
 <p>When this many consecutive black pixels are encountered, stop following the line. </p>
 
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00038">38</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
 </div>
 </div>
-<a id="aefccfda1ff7d039edab855b6f7eafd54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefccfda1ff7d039edab855b6f7eafd54">&#9670;&nbsp;</a></span>MAX_GAP</h2>
+<a id="ae66cb42fc8cf46471b4489f5158ab488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66cb42fc8cf46471b4489f5158ab488">&#9670;&nbsp;</a></span>MAX_GAP</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::MAX_GAP = 10</td>
+          <td class="memname">const <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::MAX_GAP = 10</td>
         </tr>
       </table>
   </td>
@@ -1715,21 +1776,21 @@ template&lt;size_t W, size_t H&gt; </div>
 
 <p>The maximum number of pixels that can be black within a line, while still being detected correctly. </p>
 
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00225">225</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
 </div>
 </div>
-<a id="a28d7a596362603d50b5affe909acdd2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28d7a596362603d50b5affe909acdd2b">&#9670;&nbsp;</a></span>MAX_LINE_WIDTH</h2>
+<a id="a5bc673088877fbccd3f29a1db89135c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc673088877fbccd3f29a1db89135c1">&#9670;&nbsp;</a></span>MAX_LINE_WIDTH</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::MAX_LINE_WIDTH = 32</td>
+          <td class="memname">const <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::MAX_LINE_WIDTH = 32</td>
         </tr>
       </table>
   </td>
@@ -1741,21 +1802,21 @@ template&lt;size_t W, size_t H&gt; </div>
 
 <p>"Lines" that are wider than this value are ignored, to prevent white blobs (of sunlight, for example) from being detected as random lines. </p>
 
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00232">232</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
 </div>
 </div>
-<a id="af667c56bec981faf7ff1aec38010d54b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af667c56bec981faf7ff1aec38010d54b">&#9670;&nbsp;</a></span>MAXIMUM_VERTICAL_START_LINE_WIDTH</h2>
+<a id="ad0d8d7680aa31bafa11fec57bd0ab370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0d8d7680aa31bafa11fec57bd0ab370">&#9670;&nbsp;</a></span>MAXIMUM_VERTICAL_START_LINE_WIDTH</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::MAXIMUM_VERTICAL_START_LINE_WIDTH = 32</td>
+          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::MAXIMUM_VERTICAL_START_LINE_WIDTH = 32</td>
         </tr>
       </table>
   </td>
@@ -1766,21 +1827,21 @@ template&lt;size_t W, size_t H&gt; </div>
 </div><div class="memdoc">
 <p>Don't use vertical lines as the first line, as this can result in finding a first square that's not in the center of the frame. </p>
 
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00523">523</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
 </div>
 </div>
-<a id="a4be7329c5a370ef93092c320e5a60c41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4be7329c5a370ef93092c320e5a60c41">&#9670;&nbsp;</a></span>MINIMIM_LINE_WEIGHTED_VOTE_COUNT</h2>
+<a id="adcae8b722dc8b7593c0fe67dbcd49b42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcae8b722dc8b7593c0fe67dbcd49b42">&#9670;&nbsp;</a></span>MINIMIM_LINE_WEIGHTED_VOTE_COUNT</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::MINIMIM_LINE_WEIGHTED_VOTE_COUNT = (W + H) / 10</td>
+          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::MINIMIM_LINE_WEIGHTED_VOTE_COUNT = 80</td>
         </tr>
       </table>
   </td>
@@ -1792,21 +1853,21 @@ template&lt;size_t W, size_t H&gt; </div>
 
 <p>Perpendicular lines have to be long enough to be counted as a real line. </p>
 
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00722">722</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
 </div>
 </div>
-<a id="a4cd2205d36a2fb2d60a62878c1f6c028"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cd2205d36a2fb2d60a62878c1f6c028">&#9670;&nbsp;</a></span>MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT</h2>
+<a id="a6387b8a031f63ccd0aa5b26f18a3a167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6387b8a031f63ccd0aa5b26f18a3a167">&#9670;&nbsp;</a></span>MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT = (W + H) / 10</td>
+          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT = 100</td>
         </tr>
       </table>
   </td>
@@ -1817,21 +1878,21 @@ template&lt;size_t W, size_t H&gt; </div>
 </div><div class="memdoc">
 <p>The minimum number of Hough votes the first line must have. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structHoughResult.html#aae89038b28077e16123066ee95b0d11c">HoughResult::count</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00485">485</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
 </div>
 </div>
-<a id="a2fe2f1f6d59b9c0e58465b18c7898e82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fe2f1f6d59b9c0e58465b18c7898e82">&#9670;&nbsp;</a></span>MINIMUM_START_LINE_WIDTH</h2>
+<a id="a75001d71e7ef1313c09f955fceda9a18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75001d71e7ef1313c09f955fceda9a18">&#9670;&nbsp;</a></span>MINIMUM_START_LINE_WIDTH</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::MINIMUM_START_LINE_WIDTH = 10</td>
+          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::MINIMUM_START_LINE_WIDTH = 10</td>
         </tr>
       </table>
   </td>
@@ -1843,21 +1904,21 @@ template&lt;size_t W, size_t H&gt; </div>
 
 <p>The minimum width the first line must have. </p>
 
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00482">482</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
+
 </div>
 </div>
-<a id="a2b976d83dc517faa4d46c2b6c6b79540"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b976d83dc517faa4d46c2b6c6b79540">&#9670;&nbsp;</a></span>RETRY_JUMP_DISTANCE</h2>
+<a id="ae77fc2ece4b93b0b6c68a97997513298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae77fc2ece4b93b0b6c68a97997513298">&#9670;&nbsp;</a></span>RETRY_JUMP_DISTANCE</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;size_t W, size_t H&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> <a class="el" href="classGridFinder.html">GridFinder</a>&lt; W, H &gt;::RETRY_JUMP_DISTANCE = <a class="el" href="classGridFinder.html#a28d7a596362603d50b5affe909acdd2b">MAX_LINE_WIDTH</a></td>
+          <td class="memname">constexpr static <a class="el" href="uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d">uint</a> GridFinder::RETRY_JUMP_DISTANCE = <a class="el" href="classGridFinder.html#a5bc673088877fbccd3f29a1db89135c1">MAX_LINE_WIDTH</a></td>
         </tr>
       </table>
   </td>
@@ -1867,6 +1928,8 @@ template&lt;size_t W, size_t H&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>When we're at an intersection and no width can be determined, how far should we jump along the line before trying again. </p>
+
+<p class="definition">Definition at line <a class="el" href="GridFinder_8hpp_source.html#l00349">349</a> of file <a class="el" href="GridFinder_8hpp_source.html">GridFinder.hpp</a>.</p>
 
 </div>
 </div>

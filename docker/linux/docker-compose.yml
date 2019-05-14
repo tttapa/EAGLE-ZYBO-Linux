@@ -1,0 +1,22 @@
+version: '3.4'
+services:
+  dev-image:
+    image: eagle1/crypto/develop:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # network: host
+      target: linux
+    ports:
+      - "2000:2000"
+      - "9999:9999"
+    privileged: false
+    cap_add: 
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    container_name: crypto-devenv
+    volumes:
+      - "../../:${PWD}/../../"
+    extra_hosts: 
+      - "drone:192.168.3.3"

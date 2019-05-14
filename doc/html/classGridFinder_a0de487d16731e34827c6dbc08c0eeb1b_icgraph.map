@@ -1,6 +1,0 @@
-<map id="GridFinder::getFirstLineEstimate" name="GridFinder::getFirstLineEstimate">
-<area shape="rect" id="node1" title="Get an estimate of the first line. Searches in multiple columns, starting from the center,..." alt="" coords="463,39,633,80"/>
-<area shape="rect" id="node2" href="$classGridFinder.html#a05628935998785212ee5320a7e146f2b" title="Find the vertical range of white pixels closest to the center of the given column,..." alt="" coords="231,5,402,47"/>
-<area shape="rect" id="node3" href="$classGridFinder.html#a8ac6a50ff32685b1e958cbb0a88ca4dc" title="Get the first two lines. These are the two half lines that make up the line closest to the center of ..." alt="" coords="219,71,415,112"/>
-<area shape="rect" id="node4" href="$classGridFinder.html#a3104d4fe44099faf5179674ecb55cb52" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="5,78,171,105"/>
-</map>

@@ -1,6 +1,9 @@
 var dir_afa3d1259580e3936d4bca43dab30921 =
 [
     [ "Angle.hpp", "Angle_8hpp.html", "Angle_8hpp" ],
+    [ "AngleTracker.hpp", "AngleTracker_8hpp.html", [
+      [ "AngleTracker", "classAngleTracker.html", "classAngleTracker" ]
+    ] ],
     [ "Bresenham.hpp", "Bresenham_8hpp.html", [
       [ "BresenhamLine", "classBresenhamLine.html", "classBresenhamLine" ]
     ] ],

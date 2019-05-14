@@ -1,15 +1,18 @@
 <map id="Array::begin" name="Array::begin">
-<area shape="rect" id="node1" title=" " alt="" coords="659,213,759,239"/>
-<area shape="rect" id="node2" href="$structArray.html#a30692f2d1c23322027a90fd0cc2df449" title=" " alt="" coords="457,5,611,47"/>
-<area shape="rect" id="node3" href="$structArray.html#acca20d951f89e064f92c64d357e7bb6f" title=" " alt="" coords="465,71,603,112"/>
-<area shape="rect" id="node4" href="$Array_8hpp.html#ab8a62286cf94935432fb15208c352d31" title=" " alt="" coords="501,137,567,163"/>
-<area shape="rect" id="node5" href="$Array_8hpp.html#a8210ee35a21cf8114e4f40920a6e0abf" title=" " alt="" coords="509,187,559,214"/>
-<area shape="rect" id="node10" href="$ArrayHelpers_8hpp.html#a302eae526b10a18783bc2623ee9fe646" title="Generate an array where the first value is given, and the subsequent values are calculated as the pre..." alt="" coords="473,238,595,265"/>
-<area shape="rect" id="node11" href="$ArrayHelpers_8hpp.html#a021512d0f49f5f3ac08ebac9bb547cfc" title=" " alt="" coords="489,289,579,315"/>
-<area shape="rect" id="node12" href="$MatrixHelpers_8hpp.html#a97dc20f082415c3707e56be3bec40f33" title=" " alt="" coords="483,339,585,366"/>
-<area shape="rect" id="node13" href="$MatrixHelpers_8hpp.html#a0143e59b28ca53207a87f0a2d0873bf4" title=" " alt="" coords="487,390,581,417"/>
-<area shape="rect" id="node6" href="$HouseholderQR_8hpp.html#a16f7547f23439d1eda0fcbde69451ef9" title=" " alt="" coords="288,137,409,163"/>
-<area shape="rect" id="node7" href="$LeastSquares_8hpp.html#a3e86962f655361a684f770b14c9fe1e2" title=" " alt="" coords="96,162,240,189"/>
-<area shape="rect" id="node9" href="$Matrix_8hpp.html#a341f99d67c7fef72e0432138c6d4fc34" title=" " alt="" coords="307,238,391,265"/>
-<area shape="rect" id="node8" href="$LeastSquares_8hpp.html#abc455a395ab6414f5312b56e5b479195" title=" " alt="" coords="5,162,48,189"/>
+<area shape="rect" id="node1" title=" " alt="" coords="692,213,792,239"/>
+<area shape="rect" id="node2" href="$structArray.html#a30692f2d1c23322027a90fd0cc2df449" title=" " alt="" coords="493,5,644,47"/>
+<area shape="rect" id="node3" href="$structArray.html#acca20d951f89e064f92c64d357e7bb6f" title=" " alt="" coords="493,71,644,112"/>
+<area shape="rect" id="node4" href="$Array_8hpp.html#ab8a62286cf94935432fb15208c352d31" title=" " alt="" coords="535,137,602,163"/>
+<area shape="rect" id="node6" href="$Array_8hpp.html#a8210ee35a21cf8114e4f40920a6e0abf" title=" " alt="" coords="543,187,594,214"/>
+<area shape="rect" id="node13" href="$ArrayHelpers_8hpp.html#a302eae526b10a18783bc2623ee9fe646" title="Generate an array where the first value is given, and the subsequent values are calculated as the pre..." alt="" coords="507,238,630,265"/>
+<area shape="rect" id="node14" href="$ArrayHelpers_8hpp.html#a021512d0f49f5f3ac08ebac9bb547cfc" title=" " alt="" coords="524,289,613,315"/>
+<area shape="rect" id="node15" href="$MatrixHelpers_8hpp.html#a97dc20f082415c3707e56be3bec40f33" title=" " alt="" coords="517,339,620,366"/>
+<area shape="rect" id="node16" href="$MatrixHelpers_8hpp.html#a0143e59b28ca53207a87f0a2d0873bf4" title=" " alt="" coords="521,390,616,417"/>
+<area shape="rect" id="node5" href="$structPoint.html#a0eb0afd31cfdda9c8a11d31ef42ad53f" title=" " alt="" coords="295,86,445,113"/>
+<area shape="rect" id="node7" href="$structSquare.html#a12c1f0ee0bd30021a5a7d7344538fef9" title="Get the average angle of the sides of the square ." alt="" coords="303,137,437,163"/>
+<area shape="rect" id="node9" href="$HouseholderQR_8hpp.html#a16f7547f23439d1eda0fcbde69451ef9" title=" " alt="" coords="309,187,431,214"/>
+<area shape="rect" id="node10" href="$LeastSquares_8hpp.html#a3e86962f655361a684f770b14c9fe1e2" title=" " alt="" coords="99,213,243,239"/>
+<area shape="rect" id="node12" href="$Matrix_8hpp.html#a341f99d67c7fef72e0432138c6d4fc34" title=" " alt="" coords="328,289,412,315"/>
+<area shape="rect" id="node8" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="96,137,247,163"/>
+<area shape="rect" id="node11" href="$LeastSquares_8hpp.html#abc455a395ab6414f5312b56e5b479195" title=" " alt="" coords="5,213,48,239"/>
 </map>

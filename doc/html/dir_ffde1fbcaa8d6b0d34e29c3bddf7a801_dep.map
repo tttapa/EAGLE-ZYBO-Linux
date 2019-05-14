@@ -1,7 +1,11 @@
 <map id="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/logger" name="/home/pieter/GitHub/EAGLE&#45;ZYBO&#45;Linux/src/logger">
-<area shape="rect" id="node2" href="dir_926e49a18849677eb7f09bd6efbd9682.html" title="include" alt="" coords="37,159,109,207"/>
-<area shape="rect" id="node3" href="dir_ab9c8554d9140fd8e600a51e9a012cdd.html" title="src" alt="" coords="37,63,109,111"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000017_000016.html" title="1" alt="" coords="77,133,86,147"/>
-<area shape="rect" id="clust2" href="dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html" alt="" coords="27,52,216,217"/>
-<area shape="rect" id="clust1" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="16,16,227,228"/>
+<area shape="rect" id="node2" href="dir_926e49a18849677eb7f09bd6efbd9682.html" title="include" alt="" coords="101,159,173,207"/>
+<area shape="rect" id="node4" href="dir_cc2494ece34082706c88d264c8a52186.html" title="baremetal&#45;comm" alt="" coords="5,255,140,303"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000026_000001.html" title="1" alt="" coords="101,236,111,251"/>
+<area shape="rect" id="node5" href="dir_d0537398ec3fe72d8d4f5c6709d28acc.html" title="comm" alt="" coords="165,255,237,303"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000026_000006.html" title="1" alt="" coords="177,227,186,242"/>
+<area shape="rect" id="node3" href="dir_ab9c8554d9140fd8e600a51e9a012cdd.html" title="src" alt="" coords="101,63,173,111"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000027_000026.html" title="3" alt="" coords="140,133,150,147"/>
+<area shape="rect" id="clust2" href="dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html" alt="" coords="90,52,279,217"/>
+<area shape="rect" id="clust1" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="79,16,290,228"/>
 </map>

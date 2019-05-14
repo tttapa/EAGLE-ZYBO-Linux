@@ -2,14 +2,22 @@ final PVector red_xy = new PVector(0.0, 1.0);
 final PVector green_xy = new PVector(sin(2.0*PI/3.0), cos(2.0*PI/3.0));
 final PVector blue_xy = new PVector(sin(-2.0*PI/3.0), cos(-2.0*PI/3.0));
 
-void setup() {
-  size(1786, 766);
+enum LightDark {
+  light, 
+    dark,
+};
+
+PGraphics createTriangles(LightDark lightdark) {
   PGraphics pg = createGraphics(width, height);
   pg.beginDraw();
   pg.background(0);
   for (int x = 0; x < width/2; ++x) {
     for (int y = 0; y < height; ++y) {
-      PVector current = new PVector(x-width/4, 255-y);
+      PVector current;
+      if (lightdark == LightDark.dark)
+        current = new PVector(x-width/4, 255-y);
+      else
+        current = new PVector(width/4-x, y-height+255);
       float r = max(current.dot(red_xy), 0);
       float g = max(current.dot(green_xy), 0);
       float b = max(current.dot(blue_xy), 0);
@@ -18,27 +26,164 @@ void setup() {
       b = round(b);
       boolean valid = max(max(r, g), b) <= 255;
       if (valid) {
+        if (lightdark == LightDark.light) {
+          r = 255-r;
+          g = 255-g; 
+          b = 255-b;
+        }
         pg.stroke(color(r, g, b));
         pg.point(x, y);
-        PVector current_color = new PVector(r, g, b);
-        pg.stroke(f(current_color));
-        pg.point(width/2+x, y);
+        pg.stroke(f(r, g, b));
+        pg.point(width/2+(x), (y));
       }
     }
   }
-  pg.stroke(color(255, 255, 255));
-  pg.point(442, 255);
-  pg.point(width/2+442, 255);
+  pg.ellipseMode(CENTER);
+  if (lightdark == LightDark.dark) {
+    pg.stroke(255);
+    pg.fill(255);
+    pg.circle(width/4, 255, 2);
+    pg.circle(3*width/4, 255, 2);
+  } else {
+    pg.stroke(0);
+    pg.fill(0);
+    pg.circle(width/4, height-255, 2);
+    pg.circle(3*width/4, height-255, 2);
+  }
   pg.endDraw();
-  pg.save("../../images/Colors-Mask.png");
-  image(pg, 0, 0);
+  return pg;
 }
 
-color f(PVector col) {
-  final float thres = 6;
-  float v = (col.x / 4 - (col.y + col.z)/2)/2;
-  int c = max(0, min(int(round(8 * v)), 255));
-  return !(v >= thres) ? color(col.x, col.y, col.z) : color(c);
+PGraphics createGradient(float hue) {
+  PGraphics pg = createGraphics(width, height);
+  pg.beginDraw();
+  pg.background(0);
+  for (int x = 0; x < width/2; ++x) {
+    for (int y = 0; y < height; ++y) {
+      colorMode(HSB, 255);
+      color c = color(hue, 2 * 255.0 * x / width, 255.0 * (height - y) / height);
+      colorMode(RGB, 255);
+      float r = red(c);
+      float g = green(c);
+      float b = blue(c);
+      pg.stroke(color(r, g, b));
+      pg.point(x, y);
+      pg.stroke(f(r, g, b));
+      pg.point(width/2+(x), (y));
+    }
+  }
+  pg.endDraw();
+  return pg;
 }
 
-void draw() {}
+PGraphics light;
+PGraphics dark;
+PGraphics gradient;
+
+void setup() {
+  size(1786, 766);      
+  colorMode(RGB, 255);
+  light = createTriangles(LightDark.light);
+  light.save("../../images/Colors-Mask-Light.png");
+  dark = createTriangles(LightDark.dark);
+  dark.save("../../images/Colors-Mask-Dark.png");
+  gradient = createGradient(0);
+  gradient.save("../../images/Colors-Mask-Gradient.png");
+  update();
+}
+
+// Calculates the base-2 logarithm of a number
+float log2(float x) {
+  return (log(x) / log(2));
+}
+
+/*
+final int SATURATION_THRES       = 32;
+ final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
+ final int BRIGHTNESS_THRES       = 32;
+ final int HUE_THRES_DEGREES      = 30;
+ final int HUE_THRES_SHIFT        = round(log2(60 / HUE_THRES_DEGREES));
+ 
+ color f(float r, float g, float b) {
+ int max = int(round(max(max(r, g), b)));
+ int min = int(round(min(min(r, g), b)));
+ int delta = max - min;
+ boolean cond = delta > max >> SATURATION_THRES_SHIFT // saturation
+ && max > BRIGHTNESS_THRES // brightness
+ && r == max && delta >> HUE_THRES_SHIFT > abs(g - b) // hue
+ && ((max / 16) * (max / 32) + delta) / 2 > max / 4;
+ return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
+ } // */
+
+
+/*
+final int SATURATION_THRES       = 32;
+ final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
+ final int BRIGHTNESS_THRES       = 30;
+ final int HUE_THRES_DEGREES      = 30;
+ final int HUE_THRES_SHIFT        = round(log2(60 / HUE_THRES_DEGREES));
+ 
+ color f(float r, float g, float b) {
+ int max = int(round(max(max(r, g), b)));
+ int min = int(round(min(min(r, g), b)));
+ int delta = max - min;
+ boolean cond = delta > max >> SATURATION_THRES_SHIFT // saturation
+ && max > BRIGHTNESS_THRES // brightness
+ && r == max && delta >> HUE_THRES_SHIFT > abs(g - b); // hue
+ return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
+ } // */
+
+/// The minimum saturation of the lines @f$ s \in {2, 4, 8, 16, 32, 64, 128} @f$.
+final int SATURATION_THRES       = 32;
+final int SATURATION_THRES_SHIFT = 8 - round(log2(SATURATION_THRES));
+/// The minimum brightness of the lines @f$ b \in [0, 255] @f$.
+final int BRIGHTNESS_THRES = 60;
+/// The maximum absolute hue angle of the lines in degrees
+/// @f$ h \in {3.75, 7.5, 15, 30, 60} @f$.
+final float HUE_THRES_DEGREES = 30;
+final int HUE_THRES_SHIFT     = round(log2(60 / HUE_THRES_DEGREES));
+
+
+color f(float r, float g, float b) {
+  int max   = round(max(max(r, g), b));
+  int min   = round(min(min(r, g), b));
+  int delta = max - min;
+
+  // Condition for saturation: thres < s = delta / max
+  boolean sat_cond = delta > (max >> SATURATION_THRES_SHIFT);
+  // Condition for value/brightness
+  boolean val_cond = max > BRIGHTNESS_THRES;
+  // Condition for hue
+  boolean hue_cond = (r == max) && (delta >> HUE_THRES_SHIFT > abs(g - b));
+
+  // TODO: comment
+  boolean valsat_cond = ((max >> 4) * (max >> 5) + delta) / 2 > (max >> 2);
+
+  boolean cond = sat_cond && val_cond && hue_cond && valsat_cond;
+  return cond ? color(255 - HUE_THRES_DEGREES * abs(g - b) / delta * 4) : color(r, g, b);
+}
+
+void draw() {
+}
+
+int display = 2;
+
+void mouseClicked() {
+  update();
+}
+void update() {
+  switch(display) {
+  case 0:
+    image(light, 0, 0);
+    break;
+  case 1:
+    image(dark, 0, 0);
+    break;
+  case 2:
+    image(gradient, 0, 0);
+    break;
+  }
+  display++;
+  if (display == 3)
+    display = 0;
+}

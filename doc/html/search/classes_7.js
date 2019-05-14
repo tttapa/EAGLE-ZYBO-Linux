@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['line',['Line',['../classLine.html',1,'']]],
-  ['lineresult',['LineResult',['../structLineResult.html',1,'']]]
+  ['ketje',['Ketje',['../classKetje.html',1,'']]]
 ];

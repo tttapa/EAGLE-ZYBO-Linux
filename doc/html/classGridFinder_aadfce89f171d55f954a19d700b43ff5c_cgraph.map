@@ -1,0 +1,4 @@
+<map id="GridFinder::width" name="GridFinder::width">
+<area shape="rect" id="node1" title="Get the width of the frame." alt="" coords="5,5,137,32"/>
+<area shape="rect" id="node2" href="$classMask.html#a4124a2daa1f7501d4fd80775b6217679" title="Get the width of the mask in pixels." alt="" coords="185,5,285,32"/>
+</map>

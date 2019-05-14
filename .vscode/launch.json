@@ -5,11 +5,15 @@
             "name": "Launch C++ Local Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/hello-world",
+            "program": "${workspaceFolder}/build/bin/location_finder.test",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
+            "environment": [
+                {
+                    "WORKSPACE_ROOT": "${workspaceFolder}"
+                },
+            ],
             "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [
@@ -24,7 +28,7 @@
             "name": "Launch C++ Docker Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/hello-world",
+            "program": "${workspaceFolder}/build/bin/loggerbin",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -43,6 +47,34 @@
                     "ignoreFailures": true
                 }
             ]
+        },
+        {
+            "name": "Launch C++ ZYBO Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build-arm/bin/loggerbin",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "filterStderr": true,
+            "filterStdout": true,
+            "miDebuggerServerAddress": "drone:2000",
+            "MIMode": "gdb",
+            "miDebuggerPath": "arm-linux-gnueabihf-gdb",
+            // "preLaunchTask": "Start GDB Server (ZYBO)",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "sourceFileMap": {
+                "/home/develop/x-tools/arm-cortexa9_neon-linux-gnueabihf/arm-cortexa9_neon-linux-gnueabihf/sysroot/include/opencv4": "${workspaceFolder}/docker-include/opencv4",
+                "/home/develop/x-tools/arm-cortexa9_neon-linux-gnueabihf/arm-cortexa9_neon-linux-gnueabihf/include/c++/": "docker-include/arm/8.3.0/c++"
+            }
         },
         {
             "name": "(Windows) Launch C++ Docker Debug",

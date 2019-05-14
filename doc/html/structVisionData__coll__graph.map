@@ -1,0 +1,4 @@
+<map id="VisionData" name="VisionData">
+<area shape="rect" id="node1" title="The data format sent from Vision to ANC." alt="" coords="22,233,123,311"/>
+<area shape="rect" id="node2" href="$structPosition.html" title="A struct for x and y coordinates of vision/QR positions." alt="" coords="5,5,140,171"/>
+</map>

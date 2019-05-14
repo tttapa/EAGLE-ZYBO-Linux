@@ -1,8 +1,0 @@
-<map id="GridFinder::drawLine" name="GridFinder::drawLine">
-<area shape="rect" id="node1" title="Draw a line on the mask. Used only for testing." alt="" coords="5,52,160,78"/>
-<area shape="rect" id="node2" href="$classBresenhamLine.html#aba0822ee20811d67cd9539ccbe1cd346" title=" " alt="" coords="456,26,641,53"/>
-<area shape="rect" id="node4" href="$classGridFinder.html#a5fef4e6faa3242e689a3ecb6ef21fb1f" title="Set the value of the given pixel." alt="" coords="250,26,366,53"/>
-<area shape="rect" id="node5" href="$classBresenhamLine.html#a10d505e30945f42a5cd0270c315b104f" title=" " alt="" coords="228,77,388,104"/>
-<area shape="rect" id="node6" href="$classBresenhamLine.html#ad93a4adf0535a9b4e649bce5ade1bc5e" title=" " alt="" coords="208,128,408,170"/>
-<area shape="rect" id="node3" href="$structPixel.html#a816d743559e2ac5b35c9c79ac517ad0a" title=" " alt="" coords="689,26,804,53"/>
-</map>

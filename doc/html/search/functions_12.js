@@ -1,4 +1,25 @@
 var searchData=
 [
-  ['vcat',['vcat',['../Matrix_8hpp.html#a6b703886d2a8afc3e2ae96a34f375ee1',1,'vcat(const TColVector&lt; T, R1 &gt; &amp;t, T b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#ae7c262a28886879e90372b013eaba545',1,'vcat(T t, const TColVector&lt; T, R1 &gt; &amp;b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#af15e4f88d4e60baf25c17dcbb90542a3',1,'vcat(const TMatrix&lt; T, R1, C &gt; &amp;t, const TMatrix&lt; T, R2, C &gt; &amp;b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a255a5dd5a07d823cfba97b4987637dee',1,'vcat(const TMatrix&lt; T, R, C &gt; &amp;t, Args... args) -&gt; decltype(vcat(t, vcat(args...))):&#160;Matrix.hpp']]]
+  ['send',['send',['../classUDPSender.html#a2fe3db1c77fb8d4166b180a9abae63e0',1,'UDPSender::send(const uint8_t *data, size_t size)'],['../classUDPSender.html#a455676c7839f546e9027f00b1cd7fc1b',1,'UDPSender::send(const std::vector&lt; uint8_t &gt; &amp;data)'],['../classUDPSender.html#a836a898ede92f231dabe2430198cd3f6',1,'UDPSender::send(const T &amp;data)']]],
+  ['set',['set',['../classGridFinder.html#a376419f000b3be1e8db278726a2efbc1',1,'GridFinder::set()'],['../classMask.html#abd2577692522262d25fcaae6620582e3',1,'Mask::set()']]],
+  ['setqrstatebusy',['setQRStateBusy',['../structQRCommStruct.html#a07e63598d31e1de9a92344d8f88f89f9',1,'QRCommStruct']]],
+  ['setqrstateerror',['setQRStateError',['../structQRCommStruct.html#a3f42a02288c7c26f81f732e3954fb334',1,'QRCommStruct']]],
+  ['setqrstateland',['setQRStateLand',['../structQRCommStruct.html#a525b111a30c2597762caf1faa8e26d85',1,'QRCommStruct']]],
+  ['setqrstateunkown',['setQRStateUnkown',['../structQRCommStruct.html#a665691ffc37e14b2c4e88efae6446ef9',1,'QRCommStruct']]],
+  ['settargetposition',['setTargetPosition',['../structQRCommStruct.html#ac39d369524dee12d352f73186a24d057',1,'QRCommStruct::setTargetPosition(Position target) volatile'],['../structQRCommStruct.html#a8bf578081961b6b39e6bc1ed249e0f48',1,'QRCommStruct::setTargetPosition(float x, float y) volatile']]],
+  ['sharedmemory',['SharedMemory',['../classSharedMemory.html#ad574873e9d896232e5b1cc5aed6fe755',1,'SharedMemory::SharedMemory(uintptr_t address)'],['../classSharedMemory.html#a0ebe2e077c589e0724bb24534699d8c0',1,'SharedMemory::SharedMemory()'],['../classSharedMemory.html#a1cbaca293f636d171f4584c6059ffdf4',1,'SharedMemory::SharedMemory(const SharedMemory &amp;)=delete'],['../classSharedMemory.html#a63d1444a172e28285503ba6ca0baab99',1,'SharedMemory::SharedMemory(SharedMemory &amp;&amp;other)']]],
+  ['sharedmemreferencecounter',['SharedMemReferenceCounter',['../classSharedMemReferenceCounter.html#a35f270660b0429b4d64b43e2d5d26dc4',1,'SharedMemReferenceCounter::SharedMemReferenceCounter()'],['../classSharedMemReferenceCounter.html#a9450bb4712ca5b83a5c4bc2376acbd28',1,'SharedMemReferenceCounter::SharedMemReferenceCounter(const SharedMemReferenceCounter &amp;)=delete'],['../classSharedMemReferenceCounter.html#a59b84048c4182730ad2b83b874aedba1',1,'SharedMemReferenceCounter::SharedMemReferenceCounter(SharedMemReferenceCounter &amp;&amp;)=default']]],
+  ['sharedstruct',['SharedStruct',['../structSharedStruct.html#ad856e33ae7162322d8841e85af5c05de',1,'SharedStruct']]],
+  ['sign',['sign',['../HouseholderQR_8hpp.html#ae91f1ecebb987562f092671e0cb75c40',1,'HouseholderQR.hpp']]],
+  ['sin',['sin',['../classAngle.html#a3700fa4572ca0b7dfacf65cc11108668',1,'Angle::sin() const'],['../classAngle.html#adb9bfe045dd75dad8912cf1e741d2820',1,'Angle::sin(uint angleIndex)'],['../classBresenhamLine.html#a115d1f10a5ce1e0ef945258346b6f035',1,'BresenhamLine::sin()']]],
+  ['sind',['sind',['../structCosSin.html#a427ffa2ad48206dcbb22eb6d08e924d4',1,'CosSin::sind()'],['../classAngle.html#a8e1bd6c3c781fdd6ade99388cb394b5e',1,'Angle::sind()']]],
+  ['sinf',['sinf',['../structCosSin.html#a5bfa62f2c4c84de02d4c65f0cd2512d0',1,'CosSin::sinf()'],['../classAngle.html#a01897132cd9fd91aaddc870e50df157b',1,'Angle::sinf()']]],
+  ['solveleastsquares',['solveLeastSquares',['../LeastSquares_8hpp.html#a3e86962f655361a684f770b14c9fe1e2',1,'LeastSquares.hpp']]],
+  ['split',['split',['../classBitString.html#ad98f9930d53310e7fb9de0aa46dc7f80',1,'BitString']]],
+  ['splitblocks',['splitBlocks',['../classBitString.html#a9f592521af8d36d2d45f46661d86db2b',1,'BitString']]],
+  ['sq',['sq',['../Square_8hpp.html#ace3999c20c4c886c00503d56c69ae204',1,'Square.hpp']]],
+  ['squareerror',['squareError',['../MeanSquareError_8hpp.html#a6d0454c404d0ec6ee8b5201e63812dc6',1,'MeanSquareError.hpp']]],
+  ['start',['start',['../classCryptoPoller.html#a275b05afda129bc41f85016d44330a4f',1,'CryptoPoller']]],
+  ['step',['step',['../classAngle.html#aaff4df6bab7baf6e798036a470e2cf0d',1,'Angle']]],
+  ['sum',['sum',['../Array_8hpp.html#a8210ee35a21cf8114e4f40920a6e0abf',1,'Array.hpp']]]
 ];

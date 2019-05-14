@@ -1,15 +1,17 @@
 var searchData=
 [
-  ['w_5foffset_5fthrust',['W_OFFSET_THRUST',['../wrapper_8c.html#aa62092992b57b85a3ea290d0bf1ee7af',1,'wrapper.c']]],
-  ['w_5foffset_5fx',['W_OFFSET_X',['../wrapper_8c.html#a0fedaab1653246adc5cbc796860ccb2b',1,'wrapper.c']]],
-  ['w_5foffset_5fy',['W_OFFSET_Y',['../wrapper_8c.html#aa21c26c8bafd4725ae2ff57ae1c28fab',1,'wrapper.c']]],
-  ['w_5foffset_5fz',['W_OFFSET_Z',['../wrapper_8c.html#a37e24370422abf5fb304121fc59952ab',1,'wrapper.c']]],
-  ['white',['white',['../namespaceANSIColors.html#a64eb07b702c6ae3733b81279158760c8',1,'ANSIColors']]],
-  ['whiteb',['whiteb',['../namespaceANSIColors.html#a39000c3f5f5fce1148a09cf92afc5f1f',1,'ANSIColors']]],
-  ['width',['width',['../structLineResult.html#aea3f1d76ba64d57500fc2f5fa1f3539b',1,'LineResult::width()'],['../structFirstLineEstimate.html#a372016adb853d8ae6262c348212266cf',1,'FirstLineEstimate::width()'],['../structGetMiddleResult.html#ab33ea10e015cf44a846b2bc1bf359584',1,'GetMiddleResult::width()'],['../namespaceMatrixPrinting.html#a3bff58fefc08aa073683feebf5ef23e1',1,'MatrixPrinting::width()']]],
-  ['wmem',['wmem',['../wrapper_8h.html#a33eaf162ba3d16c401a1f37349d81fe3',1,'wmem(uint64_t offset, uint32_t value):&#160;wrapper.c'],['../wrapper_8c.html#a33eaf162ba3d16c401a1f37349d81fe3',1,'wmem(uint64_t offset, uint32_t value):&#160;wrapper.c']]],
-  ['wmemf',['wmemf',['../wrapper_8h.html#a01d67d247029acc300bbf47226901198',1,'wmemf(uint64_t offset, float value):&#160;wrapper.c'],['../wrapper_8c.html#a01d67d247029acc300bbf47226901198',1,'wmemf(uint64_t offset, float value):&#160;wrapper.c']]],
-  ['wrapper_2ec',['wrapper.c',['../wrapper_8c.html',1,'']]],
-  ['wrapper_2eh',['wrapper.h',['../wrapper_8h.html',1,'']]],
-  ['writer0',['writeR0',['../crypto_8hpp.html#a5f62f9af28571dee937b4e41a47eddcd',1,'writeR0(uint32_t value):&#160;crypto.cpp'],['../crypto_8cpp.html#a5f62f9af28571dee937b4e41a47eddcd',1,'writeR0(uint32_t value):&#160;crypto.cpp']]]
+  ['u',['U',['../structQR.html#a099679dcd460fd4ae34a31be9900f37e',1,'QR']]],
+  ['udpsender',['UDPSender',['../classUDPSender.html',1,'UDPSender'],['../classUDPSender.html#a081c028249bb3bcc9c9da962adfe70a1',1,'UDPSender::UDPSender()']]],
+  ['udpsender_2ecpp',['UDPSender.cpp',['../UDPSender_8cpp.html',1,'']]],
+  ['udpsender_2ehpp',['UDPSender.hpp',['../UDPSender_8hpp.html',1,'']]],
+  ['uint',['uint',['../uint_8hpp.html#a69aa29b598b851b0640aa225a9e5d61d',1,'uint.hpp']]],
+  ['uint_2ehpp',['uint.hpp',['../uint_8hpp.html',1,'']]],
+  ['uninitialized',['UNINITIALIZED',['../BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465add652546039b18970b8dcf2cff824268',1,'BaremetalCommunicationDef.hpp']]],
+  ['unknown',['UNKNOWN',['../classCryptoInstruction.html#a5b416ef517098ce105707f7124834747',1,'CryptoInstruction::UNKNOWN()'],['../classCryptoInstruction.html#a966f06da8010704b61028f241138b0b1a696b031073e74bf2cb98e5ef201d4aa3',1,'CryptoInstruction::UNKNOWN()']]],
+  ['unknown_5ferror_5fexception',['UNKNOWN_ERROR_EXCEPTION',['../classCryptoException.html#ab8222b36d5b9edb38ec6c9d3816ac5a9a2b2ac70c61304caea0312f5481539cd4',1,'CryptoException']]],
+  ['unknown_5ft',['UNKNOWN_t',['../structCryptoInstruction_1_1UNKNOWN__t.html',1,'CryptoInstruction']]],
+  ['unsuccessful_5fdecode_5fexception',['UNSUCCESSFUL_DECODE_EXCEPTION',['../classCryptoException.html#ab8222b36d5b9edb38ec6c9d3816ac5a9a7c42b62d22ca886ce7c5f2b2a3de6a48',1,'CryptoException']]],
+  ['unwrap',['unwrap',['../classKetje.html#ac4e54ac3a43763223844c3e315012362',1,'Ketje']]],
+  ['update',['update',['../classAngleTracker.html#a513f5d6f5b1affe00dcc82a036a3dc61',1,'AngleTracker::update()'],['../classLocationTracker.html#a259a52389d4d7c4a5fe80aca35b789ea',1,'LocationTracker::update()'],['../classLogger.html#ad905325c0f6a7f835e7e54c66e7300b2',1,'Logger::update()'],['../classQRCryptoManager.html#a9a08c5f0afea16d209467e6fc27048ae',1,'QRCryptoManager::update()']]],
+  ['updatelocation',['updateLocation',['../classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522',1,'LocationFinder']]]
 ];

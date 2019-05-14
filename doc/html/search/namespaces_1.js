@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['matrices',['Matrices',['../namespaceMatrices.html',1,'']]],
-  ['matrixprinting',['MatrixPrinting',['../namespaceMatrixPrinting.html',1,'']]]
+  ['base64',['Base64',['../namespaceBase64.html',1,'']]]
 ];

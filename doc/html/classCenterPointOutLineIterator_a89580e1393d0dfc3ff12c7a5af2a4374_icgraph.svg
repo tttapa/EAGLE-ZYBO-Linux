@@ -22,7 +22,7 @@
 <!-- Node10 -->
 <g id="node2" class="node">
 <title>Node10</title>
-<g id="a_node2"><a xlink:href="classGridFinder.html#a05628935998785212ee5320a7e146f2b" target="_top" xlink:title="Find the vertical range of white pixels closest to the center of the given column,...">
+<g id="a_node2"><a xlink:href="classGridFinder.html#ae84004386cbee9606f9a46872cb67be8" target="_top" xlink:title="Find the vertical range of white pixels closest to the center of the given column,...">
 <polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-30.5 128,-30.5 128,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">GridFinder::getFirstLine</text>
 <text text-anchor="middle" x="64" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Estimate</text>

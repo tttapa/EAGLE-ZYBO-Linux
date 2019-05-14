@@ -1,0 +1,18 @@
+<map id="GridFinder::get" name="GridFinder::get">
+<area shape="rect" id="node1" title="Get the value of the given pixel." alt="" coords="1651,148,1768,175"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#ace2c24a54244e7e92618d3fe7ec62fdc" title="Starting from the given pixel, move in the direction of the given angle, and count the number of whit..." alt="" coords="1433,5,1569,32"/>
+<area shape="rect" id="node6" href="$classGridFinder.html#ab5c436911deb269a22a8d5525271fa4e" title="Get the width of the line at a given point." alt="" coords="1400,57,1603,98"/>
+<area shape="rect" id="node7" href="$classGridFinder.html#abcd46f31e256080b2d5d2aee03c0e258" title="Find the middle of a line." alt="" coords="1180,123,1340,149"/>
+<area shape="rect" id="node10" href="$classGridFinder.html#a6dec96f8c6ed97647f692fa9f9908595" title="Follow the given line to find the line perpendicular to it. Move along the line for minDistance pixel..." alt="" coords="703,136,881,163"/>
+<area shape="rect" id="node15" href="$classGridFinder.html#a671392ebb7c1324bd9a4e8d321475619" title="Print the mask as &quot;pixels&quot; to the given output stream." alt="" coords="1438,224,1565,251"/>
+<area shape="rect" id="node16" href="$classGridFinder.html#ae84004386cbee9606f9a46872cb67be8" title="Find the vertical range of white pixels closest to the center of the given column,..." alt="" coords="1416,275,1587,317"/>
+<area shape="rect" id="node3" href="$classGridFinder.html#a04e1362c95151ac77477844a952af0f9" title="Scan 360° around a given pixel, and find the angle with the most white pixels. This version is not ve..." alt="" coords="933,5,1117,32"/>
+<area shape="rect" id="node5" href="$classGridFinder.html#afcc1eed83ee0292966c3c80883069634" title="Similar to findLineAngle, but is more accurate, because it uses the average of the range of angles wi..." alt="" coords="1168,57,1352,98"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#aaea3af418ab7124f2b25bcc124fccaca" title="Get an estimate of the line through a given pixel. Find an estimate of the slope, then use that to de..." alt="" coords="707,45,877,86"/>
+<area shape="rect" id="node8" href="$classGridFinder.html#af830abf29ca6dc9c01197a38fe16e1e5" title="In exceptional cases, we might want to find the middle of a line in a point that happens to lie at th..." alt="" coords="929,57,1120,98"/>
+<area shape="rect" id="node9" href="$classGridFinder.html#ae12ca7921b02b37417d87fc737f0134d" title="Check if there could be a valid line going through the given point, and if so, find and return the ac..." alt="" coords="944,123,1105,149"/>
+<area shape="rect" id="node11" href="$classGridFinder.html#ad1a5448de0df9a84f989f64b55025843" title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults." alt="" coords="476,111,655,137"/>
+<area shape="rect" id="node12" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="483,161,648,188"/>
+<area shape="rect" id="node13" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,136,428,163"/>
+<area shape="rect" id="node14" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,161,156,188"/>
+</map>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['page_5fmask',['PAGE_MASK',['../wrapper_8c.html#ae4aa620ce57c7c3171b916de2c5f09f2',1,'wrapper.c']]],
-  ['page_5fsize',['PAGE_SIZE',['../wrapper_8c.html#a7d467c1d283fdfa1f2081ba1e0d01b6e',1,'wrapper.c']]]
+  ['is_5fbig_5fendian',['IS_BIG_ENDIAN',['../EAGLE-Hash_8a_8headers_2brg__endian_8h.html#a0fdc6fe49d3e76c9ed558321df1decef',1,'IS_BIG_ENDIAN():&#160;brg_endian.h'],['../EAGLE-KetjeJr_8a_8headers_2brg__endian_8h.html#a0fdc6fe49d3e76c9ed558321df1decef',1,'IS_BIG_ENDIAN():&#160;brg_endian.h']]],
+  ['is_5flittle_5fendian',['IS_LITTLE_ENDIAN',['../EAGLE-Hash_8a_8headers_2brg__endian_8h.html#a30f87dfd7349d5165f116b550c35c6ed',1,'IS_LITTLE_ENDIAN():&#160;brg_endian.h'],['../EAGLE-KetjeJr_8a_8headers_2brg__endian_8h.html#a30f87dfd7349d5165f116b550c35c6ed',1,'IS_LITTLE_ENDIAN():&#160;brg_endian.h']]]
 ];
