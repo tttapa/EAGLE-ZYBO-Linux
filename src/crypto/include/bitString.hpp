@@ -1,11 +1,13 @@
 #pragma once
 
 #include <array>
+#include <cryptoInstruction.hpp>
 #include <cstdint>
 #include <iostream>
 #include <vector>
 
 class BitString {
+
   private:
     std::vector<uint8_t> bits;
 
@@ -31,8 +33,9 @@ class BitString {
     void reserve(uint16_t nbBits);
 
     uint32_t toUint32() const;
-
     void toByteArray(unsigned char *buffer, uint16_t bufferLength) const;
+    void toVector(std::vector<uint8_t> &vector) const;
+    CryptoInstruction toCryptoInstruction();
 
     friend bool operator==(const BitString &bitString1,
                            const BitString &bitString2);
