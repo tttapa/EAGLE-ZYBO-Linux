@@ -55,7 +55,7 @@ Mask::hasQrCode(const cv::Mat imgRGB) {
     int thresholdAbs = 180;
     for(int x = centerCoordinateX - 80; x < centerCoordinateX + 80; x = x + 10) {
         for(int y = centerCoordinateY - 80; x < centerCoordinateY + 80; x = x + 10) {
-            Mat ptr = toRGB_ptr(imgRGB);
+            const uint8_t* ptr = toRGB_ptr(imgRGB);
             int red = ptr[y*imgRGB.rows + 3*x];
             int green = ptr[y*imgRGB.rows + 3*x + 1];
             int blue = ptr[y*imgRGB.rows + 3*x + 2];
