@@ -25,9 +25,6 @@ TEST(Crypto, CryptoKeypack) {
         .addSimplePadding(l - 8, keyLength)
         .addMultiRatePadding(200, keypack.getLength());
 
-    std::cout << std::hex << "\n" << keypack << "\n";
-    std::cout << std::dec << keypack << "\n";
-
     ASSERT_EQ(keypack,
               BitString({0x18, 0xfe, 0x97, 0x30, 0xc9, 0x62, 0xfb, 0x94, 0x2d,
                          0xc6, 0x5f, 0xf8, 0x91, 0x2a, 0xc3, 0x5c, 0xf5, 0x8e,
