@@ -9,6 +9,7 @@ void QRCryptoManager::update(const cv::Mat &image) {
     switch (qrComm->getQRState()) {
         // QR reading is requested, start reading
         case QRFSMState::QR_READ_REQUEST: {
+            cout << "Starting QR decoding" << endl;
             willBeDecoded = async(launch::async, QR::decode, image.clone());
             // Use a clone of the image, because it will be updated by
             // vision, and this will confuse the QR decoder.
@@ -18,6 +19,7 @@ void QRCryptoManager::update(const cv::Mat &image) {
         // If the QR reader has been started, check if it's finished yet
         case QRFSMState::QR_READING_BUSY: {
             if (isQRReady()) {
+                cout << "QR decoding done" << endl;
                 string qrDecoded = willBeDecoded.get();
                 decodeCrypto(qrDecoded);
             }
@@ -37,13 +39,20 @@ void QRCryptoManager::decodeCrypto(const std::string &QRdata) {
     }
     vector<uint8_t> base64Decoded = Base64::decode(QRdata);
     try {
-        CryptoInstruction instr = decrypt(base64Decoded);
+        for (uint8_t byte : base64Decoded) {
+            cout << hex << +byte << ' ';
+        }
+        cout << dec << endl;
+        CryptoInstruction instr = decrypt(base64Decoded, SWImplementation{});
         switch (instr.getInstructionType()) {
             case CryptoInstruction::InstructionType::GOTO: {
-                qrComm->setTargetPosition(instr.getXCoordinate(),
-                                          instr.getYCoordinate());
+                Position dest = {(float) instr.getXCoordinate(),
+                                 (float) instr.getYCoordinate()};
+                cout << "Crypto goto " << dest << endl;
+                qrComm->setTargetPosition(dest);
             } break;
             case CryptoInstruction::InstructionType::LAND: {
+                cout << "Crypto land" << endl;
                 qrComm->setQRStateLand();
             } break;
             case CryptoInstruction::InstructionType::UNKNOWN: {
