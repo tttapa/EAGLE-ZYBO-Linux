@@ -72,4 +72,4 @@ def main(outname, foldername, bgr = False):
     video.release()
     out.release()
 
-main('drone-images-sunlight+mask', 'drone-images-sunlight', bgr=True)
+main('drone-images', 'drone-images', bgr=True)

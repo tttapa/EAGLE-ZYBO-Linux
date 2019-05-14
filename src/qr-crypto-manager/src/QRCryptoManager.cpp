@@ -49,28 +49,31 @@ void QRCryptoManager::decodeCrypto(const std::string &QRdata) {
                 Position dest = {(float) instr.getXCoordinate(),
                                  (float) instr.getYCoordinate()};
                 cout << "Crypto goto " << dest << endl;
+                Position currPos = {(float) instr.getCurrentXCoordinate(),
+                                    (float) instr.getCurrentYCoordinate()};
+                cout << "Current position: " << currPos << endl;
+                qrComm->setCurrentPosition(currPos);
                 qrComm->setTargetPosition(dest);
-                qrComm->setCurrentPosition(
-                    {(float) instr.getCurrentXCoordinate(),
-                     (float) instr.getCurrentYCoordinate()});
             } break;
             case CryptoInstruction::InstructionType::LAND: {
                 cout << "Crypto land" << endl;
+                Position currPos = {(float) instr.getCurrentXCoordinate(),
+                                    (float) instr.getCurrentYCoordinate()};
+                cout << "Current position: " << currPos << endl;
+                qrComm->setCurrentPosition(currPos);
                 qrComm->setQRStateLand();
-                qrComm->setCurrentPosition(
-                    {(float) instr.getCurrentXCoordinate(),
-                     (float) instr.getCurrentYCoordinate()});
             } break;
             case CryptoInstruction::InstructionType::UNKNOWN: {
+                Position currPos = {(float) instr.getCurrentXCoordinate(),
+                                    (float) instr.getCurrentYCoordinate()};
+                cout << "Current position: " << currPos << endl;
+                qrComm->setCurrentPosition(currPos);
                 qrComm->setQRStateUnkown();
                 auto &vecdata = instr.getUnknownData();
                 // TODO: print as hex?
                 string data = {vecdata.begin(), vecdata.end()};
                 cerr << ANSIColors::yellowb
                      << "Warning: Unknown crypto data: " << data << endl;
-                qrComm->setCurrentPosition(
-                    {(float) instr.getCurrentXCoordinate(),
-                     (float) instr.getCurrentYCoordinate()});
             } break;
             default: { qrComm->setQRStateError(); }
         }

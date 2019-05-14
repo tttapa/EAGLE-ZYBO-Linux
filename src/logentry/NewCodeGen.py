@@ -21,17 +21,17 @@ def generate_documentation(documentation: Union[str, List[str]],
     return indentation + "/**" + prefix + doc + endl + indentation + " */"
 
 
-def generate_arguments(members: dict):
+def generate_arguments(members: OrderedDict):
     arguments = map(lambda kv: kv[1]['type']+" "+kv[0], members.items())
     return ", ".join(arguments)
 
 
-def generate_initializers(members: dict):
+def generate_initializers(members: OrderedDict):
     initializers = map(lambda kv: kv[0]+"{"+kv[0]+"}", members.items())
     return ", ".join(initializers)
 
 
-def generate_constructors(name: str, struct: dict):
+def generate_constructors(name: str, struct: OrderedDict):
     return """\
     {name}() = default;
     {name}({arguments}) : {initializers} {{}}
@@ -40,7 +40,7 @@ def generate_constructors(name: str, struct: dict):
                initializers=generate_initializers(struct['members']))
 
 
-def generate_member(name: str, member: dict):
+def generate_member(name: str, member: OrderedDict):
     documentation = generate_documentation(member['documentation'], 4)
     return """{documentation}
     {type} {name} = {default};""".format(name=name,
@@ -55,7 +55,7 @@ def generate_members(members: dict):
     return (endl * 2).join(initializers)
 
 
-def generate_struct(name: str, struct: dict):
+def generate_struct(name: str, struct: OrderedDict):
     return """\
 // This is an automatically generated struct, edit it in the code generator
 {documentation}
@@ -69,8 +69,33 @@ struct {name} {{
            members=generate_members(struct['members']))
 
 
-def generate_python_bindings():
+def generate_python_member_binding(classname: str):
     pass
+
+
+def generate_python_member_bindings(name: str, members: OrderedDict):
+    bindings = map(lambda kv: generate_python_member_binding(
+        name, kv), members.items())
+
+
+def generate_python_binding(name: str, members: OrderedDict):
+    return """\
+    pybind11::class_<{name}>(module, "{name}")
+    {member_bindings};\
+""".format(name=name,
+           member_bindings=generate_python_member_bindings(name, members))
+
+
+def generate_python_bindings(structs: OrderedDict):
+    bindings = map(lambda kv: generate_python_binding(*kv), structs.items())
+    return endl.join(bindings)
+
+
+def generate_python_module(data: OrderedDict):
+    return """\
+PYBIND11_MODULE(module, "DroneLogger") {
+{bindings}
+}""".format(bindings=generate_python_bindings(data))
 
 
 with open("Codegen.json", 'r') as f:
