@@ -106,20 +106,20 @@ class SharedMemory {
      */
     SharedMemory(uintptr_t address) {
 #ifdef ZYBO
-        std::cout << __PRETTY_FUNCTION__ << ": " << std::hex << std::showbase
+        /*std::cout << __PRETTY_FUNCTION__ << ": " << std::hex << std::showbase
                   << (uintptr_t) address << std::dec << std::noshowbase
-                  << std::endl;
+                  << std::endl;*/
         // Get the base address of the page, and the offset within the page.
         uintptr_t base   = address & PAGE_MASK;
         uintptr_t offset = address & OFFSET_MASK;
         // Make sure we don't cross the page boundary
         assert(offset + sizeof(T) <= PAGE_SIZE);
 
-        std::cout << std::hex << std::showbase << "address = " << address
+        /*std::cout << std::hex << std::showbase << "address = " << address
                   << ", base = " << base << ", offset = " << offset
                   << ", PAGE_SIZE = " << PAGE_SIZE
                   << ", PAGE_MASK = " << PAGE_MASK << std::dec
-                  << std::noshowbase << std::endl;
+                  << std::noshowbase << std::endl;*/
 
         // Map the hardware address of the shared memory region into the virtual
         // address space of the program.
@@ -146,13 +146,13 @@ class SharedMemory {
         uintptr_t memmapp = reinterpret_cast<uintptr_t>(memmap);
         structdata        = reinterpret_cast<volatile T *>(memmapp + offset);
 
-        std::cout << std::hex << std::showbase << "memmap = " << memmap
+        /*std::cout << std::hex << std::showbase << "memmap = " << memmap
                   << std::endl;
         for (size_t i = 0; i < sizeof(T); ++i) {
             int data = reinterpret_cast<volatile uint8_t *>(structdata)[i];
             std::cout << data << " ";
         }
-        std::cout << std::dec << std::noshowbase << std::endl;
+        std::cout << std::dec << std::noshowbase << std::endl;*/
 #else
         (void) address;
         structdata = std::make_unique<T>();
@@ -171,9 +171,9 @@ class SharedMemory {
      */
     ~SharedMemory() {
         if (memmap != nullptr) {
-            std::cout << __PRETTY_FUNCTION__ << ": " << std::hex
+            /*std::cout << __PRETTY_FUNCTION__ << ": " << std::hex
                       << std::showbase << (uintptr_t) memmap << std::dec
-                      << std::noshowbase << std::endl;
+                      << std::noshowbase << std::endl;*/
             munmap(memmap, PAGE_SIZE);
         }
     }

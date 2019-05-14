@@ -144,7 +144,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
      */
     QRFSMState getQRState() const volatile { return qrState; }
 
-#ifndef BAREMETAL
+//#ifndef BAREMETAL
     /**
      * @brief   Set the new target position, and change the state to NEW_TARGET.
      * 
@@ -215,7 +215,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
         checkInitialized();
         qrState = QRFSMState::LAND;
     }
-#else
+//#else
     /**
      * @brief   Get the new target position, and change the state to IDLE.
      * 
@@ -263,7 +263,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
     }
 
     // TODO: should I check all FSM transitions?
-#endif
+//#endif
 };
 
 /**
