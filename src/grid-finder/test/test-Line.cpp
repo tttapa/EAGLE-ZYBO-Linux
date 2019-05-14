@@ -25,5 +25,12 @@ TEST(Line, pointRelativePosition) {
     EXPECT_TRUE(l2.rightOfPoint(point));
     EXPECT_FALSE(r1.rightOfPoint(point));
     EXPECT_FALSE(r2.rightOfPoint(point));
+}
 
+TEST(Point, distance) {
+    Point p1       = {2.68, 5.28};
+    Point p2       = {10.5, -6.7};
+    float result   = Point::distance(p1, p2);
+    float expected = 14.30639018;
+    ASSERT_FLOAT_EQ(result, expected);
 }

@@ -27,6 +27,7 @@ target_link_libraries(grid_finder
     INTERFACE 
         matrix
         utilities
+        mask
 )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that

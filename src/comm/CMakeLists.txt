@@ -1,6 +1,7 @@
 # Create library target and specify the implementation files to compile.
 add_library(comm 
     src/wrapper.c
+    src/SharedMem.cpp
 )
 
 # Set target include directories 
@@ -18,3 +19,12 @@ target_include_directories(comm
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
+
+target_link_libraries(comm
+    PUBLIC
+        utilities
+)
+
+# Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
+# adds the tests.
+# add_subdirectory(test) 

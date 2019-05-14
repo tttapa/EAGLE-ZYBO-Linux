@@ -639,3 +639,12 @@ void clamp(Matrix<R, C> &m, const Matrix<R, C> &min, const Matrix<R, C> &max) {
         for (size_t c = 0; c < C; ++c)
             m[r][c] = clamp(m[r][c], min[r][c], max[r][c]);
 }
+
+// Float modulo
+template <class T, size_t N, size_t M>
+constexpr TMatrix<T, N, M> operator%(TMatrix<T, N, M> v, float f) {
+    for (auto &row : v)
+        for (auto &el : row)
+            el = std::fmod(el, f);
+    return v;
+}

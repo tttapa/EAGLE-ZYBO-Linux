@@ -1,8 +1,9 @@
 # Add an executable with tests, and specify the source files to compile
 add_executable(grid_finder.test 
-    test-GridFinder.cpp
+    # test-GridFinder.cpp # // TODO
     test-Bresenham.cpp
     test-Angle.cpp
+    test-AngleTracker.cpp
     test-Line.cpp
     test-CenterPointOutLineIterator.cpp
 )
@@ -15,8 +16,3 @@ include(GoogleTest)
 if (NOT CMAKE_CROSSCOMPILING)
 gtest_discover_tests(grid_finder.test)
 endif()
-
-
-### Temp
-add_executable(tmp tmp.cpp)
-target_link_libraries(tmp grid_finder)

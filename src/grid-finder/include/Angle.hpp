@@ -102,8 +102,21 @@ class Angle {
         return normalize(this->angle_index + rhs.angle_index);
     }
 
+    [[nodiscard]] constexpr Angle operator-(Angle rhs) const {
+        return normalize(this->angle_index + resolution() - rhs.angle_index);
+    }
+    [[nodiscard]] constexpr Angle operator-() const { return Angle{0} - *this; }
+
     [[nodiscard]] constexpr Angle operator/(uint divisor) const {
-        return angle_index / divisor;
+        return Angle{angle_index / divisor};
+    }
+
+    [[nodiscard]] constexpr Angle operator*(uint factor) const {
+        return normalize(angle_index * factor);
+    }
+
+    [[nodiscard]] constexpr Angle operator%(Angle rhs) const {
+        return Angle{angle_index % rhs.angle_index};
     }
 
     constexpr bool operator==(Angle rhs) const {
@@ -111,9 +124,13 @@ class Angle {
     }
 
     [[nodiscard]] static constexpr Angle normalize(uint angle_index) {
-        if (angle_index >= Resolution)
+        while (angle_index >= Resolution)
             angle_index -= Resolution;
         return Angle(angle_index);
+    }
+
+    constexpr static Angle distance(Angle a, Angle b) {
+        return Angle{std::min((a - b).getIndex(), (b - a).getIndex())};
     }
 
     constexpr static Angle average(Angle first_angle, Angle last_angle) {
@@ -124,6 +141,8 @@ class Angle {
         uint angle = (first + last) / 2;
         return normalize(angle);
     }
+
+    constexpr static uint indexof(Angle angle) { return angle.getIndex(); }
 
     static constexpr int cos(uint angleIndex) {
         return std::round(std::cos(step() * angleIndex) *

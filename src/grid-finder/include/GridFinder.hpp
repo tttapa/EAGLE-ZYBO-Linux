@@ -6,6 +6,7 @@
 #include <CenterPointOutLineIterator.hpp>
 #include <HelperStructs.hpp>
 #include <Line.hpp>
+#include <Mask.hpp>
 #include <Matrix.hpp>
 #include <algorithm>  // max_element
 #include <cstdint>
@@ -21,24 +22,12 @@ using std::optional;
 /**
  * @brief   A class for finding the lines and intersections in an image of a 
  *          grid.
- * @tparam  W
- *          The width of the image in pixels.
- * @tparam  H
- *          The height of the image in pixels.
  */
-#if 1
-template <size_t W, size_t H>
-#else
-constexpr uint H = 308;
-constexpr uint W = 410;
-#endif
 class GridFinder {
   public:
-    /// The type of the image mask.
-    using Img_t = TMatrix<uint8_t, H, W>;
-
     /// Constructor from a given mask.
-    GridFinder(const Img_t &mask) : mask(mask) {}
+    GridFinder(Mask &&mask) : mask(mask) {}
+    GridFinder(const Mask &mask) : mask(mask) {}
     /// Default constructor (creates a mask of all zeros).
     GridFinder() : mask{} {}
 
@@ -46,7 +35,7 @@ class GridFinder {
 
     /// When this many consecutive black pixels are encountered, stop following
     /// the line.
-    constexpr static uint HOUGH_MAX_GAP = 16;
+    constexpr static uint HOUGH_MAX_GAP = 64;
 
     /**
      * @brief   Starting from the given pixel, move in the direction of the 
@@ -60,7 +49,7 @@ class GridFinder {
      *          The direction to look in.
      */
     HoughResult hough(Pixel px, angle_t angle) const {
-        BresenhamLine line = {px, angle, W, H};
+        BresenhamLine line = {px, angle, width(), height()};
         uint previousWhite = 0;
         while (line.hasNext()) {
             Pixel point = line.next();
@@ -89,7 +78,7 @@ class GridFinder {
         return *std::max_element(houghRes.begin(), houghRes.end());
     }
 
-#if 1 // Not needed anymore
+#if 0  // Not needed anymore
     HoughResult findLineAngleAccurate(Pixel px) {
         std::array<HoughResult, angle_t::resolution()> houghRes;
         for (uint i = 0; i < angle_t::resolution(); ++i)
@@ -208,11 +197,11 @@ class GridFinder {
             std::find_if(max,  //
                          houghRes.end(), predicateLessThanSevenEighths);
 
-        if (first_max == houghRes.rend() || last_max == houghRes.end())
-            cerr << ANSIColors::yellow
-                 << "Warning: angle with maximum count could lie outside of "
-                    "the specified range\r\n"
-                 << ANSIColors::reset;
+        // if (first_max == houghRes.rend() || last_max == houghRes.end())
+        //     cerr << ANSIColors::yellow
+        //          << "Warning: angle with maximum count could lie outside of "
+        //             "the specified range\r\n"
+        //          << ANSIColors::reset;
 
         if (first_max != houghRes.rbegin())
             --first_max;
@@ -221,7 +210,7 @@ class GridFinder {
 
         return {
             angle_t::average(first_max->angle, last_max->angle),
-            first_max->count,  // TODO: should this be max->count?
+            max->count,
         };
     }
 
@@ -271,7 +260,7 @@ class GridFinder {
     uint getWidthAtPointOnLine(Pixel pixel, CosSin angle,
                                uint maxLineGap = MAX_GAP,
                                bool plus90deg  = true) const {
-        BresenhamLine alongLine   = {pixel, angle, W, H};
+        BresenhamLine alongLine   = {pixel, angle, width(), height()};
         CosSin perpendicularAngle = angle.perpendicular(plus90deg);
         uint maxWidthSoFar        = 0;
         // Follow a path along the given line for maxLineGap pixels
@@ -281,7 +270,7 @@ class GridFinder {
             // perpendicular to it, until you find a black pixel, until you
             // fall off the canvas, or until the maximum line width is exceeded.
             BresenhamLine perpendicular = {pixelAlongLine, perpendicularAngle,
-                                           W, H};
+                                           width(), height()};
             while (perpendicular.hasNext() &&
                    perpendicular.getCurrentLength() <= MAX_LINE_WIDTH) {
                 Pixel pixel = perpendicular.next();
@@ -397,7 +386,7 @@ class GridFinder {
      *          The y-coordinate of the pixel to check.
      * @return  The value of the given pixel.
      */
-    inline constexpr uint8_t get(uint x, uint y) const { return mask[y][x]; }
+    inline uint8_t get(uint x, uint y) const { return get({x, y}); }
     /**
      * @brief   Get the value of the given pixel.
      * 
@@ -405,7 +394,7 @@ class GridFinder {
      *          The pixel to check.
      * @return  The value of the given pixel.
      */
-    inline constexpr uint8_t get(Pixel px) const { return get(px.x, px.y); }
+    inline uint8_t get(Pixel px) const { return mask.get(px); }
     /**
      * @brief   Set the value of the given pixel.
      * 
@@ -414,9 +403,7 @@ class GridFinder {
      * @param   value
      *          The value to set the pixel to.
      */
-    inline constexpr void set(Pixel px, uint8_t value = 0xFF) {
-        mask[px.y][px.x] = value;
-    }
+    inline void set(Pixel px, uint8_t value = 0xFF) { mask.set(px, value); }
 
 #pragma endregion
 
@@ -424,32 +411,17 @@ class GridFinder {
 
     /// Print the mask as "pixels" to the given output stream.
     std::ostream &print(std::ostream &os) const {
-        for (uint y = 0; y < H; ++y) {
-            for (uint x = 0; x < W; ++x)
+        for (uint y = 0; y < height(); ++y) {
+            for (uint x = 0; x < width(); ++x)
                 os << (get(x, y) ? "⬤ " : "◯ ");
             os << "\r\n";
         }
         return os;
     }
 
-    /// Print the mask as a C++ Matrix to the given output stream.
-    std::ostream &printMaskMatrix(std::ostream &os) const {
-        os << "TMatrix<uint8_t, " << H << ", " << W << "> mask = {{\r\n";
-        for (const auto &row : mask) {
-            os << "    {";
-            uint ctr = W;
-            for (uint8_t el : row) {
-                os << std::hex << std::showbase << +el
-                   << (--ctr == 0 ? "" : ", ");
-            }
-            os << "},\r\n";
-        }
-        return os << "}};";
-    }
-
     /// Draw a line on the mask. Used only for testing.
     uint drawLine(Pixel pixel, int cos, int sin) {
-        BresenhamLine line = {pixel, cos, sin, W, H};
+        BresenhamLine line = {pixel, cos, sin, width(), height()};
         return drawLine(line);
     }
     /// Draw a line on the mask. Used only for testing.
@@ -460,7 +432,7 @@ class GridFinder {
     }
     /// Draw a line on the mask. Used only for testing.
     uint drawLine(Pixel pixel, CosSin angle) {
-        BresenhamLine line = {pixel, angle, W, H};
+        BresenhamLine line = {pixel, angle, width(), height()};
         return drawLine(line);
     }
 
@@ -480,15 +452,20 @@ class GridFinder {
      * @return  The pixel after the move.
      */
     Pixel move(Pixel start, CosSin angle, uint distance) const {
-        BresenhamLine path = {start, angle, W, H};
+        BresenhamLine path = {start, angle, width(), height()};
         Pixel end;
         while (path.hasNext() && path.getCurrentLength() <= distance)
             end = path.next();
         return end;
     }
 
+    /// Get the width of the frame.
+    uint width() const { return mask.width(); }
+    /// Get the height of the frame.
+    uint height() const { return mask.height(); }
+
     /// Get the center pixel of the frame.
-    constexpr static Pixel center() { return {(W - 1) / 2, (H - 1) / 2}; }
+    Pixel center() const { return {(width() - 1) / 2, (height() - 1) / 2}; }
 
     /// Get the point of intersection of two lines.
     static Point intersect(LineResult a, LineResult b) {
@@ -505,7 +482,7 @@ class GridFinder {
     constexpr static uint MINIMUM_START_LINE_WIDTH = 10;
     /// The minimum number of Hough votes the first line must have.
     /// @see    HoughResult::count
-    constexpr static uint MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT = (W + H) / 10;
+    constexpr static uint MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT = 100;
 
     /**
      * @brief   Get an estimate of the line through a given pixel.
@@ -543,7 +520,7 @@ class GridFinder {
 
     /// Don't use vertical lines as the first line, as this can result in
     /// finding a first square that's not in the center of the frame.
-    constexpr static uint MAXIMUM_VERTICAL_START_LINE_WIDTH = 32;
+    constexpr static uint MAXIMUM_VERTICAL_START_LINE_WIDTH = 32;  // TODO
 
     /**
      * @brief   Find the vertical range of white pixels closest to the center of
@@ -596,20 +573,20 @@ class GridFinder {
      *          white pixels are found in the given column.
      */
     optional<FirstLineEstimate> getFirstLineEstimate(uint x) const {
-        if (x >= W)
+        if (x >= width())
             throw std::out_of_range("x out of range");
 
         // Iterate like this: `... 6  4  2  0  1  3  5 ...` to find the pixels
         // close to the center first.
-        CenterPointOutLineIterator c = {H};
+        CenterPointOutLineIterator c = height();
 
         // If the center pixel is white, look for the first black pixels in both
         // directions
         if (get(x, c.getCenter())) {
-            uint first_white;
-            uint y = c.getCenter();
+            uint y           = c.getCenter();
+            uint first_white = y;
             // Find the lowest white pixel of the line through the center
-            while (y < H) {
+            while (y < height()) {
                 if (get(x, y))
                     first_white = y;
                 else
@@ -617,9 +594,9 @@ class GridFinder {
                 --y;
             }
             // Find the highest white pixel of the line through the center
-            uint last_white;
-            y = c.getCenter();
-            while (y < H) {
+            uint last_white = first_white;
+            y               = c.getCenter();
+            while (y < height()) {
                 if (get(x, y))
                     last_white = y;
                 else
@@ -635,7 +612,7 @@ class GridFinder {
         }
         // If the center pixel is not white, look for the first white pixel in
         // both directions
-        uint first_white = H;
+        uint first_white = height();
         while (c.hasNext()) {
             uint y = c.next();
             if (get(x, y)) {
@@ -643,7 +620,7 @@ class GridFinder {
                 break;
             }
         }
-        if (first_white >= H)
+        if (first_white >= height())
             return std::nullopt;
 
         uint last_white = first_white;
@@ -651,7 +628,7 @@ class GridFinder {
         if (first_white < c.getCenter()) {
             // Look downwards for the last white pixel of that line
             uint y = first_white;
-            while (y < H) {
+            while (y < height()) {
                 if (get(x, y))
                     last_white = y;
                 else
@@ -669,7 +646,7 @@ class GridFinder {
         } else {
             // Look upwards for the last white pixel of that line
             uint y = first_white;
-            while (y < H) {
+            while (y < height()) {
                 if (get(x, y))
                     last_white = y;
                 else
@@ -699,7 +676,8 @@ class GridFinder {
      *          frame.
      */
     optional<FirstLineEstimate> getFirstLineEstimate() const {
-        CenterPointOutLineIterator c = {W / FIRST_LINE_INVALID_HORIZONTAL_JUMP};
+        CenterPointOutLineIterator c =
+            width() / FIRST_LINE_INVALID_HORIZONTAL_JUMP;
         while (c.hasNext()) {
             uint x = c.next() * FIRST_LINE_INVALID_HORIZONTAL_JUMP;
             if (auto fle = getFirstLineEstimate(x); fle.has_value())
@@ -741,7 +719,7 @@ class GridFinder {
 #pragma region Finding the next perpendicular line..............................
 
     /// Perpendicular lines have to be long enough to be counted as a real line.
-    constexpr static uint MINIMIM_LINE_WEIGHTED_VOTE_COUNT = (W + H) / 10;
+    constexpr static uint MINIMIM_LINE_WEIGHTED_VOTE_COUNT = 80;
 
     /**
      * @brief   Follow the given line to find the line perpendicular to it.
@@ -764,18 +742,18 @@ class GridFinder {
      * @param   direction
      *          Should 90° be added or subtracted to get the perpendicular
      *          direction?     
+     * @param   offset
+     *          The offset of the search path, measured perpendicularly from the
      * @param   minDistance 
      *          The minimum distance between the given center point of the line
      *          and the perpendicular line. Essentially moves the starting point
      *          of the search along the line for this distance.
-     * @param   offset
-     *          The offset of the search path, measured perpendicularly from the
      *          line.
      * @return  // TODO
      */
     optional<LineResult> findNextLine(LineResult line, bool direction,
-                                      uint minDistance = 0,
-                                      uint offset      = 0) const {
+                                      uint offset      = 0,
+                                      uint minDistance = 0) const {
         angle_t angle = line.angle;
         angle_t perp  = angle.perpendicular(direction);
 
@@ -786,7 +764,7 @@ class GridFinder {
 
         uint minWidth = line.width / 3;
 
-        BresenhamLine path = {searchStart, angle, W, H};
+        BresenhamLine path = {searchStart, angle, width(), height()};
         Pixel pixel;
         do {
             // Follow the search path
@@ -820,10 +798,10 @@ class GridFinder {
      *          but also supports optional #LineResult%s.
      */
     optional<LineResult> findNextLine(optional<LineResult> line, bool direction,
-                                      uint minDistance = 0,
-                                      uint offset      = 0) const {
+                                      uint offset      = 0,
+                                      uint minDistance = 0) const {
         return line.has_value()
-                   ? findNextLine(*line, direction, minDistance, offset)
+                   ? findNextLine(*line, direction, offset, minDistance)
                    : std::nullopt;
     }
 
@@ -863,11 +841,20 @@ class GridFinder {
      *          grid, as close to the center of the frame as possible.
      * 
      * @image   html square.png
+     * @param   initialTries (default: 1)
+     *          When finding the first two corners, this many Bresenham lines will
+     *          run parallel to the initial line in order to prevent a bad result
+     *          because of a small gap in the line.
+     * @param   initialTriesFactor (default: 2.0)
+     *          When finding the first two corners, the parallel Bresenham lines
+     *          be separated by this factor multiplied by the initial line width.
      * 
      * @return  // TODO 
      */
-    Square findSquare() {
-        Square sq;
+    Square findSquare(uint initialTries = 1, float initialTriesFactor = 2.0f) {
+        assert(initialTries >= 1);
+        assert(initialTries > 0.0f);
+        Square sq = {};
 
         try {
             // Get the line closest to the center of the frame.
@@ -877,25 +864,68 @@ class GridFinder {
             sq.lines[0]     = firstLines[0];
             sq.lines[1]     = firstLines[1];
 
+            // Return empty square if we couldn't find the first line.
+            if (!sq.lines[0].has_value())
+                return sq;
+
             // Determine the direction to turn in (+90° or -90°)
             // Check if the first line lies left or right of the center of the frame
             // and pick the direction that will result in the square containing the
             // center point (if possible)
             bool direction = false;
-            if (sq.lines[0].has_value()) {
-                Line mathLine = {sq.lines[0]->lineCenter, sq.lines[0]->angle};
-                direction     = mathLine.leftOfPoint(center());
+            Line mathLine  = {sq.lines[0]->lineCenter, sq.lines[0]->angle};
+            direction      = mathLine.leftOfPoint(center());
+
+            // Try finding the first two corners multiple times. We'll remember the
+            // ones closest to the initial point, so if there's a hole in the image's
+            // line, one of the Bresenham lines will still likely find the correct
+            // perpendicular line.
+            bool firstCornerFound  = false;
+            bool secondCornerFound = false;
+            float dist1 = 0.0, dist2 = 0.0, currentDistance;
+            uint jump1 = 0, jump2 = 0;
+            Point initialPoint = sq.lines[0]->lineCenter;
+            Point tempPoint;
+            std::optional<LineResult> tempLine;
+            for (uint i = 0; i < initialTries; i++) {
+
+                // Jump initialTriesFactor times the initial line width.
+                uint jump =
+                    i * std::round(initialTriesFactor * sq.lines[0]->width);
+
+                // First corner: remember closest point to the initial point.
+                tempLine = findNextLine(sq.lines[0], direction, jump);
+                if (tempLine.has_value()) {
+                    tempPoint = intersect(*sq.lines[0], *tempLine);
+                    currentDistance =
+                        Point::distanceSquared(initialPoint, tempPoint);
+                    if (!firstCornerFound || currentDistance < dist1) {
+                        firstCornerFound = true;
+                        dist1            = currentDistance;
+                        sq.points[0]     = tempPoint;
+                        sq.lines[2]      = tempLine;
+                        jump1            = jump;
+                    }
+                }
+
+                // Second corner: remember closest point to the initial point.
+                tempLine = findNextLine(sq.lines[1], !direction, jump);
+                if (tempLine.has_value()) {
+                    tempPoint = intersect(*sq.lines[1], *tempLine);
+                    currentDistance =
+                        Point::distanceSquared(initialPoint, tempPoint);
+                    if (!secondCornerFound || currentDistance < dist2) {
+                        secondCornerFound = true;
+                        dist2             = currentDistance;
+                        sq.points[1]      = tempPoint;
+                        sq.lines[3]       = tempLine;
+                        jump2             = jump;
+                    }
+                }
             }
 
-            // Find the two lines perpendicular to the first half lines
-            // TODO: maybe try again once with a different offset if it fails?
-            sq.lines[2] = findNextLine(sq.lines[0], direction);   // second line
-            sq.lines[3] = findNextLine(sq.lines[1], !direction);  // third line
-
             // If we found all lines so far (first two, second, and third)
-            if (sq.lines[2].has_value() && sq.lines[3].has_value()) {
-                sq.points[0] = intersect(*sq.lines[0], *sq.lines[2]);
-                sq.points[1] = intersect(*sq.lines[1], *sq.lines[3]);
+            if (firstCornerFound && secondCornerFound) {
 
                 // Calculate the distance between the first two points
                 // (note that this is not the Euclidian distance, but the
@@ -916,12 +946,12 @@ class GridFinder {
                 // Search for the fourth line
                 while (!sq.lines[4].has_value() && offset < maxOffset) {
                     sq.lines[4] =  // find the fourth line along the second
-                        findNextLine(sq.lines[2], direction, minDistance,
-                                     offset);
+                        findNextLine(sq.lines[2], direction, offset,
+                                     std::max(minDistance - jump1, 0u));
                     if (!sq.lines[4].has_value())  // if not found along second
                         sq.lines[4] =  // find the fourth line along the third
-                            findNextLine(sq.lines[3], !direction, minDistance,
-                                         offset);
+                            findNextLine(sq.lines[3], !direction, offset,
+                                         std::max(minDistance - jump2, 0u));
                     // next time, try again with a different offset
                     offset += offsetIncr;
                 }
@@ -947,5 +977,5 @@ class GridFinder {
 
   private:
     /// The matrix containing the mask values.
-    Img_t mask;
+    Mask mask;
 };

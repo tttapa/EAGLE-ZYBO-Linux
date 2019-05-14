@@ -1,6 +1,8 @@
 # Create library target and specify the implementation files to compile.
 add_library(logger 
-    src/multicast.cpp
+    src/UDPSender.cpp
+    src/Logger.cpp
+    src/ThreadedLogger.cpp
 )
 
 # Set target include directories 
@@ -28,10 +30,12 @@ target_compile_features(logger PUBLIC cxx_std_17)
 #   Libraries that are used in the public header files should be public,
 #   libraries that are only used in the implementation files should be private.
 target_link_libraries(logger 
-    PRIVATE 
+    PUBLIC 
+        logentry
+        baremetal-comm
         comm
 )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that
 # adds the tests.
-add_subdirectory(test) 
+add_subdirectory(test)

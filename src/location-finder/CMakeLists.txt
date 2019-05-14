@@ -17,8 +17,9 @@ target_include_directories(location_finder
     PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    PRIVATE
         ${OpenCV_INCLUDE_DIRS}
+    PRIVATE
+        src
 )
 
 # Tell CMake to compile this library with C++17 features enabled
@@ -30,9 +31,10 @@ target_compile_features(location_finder INTERFACE cxx_std_17)
 #   Libraries that are used in the public header files should be public,
 #   libraries that are only used in the implementation files should be private.
 target_link_libraries(location_finder 
-    PRIVATE 
+    PUBLIC
         grid_finder
-        ${OpenCV_LIBS}
+    PRIVATE 
+        mask
 )
 
 # Run CMake again in the `test` folder, to discover the CMakeLists.txt file that

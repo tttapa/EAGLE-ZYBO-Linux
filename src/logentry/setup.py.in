@@ -1,0 +1,26 @@
+from setuptools import setup, Extension
+
+MAJOR_VERSION = 0
+MINOR_VERSION = 3
+PATCH_VERSION = 0
+
+version = '{}.{}.{}'.format(MAJOR_VERSION, MINOR_VERSION, PATCH_VERSION)
+version_c = '\\"{}\\"'.format(version)
+
+drone_logger_module = Extension(
+    'DroneLogger',
+    define_macros=[('MAJOR_VERSION', MAJOR_VERSION),
+                   ('MINOR_VERSION', MINOR_VERSION),
+                   ('PATCH_VERSION', PATCH_VERSION),
+                   ('MODULE_VERSION', version_c)],
+    include_dirs=['@DRONELOGGER_INCLUDE_DIR@'],
+    libraries=['logentry'],
+    library_dirs=['@CMAKE_LIBRARY_OUTPUT_DIRECTORY@'],
+    sources=['@DRONELOGGER_MODULE_SOURCE@'])
+
+setup(name='DroneLogger',
+      version=version,
+      description='Drone Logger module',
+      author='Pieter Pas',
+      author_email='pieter.pas@outlook.com',
+      ext_modules=[drone_logger_module])

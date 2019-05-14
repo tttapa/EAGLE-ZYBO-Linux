@@ -1,127 +1,175 @@
+#include <GridFinder.hpp>
 #include <LocationFinder.hpp>
+#include <LocationTracker.hpp>
+#include <Mask.hpp>
+#include <PerfTimer.hpp>
 #include <gtest/gtest.h>
+#include <iostream>
+#include <opencv2/opencv.hpp>
+#include <string>
 
-TEST(OpenCV, test) { ASSERT_EQ(test(), 0); }
+using std::string;
 
-#ifdef __SSE2__
-#include <emmintrin.h>
-TEST(SSE2, compareGT) {
-    int8_t values[sizeof(__m128i)] = {
-        63, -64, 63, -64,  //
-        63, -64, 63, -64,  //
-        63, -64, 63, -64,  //
-        63, -64, 63, -64,  //
-    };
-    int8_t zeros[sizeof(__m128i)] = {};
-    __m128i a = _mm_load_si128(reinterpret_cast<__m128i *>(values));
-    __m128i b = _mm_load_si128(reinterpret_cast<__m128i *>(zeros));
-    __m128i c = _mm_cmpgt_epi8(a, b);
+// TEST(OpenCV, test) { ASSERT_EQ(test(), 0); }
 
-    const uint8_t *result = reinterpret_cast<const uint8_t *>(&c);
-    for (size_t i = 0; i < sizeof(__m128i); ++i)
-        std::cout << +result[i] << ' ';
-    std::cout << std::endl;
-}
-#endif
+#ifndef ZYBO
 
-#ifdef __AVX__
-__m128i mullo_epi8(__m128i a, __m128i b) {
-    // unpack and multiply
-    __m128i dst_even = _mm_mullo_epi16(a, b);
-    __m128i dst_odd =
-        _mm_mullo_epi16(_mm_srli_epi16(a, 8), _mm_srli_epi16(b, 8));
-    // repack
-#ifdef __AVX2__
-    // only faster if have access to VPBROADCASTW
-    return _mm_or_si128(_mm_slli_epi16(dst_odd, 8),
-                        _mm_and_si128(dst_even, _mm_set1_epi16(0xFF)));
+TEST(MaskGridFinder, fromImage) {
+#ifdef ZYBO
+    string imagePath = "/media/TEST-LocationFinder_getLocation.bmp";
 #else
-    return _mm_or_si128(_mm_slli_epi16(dst_odd, 8),
-                        _mm_srli_epi16(_mm_slli_epi16(dst_even, 8), 8));
+    string imagePath = string(getenv("WORKSPACE_ROOT")) +
+                       "/test/TEST-LocationFinder_getLocation.bmp";
 #endif
+    std::cout << "Reading image `" << imagePath << "`" << std::endl;
+    cv::Mat imgbgr = cv::imread(imagePath);
+    cv::Mat img;
+    cv::cvtColor(imgbgr, img, cv::COLOR_BGR2RGB);
+    PerfTimer pt;
+    volatile size_t loop = 1;
+    Mask mask            = img;
+    for (size_t i = 0; i < loop - 1; ++i)
+        mask = img;
+    std::cout << "Masking took "
+              << pt.getDuration<std::chrono::microseconds>() / loop << "µs"
+              << std::endl;
+    cv::Mat maskimg = {img.rows, img.cols, CV_8UC1, mask.ptr()};
+    cv::imwrite("mask.bmp", maskimg);
+    GridFinder gf = std::move(mask);
+    pt.reset();
+    Square sq = gf.findSquare();
+    std::cout << "GridFinder took "
+              << pt.getDuration<std::chrono::microseconds>() << "µs"
+              << std::endl;
+    std::cout << sq << std::endl;
+    std::cout << "Square angle = " << sq.getAngle() << std::endl;
+    // TODO: check square result!
 }
 
-TEST(AVX, mult8bit) {
-    int8_t values[sizeof(__m128i)] = {
-        63, -64, 63, -64,  //
-        63, -64, 63, -64,  //
-        63, -64, 63, -64,  //
-        63, -64, 63, -64,  //
-    };
-    int8_t twos[sizeof(__m128i)] = {
-        2, 2, 2, 2,  //
-        2, 2, 2, 2,  //
-        2, 2, 2, 2,  //
-        2, 2, 2, 2,  //
-    };
-    __m128i a = _mm_load_si128(reinterpret_cast<__m128i *>(values));
-    __m128i b = _mm_load_si128(reinterpret_cast<__m128i *>(twos));
-    __m128i c = mullo_epi8(a, b);
+TEST(MaskGridFinder, fromVideo) {
+    string filename = "DroneCam-Spinning";
+#ifdef ZYBO
+    string imagePath = "/media/" + filename + ".mp4";
+#else
+    string imagePath =
+        string(getenv("WORKSPACE_ROOT")) + "/Video/" + filename + ".mp4";
+    // string imagePath =
+    //     string(getenv("WORKSPACE_ROOT")) + "/python/drone-images/image%04d.bmp";
+#endif
+    constexpr size_t GRIDSIZE = 48 * 1.5;
+    constexpr float OFFSET_X  = 2;
+    constexpr float OFFSET_Y  = 2;
 
-    const int8_t *result = reinterpret_cast<const int8_t *>(&c);
-    for (size_t i = 0; i < sizeof(__m128i); ++i)
-        std::cout << +result[i] << '\t';
-    std::cout << std::endl;
-}
+    LocationFinder lf = imagePath;
+    LocationTracker lt;
 
-struct veccolu {
-    uint8_t v[16];
-    operator const __m128i *() const {
-        return reinterpret_cast<const __m128i *>(v);
+    cv::VideoCapture &video = lf.getCapture();
+    int frame_width         = int(video.get(3));
+    int frame_height        = int(video.get(4));
+    double fps              = video.get(cv::CAP_PROP_FPS) / 1.5;
+    cv::VideoWriter out     = {filename + ".out.mp4",
+                           cv::VideoWriter::fourcc('m', 'p', '4', 'v'), fps,
+                           cv::Size{frame_width * 3, frame_height}};
+
+    constexpr float alpha = 0.99;
+    constexpr float beta  = 0.0;
+
+    const auto font = cv::FONT_HERSHEY_SIMPLEX;
+
+    try {
+        cv::Mat locimg;
+        size_t framectr = 0;
+        while (true) {
+            Point locInSquare = lf.updateLocation();
+            Point location    = lt.update(locInSquare);
+            Square square     = lf.getSquare();
+            cv::Mat maskimgrgb;
+            cv::cvtColor(lf.getMaskImage(), maskimgrgb, cv::COLOR_GRAY2BGR);
+            cv::circle(
+                maskimgrgb,
+                cv::Point(lf.getSquareCenter().x, lf.getSquareCenter().y), 5,
+                cv::Scalar(255, 0, 255), -1);
+            for (auto &p : lf.getSquare().points)
+                if (p)
+                    cv::circle(maskimgrgb, cv::Point(p->x, p->y), 5,
+                               cv::Scalar(20, 180, 0), -1);
+            cv::Mat image = lf.getImage();
+            cv::Size size = image.size();
+
+            std::array<cv::Scalar, 5> colors = {{
+                {0, 80, 255},
+                {0, 200, 255},
+                {0, 255, 0},
+                {255, 255, 0},
+                {255, 150, 0},
+            }};
+            size_t c                         = 0;
+            for (auto &line : square.lines) {
+                auto &color = colors[c++];
+                if (line) {
+                    cv::Point p1 = {
+                        int(line->lineCenter.x),
+                        int(line->lineCenter.y),
+                    };
+                    cv::Point p2 = {
+                        int(line->lineCenter.x) +
+                            int(round(lf.getSideLength() * line->angle.cosf())),
+                        int(line->lineCenter.y) +
+                            int(round(lf.getSideLength() * line->angle.sinf())),
+                    };
+                    cv::line(image, p1, p2, color, 3);
+                }
+            }
+            cv::putText(image, std::to_string(lf.getSideLength()),
+                        cv::Point(16, size.height - 16), font, 1,
+                        cv::Scalar(0, 100, 255), 2, cv::LINE_AA);
+
+            cv::Mat outimg;
+            cv::hconcat(image, maskimgrgb, outimg);
+            if (locimg.empty())
+                locimg = {size, lf.getImage().type(), cv::Scalar(0)};
+            else
+                for (int y = 0; y < locimg.rows; y++) {
+                    for (int x = 0; x < locimg.cols; x++) {
+                        for (int c = 0; c < 3; c++) {
+                            locimg.at<cv::Vec3b>(y, x)[c] =
+                                cv::saturate_cast<uint8_t>(
+                                    alpha * (locimg.at<cv::Vec3b>(y, x)[c]) +
+                                    beta);
+                        }
+                    }
+                }
+            cv::Point point = {
+                int(std::round(size.width / 2.0f +
+                               (location.x + OFFSET_X) * GRIDSIZE)),
+                int(std::round(size.height / 2.0f -
+                               (location.y + OFFSET_Y) * GRIDSIZE)),
+            };
+            cv::circle(locimg, point, 3, cv::Scalar(255, 0, 0), -1);
+
+            auto locimgo = locimg.clone();
+            auto color   = cv::Scalar(255, 128, 128);
+            for (size_t y = 0; y < size.height / GRIDSIZE + 1; ++y) {
+                size_t yy = y * GRIDSIZE + (size.height / 2) % GRIDSIZE;
+                cv::line(locimgo, cv::Point(0, yy), cv::Point(size.width, yy),
+                         color, 1);
+            }
+            for (size_t x = 0; x < size.width / GRIDSIZE + 1; ++x) {
+                size_t xx = x * GRIDSIZE + (size.width / 2) % GRIDSIZE;
+                cv::line(locimgo, cv::Point(xx, 0), cv::Point(xx, size.height),
+                         color, 1);
+            }
+            cv::putText(locimgo, std::to_string(++framectr),
+                        cv::Point(16, size.height - 16), font, 1,
+                        cv::Scalar(0, 100, 255), 2, cv::LINE_AA);
+            cv::hconcat(outimg, locimgo, outimg);
+            cv::cvtColor(outimg, outimg, cv::COLOR_RGB2BGR);
+            out.write(outimg);
+            // cout << location << endl;
+        }
+    } catch (std::runtime_error &e) {
+        cerr << ANSIColors::red << e.what() << ANSIColors::reset << endl;
     }
-};
-
-struct veccol {
-    int8_t v[16];
-    operator const __m128i *() const {
-        return reinterpret_cast<const __m128i *>(v);
-    }
-};
-
-TEST(AVX, colortest) {
-    veccolu values = {
-        255, 255, 255,  //
-        255, 0,   0,    //
-        0,   255, 0,    //
-        0,   0,   255,  //
-        255, 20,  20,   //
-        0,
-    };
-    __m128i shiftedvalues = _mm_srli_epi16(*values, 4);
-    shiftedvalues         = _mm_and_si128(shiftedvalues, _mm_set1_epi8(0x0F));
-
-    veccol weights = {
-        1, -2, -3,  //
-        1, -2, -3,  //
-        1, -2, -3,  //
-        1, -2, -3,  //
-        1, -2, -3,  //
-        1,
-    };
-
-    __m128i weighted = mullo_epi8(shiftedvalues, *weights);
-
-    const int8_t *result = reinterpret_cast<const int8_t *>(&weighted);
-    for (size_t i = 0; i < 15; ++i)
-        std::cout << +result[i] << '\t';
-    std::cout << std::endl;
-
-    /*
-
-    veccol weights = {
-        1, -2, -3, //
-        1, -2, -3, //
-        1, -2, -3, //
-        1, -2, -3, //
-        1, -2, -3, //
-        1, //
-    };
-    __m128i c = mullo_epi8(*values, *weights);
-
-    const int8_t *result = reinterpret_cast<const int8_t *>(&c);
-    for (size_t i = 0; i < sizeof(__m128i); ++i)
-        std::cout << +result[i] << '\t';
-    std::cout << std::endl;
-    // */
 }
+
 #endif
