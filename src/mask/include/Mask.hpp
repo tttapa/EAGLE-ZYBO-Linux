@@ -141,6 +141,8 @@ class Mask {
      */
     static const uint8_t *toRGB_ptr(const cv::Mat &imgRGB);
 
+    const bool hasQrCode(const cv::Mat imgRGB);
+
   private:
     std::vector<uint8_t> data;
     uint rows, cols;

@@ -46,3 +46,26 @@ Mask::Mask(const cv::Mat &imgRGB)
 size_t Mask::getPaddedLength(size_t numberOfPixels) {
     return ((15 + numberOfPixels) / 16) * 16;
 }
+
+Mask::hasQrCode(const cv::Mat imgRGB) {
+    int numberOfWhitePixels = 0;
+    int centerCoordinateX = img.cols/2;
+    int centerCoordinateY = img.rows/2;
+    int thresholdDelta = 20;
+    int thresholdAbs = 180;
+    for(int x = centerCoordinateX - 80; x < centerCoordinateX + 80; x = x + 10) {
+        for(int y = centerCoordinateY - 80; x < centerCoordinateY + 80; x = x + 10) {
+            Mat ptr = toRGB_ptr(imgRGB);
+            int red = ptr[y*imgRGB.rows + 3*x];
+            int green = ptr[y*imgRGB.rows + 3*x + 1];
+            int blue = ptr[y*imgRGB.rows + 3*x + 2];
+            bool absThresholdPassed = red > thresholdAbs && green > thresholdAbs && blue > thresholdAbs;
+            bool deltaThresholdsPassed = Math.abs(red-blue) < thresholdDelta && Math.abs(red-green) < thresholdDelta && Math.abs(green-blue) < thresholdDelta;
+            if (absThresholdPassed && deltaThresholdsPassed)
+                numberOfWhitePixels += 1;
+        }
+    }
+    if (numberOfWhitePixels >= 75)
+        return true;
+    return false;
+}
