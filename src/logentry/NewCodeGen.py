@@ -15,7 +15,9 @@ def generate_documentation(documentation: Union[str, List[str]],
     indentation = indent * " "
     prefix = endl + indentation + " * "
     width = linewidth - 3 - indent
-    doc = prefix.join(textwrap.wrap(documentation, width=width))
+    doc = prefix.join(textwrap.wrap(documentation,
+                                    width=width,
+                                    replace_whitespace=True))
     return indentation + "/**" + prefix + doc + endl + indentation + " */"
 
 
@@ -65,6 +67,10 @@ struct {name} {{
            documentation=generate_documentation(struct['documentation']),
            constructors=generate_constructors(name, struct),
            members=generate_members(struct['members']))
+
+
+def generate_python_bindings():
+    pass
 
 
 with open("Codegen.json", 'r') as f:

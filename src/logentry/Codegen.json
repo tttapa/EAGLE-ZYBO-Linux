@@ -4,7 +4,7 @@
             "documentation": [
                 "@todo",
                 "this is a very, very long comment to check if the",
-                "code generator breaks correctly"
+                "code generator breaks long lines correctly"
             ],
             "members": {
                 "q": {
