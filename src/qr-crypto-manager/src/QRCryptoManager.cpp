@@ -43,7 +43,7 @@ void QRCryptoManager::decodeCrypto(const std::string &QRdata) {
             cout << hex << +byte << ' ';
         }
         cout << dec << endl;
-        CryptoInstruction instr = decrypt(base64Decoded, SWImplementation{});
+        CryptoInstruction instr = decrypt(base64Decoded, HWImplementation{});
         switch (instr.getInstructionType()) {
             case CryptoInstruction::InstructionType::GOTO: {
                 Position dest = {(float) instr.getXCoordinate(),
