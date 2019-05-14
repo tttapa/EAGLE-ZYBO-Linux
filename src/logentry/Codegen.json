@@ -2,9 +2,10 @@
     "structs": {
         "AttitudeState": {
             "documentation": [
-                "@todo",
-                "this is a very, very long comment to check if the",
-                "code generator breaks long lines correctly"
+                "Estimate of the state of the drone's attitude, consisting of",
+                "the drone's orientation (1 quaternion q), angular velocity in",
+                "rad/s (3 components: wx, wy, wz) and the angular velocity of",
+                "the torque motors in rad/s (3 components: nx, ny, nz)."
             ],
             "members": {
                 "q": {
@@ -31,9 +32,8 @@
         },
         "AttitudeControlSignal": {
             "documentation": [
-                "@todo",
-                "this is a very, very long comment to check if the",
-                "code generator breaks long lines correctly"
+                "PWM control signals sent to the torque motors",
+                "(3 components: ux, uy, uz)."
             ],
             "members": {
                 "u": {
@@ -50,9 +50,7 @@
         },
         "AttitudeReference": {
             "documentation": [
-                "@todo",
-                "this is a very, very long comment to check if the",
-                "code generator breaks long lines correctly"
+                "Attitude reference to track, consisting of a single quaternion."
             ],
             "members": {
                 "q": {
@@ -69,9 +67,13 @@
         },
         "AltitudeState": {
             "documentation": [
-                "@todo",
-                "this is a very, very long comment to check if the",
-                "code generator breaks long lines correctly"
+                "Estimate of the state of the drone's altitude, consisting three",
+                "components. First is a float representing the marginal angular",
+                "velocity of the 'common motor', relative to the hovering angular",
+                "velocity. This value is measured in rad/s. Next is a float",
+                "representing the height of the drone, measured in meters.",
+                "Finally is a float representing the vertical velocity of the",
+                "drone, measured in m/s."
             ],
             "members": {
                 "nt": {
@@ -98,9 +100,7 @@
         },
         "AltitudeControlSignal": {
             "documentation": [
-                "@todo",
-                "this is a very, very long comment to check if the",
-                "code generator breaks long lines correctly"
+                "Marginal PWM control signal sent to the common motor."
             ],
             "members": {
                 "ut": {
@@ -117,9 +117,7 @@
         },
         "AltitudeReference": {
             "documentation": [
-                "@todo",
-                "this is a very, very long comment to check if the",
-                "code generator breaks long lines correctly"
+                "Altitude reference height to track, consisting of a single float."
             ],
             "members": {
                 "z": {
@@ -136,9 +134,11 @@
         },
         "PositionState": {
             "documentation": [
-                "@todo",
-                "this is a very, very long comment to check if the",
-                "code generator breaks long lines correctly"
+                "Estimate of the state of the drone's position, consisting six",
+                "components. The first two floats are the quaternion components",
+                "q1 and q2. The next two floats represent the drone's global",
+                "position, measured in meters. Finally, two floats represent",
+                "the horizontal velocity of the drone in m/s."
             ],
             "members": {
                 "q": {
@@ -165,9 +165,8 @@
         },
         "PositionControlSignal": {
             "documentation": [
-                "@todo",
-                "this is a very, very long comment to check if the",
-                "code generator breaks long lines correctly"
+                "Reference quaternion components q1 and q2 that will be sent to",
+                "the attitude controller."
             ],
             "members": {
                 "q": {
@@ -184,9 +183,8 @@
         },
         "PositionReference": {
             "documentation": [
-                "@todo",
-                "this is a very, very long comment to check if the",
-                "code generator breaks long lines correctly"
+                "Position (x,y) reference to track, consisting of a position.",
+                "This value is measured in meters."
             ],
             "members": {
                 "p": {
