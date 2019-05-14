@@ -8,14 +8,10 @@
 #include <swImplementation.hpp>
 
 CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
-                             Implementation implementation);
-BitString hash(const BitString &message, Implementation implementation);
-BitString decrypt(const BitString &key, const BitString &nonce,
-                  const BitString &associatedData, const BitString &cipherText,
-                  const BitString &tag, Implementation implementation);
+                             const CryptoImplementation &implementation);
 
 CryptoInstruction decrypt(const std::vector<uint8_t> &qrCode,
-                          Implementation implementation) {
+                          const CryptoImplementation &implementation) {
     for (uint8_t i = 0; i < nbTrials; i++) {
         try {
             return tryDecrypt(qrCode, implementation);
@@ -49,7 +45,7 @@ CryptoInstruction decrypt(const std::vector<uint8_t> &qrCode,
 }
 
 CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
-                             Implementation implementation) {
+                             const CryptoImplementation &implementation) {
     // Read drone master key from the file.
     char key[dmKeySizeInBytes];
     std::ifstream keyReader(dmKeyPath, std::ios::binary);
@@ -73,14 +69,14 @@ CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
     keyMaterial.reserve(160);
     keyMaterial.concatenate(salt);
 
-    BitString wpKey(hash(keyMaterial, implementation));
+    BitString wpKey(implementation.hash(keyMaterial));
 
     uint8_t nbInstructionsLeft = qrCode.at(14);
-    int16_t currentIndex       = 15;
+    uint16_t currentIndex      = 15;
     while (nbInstructionsLeft > 0) {
         nbInstructionsLeft--;
 
-        int8_t nbBytes = qrCode.at(currentIndex);
+        uint8_t nbBytes = qrCode.at(currentIndex);
         currentIndex += 1;
         BitString cipherText(qrCode, currentIndex, currentIndex + nbBytes - 4);
 
@@ -88,59 +84,20 @@ CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
         BitString tag(qrCode, currentIndex, currentIndex + 4);
         currentIndex += 4;
 
-        BitString plainText;
         try {
-            plainText =
-                decrypt(wpKey, nonce, ad, cipherText, tag, implementation);
-        } catch (CryptoException &exception) {
+            return implementation.decrypt(wpKey, nonce, ad, cipherText, tag)
+                .toCryptoInstruction();
+        }
+        // Only try the next instruction if there is no problem
+        // with the FPGA.
+        catch (CryptoException &exception) {
             if (exception.getExceptionType() ==
                 CryptoException::ExceptionType::TIMEOUT_EXCEPTION)
                 throw;
-            else
-                continue;
         }
-
-        return plainText.toCryptoInstruction();
     }
 
+    // Throw an exception if no instruction in the QR code is valid.
     throw CryptoException(
         CryptoException::ExceptionType::UNSUCCESSFUL_DECODE_EXCEPTION);
-}
-
-BitString hash(const BitString &message, Implementation implementation) {
-    switch (implementation) {
-        case Implementation::SWImplementation:
-            return SWImplementation::hash(message);
-            break;
-        case Implementation::HWImplementation:
-            return HWImplementation::hash(message);
-            break;
-        default:
-            throw CryptoException(
-                CryptoException::ExceptionType::UNKNOWN_ERROR_EXCEPTION,
-                "The given implementation is not valid. Choose either software "
-                "or hardware implementation.");
-            break;
-    }
-}
-
-BitString decrypt(const BitString &key, const BitString &nonce,
-                  const BitString &associatedData, const BitString &cipherText,
-                  const BitString &tag, Implementation implementation) {
-    switch (implementation) {
-        case Implementation::SWImplementation:
-            return SWImplementation::decrypt(key, nonce, associatedData,
-                                             cipherText, tag);
-            break;
-        case Implementation::HWImplementation:
-            return HWImplementation::decrypt(key, nonce, associatedData,
-                                             cipherText, tag);
-            break;
-        default:
-            throw CryptoException(
-                CryptoException::ExceptionType::UNKNOWN_ERROR_EXCEPTION,
-                "The given implementation is not valid. Choose either software "
-                "or hardware implementation.");
-            break;
-    }
 }

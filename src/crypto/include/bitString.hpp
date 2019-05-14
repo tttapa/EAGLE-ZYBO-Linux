@@ -1,12 +1,13 @@
 #pragma once
 
 #include <array>
+#include <cryptoInstruction.hpp>
 #include <cstdint>
 #include <iostream>
 #include <vector>
-#include <cryptoInstruction.hpp>
 
 class BitString {
+
   private:
     std::vector<uint8_t> bits;
 

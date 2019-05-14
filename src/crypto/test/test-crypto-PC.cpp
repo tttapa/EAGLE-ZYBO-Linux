@@ -219,12 +219,12 @@ TEST(Crypto, TestSWImplementation) {
     std::vector<uint8_t> message = {0xae, 0xb6, 0x93, 0x1d, 0x55, 0xdf, 0x17,
                                     0x2e, 0xac, 0x78, 0x0f, 0xa6, 0x7e, 0xe4,
                                     0xdd, 0xf3, 0x03, 0x00, 0xf0, 0x00};
-    BitString messageBitString   = SWImplementation::hash(BitString(message));
+    BitString messageBitString   = SWImplementation().hash(BitString(message));
     ASSERT_EQ(messageBitString,
               BitString({0x23, 0xdc, 0x24, 0xd4, 0x24, 0x81, 0x33, 0x52, 0x82,
                          0x30, 0x9a, 0x6e}));
 
-    ASSERT_EQ(SWImplementation::decrypt(
+    ASSERT_EQ(SWImplementation().decrypt(
                   BitString({0x23, 0xdc, 0x24, 0xd4, 0x24, 0x81, 0x33, 0x52,
                              0x82, 0x30, 0x9a, 0x6e}),
                   BitString({0x5d, 0xa4, 0xa2, 0x8f, 0x6b, 0x13, 0x19, 0xe4,
@@ -249,7 +249,7 @@ TEST(Crypto, TestSWImplementationQR1) {
          0xe4, 0xc5, 0x2a, 0x97, 0xa6, 0xa5, 0xd5});
 
     CryptoInstruction instruction(
-        decrypt(qrCode, Implementation::SWImplementation));
+        decrypt(qrCode, SWImplementation()));
 
     ASSERT_EQ(instruction.getInstructionType(),
               CryptoInstruction::InstructionType::GOTO);
@@ -271,7 +271,7 @@ TEST(Crypto, TestSWImplementationQR2) {
          0x82, 0x2a, 0xc0, 0xc8, 0x0d, 0xb4, 0x1a});
 
     CryptoInstruction instruction(
-        decrypt(qrCode, Implementation::SWImplementation));
+        decrypt(qrCode, SWImplementation()));
 
     ASSERT_EQ(instruction.getInstructionType(),
               CryptoInstruction::InstructionType::GOTO);
@@ -292,7 +292,7 @@ TEST(Crypto, TestSWImplementationQR3) {
          0xe1, 0x98, 0x05, 0x58, 0x17, 0x24, 0x12, 0x94});
 
     CryptoInstruction instruction(
-        decrypt(qrCode, Implementation::SWImplementation));
+        decrypt(qrCode, SWImplementation()));
 
     ASSERT_EQ(instruction.getInstructionType(),
               CryptoInstruction::InstructionType::LAND);

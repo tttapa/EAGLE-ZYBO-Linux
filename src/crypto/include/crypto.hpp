@@ -1,8 +1,10 @@
 #pragma once
 
 #include <cryptoException.hpp>
+#include <cryptoImplementation.hpp>
 #include <cryptoInstruction.hpp>
-#include <implementation.hpp>
+#include <hwImplementation.hpp>
+#include <swImplementation.hpp>
 
 /**
  * @brief   Decrypt the given QR code.
@@ -38,4 +40,4 @@
  */
 CryptoInstruction
 decrypt(const std::vector<uint8_t> &qrCode,
-        Implementation implementation = Implementation::HWImplementation);
+        const CryptoImplementation &implementation = HWImplementation());
