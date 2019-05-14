@@ -3,7 +3,7 @@
 #include <EagleCrypt.hpp>
 #include <cryptoException.hpp>
 
-BitString SWImplementation::hash(const BitString &message) {
+BitString SWImplementation::hash(const BitString &message) const {
     unsigned char *data = nullptr;
 
     try {
@@ -38,7 +38,7 @@ BitString SWImplementation::decrypt(const BitString &key,
                                     const BitString &nonce,
                                     const BitString &associatedData,
                                     const BitString &cipherText,
-                                    const BitString &tag) {
+                                    const BitString &tag) const {
     unsigned char *charKey     = nullptr;
     unsigned char *charNonce   = nullptr;
     unsigned char *ad          = nullptr;

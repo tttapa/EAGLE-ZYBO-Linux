@@ -1,7 +1,10 @@
 #pragma once
 
 #include <cryptoException.hpp>
+#include <cryptoImplementation.hpp>
 #include <cryptoInstruction.hpp>
+#include <hwImplementation.hpp>
+#include <swImplementation.hpp>
 
 /**
  * @brief   Decrypt the given QR code.
@@ -9,6 +12,9 @@
  * @param   qrCode
  *          The QR to decrypt. The QR code should be base64 decoded
  *          already.
+ * @param   implementation
+ *          The implementation to use can either be the software
+ *          implementation or the hardware implementation.
  * 
  * @return  CryptoInstruction(CryptoInstruction::GOTO)
  *          This instruction tells the drone to move to the
@@ -32,4 +38,6 @@
  *          An unknown error has occurred. You can choose yourself whether
  *          you run crypto again.
  */
-CryptoInstruction decrypt(const std::vector<uint8_t> &qrCode);
+CryptoInstruction
+decrypt(const std::vector<uint8_t> &qrCode,
+        const CryptoImplementation &implementation = HWImplementation());

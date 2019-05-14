@@ -50,24 +50,26 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
             print('frame time:          ', logentry.framecounter)
             print('mode:                ', logentry.mode)
             # print('reference location:  ', logentry.reference_location)
-            print('measurement location:', logentry.measurement_location)
+            # print('measurement location:', logentry.measurement_location)
             # print('nav ctrl output qr1: ', logentry.reference_orientation[1])
             # print('nav ctrl output qr2: ', logentry.reference_orientation[2])
             # print('observer state:      ', logentry.navigation_observer_state)
-            print('alt control signal:  ', logentry.altitude_control_signal)
-            print('sonar measurement:   ', logentry.measurement_height)
+            # print('alt control signal:  ', logentry.altitude_control_signal)
+            # print('sonar measurement:   ', logentry.measurement_height)
             # print('alt observer state:  ', logentry.altitude_observer_state)
-            print('hov thrust:          ', logentry.hover_thrust)
+            # print('hov thrust:          ', logentry.hover_thrust)
+            # print('common thrust:           ', logentry.common_thrust)
             # print('rc thrust:           ', logentry.rc_throttle)
-            print('measurement orientation: ', logentry.measurement_orientation)
-            print('measurement ang vel:     ', logentry.measurement_angular_velocity)
-            print('motor controls:          ', logentry.motor_control_signals)
-            print('common thrust:           ', logentry.common_thrust)
-            print()
+            # print('reference orientation: ', logentry.reference_orientation)
+            # print('measurement orientation: ', logentry.measurement_orientation)
+            print('position control signql  ', logentry.position_control_signal)
+            # print('measurement ang vel:     ', logentry.measurement_angular_velocity)
+            # print('motor controls:          ', logentry.motor_control_signals)
             
             LoggingThreadedUDPRequestHandler.ctr = 0
 
 GRIDSIZE = 48
+METERS_2_BLOCK = 1 / 0.3
 offset = 200
 
 class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServer):
@@ -96,8 +98,8 @@ class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServ
             frame_width = np.size(self.image, 1)
             frame_height = np.size(self.image, 0)
 
-            loc = (int(round(float(logentry.measurement_location[0]) * GRIDSIZE + frame_width/2)), 
-                int(round(float(logentry.measurement_location[1]) * GRIDSIZE + frame_height/2)))
+            loc = (int(round(float(logentry.measurement_location[0]) * GRIDSIZE * METERS_2_BLOCK + frame_width/2)), 
+                int(round(float(logentry.measurement_location[1]) * GRIDSIZE * METERS_2_BLOCK + frame_height/2)))
             cv.circle(self.image, loc, 3, (255, 255, 255), -1)
 
             dispimage = self.image

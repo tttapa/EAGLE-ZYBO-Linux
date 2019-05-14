@@ -121,8 +121,17 @@ For unit testing, the Google Test framework is used. Automatic documentation gen
 <p>Once we got our grid finder algorithm working on the ZYBO, it became clear that we had to speed up the masking as well: the new algorithm to find the lines ran at 800 fps, but the masking (detecting the red pixels in the image) only ran at 50 fps. We got rid of the OpenCV functions for masking, and wrote our own version in C++. We're using the ARM <a class="el" href="namespaceNEON.html">NEON</a> SIMD vector unit of the ZYBO, using intrinsics, meaning that we can mask 16 pixels in parallel. At the full resolution of 640×480, the masking now runs at almost 1000 fps.</p>
 <p>All of this means that we're able to update the position measurement of the drone at 60 fps, which is the refresh rate of the HDMI input. This enables us to design better controllers, and ensures that we don't skip any squares, even when moving very quickly.</p>
 <p>The grid finder algorithm is very robust. It can handle cases where certain parts are overexposed by direct sunlight, gaps in the lines, curved lines due to lens distortion, and it is mathematically correct even when turning the drone 360° around the z-axis.</p>
-<p><a href="drone-images-sunlight+mask.out.mp4">Video sunlight</a> <br  />
-<a href="DroneCam-Spinning.out.mp4">Video 360°</a></p>
+<p><b>Video sunlight</b> <br  />
+ 
+<video width=1600 controls>
+  <source src="drone-images-sunlight+mask.mp4" type="video/mp4">
+</video>
+ <b>Video 360°</b> <br  />
+ 
+<video width=1600 controls>
+  <source src="DroneCam-Spinning.mp4" type="video/mp4">
+</video>
+</p>
 <p>The final Linux application consists of three main parts: the vision algorithm for the localization, the <a class="el" href="structQR.html">QR</a> decoding using ZBar and the algorithm developed by our crypto team, that runs on the FPGA, and the data logger for ANC.</p>
 <p>Decoding the <a class="el" href="structQR.html">QR</a> code happens asynchronously, so it doesn't interrupt the vision algorithm (it does slow it down slightly). The logger doesn't really require any processing, it just reads whatever it finds in the shared memory from ANC, and sends it over the network as UDP Multicast. It runs in a separate thread, and runs periodically. </p>
 </div></div><!-- PageDoc -->

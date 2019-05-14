@@ -70,25 +70,18 @@ Point LocationFinder::getLocation(Square &sq, Vec2f frameCenter) {
     if (points[0] && !points[1] && !points[2] && !points[3]) {
         Vec2f diag = {diagAngle.cosf(), diagAngle.sinf()};
         center     = sideLen / sqrt(2) * diag + points[0]->vec();
-        std::cout << "points[0]: sideLength = " << sideLen << std::endl;
     }
     // If only the second point is valid
     else if (!points[0] && points[1] && !points[2] && !points[3]) {
         Vec2f diag = {diagAngle.cosf(), diagAngle.sinf()};
         center     = sideLen / sqrt(2) * diag + points[1]->vec();
-        std::cout << "points[1]: sideLength = " << sideLen << std::endl;
     }
     // === Two points ===
     // If only the first two points are valid
     else if (points[0] && points[1] && !points[2] && !points[3]) {
-        std::cout << "P0 = " << *points[0] << ", P1 = " << *points[1]
-                  << std::endl;
-        std::cout << "P0 - P1 = " << points[0]->vec() - points[1]->vec()
-                  << std::endl;
         sideLen    = Point::distance(*points[0], *points[1]);
         Vec2f diag = {diagAngle.cosf(), diagAngle.sinf()};
         center     = sideLen / sqrt(2) * diag + points[0]->vec();
-        std::cout << "points[0 & 1]: sideLength = " << sideLen << std::endl;
     }
     // === Four points ===
     // If we found all four points
@@ -100,15 +93,12 @@ Point LocationFinder::getLocation(Square &sq, Vec2f frameCenter) {
                   4;
         center = Point::average(Point::average(*points[0], *points[1]),
                                 Point::average(*points[2], *points[3]));
-        std::cout << "points[0 & 1 & 2 & 3]: sideLength = " << sideLen
-                  << std::endl;
     } else {
         std::cerr << ANSIColors::redb
                   << "Error: Somehow, we only found three points"
                   << ANSIColors::reset << std::endl;
         return Point::invalid();
     }
-    std::cout << "sideLen = " << sideLen << std::endl;
     // Wie deelt door nul is een snul
     if (sideLen == 0)
         return Point::invalid();

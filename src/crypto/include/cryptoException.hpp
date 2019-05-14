@@ -4,6 +4,7 @@
 #include <string>
 
 class CryptoException : public std::exception {
+
   public:
     enum class ExceptionType {
         TIMEOUT_EXCEPTION,

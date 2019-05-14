@@ -10,8 +10,8 @@ BitString::BitString(const std::vector<uint8_t> &input, int16_t start,
 
     bits.reserve(2 * (end - start));
     for (int16_t i = start; i < end; i++) {
-        bits.push_back(input[i] & 0x0F);
-        bits.push_back((input[i] & 0xF0) >> 4);
+        bits.push_back(input.at(i) & 0x0F);
+        bits.push_back((input.at(i) & 0xF0) >> 4);
     }
 }
 
@@ -176,6 +176,36 @@ void BitString::toByteArray(unsigned char *buffer,
     for (uint16_t i = 0;
          i < std::min((uint16_t)(bits.size() / 2), bufferLength); i++)
         buffer[i] = (bits[2 * i] | (bits[2 * i + 1] << 4));
+}
+
+void BitString::toVector(std::vector<uint8_t> &vector) const {
+    vector.reserve(bits.size() / 2);
+    for (uint16_t i = 0; i < (uint16_t)(bits.size() / 2); i++)
+        vector.push_back(bits[2 * i] | (bits[2 * i + 1] << 4));
+}
+
+CryptoInstruction BitString::toCryptoInstruction() {
+    if (getLength() < 8)
+        return CryptoInstruction(CryptoInstruction::UNKNOWN,
+                                 std::vector<uint8_t>());
+
+    std::vector<uint8_t> vectorPlainText;
+    toVector(vectorPlainText);
+    switch (vectorPlainText[0]) {
+        case 0x70:
+            if (vectorPlainText.size() < 3)
+                return CryptoInstruction(CryptoInstruction::UNKNOWN,
+                                         vectorPlainText);
+
+            return CryptoInstruction(CryptoInstruction::GOTO,
+                                     vectorPlainText[1], vectorPlainText[2]);
+            break;
+        case 0x7f: return CryptoInstruction(CryptoInstruction::LAND); break;
+        default:
+            return CryptoInstruction(CryptoInstruction::UNKNOWN,
+                                     vectorPlainText);
+            break;
+    }
 }
 
 bool operator==(const BitString &bitString1, const BitString &bitString2) {
