@@ -49,6 +49,11 @@ CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
     // Read drone master key from the file.
     char key[dmKeySizeInBytes];
     std::ifstream keyReader(dmKeyPath, std::ios::binary);
+    if (keyReader.fail())
+        throw CryptoException(
+            CryptoException::ExceptionType::UNKNOWN_ERROR_EXCEPTION,
+            "No drone master key available.");
+
     keyReader.read(key, dmKeySizeInBytes);
     keyReader.close();
 
@@ -86,7 +91,7 @@ CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
 
         try {
             return implementation.decrypt(wpKey, nonce, ad, cipherText, tag)
-                .toCryptoInstruction();
+                .toCryptoInstruction(qrCode.at(10), qrCode.at(11));
         }
         // Only try the next instruction if there is no problem
         // with the FPGA.
