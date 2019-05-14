@@ -25,7 +25,179 @@
             },
             "logger": {
                 "attitudeObserverState": {
-                    "value": "attitudeController.getObserverState()"
+                    "value": "attitudeController.getStateEstimate()"
+                }
+            }
+        },
+        "AttitudeControlSignal": {
+            "documentation": [
+                "@todo",
+                "this is a very, very long comment to check if the",
+                "code generator breaks long lines correctly"
+            ],
+            "members": {
+                "u": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": "Motor signal."
+                }
+            },
+            "logger": {
+                "attitudeControlSignals": {
+                    "value": "attitudeController.getControlSignal()"
+                }
+            }
+        },
+        "AttitudeReference": {
+            "documentation": [
+                "@todo",
+                "this is a very, very long comment to check if the",
+                "code generator breaks long lines correctly"
+            ],
+            "members": {
+                "q": {
+                    "type": "Quaternion",
+                    "default": "Quaternion::unit()",
+                    "documentation": "Reference orientation."
+                }
+            },
+            "logger": {
+                "referenceOrientation": {
+                    "value": "attitudeController.getReferenceQuat()"
+                }
+            }
+        },
+        "AltitudeState": {
+            "documentation": [
+                "@todo",
+                "this is a very, very long comment to check if the",
+                "code generator breaks long lines correctly"
+            ],
+            "members": {
+                "nt": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": "Common motor marginal angular velocity (rad/s)"
+                },
+                "z": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": "The height (m) of the drone"
+                },
+                "vz": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": "Velocity (m/s) of the drone"
+                }
+            },
+            "logger": {
+                "altitudeObserverState": {
+                    "value": "altitudeController.getStateEstimate()"
+                }
+            }
+        },
+        "AltitudeControlSignal": {
+            "documentation": [
+                "@todo",
+                "this is a very, very long comment to check if the",
+                "code generator breaks long lines correctly"
+            ],
+            "members": {
+                "ut": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": "Common motor marginal signal."
+                }
+            },
+            "logger": {
+                "altitudeControlSignal": {
+                    "value": "altitudeController.getControlSignal().ut"
+                }
+            }
+        },
+        "AltitudeReference": {
+            "documentation": [
+                "@todo",
+                "this is a very, very long comment to check if the",
+                "code generator breaks long lines correctly"
+            ],
+            "members": {
+                "z": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": "Reference height."
+                }
+            },
+            "logger": {
+                "referenceHeight": {
+                    "value": "altitudeController.getReferenceHeight()"
+                } 
+            }
+        },
+        "PositionState": {
+            "documentation": [
+                "@todo",
+                "this is a very, very long comment to check if the",
+                "code generator breaks long lines correctly"
+            ],
+            "members": {
+                "q": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": "Orientation q1 and q2 component (/)."
+                },
+                "p": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": "Position (x,y) in meteres."
+                },
+                "v": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": "Velocity (m/s)."
+                }
+            },
+            "logger": {
+                "navigationObserverState": {
+                    "value": "positionController.getStateEstimate()"
+                }
+            }
+        },
+        "PositionControlSignal": {
+            "documentation": [
+                "@todo",
+                "this is a very, very long comment to check if the",
+                "code generator breaks long lines correctly"
+            ],
+            "members": {
+                "q": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": "Reference orientation q1 and q2 component."
+                }
+            },
+            "logger": {
+                "positionControlSignal": {
+                    "value": "positionController.getControlSignal()"
+                }
+            }
+        },
+        "PositionReference": {
+            "documentation": [
+                "@todo",
+                "this is a very, very long comment to check if the",
+                "code generator breaks long lines correctly"
+            ],
+            "members": {
+                "p": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": "Reference position."
+                }
+            },
+            "logger": {
+                "referenceLocation": {
+                    "value": "positionController.getReferencePosition()"
                 }
             }
         }
