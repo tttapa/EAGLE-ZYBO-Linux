@@ -6,11 +6,11 @@
 #include <cstdint>   // uint32_t, int32_t
 #include <iterator>  // begin, end
 
-using float_3_const_ref = const float(&)[3];
 using float_6_const_ref = const float(&)[6];
+using float_2_const_ref = const float(&)[2];
 using float_4_const_ref = const float(&)[4];
 using float_10_const_ref = const float(&)[10];
-using float_2_const_ref = const float(&)[2];
+using float_3_const_ref = const float(&)[3];
 #else
 #include <stdint.h> // uint32_t, int32_t
 #endif
