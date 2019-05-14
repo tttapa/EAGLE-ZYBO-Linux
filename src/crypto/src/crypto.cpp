@@ -49,6 +49,11 @@ CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
     // Read drone master key from the file.
     char key[dmKeySizeInBytes];
     std::ifstream keyReader(dmKeyPath, std::ios::binary);
+    if (keyReader.fail())
+        throw CryptoException(
+            CryptoException::ExceptionType::UNSUCCESSFUL_DECODE_EXCEPTION,
+            "No drone master key available.");
+    
     keyReader.read(key, dmKeySizeInBytes);
     keyReader.close();
 
