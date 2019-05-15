@@ -129,7 +129,7 @@
             "logger": {
                 "referenceHeight": {
                     "value": "altitudeController.getReferenceHeight()"
-                } 
+                }
             }
         },
         "PositionState": {
@@ -149,7 +149,7 @@
                 "p": {
                     "type": "Vec2f",
                     "default": "{0.0, 0.0}",
-                    "documentation": "Position (x,y) in meteres."
+                    "documentation": "Position (x,y) in meters."
                 },
                 "v": {
                     "type": "Vec2f",
@@ -195,14 +195,16 @@
             },
             "logger": {
                 "referenceLocation": {
-                    "value": "positionController.getReferencePosition()"
+                    "value": "positionController.(getReferencePosition)()",
+                    "documentation": "The reference for the position controller"
                 }
             }
         }
     },
     "others": {
         "mode": {
-            "type": "int32_t"
+            "type": "int32_t",
+            "documentation": "The flight mode of the drone"
         }
     }
 }
