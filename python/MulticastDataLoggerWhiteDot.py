@@ -8,7 +8,7 @@ import time
 import datetime
 import sys
 from DroneLogger import LogEntry
-import heapq    
+import heapq
 import numpy as np
 import cv2 as cv
 import matplotlib
@@ -48,9 +48,10 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
         LoggingThreadedUDPRequestHandler.ctr += 1
         if LoggingThreadedUDPRequestHandler.ctr == self.print_subsample:
             print('frame time:          ', logentry.framecounter)
-            print('mode:                ', logentry.mode)
-            # print('reference location:  ', logentry.reference_location)
-            # print('measurement location:', logentry.measurement_location)
+            # print('mode:                ', logentry.mode)
+            print('reference location:  ', logentry.reference_location)
+            print('measurement location:', logentry.measurement_location)
+            print('estimated location:  ', logentry.navigation_observer_state[2:4])
             # print('nav ctrl output qr1: ', logentry.reference_orientation[1])
             # print('nav ctrl output qr2: ', logentry.reference_orientation[2])
             # print('observer state:      ', logentry.navigation_observer_state)
@@ -62,15 +63,17 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
             # print('rc thrust:           ', logentry.rc_throttle)
             # print('reference orientation: ', logentry.reference_orientation)
             # print('measurement orientation: ', logentry.measurement_orientation)
-            print('position control signql  ', logentry.position_control_signal)
+            # print('position control signal  ', logentry.position_control_signal)
             # print('measurement ang vel:     ', logentry.measurement_angular_velocity)
             # print('motor controls:          ', logentry.motor_control_signals)
-            
+
             LoggingThreadedUDPRequestHandler.ctr = 0
+
 
 GRIDSIZE = 48
 METERS_2_BLOCK = 1 / 0.3
 offset = 200
+
 
 class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServer):
     allow_reuse_address = True
@@ -79,7 +82,7 @@ class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServ
         super().__init__(*args)
         self.filename = filename
 
-        self.image = np.zeros((640,480,3), np.uint8)
+        self.image = np.zeros((640, 480, 3), np.uint8)
 
     def __enter__(self):
         print("Opening file: " + self.filename)
@@ -98,8 +101,8 @@ class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServ
             frame_width = np.size(self.image, 1)
             frame_height = np.size(self.image, 0)
 
-            loc = (int(round(float(logentry.measurement_location[0]) * GRIDSIZE * METERS_2_BLOCK + frame_width/2)), 
-                int(round(float(logentry.measurement_location[1]) * GRIDSIZE * METERS_2_BLOCK + frame_height/2)))
+            loc = (int(round(float(logentry.measurement_location[0]) * GRIDSIZE * METERS_2_BLOCK + frame_width/2)),
+                   int(round(float(logentry.measurement_location[1]) * GRIDSIZE * METERS_2_BLOCK + frame_height/2)))
             cv.circle(self.image, loc, 3, (255, 255, 255), -1)
 
             dispimage = self.image
