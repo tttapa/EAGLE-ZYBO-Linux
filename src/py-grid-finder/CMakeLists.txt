@@ -5,7 +5,9 @@
 find_package(pybind11 REQUIRED)
 
 # Create a Python module
-pybind11_add_module(py_grid_finder src/Grid-Finder.module.cpp)
+pybind11_add_module(py_grid_finder 
+    src/Grid-Finder.module.cpp
+    EXCLUDE_FROM_ALL)
 
 # Set target include directories 
 #   These are the folders where the compiler will search for included header 

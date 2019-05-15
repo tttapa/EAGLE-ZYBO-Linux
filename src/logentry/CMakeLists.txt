@@ -4,14 +4,20 @@
 add_custom_command(
     OUTPUT
         # ${CMAKE_CURRENT_BINARY_DIR}/src-generated/GetLogEntry.cpp
-        ${CMAKE_CURRENT_BINARY_DIR}/src-generated/DroneLogEntry.Python.cpp
         ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LogEntry.hpp
         ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LoggerStructs.hpp
+        ${CMAKE_CURRENT_BINARY_DIR}/src-generated/DroneLogEntry.Python.cpp
     COMMAND
-        ${CMAKE_CURRENT_SOURCE_DIR}/NewCodeGen.py
+        ${CMAKE_CURRENT_SOURCE_DIR}/Codegen.py
     DEPENDS
-        ${CMAKE_CURRENT_SOURCE_DIR}/NewCodeGen.py
+        ${CMAKE_CURRENT_SOURCE_DIR}/Codegen.py
         ${CMAKE_CURRENT_SOURCE_DIR}/Codegen.json
+)
+
+add_custom_target(logentry-headers 
+    DEPENDS 
+        ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LogEntry.hpp
+        ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LoggerStructs.hpp
 )
 
 #------------------------------- Library target -------------------------------#
@@ -19,6 +25,7 @@ add_custom_command(
 
 # Create a header-only library target
 add_library(logentry INTERFACE)
+add_dependencies(logentry logentry-headers)
 
 # Set target include directories 
 #   These are the folders where the compiler will search for included header 
@@ -53,7 +60,8 @@ find_package(pybind11 REQUIRED)
 
 # Create a Python module
 pybind11_add_module(py_drone_logger 
-    ${CMAKE_CURRENT_BINARY_DIR}/src-generated/DroneLogEntry.Python.cpp)
+    ${CMAKE_CURRENT_BINARY_DIR}/src-generated/DroneLogEntry.Python.cpp
+    EXCLUDE_FROM_ALL)
 
 # Set target include directories 
 #   These are the folders where the compiler will search for included header 
