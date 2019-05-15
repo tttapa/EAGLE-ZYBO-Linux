@@ -89,7 +89,9 @@ def generate_struct_header(structs: OrderedDict) -> str:
 #pragma once
 
 #include <Quaternion.hpp>
-#include <Vector.hpp>
+
+using Vec2f = TColVector<float, 2>;
+using Vec3f = TColVector<float, 3>;
 
 {structs}\
 """.format(structs=generate_structs(structs))
@@ -151,6 +153,8 @@ def generate_log_entry_members(data: OrderedDict) -> str:
 
 def generate_log_entry_header(data: OrderedDict) -> str:
     return """\
+#pragma once
+
 #include <LoggerStructs.hpp>
 
 /**
@@ -203,7 +207,7 @@ def generate_python_constructors(name: str, members: OrderedDict) -> str:
 
 def generate_python_binding(name: str, members: OrderedDict) -> str:
     return """\
-    pybind11::class_<{name}>(module, "{name}")
+    pybind11::class_<{name}>(py_log_module, "{name}")
         {constructor_bindings}
         {member_bindings};\
 """.format(name=name,
@@ -245,7 +249,7 @@ def generate_python_log_entry_member_bindings(data: OrderedDict) -> str:
 
 def generate_python_log_entry_binding(data: OrderedDict) -> str:
     return """\
-    pybind11::class_<LogEntry>(module, "LogEntry")
+    pybind11::class_<LogEntry>(py_log_module, "LogEntry")
         .def(pybind11::init<>())
 {member_bindings};\
 """.format(member_bindings=generate_python_log_entry_member_bindings(data))
@@ -257,7 +261,7 @@ def generate_python_module(data: OrderedDict) -> str:
 #include <pybind11/pybind11.h>
 #include <PyMatrix.hpp>
 
-PYBIND11_MODULE(module, "DroneLogger") {{
+PYBIND11_MODULE(DroneLogger, py_log_module) {{
 {struct_bindings}
 
 {log_entry_bindings}
@@ -269,9 +273,12 @@ PYBIND11_MODULE(module, "DroneLogger") {{
 
 json_file_path = os.path.join(dir_path, "Codegen.json")
 with open(json_file_path, 'r') as json_file, \
-        open("DroneLogEntry.Python.cpp", 'w') as pythonmodulefile, \
-        open("LoggerStructs.hpp", 'w') as structsheaderfile, \
-        open("LogEntry.hpp", 'w') as logentryheaderfile:
+    open("src-generated/DroneLogEntry.Python.cpp", 'w') \
+        as pythonmodulefile, \
+    open("include-generated/LoggerStructs.hpp", 'w') \
+        as structsheaderfile, \
+    open("include-generated/LogEntry.hpp", 'w') \
+        as logentryheaderfile:
     data = json.load(json_file, object_pairs_hook=OrderedDict)
 
     structsheaderfile.write(generate_struct_header(data['structs']))

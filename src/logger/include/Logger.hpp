@@ -1,7 +1,7 @@
 #pragma once
 
 #include <BaremetalCommunicationDef.hpp>
-#include <LogEntry.h>
+#include <LogEntry.hpp>
 #include <SharedMem.hpp>
 #include <UDPSender.hpp>
 #include <vector>

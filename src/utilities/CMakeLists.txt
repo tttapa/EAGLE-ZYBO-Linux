@@ -21,3 +21,13 @@ target_include_directories(utilities
 # )
 
 add_subdirectory(test)
+
+install(TARGETS utilities
+        EXPORT utilities
+        INCLUDES DESTINATION include)
+install(EXPORT utilities DESTINATION lib)
+install(
+FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/real_t.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/Square.hpp
+DESTINATION include)
