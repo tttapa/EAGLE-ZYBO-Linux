@@ -16,7 +16,10 @@
             },
             "logger": {
                 "altitudeControlSignal": {
-                    "value": "altitudeController.getControlSignal()"
+                    "value": "altitudeController.getControlSignal()",
+                    "documentation": [
+                        "The altitude controller's control signal."
+                    ]
                 }
             }
         },
@@ -35,7 +38,10 @@
             },
             "logger": {
                 "altitudeIntegralWindup": {
-                    "value": "altitudeController.getIntegralWindup()"
+                    "value": "altitudeController.getIntegralWindup()",
+                    "documentation": [
+                        "The altitude controller's integral windup."
+                    ]
                 }
             }
         },
@@ -55,7 +61,10 @@
             },
             "logger": {
                 "altitudeMeasurement": {
-                    "value": "altitudeController.getMeasurement()"
+                    "value": "altitudeController.getMeasurement()",
+                    "documentation": [
+                        "The altitude controller's measurement."
+                    ]
                 }
             }
         },
@@ -74,7 +83,10 @@
             },
             "logger": {
                 "altitudeReference": {
-                    "value": "altitudeController.getReference()"
+                    "value": "altitudeController.getReference()",
+                    "documentation": [
+                        "The altitude controller's reference."
+                    ]
                 }
             }
         },
@@ -110,7 +122,10 @@
             },
             "logger": {
                 "altitudeStateEstimate": {
-                    "value": "altitudeController.getStateEstimate()"
+                    "value": "altitudeController.getStateEstimate()",
+                    "documentation": [
+                        "The altitude controller's state estimate."
+                    ]
                 }
             }
         },
@@ -131,7 +146,10 @@
             },
             "logger": {
                 "attitudeControlSignal": {
-                    "value": "attitudeController.getControlSignal()"
+                    "value": "attitudeController.getControlSignal()",
+                    "documentation": [
+                        "The attitude controller's control signal."
+                    ]
                 }
             }
         },
@@ -152,7 +170,10 @@
             },
             "logger": {
                 "attitudeIntegralWindup": {
-                    "value": "attitudeController.getIntegralWindup()"
+                    "value": "attitudeController.getIntegralWindup()",
+                    "documentation": [
+                        "The attitude controller's integral windup."
+                    ]
                 }
             }
         },
@@ -180,7 +201,10 @@
             },
             "logger": {
                 "attitudeMeasurement": {
-                    "value": "attitudeController.getMeasurement()"
+                    "value": "attitudeController.getMeasurement()",
+                    "documentation": [
+                        "The attitude controller's measurement."
+                    ]
                 }
             }
         },
@@ -197,7 +221,10 @@
             },
             "logger": {
                 "attitudeReference": {
-                    "value": "attitudeController.getReference()"
+                    "value": "attitudeController.getReference()",
+                    "documentation": [
+                        "The attitude controller's reference."
+                    ]
                 }
             }
         },
@@ -233,7 +260,10 @@
             },
             "logger": {
                 "attitudeStateEstimate": {
-                    "value": "attitudeController.getStateEstimate()"
+                    "value": "attitudeController.getStateEstimate()",
+                    "documentation": [
+                        "The attitude controller's state estimate."
+                    ]
                 }
             }
         },
@@ -253,7 +283,10 @@
             },
             "logger": {
                 "positionControlSignal": {
-                    "value": "positionController.getControlSignal()"
+                    "value": "positionController.getControlSignal()",
+                    "documentation": [
+                        "The position controller's control signal."
+                    ]
                 }
             }
         },
@@ -273,7 +306,10 @@
             },
             "logger": {
                 "positionIntegralWindup": {
-                    "value": "positionController.getIntegralWindup()"
+                    "value": "positionController.getIntegralWindup()",
+                    "documentation": [
+                        "The position controller's integral windup."
+                    ]
                 }
             }
         },
@@ -292,7 +328,10 @@
             },
             "logger": {
                 "referenceLocation": {
-                    "value": "positionController.getMeasurement()"
+                    "value": "positionController.getMeasurement()",
+                    "documentation": [
+                        "The position controller's measurement."
+                    ]
                 }
             }
         },
@@ -311,7 +350,10 @@
             },
             "logger": {
                 "positionReference": {
-                    "value": "positionController.getReference()"
+                    "value": "positionController.getReference()",
+                    "documentation": [
+                        "The position controller's reference."
+                    ]
                 }
             }
         },
@@ -347,7 +389,10 @@
             },
             "logger": {
                 "positionStateEstimate": {
-                    "value": "positionController.getStateEstimate()"
+                    "value": "positionController.getStateEstimate()",
+                    "documentation": [
+                        "The position controller's state estimate."
+                    ]
                 }
             }
         },
@@ -443,7 +488,10 @@
             },
             "logger": {
                 "autonomousOutput": {
-                    "value": "autonomousController.getOutput()"
+                    "value": "autonomousController.getOutput()",
+                    "documentation": [
+                        "The autonomous controller's output."
+                    ]
                 }
             }
         },
@@ -462,7 +510,10 @@
             },
             "logger": {
                 "accelMeasurement": {
-                    "comment": "This value is set in IMU.cpp."
+                    "comment": "This value is set in IMU.cpp.",
+                    "documentation": [
+                        "The accelerometer's measurement."
+                    ]
                 }
             }
         },
@@ -482,7 +533,10 @@
             },
             "logger": {
                 "gyroMeasurement": {
-                    "comment": "This value is set in IMU.cpp."
+                    "comment": "This value is set in IMU.cpp.",
+                    "documentation": [
+                        "The gyroscope's measurement."
+                    ]
                 }
             }
         },
@@ -510,7 +564,10 @@
             },
             "logger": {
                 "imuMeasurement": {
-                    "comment": "This value is set in IMU.cpp."
+                    "comment": "This value is set in IMU.cpp.",
+                    "documentation": [
+                        "The IMU's measurement."
+                    ]
                 }
             }
         },
@@ -576,7 +633,10 @@
             },
             "logger": {
                 "rcInput": {
-                    "value": "getRCInput()"
+                    "value": "getRCInput()",
+                    "documentation": [
+                        "The most recent reading of the RC."
+                    ]
                 }
             }
         },
@@ -611,7 +671,10 @@
             },
             "logger": {
                 "buzzerInstruction": {
-                    "value": "buzzerManager.getCurrentInstruction()"
+                    "value": "buzzerManager.getCurrentInstruction()",
+                    "documentation": [
+                        "The current instruction playing on the buzzer."
+                    ]
                 }
             }
         },
@@ -652,7 +715,10 @@
             },
             "logger": {
                 "ledInstruction": {
-                    "comment": "This value is set in MainInterrupt.cpp."
+                    "comment": "This value is set in MainInterrupt.cpp.",
+                    "documentation": [
+                        "The current instruction displayed on the LEDs."
+                    ]
                 }
             }
         },
@@ -694,7 +760,10 @@
             },
             "logger": {
                 "motorSignals": {
-                    "comment": "This value is set in MainInterrupt.cpp."
+                    "comment": "This value is set in MainInterrupt.cpp.",
+                    "documentation": [
+                        "The signal sent to the four motors (ESCs)."
+                    ]
                 }
             }
         }
@@ -793,7 +862,7 @@
             "logger": {
                 "wptMode": {
                     "comment": "This is set in MainInterrupt.cpp.",
-                    "documentation": "The flight mode of the drone."
+                    "documentation": "The WPT mode of the drone."
                 }
             }
         }
