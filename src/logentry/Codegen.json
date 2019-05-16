@@ -500,19 +500,11 @@
                 "Accelerometer measurement acceleration in g (Vec3f)."
             ],
             "members": {
-                "accel": {
+                "a": {
                     "type": "Vec3f",
                     "default": "{0.0, 0.0, 0.0}",
                     "documentation": [
                         "Accelerometer measurement of the acceleration in g."
-                    ]
-                }
-            },
-            "logger": {
-                "accelMeasurement": {
-                    "comment": "This value is set in IMU.cpp.",
-                    "documentation": [
-                        "The accelerometer's measurement."
                     ]
                 }
             }
@@ -522,20 +514,12 @@
                 "Gyroscope measurement angular velocity in rad/s (Vec3f)."
             ],
             "members": {
-                "gyro": {
+                "g": {
                     "type": "Vec3f",
                     "default": "{0.0, 0.0, 0.0}",
                     "documentation": [
                         "Gyroscope measurement of the angular velocity in",
                         "rad/s."
-                    ]
-                }
-            },
-            "logger": {
-                "gyroMeasurement": {
-                    "comment": "This value is set in IMU.cpp.",
-                    "documentation": [
-                        "The gyroscope's measurement."
                     ]
                 }
             }
@@ -547,16 +531,16 @@
             ],
             "members": {
                 "gyro": {
-                    "type": "Vec3f",
-                    "default": "{0.0, 0.0, 0.0}",
+                    "type": "GyroMeasurement",
+                    "default": "{}",
                     "documentation": [
                         "Gyroscope measurement of the angular velocity in",
                         "rad/s."
                     ]
                 },
                 "accel": {
-                    "type": "Vec3f",
-                    "default": "{0.0, 0.0, 0.0}",
+                    "type": "AccelMeasurement",
+                    "default": "{}",
                     "documentation": [
                         "Accelerometer measurement of the acceleration in g."
                     ]
