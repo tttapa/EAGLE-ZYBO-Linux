@@ -16,7 +16,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_targetsDefined)
 set(_targetsNotDefined)
 set(_expectedTargets)
-foreach(_expectedTarget real_t)
+foreach(_expectedTarget real_t utilities matrix quaternion logentry baremetal-comm)
   list(APPEND _expectedTargets ${_expectedTarget})
   if(NOT TARGET ${_expectedTarget})
     list(APPEND _targetsNotDefined ${_expectedTarget})
@@ -55,13 +55,52 @@ set_target_properties(real_t PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include;${_IMPORT_PREFIX}/include"
 )
 
+# Create imported target utilities
+add_library(utilities INTERFACE IMPORTED)
+
+set_target_properties(utilities PROPERTIES
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include;${_IMPORT_PREFIX}/include"
+)
+
+# Create imported target matrix
+add_library(matrix INTERFACE IMPORTED)
+
+set_target_properties(matrix PROPERTIES
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include;${_IMPORT_PREFIX}/include"
+  INTERFACE_LINK_LIBRARIES "real_t"
+)
+
+# Create imported target quaternion
+add_library(quaternion INTERFACE IMPORTED)
+
+set_target_properties(quaternion PROPERTIES
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include;${_IMPORT_PREFIX}/include"
+  INTERFACE_LINK_LIBRARIES "matrix;utilities"
+)
+
+# Create imported target logentry
+add_library(logentry INTERFACE IMPORTED)
+
+set_target_properties(logentry PROPERTIES
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
+  INTERFACE_LINK_LIBRARIES "quaternion"
+)
+
+# Create imported target baremetal-comm
+add_library(baremetal-comm INTERFACE IMPORTED)
+
+set_target_properties(baremetal-comm PROPERTIES
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include;${_IMPORT_PREFIX}/include"
+  INTERFACE_LINK_LIBRARIES "logentry"
+)
+
 if(CMAKE_VERSION VERSION_LESS 3.0.0)
   message(FATAL_ERROR "This file relies on consumers using CMake 3.0.0 or greater.")
 endif()
 
 # Load information for each installed configuration.
 get_filename_component(_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
-file(GLOB CONFIG_FILES "${_DIR}/real_t-*.cmake")
+file(GLOB CONFIG_FILES "${_DIR}/shared-linux-*.cmake")
 foreach(f ${CONFIG_FILES})
   include(${f})
 endforeach()

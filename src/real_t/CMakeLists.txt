@@ -9,9 +9,9 @@ target_include_directories(real_t
 )
 
 install(TARGETS real_t
-        EXPORT real_t
+        EXPORT shared-linux
         INCLUDES DESTINATION include)
-install(EXPORT real_t DESTINATION cmake)
+install(EXPORT shared-linux DESTINATION cmake)
 install(
 FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/real_t.h

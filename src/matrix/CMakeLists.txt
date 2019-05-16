@@ -13,9 +13,9 @@ target_link_libraries(matrix INTERFACE real_t) # real_t
 add_subdirectory(test)
 
 install(TARGETS matrix
-        EXPORT matrix
+        EXPORT shared-linux
         INCLUDES DESTINATION include)
-install(EXPORT matrix DESTINATION cmake)
+install(EXPORT shared-linux DESTINATION cmake)
 install(
 FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Array.hpp

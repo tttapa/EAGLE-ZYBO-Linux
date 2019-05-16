@@ -28,11 +28,10 @@ add_subdirectory(test)
 #------------------------------------------------------------------------------#
 
 install(TARGETS baremetal-comm
-        EXPORT baremetal-comm
-        ARCHIVE DESTINATION lib
+        EXPORT shared-linux
         INCLUDES DESTINATION include)
-install(EXPORT baremetal-comm DESTINATION cmake)
 install(FILES 
-            ${CMAKE_CURRENT_SOURCE_DIR}/include/BaremetalCommunicationDef.hpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/include/SharedStruct.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/BaremetalCommunicationDef.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/SharedStruct.hpp
         DESTINATION include)
+install(EXPORT shared-linux DESTINATION cmake)
