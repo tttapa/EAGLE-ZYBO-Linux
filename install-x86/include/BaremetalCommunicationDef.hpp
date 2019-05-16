@@ -28,55 +28,6 @@ enum class QRFSMState : int32_t {
     NO_QR = -2,
 };
 
-/**
- * Struct containing the four different flight modes. First, the drone begins in
- * the UNINITIALIZED flight mode. After the first cycle, the drone will enter
- * the current flight mode, as specified by the RC. In MANUAL_MODE, the pilot
- * has full control over the drone's orientation and the common thrust. In
- * ALTITUDE_HOLD_MODE, the pilot still has control over the drone's orientation,
- * but the altitude controller takes over the common thrust in order to keep the
- * drone at a constant height. Finally, in AUTONOMOUS_MODE, the pilot has no
- * control over the attitude or altitude of the drone. The drone will navigate
- * autonomously to successive QR codes and land at its final code. As a safety
- * precaution, if the pilot sets the throttle to zero during the autonomous
- * flight, the drone will land at its current location.
- */
-enum class FlightMode : int32_t {
-
-    /**
-     * The drone is in its first clock cycle and has not yet entered a flight
-     * mode.
-     */
-    UNINITIALIZED = 0,
-
-    /**
-     * The drone is in "manual mode". The pilot has control over the drone's
-     * orientation and the common thrust.
-     */
-    MANUAL = 1,
-
-    /**
-     * The drone is in "altitude-hold mode". The pilot has control over drone's
-     * orientation, but the altitude controller takes over the common thrust in
-     * order to keep the drone at a constant altitude.
-     */
-    ALTITUDE_HOLD = 2,
-
-    /**
-     * The drone is in "autonomous mode". The pilot has no control over the
-     * attitude or altitude of the drone. If the drone is grounded when entering
-     * this flight mode, then it will take off as soon as the pilot raises the
-     * throttle above the predetermined threshold (see Autonomous.hpp). If the
-     * drone was already airborne when entering this flight mode, then this step
-     * will be skipped. Then, the drone will loiter at its current position for
-     * a predetermined time (see Autonomous.hpp). After that, it will navigate
-     * autonomously to successive QR codes and finally land at its final code.
-     * As a safety precaution, if the pilot sets the throttle to zero during the
-     * autonomous flight, the drone will land at its current location.
-     */
-    AUTONOMOUS = 3,
-};
-
 enum WPTMode {
     OFF = 0,  ///< Wireless Power Transfer is turned off.
     ON  = 1,  ///< Wireless Power Transfer is turned on.

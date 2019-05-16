@@ -14,9 +14,9 @@ endl = '\n'
 def json_text_list_to_str(strings: Union[str, List[str]]) -> str:
     if isinstance(strings, list):
         strings = " ".join(strings)
-    return strings
+    return strings.replace('"','\\"')
 
-# region C++ Header File ........................................................
+# region C++ Header File .......................................................
 
 
 def generate_documentation(documentation: Union[str, List[str]],
@@ -60,8 +60,7 @@ def generate_member(name: str, member: OrderedDict) -> str:
 
 
 def generate_members(members: dict) -> str:
-    initializers = map(lambda kv: generate_member(
-        kv[0], kv[1]), members.items())
+    initializers = map(lambda kv: generate_member(*kv), members.items())
     return (endl * 2).join(initializers)
 
 
@@ -206,7 +205,7 @@ struct LogEntry {{
 
 # endregion
 
-# region Python Struct Bindings .................................................
+# region Python Struct Bindings ................................................
 
 
 def generate_python_member_binding(classname: str, membername: str,
@@ -245,8 +244,38 @@ def generate_python_binding(name: str, members: OrderedDict) -> str:
 
 
 def generate_python_bindings(structs: OrderedDict) -> str:
-    bindings = map(lambda kv: generate_python_binding(
-        kv[0], kv[1]['members']), structs.items())
+    bindings = map(
+        lambda kv: generate_python_binding(kv[0], kv[1]['members']),
+        structs.items())
+    return (endl * 2).join(bindings)
+
+
+def generate_python_enum_value_binding(enumname: str, valuename: str,
+                                       value: OrderedDict) -> str:
+    return ".value(\"{name}\", {enumname}::{name}, \"{doc}\")"\
+        .format(name=valuename,
+                enumname=enumname,
+                doc=json_text_list_to_str(value['documentation']))
+
+
+def generate_python_enum_value_bindings(name: str, values: OrderedDict) -> str:
+    bindings = map(lambda kv: generate_python_enum_value_binding(
+        name, kv[0], kv[1]), values.items())
+    return (endl + " " * 8).join(bindings)
+
+
+def generate_python_enum_binding(name: str, values: OrderedDict) -> str:
+    return """\
+    pybind11::enum_<{name}>(py_log_module, "{name}", pybind11::arithmetic())
+        {value_bindings};\
+""".format(name=name,
+           value_bindings=generate_python_enum_value_bindings(name, values))
+
+
+def generate_python_enum_bindings(enums: OrderedDict) -> str:
+    bindings = map(
+        lambda kv: generate_python_enum_binding(kv[0], kv[1]['values']),
+        enums.items())
     return (endl * 2).join(bindings)
 
 
@@ -316,8 +345,11 @@ PYBIND11_MODULE(DroneLogger, py_log_module) {{
 
 {struct_bindings}
 
+{enum_bindings}
+
 {log_entry_bindings}
 }}""".format(struct_bindings=generate_python_bindings(data['structs']),
+             enum_bindings=generate_python_enum_bindings(data['enums']),
              log_entry_bindings=generate_python_log_entry_binding(data))
 
 # endregion
