@@ -74,7 +74,7 @@ target_include_directories(DroneLogger
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include-generated>
     PRIVATE
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+        # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/src-generated>
 )
 
@@ -97,8 +97,10 @@ install(TARGETS logentry
         EXPORT logentry
         INCLUDES DESTINATION include)
 install(EXPORT logentry DESTINATION lib)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LogEntry.hpp
+install(FILES 
+        ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LogEntry.hpp
+        ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LoggerStructs.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/GetLogData.hpp
         DESTINATION include)
-# TODO
-# install(FILES ${CMAKE_CURRENT_BINARY_DIR}/src-generated/logger.drone.cpp
-#         DESTINATION src)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/src-generated/GetLogData.cpp
+        DESTINATION src)

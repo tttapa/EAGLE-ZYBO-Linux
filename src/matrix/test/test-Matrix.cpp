@@ -118,13 +118,13 @@ TEST(Matrix, diag) {
 }
 
 TEST(Matrix, diagElements) {
-    TMatrix<int, 4, 5> m        = {{
+    TMatrix<int, 4, 5> m   = {{
         {11, 12, 13, 14, 15},
         {21, 22, 23, 24, 25},
         {31, 32, 33, 34, 35},
         {41, 42, 43, 44, 45},
     }};
-    auto result = diagElements(m);
+    auto result            = diagElements(m);
     Array<int, 4> expected = {{11, 22, 33, 44}};
     ASSERT_EQ(result, expected);
 }
@@ -246,14 +246,14 @@ TEST(Matrix, hcat) {
 
 TEST(Matrix, hcatRowVectorDoubleR) {
     RowVector<2> l        = {{1, 2}};
-    double r              = 3;
+    real_t r              = 3;
     RowVector<3> result   = hcat(l, r);
     RowVector<3> expected = {{1, 2, 3}};
     ASSERT_EQ(result, expected);
 }
 
 TEST(Matrix, hcatRowVectorDoubleL) {
-    double l              = 1;
+    real_t l              = 1;
     RowVector<2> r        = {{2, 3}};
     RowVector<3> result   = hcat(l, r);
     RowVector<3> expected = {{1, 2, 3}};
@@ -283,14 +283,14 @@ TEST(Matrix, hcat3) {
 
 TEST(Matrix, hcatColVectorDoubleR) {
     ColVector<2> t        = {{1, 2}};
-    double b              = 3;
+    real_t b              = 3;
     ColVector<3> result   = vcat(t, b);
     ColVector<3> expected = {{1, 2, 3}};
     ASSERT_EQ(result, expected);
 }
 
 TEST(Matrix, hcatColVectorDoubleL) {
-    double t              = 1;
+    real_t t              = 1;
     ColVector<2> b        = {{2, 3}};
     ColVector<3> result   = vcat(t, b);
     ColVector<3> expected = {{1, 2, 3}};
@@ -370,22 +370,22 @@ TEST(Matrix, isfinite) {
         {-2.3, 0.0, 1.2},
     }};
     ASSERT_TRUE(isfinite(m));
-    m[1][2] = std::numeric_limits<double>::infinity();
+    m[1][2] = std::numeric_limits<real_t>::infinity();
     ASSERT_FALSE(isfinite(m));
-    m[1][2] = std::numeric_limits<double>::quiet_NaN();
+    m[1][2] = std::numeric_limits<real_t>::quiet_NaN();
     ASSERT_FALSE(isfinite(m));
-    m[1][2] = std::numeric_limits<double>::signaling_NaN();
+    m[1][2] = std::numeric_limits<real_t>::signaling_NaN();
     ASSERT_FALSE(isfinite(m));
     m[1][2] = 1.0 / 0.0;
     ASSERT_FALSE(isfinite(m));
 }
 
 TEST(Matrix, map) {
-    Matrix<2, 3> m        = {{
+    Matrix<2, 3> m = {{
         {0.0, -1.1, 2.2},
         {-2.3, 0.0, 1.2},
     }};
-    auto f                = [](double d) { return d >= 0 ? 1.0 : -1.0; };
+    auto f         = [](real_t d) -> real_t { return d >= 0 ? 1.0 : -1.0; };
     Matrix<2, 3> result   = map(m, f);
     Matrix<2, 3> expected = {{
         {1, -1, 1},
@@ -399,14 +399,14 @@ TEST(Matrix, copyToCArray) {
         {1, 2, 3},
         {4, 5, 6},
     }};
-    double a[6];
+    real_t a[6];
     copyToCArray(a, m);
-    ASSERT_EQ(std::vector<double>(a, a + 6),
-              std::vector<double>({1, 2, 3, 4, 5, 6}));
+    ASSERT_EQ(std::vector<real_t>(a, a + 6),
+              std::vector<real_t>({1, 2, 3, 4, 5, 6}));
 }
 
 TEST(Matrix, copyFromCArray) {
-    double a[6] = {1, 2, 3, 4, 5, 6};
+    real_t a[6] = {1, 2, 3, 4, 5, 6};
     Matrix<2, 3> m;
     copyFromCArray(m, a);
     Matrix<2, 3> expected = {{
@@ -419,6 +419,6 @@ TEST(Matrix, copyFromCArray) {
 TEST(Matrix, innerProduct) {
     ColVector<3> x  = {1, 2, 3};
     ColVector<3> y  = {4, 5, 6};
-    double expected = 1 * 4 + 2 * 5 + 3 * 6;
+    real_t expected = 1 * 4 + 2 * 5 + 3 * 6;
     ASSERT_EQ(x * y, expected);
 }

@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
-#include <HouseholderQR.hpp>
 #include <AlmostEqual.hpp>
+#include <HouseholderQR.hpp>
 
 using Matrices::T;
 using std::cout;
@@ -13,7 +13,7 @@ TEST(QR, QR) {
         {21, 22},
         {31, 32},
     }};
-    QR<double, 3, 2> qtr      = householderQR(A);
+    QR<real_t, 3, 2> qtr      = householderQR(A);
     Matrix<3, 2> QTA          = qtr.applyTranspose(A);
     Matrix<3, 3> Q            = qtr.Q();
     Matrix<3, 2> U_expected   = {{

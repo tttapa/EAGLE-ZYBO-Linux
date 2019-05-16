@@ -293,6 +293,42 @@ PYBIND11_MODULE(DroneLogger, py_log_module) {{
 
 # endregion
 
+# region GetLogData for Baremetal ..............................................
+
+
+def generate_getlogdata_assignment(name: str, entry: OrderedDict) -> str:
+    return """\
+    logentry.{name} = {value};""".format(name=name, value=entry['value'])
+
+
+def generate_getlogdata_assignments(logger: OrderedDict):
+    assignments = map(lambda kv: generate_getlogdata_assignment(*kv),
+                      filter(lambda kv: 'value' in kv[1], logger.items()))
+    return endl.join(assignments)
+
+
+def generate_getlogdata_all_assignments(data: OrderedDict) -> str:
+    struct_assignments = map(
+        lambda struct: generate_getlogdata_assignments(struct['logger']),
+        filter(lambda struct: 'logger' in struct and len(struct['logger']) > 0,
+               data['structs'].values()))
+    other_assignments = generate_getlogdata_assignments(data['others'])
+    return endl.join(struct_assignments) + endl + other_assignments
+
+
+def generate_getlogdata(data: OrderedDict) -> str:
+    return """\
+#include <GetLogData.hpp>
+
+LogEntry getLogData() {{
+    LogEntry logentry;
+{assignments}
+    return logentry;
+}}""".format(assignments=generate_getlogdata_all_assignments(data))
+
+# endregion
+
+
 for folder in ["src-generated", "include-generated"]:
     if not os.path.exists(folder):
         os.makedirs(folder)
@@ -304,9 +340,12 @@ with open(json_file_path, 'r') as json_file, \
     open("include-generated/LoggerStructs.hpp", 'w') \
         as structsheaderfile, \
     open("include-generated/LogEntry.hpp", 'w') \
-        as logentryheaderfile:
+        as logentryheaderfile, \
+    open("src-generated/GetLogData.cpp", 'w') \
+        as getlogdatafile:
     data = json.load(json_file, object_pairs_hook=OrderedDict)
 
     structsheaderfile.write(generate_struct_header(data['structs']))
     pythonmodulefile.write(generate_python_module(data))
     logentryheaderfile.write(generate_log_entry_header(data))
+    getlogdatafile.write(generate_getlogdata(data))

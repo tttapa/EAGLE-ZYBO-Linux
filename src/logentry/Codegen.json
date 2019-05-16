@@ -204,7 +204,8 @@
     "others": {
         "mode": {
             "type": "int32_t",
-            "documentation": "The flight mode of the drone"
+            "documentation": "The flight mode of the drone",
+            "value": "getMode()"
         }
     }
 }

@@ -16,7 +16,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_targetsDefined)
 set(_targetsNotDefined)
 set(_expectedTargets)
-foreach(_expectedTarget logentry)
+foreach(_expectedTarget utilities)
   list(APPEND _expectedTargets ${_expectedTarget})
   if(NOT TARGET ${_expectedTarget})
     list(APPEND _targetsNotDefined ${_expectedTarget})
@@ -48,12 +48,11 @@ if(_IMPORT_PREFIX STREQUAL "/")
   set(_IMPORT_PREFIX "")
 endif()
 
-# Create imported target logentry
-add_library(logentry INTERFACE IMPORTED)
+# Create imported target utilities
+add_library(utilities INTERFACE IMPORTED)
 
-set_target_properties(logentry PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_LINK_LIBRARIES "quaternion"
+set_target_properties(utilities PROPERTIES
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include;${_IMPORT_PREFIX}/include"
 )
 
 if(CMAKE_VERSION VERSION_LESS 3.0.0)
@@ -62,7 +61,7 @@ endif()
 
 # Load information for each installed configuration.
 get_filename_component(_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
-file(GLOB CONFIG_FILES "${_DIR}/logentry-*.cmake")
+file(GLOB CONFIG_FILES "${_DIR}/utilities-*.cmake")
 foreach(f ${CONFIG_FILES})
   include(${f})
 endforeach()
@@ -89,24 +88,8 @@ but not all the files it references.
 endforeach()
 unset(_IMPORT_CHECK_TARGETS)
 
-# Make sure the targets which have been exported in some other 
-# export set exist.
-unset(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets)
-foreach(_target "quaternion" )
-  if(NOT TARGET "${_target}" )
-    set(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets "${${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets} ${_target}")
-  endif()
-endforeach()
-
-if(DEFINED ${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets)
-  if(CMAKE_FIND_PACKAGE_NAME)
-    set( ${CMAKE_FIND_PACKAGE_NAME}_FOUND FALSE)
-    set( ${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE "The following imported targets are referenced, but are missing: ${${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets}")
-  else()
-    message(FATAL_ERROR "The following imported targets are referenced, but are missing: ${${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets}")
-  endif()
-endif()
-unset(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets)
+# This file does not depend on other imported targets which have
+# been exported from the same project but in a separate export set.
 
 # Commands beyond this point should not need to know the version.
 set(CMAKE_IMPORT_FILE_VERSION)
