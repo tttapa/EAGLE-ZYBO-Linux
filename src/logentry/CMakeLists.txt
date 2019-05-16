@@ -96,7 +96,7 @@ endif()
 install(TARGETS logentry
         EXPORT logentry
         INCLUDES DESTINATION include)
-install(EXPORT logentry DESTINATION lib)
+install(EXPORT logentry DESTINATION cmake)
 install(FILES 
         ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LogEntry.hpp
         ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LoggerStructs.hpp

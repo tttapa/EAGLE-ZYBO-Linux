@@ -25,7 +25,7 @@ add_subdirectory(test)
 install(TARGETS utilities
         EXPORT utilities
         INCLUDES DESTINATION include)
-install(EXPORT utilities DESTINATION lib)
+install(EXPORT utilities DESTINATION cmake)
 install(
 FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Square.hpp

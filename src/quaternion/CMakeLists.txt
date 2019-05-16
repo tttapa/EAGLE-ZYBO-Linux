@@ -19,7 +19,7 @@ endif()
 install(TARGETS quaternion
         EXPORT quaternion
         INCLUDES DESTINATION include)
-install(EXPORT quaternion DESTINATION lib)
+install(EXPORT quaternion DESTINATION cmake)
 install(
 FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/EulerAngles.hpp

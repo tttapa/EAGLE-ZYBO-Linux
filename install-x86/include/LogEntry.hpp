@@ -80,14 +80,8 @@ struct LogEntry {
      * The autonomous controller's output.
      */
     AutonomousOutput autonomousOutput;
-    /**
-     * The accelerometer's measurement.
-     */
-    AccelMeasurement accelMeasurement;
-    /**
-     * The gyroscope's measurement.
-     */
-    GyroMeasurement gyroMeasurement;
+
+
     /**
      * The IMU's measurement.
      */
@@ -128,4 +122,8 @@ struct LogEntry {
      * Time since startup in seconds, calculated using getTickCount().
      */
     real_t time;
+    /**
+     * Yaw measurement from IMP in radians.
+     */
+    real_t yawMeasurement;
 };

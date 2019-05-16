@@ -15,7 +15,7 @@ add_subdirectory(test)
 install(TARGETS matrix
         EXPORT matrix
         INCLUDES DESTINATION include)
-install(EXPORT matrix DESTINATION lib)
+install(EXPORT matrix DESTINATION cmake)
 install(
 FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Array.hpp
