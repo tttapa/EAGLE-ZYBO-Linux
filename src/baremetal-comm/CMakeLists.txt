@@ -31,7 +31,7 @@ install(TARGETS baremetal-comm
         EXPORT baremetal-comm
         ARCHIVE DESTINATION lib
         INCLUDES DESTINATION include)
-install(EXPORT baremetal-comm DESTINATION lib)
+install(EXPORT baremetal-comm DESTINATION cmake)
 install(FILES 
             ${CMAKE_CURRENT_SOURCE_DIR}/include/BaremetalCommunicationDef.hpp
             ${CMAKE_CURRENT_SOURCE_DIR}/include/SharedStruct.hpp
