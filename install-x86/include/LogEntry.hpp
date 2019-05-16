@@ -122,4 +122,8 @@ struct LogEntry {
      * Time since startup in seconds, calculated using getTickCount().
      */
     real_t time;
+    /**
+     * Yaw measurement from IMP in radians.
+     */
+    real_t yawMeasurement;
 };
