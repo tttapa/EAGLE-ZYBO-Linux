@@ -250,12 +250,12 @@ struct AttitudeState {
  */
 struct PositionControlSignal {
     PositionControlSignal() = default;
-    PositionControlSignal(Vec2f q12ref) : q12ref{q12ref} {}
+    PositionControlSignal(Vec2f q12) : q12{q12} {}
     
     /**
      * Reference orientation, q1 and q2 components.
      */
-    Vec2f q12ref = {0.0, 0.0};
+    Vec2f q12 = {0.0, 0.0};
 };
 
 // This is an automatically generated struct, edit it in the code generator
