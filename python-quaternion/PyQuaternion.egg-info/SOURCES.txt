@@ -1,0 +1,5 @@
+setup.py
+PyQuaternion.egg-info/PKG-INFO
+PyQuaternion.egg-info/SOURCES.txt
+PyQuaternion.egg-info/dependency_links.txt
+PyQuaternion.egg-info/top_level.txt

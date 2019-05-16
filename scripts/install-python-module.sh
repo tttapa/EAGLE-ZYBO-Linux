@@ -18,12 +18,12 @@ python_arch=$(${python_bin} -c 'import platform; print(platform.machine())')
 echo "Using Python $python_version_dot (${python_bin})"
 
 # Install the Wheel module
-$python_bin -m pip install --user wheel
+$python_bin -m pip install --user --quiet wheel
 
 # Build the Wheel package
 $python_bin setup.py bdist_wheel
 # List all Wheels compatible with this Python version
-wheels=($(ls dist/py_grid_finder-*-cp${python_version_no_dot}-cp${python_version_no_dot}m-linux_${python_arch}.whl))
+wheels=($(ls dist/*-cp${python_version_no_dot}-cp${python_version_no_dot}m-linux_${python_arch}.whl))
 # Sort them by version number
 wheels=($(sort --version-sort <<< ${wheels[*]}))
 echo "${wheels[*]}"

@@ -270,6 +270,9 @@ PYBIND11_MODULE(DroneLogger, py_log_module) {{
 
 # endregion
 
+for folder in ["src-generated", "include-generated"]:
+    if not os.path.exists(folder):
+        os.makedirs(folder)
 
 json_file_path = os.path.join(dir_path, "Codegen.json")
 with open(json_file_path, 'r') as json_file, \

@@ -104,7 +104,17 @@ add_subdirectory("applications")
 ################################################################################
 
 # Builds a Python Wheel package and installs it using Pip
-add_custom_target(python
+add_custom_target(python-gridfinder
     "${CMAKE_CURRENT_LIST_DIR}/scripts/install-python-module.sh"
     "${PYTHON_EXECUTABLE}"
-    WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/python-module")
+    WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/python-gridfinder")
+
+add_custom_target(python-quaternion
+    "${CMAKE_CURRENT_LIST_DIR}/scripts/install-python-module.sh"
+    "${PYTHON_EXECUTABLE}"
+    WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/python-quaternion")
+
+add_custom_target(python-logentry
+    "${CMAKE_CURRENT_LIST_DIR}/scripts/install-python-module.sh"
+    "${PYTHON_EXECUTABLE}"
+    WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/python-logentry")

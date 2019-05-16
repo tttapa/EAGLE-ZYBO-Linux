@@ -59,12 +59,12 @@ class CMakeBuild(build_ext):
         subprocess.check_call(['cmake', '--build', '.', '--target', ext.name] + build_args, cwd=self.build_temp)
 
 setup(
-    name='DroneLogger',
-    version='0.1.2',
+    name='PyQuaternion',
+    version='0.0.2',
     author='Pieter Pas',
     author_email='pieter.pas@outlook.com',
-    description='The Python Drone Logger Module',
+    description='The Python Quaternion module',
     long_description='',
-    ext_modules=[CMakeExtension('DroneLogger', '..')],
+    ext_modules=[CMakeExtension('PyQuaternion', '..')],
     cmdclass=dict(build_ext=CMakeBuild),
 )

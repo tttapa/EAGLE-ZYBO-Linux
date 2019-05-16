@@ -59,7 +59,7 @@ if(NOT CMAKE_CROSSCOMPILING)
 find_package(pybind11 REQUIRED)
 
 # Create a Python module
-pybind11_add_module(py_drone_logger 
+pybind11_add_module(DroneLogger 
     ${CMAKE_CURRENT_BINARY_DIR}/src-generated/DroneLogEntry.Python.cpp
     EXCLUDE_FROM_ALL)
 
@@ -68,7 +68,7 @@ pybind11_add_module(py_drone_logger
 #   files.
 #   The include files in the `include` folder are part of the public API of the
 #   library, users of the library need to be able to include them in their code. 
-target_include_directories(py_drone_logger
+target_include_directories(DroneLogger
     PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -81,7 +81,7 @@ target_include_directories(py_drone_logger
 # Link the library with its dependencies.
 #   This manages both the include directories of the dependencies, as well as  
 #   the actual linking of the other libraries.
-target_link_libraries(py_drone_logger
+target_link_libraries(DroneLogger
     PUBLIC
         logentry
         pybind11::module
