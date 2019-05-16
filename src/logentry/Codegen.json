@@ -893,6 +893,7 @@
     },
     "includes": [
         "ControllerInstances.hpp",
+        "Matrix.hpp",
         "MiscInstances.hpp",
         "RCValues.hpp",
         "Time.hpp"
