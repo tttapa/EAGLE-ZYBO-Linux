@@ -273,7 +273,7 @@
                 "to the attitude controller, represented by a Vec2f."
             ],
             "members": {
-                "q12ref": {
+                "q12": {
                     "type": "Vec2f",
                     "default": "{0.0, 0.0}",
                     "documentation": [
