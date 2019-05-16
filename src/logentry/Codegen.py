@@ -131,7 +131,7 @@ def generate_struct_header(data: OrderedDict) -> str:
 
 def get_optional_documentation_string(member: OrderedDict) -> str:
     if 'documentation' in member:
-        return member['documentation']
+        return json_text_list_to_str(member['documentation'])
     else:
         return ""
 

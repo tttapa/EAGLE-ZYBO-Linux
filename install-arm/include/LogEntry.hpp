@@ -16,35 +16,98 @@ struct LogEntry {
   // public:
   //   LogEntry() : size(sizeof(LogEntry)) {}
 
+    /**
+     * The altitude controller's control signal.
+     */
     AltitudeControlSignal altitudeControlSignal;
+    /**
+     * The altitude controller's integral windup.
+     */
     AltitudeIntegralWindup altitudeIntegralWindup;
+    /**
+     * The altitude controller's measurement.
+     */
     AltitudeMeasurement altitudeMeasurement;
+    /**
+     * The altitude controller's reference.
+     */
     AltitudeReference altitudeReference;
+    /**
+     * The altitude controller's state estimate.
+     */
     AltitudeState altitudeStateEstimate;
+    /**
+     * The attitude controller's control signal.
+     */
     AttitudeControlSignal attitudeControlSignal;
+    /**
+     * The attitude controller's integral windup.
+     */
     AttitudeIntegralWindup attitudeIntegralWindup;
+    /**
+     * The attitude controller's measurement.
+     */
     AttitudeMeasurement attitudeMeasurement;
+    /**
+     * The attitude controller's reference.
+     */
     AttitudeReference attitudeReference;
+    /**
+     * The attitude controller's state estimate.
+     */
     AttitudeState attitudeStateEstimate;
+    /**
+     * The position controller's control signal.
+     */
     PositionControlSignal positionControlSignal;
+    /**
+     * The position controller's integral windup.
+     */
     PositionIntegralWindup positionIntegralWindup;
+    /**
+     * The position controller's measurement.
+     */
     PositionMeasurement referenceLocation;
+    /**
+     * The position controller's reference.
+     */
     PositionReference positionReference;
+    /**
+     * The position controller's state estimate.
+     */
     PositionState positionStateEstimate;
+    /**
+     * The autonomous controller's output.
+     */
     AutonomousOutput autonomousOutput;
-    AccelMeasurement accelMeasurement;
-    GyroMeasurement gyroMeasurement;
+
+
+    /**
+     * The IMU's measurement.
+     */
     IMUMeasurement imuMeasurement;
+    /**
+     * The most recent reading of the RC.
+     */
     RCInput rcInput;
+    /**
+     * The current instruction playing on the buzzer.
+     */
     BuzzerInstruction buzzerInstruction;
+    /**
+     * The current instruction displayed on the LEDs.
+     */
     LEDInstruction ledInstruction;
+    /**
+     * The signal sent to the four motors (ESCs).
+     */
     MotorSignals motorSignals;
     /**
      * The flight mode of the drone.
      */
     FlightMode flightMode;
     /**
-     * The flight mode of the drone.
+     * The WPT mode of the drone.
      */
     WPTMode wptMode;
     /**

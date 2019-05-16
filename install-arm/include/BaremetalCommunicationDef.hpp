@@ -38,22 +38,24 @@ struct TestStruct : SharedStruct<TestStruct> {
 /**
  * @brief   A struct for x and y coordinates of vision/QR positions.
  */
-struct Position {
+struct VisionPosition {
     float x = NAN, y = NAN;
     explicit operator bool() const volatile {
         return !(std::isnan(x) || std::isnan(y));
     }
-    Position() = default;
-    Position(float x, float y) : x{x}, y{y} {}
-    Position(const volatile Position &p) : x{p.x}, y{p.y} {}
-    Position(const Position &p) : x{p.x}, y{p.y} {}
-    void operator=(const Position &p) volatile {
+    VisionPosition() = default;
+    VisionPosition(float x, float y) : x{x}, y{y} {}
+    VisionPosition(const volatile VisionPosition &p) : x{p.x}, y{p.y} {}
+    VisionPosition(const VisionPosition &p) : x{p.x}, y{p.y} {}
+    VisionPosition(const ColVector<2> &p)
+        : x((real_t) p[0]), y((real_t) p[1]) {}
+    void operator=(const VisionPosition &p) volatile {
         this->x = p.x;
         this->y = p.y;
     }
 };
 
-inline std::ostream &operator<<(std::ostream &os, Position pos) {
+inline std::ostream &operator<<(std::ostream &os, VisionPosition pos) {
     return os << "(" << pos.x << ", " << pos.y << ")";
 }
 
@@ -61,7 +63,7 @@ inline std::ostream &operator<<(std::ostream &os, Position pos) {
  * @brief   The data format sent from Vision to ANC.
  */
 struct VisionData {
-    Position position;
+    VisionPosition position;
     double yawAngle;
     // float sideLen;
 };
@@ -79,8 +81,8 @@ using VisionCommStruct =
 struct QRCommStruct : SharedStruct<QRCommStruct> {
   private:
     mutable QRFSMState qrState = QRFSMState::IDLE;
-    Position target;
-    Position current;
+    VisionPosition target;
+    VisionPosition current;
 
   public:
     constexpr static uintptr_t address = VisionCommStruct::nextFreeAddress();
@@ -105,7 +107,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
      *          Baremetal has not yet finished reading the previous target 
      *          position.
      */
-    void setTargetPosition(Position target) volatile {
+    void setTargetPosition(VisionPosition target) volatile {
         checkInitialized();
         if (getQRState() == QRFSMState::NEW_TARGET)
             throw std::runtime_error("Error: illegal setTargetPosition call: "
@@ -121,7 +123,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
     /**
      * @brief   Set the position of the current QR code.
      */
-    void setCurrentPosition(Position current) volatile {
+    void setCurrentPosition(VisionPosition current) volatile {
         if (getQRState() == QRFSMState::NEW_TARGET ||
             getQRState() == QRFSMState::LAND ||
             getQRState() == QRFSMState::QR_UNKNOWN)
@@ -188,12 +190,12 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
      * @throws  std::logic_error
      *          No new target is available.
      */
-    Position getTargetPosition() const volatile {
+    VisionPosition getTargetPosition() const volatile {
         checkInitialized();
         if (getQRState() != QRFSMState::NEW_TARGET)
             throw std::logic_error("Error: illegal getTargetPosition call: "
                                    "No new target available");
-        Position target = this->target;
+        VisionPosition target = this->target;
         qrState         = QRFSMState::IDLE;
         return target;
     }
@@ -208,7 +210,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
      * @throws  std::logic_error
      *          No current position is available.
      */
-    Position getCurrentPosition() const volatile {
+    VisionPosition getCurrentPosition() const volatile {
         checkInitialized();
         if (getQRState() != QRFSMState::NEW_TARGET &&
             getQRState() != QRFSMState::LAND &&

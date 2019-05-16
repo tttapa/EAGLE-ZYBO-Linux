@@ -19,8 +19,6 @@ LogEntry getLogData() {
     logentry.positionStateEstimate = positionController.getStateEstimate();
     logentry.autonomousOutput = autonomousController.getOutput();
 
-
-
     logentry.rcInput = getRCInput();
     logentry.buzzerInstruction = buzzerManager.getCurrentInstruction();
 
