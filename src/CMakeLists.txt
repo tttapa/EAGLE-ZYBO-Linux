@@ -1,6 +1,7 @@
 add_subdirectory(greet)
 add_subdirectory(comm)
 add_subdirectory(crypto)
+add_subdirectory(real_t)
 add_subdirectory(utilities)
 add_subdirectory(matrix)
 add_subdirectory(quaternion)

@@ -8,7 +8,7 @@ target_include_directories(matrix
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
 
-target_link_libraries(matrix INTERFACE utilities) # real_t
+target_link_libraries(matrix INTERFACE real_t) # real_t
 
 add_subdirectory(test)
 
