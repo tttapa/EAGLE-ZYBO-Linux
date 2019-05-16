@@ -232,6 +232,10 @@ TEST(Crypto, TestSWImplementation) {
               BitString({0x70, 0x06, 0x02}));
 }
 
+const std::vector<uint8_t> key = {0xae, 0xb6, 0x93, 0x1d, 0x55, 0xdf,
+                                  0x17, 0x2e, 0xac, 0x78, 0x0f, 0xa6,
+                                  0x7e, 0xe4, 0xdd, 0xf3};
+
 /**
  * @brief   Test SW implementation with QR codes.
  */
@@ -245,8 +249,7 @@ TEST(Crypto, TestSWImplementationQR1) {
          0x53, 0xe3, 0xc7, 0x07, 0x2f, 0x49, 0x12, 0x21, 0x18, 0xf0, 0x51, 0x07,
          0xe4, 0xc5, 0x2a, 0x97, 0xa6, 0xa5, 0xd5});
 
-    CryptoInstruction instruction(
-        decrypt(qrCode, SWImplementation()));
+    CryptoInstruction instruction = tryDecrypt(qrCode, SWImplementation(), key);
 
     ASSERT_EQ(instruction.getInstructionType(),
               CryptoInstruction::InstructionType::GOTO);
@@ -267,8 +270,7 @@ TEST(Crypto, TestSWImplementationQR2) {
          0x70, 0xe2, 0x88, 0x07, 0x91, 0xc0, 0xda, 0x24, 0xdf, 0x40, 0x97, 0x07,
          0x82, 0x2a, 0xc0, 0xc8, 0x0d, 0xb4, 0x1a});
 
-    CryptoInstruction instruction(
-        decrypt(qrCode, SWImplementation()));
+    CryptoInstruction instruction = tryDecrypt(qrCode, SWImplementation(), key);
 
     ASSERT_EQ(instruction.getInstructionType(),
               CryptoInstruction::InstructionType::GOTO);
@@ -288,8 +290,7 @@ TEST(Crypto, TestSWImplementationQR3) {
          0x88, 0x05, 0x51, 0x2a, 0xc9, 0xe9, 0x73, 0x05, 0xc6, 0xf9, 0x50,
          0xe1, 0x98, 0x05, 0x58, 0x17, 0x24, 0x12, 0x94});
 
-    CryptoInstruction instruction(
-        decrypt(qrCode, SWImplementation()));
+    CryptoInstruction instruction = tryDecrypt(qrCode, SWImplementation(), key);
 
     ASSERT_EQ(instruction.getInstructionType(),
               CryptoInstruction::InstructionType::LAND);
