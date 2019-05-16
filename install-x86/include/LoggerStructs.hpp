@@ -193,20 +193,20 @@ enum class FlightMode : int32_t {
     UNINITIALIZED = 0,
 
     /**
-     * The drone is in "manual mode". The pilot has control over the drone's
+     * The drone is in \"manual mode\". The pilot has control over the drone's
      * orientation and the common thrust.
      */
     MANUAL = 1,
 
     /**
-     * The drone is in "altitude-hold mode". The pilot has control over drone's
-     * orientation, but the altitude controller takes over the common thrust in
-     * order to keep the drone at a constant altitude.
+     * The drone is in \"altitude-hold mode\". The pilot has control over
+     * drone's orientation, but the altitude controller takes over the common
+     * thrust in order to keep the drone at a constant altitude.
      */
     ALTITUDE_HOLD = 2,
 
     /**
-     * The drone is in "autonomous mode". The pilot has no control over the
+     * The drone is in \"autonomous mode\". The pilot has no control over the
      * attitude or altitude of the drone. If the drone is grounded when entering
      * this flight mode, then it will take off as soon as the pilot raises the
      * throttle above the predetermined threshold (see Autonomous.hpp). If the

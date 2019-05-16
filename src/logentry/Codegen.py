@@ -14,7 +14,7 @@ endl = '\n'
 def json_text_list_to_str(strings: Union[str, List[str]]) -> str:
     if isinstance(strings, list):
         strings = " ".join(strings)
-    return strings.replace('"','\\"')
+    return strings.replace('"', '\\"')
 
 # region C++ Header File .......................................................
 
@@ -174,9 +174,13 @@ def generate_log_entry_other_member(name: str, member: OrderedDict) -> str:
 def generate_log_entry_members(data: OrderedDict) -> str:
     struct_members = map(lambda kv: generate_log_entry_struct_members(*kv),
                          data['structs'].items())
+    enum_members = map(lambda kv: generate_log_entry_struct_members(*kv),
+                       data['enums'].items())
     other_members = map(lambda kv: generate_log_entry_other_member(*kv),
                         data['others'].items())
-    return endl.join(struct_members) + endl + endl.join(other_members)
+    return endl.join(struct_members) + endl \
+        + endl.join(enum_members) + endl \
+        + endl.join(other_members)
 
 
 def generate_log_entry_header(data: OrderedDict) -> str:
@@ -300,9 +304,14 @@ def generate_python_log_entry_member_bindings(data: OrderedDict) -> str:
     struct_members = map(
         lambda kv: generate_python_log_entry_struct_bindings(kv[1]),
         data['structs'].items())
+    enum_members = map(
+        lambda kv: generate_python_log_entry_struct_bindings(kv[1]),
+        data['enums'].items())
     other_members = map(lambda kv: generate_python_log_entry_member_binding(*kv),
                         data['others'].items())
-    return endl.join(struct_members) + endl + endl.join(other_members)
+    return endl.join(struct_members) + endl \
+        + endl.join(enum_members) + endl \
+        + endl.join(other_members) + endl
 
 
 def generate_python_log_entry_binding(data: OrderedDict) -> str:

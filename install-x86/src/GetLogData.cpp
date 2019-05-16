@@ -11,6 +11,6 @@ LogEntry getLogData() {
     logentry.navigationObserverState = positionController.getStateEstimate();
     logentry.positionControlSignal = positionController.getControlSignal();
     logentry.referenceLocation = positionController.(getReferencePosition)();
-    logentry.mode = getMode();
+    logentry.frametime = getFrameTime();
     return logentry;
 }

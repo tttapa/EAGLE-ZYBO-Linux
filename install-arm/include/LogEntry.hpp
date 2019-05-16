@@ -31,5 +31,9 @@ struct LogEntry {
     /**
      * The flight mode of the drone
      */
-    int32_t mode;
+    FlightMode mode;
+    /**
+     * The time since startup in milliseconds
+     */
+    uint64_t frametime;
 };

@@ -243,13 +243,13 @@
                         "controller takes over the common thrust in order to",
                         "keep the drone at a constant altitude."
                     ]
-                }, 
+                },
                 "AUTONOMOUS": {
                     "value": "3",
                     "documentation": [
-                        "The drone is in \"autonomous mode\". The pilot has no", 
+                        "The drone is in \"autonomous mode\". The pilot has no",
                         "control over the attitude or altitude of the drone.",
-                        "If the drone is grounded when entering this flight", 
+                        "If the drone is grounded when entering this flight",
                         "mode, then it will take off as soon as the pilot",
                         "raises the throttle above the predetermined threshold",
                         "(see Autonomous.hpp). If the drone was already",
@@ -263,14 +263,20 @@
                         "flight, the drone will land at its current location."
                     ]
                 }
+            },
+            "logger": {
+                "mode": {
+                    "value": "getMode()",
+                    "documentation": "The flight mode of the drone"
+                }
             }
         }
     },
     "others": {
-        "mode": {
-            "type": "int32_t",
-            "documentation": "The flight mode of the drone",
-            "value": "getMode()"
+        "frametime": {
+            "type": "uint64_t",
+            "documentation": "The time since startup in milliseconds",
+            "value": "getFrameTime()"
         }
     }
 }
