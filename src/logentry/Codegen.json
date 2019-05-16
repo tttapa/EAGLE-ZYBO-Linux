@@ -702,20 +702,20 @@
     "enums": {
         "FlightMode": {
             "documentation": [
-                "Struct containing the four different flight modes. First, the",
-                "drone begins in the UNINITIALIZED flight mode. After the",
-                "first cycle, the drone will enter the current flight mode, as",
-                "specified by the RC. In MANUAL_MODE, the pilot has full",
-                "control over the drone's orientation and the common thrust.",
-                "In ALTITUDE_HOLD_MODE, the pilot still has control over the ",
-                "drone's orientation, but the altitude controller takes over",
-                "the common thrust in order to keep the drone at a constant",
-                "height. Finally, in AUTONOMOUS_MODE, the pilot has no control",
-                "over the attitude or altitude of the drone. The drone will",
-                "navigate autonomously to successive QR codes and land at its",
-                "final code. As a safety precaution, if the pilot sets the",
-                "throttle to zero during the autonomous flight, the drone will",
-                "land at its current location."
+                "Enumeration containing the four different flight modes.",
+                "First, the drone begins in the UNINITIALIZED flight mode.",
+                "After the first cycle, the drone will enter the current",
+                "flight mode, as specified by the RC. In MANUAL_MODE, the",
+                "pilot has full control over the drone's orientation and the",
+                "common thrust. In ALTITUDE_HOLD_MODE, the pilot still has",
+                "control over the drone's orientation, but the altitude",
+                "controller takes over the common thrust in order to keep the",
+                "drone at a constant height. Finally, in AUTONOMOUS_MODE, the",
+                "pilot has no control over the attitude or altitude of the",
+                "drone. The drone will navigate autonomously to successive QR",
+                "codes and land at its final code. As a safety precaution,",
+                "if the pilot sets the throttle to zero during the autonomous",
+                "flight, the drone will land at its current location."
             ],
             "values": {
                 "UNINITIALIZED": {
@@ -728,15 +728,14 @@
                 "MANUAL": {
                     "value": "1",
                     "documentation": [
-                        "The drone is in \"manual mode\". The pilot has",
-                        "control over the drone's orientation and the common",
-                        "thrust."
+                        "The drone is in MANUAL mode. The pilot has control",
+                        "over the drone's orientation and the common thrust."
                     ]
                 },
                 "ALTITUDE_HOLD": {
                     "value": "2",
                     "documentation": [
-                        "The drone is in \"altitude-hold mode\". The pilot has",
+                        "The drone is in ALTITUDE-HOLD mode. The pilot has",
                         "control over drone's orientation, but the altitude",
                         "controller takes over the common thrust in order to",
                         "keep the drone at a constant altitude."
@@ -745,41 +744,88 @@
                 "AUTONOMOUS": {
                     "value": "3",
                     "documentation": [
-                        "The drone is in \"autonomous mode\". The pilot has no",
+                        "The drone is in AUTONOMOUS mode. The pilot has no",
                         "control over the attitude or altitude of the drone.",
                         "If the drone is grounded when entering this flight",
                         "mode, then it will take off as soon as the pilot",
-                        "raises the throttle above the predetermined threshold",
-                        "(see Autonomous.hpp). If the drone was already",
-                        "airborne when entering this flight mode, then this",
-                        "step will be skipped. Then, the drone will loiter at",
-                        "its current position for a predetermined time (see",
-                        "Autonomous.hpp). After that, it will navigate",
-                        "autonomously to successive QR codes and finally land",
-                        "at its final code. As a safety precaution, if the",
-                        "pilot sets the throttle to zero during the autonomous",
-                        "flight, the drone will land at its current location."
+                        "raises the throttle above 50%. If the drone was",
+                        "already airborne when entering this flight mode, then",
+                        "this step will be skipped. Then, the drone will",
+                        "loiter at its current position for 15 seconds. After",
+                        "that,it will navigate autonomously to successive QR",
+                        "codes and finally land at its final code. As a safety",
+                        "precaution, if the pilot sets the throttle to zero",
+                        "during the autonomous flight, the drone will land at",
+                        "its current location. See Autonomous.hpp for more",
+                        "details."
                     ]
                 }
             },
             "logger": {
                 "mode": {
-                    "value": "getMode()",
-                    "documentation": "The flight mode of the drone"
+                    "comment": "This is set in MainInterrupt.cpp.",
+                    "documentation": "The flight mode of the drone."
+                }
+            }
+        },
+        "WPTMode": {
+            "documentation": [
+                "Enumeration containing the two states of wireless power",
+                "transfer, namely OFF and ON. However, wireless power transfer",
+                "cannot be initiated at any time. Only if the drone is in",
+                "MANUAL mode or if it is grounded in AUTONOMOUS mode with zero",
+                "thrust."
+            ],
+            "values": {
+                "OFF": {
+                    "value": "0",
+                    "documentation": [
+                        "Wireless power transfer (WPT) is off."
+                    ]
+                },
+                "ON": {
+                    "value": "1",
+                    "documentation": [
+                        "Wireless power transfer (WPT) is on."
+                    ]
+                }
+            },
+            "logger": {
+                "mode": {
+                    "comment": "This is set in MainInterrupt.cpp.",
+                    "documentation": "The flight mode of the drone."
                 }
             }
         }
     },
     "others": {
-        "frametime": {
+        "millis": {
             "type": "uint64_t",
-            "documentation": "The time since startup in milliseconds",
-            "value": "getFrameTime()"
+            "documentation": [
+                "Time since startup in milliseconds."
+            ],
+            "value": "getMillis()"
+        },
+        "tickCount": {
+            "type": "uint32_t",
+            "documentation": [
+                "IMU tick count since startup."
+            ],
+            "value": "getTickCount()"
+        },
+        "time": {
+            "type": "real_t",
+            "documentation": [
+                "Time since startup in seconds, calculated using",
+                "getTickCount()."
+            ],
+            "value": "getTime()"
         }
     },
     "includes": [
-        "RCValues.hpp",
         "ControllerInstances.hpp",
-        "MiscInstances.hpp"
+        "MiscInstances.hpp",
+        "RCValues.hpp",
+        "Time.hpp"
     ]
 }
