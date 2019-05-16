@@ -6,7 +6,7 @@
 <area shape="rect" id="node5" href="$classBresenhamLine.html#ae4b0dd9c534a550583ae812695bbac59" title=" " alt="" coords="489,157,642,184"/>
 <area shape="rect" id="node6" href="$classBresenhamLine.html#a115d1f10a5ce1e0ef945258346b6f035" title=" " alt="" coords="490,208,641,235"/>
 <area shape="rect" id="node7" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="483,259,648,285"/>
-<area shape="rect" id="node9" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,259,156,285"/>
+<area shape="rect" id="node9" href="$Grid-Finder_8module_8hpp.html#a6849f4dcdb45a7aaadcda6439233d376" title=" " alt="" coords="5,259,156,285"/>
 <area shape="rect" id="node10" href="$classLocationTracker.html#a259a52389d4d7c4a5fe80aca35b789ea" title=" " alt="" coords="477,360,654,387"/>
 <area shape="rect" id="node8" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,208,428,235"/>
 </map>

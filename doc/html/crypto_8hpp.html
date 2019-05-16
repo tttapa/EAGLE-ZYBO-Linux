@@ -99,11 +99,14 @@ $(document).ready(function(){initNavTree('crypto_8hpp.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="cryptoException_8hpp_source.html">cryptoException.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cryptoImplementation_8hpp_source.html">cryptoImplementation.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="cryptoInstruction_8hpp_source.html">cryptoInstruction.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="hwImplementation_8hpp_source.html">hwImplementation.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="swImplementation_8hpp_source.html">swImplementation.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for crypto.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="crypto_8hpp__incl.svg" width="470" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="crypto_8hpp__incl.svg" width="703" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -117,13 +120,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac7aec84cd9b29bd73046db2ea5a8a020"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCryptoInstruction.html">CryptoInstruction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto_8hpp.html#ac7aec84cd9b29bd73046db2ea5a8a020">decrypt</a> (const std::vector&lt; uint8_t &gt; &amp;qrCode)</td></tr>
-<tr class="memdesc:ac7aec84cd9b29bd73046db2ea5a8a020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt the given <a class="el" href="structQR.html">QR</a> code.  <a href="crypto_8hpp.html#ac7aec84cd9b29bd73046db2ea5a8a020">More...</a><br /></td></tr>
-<tr class="separator:ac7aec84cd9b29bd73046db2ea5a8a020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa78f23ed8adf4a7eefe842c3b1bb942a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCryptoInstruction.html">CryptoInstruction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto_8hpp.html#aa78f23ed8adf4a7eefe842c3b1bb942a">decrypt</a> (const std::vector&lt; uint8_t &gt; &amp;qrCode, const <a class="el" href="classCryptoImplementation.html">CryptoImplementation</a> &amp;implementation=<a class="el" href="classHWImplementation.html">HWImplementation</a>())</td></tr>
+<tr class="memdesc:aa78f23ed8adf4a7eefe842c3b1bb942a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt the given <a class="el" href="structQR.html">QR</a> code.  <a href="crypto_8hpp.html#aa78f23ed8adf4a7eefe842c3b1bb942a">More...</a><br /></td></tr>
+<tr class="separator:aa78f23ed8adf4a7eefe842c3b1bb942a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f69ce9864a092ee96aa3b9a299e6074"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCryptoInstruction.html">CryptoInstruction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto_8hpp.html#a7f69ce9864a092ee96aa3b9a299e6074">tryDecrypt</a> (const std::vector&lt; uint8_t &gt; &amp;qrCode, const <a class="el" href="classCryptoImplementation.html">CryptoImplementation</a> &amp;implementation, const std::vector&lt; uint8_t &gt; &amp;vectorDmKey)</td></tr>
+<tr class="memdesc:a7f69ce9864a092ee96aa3b9a299e6074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt the given <a class="el" href="structQR.html">QR</a> code without retries.  <a href="crypto_8hpp.html#a7f69ce9864a092ee96aa3b9a299e6074">More...</a><br /></td></tr>
+<tr class="separator:a7f69ce9864a092ee96aa3b9a299e6074"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ac7aec84cd9b29bd73046db2ea5a8a020"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7aec84cd9b29bd73046db2ea5a8a020">&#9670;&nbsp;</a></span>decrypt()</h2>
+<a id="aa78f23ed8adf4a7eefe842c3b1bb942a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa78f23ed8adf4a7eefe842c3b1bb942a">&#9670;&nbsp;</a></span>decrypt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,8 +138,18 @@ Functions</h2></td></tr>
           <td class="memname"><a class="el" href="classCryptoInstruction.html">CryptoInstruction</a> decrypt </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>qrCode</em></td><td>)</td>
+          <td class="paramname"><em>qrCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="classCryptoImplementation.html">CryptoImplementation</a> &amp;&#160;</td>
+          <td class="paramname"><em>implementation</em> = <code><a class="el" href="classHWImplementation.html">HWImplementation</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -141,7 +157,8 @@ Functions</h2></td></tr>
 <p>Decrypt the given <a class="el" href="structQR.html">QR</a> code. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">qrCode</td><td>The <a class="el" href="structQR.html">QR</a> to decrypt. The <a class="el" href="structQR.html">QR</a> code should be base64 decoded already.</td></tr>
+    <tr><td class="paramname">qrCode</td><td>The <a class="el" href="structQR.html">QR</a> to decrypt. The <a class="el" href="structQR.html">QR</a> code should be base64 decoded already. </td></tr>
+    <tr><td class="paramname">implementation</td><td>The implementation to use can either be the software implementation or the hardware implementation.</td></tr>
   </table>
   </dd>
 </dl>
@@ -159,11 +176,62 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="crypto_8cpp_source.html#l00004">4</a> of file <a class="el" href="crypto_8cpp_source.html">crypto.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="crypto_8cpp_source.html#l00013">13</a> of file <a class="el" href="crypto_8cpp_source.html">crypto.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="crypto_8hpp_aa78f23ed8adf4a7eefe842c3b1bb942a_cgraph.svg" width="524" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="crypto_8hpp_ac7aec84cd9b29bd73046db2ea5a8a020_icgraph.svg" width="367" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="crypto_8hpp_aa78f23ed8adf4a7eefe842c3b1bb942a_icgraph.svg" width="367" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a7f69ce9864a092ee96aa3b9a299e6074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f69ce9864a092ee96aa3b9a299e6074">&#9670;&nbsp;</a></span>tryDecrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCryptoInstruction.html">CryptoInstruction</a> tryDecrypt </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>qrCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classCryptoImplementation.html">CryptoImplementation</a> &amp;&#160;</td>
+          <td class="paramname"><em>implementation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vectorDmKey</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decrypt the given <a class="el" href="structQR.html">QR</a> code without retries. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="crypto_8hpp.html#aa78f23ed8adf4a7eefe842c3b1bb942a" title="Decrypt the given QR code.">decrypt</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="crypto_8cpp_source.html#l00069">69</a> of file <a class="el" href="crypto_8cpp_source.html">crypto.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="crypto_8hpp_a7f69ce9864a092ee96aa3b9a299e6074_cgraph.svg" width="600" height="322"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

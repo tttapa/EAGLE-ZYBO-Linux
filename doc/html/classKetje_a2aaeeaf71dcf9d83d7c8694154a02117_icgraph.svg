@@ -21,7 +21,7 @@
 <!-- Node8 -->
 <g id="node2" class="node">
 <title>Node8</title>
-<g id="a_node2"><a xlink:href="namespaceHWImplementation.html#abc6e81f17d057a26e8491533d5dfdc38" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classHWImplementation.html#a9725062c33ebdc296909f65aa22edbca" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-19.5 155,-19.5 155,-.5 0,-.5"/>
 <text text-anchor="middle" x="77.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">HWImplementation::decrypt</text>
 </a>

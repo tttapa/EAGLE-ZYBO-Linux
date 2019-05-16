@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['off',['OFF',['../BaremetalCommunicationDef_8hpp.html#ab7a76423712b76a869e2644f9067623faac132f2982b98bcaa3445e535a03ff75',1,'BaremetalCommunicationDef.hpp']]],
-  ['on',['ON',['../BaremetalCommunicationDef_8hpp.html#ab7a76423712b76a869e2644f9067623fa977d478dacaae531f95695750d1e9d03',1,'BaremetalCommunicationDef.hpp']]]
+  ['new_5ftarget',['NEW_TARGET',['../BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643ca54d13562b9472e7c520230c6ef5471ff',1,'BaremetalCommunicationDef.hpp']]],
+  ['no_5fqr',['NO_QR',['../BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643caf8c541e50034b50f798808405fbe0cdb',1,'BaremetalCommunicationDef.hpp']]]
 ];

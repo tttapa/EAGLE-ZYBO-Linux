@@ -1,8 +1,7 @@
 <map id="BitString::splitBlocks" name="BitString::splitBlocks">
-<area shape="rect" id="node1" title=" " alt="" coords="653,31,811,57"/>
-<area shape="rect" id="node2" href="$keccak_8hpp.html#ad2ec31efd2cbbecc017d9c4e61b379f7" title=" " alt="" coords="516,5,584,32"/>
-<area shape="rect" id="node5" href="$classKetje.html#ac4e54ac3a43763223844c3e315012362" title=" " alt="" coords="495,56,605,83"/>
-<area shape="rect" id="node3" href="$namespaceHWImplementation.html#a803049b0475e6953f079b68b7e0d3a05" title=" " alt="" coords="249,5,437,32"/>
-<area shape="rect" id="node4" href="$namespaceSWImplementation.html#ab0f297c83760f0be08281d3cac7d84ee" title=" " alt="" coords="5,5,192,32"/>
-<area shape="rect" id="node6" href="$namespaceHWImplementation.html#abc6e81f17d057a26e8491533d5dfdc38" title=" " alt="" coords="240,56,447,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="419,31,576,57"/>
+<area shape="rect" id="node2" href="$keccak_8hpp.html#ad2ec31efd2cbbecc017d9c4e61b379f7" title=" " alt="" coords="281,5,349,32"/>
+<area shape="rect" id="node4" href="$classKetje.html#ac4e54ac3a43763223844c3e315012362" title=" " alt="" coords="260,56,371,83"/>
+<area shape="rect" id="node3" href="$classHWImplementation.html#abe2799913267791c526580c8f9ae2fac" title=" " alt="" coords="15,5,203,32"/>
+<area shape="rect" id="node5" href="$classHWImplementation.html#a9725062c33ebdc296909f65aa22edbca" title=" " alt="" coords="5,56,212,83"/>
 </map>

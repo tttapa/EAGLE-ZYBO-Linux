@@ -1,4 +1,4 @@
 <map id="QRCommStruct" name="QRCommStruct">
-<area shape="rect" id="node1" title="The struct for communication between QR/Crypto and ANC." alt="" coords="36,175,209,340"/>
+<area shape="rect" id="node1" title="The struct for communication between QR/Crypto and ANC." alt="" coords="36,175,209,413"/>
 <area shape="rect" id="node2" href="$structSharedStruct.html" title=" " alt="" coords="5,5,240,127"/>
 </map>

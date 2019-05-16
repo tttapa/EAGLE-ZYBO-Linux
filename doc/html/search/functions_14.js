@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['udpsender',['UDPSender',['../classUDPSender.html#a081c028249bb3bcc9c9da962adfe70a1',1,'UDPSender']]],
-  ['unwrap',['unwrap',['../classKetje.html#ac4e54ac3a43763223844c3e315012362',1,'Ketje']]],
-  ['update',['update',['../classAngleTracker.html#a513f5d6f5b1affe00dcc82a036a3dc61',1,'AngleTracker::update()'],['../classLocationTracker.html#a259a52389d4d7c4a5fe80aca35b789ea',1,'LocationTracker::update()'],['../classLogger.html#ad905325c0f6a7f835e7e54c66e7300b2',1,'Logger::update()'],['../classQRCryptoManager.html#a9a08c5f0afea16d209467e6fc27048ae',1,'QRCryptoManager::update()']]],
-  ['updatelocation',['updateLocation',['../classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522',1,'LocationFinder']]]
+  ['vcat',['vcat',['../Matrix_8hpp.html#aa2d8440aedee83f1dccdfc601cf76318',1,'vcat(const TColVector&lt; T, R1 &gt; &amp;t, T b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#acc09e84eecbf32db636f5293c09571ae',1,'vcat(T t, const TColVector&lt; T, R1 &gt; &amp;b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a4f2cfb005e9527a7871f32a798707058',1,'vcat(const TMatrix&lt; T, R1, C &gt; &amp;t, const TMatrix&lt; T, R2, C &gt; &amp;b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a161268a44cafcf8e749d9e5135b60e12',1,'vcat(const TMatrix&lt; T, R, C &gt; &amp;t, Args... args) -&gt; decltype(vcat(t, vcat(args...))):&#160;Matrix.hpp']]],
+  ['vec',['vec',['../structPoint.html#a482c5bbc38af3c934eac31cb645aeba1',1,'Point']]]
 ];

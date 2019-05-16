@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['vcat',['vcat',['../Matrix_8hpp.html#a6b703886d2a8afc3e2ae96a34f375ee1',1,'vcat(const TColVector&lt; T, R1 &gt; &amp;t, T b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#ae7c262a28886879e90372b013eaba545',1,'vcat(T t, const TColVector&lt; T, R1 &gt; &amp;b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#af15e4f88d4e60baf25c17dcbb90542a3',1,'vcat(const TMatrix&lt; T, R1, C &gt; &amp;t, const TMatrix&lt; T, R2, C &gt; &amp;b):&#160;Matrix.hpp'],['../Matrix_8hpp.html#a255a5dd5a07d823cfba97b4987637dee',1,'vcat(const TMatrix&lt; T, R, C &gt; &amp;t, Args... args) -&gt; decltype(vcat(t, vcat(args...))):&#160;Matrix.hpp']]],
-  ['vec',['vec',['../structPoint.html#a482c5bbc38af3c934eac31cb645aeba1',1,'Point']]]
+  ['what',['what',['../classCryptoException.html#a8da6c80ec8c57c2b429ae26bc53cacd7',1,'CryptoException']]],
+  ['width',['width',['../classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c',1,'GridFinder::width()'],['../classMask.html#a4124a2daa1f7501d4fd80775b6217679',1,'Mask::width()']]],
+  ['wmem',['wmem',['../wrapper_8h.html#a33eaf162ba3d16c401a1f37349d81fe3',1,'wmem(uint64_t offset, uint32_t value):&#160;original-wrapper.c'],['../original-wrapper_8c.html#a33eaf162ba3d16c401a1f37349d81fe3',1,'wmem(uint64_t offset, uint32_t value):&#160;original-wrapper.c'],['../wrapper_8c.html#a33eaf162ba3d16c401a1f37349d81fe3',1,'wmem(uint64_t offset, uint32_t value):&#160;wrapper.c']]],
+  ['wmemf',['wmemf',['../wrapper_8h.html#a01d67d247029acc300bbf47226901198',1,'wmemf(uint64_t offset, float value):&#160;original-wrapper.c'],['../original-wrapper_8c.html#a01d67d247029acc300bbf47226901198',1,'wmemf(uint64_t offset, float value):&#160;original-wrapper.c'],['../wrapper_8c.html#a01d67d247029acc300bbf47226901198',1,'wmemf(uint64_t offset, float value):&#160;wrapper.c']]],
+  ['write',['write',['../structAccessControlledSharedStruct.html#a0be743fe67c59afa646557b410256ac7',1,'AccessControlledSharedStruct::write()'],['../classCryptoPoller.html#a4ccd77899baffcc96e1a179b26e424f1',1,'CryptoPoller::write()']]]
 ];

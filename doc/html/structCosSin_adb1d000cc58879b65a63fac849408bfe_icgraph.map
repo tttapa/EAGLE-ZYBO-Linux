@@ -9,5 +9,5 @@
 <area shape="rect" id="node8" href="$classGridFinder.html#ad1a5448de0df9a84f989f64b55025843" title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults." alt="" coords="476,46,655,73"/>
 <area shape="rect" id="node9" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="483,97,648,123"/>
 <area shape="rect" id="node10" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,71,428,98"/>
-<area shape="rect" id="node11" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,97,156,123"/>
+<area shape="rect" id="node11" href="$Grid-Finder_8module_8hpp.html#a6849f4dcdb45a7aaadcda6439233d376" title=" " alt="" coords="5,97,156,123"/>
 </map>

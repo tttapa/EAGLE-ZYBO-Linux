@@ -1,5 +1,6 @@
 var Threshold_8hpp =
 [
+    [ "CAFETARIA", "Threshold_8hpp.html#a058827475685a10107f04f555520b453", null ],
     [ "BRIGHTNESS_THRES", "Threshold_8hpp.html#a2f34b8ce94656374e678821229c1e41b", null ],
     [ "HUE_THRES_DEGREES", "Threshold_8hpp.html#a08244d068ef200746f5f2b693268c711", null ],
     [ "HUE_THRES_SHIFT", "Threshold_8hpp.html#a2a9190a6a918e4b958f900c155f94420", null ],

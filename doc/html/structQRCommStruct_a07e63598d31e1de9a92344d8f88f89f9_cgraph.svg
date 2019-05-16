@@ -9,18 +9,18 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 73.5)">
 <title>QRCommStruct::setQRStateBusy</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-73.5 380,-73.5 380,4 -4,4"/>
-<!-- Node5 -->
+<!-- Node21 -->
 <g id="node1" class="node">
-<title>Node5</title>
+<title>Node21</title>
 <g id="a_node1"><a xlink:title="Change the state to QR_READING_BUSY.">
 <polygon fill="#bfbfbf" stroke="#000000" points="0,-22.5 0,-41.5 176,-41.5 176,-22.5 0,-22.5"/>
 <text text-anchor="middle" x="88" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QRCommStruct::setQRStateBusy</text>
 </a>
 </g>
 </g>
-<!-- Node6 -->
+<!-- Node22 -->
 <g id="node2" class="node">
-<title>Node6</title>
+<title>Node22</title>
 <g id="a_node2"><a xlink:href="structSharedStruct.html#ab84d9ff23f09b19bb8cf7f72ec9901fe" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="212,-39 212,-69 376,-69 376,-39 212,-39"/>
 <text text-anchor="start" x="220" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">SharedStruct&lt; QRCommStruct</text>
@@ -28,24 +28,24 @@
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node6 -->
+<!-- Node21&#45;&gt;Node22 -->
 <g id="edge1" class="edge">
-<title>Node5&#45;&gt;Node6</title>
+<title>Node21&#45;&gt;Node22</title>
 <path fill="none" stroke="#191970" d="M176.259,-41.4257C184.6437,-42.3212 193.1616,-43.2308 201.584,-44.1303"/>
 <polygon fill="#191970" stroke="#191970" points="201.4796,-47.639 211.7948,-45.2208 202.223,-40.6786 201.4796,-47.639"/>
 </g>
-<!-- Node7 -->
+<!-- Node23 -->
 <g id="node3" class="node">
-<title>Node7</title>
+<title>Node23</title>
 <g id="a_node3"><a xlink:href="structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" target="_top" xlink:title="Get the current state of the QR/Crypto FSM.">
 <polygon fill="#ffffff" stroke="#000000" points="218,-.5 218,-19.5 370,-19.5 370,-.5 218,-.5"/>
 <text text-anchor="middle" x="294" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">QRCommStruct::getQRState</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node7 -->
+<!-- Node21&#45;&gt;Node23 -->
 <g id="edge2" class="edge">
-<title>Node5&#45;&gt;Node7</title>
+<title>Node21&#45;&gt;Node23</title>
 <path fill="none" stroke="#191970" d="M176.259,-22.5743C186.7689,-21.4519 197.4879,-20.3071 207.9661,-19.1881"/>
 <polygon fill="#191970" stroke="#191970" points="208.3518,-22.6669 217.9236,-18.1247 207.6084,-15.7065 208.3518,-22.6669"/>
 </g>

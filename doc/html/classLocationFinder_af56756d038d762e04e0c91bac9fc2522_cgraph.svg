@@ -163,7 +163,7 @@
 <!-- Node72 -->
 <g id="node31" class="node">
 <title>Node72</title>
-<g id="a_node31"><a xlink:href="Array_8hpp.html#a54bae1a9c86ad6bc491b4f10495a759f" target="_top" xlink:title=" ">
+<g id="a_node31"><a xlink:href="Array_8hpp.html#a2a94116476a44c5d54a8b9d67075def4" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="978,-314.9717 978,-333.9717 1012,-333.9717 1012,-314.9717 978,-314.9717"/>
 <text text-anchor="middle" x="995" y="-321.9717" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">abs</text>
 </a>
@@ -663,7 +663,7 @@
 <!-- Node75 -->
 <g id="node34" class="node">
 <title>Node75</title>
-<g id="a_node34"><a xlink:href="Matrix_8hpp.html#aaac3f553f87e00956b4736107cf40289" target="_top" xlink:title="Calculates u × v, where u, v ⊆ ℝ³.">
+<g id="a_node34"><a xlink:href="Matrix_8hpp.html#ad67efeedccae466877bcdc358c4e67ca" target="_top" xlink:title="Calculates u × v, where u, v ⊆ ℝ³.">
 <polygon fill="#ffffff" stroke="#000000" points="792,-428.9717 792,-447.9717 834,-447.9717 834,-428.9717 792,-428.9717"/>
 <text text-anchor="middle" x="813" y="-435.9717" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">cross</text>
 </a>
@@ -693,7 +693,7 @@
 <!-- Node78 -->
 <g id="node37" class="node">
 <title>Node78</title>
-<g id="a_node37"><a xlink:href="Matrix_8hpp.html#a49ccaf0f0f1746a2824dc79538165c9c" target="_top" xlink:title=" ">
+<g id="a_node37"><a xlink:href="Matrix_8hpp.html#abec71070cc8e64b7c426b3bfde2af39d" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="786.5,-732.9717 786.5,-751.9717 839.5,-751.9717 839.5,-732.9717 786.5,-732.9717"/>
 <text text-anchor="middle" x="813" y="-739.9717" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">normsq</text>
 </a>
@@ -750,7 +750,7 @@
 <!-- Node84 -->
 <g id="node43" class="node">
 <title>Node84</title>
-<g id="a_node43"><a xlink:href="Matrix_8hpp.html#af9bfdd6b415847d35ca735a8a2498652" target="_top" xlink:title=" ">
+<g id="a_node43"><a xlink:href="Matrix_8hpp.html#aab34fe0fbeddb432c56d5a0bd5fed48d" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="438,-770.9717 438,-789.9717 476,-789.9717 476,-770.9717 438,-770.9717"/>
 <text text-anchor="middle" x="457" y="-777.9717" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">diag</text>
 </a>
@@ -870,7 +870,7 @@
 <!-- Node85 -->
 <g id="node44" class="node">
 <title>Node85</title>
-<g id="a_node44"><a xlink:href="Matrix_8hpp.html#a8d3b59e5715a530471c29ef64fff8f0b" target="_top" xlink:title=" ">
+<g id="a_node44"><a xlink:href="Matrix_8hpp.html#a045270fbe2cc7b50f4aa1f25212009fd" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="592,-770.9717 592,-789.9717 675,-789.9717 675,-770.9717 592,-770.9717"/>
 <text text-anchor="middle" x="633.5" y="-777.9717" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">diagElements</text>
 </a>

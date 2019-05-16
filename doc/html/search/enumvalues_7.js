@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['new_5ftarget',['NEW_TARGET',['../BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643ca54d13562b9472e7c520230c6ef5471ff',1,'BaremetalCommunicationDef.hpp']]]
+  ['manual',['MANUAL',['../LoggerStructs_8hpp.html#a6a60337a24d8bfef665223e69b81c465aa60a6a471c0681e5a49c4f5d00f6bc5a',1,'LoggerStructs.hpp']]]
 ];
