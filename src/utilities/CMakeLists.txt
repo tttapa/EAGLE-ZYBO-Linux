@@ -28,6 +28,5 @@ install(TARGETS utilities
 install(EXPORT utilities DESTINATION lib)
 install(
 FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/real_t.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/Square.hpp
 DESTINATION include)

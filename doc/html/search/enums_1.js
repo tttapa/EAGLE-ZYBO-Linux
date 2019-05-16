@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['flightmode',['FlightMode',['../BaremetalCommunicationDef_8hpp.html#a6a60337a24d8bfef665223e69b81c465',1,'BaremetalCommunicationDef.hpp']]]
+  ['exceptiontype',['ExceptionType',['../classCryptoException.html#ab8222b36d5b9edb38ec6c9d3816ac5a9',1,'CryptoException']]]
 ];

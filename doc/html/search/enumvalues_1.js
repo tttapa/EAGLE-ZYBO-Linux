@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['error',['ERROR',['../BaremetalCommunicationDef_8hpp.html#ad85364ea45ddd7f6c811974a92d7643cabb1ca97ec761fc37101737ba0aa2e7c5',1,'BaremetalCommunicationDef.hpp']]]
+  ['degrees',['degrees',['../AnglePrinter_8hpp.html#a30e9be845c31a8fb53d403bb863bcd08a18daee01fc6e54aacd7f4c2eef60ff4d',1,'AnglePrinter.hpp']]],
+  ['degreestex',['degreesTeX',['../AnglePrinter_8hpp.html#a30e9be845c31a8fb53d403bb863bcd08ad8b89e1221cdccc4167a00482ea9f0dc',1,'AnglePrinter.hpp']]]
 ];

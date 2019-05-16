@@ -1,8 +1,9 @@
 <map id="sq" name="sq">
-<area shape="rect" id="node1" title=" " alt="" coords="724,46,763,73"/>
-<area shape="rect" id="node2" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="493,21,659,48"/>
-<area shape="rect" id="node4" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,21,156,48"/>
-<area shape="rect" id="node5" href="$HelperStructs_8hpp.html#a8d72795c613cf90fdae6c7de87343593" title=" " alt="" coords="527,72,625,98"/>
-<area shape="rect" id="node6" href="$classLocationFinder.html#a93be2c4b05b52c58f5fca5d1514dfbe9" title="Get the position of the center of the frame relative to the given square." alt="" coords="476,122,676,149"/>
-<area shape="rect" id="node3" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,72,428,98"/>
+<area shape="rect" id="node1" title=" " alt="" coords="724,111,763,137"/>
+<area shape="rect" id="node2" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="493,60,659,87"/>
+<area shape="rect" id="node4" href="$Grid-Finder_8module_8hpp.html#a6849f4dcdb45a7aaadcda6439233d376" title=" " alt="" coords="5,60,156,87"/>
+<area shape="rect" id="node5" href="$HelperStructs_8hpp.html#a8d72795c613cf90fdae6c7de87343593" title=" " alt="" coords="527,111,625,137"/>
+<area shape="rect" id="node6" href="$classLocationFinder.html#a93be2c4b05b52c58f5fca5d1514dfbe9" title="Get the position of the center of the frame relative to the given square." alt="" coords="476,161,676,188"/>
+<area shape="rect" id="node7" href="$classQuaternion.html#a0a781f97da60b1e383efbe91483f5976" title=" " alt="" coords="505,212,647,239"/>
+<area shape="rect" id="node3" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,111,428,137"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['instructiontype',['InstructionType',['../classCryptoInstruction.html#a966f06da8010704b61028f241138b0b1',1,'CryptoInstruction']]]
+  ['flightmode',['FlightMode',['../LoggerStructs_8hpp.html#a6a60337a24d8bfef665223e69b81c465',1,'LoggerStructs.hpp']]]
 ];

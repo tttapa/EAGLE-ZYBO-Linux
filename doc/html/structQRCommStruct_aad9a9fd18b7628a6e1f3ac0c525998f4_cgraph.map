@@ -1,0 +1,5 @@
+<map id="QRCommStruct::setCurrentPosition" name="QRCommStruct::setCurrentPosition">
+<area shape="rect" id="node1" title="Set the position of the current QR code." alt="" coords="5,27,203,69"/>
+<area shape="rect" id="node2" href="$structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" title="Get the current state of the QR/Crypto FSM." alt="" coords="259,5,461,32"/>
+<area shape="rect" id="node3" href="$structSharedStruct.html#ab84d9ff23f09b19bb8cf7f72ec9901fe" title=" " alt="" coords="251,57,469,98"/>
+</map>

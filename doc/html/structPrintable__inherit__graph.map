@@ -1,5 +1,6 @@
 <map id="Printable" name="Printable">
-<area shape="rect" id="node1" title=" " alt="" coords="158,5,238,83"/>
-<area shape="rect" id="node2" href="$classPrintAsRowVector__t.html" title=" " alt="" coords="5,131,193,223"/>
-<area shape="rect" id="node3" href="$classPrintAsTeX__t.html" title=" " alt="" coords="217,131,376,223"/>
+<area shape="rect" id="node1" title=" " alt="" coords="255,5,335,83"/>
+<area shape="rect" id="node2" href="$structPrintAsEulerAngles.html" title=" " alt="" coords="5,131,176,223"/>
+<area shape="rect" id="node3" href="$classPrintAsRowVector__t.html" title=" " alt="" coords="201,131,389,223"/>
+<area shape="rect" id="node4" href="$classPrintAsTeX__t.html" title=" " alt="" coords="413,131,571,223"/>
 </map>

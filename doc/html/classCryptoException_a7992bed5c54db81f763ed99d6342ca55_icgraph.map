@@ -1,5 +1,8 @@
 <map id="CryptoException::getExceptionType" name="CryptoException::getExceptionType">
-<area shape="rect" id="node1" title=" " alt="" coords="508,5,760,32"/>
-<area shape="rect" id="node2" href="$classCryptoException.html#a8da6c80ec8c57c2b429ae26bc53cacd7" title=" " alt="" coords="291,5,460,32"/>
-<area shape="rect" id="node3" href="$classQRCryptoManager.html#adce85dbb0a3457d79025813c2dea59df" title=" " alt="" coords="5,5,243,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="568,71,820,98"/>
+<area shape="rect" id="node2" href="$classCryptoException.html#a94d9def761bd20ed17eb91dedfeebc51" title=" " alt="" coords="297,5,520,47"/>
+<area shape="rect" id="node4" href="$crypto_8cpp.html#adabfd974d585634ed2e9332c8c164941" title="Decrypt the given QR code." alt="" coords="373,71,444,98"/>
+<area shape="rect" id="node6" href="$crypto_8cpp.html#a7f69ce9864a092ee96aa3b9a299e6074" title="Decrypt the given QR code without retries." alt="" coords="363,122,454,149"/>
+<area shape="rect" id="node3" href="$classCryptoException.html#a14be93aed45bc1fe88271b250ed99c2f" title=" " alt="" coords="5,13,249,39"/>
+<area shape="rect" id="node5" href="$classQRCryptoManager.html#adce85dbb0a3457d79025813c2dea59df" title=" " alt="" coords="9,71,246,98"/>
 </map>

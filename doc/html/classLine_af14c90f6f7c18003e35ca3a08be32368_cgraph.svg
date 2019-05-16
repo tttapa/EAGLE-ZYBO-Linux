@@ -21,7 +21,7 @@
 <!-- Node8 -->
 <g id="node2" class="node">
 <title>Node8</title>
-<g id="a_node2"><a xlink:href="Matrix_8hpp.html#aaac3f553f87e00956b4736107cf40289" target="_top" xlink:title="Calculates u × v, where u, v ⊆ ℝ³.">
+<g id="a_node2"><a xlink:href="Matrix_8hpp.html#ad67efeedccae466877bcdc358c4e67ca" target="_top" xlink:title="Calculates u × v, where u, v ⊆ ℝ³.">
 <polygon fill="#ffffff" stroke="#000000" points="122,-.5 122,-19.5 164,-19.5 164,-.5 122,-.5"/>
 <text text-anchor="middle" x="143" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">cross</text>
 </a>

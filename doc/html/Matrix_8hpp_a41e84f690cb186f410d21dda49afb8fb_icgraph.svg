@@ -9,18 +9,18 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 106)">
 <title>toArrayPointer</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-106 260,-106 260,4 -4,4"/>
-<!-- Node162 -->
+<!-- Node173 -->
 <g id="node1" class="node">
-<title>Node162</title>
+<title>Node173</title>
 <g id="a_node1"><a xlink:title="Get a raw pointer to the internal buffer of the matrix.">
 <polygon fill="#bfbfbf" stroke="#000000" points="169,-41.5 169,-60.5 256,-60.5 256,-41.5 169,-41.5"/>
 <text text-anchor="middle" x="212.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">toArrayPointer</text>
 </a>
 </g>
 </g>
-<!-- Node163 -->
+<!-- Node174 -->
 <g id="node2" class="node">
-<title>Node163</title>
+<title>Node174</title>
 <g id="a_node2"><a xlink:href="structpybind11_1_1detail_1_1type__caster_3_01TMatrix_3_01T_00_01R_00_01C_01_4_01_4.html#a5abe098069b3f8359e43696f9a7dbee2" target="_top" xlink:title="Conversion Python → C++.">
 <polygon fill="#ffffff" stroke="#000000" points="0,-60.5 0,-101.5 133,-101.5 133,-60.5 0,-60.5"/>
 <text text-anchor="start" x="8" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">pybind11::detail::type</text>
@@ -29,15 +29,15 @@
 </a>
 </g>
 </g>
-<!-- Node162&#45;&gt;Node163 -->
+<!-- Node173&#45;&gt;Node174 -->
 <g id="edge1" class="edge">
-<title>Node162&#45;&gt;Node163</title>
+<title>Node173&#45;&gt;Node174</title>
 <path fill="none" stroke="#191970" d="M158.7657,-62.0413C150.4533,-63.7493 141.7818,-65.5311 133.2262,-67.2891"/>
 <polygon fill="#191970" stroke="#191970" points="159.6043,-65.4422 168.6952,-60.001 158.1953,-58.5854 159.6043,-65.4422"/>
 </g>
-<!-- Node164 -->
+<!-- Node175 -->
 <g id="node3" class="node">
-<title>Node164</title>
+<title>Node175</title>
 <g id="a_node3"><a xlink:href="structpybind11_1_1detail_1_1type__caster_3_01TMatrix_3_01T_00_01R_00_01C_01_4_01_4.html#a21af6335218f0f9ea262c1ba3f9c8387" target="_top" xlink:title="Conversion C++ → Python.">
 <polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-41.5 133,-41.5 133,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">pybind11::detail::type</text>
@@ -46,9 +46,9 @@
 </a>
 </g>
 </g>
-<!-- Node162&#45;&gt;Node164 -->
+<!-- Node173&#45;&gt;Node175 -->
 <g id="edge2" class="edge">
-<title>Node162&#45;&gt;Node164</title>
+<title>Node173&#45;&gt;Node175</title>
 <path fill="none" stroke="#191970" d="M158.7657,-39.9587C150.4533,-38.2507 141.7818,-36.4689 133.2262,-34.7109"/>
 <polygon fill="#191970" stroke="#191970" points="158.1953,-43.4146 168.6952,-41.999 159.6043,-36.5578 158.1953,-43.4146"/>
 </g>

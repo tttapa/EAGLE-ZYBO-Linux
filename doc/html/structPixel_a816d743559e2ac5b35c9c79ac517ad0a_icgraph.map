@@ -18,7 +18,7 @@
 <area shape="rect" id="node13" href="$classGridFinder.html#ad1a5448de0df9a84f989f64b55025843" title="Equivalent to #findNextLine(LineResult,bool,uint,uint) but also supports optional LineResults." alt="" coords="476,44,655,71"/>
 <area shape="rect" id="node14" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="483,95,648,122"/>
 <area shape="rect" id="node15" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,120,428,147"/>
-<area shape="rect" id="node16" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,95,156,122"/>
+<area shape="rect" id="node16" href="$Grid-Finder_8module_8hpp.html#a6849f4dcdb45a7aaadcda6439233d376" title=" " alt="" coords="5,95,156,122"/>
 <area shape="rect" id="node20" href="$classGridFinder.html#a05d847c0d5e11314641f84afa0f2ca05" title="Get the value of the given pixel." alt="" coords="1672,403,1789,430"/>
 <area shape="rect" id="node22" href="$classGridFinder.html#a376419f000b3be1e8db278726a2efbc1" title="Set the value of the given pixel." alt="" coords="1673,352,1789,379"/>
 </map>

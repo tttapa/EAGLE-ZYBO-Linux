@@ -1,20 +1,34 @@
 var hierarchy =
 [
+    [ "AltitudeControlSignal", "structAltitudeControlSignal.html", null ],
+    [ "AltitudeReference", "structAltitudeReference.html", null ],
+    [ "AltitudeState", "structAltitudeState.html", null ],
     [ "Angle< Resolution >", "classAngle.html", null ],
     [ "Angle< 360 >", "classAngle.html", null ],
     [ "AngleTracker", "classAngleTracker.html", null ],
     [ "Array< T, N >", "structArray.html", null ],
+    [ "Array< 4 >", "structArray.html", null ],
+    [ "Array< float, 2 >", "structArray.html", null ],
+    [ "Array< float, 3 >", "structArray.html", null ],
     [ "Array< N >", "structArray.html", null ],
     [ "Array< R, C >", "structArray.html", null ],
     [ "Array< T, R, C >", "structArray.html", null ],
     [ "Array< T, Rm, Cn >", "structArray.html", null ],
+    [ "AttitudeControlSignal", "structAttitudeControlSignal.html", null ],
+    [ "AttitudeReference", "structAttitudeReference.html", null ],
+    [ "AttitudeState", "structAttitudeState.html", null ],
     [ "Baremetal2Linux", "structBaremetal2Linux.html", null ],
     [ "BitString", "classBitString.html", null ],
     [ "BresenhamLine", "classBresenhamLine.html", null ],
     [ "CenterPointOutLineIterator", "classCenterPointOutLineIterator.html", null ],
     [ "CosSin", "structCosSin.html", null ],
+    [ "CryptoImplementation", "classCryptoImplementation.html", [
+      [ "HWImplementation", "classHWImplementation.html", null ],
+      [ "SWImplementation", "classSWImplementation.html", null ]
+    ] ],
     [ "CryptoInstruction", "classCryptoInstruction.html", null ],
     [ "CryptoPoller", "classCryptoPoller.html", null ],
+    [ "EulerAngles", "structEulerAngles.html", null ],
     [ "std::exception", null, [
       [ "CryptoException", "classCryptoException.html", null ]
     ] ],
@@ -47,13 +61,17 @@ var hierarchy =
     [ "Pixel", "structPixel.html", null ],
     [ "Point", "structPoint.html", null ],
     [ "Position", "structPosition.html", null ],
+    [ "PositionControlSignal", "structPositionControlSignal.html", null ],
+    [ "PositionReference", "structPositionReference.html", null ],
+    [ "PositionState", "structPositionState.html", null ],
     [ "Printable", "structPrintable.html", [
+      [ "PrintAsEulerAngles", "structPrintAsEulerAngles.html", null ],
       [ "PrintAsRowVector_t< N >", "classPrintAsRowVector__t.html", null ],
       [ "PrintAsTeX_t< R, C >", "classPrintAsTeX__t.html", null ]
     ] ],
-    [ "PythonDroneLogEntry", "structPythonDroneLogEntry.html", null ],
     [ "QR< T, Rm, Cn >", "structQR.html", null ],
     [ "QRCryptoManager", "classQRCryptoManager.html", null ],
+    [ "Quaternion", "classQuaternion.html", null ],
     [ "SharedMemory< T >", "classSharedMemory.html", null ],
     [ "SharedMemory< AccessControlledSharedStruct >", "classSharedMemory.html", null ],
     [ "SharedMemory< FPGARegisters >", "classSharedMemory.html", null ],

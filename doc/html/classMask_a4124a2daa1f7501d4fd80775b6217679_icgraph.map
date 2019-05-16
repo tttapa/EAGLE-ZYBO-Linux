@@ -1,7 +1,7 @@
 <map id="Mask::width" name="Mask::width">
 <area shape="rect" id="node1" title="Get the width of the mask in pixels." alt="" coords="1831,333,1931,360"/>
 <area shape="rect" id="node2" href="$classGridFinder.html#aadfce89f171d55f954a19d700b43ff5c" title="Get the width of the frame." alt="" coords="1651,224,1783,251"/>
-<area shape="rect" id="node15" href="$Grid-Finder_8module_8hpp.html#a05e720af51446c0f9319fb9455fe1767" title=" " alt="" coords="5,392,156,419"/>
+<area shape="rect" id="node15" href="$Grid-Finder_8module_8hpp.html#a6849f4dcdb45a7aaadcda6439233d376" title=" " alt="" coords="5,392,156,419"/>
 <area shape="rect" id="node3" href="$classGridFinder.html#ace2c24a54244e7e92618d3fe7ec62fdc" title="Starting from the given pixel, move in the direction of the given angle, and count the number of whit..." alt="" coords="1433,173,1569,200"/>
 <area shape="rect" id="node7" href="$classGridFinder.html#ab5c436911deb269a22a8d5525271fa4e" title="Get the width of the line at a given point." alt="" coords="1400,275,1603,317"/>
 <area shape="rect" id="node11" href="$classGridFinder.html#a6dec96f8c6ed97647f692fa9f9908595" title="Follow the given line to find the line perpendicular to it. Move along the line for minDistance pixel..." alt="" coords="703,291,881,317"/>

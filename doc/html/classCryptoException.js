@@ -7,5 +7,6 @@ var classCryptoException =
     ] ],
     [ "CryptoException", "classCryptoException.html#a14be93aed45bc1fe88271b250ed99c2f", null ],
     [ "getExceptionType", "classCryptoException.html#a7992bed5c54db81f763ed99d6342ca55", null ],
+    [ "getExceptionTypeName", "classCryptoException.html#a94d9def761bd20ed17eb91dedfeebc51", null ],
     [ "what", "classCryptoException.html#a8da6c80ec8c57c2b429ae26bc53cacd7", null ]
 ];

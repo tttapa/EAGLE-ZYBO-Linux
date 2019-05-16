@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['leftofpoint',['leftOfPoint',['../classLine.html#ade63ea812bc1673307538a83b82da577',1,'Line']]],
-  ['length',['length',['../structArray.html#aac41e8914e639052f99def786107e824',1,'Array']]],
-  ['line',['Line',['../classLine.html#a7ba5776ab6b39324440cf1d26a9f779a',1,'Line::Line(ColVec3f homogCoordinates)'],['../classLine.html#a5787b2d9bfde75c663aafded9d29c6a5',1,'Line::Line(Pixel p, CosSin slope)']]],
-  ['load',['load',['../structpybind11_1_1detail_1_1type__caster_3_01TMatrix_3_01T_00_01R_00_01C_01_4_01_4.html#a5abe098069b3f8359e43696f9a7dbee2',1,'pybind11::detail::type_caster&lt; TMatrix&lt; T, R, C &gt; &gt;']]],
-  ['locationfinder',['LocationFinder',['../classLocationFinder.html#a34247bb662b8dd33c83a4462415d7c72',1,'LocationFinder::LocationFinder(cv::VideoCapture &amp;&amp;cap)'],['../classLocationFinder.html#a1ad23622468a2a0ed185c79297f7c9ee',1,'LocationFinder::LocationFinder(const cv::VideoCapture &amp;cap)'],['../classLocationFinder.html#a2d8719d8e45ffbb386aacd159511f79e',1,'LocationFinder::LocationFinder(int i)'],['../classLocationFinder.html#a18c0643258b7c195b55a9815d1678645',1,'LocationFinder::LocationFinder(std::string s)']]],
-  ['logger',['Logger',['../classLogger.html#a6a8156ed7fe85aad72e782f7662661a7',1,'Logger::Logger(const char *addr, int port)'],['../classLogger.html#a6822a801df00e3d4f8a338e26d762b1d',1,'Logger::Logger(const std::vector&lt; UDPSender &gt; &amp;senders)'],['../classLogger.html#a8c232dde4aa18f4ec99b503827fae653',1,'Logger::Logger(Logger &amp;&amp;other)']]]
+  ['map',['map',['../Array_8hpp.html#a2f77aa10400f73ca5cd3a2af6b603a98',1,'map(const T &amp;t, F &amp;&amp;f):&#160;Array.hpp'],['../Array_8hpp.html#a27d94e7e78161c75a629257b3e6cbe70',1,'map(const Array&lt; T, N &gt; &amp;a, F &amp;&amp;f):&#160;Array.hpp']]],
+  ['mask',['Mask',['../classMask.html#a6e8f3b4b77d759653359dea264c9554d',1,'Mask::Mask(const uint8_t *imgRGB, uint rows, uint cols)'],['../classMask.html#a302473de9ad7f1b21195f0140208703c',1,'Mask::Mask(const cv::Mat &amp;imgRGB)'],['../classMask.html#a209448a82e47f6ebf89f5b6fb8267dfa',1,'Mask::Mask()']]],
+  ['maxsquareerror',['maxSquareError',['../MeanSquareError_8hpp.html#aaea5e00a8cb283ab17b1d5d89be6fc48',1,'MeanSquareError.hpp']]],
+  ['meansquareerror',['meanSquareError',['../MeanSquareError_8hpp.html#a8e251cbd6c24d1b635c2380bc53f39f6',1,'MeanSquareError.hpp']]],
+  ['move',['move',['../classGridFinder.html#af8bdc28d95e295618c2f345f2d7eb758',1,'GridFinder']]]
 ];

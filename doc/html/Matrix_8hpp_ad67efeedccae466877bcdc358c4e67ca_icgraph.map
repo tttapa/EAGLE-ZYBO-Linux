@@ -1,0 +1,10 @@
+<map id="cross" name="cross">
+<area shape="rect" id="node1" title="Calculates u × v, where u, v ⊆ ℝ³." alt="" coords="1131,132,1187,159"/>
+<area shape="rect" id="node2" href="$classLine.html#af14c90f6f7c18003e35ca3a08be32368" title=" " alt="" coords="929,107,1044,133"/>
+<area shape="rect" id="node7" href="$classQuaternion.html#afee65eb7b0f6feb1c6c857e271e1d7d1" title=" " alt="" coords="891,157,1083,184"/>
+<area shape="rect" id="node3" href="$classGridFinder.html#ac7202be6727634054a169022b5ce3e01" title="Get the point of intersection of two lines." alt="" coords="689,56,843,83"/>
+<area shape="rect" id="node6" href="$Grid-Finder_8module_8hpp.html#a6849f4dcdb45a7aaadcda6439233d376" title=" " alt="" coords="5,56,156,83"/>
+<area shape="rect" id="node4" href="$classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0" title="This is the main function: it looks for a complete square of the grid, as close to the center of the ..." alt="" coords="476,56,641,83"/>
+<area shape="rect" id="node5" href="$classLocationFinder.html#af56756d038d762e04e0c91bac9fc2522" title="Read a new frame, mask it, run GridFinder, and get the position of the drone. The position is the pos..." alt="" coords="204,5,428,32"/>
+<area shape="rect" id="node8" href="$PyQuaternion_8cpp.html#a2957609bcf20d996c14300f7288e3300" title=" " alt="" coords="691,157,841,184"/>
+</map>

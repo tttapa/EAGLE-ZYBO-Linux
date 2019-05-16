@@ -14,9 +14,9 @@ endl = '\n'
 def json_text_list_to_str(strings: Union[str, List[str]]) -> str:
     if isinstance(strings, list):
         strings = " ".join(strings)
-    return strings
+    return strings.replace('"', '\\"')
 
-# region C++ Header File ........................................................
+# region C++ Header File .......................................................
 
 
 def generate_documentation(documentation: Union[str, List[str]],
@@ -60,8 +60,7 @@ def generate_member(name: str, member: OrderedDict) -> str:
 
 
 def generate_members(members: dict) -> str:
-    initializers = map(lambda kv: generate_member(
-        kv[0], kv[1]), members.items())
+    initializers = map(lambda kv: generate_member(*kv), members.items())
     return (endl * 2).join(initializers)
 
 
@@ -84,14 +83,46 @@ def generate_structs(structs: OrderedDict) -> str:
     return endl.join(structs_code)
 
 
-def generate_struct_header(structs: OrderedDict) -> str:
+def generate_enum_value(name: str, value: OrderedDict) -> str:
+    documentation = generate_documentation(value['documentation'], 4)
+    return """{documentation}
+    {name} = {value},""".format(name=name,
+                                value=value['value'],
+                                documentation=documentation)
+
+
+def generate_enum_values(values: dict) -> str:
+    initializers = map(lambda kv: generate_enum_value(*kv), values.items())
+    return (endl * 2).join(initializers)
+
+
+def generate_enum(name: str, enum: OrderedDict) -> str:
+    return """\
+// This is an automatically generated enum, edit it in the code generator
+{documentation}
+enum class {name} : int32_t {{
+{values}
+}};
+""".format(name=name,
+           documentation=generate_documentation(enum['documentation']),
+           values=generate_enum_values(enum['values']))
+
+
+def generate_enums(enums: OrderedDict) -> str:
+    enums_code = map(lambda kv: generate_enum(*kv), enums.items())
+    return endl.join(enums_code)
+
+
+def generate_struct_header(data: OrderedDict) -> str:
     return """\
 #pragma once
 
 #include <Quaternion.hpp>
 
-{structs}\
-""".format(structs=generate_structs(structs))
+{structs}
+{enums}\
+""".format(structs=generate_structs(data['structs']),
+           enums=generate_enums(data['enums']))
 
 # endregion
 
@@ -143,9 +174,13 @@ def generate_log_entry_other_member(name: str, member: OrderedDict) -> str:
 def generate_log_entry_members(data: OrderedDict) -> str:
     struct_members = map(lambda kv: generate_log_entry_struct_members(*kv),
                          data['structs'].items())
+    enum_members = map(lambda kv: generate_log_entry_struct_members(*kv),
+                       data['enums'].items())
     other_members = map(lambda kv: generate_log_entry_other_member(*kv),
                         data['others'].items())
-    return endl.join(struct_members) + endl + endl.join(other_members)
+    return endl.join(struct_members) + endl \
+        + endl.join(enum_members) + endl \
+        + endl.join(other_members)
 
 
 def generate_log_entry_header(data: OrderedDict) -> str:
@@ -174,7 +209,7 @@ struct LogEntry {{
 
 # endregion
 
-# region Python Struct Bindings .................................................
+# region Python Struct Bindings ................................................
 
 
 def generate_python_member_binding(classname: str, membername: str,
@@ -213,8 +248,38 @@ def generate_python_binding(name: str, members: OrderedDict) -> str:
 
 
 def generate_python_bindings(structs: OrderedDict) -> str:
-    bindings = map(lambda kv: generate_python_binding(
-        kv[0], kv[1]['members']), structs.items())
+    bindings = map(
+        lambda kv: generate_python_binding(kv[0], kv[1]['members']),
+        structs.items())
+    return (endl * 2).join(bindings)
+
+
+def generate_python_enum_value_binding(enumname: str, valuename: str,
+                                       value: OrderedDict) -> str:
+    return ".value(\"{name}\", {enumname}::{name}, \"{doc}\")"\
+        .format(name=valuename,
+                enumname=enumname,
+                doc=json_text_list_to_str(value['documentation']))
+
+
+def generate_python_enum_value_bindings(name: str, values: OrderedDict) -> str:
+    bindings = map(lambda kv: generate_python_enum_value_binding(
+        name, kv[0], kv[1]), values.items())
+    return (endl + " " * 8).join(bindings)
+
+
+def generate_python_enum_binding(name: str, values: OrderedDict) -> str:
+    return """\
+    pybind11::enum_<{name}>(py_log_module, "{name}", pybind11::arithmetic())
+        {value_bindings};\
+""".format(name=name,
+           value_bindings=generate_python_enum_value_bindings(name, values))
+
+
+def generate_python_enum_bindings(enums: OrderedDict) -> str:
+    bindings = map(
+        lambda kv: generate_python_enum_binding(kv[0], kv[1]['values']),
+        enums.items())
     return (endl * 2).join(bindings)
 
 
@@ -239,9 +304,14 @@ def generate_python_log_entry_member_bindings(data: OrderedDict) -> str:
     struct_members = map(
         lambda kv: generate_python_log_entry_struct_bindings(kv[1]),
         data['structs'].items())
+    enum_members = map(
+        lambda kv: generate_python_log_entry_struct_bindings(kv[1]),
+        data['enums'].items())
     other_members = map(lambda kv: generate_python_log_entry_member_binding(*kv),
                         data['others'].items())
-    return endl.join(struct_members) + endl + endl.join(other_members)
+    return endl.join(struct_members) + endl \
+        + endl.join(enum_members) + endl \
+        + endl.join(other_members) + endl
 
 
 def generate_python_log_entry_binding(data: OrderedDict) -> str:
@@ -284,8 +354,11 @@ PYBIND11_MODULE(DroneLogger, py_log_module) {{
 
 {struct_bindings}
 
+{enum_bindings}
+
 {log_entry_bindings}
 }}""".format(struct_bindings=generate_python_bindings(data['structs']),
+             enum_bindings=generate_python_enum_bindings(data['enums']),
              log_entry_bindings=generate_python_log_entry_binding(data))
 
 # endregion
@@ -342,7 +415,7 @@ with open(json_file_path, 'r') as json_file, \
         as getlogdatafile:
     data = json.load(json_file, object_pairs_hook=OrderedDict)
 
-    structsheaderfile.write(generate_struct_header(data['structs']))
+    structsheaderfile.write(generate_struct_header(data))
     pythonmodulefile.write(generate_python_module(data))
     logentryheaderfile.write(generate_log_entry_header(data))
     getlogdatafile.write(generate_getlogdata(data))

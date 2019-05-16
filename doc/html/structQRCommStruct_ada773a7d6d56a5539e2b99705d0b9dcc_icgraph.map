@@ -1,6 +1,10 @@
 <map id="QRCommStruct::getQRState" name="QRCommStruct::getQRState">
-<area shape="rect" id="node1" title="Get the current state of the QR/Crypto FSM." alt="" coords="584,31,787,57"/>
-<area shape="rect" id="node2" href="$structQRCommStruct.html#ac39d369524dee12d352f73186a24d057" title="Set the new target position, and change the state to NEW_TARGET." alt="" coords="295,5,536,32"/>
-<area shape="rect" id="node4" href="$structQRCommStruct.html#a07e63598d31e1de9a92344d8f88f89f9" title="Change the state to QR_READING_BUSY." alt="" coords="298,56,533,83"/>
+<area shape="rect" id="node1" title="Get the current state of the QR/Crypto FSM." alt="" coords="585,148,788,175"/>
+<area shape="rect" id="node2" href="$structQRCommStruct.html#ac39d369524dee12d352f73186a24d057" title="Set the new target position, and change the state to NEW_TARGET." alt="" coords="295,5,537,32"/>
+<area shape="rect" id="node4" href="$structQRCommStruct.html#aad9a9fd18b7628a6e1f3ac0c525998f4" title="Set the position of the current QR code." alt="" coords="317,57,515,98"/>
+<area shape="rect" id="node5" href="$structQRCommStruct.html#a07e63598d31e1de9a92344d8f88f89f9" title="Change the state to QR_READING_BUSY." alt="" coords="299,123,533,149"/>
+<area shape="rect" id="node6" href="$structQRCommStruct.html#a7586036f2692c171b5b67e232880b015" title="Get the new target position, and change the state to IDLE." alt="" coords="295,173,537,200"/>
+<area shape="rect" id="node7" href="$structQRCommStruct.html#a75f26523e6fc0507cef40c8ed8bf2ea8" title="Get the position of the current QR code." alt="" coords="317,225,515,266"/>
+<area shape="rect" id="node8" href="$structQRCommStruct.html#ac1d6a2901affe96dbc5decef041f697b" title="Request read a new QR code." alt="" coords="315,290,517,331"/>
 <area shape="rect" id="node3" href="$structQRCommStruct.html#a8bf578081961b6b39e6bc1ed249e0f48" title=" " alt="" coords="5,5,247,32"/>
 </map>

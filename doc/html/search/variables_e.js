@@ -1,11 +1,4 @@
 var searchData=
 [
-  ['saturation_5fthres',['SATURATION_THRES',['../Threshold_8hpp.html#a3dd7783fcf1ee28e1fec445596f2ec10',1,'Threshold.hpp']]],
-  ['saturation_5fthres_5fshift',['SATURATION_THRES_SHIFT',['../Threshold_8hpp.html#af859189ab69190c66e2d325b99be9a2d',1,'Threshold.hpp']]],
-  ['shared_5fmem_5flast_5faddress',['SHARED_MEM_LAST_ADDRESS',['../SharedStruct_8hpp.html#a227867db790f015614bc16fe7e616e41',1,'SharedStruct.hpp']]],
-  ['shared_5fmem_5fstart_5faddress',['SHARED_MEM_START_ADDRESS',['../SharedStruct_8hpp.html#a7af91af8db822b6a9615379153f05488',1,'SharedStruct.hpp']]],
-  ['sin',['sin',['../structCosSin.html#adfe44e3bd6b28b94cf80608cf02e8c23',1,'CosSin']]],
-  ['sines',['sines',['../classAngle.html#afc86b54fad04ab9bfcd3f534d7e77dfb',1,'Angle']]],
-  ['sponge',['sponge',['../EagleCryptSW_8cpp.html#a044559a7c777602405a4cf26f96b2772',1,'EagleCryptSW.cpp']]],
-  ['start',['start',['../classPerfTimer.html#aee43e0006daa2bc29c25bd725a7fd78d',1,'PerfTimer']]]
+  ['q',['q',['../structAttitudeState.html#ad4b1bbee0058f085486ac59d92eba7b9',1,'AttitudeState::q()'],['../structAttitudeReference.html#aa54f22f02c8435b27dba72d466a29bee',1,'AttitudeReference::q()'],['../structPositionState.html#a984f4be2cb840a8ab74c72a93d0072fd',1,'PositionState::q()'],['../structPositionControlSignal.html#a5efba385343365db99cfad7067e7d793',1,'PositionControlSignal::q()']]]
 ];

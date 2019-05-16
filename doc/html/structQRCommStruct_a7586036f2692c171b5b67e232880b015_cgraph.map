@@ -1,0 +1,5 @@
+<map id="QRCommStruct::getTargetPosition" name="QRCommStruct::getTargetPosition">
+<area shape="rect" id="node1" title="Get the new target position, and change the state to IDLE." alt="" coords="5,42,248,69"/>
+<area shape="rect" id="node2" href="$structSharedStruct.html#ab84d9ff23f09b19bb8cf7f72ec9901fe" title=" " alt="" coords="296,5,515,47"/>
+<area shape="rect" id="node3" href="$structQRCommStruct.html#ada773a7d6d56a5539e2b99705d0b9dcc" title="Get the current state of the QR/Crypto FSM." alt="" coords="304,71,507,98"/>
+</map>

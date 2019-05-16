@@ -112,7 +112,7 @@
 <!-- Node164 -->
 <g id="node29" class="node">
 <title>Node164</title>
-<g id="a_node29"><a xlink:href="Array_8hpp.html#a54bae1a9c86ad6bc491b4f10495a759f" target="_top" xlink:title=" ">
+<g id="a_node29"><a xlink:href="Array_8hpp.html#a2a94116476a44c5d54a8b9d67075def4" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="748,-171.5 748,-190.5 782,-190.5 782,-171.5 748,-171.5"/>
 <text text-anchor="middle" x="765" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">abs</text>
 </a>
@@ -612,7 +612,7 @@
 <!-- Node167 -->
 <g id="node32" class="node">
 <title>Node167</title>
-<g id="a_node32"><a xlink:href="Matrix_8hpp.html#aaac3f553f87e00956b4736107cf40289" target="_top" xlink:title="Calculates u × v, where u, v ⊆ ℝ³.">
+<g id="a_node32"><a xlink:href="Matrix_8hpp.html#ad67efeedccae466877bcdc358c4e67ca" target="_top" xlink:title="Calculates u × v, where u, v ⊆ ℝ³.">
 <polygon fill="#ffffff" stroke="#000000" points="562,-76.5 562,-95.5 604,-95.5 604,-76.5 562,-76.5"/>
 <text text-anchor="middle" x="583" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">cross</text>
 </a>
@@ -642,7 +642,7 @@
 <!-- Node170 -->
 <g id="node35" class="node">
 <title>Node170</title>
-<g id="a_node35"><a xlink:href="Matrix_8hpp.html#a49ccaf0f0f1746a2824dc79538165c9c" target="_top" xlink:title=" ">
+<g id="a_node35"><a xlink:href="Matrix_8hpp.html#abec71070cc8e64b7c426b3bfde2af39d" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="377,-38.5 377,-57.5 430,-57.5 430,-38.5 377,-38.5"/>
 <text text-anchor="middle" x="403.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">normsq</text>
 </a>

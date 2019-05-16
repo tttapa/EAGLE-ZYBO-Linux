@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['incrementor',['Incrementor',['../classIncrementor.html',1,'']]]
+  ['houghresult',['HoughResult',['../structHoughResult.html',1,'']]],
+  ['hwimplementation',['HWImplementation',['../classHWImplementation.html',1,'']]]
 ];

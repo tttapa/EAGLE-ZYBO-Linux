@@ -9,5 +9,6 @@ var searchData=
   ['middle',['middle',['../structFirstLineEstimate.html#a584a8e75fc5ffe36bc5a085bf288f283',1,'FirstLineEstimate']]],
   ['minimim_5fline_5fweighted_5fvote_5fcount',['MINIMIM_LINE_WEIGHTED_VOTE_COUNT',['../classGridFinder.html#adcae8b722dc8b7593c0fe67dbcd49b42',1,'GridFinder']]],
   ['minimim_5fstart_5fline_5fweighted_5fvote_5fcount',['MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT',['../classGridFinder.html#a6387b8a031f63ccd0aa5b26f18a3a167',1,'GridFinder']]],
-  ['minimum_5fstart_5fline_5fwidth',['MINIMUM_START_LINE_WIDTH',['../classGridFinder.html#a75001d71e7ef1313c09f955fceda9a18',1,'GridFinder']]]
+  ['minimum_5fstart_5fline_5fwidth',['MINIMUM_START_LINE_WIDTH',['../classGridFinder.html#a75001d71e7ef1313c09f955fceda9a18',1,'GridFinder']]],
+  ['mode',['mode',['../structLogEntry.html#abd6797eb5529a4d52582e455b7e54d3f',1,'LogEntry']]]
 ];

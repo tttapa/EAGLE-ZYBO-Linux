@@ -13,7 +13,10 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "matrix", "dir_40d7732de2983c682bb99d86585a563c.html", "dir_40d7732de2983c682bb99d86585a563c" ],
     [ "py-grid-finder", "dir_78013b9138429c0bcb36eab7f16ba065.html", "dir_78013b9138429c0bcb36eab7f16ba065" ],
     [ "py-matrix", "dir_e933f813a55dc21e057ace61f7557bd3.html", "dir_e933f813a55dc21e057ace61f7557bd3" ],
+    [ "py-quaternion", "dir_0f9bae5f9611e027fbb1547f546a85da.html", "dir_0f9bae5f9611e027fbb1547f546a85da" ],
     [ "qr-crypto-manager", "dir_2b5615639a780788a137586f580a6a22.html", "dir_2b5615639a780788a137586f580a6a22" ],
     [ "qr-decode", "dir_a6001fb970975ebb58a93b6f2462248e.html", "dir_a6001fb970975ebb58a93b6f2462248e" ],
+    [ "quaternion", "dir_dde8465fa9db81d33b4c6be743ec2750.html", "dir_dde8465fa9db81d33b4c6be743ec2750" ],
+    [ "real_t", "dir_4c4a2658256c21d40e51b2944a6e42cf.html", "dir_4c4a2658256c21d40e51b2944a6e42cf" ],
     [ "utilities", "dir_7b5d38f1875f1b693f62ca6a108a1129.html", "dir_7b5d38f1875f1b693f62ca6a108a1129" ]
 ];

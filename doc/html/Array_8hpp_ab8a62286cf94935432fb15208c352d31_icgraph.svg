@@ -9,27 +9,27 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>isfinite</title>
 <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-24 203,-24 203,4 -4,4"/>
-<!-- Node17 -->
+<!-- Node19 -->
 <g id="node1" class="node">
-<title>Node17</title>
+<title>Node19</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="#000000" points="149,-.5 149,-19.5 199,-19.5 199,-.5 149,-.5"/>
 <text text-anchor="middle" x="174" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">isfinite</text>
 </a>
 </g>
 </g>
-<!-- Node18 -->
+<!-- Node20 -->
 <g id="node2" class="node">
-<title>Node18</title>
+<title>Node20</title>
 <g id="a_node2"><a xlink:href="structPoint.html#a0eb0afd31cfdda9c8a11d31ef42ad53f" target="_top" xlink:title=" ">
 <polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-19.5 113,-19.5 113,-.5 0,-.5"/>
 <text text-anchor="middle" x="56.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Point::operator bool</text>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node18 -->
+<!-- Node19&#45;&gt;Node20 -->
 <g id="edge1" class="edge">
-<title>Node17&#45;&gt;Node18</title>
+<title>Node19&#45;&gt;Node20</title>
 <path fill="none" stroke="#191970" d="M138.6418,-10C130.5611,-10 121.7749,-10 113.0532,-10"/>
 <polygon fill="#191970" stroke="#191970" points="138.7933,-13.5001 148.7933,-10 138.7933,-6.5001 138.7933,-13.5001"/>
 </g>

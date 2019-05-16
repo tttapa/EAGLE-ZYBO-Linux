@@ -1,7 +1,16 @@
 var searchData=
 [
-  ['encode',['encode',['../namespaceBase64.html#a5b4aba825d1b499a1a382e421b315af8',1,'Base64::encode(uint8_t const *buf, size_t bufLen)'],['../namespaceBase64.html#aefdbbbe5e08214a7698f981a63e24208',1,'Base64::encode(const std::vector&lt; uint8_t &gt; &amp;data)']]],
-  ['encrypt',['encrypt',['../EagleCrypt_8hpp.html#a93c2f0bfbbbe606763f70438afde9be8',1,'encrypt(const unsigned char *ad, const unsigned int adByteLen, const unsigned char *pt, const unsigned int ptByteLen, unsigned char *ct, unsigned char *tag, const unsigned int tagByteLen):&#160;EagleCryptSW.cpp'],['../EagleCryptSW_8cpp.html#a93c2f0bfbbbe606763f70438afde9be8',1,'encrypt(const unsigned char *ad, const unsigned int adByteLen, const unsigned char *pt, const unsigned int ptByteLen, unsigned char *ct, unsigned char *tag, const unsigned int tagByteLen):&#160;EagleCryptSW.cpp']]],
-  ['end',['end',['../structArray.html#ab2762fef4f8caa072636dde951d90702',1,'Array::end()'],['../structArray.html#a7a0a004dc8135ebdd6e71f54568afec0',1,'Array::end() const']]],
-  ['eye',['eye',['../Matrix_8hpp.html#a6940ae695079b9fa26076e2ca1f69756',1,'Matrix.hpp']]]
+  ['filledarray',['filledArray',['../ArrayHelpers_8hpp.html#a021512d0f49f5f3ac08ebac9bb547cfc',1,'ArrayHelpers.hpp']]],
+  ['filledmatrix',['filledMatrix',['../MatrixHelpers_8hpp.html#a0143e59b28ca53207a87f0a2d0873bf4',1,'MatrixHelpers.hpp']]],
+  ['filledtmatrix',['filledTMatrix',['../MatrixHelpers_8hpp.html#a97dc20f082415c3707e56be3bec40f33',1,'MatrixHelpers.hpp']]],
+  ['findlineangle',['findLineAngle',['../classGridFinder.html#a04e1362c95151ac77477844a952af0f9',1,'GridFinder']]],
+  ['findlineangleaccuraterange',['findLineAngleAccurateRange',['../classGridFinder.html#afcc1eed83ee0292966c3c80883069634',1,'GridFinder']]],
+  ['findnextline',['findNextLine',['../classGridFinder.html#a6dec96f8c6ed97647f692fa9f9908595',1,'GridFinder::findNextLine(LineResult line, bool direction, uint offset=0, uint minDistance=0) const'],['../classGridFinder.html#ad1a5448de0df9a84f989f64b55025843',1,'GridFinder::findNextLine(optional&lt; LineResult &gt; line, bool direction, uint offset=0, uint minDistance=0) const']]],
+  ['findsquare',['findSquare',['../classGridFinder.html#a701c0c1e70d01bb8773a89a29f6673a0',1,'GridFinder']]],
+  ['flight_5fmode',['flight_mode',['../wrapper_8h.html#a647003f1ea2f8e97c1c41fdc18008bfd',1,'flight_mode():&#160;original-wrapper.c'],['../original-wrapper_8c.html#a647003f1ea2f8e97c1c41fdc18008bfd',1,'flight_mode():&#160;original-wrapper.c'],['../wrapper_8c.html#a647003f1ea2f8e97c1c41fdc18008bfd',1,'flight_mode():&#160;wrapper.c']]],
+  ['fromcarray',['fromCArray',['../structArray.html#a4b18562bcf9a1d33dc29cb0ab1ba2aa9',1,'Array']]],
+  ['fromcpparray',['fromCppArray',['../structArray.html#a25c98a35319a7b390d9701e64876c826',1,'Array']]],
+  ['fromdirection',['fromDirection',['../classQuaternion.html#afee65eb7b0f6feb1c6c857e271e1d7d1',1,'Quaternion']]],
+  ['functionaltimefunctiont',['FunctionalTimeFunctionT',['../structFunctionalTimeFunctionT.html#aa6bb6764d37a76419928c31e1cd7705b',1,'FunctionalTimeFunctionT']]],
+  ['functionpointertimefunctiont',['FunctionPointerTimeFunctionT',['../structFunctionPointerTimeFunctionT.html#a2eec1de78d8547b6d4c8bfbc5f3de217',1,'FunctionPointerTimeFunctionT']]]
 ];
