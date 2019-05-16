@@ -8,7 +8,7 @@
 TEST(Mask, applyMaskNEON) {
     uint8_t colors[16 * 3] = {
         255, 0, 0,    // red
-        102, 4, 4,    // dark red
+        140, 4, 4,    // dark red
         255, 48, 48,  // light red
         //
         200, 59, 239,   // purple
@@ -38,7 +38,7 @@ TEST(Mask, applyMaskNEON) {
 TEST(Mask, applyMaskFallback) {
     uint8_t colors[16 * 3] = {
         255, 0, 0,    // red
-        102, 4, 4,    // dark red
+        140, 4, 4,    // dark red
         255, 48, 48,  // light red
         //
         200, 59, 239,   // purple
@@ -69,7 +69,7 @@ TEST(Mask, applyMaskFallback) {
 TEST(Mask, Mask) {
     uint8_t colors[8 * 3] = {
         255, 0, 0,    // red
-        102, 4, 4,    // dark red
+        140, 4, 4,    // dark red
         255, 48, 48,  // light red
         //
         200, 59, 239,   // purple

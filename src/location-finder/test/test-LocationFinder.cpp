@@ -22,9 +22,13 @@ TEST(MaskGridFinder, fromImage) {
                        "/test/TEST-LocationFinder_getLocation.bmp";
 #endif
     std::cout << "Reading image `" << imagePath << "`" << std::endl;
+#ifdef BGR
     cv::Mat imgbgr = cv::imread(imagePath);
     cv::Mat img;
     cv::cvtColor(imgbgr, img, cv::COLOR_BGR2RGB);
+#else
+    cv::Mat img = cv::imread(imagePath);
+#endif
     PerfTimer pt;
     volatile size_t loop = 1;
     Mask mask            = img;

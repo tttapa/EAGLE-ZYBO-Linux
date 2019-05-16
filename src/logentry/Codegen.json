@@ -2,9 +2,10 @@
     "structs": {
         "AttitudeState": {
             "documentation": [
-                "@todo",
-                "this is a very, very long comment to check if the",
-                "code generator breaks long lines correctly"
+                "Estimate of the state of the drone's attitude, consisting of",
+                "the drone's orientation (1 quaternion q), angular velocity in",
+                "rad/s (3 components: wx, wy, wz) and the angular velocity of",
+                "the torque motors in rad/s (3 components: nx, ny, nz)."
             ],
             "members": {
                 "q": {
@@ -25,14 +26,186 @@
             },
             "logger": {
                 "attitudeObserverState": {
-                    "value": "attitudeController.getObserverState()"
+                    "value": "attitudeController.getStateEstimate()"
+                }
+            }
+        },
+        "AttitudeControlSignal": {
+            "documentation": [
+                "PWM control signals sent to the torque motors",
+                "(3 components: ux, uy, uz)."
+            ],
+            "members": {
+                "u": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": "Motor signal."
+                }
+            },
+            "logger": {
+                "attitudeControlSignals": {
+                    "value": "attitudeController.getControlSignal()"
+                }
+            }
+        },
+        "AttitudeReference": {
+            "documentation": [
+                "Attitude reference to track, consisting of a single quaternion."
+            ],
+            "members": {
+                "q": {
+                    "type": "Quaternion",
+                    "default": "Quaternion::unit()",
+                    "documentation": "Reference orientation."
+                }
+            },
+            "logger": {
+                "referenceOrientation": {
+                    "value": "attitudeController.getReferenceQuat()"
+                }
+            }
+        },
+        "AltitudeState": {
+            "documentation": [
+                "Estimate of the state of the drone's altitude, consisting three",
+                "components. First is a float representing the marginal angular",
+                "velocity of the 'common motor', relative to the hovering angular",
+                "velocity. This value is measured in rad/s. Next is a float",
+                "representing the height of the drone, measured in meters.",
+                "Finally is a float representing the vertical velocity of the",
+                "drone, measured in m/s."
+            ],
+            "members": {
+                "nt": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": "Common motor marginal angular velocity (rad/s)"
+                },
+                "z": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": "The height (m) of the drone"
+                },
+                "vz": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": "Velocity (m/s) of the drone"
+                }
+            },
+            "logger": {
+                "altitudeObserverState": {
+                    "value": "altitudeController.getStateEstimate()"
+                }
+            }
+        },
+        "AltitudeControlSignal": {
+            "documentation": [
+                "Marginal PWM control signal sent to the common motor."
+            ],
+            "members": {
+                "ut": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": "Common motor marginal signal."
+                }
+            },
+            "logger": {
+                "altitudeControlSignal": {
+                    "value": "altitudeController.getControlSignal().ut"
+                }
+            }
+        },
+        "AltitudeReference": {
+            "documentation": [
+                "Altitude reference height to track, consisting of a single float."
+            ],
+            "members": {
+                "z": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": "Reference height."
+                }
+            },
+            "logger": {
+                "referenceHeight": {
+                    "value": "altitudeController.getReferenceHeight()"
+                }
+            }
+        },
+        "PositionState": {
+            "documentation": [
+                "Estimate of the state of the drone's position, consisting six",
+                "components. The first two floats are the quaternion components",
+                "q1 and q2. The next two floats represent the drone's global",
+                "position, measured in meters. Finally, two floats represent",
+                "the horizontal velocity of the drone in m/s."
+            ],
+            "members": {
+                "q": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": "Orientation q1 and q2 component (/)."
+                },
+                "p": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": "Position (x,y) in meters."
+                },
+                "v": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": "Velocity (m/s)."
+                }
+            },
+            "logger": {
+                "navigationObserverState": {
+                    "value": "positionController.getStateEstimate()"
+                }
+            }
+        },
+        "PositionControlSignal": {
+            "documentation": [
+                "Reference quaternion components q1 and q2 that will be sent to",
+                "the attitude controller."
+            ],
+            "members": {
+                "q": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": "Reference orientation q1 and q2 component."
+                }
+            },
+            "logger": {
+                "positionControlSignal": {
+                    "value": "positionController.getControlSignal()"
+                }
+            }
+        },
+        "PositionReference": {
+            "documentation": [
+                "Position (x,y) reference to track, consisting of a position.",
+                "This value is measured in meters."
+            ],
+            "members": {
+                "p": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": "Reference position."
+                }
+            },
+            "logger": {
+                "referenceLocation": {
+                    "value": "positionController.(getReferencePosition)()",
+                    "documentation": "The reference for the position controller"
                 }
             }
         }
     },
     "others": {
         "mode": {
-            "type": "int32_t"
+            "type": "int32_t",
+            "documentation": "The flight mode of the drone",
+            "value": "getMode()"
         }
     }
 }

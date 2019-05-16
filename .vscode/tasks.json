@@ -185,28 +185,15 @@
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Build & Install Python GridFinder Module x86-64 (Docker)",
+            "label": "Build & Install Python Modules x86-64 (Docker)",
             "type": "shell",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make python",
+            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make python-gridfinder python-quaternion python-logentry",
             "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make python'",
-            },
-            "problemMatcher": "$gcc"
-        },
-        {
-            "label": "Build & Install Python LogEntry Module x86-64 (Docker)",
-            "type": "shell",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "command": "docker exec -it -w  ${workspaceFolder}/build crypto-devenv make PythonDroneLogger",
-            "windows": {
-                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make PythonDroneLogger'",
+                "command": "docker exec -it -w /home/develop/eagle/build crypto-devenv sh -c 'make python-gridfinder python-quaternion python-logentry'",
             },
             "problemMatcher": "$gcc"
         },

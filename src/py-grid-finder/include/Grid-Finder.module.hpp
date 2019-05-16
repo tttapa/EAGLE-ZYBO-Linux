@@ -12,7 +12,7 @@
 
 using namespace pybind11::literals;
 
-PYBIND11_MODULE(py_grid_finder, pygridmodule) {
+PYBIND11_MODULE(PyGridFinder, pygridmodule) {
     pybind11::class_<GridFinder>(pygridmodule, "GridFinder")
         .def(pybind11::init<const Mask &>())
         .def("findSquare", &GridFinder::findSquare, "initialTries"_a = 1,

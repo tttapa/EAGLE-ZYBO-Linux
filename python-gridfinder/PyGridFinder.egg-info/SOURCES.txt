@@ -1,0 +1,5 @@
+setup.py
+PyGridFinder.egg-info/PKG-INFO
+PyGridFinder.egg-info/SOURCES.txt
+PyGridFinder.egg-info/dependency_links.txt
+PyGridFinder.egg-info/top_level.txt

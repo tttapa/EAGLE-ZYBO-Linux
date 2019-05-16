@@ -2,7 +2,7 @@
 
 import cv2
 import numpy as np
-import py_grid_finder as gr
+import PyGridFinder as gr
 from math import cos, sin
 from timeit import default_timer as timer
 

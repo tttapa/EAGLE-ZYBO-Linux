@@ -1,6 +1,6 @@
 #pragma once
 
-#include <LogEntry.h>
+#include <LogEntry.hpp>
 #include <SharedStruct.hpp>
 #include <cassert>
 #include <cmath>  // NAN
@@ -24,6 +24,8 @@ enum class QRFSMState : int32_t {
     QR_UNKNOWN = 5,
     /// The Cryptography team could not decode the image sent to them.
     ERROR = -1,
+    /// There is no QR code in the camera frame
+    NO_QR = -2,
 };
 
 /**

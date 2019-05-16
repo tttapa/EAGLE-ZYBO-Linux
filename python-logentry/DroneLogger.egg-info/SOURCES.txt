@@ -1,0 +1,5 @@
+setup.py
+DroneLogger.egg-info/PKG-INFO
+DroneLogger.egg-info/SOURCES.txt
+DroneLogger.egg-info/dependency_links.txt
+DroneLogger.egg-info/top_level.txt

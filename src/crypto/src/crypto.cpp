@@ -63,6 +63,12 @@ CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
     for (uint16_t i = 0; i < dmKeySizeInBytes; i++)
         vectorDmKey.push_back(key[i]);
 
+    return tryDecrypt(qrCode, implementation, vectorDmKey);
+}
+
+CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
+                             const CryptoImplementation &implementation, 
+                             const std::vector<uint8_t> &vectorDmKey) {
     BitString dmKey(vectorDmKey);
 
     BitString nonce(qrCode, 0, 10);
