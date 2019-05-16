@@ -386,15 +386,23 @@ def generate_getlogdata_all_assignments(data: OrderedDict) -> str:
     return endl.join(struct_assignments) + endl + other_assignments
 
 
+def generate_getlogdata_includes(includes: List[str]) -> str:
+    includes = map(lambda inc: "#include <" + inc + ">", includes)
+    return endl.join(includes)
+
+
 def generate_getlogdata(data: OrderedDict) -> str:
     return """\
 #include <GetLogData.hpp>
+
+{includes}
 
 LogEntry getLogData() {{
     LogEntry logentry;
 {assignments}
     return logentry;
-}}""".format(assignments=generate_getlogdata_all_assignments(data))
+}}""".format(includes=generate_getlogdata_includes(data['includes']),
+             assignments=generate_getlogdata_all_assignments(data))
 
 # endregion
 
