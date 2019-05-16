@@ -873,6 +873,13 @@
                 "getTickCount()."
             ],
             "value": "getTime()"
+        },
+        "yawMeasurement": {
+            "type": "real_t",
+            "documentation": [
+                "Yaw measurement from IMP in radians."
+            ],
+            "comment": "This value is set in MainInterrupt.cpp"
         }
     },
     "includes": [
