@@ -16,24 +16,47 @@ struct LogEntry {
   // public:
   //   LogEntry() : size(sizeof(LogEntry)) {}
 
-    AttitudeState attitudeObserverState;
-    AttitudeControlSignal attitudeControlSignals;
-    AttitudeReference referenceOrientation;
-    AltitudeState altitudeObserverState;
     AltitudeControlSignal altitudeControlSignal;
-    AltitudeReference referenceHeight;
-    PositionState navigationObserverState;
+    AltitudeIntegralWindup altitudeIntegralWindup;
+    AltitudeMeasurement altitudeMeasurement;
+    AltitudeReference altitudeReference;
+    AltitudeState altitudeStateEstimate;
+    AttitudeControlSignal attitudeControlSignal;
+    AttitudeIntegralWindup attitudeIntegralWindup;
+    AttitudeMeasurement attitudeMeasurement;
+    AttitudeReference attitudeReference;
+    AttitudeState attitudeStateEstimate;
     PositionControlSignal positionControlSignal;
+    PositionIntegralWindup positionIntegralWindup;
+    PositionMeasurement referenceLocation;
+    PositionReference positionReference;
+    PositionState positionStateEstimate;
+    AutonomousOutput autonomousOutput;
+    AccelMeasurement accelMeasurement;
+    GyroMeasurement gyroMeasurement;
+    IMUMeasurement imuMeasurement;
+    RCInput rcInput;
+    BuzzerInstruction buzzerInstruction;
+    LEDInstruction ledInstruction;
+    MotorSignals motorSignals;
     /**
-     * The reference for the position controller
+     * The flight mode of the drone.
      */
-    PositionReference referenceLocation;
+    FlightMode flightMode;
     /**
-     * The flight mode of the drone
+     * The flight mode of the drone.
      */
-    FlightMode mode;
+    WPTMode wptMode;
     /**
-     * The time since startup in milliseconds
+     * Time since startup in milliseconds.
      */
-    uint64_t frametime;
+    uint64_t millis;
+    /**
+     * IMU tick count since startup.
+     */
+    uint32_t tickCount;
+    /**
+     * Time since startup in seconds, calculated using getTickCount().
+     */
+    real_t time;
 };

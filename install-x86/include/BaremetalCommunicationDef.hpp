@@ -28,11 +28,6 @@ enum class QRFSMState : int32_t {
     NO_QR = -2,
 };
 
-enum WPTMode {
-    OFF = 0,  ///< Wireless Power Transfer is turned off.
-    ON  = 1,  ///< Wireless Power Transfer is turned on.
-};
-
 struct TestStruct : SharedStruct<TestStruct> {
     uint32_t l2b = 0;
     uint32_t b2l = 0;
