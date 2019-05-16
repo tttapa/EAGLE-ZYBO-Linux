@@ -119,8 +119,8 @@ def generate_struct_header(data: OrderedDict) -> str:
 
 #include <Quaternion.hpp>
 
-{structs}
-{enums}\
+{enums}
+{structs}\
 """.format(structs=generate_structs(data['structs']),
            enums=generate_enums(data['enums']))
 
