@@ -88,9 +88,9 @@ void loop() {
 
         if (locInSquare) {  // If we have a new position measurement
             if (visionComm->isDoneReading()) {
-                double angle      = lf.getAngle().rad();
-                Position position = {location.x, location.y};
-                VisionData data   = {position, angle};
+                double angle            = lf.getAngle().rad();
+                VisionPosition position = {location.x, location.y};
+                VisionData data         = {position, angle};
                 visionComm->write(data);
             } else {
                 cerr << ANSIColors::magenta

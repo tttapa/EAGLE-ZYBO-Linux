@@ -250,17 +250,43 @@ struct Array {
     using type = T;
 };
 
+// Rounding
+template <class T>
+MATRIX_CONSTEXPR T round(T t, size_t digits) {
+    return std::round(t * std::pow(10, digits)) / std::pow(10, digits);
+}
 template <class T, size_t N>
-MATRIX_CONSTEXPR Array<T, N> abs(const Array<T, N> &a) {
-    using namespace std;
-    Array<T, N> result = a;
-    for (auto &e : result)
-        e = abs(e);
-    return result;
+MATRIX_CONSTEXPR Array<T, N> round(Array<T, N> a, size_t digits) {
+    for (auto &e : a) {
+        e = round(e, digits);
+        if (e == T{})  // fix -0.0
+            e = T{};
+    }
+    return a;
 }
 
 template <class T, size_t N>
-bool isfinite(const Array<T, N> &a) {
+MATRIX_CONSTEXPR Array<T, N> round(Array<T, N> a) {
+    using namespace std;
+    for (auto &e : a) {
+        e = round(e);
+        if (e == T{})  // fix -0.0
+            e = T{};
+    }
+    return a;
+}
+
+// Absolute value
+template <class T, size_t N>
+MATRIX_CONSTEXPR Array<T, N> abs(Array<T, N> a) {
+    using namespace std;
+    for (auto &e : a)
+        e = abs(e);
+    return a;
+}
+
+template <class T, size_t N>
+MATRIX_CONSTEXPR bool isfinite(const Array<T, N> &a) {
     using std::isfinite;
     return std::all_of(a.begin(), a.end(),
                        [](const T &e) { return isfinite(e); });

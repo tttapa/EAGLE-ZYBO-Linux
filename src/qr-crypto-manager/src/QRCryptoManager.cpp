@@ -46,26 +46,34 @@ void QRCryptoManager::decodeCrypto(const std::string &QRdata) {
         CryptoInstruction instr = decrypt(base64Decoded, HWImplementation{});
         switch (instr.getInstructionType()) {
             case CryptoInstruction::InstructionType::GOTO: {
-                Position dest = {(float) instr.getXCoordinate(),
-                                 (float) instr.getYCoordinate()};
+                VisionPosition dest = {
+                    (float) instr.getXCoordinate(),
+                    (float) instr.getYCoordinate(),
+                };
                 cout << "Crypto goto " << dest << endl;
-                Position currPos = {(float) instr.getCurrentXCoordinate(),
-                                    (float) instr.getCurrentYCoordinate()};
+                VisionPosition currPos = {
+                    (float) instr.getCurrentXCoordinate(),
+                    (float) instr.getCurrentYCoordinate(),
+                };
                 cout << "Current position: " << currPos << endl;
                 qrComm->setCurrentPosition(currPos);
                 qrComm->setTargetPosition(dest);
             } break;
             case CryptoInstruction::InstructionType::LAND: {
                 cout << "Crypto land" << endl;
-                Position currPos = {(float) instr.getCurrentXCoordinate(),
-                                    (float) instr.getCurrentYCoordinate()};
+                VisionPosition currPos = {
+                    (float) instr.getCurrentXCoordinate(),
+                    (float) instr.getCurrentYCoordinate(),
+                };
                 cout << "Current position: " << currPos << endl;
                 qrComm->setCurrentPosition(currPos);
                 qrComm->setQRStateLand();
             } break;
             case CryptoInstruction::InstructionType::UNKNOWN: {
-                Position currPos = {(float) instr.getCurrentXCoordinate(),
-                                    (float) instr.getCurrentYCoordinate()};
+                VisionPosition currPos = {
+                    (float) instr.getCurrentXCoordinate(),
+                    (float) instr.getCurrentYCoordinate(),
+                };
                 cout << "Current position: " << currPos << endl;
                 qrComm->setCurrentPosition(currPos);
                 qrComm->setQRStateUnkown();
