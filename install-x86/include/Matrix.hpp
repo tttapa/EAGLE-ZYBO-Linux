@@ -26,6 +26,9 @@ using TRowVector = TMatrix<T, 1, C>;
 template <size_t C>
 using RowVector = TRowVector<real_t, C>;
 
+using Vec2f = TColVector<float, 2>;
+using Vec3f = TColVector<float, 3>;
+
 /// Get a raw pointer to the internal buffer of the matrix
 template <class T, size_t R, size_t C>
 T *toArrayPointer(TMatrix<T, R, C> &matrix) {

@@ -2,9 +2,6 @@
 
 #include <Quaternion.hpp>
 
-using Vec2f = TColVector<float, 2>;
-using Vec3f = TColVector<float, 3>;
-
 // This is an automatically generated struct, edit it in the code generator
 /**
  * Estimate of the state of the drone's attitude, consisting of the drone's

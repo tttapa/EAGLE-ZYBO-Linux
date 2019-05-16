@@ -90,9 +90,6 @@ def generate_struct_header(structs: OrderedDict) -> str:
 
 #include <Quaternion.hpp>
 
-using Vec2f = TColVector<float, 2>;
-using Vec3f = TColVector<float, 3>;
-
 {structs}\
 """.format(structs=generate_structs(structs))
 
