@@ -1,12 +1,6 @@
 #ifndef REAL_T_H
 #define REAL_T_H
 
-#ifdef __cplusplus
-#define ADD_CPP_REF(x) (&x)
-#else
-#define ADD_CPP_REF(x) x
-#endif
-
 #include <stdint.h>
 #if UINTPTR_MAX == 0xffffffff
 /* 32-bit */

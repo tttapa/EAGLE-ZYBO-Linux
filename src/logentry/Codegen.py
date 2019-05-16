@@ -84,14 +84,46 @@ def generate_structs(structs: OrderedDict) -> str:
     return endl.join(structs_code)
 
 
-def generate_struct_header(structs: OrderedDict) -> str:
+def generate_enum_value(name: str, value: OrderedDict) -> str:
+    documentation = generate_documentation(value['documentation'], 4)
+    return """{documentation}
+    {name} = {value},""".format(name=name,
+                                value=value['value'],
+                                documentation=documentation)
+
+
+def generate_enum_values(values: dict) -> str:
+    initializers = map(lambda kv: generate_enum_value(*kv), values.items())
+    return (endl * 2).join(initializers)
+
+
+def generate_enum(name: str, enum: OrderedDict) -> str:
+    return """\
+// This is an automatically generated enum, edit it in the code generator
+{documentation}
+enum class {name} : int32_t {{
+{values}
+}};
+""".format(name=name,
+           documentation=generate_documentation(enum['documentation']),
+           values=generate_enum_values(enum['values']))
+
+
+def generate_enums(enums: OrderedDict) -> str:
+    enums_code = map(lambda kv: generate_enum(*kv), enums.items())
+    return endl.join(enums_code)
+
+
+def generate_struct_header(data: OrderedDict) -> str:
     return """\
 #pragma once
 
 #include <Quaternion.hpp>
 
-{structs}\
-""".format(structs=generate_structs(structs))
+{structs}
+{enums}\
+""".format(structs=generate_structs(data['structs']),
+           enums=generate_enums(data['enums']))
 
 # endregion
 
@@ -342,7 +374,7 @@ with open(json_file_path, 'r') as json_file, \
         as getlogdatafile:
     data = json.load(json_file, object_pairs_hook=OrderedDict)
 
-    structsheaderfile.write(generate_struct_header(data['structs']))
+    structsheaderfile.write(generate_struct_header(data))
     pythonmodulefile.write(generate_python_module(data))
     logentryheaderfile.write(generate_log_entry_header(data))
     getlogdatafile.write(generate_getlogdata(data))
