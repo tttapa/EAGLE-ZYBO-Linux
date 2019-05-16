@@ -762,7 +762,7 @@
                 }
             },
             "logger": {
-                "mode": {
+                "flightMode": {
                     "comment": "This is set in MainInterrupt.cpp.",
                     "documentation": "The flight mode of the drone."
                 }
@@ -791,7 +791,7 @@
                 }
             },
             "logger": {
-                "mode": {
+                "wptMode": {
                     "comment": "This is set in MainInterrupt.cpp.",
                     "documentation": "The flight mode of the drone."
                 }
