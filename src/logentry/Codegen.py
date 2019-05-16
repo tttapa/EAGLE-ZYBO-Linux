@@ -165,11 +165,11 @@ def generate_log_entry_header(data: OrderedDict) -> str:
  *          machines is the same.
  */
 struct LogEntry {{
-  private:
-    size_t size;
-
-  public:
-    LogEntry() : size(sizeof(LogEntry)) {{}}
+  // private:
+  //   size_t size;
+  //
+  // public:
+  //   LogEntry() : size(sizeof(LogEntry)) {{}}
 
 {members}
 }};
@@ -251,6 +251,27 @@ def generate_python_log_entry_binding(data: OrderedDict) -> str:
     return """\
     pybind11::class_<LogEntry>(py_log_module, "LogEntry")
         .def(pybind11::init<>())
+        .def("__init__",
+             [](LogEntry &self, pybind11::bytes bytes) {{
+                 const std::string v = bytes;
+                 size_t size         = pybind11::len(bytes);
+                 if (size != sizeof(LogEntry))
+                     throw std::length_error(
+                         std::string(
+                             "The length of the bytes is not the same as the "
+                             "size of the object (len(bytes) = ") +
+                         std::to_string(size) + ", sizeof(T) = " +
+                         std::to_string(sizeof(LogEntry)) + ")");
+                 memcpy(&self, v.c_str(), sizeof(LogEntry));
+             }})
+        .def("__bytes__",
+             [](const LogEntry &self) {{
+                 const std::string str = {{
+                     (const uint8_t *) &self, 
+                     (const uint8_t *) &self + sizeof(self), 
+                 }};
+                 return pybind11::bytes(str);
+             }})
 {member_bindings};\
 """.format(member_bindings=generate_python_log_entry_member_bindings(data))
 
@@ -262,6 +283,8 @@ def generate_python_module(data: OrderedDict) -> str:
 #include <PyMatrix.hpp>
 
 PYBIND11_MODULE(DroneLogger, py_log_module) {{
+        pybind11::module::import("PyQuaternion");
+
 {struct_bindings}
 
 {log_entry_bindings}

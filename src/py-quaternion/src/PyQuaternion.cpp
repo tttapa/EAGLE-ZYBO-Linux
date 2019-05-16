@@ -23,16 +23,25 @@ PYBIND11_MODULE(PyQuaternion, py_quaternion_module) {
              pybind11::overload_cast<size_t>(&Quaternion::operator[]))
         .def("__getitem__", pybind11::overload_cast<size_t>(
                                 &Quaternion::operator[], pybind11::const_))
+        .def("__setitem__",
+             [](Quaternion &q, size_t i, real_t value) { return q[i] = value; })
         .def("__len__", []() { return 4; })
         .def(pybind11::self + pybind11::self)
         .def(pybind11::self - pybind11::self)
         .def(-pybind11::self)
         .def(pybind11::self == pybind11::self)
         .def(pybind11::self != pybind11::self)
-        .def("__repr__",
+        .def("__str__",
              [](const Quaternion &q) {
                  std::ostringstream ss;
                  ss << asEulerAngles(q, AngleFormat::degrees);
+                 return ss.str();
+             })
+        .def("__repr__",
+             [](const Quaternion &q) {
+                 std::ostringstream ss;
+                 ss << "Q(" << q[0] << ", " << q[1] << ", " << q[2] << ", "
+                    << q[3] << ")";
                  return ss.str();
              })
         .def_static("unit", &Quaternion::unit)
@@ -43,7 +52,7 @@ PYBIND11_MODULE(PyQuaternion, py_quaternion_module) {
         .def(pybind11::init<Quaternion>())
         .def(pybind11::init<real_t, real_t, real_t>())
         .def("asColVector", &EulerAngles::asColVector)
-        .def("__repr__",
+        .def("__str__",
              [](const EulerAngles &q) {
                  std::ostringstream ss;
                  ss << asEulerAngles(q, AngleFormat::degrees);
