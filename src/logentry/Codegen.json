@@ -548,7 +548,7 @@
             },
             "logger": {
                 "imuMeasurement": {
-                    "comment": "This value is set in IMU.cpp.",
+                    "comment": "This value is set in MainInterrupt.cpp.",
                     "documentation": [
                         "The IMU's measurement."
                     ]
