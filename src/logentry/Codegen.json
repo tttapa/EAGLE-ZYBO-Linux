@@ -1,56 +1,192 @@
 {
     "structs": {
-        "AttitudeState": {
+        "AltitudeControlSignal": {
             "documentation": [
-                "Estimate of the state of the drone's attitude, consisting of",
-                "the drone's orientation (1 quaternion q), angular velocity in",
-                "rad/s (3 components: wx, wy, wz) and the angular velocity of",
-                "the torque motors in rad/s (3 components: nx, ny, nz)."
+                "Marginal PWM control signal sent to the 'common motor'",
+                "(float)."
             ],
             "members": {
-                "q": {
-                    "type": "Quaternion",
-                    "default": "Quaternion::unit()",
-                    "documentation": "The orientation of the drone"
-                },
-                "w": {
-                    "type": "Vec3f",
-                    "default": "{0.0, 0.0, 0.0}",
-                    "documentation": "The angular velocity of the drone"
-                },
-                "n": {
-                    "type": "Vec3f",
-                    "default": "{0.0, 0.0, 0.0}",
-                    "documentation": "The angular velocity of the motors"
+                "ut": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "'Common motor' marginal signal."
+                    ]
                 }
             },
             "logger": {
-                "attitudeObserverState": {
-                    "value": "attitudeController.getStateEstimate()"
+                "altitudeControlSignal": {
+                    "value": "altitudeController.getControlSignal()"
+                }
+            }
+        },
+        "AltitudeIntegralWindup": {
+            "documentation": [
+                "Integral of the error of the height of the drone in meters."
+            ],
+            "members": {
+                "z": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Integral of the height estimate in meters."
+                    ]
+                }
+            },
+            "logger": {
+                "altitudeIntegralWindup": {
+                    "value": "altitudeController.getIntegralWindup()"
+                }
+            }
+        },
+        "AltitudeMeasurement": {
+            "documentation": [
+                "Measurement of the drone height by the sonar in meters,",
+                "corrected for the tilt of the drone, represented by a float."
+            ],
+            "members": {
+                "z": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Measurement height in meters."
+                    ]
+                }
+            },
+            "logger": {
+                "altitudeMeasurement": {
+                    "value": "altitudeController.getMeasurement()"
+                }
+            }
+        },
+        "AltitudeReference": {
+            "documentation": [
+                "Reference height to track in meters, represented by a float."
+            ],
+            "members": {
+                "z": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Reference height in meters."
+                    ]
+                }
+            },
+            "logger": {
+                "altitudeReference": {
+                    "value": "altitudeController.getReference()"
+                }
+            }
+        },
+        "AltitudeState": {
+            "documentation": [
+                "Estimate of the altitude state, consisting of the marginal",
+                "angular velocity of the 'common motor' in rad/s (float), the",
+                "height of the drone in meters (float) and the vertical",
+                "velocity of the drone in m/s (float)."
+            ],
+            "members": {
+                "nt": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "'Common motor' marginal angular velocity in rad/s."
+                    ]
+                },
+                "z": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Height of the drone in meters."
+                    ]
+                },
+                "vz": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Vertical velocity of the drone in m/s."
+                    ]
+                }
+            },
+            "logger": {
+                "altitudeStateEstimate": {
+                    "value": "altitudeController.getStateEstimate()"
                 }
             }
         },
         "AttitudeControlSignal": {
             "documentation": [
-                "PWM control signals sent to the torque motors",
-                "(3 components: ux, uy, uz)."
+                "PWM control signals sent to the 'torque motors', consisting",
+                "of a Vec3f. Each component will be sent to a different",
+                "'torque motor'."
             ],
             "members": {
-                "u": {
+                "uxyz": {
                     "type": "Vec3f",
                     "default": "{0.0, 0.0, 0.0}",
-                    "documentation": "Motor signal."
+                    "documentation": [
+                        "Signal sent to the 'torque motors'."
+                    ]
                 }
             },
             "logger": {
-                "attitudeControlSignals": {
+                "attitudeControlSignal": {
                     "value": "attitudeController.getControlSignal()"
+                }
+            }
+        },
+        "AttitudeIntegralWindup": {
+            "documentation": [
+                "Integral of the error of the quaternion components q1, q2 and",
+                "q3, represented by a Vec3f."
+            ],
+            "members": {
+                "q123": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": [
+                        "Integral of the error of the quaternion components q1",
+                        "q2 and q3."
+                    ]
+                }
+            },
+            "logger": {
+                "attitudeIntegralWindup": {
+                    "value": "attitudeController.getIntegralWindup()"
+                }
+            }
+        },
+        "AttitudeMeasurement": {
+            "documentation": [
+                "Measurement from the IMU, consisting of a quaternion for the",
+                "drone's orientation and a Vec3f for the drone's angular",
+                "velocity, measured in rad/s."
+            ],
+            "members": {
+                "q": {
+                    "type": "Quaternion",
+                    "default": "Quaternion::unit()",
+                    "documentation": [
+                        "Measurement orientation from the IMU."
+                    ]
+                },
+                "w": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": [
+                        "Measurement angular velocity from the IMU."
+                    ]
+                }
+            },
+            "logger": {
+                "attitudeMeasurement": {
+                    "value": "attitudeController.getMeasurement()"
                 }
             }
         },
         "AttitudeReference": {
             "documentation": [
-                "Attitude reference to track, consisting of a single quaternion."
+                "Reference orientation to track, represented by a quaternion."
             ],
             "members": {
                 "q": {
@@ -60,119 +196,59 @@
                 }
             },
             "logger": {
-                "referenceOrientation": {
-                    "value": "attitudeController.getReferenceQuat()"
+                "attitudeReference": {
+                    "value": "attitudeController.getReference()"
                 }
             }
         },
-        "AltitudeState": {
+        "AttitudeState": {
             "documentation": [
-                "Estimate of the state of the drone's altitude, consisting three",
-                "components. First is a float representing the marginal angular",
-                "velocity of the 'common motor', relative to the hovering angular",
-                "velocity. This value is measured in rad/s. Next is a float",
-                "representing the height of the drone, measured in meters.",
-                "Finally is a float representing the vertical velocity of the",
-                "drone, measured in m/s."
-            ],
-            "members": {
-                "nt": {
-                    "type": "real_t",
-                    "default": "0.0",
-                    "documentation": "Common motor marginal angular velocity (rad/s)"
-                },
-                "z": {
-                    "type": "real_t",
-                    "default": "0.0",
-                    "documentation": "The height (m) of the drone"
-                },
-                "vz": {
-                    "type": "real_t",
-                    "default": "0.0",
-                    "documentation": "Velocity (m/s) of the drone"
-                }
-            },
-            "logger": {
-                "altitudeObserverState": {
-                    "value": "altitudeController.getStateEstimate()"
-                }
-            }
-        },
-        "AltitudeControlSignal": {
-            "documentation": [
-                "Marginal PWM control signal sent to the common motor."
-            ],
-            "members": {
-                "ut": {
-                    "type": "real_t",
-                    "default": "0.0",
-                    "documentation": "Common motor marginal signal."
-                }
-            },
-            "logger": {
-                "altitudeControlSignal": {
-                    "value": "altitudeController.getControlSignal().ut"
-                }
-            }
-        },
-        "AltitudeReference": {
-            "documentation": [
-                "Altitude reference height to track, consisting of a single float."
-            ],
-            "members": {
-                "z": {
-                    "type": "real_t",
-                    "default": "0.0",
-                    "documentation": "Reference height."
-                }
-            },
-            "logger": {
-                "referenceHeight": {
-                    "value": "altitudeController.getReferenceHeight()"
-                }
-            }
-        },
-        "PositionState": {
-            "documentation": [
-                "Estimate of the state of the drone's position, consisting six",
-                "components. The first two floats are the quaternion components",
-                "q1 and q2. The next two floats represent the drone's global",
-                "position, measured in meters. Finally, two floats represent",
-                "the horizontal velocity of the drone in m/s."
+                "Estimate of the attitude state, consisting of the drone's",
+                "orientation (quaterion), angular velocity in rad/s (Vec3f)",
+                "and the angular velocity of the 'torque motors' in rad/s",
+                "(Vec3f)."
             ],
             "members": {
                 "q": {
-                    "type": "Vec2f",
-                    "default": "{0.0, 0.0}",
-                    "documentation": "Orientation q1 and q2 component (/)."
+                    "type": "Quaternion",
+                    "default": "Quaternion::unit()",
+                    "documentation": [
+                        "The orientation of the drone."
+                    ]
                 },
-                "p": {
-                    "type": "Vec2f",
-                    "default": "{0.0, 0.0}",
-                    "documentation": "Position (x,y) in meters."
+                "w": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": [
+                        "The angular velocity of the drone in rad/s."
+                    ]
                 },
-                "v": {
-                    "type": "Vec2f",
-                    "default": "{0.0, 0.0}",
-                    "documentation": "Velocity (m/s)."
+                "n": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": [
+                        "The angular velocity of the 'torque motors' in rad/s."
+                    ]
                 }
             },
             "logger": {
-                "navigationObserverState": {
-                    "value": "positionController.getStateEstimate()"
+                "attitudeStateEstimate": {
+                    "value": "attitudeController.getStateEstimate()"
                 }
             }
         },
         "PositionControlSignal": {
             "documentation": [
-                "Reference quaternion components q1 and q2 that will be sent to",
-                "the attitude controller."
+                "Reference quaternion components q1 and q2 that will be sent",
+                "to the attitude controller, represented by a Vec2f."
             ],
             "members": {
-                "q": {
+                "q12ref": {
                     "type": "Vec2f",
                     "default": "{0.0, 0.0}",
-                    "documentation": "Reference orientation q1 and q2 component."
+                    "documentation": [
+                        "Reference orientation, q1 and q2 components."
+                    ]
                 }
             },
             "logger": {
@@ -181,22 +257,444 @@
                 }
             }
         },
-        "PositionReference": {
+        "PositionIntegralWindup": {
             "documentation": [
-                "Position (x,y) reference to track, consisting of a position.",
-                "This value is measured in meters."
+                "Integral of the error of the position in meters, represented",
+                "by a Vec2f."
             ],
             "members": {
                 "p": {
                     "type": "Vec2f",
                     "default": "{0.0, 0.0}",
-                    "documentation": "Reference position."
+                    "documentation": [
+                        "Integral of the position in meters."
+                    ]
+                }
+            },
+            "logger": {
+                "positionIntegralWindup": {
+                    "value": "positionController.getIntegralWindup()"
+                }
+            }
+        },
+        "PositionMeasurement": {
+            "documentation": [
+                "Measurement of the position in meters, represented by a Vec2f."
+            ],
+            "members": {
+                "p": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": [
+                        "Measurement position in meters."
+                    ]
                 }
             },
             "logger": {
                 "referenceLocation": {
-                    "value": "positionController.(getReferencePosition)()",
-                    "documentation": "The reference for the position controller"
+                    "value": "positionController.getMeasurement()"
+                }
+            }
+        },
+        "PositionReference": {
+            "documentation": [
+                "Reference position to track in meters, represented by a Vec2f."
+            ],
+            "members": {
+                "p": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": [
+                        "Reference position in meters."
+                    ]
+                }
+            },
+            "logger": {
+                "positionReference": {
+                    "value": "positionController.getReference()"
+                }
+            }
+        },
+        "PositionState": {
+            "documentation": [
+                "Estimate of the position state, consisting of the quaternion",
+                "components q1 and q2 (Vec2f), the global position of the",
+                "drone in meters (Vec2f) and the horizontal velocity of the",
+                "drone in m/s (Vec2f)."
+            ],
+            "members": {
+                "q": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": [
+                        "Drone orientation, q1 and q2 components."
+                    ]
+                },
+                "p": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": [
+                        "Position of the drone in meters."
+                    ]
+                },
+                "v": {
+                    "type": "Vec2f",
+                    "default": "{0.0, 0.0}",
+                    "documentation": [
+                        "Horizontal velocity of the drone in m/s."
+                    ]
+                }
+            },
+            "logger": {
+                "positionStateEstimate": {
+                    "value": "positionController.getStateEstimate()"
+                }
+            }
+        },
+        "AutonomousOutput": {
+            "documentation": [
+                "Output of the autonomous control system, which contains",
+                "information about whether the altitude/position controllers",
+                "should be used and whether their observers should be updated.",
+                "If the controller(s) should be bypassed, the struct also",
+                "contains signals to pass to the next part of the code.",
+                "Finally, if the position controller should be updated, should",
+                "it use IMP's measurement or data from the accelerometer to",
+                "determine the position of the drone?"
+            ],
+            "members": {
+                "useAltitudeController": {
+                    "type": "bool",
+                    "default": "false",
+                    "documentation": [
+                        "Whether the altitude controller should be used. If",
+                        "this is false, then this AutonomousOutput's",
+                        "commonThrust should be used instead of the altitude",
+                        "controller's common thrust."
+                    ]
+                },
+                "referenceHeight": {
+                    "type": "AltitudeReference",
+                    "default": "{}",
+                    "documentation": [
+                        "Reference height to be sent to the altitude",
+                        "controller, if it is not bypassed."
+                    ]
+                },
+                "commonThrust": {
+                    "type": "AltitudeControlSignal",
+                    "default": "{}",
+                    "documentation": [
+                        "Control signal to send to the 'common motor' if the",
+                        "altitude controller is bypassed."
+                    ]
+                },
+                "updateAltitudeObserver": {
+                    "type": "bool",
+                    "default": "false",
+                    "documentation": [
+                        "Whether the altitude observer should be updated."
+                    ]
+                },
+                "usePositionController": {
+                    "type": "bool",
+                    "default": "false",
+                    "documentation": [
+                        "Whether the position controller should be used. If",
+                        "this is false, then this AutonomousOutput's reference",
+                        "orientation should be used instead of the position",
+                        "controller's reference orientation."
+                    ]
+                },
+                "referencePosition": {
+                    "type": "PositionReference",
+                    "default": "{}",
+                    "documentation": [
+                        "Reference position to be sent to the position",
+                        "controller, if it is not bypassed."
+                    ]
+                },
+                "q12ref": {
+                    "type": "PositionControlSignal",
+                    "default": "{}",
+                    "documentation": [
+                        "Control signal to send to the attitude controller, if",
+                        "the position controller is bypassed."
+                    ]
+                },
+                "updatePositionObserver": {
+                    "type": "bool",
+                    "default": "false",
+                    "documentation": [
+                        "Whether the position observer should be updated."
+                    ]
+                },
+                "trustIMPForPosition": {
+                    "type": "bool",
+                    "default": "false",
+                    "documentation": [
+                        "If this is true, then the drone should trust IMP's",
+                        "measurement to determine the position of the drone.",
+                        "Otherwise, it will use the accelerometer's ax and ay",
+                        "data to determine the position, according to the",
+                        "mathematical model."
+                    ]
+                }
+            },
+            "logger": {
+                "autonomousOutput": {
+                    "value": "autonomousController.getOutput()"
+                }
+            }
+        },
+        "AccelMeasurement": {
+            "documentation": [
+                "Accelerometer measurement acceleration in g (Vec3f)."
+            ],
+            "members": {
+                "accel": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": [
+                        "Accelerometer measurement of the acceleration in g."
+                    ]
+                }
+            },
+            "logger": {
+                "accelMeasurement": {
+                    "comment": "This value is set in IMU.cpp."
+                }
+            }
+        },
+        "GyroMeasurement": {
+            "documentation": [
+                "Gyroscope measurement angular velocity in rad/s (Vec3f)."
+            ],
+            "members": {
+                "gyro": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": [
+                        "Gyroscope measurement of the angular velocity in",
+                        "rad/s."
+                    ]
+                }
+            },
+            "logger": {
+                "gyroMeasurement": {
+                    "comment": "This value is set in IMU.cpp."
+                }
+            }
+        },
+        "IMUMeasurement": {
+            "documentation": [
+                "IMU measurement angular velocity in rad/s (Vec3f) and",
+                "acceleration in g (Vec3f)."
+            ],
+            "members": {
+                "gyro": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": [
+                        "Gyroscope measurement of the angular velocity in",
+                        "rad/s."
+                    ]
+                },
+                "accel": {
+                    "type": "Vec3f",
+                    "default": "{0.0, 0.0, 0.0}",
+                    "documentation": [
+                        "Accelerometer measurement of the acceleration in g."
+                    ]
+                }
+            },
+            "logger": {
+                "imuMeasurement": {
+                    "comment": "This value is set in IMU.cpp."
+                }
+            }
+        },
+        "RCInput": {
+            "documentation": [
+                "Struct containing the values from the RC transmitter. This",
+                "includes the value of the throttle, which ranges from 0 to 1.",
+                "It also contains the values of the roll, pitch, yaw and tuner",
+                "knob, which range from -1 to +1. Lastly, there are switches",
+                "for the flight mode and the wireless power transfer. These",
+                "are represented by their respective enumerations."
+            ],
+            "members": {
+                "throttle": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Value of the RC throttle in [0, 1]."
+                    ]
+                },
+                "roll": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Value of the RC roll in [-1, 1]."
+                    ]
+                },
+                "pitch": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Value of the RC pitch in [-1, 1]."
+                    ]
+                },
+                "yaw": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Value of the RC yaw in [-1, 1]."
+                    ]
+                },
+                "tuner": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Value of the RC tuner knob in [-1, 1]."
+                    ]
+                },
+                "flightMode": {
+                    "type": "FlightMode",
+                    "default": "FlightMode::UNINITIALIZED",
+                    "documentation": [
+                        "Value of the RC flight mode (as a FlightMode)."
+                    ]
+                },
+                "wptMode": {
+                    "type": "WPTMode",
+                    "default": "WPTMode::OFF",
+                    "documentation": [
+                        "Value of the RC WPT mode (as a WPTMode)."
+                    ]
+                }
+            },
+            "logger": {
+                "rcInput": {
+                    "value": "getRCInput()"
+                }
+            }
+        },
+        "BuzzerInstruction": {
+            "documentation": [
+                "Instruction to be sent to the buzzer containing a duration in",
+                "seconds (float), a buzzer period in ? (int) and a buzzer",
+                "volume in ? (int)."
+            ],
+            "members": {
+                "duration": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Duration of the instruction in seconds."
+                    ]
+                },
+                "period": {
+                    "type": "int",
+                    "default": "0",
+                    "documentation": [
+                        "Period of sound, represented as an integer."
+                    ]
+                },
+                "volume": {
+                    "type": "int",
+                    "default": "0",
+                    "documentation": [
+                        "Volume of sound, represented as an integer."
+                    ]
+                }
+            },
+            "logger": {
+                "buzzerInstruction": {
+                    "value": "buzzerManager.getCurrentInstruction()"
+                }
+            }
+        },
+        "LEDInstruction": {
+            "documentation": [
+                "Instruction to be sent to the LEDs, containing four booleans,",
+                "representing whether each of the four LEDs should be lit."
+            ],
+            "members": {
+                "led1": {
+                    "type": "bool",
+                    "default": "false",
+                    "documentation": [
+                        "Whether the first LED should be lit."
+                    ]
+                },
+                "led2": {
+                    "type": "bool",
+                    "default": "false",
+                    "documentation": [
+                        "Whether the second LED should be lit."
+                    ]
+                },
+                "led3": {
+                    "type": "bool",
+                    "default": "false",
+                    "documentation": [
+                        "Whether the third LED should be lit."
+                    ]
+                },
+                "led4": {
+                    "type": "bool",
+                    "default": "false",
+                    "documentation": [
+                        "Whether the fourth LED should be lit."
+                    ]
+                }
+            },
+            "logger": {
+                "ledInstruction": {
+                    "comment": "This value is set in MainInterrupt.cpp."
+                }
+            }
+        },
+        "MotorSignals": {
+            "documentation": [
+                "Four floats representing the duty cycles to be sent to the",
+                "four motors (front-left, front-right, back-left, back-right).",
+                "These four must be in the interval [0.0, 1.0]."
+            ],
+            "members": {
+                "v0": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Front-left motor duty cycle in [0.0, 1.0]."
+                    ]
+                },
+                "v1": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Front-right motor duty cycle in [0.0, 1.0]."
+                    ]
+                },
+                "v2": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Back-left motor duty cycle in [0.0, 1.0]."
+                    ]
+                },
+                "v3": {
+                    "type": "real_t",
+                    "default": "0.0",
+                    "documentation": [
+                        "Back-right motor duty cycle in [0.0, 1.0]."
+                    ]
+                }
+            },
+            "logger": {
+                "motorSignals": {
+                    "comment": "This value is set in MainInterrupt.cpp."
                 }
             }
         }
@@ -207,5 +705,10 @@
             "documentation": "The flight mode of the drone",
             "value": "getMode()"
         }
-    }
+    },
+    "includes": [
+        "RCValues.hpp",
+        "ControllerInstances.hpp",
+        "MiscInstances.hpp"
+    ]
 }
