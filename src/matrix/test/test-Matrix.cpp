@@ -422,3 +422,29 @@ TEST(Matrix, innerProduct) {
     real_t expected = 1 * 4 + 2 * 5 + 3 * 6;
     ASSERT_EQ(x * y, expected);
 }
+
+TEST(Matrix, round) {
+    Matrix<2, 3> m        = {{
+        {1.2, 1.6, 3.0},
+        {0.0, 5.4, 5.9},
+    }};
+    Matrix<2, 3> result   = round(m);
+    Matrix<2, 3> expected = {{
+        {1, 2, 3},
+        {0, 5, 6},
+    }};
+    ASSERT_EQ(result, expected);
+}
+
+TEST(Matrix, roundDigits) {
+    Matrix<2, 3> m        = {{
+        {1.22, 1.66, 3.00},
+        {0.01, 5.43, 5.99},
+    }};
+    Matrix<2, 3> result   = round(m, 1);
+    Matrix<2, 3> expected = {{
+        {1.2, 1.7, 3.0},
+        {0.0, 5.4, 6.0},
+    }};
+    ASSERT_EQ(result, expected);
+}
