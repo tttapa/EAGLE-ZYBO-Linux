@@ -6,6 +6,10 @@
 #include <ketje.hpp>
 #include <swImplementation.hpp>
 
+CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
+                             const CryptoImplementation &implementation,
+                             const std::vector<uint8_t> &vectorDmKey);
+
 /**
  * @brief   Test simple operations on crypto keypack.
  *          - Enc function.

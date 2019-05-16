@@ -41,12 +41,3 @@
 CryptoInstruction
 decrypt(const std::vector<uint8_t> &qrCode,
         const CryptoImplementation &implementation = HWImplementation());
-
-/**
- * @brief   Decrypt the given QR code without retries.
- * 
- * @see     decrypt
- */
-CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
-                             const CryptoImplementation &implementation,
-                             const std::vector<uint8_t> &vectorDmKey);

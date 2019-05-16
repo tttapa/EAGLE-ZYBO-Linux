@@ -10,6 +10,10 @@
 CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
                              const CryptoImplementation &implementation);
 
+CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
+                             const CryptoImplementation &implementation,
+                             const std::vector<uint8_t> &vectorDmKey);
+
 CryptoInstruction decrypt(const std::vector<uint8_t> &qrCode,
                           const CryptoImplementation &implementation) {
     for (uint8_t i = 0; i < nbTrials; i++) {
@@ -67,7 +71,7 @@ CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
 }
 
 CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
-                             const CryptoImplementation &implementation, 
+                             const CryptoImplementation &implementation,
                              const std::vector<uint8_t> &vectorDmKey) {
     BitString dmKey(vectorDmKey);
 
