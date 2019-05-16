@@ -35,7 +35,7 @@ class BitString {
     uint32_t toUint32() const;
     void toByteArray(unsigned char *buffer, uint16_t bufferLength) const;
     void toVector(std::vector<uint8_t> &vector) const;
-    CryptoInstruction toCryptoInstruction();
+    CryptoInstruction toCryptoInstruction(uint8_t currentX, uint8_t currentY);
 
     friend bool operator==(const BitString &bitString1,
                            const BitString &bitString2);

@@ -18,18 +18,27 @@ class CryptoInstruction {
 
   private:
     InstructionType instructionType;
-    uint8_t x;
-    uint8_t y;
+    uint8_t nextX;
+    uint8_t nextY;
     std::vector<uint8_t> unknownData;
 
+    uint8_t currentX;
+    uint8_t currentY;
+
   public:
-    CryptoInstruction(GOTO_t, uint8_t x, uint8_t y)
-        : instructionType(InstructionType::GOTO), x(x), y(y) {}
+    CryptoInstruction(GOTO_t, uint8_t nextX, uint8_t nextY, uint8_t currentX,
+                      uint8_t currentY)
+        : instructionType(InstructionType::GOTO), nextX(nextX), nextY(nextY),
+          currentX(currentX), currentY(currentY) {}
 
-    CryptoInstruction(LAND_t) : instructionType(InstructionType::LAND) {}
+    CryptoInstruction(LAND_t, uint8_t currentX, uint8_t currentY)
+        : instructionType(InstructionType::LAND), currentX(currentX),
+          currentY(currentY) {}
 
-    CryptoInstruction(UNKNOWN_t, const std::vector<uint8_t> &unknownData)
-        : instructionType(InstructionType::UNKNOWN), unknownData(unknownData) {}
+    CryptoInstruction(UNKNOWN_t, const std::vector<uint8_t> &unknownData,
+                      uint8_t currentX, uint8_t currentY)
+        : instructionType(InstructionType::UNKNOWN), unknownData(unknownData),
+          currentX(currentX), currentY(currentY) {}
 
     InstructionType getInstructionType() const { return instructionType; }
 
@@ -37,14 +46,14 @@ class CryptoInstruction {
         if (getInstructionType() != InstructionType::GOTO)
             throw std::logic_error(
                 "Error: only GOTO instructions have a valid x-coordinate");
-        return x;
+        return nextX;
     }
 
     uint8_t getYCoordinate() const {
         if (getInstructionType() != InstructionType::GOTO)
             throw std::logic_error(
                 "Error: only GOTO instructions have a valid y-coordinate");
-        return y;
+        return nextY;
     }
 
     const std::vector<uint8_t> &getUnknownData() const {
@@ -53,4 +62,7 @@ class CryptoInstruction {
                 "Error: only UNKNOWN instructions have valid unknown data");
         return unknownData;
     }
+
+    uint8_t getCurrentXCoordinate() const { return currentX; }
+    uint8_t getCurrentYCoordinate() const { return currentY; }
 };

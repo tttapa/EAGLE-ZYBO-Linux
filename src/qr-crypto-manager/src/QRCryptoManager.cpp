@@ -49,13 +49,25 @@ void QRCryptoManager::decodeCrypto(const std::string &QRdata) {
                 Position dest = {(float) instr.getXCoordinate(),
                                  (float) instr.getYCoordinate()};
                 cout << "Crypto goto " << dest << endl;
+                Position currPos = {(float) instr.getCurrentXCoordinate(),
+                                    (float) instr.getCurrentYCoordinate()};
+                cout << "Current position: " << currPos << endl;
+                qrComm->setCurrentPosition(currPos);
                 qrComm->setTargetPosition(dest);
             } break;
             case CryptoInstruction::InstructionType::LAND: {
                 cout << "Crypto land" << endl;
+                Position currPos = {(float) instr.getCurrentXCoordinate(),
+                                    (float) instr.getCurrentYCoordinate()};
+                cout << "Current position: " << currPos << endl;
+                qrComm->setCurrentPosition(currPos);
                 qrComm->setQRStateLand();
             } break;
             case CryptoInstruction::InstructionType::UNKNOWN: {
+                Position currPos = {(float) instr.getCurrentXCoordinate(),
+                                    (float) instr.getCurrentYCoordinate()};
+                cout << "Current position: " << currPos << endl;
+                qrComm->setCurrentPosition(currPos);
                 qrComm->setQRStateUnkown();
                 auto &vecdata = instr.getUnknownData();
                 // TODO: print as hex?

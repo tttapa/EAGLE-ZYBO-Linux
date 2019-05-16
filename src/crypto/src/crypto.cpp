@@ -97,7 +97,7 @@ CryptoInstruction tryDecrypt(const std::vector<uint8_t> &qrCode,
 
         try {
             return implementation.decrypt(wpKey, nonce, ad, cipherText, tag)
-                .toCryptoInstruction();
+                .toCryptoInstruction(qrCode.at(10), qrCode.at(11));
         }
         // Only try the next instruction if there is no problem
         // with the FPGA.

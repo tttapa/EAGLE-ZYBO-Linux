@@ -132,6 +132,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
   private:
     mutable QRFSMState qrState = QRFSMState::IDLE;
     Position target;
+    Position current;
 
   public:
     constexpr static uintptr_t address = VisionCommStruct::nextFreeAddress();
@@ -144,7 +145,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
      */
     QRFSMState getQRState() const volatile { return qrState; }
 
-//#ifndef BAREMETAL
+    //#ifndef BAREMETAL
     /**
      * @brief   Set the new target position, and change the state to NEW_TARGET.
      * 
@@ -167,6 +168,19 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
     /// @see    setTargetPosition(Position)
     void setTargetPosition(float x, float y) volatile {
         setTargetPosition({x, y});
+    }
+
+    /**
+     * @brief   Set the position of the current QR code.
+     */
+    void setCurrentPosition(Position current) volatile {
+        if (getQRState() == QRFSMState::NEW_TARGET ||
+            getQRState() == QRFSMState::LAND ||
+            getQRState() == QRFSMState::QR_UNKNOWN)
+            throw std::runtime_error("Error: illegal setCurrentPosition call: "
+                                     "Baremetal not yet done reading");
+        checkInitialized();
+        this->current = current;
     }
 
     /**
@@ -215,7 +229,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
         checkInitialized();
         qrState = QRFSMState::LAND;
     }
-//#else
+    //#else
     /**
      * @brief   Get the new target position, and change the state to IDLE.
      * 
@@ -234,6 +248,26 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
         Position target = this->target;
         qrState         = QRFSMState::IDLE;
         return target;
+    }
+
+    /**
+     * @brief   Get the position of the current QR code.
+     * 
+     * @return  The position of the current QR code.
+     * 
+     * @throws  std::runtime_error
+     *          The communication struct is not initialized yet.
+     * @throws  std::logic_error
+     *          No current position is available.
+     */
+    Position getCurrentPosition() const volatile {
+        checkInitialized();
+        if (getQRState() != QRFSMState::NEW_TARGET &&
+            getQRState() != QRFSMState::LAND &&
+            getQRState() != QRFSMState::QR_UNKNOWN)
+            throw std::logic_error("Error: illegal getTargetPosition call: "
+                                   "No current position available");
+        return this->current;
     }
 
     /**
@@ -263,7 +297,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
     }
 
     // TODO: should I check all FSM transitions?
-//#endif
+    //#endif
 };
 
 /**
