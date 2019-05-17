@@ -327,7 +327,7 @@
                 }
             },
             "logger": {
-                "referenceLocation": {
+                "positionMeasurement": {
                     "value": "positionController.getMeasurement()",
                     "documentation": [
                         "The position controller's measurement."

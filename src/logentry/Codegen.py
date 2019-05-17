@@ -68,7 +68,7 @@ def generate_struct(name: str, struct: OrderedDict) -> str:
     return """\
 // This is an automatically generated struct, edit it in the code generator
 {documentation}
-struct {name} {{
+struct __attribute__((packed)) {name} {{
 {constructors}
 {members}
 }};
@@ -196,7 +196,7 @@ def generate_log_entry_header(data: OrderedDict) -> str:
  * @note    For simplicity, we'll assume that the byte order and padding of both
  *          machines is the same.
  */
-struct LogEntry {{
+struct __attribute__((packed)) LogEntry {{
   // private:
   //   size_t size;
   //

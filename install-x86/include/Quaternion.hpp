@@ -3,7 +3,7 @@
 #include <Matrix.hpp>
 #include <Square.hpp>
 
-class Quaternion {
+class __attribute__((packed)) Quaternion {
   private:
     ColVector<4> q;
 
