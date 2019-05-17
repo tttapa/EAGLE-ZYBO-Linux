@@ -894,8 +894,7 @@
                 "getTickCount()."
             ],
             "value": "getTime()"
-        },
-
+        }
     },
     "includes": [
         "ControllerInstances.hpp",

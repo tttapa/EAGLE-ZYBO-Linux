@@ -119,11 +119,19 @@ struct __attribute__((packed)) LogEntry {
      */
     uint32_t tickCount;
     /**
-     * Time since startup in seconds, calculated using getTickCount().
+     * Height measurement from the sonar in meters (tilt corrected).
      */
-    real_t time;
+    real_t sensorHeightMeasurement;
+    /**
+     * Position measurement from IMP in meters (tilt corrected).
+     */
+    Vec2f sensorPositionMeasurement;
     /**
      * Yaw measurement from IMP in radians.
      */
-    real_t yawMeasurement;
+    real_t sensorYawMeasurement;
+    /**
+     * Time since startup in seconds, calculated using getTickCount().
+     */
+    real_t time;
 };
