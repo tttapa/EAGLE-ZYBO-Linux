@@ -7,7 +7,7 @@
             ],
             "members": {
                 "ut": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "'Common motor' marginal signal."
@@ -29,7 +29,7 @@
             ],
             "members": {
                 "z": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Integral of the height estimate in meters."
@@ -52,7 +52,7 @@
             ],
             "members": {
                 "z": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Measurement height in meters."
@@ -74,7 +74,7 @@
             ],
             "members": {
                 "z": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Reference height in meters."
@@ -99,21 +99,21 @@
             ],
             "members": {
                 "nt": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "'Common motor' marginal angular velocity in rad/s."
                     ]
                 },
                 "z": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Height of the drone in meters."
                     ]
                 },
                 "vz": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Vertical velocity of the drone in m/s."
@@ -566,35 +566,35 @@
             ],
             "members": {
                 "throttle": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Value of the RC throttle in [0, 1]."
                     ]
                 },
                 "roll": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Value of the RC roll in [-1, 1]."
                     ]
                 },
                 "pitch": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Value of the RC pitch in [-1, 1]."
                     ]
                 },
                 "yaw": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Value of the RC yaw in [-1, 1]."
                     ]
                 },
                 "tuner": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Value of the RC tuner knob in [-1, 1]."
@@ -632,7 +632,7 @@
             ],
             "members": {
                 "duration": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Duration of the instruction in seconds."
@@ -714,28 +714,28 @@
             ],
             "members": {
                 "v0": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Front-left motor duty cycle in [0.0, 1.0]."
                     ]
                 },
                 "v1": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Front-right motor duty cycle in [0.0, 1.0]."
                     ]
                 },
                 "v2": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Back-left motor duty cycle in [0.0, 1.0]."
                     ]
                 },
                 "v3": {
-                    "type": "real_t",
+                    "type": "float",
                     "default": "0.0",
                     "documentation": [
                         "Back-right motor duty cycle in [0.0, 1.0]."
@@ -867,7 +867,7 @@
             "value": "getTickCount()"
         },
         "sensorHeightMeasurement": {
-            "type": "real_t",
+            "type": "float",
             "documentation": [
                 "Height measurement from the sonar in meters (tilt corrected)."
             ],
@@ -881,14 +881,14 @@
             "comment": "This value is set in MainInterrupt.cpp"
         },
         "sensorYawMeasurement": {
-            "type": "real_t",
+            "type": "float",
             "documentation": [
                 "Yaw measurement from IMP in radians."
             ],
             "comment": "This value is set in MainInterrupt.cpp"
         },
         "time": {
-            "type": "real_t",
+            "type": "float",
             "documentation": [
                 "Time since startup in seconds, calculated using",
                 "getTickCount()."
@@ -898,7 +898,6 @@
     },
     "includes": [
         "ControllerInstances.hpp",
-        "Matrix.hpp",
         "MiscInstances.hpp",
         "RCValues.hpp",
         "Time.hpp"
