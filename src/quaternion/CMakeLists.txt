@@ -17,9 +17,9 @@ add_subdirectory(test)
 endif()
 
 install(TARGETS quaternion
-        EXPORT quaternion
+        EXPORT shared-linux
         INCLUDES DESTINATION include)
-install(EXPORT quaternion DESTINATION cmake)
+install(EXPORT shared-linux DESTINATION cmake)
 install(
 FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/EulerAngles.hpp

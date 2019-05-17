@@ -74,7 +74,7 @@ enum class WPTMode : int32_t {
 /**
  * Marginal PWM control signal sent to the 'common motor' (float).
  */
-struct AltitudeControlSignal {
+struct __attribute__((packed)) AltitudeControlSignal {
     AltitudeControlSignal() = default;
     AltitudeControlSignal(real_t ut) : ut{ut} {}
     
@@ -88,7 +88,7 @@ struct AltitudeControlSignal {
 /**
  * Integral of the error of the height of the drone in meters.
  */
-struct AltitudeIntegralWindup {
+struct __attribute__((packed)) AltitudeIntegralWindup {
     AltitudeIntegralWindup() = default;
     AltitudeIntegralWindup(real_t z) : z{z} {}
     
@@ -103,7 +103,7 @@ struct AltitudeIntegralWindup {
  * Measurement of the drone height by the sonar in meters, corrected for the
  * tilt of the drone, represented by a float.
  */
-struct AltitudeMeasurement {
+struct __attribute__((packed)) AltitudeMeasurement {
     AltitudeMeasurement() = default;
     AltitudeMeasurement(real_t z) : z{z} {}
     
@@ -117,7 +117,7 @@ struct AltitudeMeasurement {
 /**
  * Reference height to track in meters, represented by a float.
  */
-struct AltitudeReference {
+struct __attribute__((packed)) AltitudeReference {
     AltitudeReference() = default;
     AltitudeReference(real_t z) : z{z} {}
     
@@ -133,7 +133,7 @@ struct AltitudeReference {
  * of the 'common motor' in rad/s (float), the height of the drone in meters
  * (float) and the vertical velocity of the drone in m/s (float).
  */
-struct AltitudeState {
+struct __attribute__((packed)) AltitudeState {
     AltitudeState() = default;
     AltitudeState(real_t nt, real_t z, real_t vz) : nt{nt}, z{z}, vz{vz} {}
     
@@ -158,7 +158,7 @@ struct AltitudeState {
  * PWM control signals sent to the 'torque motors', consisting of a Vec3f. Each
  * component will be sent to a different 'torque motor'.
  */
-struct AttitudeControlSignal {
+struct __attribute__((packed)) AttitudeControlSignal {
     AttitudeControlSignal() = default;
     AttitudeControlSignal(Vec3f uxyz) : uxyz{uxyz} {}
     
@@ -173,7 +173,7 @@ struct AttitudeControlSignal {
  * Integral of the error of the quaternion components q1, q2 and q3, represented
  * by a Vec3f.
  */
-struct AttitudeIntegralWindup {
+struct __attribute__((packed)) AttitudeIntegralWindup {
     AttitudeIntegralWindup() = default;
     AttitudeIntegralWindup(Vec3f q123) : q123{q123} {}
     
@@ -188,7 +188,7 @@ struct AttitudeIntegralWindup {
  * Measurement from the IMU, consisting of a quaternion for the drone's
  * orientation and a Vec3f for the drone's angular velocity, measured in rad/s.
  */
-struct AttitudeMeasurement {
+struct __attribute__((packed)) AttitudeMeasurement {
     AttitudeMeasurement() = default;
     AttitudeMeasurement(Quaternion q, Vec3f w) : q{q}, w{w} {}
     
@@ -207,7 +207,7 @@ struct AttitudeMeasurement {
 /**
  * Reference orientation to track, represented by a quaternion.
  */
-struct AttitudeReference {
+struct __attribute__((packed)) AttitudeReference {
     AttitudeReference() = default;
     AttitudeReference(Quaternion q) : q{q} {}
     
@@ -223,7 +223,7 @@ struct AttitudeReference {
  * (quaterion), angular velocity in rad/s (Vec3f) and the angular velocity of
  * the 'torque motors' in rad/s (Vec3f).
  */
-struct AttitudeState {
+struct __attribute__((packed)) AttitudeState {
     AttitudeState() = default;
     AttitudeState(Quaternion q, Vec3f w, Vec3f n) : q{q}, w{w}, n{n} {}
     
@@ -248,7 +248,7 @@ struct AttitudeState {
  * Reference quaternion components q1 and q2 that will be sent to the attitude
  * controller, represented by a Vec2f.
  */
-struct PositionControlSignal {
+struct __attribute__((packed)) PositionControlSignal {
     PositionControlSignal() = default;
     PositionControlSignal(Vec2f q12) : q12{q12} {}
     
@@ -262,7 +262,7 @@ struct PositionControlSignal {
 /**
  * Integral of the error of the position in meters, represented by a Vec2f.
  */
-struct PositionIntegralWindup {
+struct __attribute__((packed)) PositionIntegralWindup {
     PositionIntegralWindup() = default;
     PositionIntegralWindup(Vec2f p) : p{p} {}
     
@@ -276,7 +276,7 @@ struct PositionIntegralWindup {
 /**
  * Measurement of the position in meters, represented by a Vec2f.
  */
-struct PositionMeasurement {
+struct __attribute__((packed)) PositionMeasurement {
     PositionMeasurement() = default;
     PositionMeasurement(Vec2f p) : p{p} {}
     
@@ -290,7 +290,7 @@ struct PositionMeasurement {
 /**
  * Reference position to track in meters, represented by a Vec2f.
  */
-struct PositionReference {
+struct __attribute__((packed)) PositionReference {
     PositionReference() = default;
     PositionReference(Vec2f p) : p{p} {}
     
@@ -306,7 +306,7 @@ struct PositionReference {
  * and q2 (Vec2f), the global position of the drone in meters (Vec2f) and the
  * horizontal velocity of the drone in m/s (Vec2f).
  */
-struct PositionState {
+struct __attribute__((packed)) PositionState {
     PositionState() = default;
     PositionState(Vec2f q, Vec2f p, Vec2f v) : q{q}, p{p}, v{v} {}
     
@@ -335,7 +335,7 @@ struct PositionState {
  * if the position controller should be updated, should it use IMP's measurement
  * or data from the accelerometer to determine the position of the drone?
  */
-struct AutonomousOutput {
+struct __attribute__((packed)) AutonomousOutput {
     AutonomousOutput() = default;
     AutonomousOutput(bool useAltitudeController, AltitudeReference referenceHeight, AltitudeControlSignal commonThrust, bool updateAltitudeObserver, bool usePositionController, PositionReference referencePosition, PositionControlSignal q12ref, bool updatePositionObserver, bool trustIMPForPosition) : useAltitudeController{useAltitudeController}, referenceHeight{referenceHeight}, commonThrust{commonThrust}, updateAltitudeObserver{updateAltitudeObserver}, usePositionController{usePositionController}, referencePosition{referencePosition}, q12ref{q12ref}, updatePositionObserver{updatePositionObserver}, trustIMPForPosition{trustIMPForPosition} {}
     
@@ -400,7 +400,7 @@ struct AutonomousOutput {
 /**
  * Accelerometer measurement acceleration in g (Vec3f).
  */
-struct AccelMeasurement {
+struct __attribute__((packed)) AccelMeasurement {
     AccelMeasurement() = default;
     AccelMeasurement(Vec3f a) : a{a} {}
     
@@ -414,7 +414,7 @@ struct AccelMeasurement {
 /**
  * Gyroscope measurement angular velocity in rad/s (Vec3f).
  */
-struct GyroMeasurement {
+struct __attribute__((packed)) GyroMeasurement {
     GyroMeasurement() = default;
     GyroMeasurement(Vec3f g) : g{g} {}
     
@@ -429,7 +429,7 @@ struct GyroMeasurement {
  * IMU measurement angular velocity in rad/s (Vec3f) and acceleration in g
  * (Vec3f).
  */
-struct IMUMeasurement {
+struct __attribute__((packed)) IMUMeasurement {
     IMUMeasurement() = default;
     IMUMeasurement(GyroMeasurement gyro, AccelMeasurement accel) : gyro{gyro}, accel{accel} {}
     
@@ -452,7 +452,7 @@ struct IMUMeasurement {
  * switches for the flight mode and the wireless power transfer. These are
  * represented by their respective enumerations.
  */
-struct RCInput {
+struct __attribute__((packed)) RCInput {
     RCInput() = default;
     RCInput(real_t throttle, real_t roll, real_t pitch, real_t yaw, real_t tuner, FlightMode flightMode, WPTMode wptMode) : throttle{throttle}, roll{roll}, pitch{pitch}, yaw{yaw}, tuner{tuner}, flightMode{flightMode}, wptMode{wptMode} {}
     
@@ -497,7 +497,7 @@ struct RCInput {
  * Instruction to be sent to the buzzer containing a duration in seconds
  * (float), a buzzer period in ? (int) and a buzzer volume in ? (int).
  */
-struct BuzzerInstruction {
+struct __attribute__((packed)) BuzzerInstruction {
     BuzzerInstruction() = default;
     BuzzerInstruction(real_t duration, int period, int volume) : duration{duration}, period{period}, volume{volume} {}
     
@@ -522,7 +522,7 @@ struct BuzzerInstruction {
  * Instruction to be sent to the LEDs, containing four booleans, representing
  * whether each of the four LEDs should be lit.
  */
-struct LEDInstruction {
+struct __attribute__((packed)) LEDInstruction {
     LEDInstruction() = default;
     LEDInstruction(bool led1, bool led2, bool led3, bool led4) : led1{led1}, led2{led2}, led3{led3}, led4{led4} {}
     
@@ -553,7 +553,7 @@ struct LEDInstruction {
  * (front-left, front-right, back-left, back-right). These four must be in the
  * interval [0.0, 1.0].
  */
-struct MotorSignals {
+struct __attribute__((packed)) MotorSignals {
     MotorSignals() = default;
     MotorSignals(real_t v0, real_t v1, real_t v2, real_t v3) : v0{v0}, v1{v1}, v2{v2}, v3{v3} {}
     

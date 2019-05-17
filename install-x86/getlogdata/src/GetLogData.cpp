@@ -20,7 +20,7 @@ LogEntry getLogData() {
     logentry.attitudeStateEstimate = attitudeController.getStateEstimate();
     logentry.positionControlSignal = positionController.getControlSignal();
     logentry.positionIntegralWindup = positionController.getIntegralWindup();
-    logentry.referenceLocation = positionController.getMeasurement();
+    logentry.positionMeasurement = positionController.getMeasurement();
     logentry.positionReference = positionController.getReference();
     logentry.positionStateEstimate = positionController.getStateEstimate();
     logentry.autonomousOutput = autonomousController.getOutput();

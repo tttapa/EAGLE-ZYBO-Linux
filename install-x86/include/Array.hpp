@@ -44,7 +44,7 @@ template <typename T>
 struct getArrayLength : getArrayLengthBase<T> {};
 
 template <class T, size_t N>
-struct Array {
+struct __attribute__((packed)) Array {
     T data[N];
 
     MATRIX_CONSTEXPR T &operator[](size_t index) {
@@ -449,7 +449,9 @@ MATRIX_CONSTEXPR U &operator+=(U &u, const Array<T, 1> &a) {
 
 template <class T, class U>
 MATRIX_CONSTEXPR Array<T, 1> &operator+=(Array<T, 1> &a, const U &u) {
-    return a += {u};
+    Array<T, 1> b = {};
+    b[0] = u;
+    return a += b;
 }
 
 //

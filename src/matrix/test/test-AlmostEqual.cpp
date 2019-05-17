@@ -10,11 +10,11 @@ TEST(AlmostEqual, double) {
 }
 
 TEST(AlmostEqual, matrix) {
-    Matrix<2, 2> l = {{
+    TMatrix<double, 2, 2> l = {{
         {1, 1},
         {1, 1},
     }};
-    Matrix<2, 2> r = {{
+    TMatrix<double, 2, 2> r = {{
         {1, 1},
         {1, 1 + 1e-10},
     }};

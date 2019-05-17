@@ -8,7 +8,7 @@ using namespace std;
 
 TEST(QRDecoder, fromImage) {
 #ifdef ZYBO
-    string imagePath = "/media/QR.bmp";
+    string imagePath = "/media/test/QR.bmp";
 #else
     string imagePath = string(getenv("WORKSPACE_ROOT")) + "/test/QR.bmp";
 #endif
@@ -27,7 +27,7 @@ TEST(QRDecoder, fromImage) {
 
 TEST(QRDecoder, async) {
 #ifdef ZYBO
-    string imagePath = "/media/QR.bmp";
+    string imagePath = "/media/test/QR.bmp";
 #else
     string imagePath = string(getenv("WORKSPACE_ROOT")) + "/test/QR.bmp";
 #endif

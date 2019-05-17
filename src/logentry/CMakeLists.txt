@@ -94,13 +94,14 @@ endif()
 #------------------------------------------------------------------------------#
 
 install(TARGETS logentry
-        EXPORT logentry
+        EXPORT shared-linux
         INCLUDES DESTINATION include)
-install(EXPORT logentry DESTINATION cmake)
+install(EXPORT shared-linux DESTINATION cmake)
 install(FILES 
         ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LogEntry.hpp
         ${CMAKE_CURRENT_BINARY_DIR}/include-generated/LoggerStructs.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/GetLogData.hpp
         DESTINATION include)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/GetLogData.hpp
+        DESTINATION getlogdata/include)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/src-generated/GetLogData.cpp
-        DESTINATION src)
+        DESTINATION getlogdata/src)

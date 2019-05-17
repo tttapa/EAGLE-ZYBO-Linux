@@ -9,7 +9,7 @@
  * @note    For simplicity, we'll assume that the byte order and padding of both
  *          machines is the same.
  */
-struct LogEntry {
+struct __attribute__((packed)) LogEntry {
   // private:
   //   size_t size;
   //
@@ -67,7 +67,7 @@ struct LogEntry {
     /**
      * The position controller's measurement.
      */
-    PositionMeasurement referenceLocation;
+    PositionMeasurement positionMeasurement;
     /**
      * The position controller's reference.
      */

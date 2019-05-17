@@ -16,7 +16,7 @@ using std::string;
 
 TEST(MaskGridFinder, fromImage) {
 #ifdef ZYBO
-    string imagePath = "/media/TEST-LocationFinder_getLocation.bmp";
+    string imagePath = "/media/test/TEST-LocationFinder_getLocation.bmp";
 #else
     string imagePath = string(getenv("WORKSPACE_ROOT")) +
                        "/test/TEST-LocationFinder_getLocation.bmp";
