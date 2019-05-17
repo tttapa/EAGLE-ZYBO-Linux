@@ -204,7 +204,7 @@
             "windows": {
                 "command": "exit 1",
             },
-            "dependsOn": "Build and Export All ARMv7 ZYBO (Docker)",
+            //"dependsOn": "Build and Export All ARMv7 ZYBO (Docker)",
             "problemMatcher": []
         },
         //#endregion

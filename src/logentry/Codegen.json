@@ -866,6 +866,27 @@
             ],
             "value": "getTickCount()"
         },
+        "sensorHeightMeasurement": {
+            "type": "real_t",
+            "documentation": [
+                "Height measurement from the sonar in meters (tilt corrected)."
+            ],
+            "comment": "This value is set in MainInterrupt.cpp"
+        },
+        "sensorPositionMeasurement": {
+            "type": "Vec2f",
+            "documentation": [
+                "Position measurement from IMP in meters (tilt corrected)."
+            ],
+            "comment": "This value is set in MainInterrupt.cpp"
+        },
+        "sensorYawMeasurement": {
+            "type": "real_t",
+            "documentation": [
+                "Yaw measurement from IMP in radians."
+            ],
+            "comment": "This value is set in MainInterrupt.cpp"
+        },
         "time": {
             "type": "real_t",
             "documentation": [
@@ -874,13 +895,7 @@
             ],
             "value": "getTime()"
         },
-        "yawMeasurement": {
-            "type": "real_t",
-            "documentation": [
-                "Yaw measurement from IMP in radians."
-            ],
-            "comment": "This value is set in MainInterrupt.cpp"
-        }
+
     },
     "includes": [
         "ControllerInstances.hpp",
