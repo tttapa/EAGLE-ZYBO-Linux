@@ -86,6 +86,12 @@ struct Linux2Baremetal {
     constexpr static const char *reader = "Baremetal";
 };
 
+#if __cplusplus < 201703L
+template< class T, class U >
+inline constexpr bool is_same_v = is_same<T, U>::value;
+#endif
+
+
 /**
  * @brief   A struct that adds access control to a communication struct.
  *          It ensures that data can only flow in the specified direction,

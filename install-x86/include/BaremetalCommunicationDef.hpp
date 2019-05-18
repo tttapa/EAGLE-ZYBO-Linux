@@ -47,8 +47,10 @@ struct VisionPosition {
     VisionPosition(float x, float y) : x{x}, y{y} {}
     VisionPosition(const volatile VisionPosition &p) : x{p.x}, y{p.y} {}
     VisionPosition(const VisionPosition &p) : x{p.x}, y{p.y} {}
+#ifndef BAREMETAL
     VisionPosition(const ColVector<2> &p)
         : x((real_t) p[0]), y((real_t) p[1]) {}
+#endif
     void operator=(const VisionPosition &p) volatile {
         this->x = p.x;
         this->y = p.y;
@@ -196,7 +198,7 @@ struct QRCommStruct : SharedStruct<QRCommStruct> {
             throw std::logic_error("Error: illegal getTargetPosition call: "
                                    "No new target available");
         VisionPosition target = this->target;
-        qrState         = QRFSMState::IDLE;
+        qrState               = QRFSMState::IDLE;
         return target;
     }
 
