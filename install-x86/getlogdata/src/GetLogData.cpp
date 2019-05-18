@@ -33,7 +33,7 @@ LogEntry getLogData() {
     logentry.pitchBias = biasManager.getPitchBias();
     logentry.rollBias = biasManager.getRollBias();
     logentry.thrustBias = biasManager.getThrustBias();
-    logentry.autonomousHoveringThrust = biasManager.biasManager.getAutonomousHoveringThrust();
+    logentry.autonomousHoveringThrust = biasManager.getAutonomousHoveringThrust();
     logentry.time = getTime();
     return logentry;
 }

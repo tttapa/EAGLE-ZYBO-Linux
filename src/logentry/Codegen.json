@@ -909,7 +909,7 @@
                 "Hovering thrust saved between flights for autonomous",
                 "controller"
             ],
-            "value": "biasManager.biasManager.getAutonomousHoveringThrust()"
+            "value": "biasManager.getAutonomousHoveringThrust()"
         },
         "time": {
             "type": "real_t",
