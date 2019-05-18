@@ -186,7 +186,7 @@
             "members": {
                 "q": {
                     "type": "Quaternion",
-                    "default": "Quaternion::unit()",
+                    "default": "Quaternion::identity()",
                     "documentation": [
                         "Measurement orientation from the IMU."
                     ]
@@ -215,7 +215,7 @@
             "members": {
                 "q": {
                     "type": "Quaternion",
-                    "default": "Quaternion::unit()",
+                    "default": "Quaternion::identity()",
                     "documentation": "Reference orientation."
                 }
             },
@@ -238,7 +238,7 @@
             "members": {
                 "q": {
                     "type": "Quaternion",
-                    "default": "Quaternion::unit()",
+                    "default": "Quaternion::identity()",
                     "documentation": [
                         "The orientation of the drone."
                     ]

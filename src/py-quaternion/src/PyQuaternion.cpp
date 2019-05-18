@@ -44,7 +44,7 @@ PYBIND11_MODULE(PyQuaternion, py_quaternion_module) {
                     << q[3] << ")";
                  return ss.str();
              })
-        .def_static("unit", &Quaternion::unit)
+        .def_static("identity", &Quaternion::identity)
         .def_static("fromDirection", &Quaternion::fromDirection);
 
     pybind11::class_<EulerAngles>(py_quaternion_module, "EulerAngles")
