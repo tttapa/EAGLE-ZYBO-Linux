@@ -166,11 +166,19 @@ def generate_log_entry_struct_members(name: str, member: OrderedDict) -> str:
 
 
 def generate_log_entry_other_member(name: str, member: OrderedDict) -> str:
-    return """{documentation}\
+    if 'default' in member:
+        return """{documentation}\
+    {type} {name} = {default};"""\
+            .format(name=name,
+                    type=member['type'],
+                    default=member['default'],
+                    documentation=generate_optional_documentation(member))
+    else:
+        return """{documentation}\
     {type} {name};"""\
-        .format(name=name,
-                type=member['type'],
-                documentation=generate_optional_documentation(member))
+            .format(name=name,
+                    type=member['type'],
+                    documentation=generate_optional_documentation(member))
 
 
 def generate_log_entry_members(data: OrderedDict) -> str:

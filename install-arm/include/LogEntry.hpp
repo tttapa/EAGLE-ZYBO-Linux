@@ -109,7 +109,7 @@ struct __attribute__((packed)) LogEntry {
     /**
      * Time since startup in milliseconds.
      */
-    uint64_t millis;
+    uint64_t millis = 0;
     /**
      * IMU tick count since startup.
      */

@@ -857,7 +857,8 @@
             "documentation": [
                 "Time since startup in milliseconds."
             ],
-            "value": "getMillis()"
+            "value": "getMillis()", 
+            "default": "0"
         },
         "tickCount": {
             "type": "uint32_t",
