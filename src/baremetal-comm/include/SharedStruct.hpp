@@ -87,8 +87,10 @@ struct Linux2Baremetal {
 };
 
 #if __cplusplus < 201703L
+namespace std {
 template< class T, class U >
 inline constexpr bool is_same_v = is_same<T, U>::value;
+}
 #endif
 
 
