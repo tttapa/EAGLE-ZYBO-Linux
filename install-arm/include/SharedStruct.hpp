@@ -33,8 +33,10 @@ struct SharedStruct {
     }
     /// Initialize the data structure at its default address. (Baremetal only)
     static volatile T *init() {
-        static_assert(T::address >= SHARED_MEM_START_ADDRESS);
-        static_assert(T::address <= SHARED_MEM_LAST_ADDRESS - sizeof(T));
+        static_assert(T::address >= SHARED_MEM_START_ADDRESS, 
+                      "Error: address not inside of shared memory region");
+        static_assert(T::address <= SHARED_MEM_LAST_ADDRESS - sizeof(T),
+                      "Error: address not inside of shared memory region");
         return new ((void *) T::address) T();
     }
 #endif
