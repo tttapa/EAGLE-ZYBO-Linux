@@ -117,8 +117,9 @@ def generate_struct_header(data: OrderedDict) -> str:
     return """\
 #pragma once
 
-#include <Quaternion.hpp>
 #include <cstdint>
+#include <Quaternion.hpp>
+#include <real_t.h>
 
 {enums}
 {structs}\

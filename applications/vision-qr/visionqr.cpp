@@ -4,7 +4,11 @@
 #include <PerfTimer.hpp>
 #include <QRCryptoManager.hpp>
 #include <ThreadedLogger.hpp>
+#if __GNUC__ >= 8
 #include <filesystem>
+#else
+#include <experimental/filesystem>
+#endif
 #include <fstream>
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -12,6 +16,9 @@
 
 using namespace std;
 using namespace chrono_literals;
+#if __GNUC__ < 8
+using namespace experimental;
+#endif
 
 #define DEBUG_VISION
 

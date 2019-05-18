@@ -30,6 +30,10 @@ LogEntry getLogData() {
 
     logentry.millis = getMillis();
     logentry.tickCount = getTickCount();
+    logentry.pitchBias = biasManager.getPitchBias();
+    logentry.rollBias = biasManager.getRollBias();
+    logentry.thrustBias = biasManager.getThrustBias();
+    logentry.autonomousHoveringThrust = biasManager.biasManager.getAutonomousHoveringThrust();
     logentry.time = getTime();
     return logentry;
 }

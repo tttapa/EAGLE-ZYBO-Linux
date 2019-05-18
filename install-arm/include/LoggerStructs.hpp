@@ -1,7 +1,8 @@
 #pragma once
 
-#include <Quaternion.hpp>
 #include <cstdint>
+#include <Quaternion.hpp>
+#include <real_t.h>
 
 // This is an automatically generated enum, edit it in the code generator
 /**
