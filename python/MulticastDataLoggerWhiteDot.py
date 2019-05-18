@@ -24,13 +24,22 @@ BUFFER_SIZE = 4
 
 class ComparableLogEntry(LogEntry):
     def __lt__(self, other: LogEntry):
-        return self.frametime < other.frametime
+        return self.millis < other.millis
+
+
+class Pos:
+    def __init__(self, vec: np.array):
+        self.x = vec[0][0]
+        self.y = vec[1][0]
+
+    def __str__(self):
+        return "({x}, {y})".format(x=self.x, y=self.y)
 
 
 class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
     queue = []
     ctr = 0
-    print_subsample = 10
+    print_subsample = 12
 
     def handle(self):
         data = self.request[0]
@@ -47,25 +56,16 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
 
         LoggingThreadedUDPRequestHandler.ctr += 1
         if LoggingThreadedUDPRequestHandler.ctr == self.print_subsample:
-            print('frame time:          ', logentry.framecounter)
-            # print('mode:                ', logentry.mode)
-            print('reference location:  ', logentry.reference_location)
-            print('measurement location:', logentry.measurement_location)
-            print('estimated location:  ', logentry.navigation_observer_state[2:4])
-            # print('nav ctrl output qr1: ', logentry.reference_orientation[1])
-            # print('nav ctrl output qr2: ', logentry.reference_orientation[2])
-            # print('observer state:      ', logentry.navigation_observer_state)
-            # print('alt control signal:  ', logentry.altitude_control_signal)
-            # print('sonar measurement:   ', logentry.measurement_height)
-            # print('alt observer state:  ', logentry.altitude_observer_state)
-            # print('hov thrust:          ', logentry.hover_thrust)
-            # print('common thrust:           ', logentry.common_thrust)
-            # print('rc thrust:           ', logentry.rc_throttle)
-            # print('reference orientation: ', logentry.reference_orientation)
-            # print('measurement orientation: ', logentry.measurement_orientation)
-            # print('position control signal  ', logentry.position_control_signal)
-            # print('measurement ang vel:     ', logentry.measurement_angular_velocity)
-            # print('motor controls:          ', logentry.motor_control_signals)
+            print('frame time:          ', logentry.millis / 1000)
+            print('tick count:          ', logentry.tickCount)
+            print('wpt mode:            ', logentry.wptMode)
+            print('flight mode:         ', logentry.flightMode)
+            print('throttle:            ', logentry.rcInput.throttle)
+            print('reference location:  ', Pos(logentry.positionReference.p))
+            print('measurement location:', Pos(logentry.sensorPositionMeasurement))
+            print('estimated location:  ', Pos(logentry.positionStateEstimate.p))
+            print('nav ctrl output:     ', Pos(logentry.positionControlSignal.q12))
+            print()
 
             LoggingThreadedUDPRequestHandler.ctr = 0
 

@@ -5,6 +5,7 @@ import struct
 import socketserver, socket, threading, time
 from mathutils import Quaternion, Euler
 import heapq
+import math
 
 print(sys.version_info)
 
@@ -12,6 +13,8 @@ from DroneLogger import LogEntry
 
 MCAST_GRP = '239.0.0.2'
 MCAST_PORT = 5003
+
+SQUARE_SIZE = 0.30
 
 drone = bpy.data.objects["drone"]
 motor1 = bpy.data.objects["motor1"]
@@ -24,12 +27,12 @@ BUFFER_SIZE = 5
 
 class ComparableLogEntry(LogEntry):
     def __lt__(self, other: LogEntry):
-        return self.frametime < other.frametime
+        return self.millis < other.millis
 
 class ThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
     queue = []
     ctr = 0
-    print_subsample = 10
+    print_subsample = 2
 
     def handle(self):
         data = self.request[0]
@@ -44,9 +47,9 @@ class ThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
     def handle_entry(self, logentry: LogEntry):
         ThreadedUDPRequestHandler.ctr += 1
         if ThreadedUDPRequestHandler.ctr == self.print_subsample:
-            print('frame time:          ', logentry.framecounter)
+            print('time:                  ', logentry.millis)
             # print('reference location:  ', logentry.reference_location)
-            print('measurement location:', logentry.measurement_location)
+            # print('measurement location:', logentry.measurement_location)
             # print('nav ctrl output qr1: ', logentry.reference_orientation[1])
             # print('nav ctrl output qr2: ', logentry.reference_orientation[2])
             # print('observer state:      ', logentry.navigation_observer_state)
@@ -58,17 +61,23 @@ class ThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
             # print('measurement orientation: ', logentry.measurement_orientation)
             print()
 
-            q = Quaternion(logentry.attitude_observer_state[0:4])
-            eul = q.to_euler()
-            eul.z = -eul.z
-            eul.z += logentry.attitude_yaw_offset
-            drone.rotation_quaternion = eul.to_quaternion()
+            q = Quaternion(logentry.attitudeStateEstimate.q.asColVector())
+            # eul = q.to_euler()
+            # eul.z = -eul.z
+            # eul.z += logentry.attitude_yaw_offset
+            # drone.rotation_quaternion = eul.to_quaternion()
+            drone.rotation_quaternion = q
             fac = 0.2
-            motorthrust = logentry.motor_control_signals
-            motor1.dimensions[2] = motorthrust[0] * fac
-            motor2.dimensions[2] = motorthrust[1] * fac
-            motor3.dimensions[2] = motorthrust[2] * fac
-            motor4.dimensions[2] = motorthrust[3] * fac
+            motorthrust = logentry.motorSignals
+            motor1.dimensions[2] = motorthrust.v0 * fac
+            motor2.dimensions[2] = motorthrust.v1 * fac
+            motor3.dimensions[2] = motorthrust.v2 * fac
+            motor4.dimensions[2] = motorthrust.v3 * fac
+            x = logentry.sensorPositionMeasurement[0]
+            y = logentry.sensorPositionMeasurement[1]
+            if not math.isnan(x) and not math.isnan(y):
+                drone.location[0] = x
+                drone.location[1] = y
             
             ThreadedUDPRequestHandler.ctr = 0
 
