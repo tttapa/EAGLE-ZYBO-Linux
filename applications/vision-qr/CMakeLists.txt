@@ -7,4 +7,5 @@ target_link_libraries(vision-qr
     utilities
     qr-crypto-manager
     logger
+    stdc++fs
 )

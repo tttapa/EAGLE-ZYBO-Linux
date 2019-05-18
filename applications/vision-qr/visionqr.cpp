@@ -4,6 +4,7 @@
 #include <PerfTimer.hpp>
 #include <QRCryptoManager.hpp>
 #include <ThreadedLogger.hpp>
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -12,7 +13,7 @@
 using namespace std;
 using namespace chrono_literals;
 
-// #define DEBUG_VISION
+#define DEBUG_VISION
 
 string to_padded_string(int i, uint8_t n_zero = 4);
 
@@ -67,9 +68,12 @@ void loop() {
     LocationTracker lt = {};  // Tracks the XY position of the drone
 
 #ifdef DEBUG_VISION
-    ofstream squares("squares.csv");
-    ofstream locs("locs.csv");
-    ofstream sidelens("sidelens.csv");
+    filesystem::path outdir = "output-vision-qr";
+    filesystem::create_directories(outdir);
+    filesystem::remove_all(outdir);
+    ofstream squares(outdir / "squares.csv");
+    ofstream locs(outdir / "locs.csv");
+    ofstream sidelens(outdir / "sidelens.csv");
     size_t i = 0;
 #endif
     while (true) {
@@ -78,9 +82,9 @@ void loop() {
         Point location    = lt.update(locInSquare);
 
 #ifdef DEBUG_VISION
-        cv::imwrite(string("mask") + to_padded_string(i) + ".bmp",
+        cv::imwrite(outdir / (string("mask") + to_padded_string(i) + ".bmp"),
                     lf.getMaskImage());
-        cv::imwrite(string("image") + to_padded_string(i) + ".bmp",
+        cv::imwrite(outdir / (string("image") + to_padded_string(i) + ".bmp"),
                     lf.getImage());
 #endif
 
