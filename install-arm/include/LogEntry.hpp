@@ -131,6 +131,22 @@ struct __attribute__((packed)) LogEntry {
      */
     real_t sensorYawMeasurement;
     /**
+     * Pitch bias from the RC
+     */
+    float pitchBias;
+    /**
+     * Roll bias from the RC
+     */
+    float rollBias;
+    /**
+     * Thrust bias from the RC (hovering thrust)
+     */
+    float thrustBias;
+    /**
+     * Hovering thrust saved between flights for autonomous controller
+     */
+    float autonomousHoveringThrust;
+    /**
      * Time since startup in seconds, calculated using getTickCount().
      */
     real_t time;

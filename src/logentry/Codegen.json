@@ -887,6 +887,29 @@
             ],
             "comment": "This value is set in MainInterrupt.cpp"
         },
+        "pitchBias": {
+            "type": "float",
+            "documentation": "Pitch bias from the RC",
+            "value": "biasManager.getPitchBias()"
+        },
+        "rollBias": {
+            "type": "float",
+            "documentation": "Roll bias from the RC",
+            "value": "biasManager.getRollBias()"
+        },
+        "thrustBias": {
+            "type": "float",
+            "documentation": "Thrust bias from the RC (hovering thrust)",
+            "value": "biasManager.getThrustBias()"
+        },
+        "autonomousHoveringThrust": {
+            "type": "float",
+            "documentation": [
+                "Hovering thrust saved between flights for autonomous",
+                "controller"
+            ],
+            "value": "biasManager.biasManager.getAutonomousHoveringThrust()"
+        },
         "time": {
             "type": "real_t",
             "documentation": [
