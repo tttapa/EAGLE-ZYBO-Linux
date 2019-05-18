@@ -199,11 +199,7 @@ def generate_log_entry_header(data: OrderedDict) -> str:
  *          machines is the same.
  */
 struct __attribute__((packed)) LogEntry {{
-  // private:
-  //   size_t size;
-  //
-  // public:
-  //   LogEntry() : size(sizeof(LogEntry)) {{}}
+    LogEntry() = default;
 
 {members}
 }};

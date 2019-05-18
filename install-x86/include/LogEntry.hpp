@@ -10,11 +10,7 @@
  *          machines is the same.
  */
 struct __attribute__((packed)) LogEntry {
-  // private:
-  //   size_t size;
-  //
-  // public:
-  //   LogEntry() : size(sizeof(LogEntry)) {}
+    LogEntry() = default;
 
     /**
      * The altitude controller's control signal.
