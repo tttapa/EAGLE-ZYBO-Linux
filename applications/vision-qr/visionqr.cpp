@@ -30,7 +30,7 @@ int main() {
     while (true)
         try {
             loop();
-        } catch (std::runtime_error &e) {
+        } catch (std::exception &e) {
             cerr << ANSIColors::redb << e.what() << ANSIColors::reset << endl
                  << "Restarting loop ..." << endl;
         }
@@ -76,8 +76,9 @@ void loop() {
 
 #ifdef DEBUG_VISION
     filesystem::path outdir = "output-vision-qr";
+    if (filesystem::exists(outdir))
+        filesystem::remove_all(outdir);
     filesystem::create_directories(outdir);
-    filesystem::remove_all(outdir);
     ofstream squares(outdir / "squares.csv");
     ofstream locs(outdir / "locs.csv");
     ofstream sidelens(outdir / "sidelens.csv");
@@ -100,8 +101,11 @@ void loop() {
         if (locInSquare) {  // If we have a new position measurement
             if (visionComm->isDoneReading()) {
                 double angle            = lf.getAngle().rad();
-                VisionPosition position = {location.x, location.y};
-                VisionData data         = {position, angle};
+                VisionPosition position = {
+                    location.x - 0.5f,
+                    location.y - 0.5f,
+                };
+                VisionData data = {position, angle};
                 visionComm->write(data);
             } else {
                 cerr << ANSIColors::magenta

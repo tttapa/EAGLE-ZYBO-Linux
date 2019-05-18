@@ -3,7 +3,7 @@ String mask_path = "../../python/drone-images/mask%04d.bmp";
 
 PImage img;
 PImage mask;
-int image_number = 1;
+int image_number = 1100;
 boolean show_mask = false;
 
 void display() {
@@ -53,10 +53,15 @@ void mousePressed() {
     color c = img.get(mouseX, mouseY);
     c = color(blue(c), green(c), red(c)); // BGR → RGB
     text(String.format("%d°, %d, %d", 
-      int(hue(c)), 
+      int(360*hue(c)/255), 
       int(saturation(c)), 
       int(brightness(c))), 
       width - 160, height - 20);
+    text(String.format("%d, %d, %d", 
+      int(red(c)), 
+      int(green(c)), 
+      int(blue(c))), 
+      width - 160, height - 40);
   } else if (mouseButton == RIGHT) {
     show_mask = !show_mask;
     display();
