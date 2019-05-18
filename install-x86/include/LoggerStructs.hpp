@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Quaternion.hpp>
+#include <cstdint>
 
 // This is an automatically generated enum, edit it in the code generator
 /**

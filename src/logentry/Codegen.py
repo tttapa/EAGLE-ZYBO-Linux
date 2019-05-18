@@ -118,6 +118,7 @@ def generate_struct_header(data: OrderedDict) -> str:
 #pragma once
 
 #include <Quaternion.hpp>
+#include <cstdint>
 
 {enums}
 {structs}\
