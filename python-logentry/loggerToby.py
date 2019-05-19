@@ -1,16 +1,9 @@
 import struct
 
-def loggerToby(b, dict):
-    for x in dict:
-        if x == "flightMode":
-            dict[x] = struct.unpack('i', b[305:309])[0]
-        if x == "destination":
-            dict[x] = struct.unpack('ff', b[160:168]) + struct.unpack('f', b[12:16])
-        if x == "currentPosition":
-            dict[x] = struct.unpack('ff', b[176:184]) + struct.unpack('f', b[20:24])
-        if x == "currentOrientation":
-            dict[x] = struct.unpack('ffff', b[96:112])
-        if x == "thrust":
-            dict[x] = struct.unpack('f', b[245:249])[0]
-        if x == "millis":
-            dict[x] = struct.unpack('Q', b[313:321])[0]
+def loggerToby(b):
+    return {"flightMode" : struct.unpack('i', b[305:309])[0], 
+            "destination" : struct.unpack('ff', b[160:168]) + struct.unpack('f', b[12:16]), 
+            "currentPosition" : struct.unpack('ff', b[176:184]) + struct.unpack('f', b[20:24]),
+            "currentOrientation" : struct.unpack('ffff', b[96:112]),
+            "thrust" : struct.unpack('f', b[245:249])[0],
+            "millis" : struct.unpack('Q', b[313:321])[0]}
