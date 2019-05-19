@@ -19,7 +19,7 @@ struct PrintAsEulerAngles : public Printable {
         os << '(';                            //
         formatAngle(os, e.roll) << " X\", ";  //
         formatAngle(os, e.pitch) << " Y', ";  //
-        formatAngle(os, e.pitch) << " Z)";    //
+        formatAngle(os, e.yaw) << " Z)";      //
     }
 
   private:
