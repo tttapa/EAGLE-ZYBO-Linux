@@ -4,6 +4,6 @@
 
 int main() {
     LogEntry l = {};
-    std::cout << "Offset = " << +((uintptr_t) &l.altitudeControlSignal - (uintptr_t) &l)
+    std::cout << "Offset = " << +((uintptr_t) &l.rcInput.throttle - (uintptr_t) &l)
               << " bytes" << std::endl;
 }
