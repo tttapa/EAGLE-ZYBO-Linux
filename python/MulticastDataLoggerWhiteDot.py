@@ -12,6 +12,7 @@ import heapq
 import numpy as np
 import cv2 as cv
 import matplotlib
+from PyQuaternion import EulerAngles
 
 MCAST_GRP = '239.0.0.2'
 MCAST_PORT = 5003
@@ -35,6 +36,15 @@ class Pos:
     def __str__(self):
         return "({x}, {y})".format(x=self.x, y=self.y)
 
+class Vec3:
+    def __init__(self, vec: np.array):
+        self.x = vec[0][0]
+        self.y = vec[1][0]
+        self.z = vec[2][0]
+
+    def __str__(self):
+        return "({x}, {y}, {z})".format(x=self.x, y=self.y, z=self.z)
+
 
 class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
     queue = []
@@ -57,15 +67,22 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
         LoggingThreadedUDPRequestHandler.ctr += 1
         if LoggingThreadedUDPRequestHandler.ctr == self.print_subsample:
             print('frame time:          ', logentry.millis / 1000)
-            print('tick count:          ', logentry.tickCount)
-            print('wpt mode:            ', logentry.wptMode)
-            print('flight mode:         ', logentry.flightMode)
-            print('throttle:            ', logentry.rcInput.throttle)
-            print('reference location:  ', Pos(logentry.positionReference.p))
-            print('measurement location:', Pos(logentry.sensorPositionMeasurement))
-            print('estimated location:  ', Pos(logentry.positionStateEstimate.p))
-            print('nav ctrl output:     ', Pos(logentry.positionControlSignal.q12))
-            print()
+            # print('tick count:          ', logentry.tickCount)
+            # print('wpt mode:            ', logentry.wptMode)
+            # print('flight mode:         ', logentry.flightMode)
+            # print('throttle:            ', logentry.rcInput.throttle)
+            # print('reference location:  ', Pos(logentry.positionReference.p))
+            # print('measurement location:', Pos(logentry.sensorPositionMeasurement))
+            # print('estimated location:  ', Pos(logentry.positionStateEstimate.p))
+            # print('nav ctrl output:     ', Pos(logentry.positionControlSignal.q12))
+            print('attitude reference:   ', repr(logentry.attitudeReference.q))
+            print('attitude state:       ', repr(
+                logentry.attitudeStateEstimate.q))
+            print('AHRS measurement:     ', repr(
+                logentry.attitudeMeasurement.q))
+            print('AHRS measurement:     ', logentry.attitudeMeasurement.q)
+            print('Accel measurement:     ', Vec3(logentry.imuMeasurement.accel.a))
+            print('Gyro measurement:     ', Vec3(logentry.imuMeasurement.gyro.g))
 
             LoggingThreadedUDPRequestHandler.ctr = 0
 

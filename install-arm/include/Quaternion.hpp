@@ -8,7 +8,7 @@ class __attribute__((packed)) Quaternion {
     ColVector<4> q;
 
   public:
-    MATRIX_CONSTEXPR Quaternion() : Quaternion{unit()} {}
+    MATRIX_CONSTEXPR Quaternion() : Quaternion{identity()} {}
     MATRIX_CONSTEXPR Quaternion(const ColVector<4> &q) : q(q) {}
     MATRIX_CONSTEXPR Quaternion(real_t q0, real_t q1, real_t q2, real_t q3)
         : q{q0, q1, q2, q3} {}
@@ -85,7 +85,7 @@ class __attribute__((packed)) Quaternion {
     MATRIX_CONSTEXPR operator ColVector<4> &() { return q; }
     MATRIX_CONSTEXPR operator const ColVector<4> &() const { return q; }
 
-    MATRIX_CONSTEXPR static Quaternion unit() { return {1, 0, 0, 0}; }
+    MATRIX_CONSTEXPR static Quaternion identity() { return {1, 0, 0, 0}; }
 
     /**
      * Calculate the quaternion that results in vector when rotating (0 0 1) by
@@ -106,7 +106,7 @@ class __attribute__((packed)) Quaternion {
         /* First check the edge case vec ~ (0 0 1). */
         real_t eps = std::numeric_limits<real_t>::epsilon();
         if (abs(vec[0]) <= eps && abs(vec[1]) <= eps)
-            return Quaternion::unit();
+            return Quaternion::identity();
 
         /* Calculate the cross product and its norm. */
         ColVector<3> cross = {vec[1], -vec[0], 0};

@@ -1,5 +1,5 @@
-add_executable(quaternion_test test-Quaternion.cpp)
-target_link_libraries(quaternion_test gtest_main quaternion)
+add_executable(quaternion.test test-Quaternion.cpp)
+target_link_libraries(quaternion.test gtest_main quaternion)
 
 include(GoogleTest)
-gtest_discover_tests(quaternion_test)
+gtest_discover_tests(quaternion.test)

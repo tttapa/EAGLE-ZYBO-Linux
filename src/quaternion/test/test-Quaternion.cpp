@@ -59,6 +59,10 @@ TEST(Quaternion, fromDirectionHard) {
     Quaternion expected = {0.829156197588850, 0.5, 0.25, 0.0};
     ASSERT_TRUE(isAlmostEqual(result.asColVector(), expected.asColVector(),
                               std::numeric_limits<real_t>::epsilon()));
+    ColVector<3> reference = {0, 0, 1};
+    ColVector<3> rotated   = result.rotate(reference);
+    ASSERT_TRUE(
+        isAlmostEqual(rotated, vector, std::numeric_limits<real_t>::epsilon()));
 }
 
 // -------------------------------------------------------------------------- //
@@ -73,7 +77,7 @@ TEST(Quaternion, eul2quat) {
         isAlmostEqual(result.asColVector(), expected.asColVector(), eps));
 }
 
-TEST(Quaternion, quat2eul) {
+TEST(Quaternion, eul2quatAndBack) {
     EulerAngles e         = {0.3, -0.7, 0.9};
     Quaternion q          = e;
     EulerAngles result    = q;
@@ -81,6 +85,16 @@ TEST(Quaternion, quat2eul) {
     Quaternion q_expected = {0.814068885161671, 0.450147392727527,
                              -0.244234643193019, 0.273877005417802};
     ASSERT_TRUE(isAlmostEqual(q.asColVector(), q_expected.asColVector(), eps));
+    ASSERT_TRUE(
+        isAlmostEqual(result.asColVector(), expected.asColVector(), eps));
+}
+
+TEST(Quaternion, quat2eulAndBack) {
+    Quaternion q        = {1, 2, 5, 11};
+    q                   = q.normalize();
+    EulerAngles e       = q;
+    Quaternion result   = e;
+    Quaternion expected = q;
     ASSERT_TRUE(
         isAlmostEqual(result.asColVector(), expected.asColVector(), eps));
 }

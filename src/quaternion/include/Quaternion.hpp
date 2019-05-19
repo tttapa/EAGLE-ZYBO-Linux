@@ -89,7 +89,7 @@ class __attribute__((packed)) Quaternion {
 
     /**
      * Calculate the quaternion that results in vector when rotating (0 0 1) by
-     * this quaterion.
+     * this quaternion.
      * 
      * If (0 0 1) is rotated by this quaternion, it results in the given vector.
      */

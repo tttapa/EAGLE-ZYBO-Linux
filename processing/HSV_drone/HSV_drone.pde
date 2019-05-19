@@ -3,7 +3,7 @@ String mask_path = "../../python/drone-images/mask%04d.bmp";
 
 PImage img;
 PImage mask;
-int image_number = 1100;
+int image_number = 1;
 boolean show_mask = false;
 
 void display() {
