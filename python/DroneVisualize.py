@@ -21,7 +21,7 @@ def main(outname, foldername, bgr = False):
     frame_height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = video.get(cv2.CAP_PROP_FPS) / 4
     out = cv2.VideoWriter(outname+'.out.mp4', cv2.VideoWriter_fourcc(
-        'M', 'P', '4', 'V'), fps, (frame_width * 3, frame_height))
+        'm', 'p', '4', 'v'), fps, (frame_width * 3, frame_height))
 
     with open(foldername + "/squares.csv") as f:
         squares = f.read().split("\n")

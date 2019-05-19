@@ -3,7 +3,7 @@
 #include <cmath>
 #include <cstdint>
 
-// #define CAFETERIA
+#define CAFETERIA
 
 #ifdef CAFETERIA
 

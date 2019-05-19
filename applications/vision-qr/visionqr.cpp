@@ -20,7 +20,7 @@ using namespace chrono_literals;
 using namespace experimental;
 #endif
 
-#define DEBUG_VISION
+// #define DEBUG_VISION
 
 string to_padded_string(int i, uint8_t n_zero = 4);
 
@@ -52,7 +52,6 @@ void loop() {
         {"239.0.0.2", 5003},      // Multicast
         {"192.168.4.100", 5001},  // Unicast
     }};
-    cout << "logger : " << logger.isInitialized() << endl;
     // Make sure that Baremetal has initialized the logger
     logger.checkInitialized();
     // Spawns another thread, is cleaned up when destructed. Update every 17ms.
@@ -68,9 +67,8 @@ void loop() {
     cv::VideoCapture &cap = lf.getCapture();
     int frame_width       = cap.get(cv::CAP_PROP_FRAME_WIDTH);
     int frame_height      = cap.get(cv::CAP_PROP_FRAME_HEIGHT);
-    double fps            = cap.get(cv::CAP_PROP_FPS);
-    cout << "Frame dimensions: (" << frame_width << "×" << frame_height << ")\n"
-         << "Frame rate      : " << fps << " fps" << std::endl;
+    cout << "Frame dimensions: (" << frame_width << "×" << frame_height << ")"
+         << std::endl;
 
     LocationTracker lt = {};  // Tracks the XY position of the drone
 
@@ -126,11 +124,11 @@ void loop() {
 #endif
 
         // auto duration = pt.getDuration<chrono::microseconds>();
-        static size_t subframectr = 0;
-        if (subframectr++ == 30) {
-            cout << "Position: " << location << endl;
-            subframectr = 0;
-        }
+        // static size_t subframectr = 0;
+        // if (subframectr++ == 30) {
+        //     cout << "Position: " << location << endl;
+        //     subframectr = 0;
+        // }
         // cout << "Vision duration: " << 1e-3 * duration << " ms → "
         //      << 1e6 / duration << " fps" << endl;
     }

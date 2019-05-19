@@ -34,7 +34,7 @@ class Pos:
         self.y = vec[1][0]
 
     def __str__(self):
-        return "({x}, {y})".format(x=self.x, y=self.y)
+        return "(%.2f, %.2f)" % (self.x, self.y)
 
 class Vec3:
     def __init__(self, vec: np.array):
@@ -43,7 +43,7 @@ class Vec3:
         self.z = vec[2][0]
 
     def __str__(self):
-        return "({x}, {y}, {z})".format(x=self.x, y=self.y, z=self.z)
+        return "(%.2f, %.2f, %.2f)" % (self.x, self.y, self.z)
 
 
 class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
@@ -66,23 +66,26 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
 
         LoggingThreadedUDPRequestHandler.ctr += 1
         if LoggingThreadedUDPRequestHandler.ctr == self.print_subsample:
-            print('frame time:          ', logentry.millis / 1000)
+            print('frame time:           ', logentry.millis / 1000)
             # print('tick count:          ', logentry.tickCount)
             # print('wpt mode:            ', logentry.wptMode)
             # print('flight mode:         ', logentry.flightMode)
             # print('throttle:            ', logentry.rcInput.throttle)
-            # print('reference location:  ', Pos(logentry.positionReference.p))
-            # print('measurement location:', Pos(logentry.sensorPositionMeasurement))
-            # print('estimated location:  ', Pos(logentry.positionStateEstimate.p))
+            print('reference location:   ', Pos(logentry.positionReference.p))
+            print('measurement location: ', Pos(logentry.sensorPositionMeasurement))
+            print('estimated location:   ', Pos(logentry.positionStateEstimate.p))
+            print()
+            print()
+            print()
             # print('nav ctrl output:     ', Pos(logentry.positionControlSignal.q12))
-            print('attitude reference:   ', repr(logentry.attitudeReference.q))
-            print('attitude state:       ', repr(
-                logentry.attitudeStateEstimate.q))
-            print('AHRS measurement:     ', repr(
-                logentry.attitudeMeasurement.q))
-            print('AHRS measurement:     ', logentry.attitudeMeasurement.q)
-            print('Accel measurement:     ', Vec3(logentry.imuMeasurement.accel.a))
-            print('Gyro measurement:     ', Vec3(logentry.imuMeasurement.gyro.g))
+            # print('attitude reference:   ', repr(logentry.attitudeReference.q))
+            # print('attitude state:       ', repr(
+            #     logentry.attitudeStateEstimate.q))
+            # print('AHRS measurement:     ', repr(
+            #     logentry.attitudeMeasurement.q))
+            # print('AHRS measurement:     ', logentry.attitudeMeasurement.q)
+            # print('Accel measurement:     ', Vec3(logentry.imuMeasurement.accel.a))
+            # print('Gyro measurement:     ', Vec3(logentry.imuMeasurement.gyro.g))
 
             LoggingThreadedUDPRequestHandler.ctr = 0
 
@@ -114,6 +117,7 @@ class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServ
         self.file.write(bytes(logentry))
 
         try:
+            raise RuntimeError()
 
             frame_width = np.size(self.image, 1)
             frame_height = np.size(self.image, 0)
