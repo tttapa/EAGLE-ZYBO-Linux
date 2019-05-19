@@ -12,3 +12,5 @@ def loggerToby(b, dict):
             dict[x] = struct.unpack('ffff', b[96:112])
         if x == "thrust":
             dict[x] = struct.unpack('f', b[245:249])[0]
+        if x == "millis":
+            dict[x] = struct.unpack('Q', b[313:321])[0]
