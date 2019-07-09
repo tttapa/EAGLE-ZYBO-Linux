@@ -51,15 +51,17 @@ class GridFinder {
     HoughResult hough(Pixel px, angle_t angle) const {
         BresenhamLine line = {px, angle, width(), height()};
         uint previousWhite = 0;
+        uint score         = 0;
         while (line.hasNext()) {
             Pixel point = line.next();
             // If pixel is white
-            if (get(point))
+            if (get(point)) {
                 previousWhite = line.getCurrentLength();
-            else if (line.getCurrentLength() - previousWhite >= HOUGH_MAX_GAP)
+                ++score;
+            } else if (line.getCurrentLength() - previousWhite >= HOUGH_MAX_GAP)
                 break;
         }
-        return {angle, previousWhite};
+        return {angle, score};
     }
 
     /** 
@@ -229,7 +231,7 @@ class GridFinder {
      *          white blobs (of sunlight, for example) from being detected as
      *          random lines.
      */
-    static const uint MAX_LINE_WIDTH = 32;
+    static const uint MAX_LINE_WIDTH = 48;
 
     /**
      * @brief   Get the width of the line at a given point.
@@ -719,7 +721,7 @@ class GridFinder {
 #pragma region Finding the next perpendicular line..............................
 
     /// Perpendicular lines have to be long enough to be counted as a real line.
-    constexpr static uint MINIMIM_LINE_WEIGHTED_VOTE_COUNT = 80;
+    constexpr static uint MINIMIM_LINE_WEIGHTED_VOTE_COUNT = 48;
 
     /**
      * @brief   Follow the given line to find the line perpendicular to it.
@@ -937,21 +939,39 @@ class GridFinder {
                 // start looking for the fourth line, as it's very likely that
                 // the other sides of the square are roughly the same length as
                 // the first side
-                minDistance -= minDistance / 4;
+                minDistance -= minDistance / 2;
                 uint offset          = 0;
                 const uint maxOffset = minDistance / 2;
                 const uint offsetIncr =
                     std::max(sq.lines[2]->width, sq.lines[3]->width);
 
                 // Search for the fourth line
-                while (!sq.lines[4].has_value() && offset < maxOffset) {
-                    sq.lines[4] =  // find the fourth line along the second
+                float bestDistance = 0;
+                while (offset < maxOffset) {
+                    if (auto line =  // find the fourth line along the second
                         findNextLine(sq.lines[2], direction, offset,
-                                     std::max(minDistance - jump1, 0u));
-                    if (!sq.lines[4].has_value())  // if not found along second
-                        sq.lines[4] =  // find the fourth line along the third
-                            findNextLine(sq.lines[3], !direction, offset,
-                                         std::max(minDistance - jump2, 0u));
+                                     std::max(minDistance - jump1, 0u))) {
+                        auto tempPoint = intersect(*sq.lines[2], *line);
+                        auto currentDistance =
+                            Point::distanceSquared(tempPoint, *sq.points[0]);
+                        if (!sq.lines[4].has_value() ||
+                            currentDistance < bestDistance) {
+                            bestDistance = currentDistance;
+                            sq.lines[4]  = line;
+                        }
+                    }
+                    if (auto line =  // find the fourth line along the third
+                        findNextLine(sq.lines[3], !direction, offset,
+                                     std::max(minDistance - jump2, 0u))) {
+                        auto tempPoint = intersect(*sq.lines[3], *line);
+                        auto currentDistance =
+                            Point::distanceSquared(tempPoint, *sq.points[1]);
+                        if (!sq.lines[4].has_value() ||
+                            currentDistance < bestDistance) {
+                            bestDistance = currentDistance;
+                            sq.lines[4]  = line;
+                        }
+                    }
                     // next time, try again with a different offset
                     offset += offsetIncr;
                 }

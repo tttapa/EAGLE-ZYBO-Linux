@@ -1,7 +1,7 @@
 from DroneLogger import LogEntry
 import os
 
-logfile = "eagle-2019-05-18.18.54.53.dat"
+logfile = "eagle-2019-05-19.23.39.23.dat"
 with open(os.path.join(os.getenv("HOME"), "dronelogs", logfile), 'rb') as f:
     logentries = f.read()
     size = len(bytes(LogEntry()))

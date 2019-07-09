@@ -6,7 +6,7 @@ import PyGridFinder as gr
 from math import cos, sin
 from timeit import default_timer as timer
 
-GRIDSIZE = 24
+GRIDSIZE = 64
 
 def main(outname, foldername, bgr = False):
     videofiles = foldername + "/image%04d.bmp"
