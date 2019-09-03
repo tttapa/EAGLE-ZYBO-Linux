@@ -6,6 +6,7 @@ import PyGridFinder as gr
 from math import cos, sin
 from timeit import default_timer as timer
 import os
+import matplotlib.pyplot as plt
 
 scriptfolder = os.path.dirname(os.path.realpath(__file__))
 outfolder = os.path.join(scriptfolder, '../Video/test-sequences/out')
@@ -45,10 +46,13 @@ def main(outname, filename, bgr=False):
         processed, square, time = processFrame(image, mask)
         location = locationTracker.getLocation(
             square, (frame_width / 2, frame_height / 2))
-        showAngle(locationTracker.getAngle(), processed)
+        showAngle(locationTracker.getAngle(),
+                  locationTracker.getSquareCenter(), processed)
+        cv2.circle(processed, (frame_width // 2, frame_height // 2), 3,
+                   (0, 200, 160), -1)
         angle = locationTracker.getAngle()
         angle = angle if angle <= np.pi else angle - 2 * np.pi
-        locations[index] = (location.x, location.y, angle)
+        locations[index] = (location.x, 1 - location.y, angle)
 
         gr_time += time
         gr_times[framectr] = time
@@ -79,7 +83,12 @@ def main(outname, filename, bgr=False):
 
     np.savetxt(os.path.join(outfolder, outname + '.csv'),
                locations,
-               delimiter=",")
+               delimiter=",",
+               header='x,y,yaw',
+               comments='')
+    plt.plot(locations[:,0:2])
+    plt.savefig(os.path.join(outfolder, outname + '.png'))
+    plt.close()
 
     video.release()
     out.release()
@@ -95,11 +104,13 @@ def showLine(line, color, image):
     cv2.line(image, p1, p2, color, 2)
 
 
-def showAngle(angle, image: np.array):
+def showAngle(angle, location, image: np.array):
     h, w, _ = image.shape
-    p1 = (int(w / 2), int(h / 2))
-    p2 = (int(w / 2 + 2 * w * cos(angle)), int(h / 2 + 2 * w * sin(angle)))
+    p1 = (int(round(location.x)), int(round(location.y)))
+    p2 = (int(round(location.x + 2 * w * cos(angle))),
+          int(round(location.y + 2 * w * sin(angle))))
     cv2.line(image, p1, p2, (100, 100, 100), 2)
+    cv2.circle(image, p1, 3, (0, 0, 255), -1)
 
 
 def processFrame(image, mask):

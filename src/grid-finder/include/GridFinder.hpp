@@ -481,7 +481,7 @@ class GridFinder {
 
     // TODO: can we make this dynamic?
     /// The minimum width the first line must have.
-    constexpr static uint MINIMUM_START_LINE_WIDTH = 10;
+    constexpr static uint MINIMUM_START_LINE_WIDTH = 8;
     /// The minimum number of Hough votes the first line must have.
     /// @see    HoughResult::count
     constexpr static uint MINIMIM_START_LINE_WEIGHTED_VOTE_COUNT = 100;
@@ -522,7 +522,7 @@ class GridFinder {
 
     /// Don't use vertical lines as the first line, as this can result in
     /// finding a first square that's not in the center of the frame.
-    constexpr static uint MAXIMUM_VERTICAL_START_LINE_WIDTH = 32;  // TODO
+    constexpr static uint MAXIMUM_VERTICAL_START_LINE_WIDTH = 24;  // TODO
 
     /**
      * @brief   Find the vertical range of white pixels closest to the center of

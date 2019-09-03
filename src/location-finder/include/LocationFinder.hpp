@@ -8,6 +8,7 @@ int test();
 #include <opencv2/videoio.hpp>
 
 #define GLOBAL_POSITION
+#define CONTINUOUS_SPEED
 
 class LocationTracker {
   public:
@@ -22,7 +23,8 @@ class LocationTracker {
     float sideLen = 0.0;
     angle_t angle;
     Point squareCenter;
-    OutlierRejection outRej = {0.2, 5, {0.5, 0.5}};
+    Vec2f location           = {0.5, 0.5};
+    Vec2f previousDifference = {0, 0};
 };
 
 class LocationFinder {

@@ -66,8 +66,11 @@ Point LocationTracker::getLocation(Square &sq, Vec2f frameCenter) {
 
     // === No points ===
     // If we found just one line, no points → nothing can be done
-    if (!points[0] && !points[1])
+    if (!points[0] && !points[1]) {
+        location += previousDifference;
+        previousDifference = {0, 0};
         return Point::invalid();
+    }
     angle_t diagAngle = angle + 45_deg;
     // === One point ===
     // If only the first point is valid
@@ -104,8 +107,11 @@ Point LocationTracker::getLocation(Square &sq, Vec2f frameCenter) {
         return Point::invalid();
     }
     // Wie deelt door nul is een snul
-    if (sideLen == 0)
+    if (sideLen == 0) {
+        location += previousDifference;
+        previousDifference = {0, 0};
         return Point::invalid();
+    }
 
     // Remember the center of the square
     this->squareCenter = center;
@@ -128,8 +134,15 @@ Point LocationTracker::getLocation(Square &sq, Vec2f frameCenter) {
     position = Point{position + Vec2f{2.0, 2.0}} % 1.0;
 
 #ifdef GLOBAL_POSITION
-    outRej(position + round(outRej.getPreviousValid().vec() - position));
-    return outRej.getPreviousValid();
+    Vec2f previousPosition = location;
+#ifdef CONTINUOUS_SPEED
+    Vec2f expected = previousPosition + previousDifference;
+#else
+    Vec2f expected = previousPosition;
+#endif
+    location           = position + round(expected - position);
+    previousDifference = location - previousPosition;
+    return location;
 #else
     return position;
 #endif
