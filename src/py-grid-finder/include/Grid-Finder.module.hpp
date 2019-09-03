@@ -98,5 +98,12 @@ PYBIND11_MODULE(PyGridFinder, pygridmodule) {
         .def(pybind11::init<std::string>())
         .def(pybind11::init<int>())
         .def("updateLocation", &LocationFinder::updateLocation)
-        .def("getAngle", [](LocationFinder l) { return l.getAngle().rad(); });
+        .def("getAngle", [](LocationFinder &l) { return l.getAngle().rad(); });
+
+    pybind11::class_<LocationTracker>(pygridmodule, "LocationTracker")
+        .def(pybind11::init<>())
+        .def("getLocation", &LocationTracker::getLocation)
+        .def("getSquareCenter", &LocationTracker::getSquareCenter)
+        .def("getSideLength", &LocationTracker::getSideLength)
+        .def("getAngle", [](LocationTracker &l) { return l.getAngle().rad(); });
 }

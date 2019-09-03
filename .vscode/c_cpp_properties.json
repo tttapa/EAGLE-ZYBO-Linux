@@ -10,7 +10,9 @@
                 "${workspaceFolder}/docker-include/opencv4/**",
                 "${workspaceFolder}/docker-include/zbar",
                 "${workspaceFolder}/docker-include/python3.7m",
-                "${workspaceFolder}/build-arm/src/logentry/include-generated"
+                "${workspaceFolder}/build-arm/src/logentry/include-generated",
+                "${workspaceFolder}/src/summer/math/include",
+                "${workspaceFolder}/src/summer/logger/include"
             ],
             "defines": [
                 "__AVX__",

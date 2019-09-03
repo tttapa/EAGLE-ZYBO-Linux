@@ -15,6 +15,8 @@ add_subdirectory(qr-decode)
 add_subdirectory(base64)
 add_subdirectory(qr-crypto-manager)
 
+add_subdirectory(summer)
+
 if (NOT CMAKE_CROSSCOMPILING)
 add_subdirectory(py-matrix)
 add_subdirectory(py-grid-finder)

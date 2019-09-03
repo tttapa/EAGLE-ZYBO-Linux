@@ -1,0 +1,54 @@
+/**
+ * @file
+ * @brief	Wrapper for the C++ standard library math functions.
+ *
+ * The toolchain used by the Xilinx SDK isn't configured correctly, and some of
+ * the standard math functions are not available. This wrapper defines the
+ * right macros and declares some functions to get access to all math
+ * functions.  
+ *
+ * This wrapper also `#undef`s `__STRICT_ANSI__`, so that M_PI is defined.
+ *
+ * @note    The `log2l`, `logbl`, `nexttoward`, `nexttowardf` and `nexttowardl`
+ * 		    are not defined by the compiler, so you cannot use them. They are 
+ * 		    just declared here to be able to compile the math library, actually
+ *          trying to use them will result in a linker error 
+ * 		    (`undefined reference to ...`).
+ */
+
+#pragma once
+
+#ifndef __x86_64__
+#define _GLIBCXX_USE_C99_MATH_TR1 1
+
+long double log2l(long double arg);
+/* {
+    return __builtin_log2l(arg);
+} // */
+
+long double logbl(long double arg);
+/* {
+    return __builtin_logbl(arg);
+} // */
+
+double nexttoward(double x, long double y);
+/* {
+    return __builtin_nexttoward(x, y);
+} // */
+float nexttowardf(float x, long double y);
+/* {
+    return __builtin_nexttowardf(x, y);
+} // */
+long double nexttowardl(long double x, long double y);
+/* {
+    return __builtin_nexttowardl(x, y);
+} // */
+#undef __STRICT_ANSI__
+#include_next <cmath>
+#undef _GLIBCXX_USE_C99_MATH_TR1
+
+#else
+
+#include_next <cmath>
+
+#endif

@@ -20,7 +20,7 @@ using namespace chrono_literals;
 using namespace experimental;
 #endif
 
-#define DEBUG_VISION
+// #define DEBUG_VISION
 
 string to_padded_string(int i, uint8_t n_zero = 4);
 
@@ -123,15 +123,15 @@ void loop() {
         i++;
 #endif
 
-        auto duration             = pt.getDuration<chrono::microseconds>();
-        static size_t subframectr = 0;
-        if (subframectr++ == 0) {
-            cout << "Position: " << location << endl;
-            subframectr = 0;
-        }
-        (void) duration;
-        // cout << "Vision duration: " << 1e-3 * duration << " ms → "
-        //      << 1e6 / duration << " fps" << endl;
+        auto duration = pt.getDuration<chrono::microseconds>();
+        // static size_t subframectr = 0;
+        // if (subframectr++ == 0) {
+        //     cout << "Position: " << location << endl;
+        //     subframectr = 0;
+        // }
+        // (void)duration;
+        cout << "Vision duration: " << 1e-3 * duration << " ms → "
+             << 1e6 / duration << " fps" << endl;
     }
 }
 

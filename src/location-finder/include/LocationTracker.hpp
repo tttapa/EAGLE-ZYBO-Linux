@@ -1,7 +1,9 @@
 #pragma once
 
 #include <Line.hpp>
+#include <OutlierRejection.hpp>
 
+#if 0
 #define GLOBAL_POSITION
 
 class LocationTracker {
@@ -9,13 +11,16 @@ class LocationTracker {
     Point update(Point newLocation) {
 #ifdef GLOBAL_POSITION
         if (newLocation)
-            location = newLocation.vec() + round(location.vec() - newLocation);
-        return location;
+            outRej(newLocation.vec() +
+                   round(outRej.getPreviousValid().vec() - newLocation));
+        return outRej.getPreviousValid();
 #else
         return newLocation;
 #endif
     }
 
   private:
-    Point location = {0.5, 0.5};
+    OutlierRejection outRej = {0.2, 5, {0.5, 0.5}};
 };
+
+#endif

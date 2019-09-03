@@ -36,6 +36,7 @@ class Pos:
     def __str__(self):
         return "(%.2f, %.2f)" % (self.x, self.y)
 
+
 class Vec3:
     def __init__(self, vec: np.array):
         self.x = vec[0][0]
@@ -72,8 +73,10 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
             # print('flight mode:         ', logentry.flightMode)
             # print('throttle:            ', logentry.rcInput.throttle)
             print('reference location:   ', Pos(logentry.positionReference.p))
-            print('estimated location:   ', Pos(logentry.positionStateEstimate.p))
-            # print('pos control signal:   ', Pos(logentry.positionControlSignal.q12))
+            print('estimated location:   ', Pos(
+                logentry.positionStateEstimate.p))
+            print('pos control signal:   ', Pos(
+                logentry.positionControlSignal.q12))
             # print('attitude reference:   ', repr(logentry.attitudeReference.q))
             # print('attitude reference:   ', logentry.attitudeReference.q)
             # print('bias pitch:           ', logentry.pitchBias)
@@ -82,7 +85,7 @@ class LoggingThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
             # print('rc roll:              ', logentry.rcInput.roll)
             # print('attitude reference:   ', logentry.attitudeReference.q)
             # print()
-            print()
+            print('altitude state:       ', logentry.altitudeStateEstimate.z)
             print()
             # print('nav ctrl output:     ', Pos(logentry.positionControlSignal.q12))
             # print('attitude state:       ', repr(
@@ -108,33 +111,37 @@ class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServ
         super().__init__(*args)
         self.filename = filename
 
-        self.image = np.zeros((640, 480, 3), np.uint8)
+        self.image = np.zeros((480, 480, 3), np.uint8)
 
     def __enter__(self):
         print("Opening file: " + self.filename)
-        self.file = open(self.filename, mode='wb')
+        self.file = open(self.filename+".dat", mode='wb')
+        # fps = 30
+        # self.video_out = cv.VideoWriter(self.filename+'.avi', cv.VideoWriter_fourcc(
+        #     'M', 'J', 'P', 'G'), fps, (480, 480 + 360))
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         print("Closing file: " + self.filename)
         self.file.close()
+        # self.video_out.release()
 
     def log(self, logentry: LogEntry):
         self.file.write(bytes(logentry))
 
         try:
-            raise RuntimeError()
+            # raise RuntimeError()
 
             frame_width = np.size(self.image, 1)
             frame_height = np.size(self.image, 0)
 
-            loc = (int(round(float(logentry.measurement_location[0]) * GRIDSIZE * METERS_2_BLOCK + frame_width/2)),
-                   int(round(float(logentry.measurement_location[1]) * GRIDSIZE * METERS_2_BLOCK + frame_height/2)))
+            loc = (int(round(float(logentry.positionMeasurement.p[0]) * GRIDSIZE * METERS_2_BLOCK + frame_width/2)),
+                   int(round(float(-logentry.positionMeasurement.p[1]) * GRIDSIZE * METERS_2_BLOCK + frame_height/2)))
             cv.circle(self.image, loc, 3, (255, 255, 255), -1)
 
             dispimage = self.image
 
-            self.image = self.image * 0.95
+            self.image -= self.image // 32
 
             color = (128, 255, 255)
             for y in range(frame_height//GRIDSIZE + 1):
@@ -145,17 +152,40 @@ class LoggingThreadedUDPServer(socketserver.ThreadingMixIn, socketserver.UDPServ
                 x *= GRIDSIZE
                 x += (frame_width//2) % GRIDSIZE
                 cv.line(dispimage, (x, 0), (x, frame_height), color, 1)
-            cv.imshow("image", dispimage)
+
+            max_ctrl = 0.0262
+            x_ctrl = int(
+                round(logentry.positionControlSignal.q12[1][0]*150/max_ctrl))+240
+            y_ctrl = int(
+                round(logentry.positionControlSignal.q12[0][0]*150/max_ctrl))+180
+
+            ctrl_image = np.zeros((360, 480, 3), np.uint8)
+            cv.rectangle(ctrl_image, (60+30, 30),
+                         (480-(60+30), 360-30), (255, 255, 255))
+            cv.line(ctrl_image, (x_ctrl, 30),
+                    (x_ctrl, 360-30), (0, 255, 0), thickness=2)
+            cv.line(ctrl_image, (60+30, y_ctrl),
+                    (480-(60+30), y_ctrl), (255, 0, 0), thickness=2)
+            cv.line(ctrl_image, (240, 0), (240, 360), (1, 1, 1), thickness=1)
+            cv.line(ctrl_image, (0, 180), (480, 180), (1, 1, 1), thickness=1)
+            cv.circle(ctrl_image, (x_ctrl, y_ctrl),
+                      9, (0, 0, 255), thickness=-1)
+
+            dispimage_with_ctrl = np.concatenate((dispimage, ctrl_image))
+
+            # self.video_out.write(dispimage_with_ctrl)
+
+            cv.imshow("image", dispimage_with_ctrl)
             cv.waitKey(1)
 
-        except:
-            pass
+        except Exception as e:
+            print(e)
 
 
 if __name__ == "__main__":
     ts = datetime.datetime.now().strftime('%Y-%m-%d.%H.%M.%S')
     # fname = "/home/pieter/GitHub/EAGLE/DroneLogs/eagle-" + ts + ".dat"
-    fname = "/tmp/eagle-" + ts + ".dat"
+    fname = "/tmp/eagle-" + ts
     with LoggingThreadedUDPServer(fname, (MCAST_GRP, MCAST_PORT), LoggingThreadedUDPRequestHandler) as server:
         server_thread = threading.Thread(target=server.serve_forever)
         server_thread.daemon = True
@@ -164,3 +194,4 @@ if __name__ == "__main__":
         server_thread.start()
         print("Server started")
         input("Press Enter to stop ...")
+

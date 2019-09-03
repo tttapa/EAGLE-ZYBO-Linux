@@ -4,7 +4,26 @@ int test();
 
 #include <AngleTracker.hpp>
 #include <HelperStructs.hpp>
+#include <OutlierRejection.hpp>
 #include <opencv2/videoio.hpp>
+
+#define GLOBAL_POSITION
+
+class LocationTracker {
+  public:
+    Point getLocation(Square &sq, Vec2f frameCenter);
+
+    angle_t getAngle() const { return angle; }
+    float getSideLength() const { return sideLen; }
+    Point getSquareCenter() const { return squareCenter; }
+
+  private:
+    AngleTracker angleTracker;
+    float sideLen = 0.0;
+    angle_t angle;
+    Point squareCenter;
+    OutlierRejection outRej = {0.2, 5, {0.5, 0.5}};
+};
 
 class LocationFinder {
   public:
@@ -36,10 +55,10 @@ class LocationFinder {
      */
     Point getLocation(Square &sq, Vec2f frameCenter);
 
-    angle_t getAngle() const { return angle; }
-    float getSideLength() const { return sideLen; }
+    angle_t getAngle() const { return locTracker.getAngle(); }
+    float getSideLength() const { return locTracker.getSideLength(); }
     Square getSquare() const { return square; }
-    Point getSquareCenter() const { return squareCenter; }
+    Point getSquareCenter() const { return locTracker.getSquareCenter(); }
     cv::Mat getImage() const { return image; }
     cv::Mat getMaskImage() const { return maskImage; }
     cv::VideoCapture &getCapture() { return cap; }
@@ -48,10 +67,7 @@ class LocationFinder {
     cv::VideoCapture cap;
     cv::Mat image;
     cv::Mat maskImage;
-    Point squareCenter;
     Square square;
     bool hasImage = false;
-    AngleTracker angleTracker;
-    float sideLen = 0.0;
-    angle_t angle;
+    LocationTracker locTracker;
 };

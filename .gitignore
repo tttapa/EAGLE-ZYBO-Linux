@@ -8,3 +8,4 @@ sysroot.ext4
 *.ko.cmd
 *.order
 .tmp_versions
+Video/test-sequences

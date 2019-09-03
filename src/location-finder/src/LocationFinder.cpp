@@ -46,6 +46,10 @@ Point LocationFinder::updateLocation() {
 }
 
 Point LocationFinder::getLocation(Square &sq, Vec2f frameCenter) {
+    return locTracker.getLocation(sq, frameCenter);
+}
+
+Point LocationTracker::getLocation(Square &sq, Vec2f frameCenter) {
     // Find the angle of the square
     // ----------------------------
     try {
@@ -121,5 +125,12 @@ Point LocationFinder::getLocation(Square &sq, Vec2f frameCenter) {
     position += rotate(sqCenterToFrameCenter, angle).vec() / sideLen;
     // Make sure that the coordinates are between 0.0 and 1.0
     // add 2.0 to handle negative case correctly
-    return Point{position + Vec2f{2.0, 2.0}} % 1.0;
+    position = Point{position + Vec2f{2.0, 2.0}} % 1.0;
+
+#ifdef GLOBAL_POSITION
+    outRej(position + round(outRej.getPreviousValid().vec() - position));
+    return outRej.getPreviousValid();
+#else
+    return position;
+#endif
 }

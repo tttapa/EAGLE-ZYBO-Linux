@@ -1,7 +1,8 @@
-from DroneLogger import LogEntry, MotorSignals
+from DroneLogger import LogEntry, MotorSignals, PositionControlSignal
 from time import sleep, time
 import socket
 from PyQuaternion import *
+import numpy as np
 
 MCAST_GRP = '239.0.0.2'
 MCAST_PORT = 5003
@@ -21,6 +22,7 @@ try:
         log_entry = LogEntry()
         log_entry.millis = int(round(time() * 1000))
         log_entry.motorSignals = MotorSignals(0.5, 0.5, 0.5, 0.5)
+        log_entry.positionControlSignal = PositionControlSignal(np.array([[0.01], [0.005]]))
         log_entry.attitudeStateEstimate.q = EulerAngles.eul2quat(EulerAngles(0, 0.1, 0.2))
         sock.sendto(bytes(log_entry), (MCAST_GRP, MCAST_PORT))
         ctr += 1
